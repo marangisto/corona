@@ -30,3 +30,9 @@
 *.exe
 *.out
 *.app
+
+# Stack files
+.stack-work/
+*.lock
+*.cabal
+*~

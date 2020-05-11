@@ -3,9 +3,7 @@ module Main (main) where
 
 import Types
 import Config
---import Internal.ToolChain
 --import Internal.Program
---import Internal.USBSerial
 import qualified ARM as ARM
 import Development.Shake
 import Development.Shake.Command
@@ -133,13 +131,8 @@ toolChain = do
 
 arch :: MCU -> ARCH
 arch MCU{..}
-    | "STM32" `isPrefixOf` unMCU = ARM
-    | otherwise = error $ "don't know architecture for " <> unMCU
-
-family :: MCU -> String
-family  MCU{..}
-    | "STM32G0" `isPrefixOf` unMCU = "stm32g0"
-    | otherwise = error $ "don't know family for " <> unMCU
+    | "STM32" `isPrefixOf` name = ARM
+    | otherwise = error $ "don't know architecture for " <> name
 
 filterGarbageFiles :: [FilePath] -> [FilePath]
 filterGarbageFiles = filter $ \p -> not $ any (`isPrefixOf` takeFileName p) ["#", ".#"]

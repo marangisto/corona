@@ -22,24 +22,25 @@ ccFlags ToolConfig{..} = mcuFlags mcu ++
     [ "-mthumb"
     , "-ffunction-sections"
     , "-fdata-sections"
-    , "-DMCU=" <> unMCU mcu
+    , "-DMCU=" <> name mcu
     ]
 
 mcuFlags :: MCU -> [String]
-mcuFlags MCU{..}
-    | "STM32F0" `isPrefixOf` unMCU = [ "-mcpu=cortex-m0" ]
-    | "STM32F1" `isPrefixOf` unMCU = [ "-mcpu=cortex-m3" ]
-    | "STM32F4" `isPrefixOf` unMCU = [ "-mcpu=cortex-m4" ]
-    | "STM32F7" `isPrefixOf` unMCU = [ "-mcpu=cortex-m7" ]
-    | "STM32G0" `isPrefixOf` unMCU = [ "-mcpu=cortex-m0plus" ]
-    | "STM32G4" `isPrefixOf` unMCU =
-        [ "-mcpu=cortex-m4"
-        , "-mfloat-abi=hard"
+mcuFlags MCU{..} = ("-mcpu=" <> cleanCore core) : fpuFlags core
+
+fpuFlags :: String -> [String]
+fpuFlags core
+    | core == "cortex-m4" = 
+        [ "-mfloat-abi=hard"
         , "-mfpu=fpv4-sp-d16"
         , "-fsingle-precision-constant"
         ]
-    | "STM32H7" `isPrefixOf` unMCU = [ "-mcpu=cortex-m7" ]
-    | otherwise = error "don't know toolchain flags for mcu"
+    | core == "cortex-m7" =     -- FIXME: enable double precision?
+        [ "-mfloat-abi=hard"
+        , "-mfpu=fpv5-sp-d16"
+        , "-fsingle-precision-constant"
+        ]
+    | otherwise = []
 
 cppFlags _ =
     [ "-std=gnu++17"
@@ -71,4 +72,8 @@ ldFlags ToolConfig{..} objs = mcuFlags mcu ++
 copyFlags _ =
     [
     ]
+
+cleanCore :: String -> String
+cleanCore "cortex-m0+" = "cortex-m0plus"
+cleanCore c = c
 

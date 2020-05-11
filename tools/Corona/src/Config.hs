@@ -8,15 +8,18 @@ module Config
     ) where
 
 import Types
+import STM32 (mcuList)
 import Development.Shake
 import Development.Shake.Config
 import Development.Shake.FilePath
 import Control.Applicative
 import Data.Maybe (fromMaybe)
+import Data.List (find)
 
 getMCU :: Action MCU
 getMCU = do
-    mcu <- fmap MCU <$> getConfig "MCU"
+    x <- getConfig "MCU"
+    let mcu = findMCU =<< x
     return $ fromMaybe (error "MCU required") mcu
 
 getLibs :: MCU -> Action [String]
@@ -37,8 +40,11 @@ getLink = do
         Nothing -> do
             mcu <- getMCU
             baseDir <- getBaseDir
-            return $ baseDir </> "hal/link" </> unMCU mcu <.> "ld"
+            return $ baseDir </> "hal/link" </> name mcu <.> "ld"
 
 getEntry :: Action FilePath
 getEntry = fromMaybe "__reset" <$> getConfig "ENTRY"
+
+findMCU :: String -> Maybe MCU
+findMCU x = find ((==x) . name) mcuList
 

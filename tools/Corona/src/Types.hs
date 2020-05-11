@@ -1,6 +1,13 @@
-module Types where
+module Types
+    ( MCU(..)
+    , ARCH(..)
+    , ToolConfig(..)
+    , Format(..)
+    , Tool
+    , ToolChain(..)
+    ) where
 
-newtype MCU = MCU { unMCU :: String }
+import STM32 as STM32
 
 data ARCH = AVR | ARM deriving (Read, Show)
 
@@ -16,8 +23,8 @@ data Format = Binary | Hex
 type Tool = (String, [String] -> [String])
 
 data ToolChain = ToolChain
-    { name      :: String
-    , cc        :: Tool
+    --{ name      :: String
+    { cc        :: Tool
     , cpp       :: Tool
     , asm       :: Tool
     , ld        :: Tool

@@ -1,4 +1,4 @@
-{-# LANGUAGE RecordWildCards #-}
+{-# LANGUAGE RecordWildCards, TupleSections #-}
 module Main (main) where
 
 import Types
@@ -32,11 +32,16 @@ main = do
         mcu <- getMCU
         let objs = [ buildDir </> name </> c <.> "o" | c <- cs ++ cpps ++ asms ]
         libs <- (map (\l -> buildDir </> l </> l <.> "a")) <$> getLibs mcu
-        need $ objs ++ libs
+        lnk <- return $ buildDir </> "link" <.> "ld"
+        need $ lnk : objs ++ libs
         (command, flags) <- ld <$> toolChain
         () <- cmd command (flags $ objs ++ libs) "-o" [ out ]
         (command, flags) <- size <$> toolChain
         cmd command (flags []) [ out ]
+
+    buildDir </> "link" <.> "ld" %> \out -> do
+        script <- ldScript <$> toolChain
+        liftIO (writeFile out =<< script)
 
     buildDir </> "image" <.> "hex" %> \out -> do
         let elf = out -<.> ".elf"
@@ -125,7 +130,7 @@ toolChain = do
     mcu <- getMCU
     baseDir <- getBaseDir
     entry <- getEntry
-    link <- getLink
+    extLink <- getLink
     return $ case arch mcu of
         ARM -> ARM.toolChain ToolConfig{..}
 
@@ -139,5 +144,4 @@ filterGarbageFiles = filter $ \p -> not $ any (`isPrefixOf` takeFileName p) ["#"
 
 buildDir :: FilePath
 buildDir = "_build"
-
 

@@ -17,6 +17,7 @@ toolChain tc@ToolConfig{..} = ToolChain{..}
           objdump = ("arm-none-eabi-objdump", \_ -> [ "--disassemble-all" ])
           size = ("arm-none-eabi-size", \_ -> [])
           format = Binary
+          ldScript = makeLink tc
 
 ccFlags ToolConfig{..} = mcuFlags mcu ++
     [ "-mthumb"
@@ -57,7 +58,7 @@ ldFlags ToolConfig{..} objs = mcuFlags mcu ++
     [ "-mthumb"
     , "-specs=nosys.specs"  -- to get gcc _sbrk, etc to link
     , "-Wl,--gc-sections"
-    , "-T" ++ link
+    , "-T_build/link.ld"
     , "-Wl,--check-sections"
     , "-Wl,--entry=" ++ entry
     , "-Wl,--unresolved-symbols=report-all"
@@ -71,6 +72,23 @@ ldFlags ToolConfig{..} objs = mcuFlags mcu ++
 
 copyFlags _ =
     [
+    ]
+
+makeLink :: ToolConfig -> IO String
+makeLink ToolConfig{..} = case extLink of
+    Just fn -> readFile fn
+    Nothing -> do
+        let fn = baseDir </> "corona" </> "src" </> "stm32" <.> "ld"
+        (memory mcu <>) <$> readFile fn
+
+memory :: MCU -> String
+memory MCU{..} = unlines
+    [ "MEMORY"
+    , "{"
+    , "    FLASH(rx) : ORIGIN = 0x08000000, LENGTH = " <> show flash <> "k"
+    , "    RAM(rwx) : ORIGIN = 0x20000000, LENGTH = " <> show ram <> "k"
+    , "}"
+    , ""
     ]
 
 cleanCore :: String -> String

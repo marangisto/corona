@@ -32,15 +32,8 @@ getDefs = maybe [] words <$> getConfig "DEFS"
 getBaseDir :: Action FilePath
 getBaseDir = fromMaybe "../.." <$> getConfig "BASE_DIR"
 
-getLink :: Action FilePath
-getLink = do
-    mfp <- getConfig "LINK"
-    case mfp of
-        Just fp -> return fp
-        Nothing -> do
-            mcu <- getMCU
-            baseDir <- getBaseDir
-            return $ baseDir </> "hal/link" </> name mcu <.> "ld"
+getLink :: Action (Maybe FilePath)
+getLink = getConfig "LINK"
 
 getEntry :: Action FilePath
 getEntry = fromMaybe "__reset" <$> getConfig "ENTRY"

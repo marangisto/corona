@@ -36,3 +36,6 @@
 *.lock
 *.cabal
 *~
+
+# Corona project files
+_build

@@ -3,7 +3,6 @@ module Main (main) where
 
 import Types
 import Config
---import Internal.Program
 import qualified ARM as ARM
 import Development.Shake
 import Development.Shake.Command
@@ -103,20 +102,18 @@ main = do
     buildDir <//> "*.cpp.o" %> compile cpp
     buildDir <//> "*.asm.o" %> compile asm
 
-{-
     phony "upload" $ do
         tc <- toolChain
         let payload = case format tc of
                 Hex -> buildDir </> "image" <.> "hex"
                 Binary -> buildDir </> "image" <.> "bin"
         need [ payload ]
-        (command, flags) <- programmer mcu payload
-        cmd command (flags [])
+        (command, flags) <- return $ program tc
+        cmd command (flags [ payload ])
 
     phony "reset" $ do
-        (command, flags) <- reset board mcu
+        (command, flags) <- reset <$> toolChain
         cmd command (flags [])
--}
 
     phony "clean" $ do
         putNormal $ "Cleaning files in " ++ buildDir

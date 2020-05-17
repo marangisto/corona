@@ -16,6 +16,8 @@ toolChain tc@ToolConfig{..} = ToolChain{..}
           objcopy = ("arm-none-eabi-objcopy", \_ -> copyFlags mcu)
           objdump = ("arm-none-eabi-objdump", \_ -> [ "--disassemble-all" ])
           size = ("arm-none-eabi-size", \_ -> [])
+          program = ("STM32_Programmer_CLI", progFlags)
+          reset = ("STM32_Programmer_CLI", \_ -> rstFlags)
           format = Binary
           ldScript = makeLink tc
 
@@ -94,4 +96,20 @@ memory MCU{..} = unlines
 cleanCore :: String -> String
 cleanCore "cortex-m0+" = "cortex-m0plus"
 cleanCore c = c
+
+progFlags :: [FilePath] -> [String]
+progFlags (bin:[]) =
+    [ "--connect port=SWD mode=UR"
+    , "--write"
+    , bin
+    , "0x8000000"
+    , "--verify"
+    , "-hardRst"
+    ]
+
+rstFlags :: [String]
+rstFlags =
+    [ "--connect port=SWD mode=UR"
+    , "-hardRst"
+    ]
 

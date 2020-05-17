@@ -31,6 +31,8 @@ data ToolChain = ToolChain
     , objcopy   :: Tool
     , objdump   :: Tool
     , size      :: Tool
+    , program   :: Tool
+    , reset     :: Tool
     , format    :: Format
     , ldScript  :: IO String
     }

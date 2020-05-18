@@ -24,7 +24,6 @@ struct stm32g030_adc_t
     volatile uint32_t AWD1TR;   // [read-write] watchdog threshold register
     volatile uint32_t AWD2TR;   // [read-write] watchdog threshold register
     volatile uint32_t CHSELR;   // [read-write] channel selection register
-    volatile uint32_t CHSELR_1; // [read-write] channel selection register CHSELRMOD = 1 in ADC_CFGR1
     volatile uint32_t AWD3TR;   // [read-write] watchdog threshold register
     reserved_t<0x4> _0x40;
     volatile uint32_t DR;       // [read-only] ADC group regular conversion data register
@@ -222,7 +221,6 @@ struct stm32g070_adc_t
     volatile uint32_t AWD1TR;   // [read-write] watchdog threshold register
     volatile uint32_t AWD2TR;   // [read-write] watchdog threshold register
     volatile uint32_t CHSELR;   // [read-write] channel selection register
-    volatile uint32_t CHSELR_1; // [read-write] channel selection register CHSELRMOD = 1 in ADC_CFGR1
     volatile uint32_t AWD3TR;   // [read-write] watchdog threshold register
     reserved_t<0x4> _0x40;
     volatile uint32_t DR;       // [read-only] ADC group regular conversion data register

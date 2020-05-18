@@ -20,10 +20,8 @@ struct stm32g030_tim1_t
     volatile uint32_t DIER;         // [read-write] DMA/Interrupt enable register
     volatile uint32_t SR;           // [read-write] status register
     volatile uint32_t EGR;          // [write-only] event generation register
-    volatile uint32_t CCMR1_Output; // [read-write] capture/compare mode register 1 (output mode)
-    volatile uint32_t CCMR1_Input;  // [read-write] capture/compare mode register 1 (output mode)
-    volatile uint32_t CCMR2_Output; // [read-write] capture/compare mode register 2 (output mode)
-    volatile uint32_t CCMR2_Input;  // [read-write] capture/compare mode register 2 (output mode)
+    volatile uint32_t CCMR1;        // [read-write] capture/compare mode register 1 (output mode)
+    volatile uint32_t CCMR2;        // [read-write] capture/compare mode register 2 (output mode)
     volatile uint32_t CCER;         // [read-write] capture/compare enable register
     volatile uint32_t CNT;          // counter
     volatile uint32_t PSC;          // [read-write] prescaler
@@ -415,10 +413,8 @@ struct stm32g070_tim1_t
     volatile uint32_t DIER;         // [read-write] DMA/Interrupt enable register
     volatile uint32_t SR;           // [read-write] status register
     volatile uint32_t EGR;          // [write-only] event generation register
-    volatile uint32_t CCMR1_Output; // [read-write] capture/compare mode register 1 (output mode)
-    volatile uint32_t CCMR1_Input;  // [read-write] capture/compare mode register 1 (output mode)
-    volatile uint32_t CCMR2_Output; // [read-write] capture/compare mode register 2 (output mode)
-    volatile uint32_t CCMR2_Input;  // [read-write] capture/compare mode register 2 (output mode)
+    volatile uint32_t CCMR1;        // [read-write] capture/compare mode register 1 (output mode)
+    volatile uint32_t CCMR2;        // [read-write] capture/compare mode register 2 (output mode)
     volatile uint32_t CCER;         // [read-write] capture/compare enable register
     volatile uint32_t CNT;          // counter
     volatile uint32_t PSC;          // [read-write] prescaler
@@ -794,8 +790,7 @@ struct stm32g030_tim14_t
     volatile uint32_t DIER;         // [read-write] DMA/Interrupt enable register
     volatile uint32_t SR;           // [read-write] status register
     volatile uint32_t EGR;          // [write-only] event generation register
-    volatile uint32_t CCMR1_Output; // [read-write] capture/compare mode register 1 (output mode)
-    volatile uint32_t CCMR1_Input;  // [read-write] capture/compare mode register 1 (input mode)
+    volatile uint32_t CCMR1;        // [read-write] capture/compare mode register 1 (output mode)
     reserved_t<0x1> _0x20;
     volatile uint32_t CCER;         // [read-write] capture/compare enable register
     volatile uint32_t CNT;          // [read-write] counter
@@ -900,8 +895,7 @@ struct stm32g071_tim15_t
     volatile uint32_t DIER;         // [read-write] DMA/Interrupt enable register
     volatile uint32_t SR;           // [read-write] status register
     volatile uint32_t EGR;          // [write-only] event generation register
-    volatile uint32_t CCMR1_Output; // [read-write] capture/compare mode register (output mode)
-    volatile uint32_t CCMR1_Input;  // [read-write] capture/compare mode register 1 (input mode)
+    volatile uint32_t CCMR1;        // [read-write] capture/compare mode register (output mode)
     reserved_t<0x1> _0x20;
     volatile uint32_t CCER;         // [read-write] capture/compare enable register
     volatile uint32_t CNT;          // counter
@@ -1128,8 +1122,7 @@ struct stm32g030_tim16_t
     volatile uint32_t DIER;         // [read-write] DMA/Interrupt enable register
     volatile uint32_t SR;           // [read-write] status register
     volatile uint32_t EGR;          // [write-only] event generation register
-    volatile uint32_t CCMR1_Output; // [read-write] capture/compare mode register (output mode)
-    volatile uint32_t CCMR1_Input;  // [read-write] capture/compare mode register 1 (input mode)
+    volatile uint32_t CCMR1;        // [read-write] capture/compare mode register (output mode)
     reserved_t<0x1> _0x20;
     volatile uint32_t CCER;         // [read-write] capture/compare enable register
     volatile uint32_t CNT;          // counter
@@ -1302,8 +1295,7 @@ struct stm32g071_tim16_t
     volatile uint32_t DIER;         // [read-write] DMA/Interrupt enable register
     volatile uint32_t SR;           // [read-write] status register
     volatile uint32_t EGR;          // [write-only] event generation register
-    volatile uint32_t CCMR1_Output; // [read-write] capture/compare mode register (output mode)
-    volatile uint32_t CCMR1_Input;  // [read-write] capture/compare mode register 1 (input mode)
+    volatile uint32_t CCMR1;        // [read-write] capture/compare mode register (output mode)
     reserved_t<0x1> _0x20;
     volatile uint32_t CCER;         // [read-write] capture/compare enable register
     volatile uint32_t CNT;          // counter
@@ -1479,10 +1471,8 @@ struct stm32g030_tim2_t
     volatile uint32_t DIER;         // [read-write] DMA/Interrupt enable register
     volatile uint32_t SR;           // [read-write] status register
     volatile uint32_t EGR;          // [write-only] event generation register
-    volatile uint32_t CCMR1_Output; // [read-write] capture/compare mode register 1 (output mode)
-    volatile uint32_t CCMR1_Input;  // [read-write] capture/compare mode register 1 (input mode)
-    volatile uint32_t CCMR2_Output; // [read-write] capture/compare mode register 2 (output mode)
-    volatile uint32_t CCMR2_Input;  // [read-write] capture/compare mode register 2 (input mode)
+    volatile uint32_t CCMR1;        // [read-write] capture/compare mode register 1 (output mode)
+    volatile uint32_t CCMR2;        // [read-write] capture/compare mode register 2 (output mode)
     volatile uint32_t CCER;         // [read-write] capture/compare enable register
     volatile uint32_t CNT;          // [read-write] counter
     volatile uint32_t PSC;          // [read-write] prescaler

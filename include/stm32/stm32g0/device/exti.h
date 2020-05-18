@@ -260,7 +260,6 @@ struct stm32g070_exti_t
     volatile uint32_t EXTICR4; // [read-write] EXTI external interrupt selection register
     reserved_t<0x4> _0x80;
     volatile uint32_t IMR1;    // [read-write] EXTI CPU wakeup with interrupt mask register
-    volatile uint32_t EMR1;    // [read-write] EXTI CPU wakeup with event mask register
     reserved_t<0x3> _0x90;
     volatile uint32_t IMR2;    // [read-write] EXTI CPU wakeup with interrupt mask register
     volatile uint32_t EMR2;    // [read-write] EXTI CPU wakeup with event mask register

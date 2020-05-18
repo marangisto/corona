@@ -54,7 +54,7 @@ uint32_t sys_clock::m_freq;
 
 void sys_clock::init()
 {
-    m_freq = 16000000; // clock_tree_init();
+    m_freq = clock_tree_init();
     sys_tick_init(m_freq / 1000);
 }
 

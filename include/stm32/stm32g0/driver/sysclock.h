@@ -16,7 +16,7 @@ static inline uint32_t clock_tree_init()
 
     constexpr uint8_t wait_states = 0x2;    // 2 wait-states
 
-    FLASH.ACR = __::ACR_PRFTEN | __::ACR_LATENCY<wait_states>;
+    FLASH.ACR |= __::ACR_PRFTEN | __::ACR_LATENCY<wait_states>;
     while ((FLASH.ACR & __::ACR_LATENCY<0x7>) != __::ACR_LATENCY<wait_states>); // wait to take effect
 
     // fR (fSYS) = fVCO / pllR      // <= 64MHz

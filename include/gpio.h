@@ -107,3 +107,50 @@ private:
     static constexpr uint32_t MASK = 1 << POS;
 };
 
+template<gpio_pin_t PIN, alternate_function_t ALT>
+class alternate_t
+{
+public:
+    template
+        < output_speed_t speed = low_speed
+        , output_type_t output_type = push_pull
+        >  // FIXME: should we not have output_type option here?
+    static inline void setup()
+    {
+        typename gpio_t<PORT>::T& GPIO = gpio_t<PORT>::V;
+
+        clock_control_t<gpio_t<PORT>>::enable();
+        GPIO.MODER &= ~(0x3 << (POS*2));
+        GPIO.MODER |= alternate_mode << (POS*2);
+        if (speed != low_speed)
+            GPIO.OSPEEDR |= speed << (POS*2);
+        if (output_type == open_drain)
+            GPIO.OTYPER |= MASK;
+        if (POS < 8)
+            GPIO.AFRL |= alt_fun_traits<PIN, ALT>::AF << (POS*4);
+        else
+            GPIO.AFRH |= alt_fun_traits<PIN, ALT>::AF << ((POS-8)*4);
+    }
+
+    template<input_type_t input_type = floating>
+    static inline void setup()
+    {
+        typename gpio_t<PORT>::T& GPIO = gpio_t<PORT>::V;
+
+        clock_control_t<gpio_t<PORT>>::enable();
+        GPIO.MODER &= ~(0x3 << (POS*2));
+        GPIO.MODER |= alternate_mode << (POS*2);
+        if (input_type != floating)
+            GPIO.PUPDR |= input_type << (POS*2);
+        if (POS < 8)
+            GPIO.AFRL |= alt_fun_traits<PIN, ALT>::AF << (POS*4);
+        else
+            GPIO.AFRH |= alt_fun_traits<PIN, ALT>::AF << ((POS-8)*4);
+    }
+
+private:
+    static constexpr gpio_port_t PORT = port_pin<PIN>();
+    static constexpr uint8_t POS = pin_bit<PIN>();
+    static constexpr uint32_t MASK = 1 << POS;
+};
+

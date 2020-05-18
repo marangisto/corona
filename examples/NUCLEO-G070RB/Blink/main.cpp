@@ -1,6 +1,6 @@
 #include <gpio.h>
 
-typedef output_t<PA5> ld4;
+using ld4 = output_t<PA5>;
 
 int main()
 {

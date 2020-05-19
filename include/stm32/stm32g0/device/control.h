@@ -6,6 +6,9 @@
 //
 ////
 
+template<typename PERIPHERAL>
+struct clock_control_t {};
+
 template<>
 struct clock_control_t<peripheral_t<STM32G030, ADC>>
 {

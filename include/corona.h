@@ -3,21 +3,14 @@
 #include "register.h"
 #include "stm32/stm32.h"
 #include <device/mcu.h>
-#include <device/peripheral.h>
-#include <device/interrupt.h>
 
-static constexpr mcu_t mcu = STM32G070RBTx;
+static constexpr mcu_t mcu = MCU;   // from -DMCU=...
 static constexpr mcu_family_t mcu_family = mcu_traits<mcu>::mcu_family;
 static constexpr mcu_svd_t mcu_svd = mcu_traits<mcu>::mcu_svd;
 
-template<mcu_svd_t SVD, peripheral_enum_t PERIPHERAL>
-struct peripheral_t
-{
-    static_assert(always_false_i<SVD>::value, "peripheral not available on MCU!");
-};
-
-template<typename PERIPHERAL>
-struct clock_control_t {};
+#include <device/peripheral.h>
+#include <device/nvic.h>
+#include <device/interrupt.h>
 
 template<interrupt::interrupt_t> void handler();
 

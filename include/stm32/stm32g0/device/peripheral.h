@@ -66,3 +66,12 @@ enum peripheral_enum_t
     , WWDG
     };
 
+template<mcu_svd_t SVD, peripheral_enum_t PERIPHERAL>
+struct peripheral_t
+{
+    static_assert
+        ( always_false_i<SVD>::value
+        , "peripheral not available on MCU!"
+        );
+};
+

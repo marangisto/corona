@@ -14,24 +14,24 @@
 
 struct stm32g030_nvic_t
 {
-    volatile uint32_t ISER; // [read-write] Interrupt Set Enable Register
+    volatile uint32_t ISER0; // [read-write] Interrupt Set Enable Register
     reserved_t<0x1f> _0x80;
-    volatile uint32_t ICER; // [read-write] Interrupt Clear Enable Register
+    volatile uint32_t ICER;  // [read-write] Interrupt Clear Enable Register
     reserved_t<0x1f> _0x100;
-    volatile uint32_t ISPR; // [read-write] Interrupt Set-Pending Register
+    volatile uint32_t ISPR;  // [read-write] Interrupt Set-Pending Register
     reserved_t<0x1f> _0x180;
-    volatile uint32_t ICPR; // [read-write] Interrupt Clear-Pending Register
+    volatile uint32_t ICPR;  // [read-write] Interrupt Clear-Pending Register
     reserved_t<0x5f> _0x300;
-    volatile uint32_t IPR0; // [read-write] Interrupt Priority Register 0
-    volatile uint32_t IPR1; // [read-write] Interrupt Priority Register 1
-    volatile uint32_t IPR2; // [read-write] Interrupt Priority Register 2
-    volatile uint32_t IPR3; // [read-write] Interrupt Priority Register 3
-    volatile uint32_t IPR4; // [read-write] Interrupt Priority Register 4
-    volatile uint32_t IPR5; // [read-write] Interrupt Priority Register 5
-    volatile uint32_t IPR6; // [read-write] Interrupt Priority Register 6
-    volatile uint32_t IPR7; // [read-write] Interrupt Priority Register 7
+    volatile uint32_t IPR0;  // [read-write] Interrupt Priority Register 0
+    volatile uint32_t IPR1;  // [read-write] Interrupt Priority Register 1
+    volatile uint32_t IPR2;  // [read-write] Interrupt Priority Register 2
+    volatile uint32_t IPR3;  // [read-write] Interrupt Priority Register 3
+    volatile uint32_t IPR4;  // [read-write] Interrupt Priority Register 4
+    volatile uint32_t IPR5;  // [read-write] Interrupt Priority Register 5
+    volatile uint32_t IPR6;  // [read-write] Interrupt Priority Register 6
+    volatile uint32_t IPR7;  // [read-write] Interrupt Priority Register 7
 
-    static constexpr uint32_t ISER_RESET_VALUE = 0x0;
+    static constexpr uint32_t ISER0_RESET_VALUE = 0x0;
 
     static constexpr uint32_t ICER_RESET_VALUE = 0x0;
 

@@ -55,4 +55,20 @@ struct interrupt
     , CEC = 30
     , AES_RNG = 31
     };
+
+    template<interrupt_t INTERRUPT>
+    static void enable() { helper<nvic_t, INTERRUPT>::enable(); }
+
+    template<typename NVIC, interrupt_t I, typename = is_in_range<true>>
+    struct helper
+    {
+        static_assert(always_false_i<I>::value, "no such interrupt");
+    };
+
+    template<typename NVIC, interrupt_t I>
+    struct helper<NVIC, I, is_in_range<(0 <= I && I < 32)>>
+    {
+        static void enable() { NVIC::V.ISER0 |= 1 << (I - 0); }
+    };
 };
+

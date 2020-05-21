@@ -16,8 +16,8 @@ int main()
 {
     ld4::setup();
     serial::setup<230400>();
-    //hal::nvic<interrupt::USART2>::enable();
     stdio_t::bind<serial>();
+    interrupt::enable<interrupt::USART2>();
     interrupt::enable();
 
     printf("Hello STM32G070!\n");

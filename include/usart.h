@@ -8,14 +8,14 @@ template<int INST> struct usart_traits {};
 
 template<> struct usart_traits<1>
 {
-    static constexpr peripheral_enum_t peripheral = USART1;
+    using usart = usart1_t;
     static constexpr alternate_function_t TX = USART1_TX;
     static constexpr alternate_function_t RX = USART1_RX;
 };
 
 template<> struct usart_traits<2>
 {
-    static constexpr peripheral_enum_t peripheral = USART2;
+    using usart = usart2_t;
     static constexpr alternate_function_t TX = USART2_TX;
     static constexpr alternate_function_t RX = USART2_RX;
 };
@@ -96,8 +96,8 @@ public:
 
 private:
     using traits = usart_traits<INST>;
-    using usart = peripheral_t<mcu_svd, traits::peripheral>;
-    using fifo = fifo_t<char, INST, 16>;
+    using usart = typename traits::usart;
     using _ = typename usart::T;
+    using fifo = fifo_t<char, INST, 16>;    // FIXME id on type!
 };
 

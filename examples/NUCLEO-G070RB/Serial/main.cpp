@@ -17,7 +17,7 @@ int main()
     ld4::setup();
     serial::setup<230400>();
     stdio_t::bind<serial>();
-    interrupt::enable<interrupt::USART2>();
+    interrupt::set<interrupt::USART2>();
     interrupt::enable();
 
     printf("Hello STM32G070!\n");

@@ -16,11 +16,11 @@ struct stm32f0x0_nvic_t
 {
     volatile uint32_t ISER0; // [read-write] Interrupt Set Enable Register
     reserved_t<0x1f> _0x80;
-    volatile uint32_t ICER;  // [read-write] Interrupt Clear Enable Register
+    volatile uint32_t ICER0; // [read-write] Interrupt Clear Enable Register
     reserved_t<0x1f> _0x100;
-    volatile uint32_t ISPR;  // [read-write] Interrupt Set-Pending Register
+    volatile uint32_t ISPR0; // [read-write] Interrupt Set-Pending Register
     reserved_t<0x1f> _0x180;
-    volatile uint32_t ICPR;  // [read-write] Interrupt Clear-Pending Register
+    volatile uint32_t ICPR0; // [read-write] Interrupt Clear-Pending Register
     reserved_t<0x5f> _0x300;
     volatile uint32_t IPR0;  // [read-write] Interrupt Priority Register 0
     volatile uint32_t IPR1;  // [read-write] Interrupt Priority Register 1
@@ -33,11 +33,11 @@ struct stm32f0x0_nvic_t
 
     static constexpr uint32_t ISER0_RESET_VALUE = 0x0;
 
-    static constexpr uint32_t ICER_RESET_VALUE = 0x0;
+    static constexpr uint32_t ICER0_RESET_VALUE = 0x0;
 
-    static constexpr uint32_t ISPR_RESET_VALUE = 0x0;
+    static constexpr uint32_t ISPR0_RESET_VALUE = 0x0;
 
-    static constexpr uint32_t ICPR_RESET_VALUE = 0x0;
+    static constexpr uint32_t ICPR0_RESET_VALUE = 0x0;
 
     static constexpr uint32_t IPR0_RESET_VALUE = 0x0;
     template<uint32_t X>

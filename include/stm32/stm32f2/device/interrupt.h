@@ -106,7 +106,40 @@ struct interrupt
     };
 
     template<interrupt_t INTERRUPT>
-    static void enable() { helper<nvic_t, INTERRUPT>::enable(); }
+    static bool get()
+    {
+        return helper<nvic_t, INTERRUPT>::get();
+    }
+
+    template<interrupt_t INTERRUPT>
+    static void set()
+    {
+        helper<nvic_t, INTERRUPT>::set();
+    }
+
+    template<interrupt_t INTERRUPT>
+    static void clear()
+    {
+        helper<nvic_t, INTERRUPT>::clear();
+    }
+
+    template<interrupt_t INTERRUPT>
+    static bool get_pending()
+    {
+        return helper<nvic_t, INTERRUPT>::get_pending();
+    }
+
+    template<interrupt_t INTERRUPT>
+    static void set_pending()
+    {
+        helper<nvic_t, INTERRUPT>::set_pending();
+    }
+
+    template<interrupt_t INTERRUPT>
+    static void clear_pending()
+    {
+        helper<nvic_t, INTERRUPT>::clear_pending();
+    }
 
     template<typename NVIC, interrupt_t I, typename = is_in_range<true>>
     struct helper
@@ -117,19 +150,34 @@ struct interrupt
     template<typename NVIC, interrupt_t I>
     struct helper<NVIC, I, is_in_range<(0 <= I && I < 32)>>
     {
-        static void enable() { NVIC::V.ISER0 |= 1 << (I - 0); }
+        static bool get() { return NVIC::V.ISER0 & 1 << (I - 0); }
+        static void set() { NVIC::V.ISER0 = 1 << (I - 0); }
+        static void clear() { NVIC::V.ICER0 = 1 << (I - 0); }
+        static bool get_pending() { return NVIC::V.ISPR0 & 1 << (I - 0); }
+        static void set_pending() { NVIC::V.ISPR0 = 1 << (I - 0); }
+        static void clear_pending() { NVIC::V.ICPR0 = 1 << (I - 0); }
     };
 
     template<typename NVIC, interrupt_t I>
     struct helper<NVIC, I, is_in_range<(32 <= I && I < 64)>>
     {
-        static void enable() { NVIC::V.ISER1 |= 1 << (I - 32); }
+        static bool get() { return NVIC::V.ISER1 & 1 << (I - 32); }
+        static void set() { NVIC::V.ISER1 = 1 << (I - 32); }
+        static void clear() { NVIC::V.ICER1 = 1 << (I - 32); }
+        static bool get_pending() { return NVIC::V.ISPR1 & 1 << (I - 32); }
+        static void set_pending() { NVIC::V.ISPR1 = 1 << (I - 32); }
+        static void clear_pending() { NVIC::V.ICPR1 = 1 << (I - 32); }
     };
 
     template<typename NVIC, interrupt_t I>
     struct helper<NVIC, I, is_in_range<(64 <= I && I < 96)>>
     {
-        static void enable() { NVIC::V.ISER2 |= 1 << (I - 64); }
+        static bool get() { return NVIC::V.ISER2 & 1 << (I - 64); }
+        static void set() { NVIC::V.ISER2 = 1 << (I - 64); }
+        static void clear() { NVIC::V.ICER2 = 1 << (I - 64); }
+        static bool get_pending() { return NVIC::V.ISPR2 & 1 << (I - 64); }
+        static void set_pending() { NVIC::V.ISPR2 = 1 << (I - 64); }
+        static void clear_pending() { NVIC::V.ICPR2 = 1 << (I - 64); }
     };
 };
 

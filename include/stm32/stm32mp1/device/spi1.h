@@ -265,3 +265,59 @@ using spi4_t = peripheral_t<mcu_svd, SPI4>;
 using spi5_t = peripheral_t<mcu_svd, SPI5>;
 using spi6_t = peripheral_t<mcu_svd, SPI6>;
 
+template<int INST> struct spi_traits {};
+
+template<> struct spi_traits<1>
+{
+    using spi = spi1_t;
+    static constexpr alternate_function_t MISO = SPI1_MISO;
+    static constexpr alternate_function_t MOSI = SPI1_MOSI;
+    static constexpr alternate_function_t NSS = SPI1_NSS;
+    static constexpr alternate_function_t SCK = SPI1_SCK;
+};
+
+template<> struct spi_traits<2>
+{
+    using spi = spi2_t;
+    static constexpr alternate_function_t MISO = SPI2_MISO;
+    static constexpr alternate_function_t MOSI = SPI2_MOSI;
+    static constexpr alternate_function_t NSS = SPI2_NSS;
+    static constexpr alternate_function_t SCK = SPI2_SCK;
+};
+
+template<> struct spi_traits<3>
+{
+    using spi = spi3_t;
+    static constexpr alternate_function_t MISO = SPI3_MISO;
+    static constexpr alternate_function_t MOSI = SPI3_MOSI;
+    static constexpr alternate_function_t NSS = SPI3_NSS;
+    static constexpr alternate_function_t SCK = SPI3_SCK;
+};
+
+template<> struct spi_traits<4>
+{
+    using spi = spi4_t;
+    static constexpr alternate_function_t MISO = SPI4_MISO;
+    static constexpr alternate_function_t MOSI = SPI4_MOSI;
+    static constexpr alternate_function_t NSS = SPI4_NSS;
+    static constexpr alternate_function_t SCK = SPI4_SCK;
+};
+
+template<> struct spi_traits<5>
+{
+    using spi = spi5_t;
+    static constexpr alternate_function_t MISO = SPI5_MISO;
+    static constexpr alternate_function_t MOSI = SPI5_MOSI;
+    static constexpr alternate_function_t NSS = SPI5_NSS;
+    static constexpr alternate_function_t SCK = SPI5_SCK;
+};
+
+template<> struct spi_traits<6>
+{
+    using spi = spi6_t;
+    static constexpr alternate_function_t MISO = SPI6_MISO;
+    static constexpr alternate_function_t MOSI = SPI6_MOSI;
+    static constexpr alternate_function_t NSS = SPI6_NSS;
+    static constexpr alternate_function_t SCK = SPI6_SCK;
+};
+

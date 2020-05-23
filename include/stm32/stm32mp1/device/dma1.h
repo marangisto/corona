@@ -651,3 +651,15 @@ struct peripheral_t<STM32MP15xxx, DMA2>
 using dma1_t = peripheral_t<mcu_svd, DMA1>;
 using dma2_t = peripheral_t<mcu_svd, DMA2>;
 
+template<int INST> struct dma_traits {};
+
+template<> struct dma_traits<1>
+{
+    using dma = dma1_t;
+};
+
+template<> struct dma_traits<2>
+{
+    using dma = dma2_t;
+};
+

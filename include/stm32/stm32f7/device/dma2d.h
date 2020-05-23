@@ -295,3 +295,10 @@ struct peripheral_t<STM32F779, DMA2D>
 
 using dma2d_t = peripheral_t<mcu_svd, DMA2D>;
 
+template<int INST> struct dma_traits {};
+
+template<> struct dma_traits<2D>
+{
+    using dma = dma2D_t;
+};
+

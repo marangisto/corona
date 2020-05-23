@@ -217,3 +217,17 @@ struct peripheral_t<STM32L562, SEC_OTFDEC1>
 using otfdec1_t = peripheral_t<mcu_svd, OTFDEC1>;
 using sec_otfdec1_t = peripheral_t<mcu_svd, SEC_OTFDEC1>;
 
+template<int INST> struct otfdec_traits {};
+
+template<> struct otfdec_traits<1>
+{
+    using otfdec = otfdec1_t;
+};
+
+template<int INST> struct sec_otfdec_traits {};
+
+template<> struct sec_otfdec_traits<1>
+{
+    using sec_otfdec = sec_otfdec1_t;
+};
+

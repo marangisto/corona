@@ -163,3 +163,10 @@ struct peripheral_t<STM32G484xx, LPTIMER1>
 
 using lptimer1_t = peripheral_t<mcu_svd, LPTIMER1>;
 
+template<int INST> struct lptimer_traits {};
+
+template<> struct lptimer_traits<1>
+{
+    using lptimer = lptimer1_t;
+};
+

@@ -341,3 +341,15 @@ struct peripheral_t<STM32WB55_CM4, AES2>
 using aes1_t = peripheral_t<mcu_svd, AES1>;
 using aes2_t = peripheral_t<mcu_svd, AES2>;
 
+template<int INST> struct aes_traits {};
+
+template<> struct aes_traits<1>
+{
+    using aes = aes1_t;
+};
+
+template<> struct aes_traits<2>
+{
+    using aes = aes2_t;
+};
+

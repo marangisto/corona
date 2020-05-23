@@ -690,3 +690,10 @@ struct peripheral_t<STM32MP15xxx, DSIHOST1>
 
 using dsihost1_t = peripheral_t<mcu_svd, DSIHOST1>;
 
+template<int INST> struct dsihost_traits {};
+
+template<> struct dsihost_traits<1>
+{
+    using dsihost = dsihost1_t;
+};
+

@@ -319,3 +319,15 @@ struct peripheral_t<STM32MP15xxx, TIM3>
 
 using tim3_t = peripheral_t<mcu_svd, TIM3>;
 
+template<int INST> struct tim_traits {};
+
+template<> struct tim_traits<3>
+{
+    using tim = tim3_t;
+    static constexpr alternate_function_t CH1 = TIM3_CH1;
+    static constexpr alternate_function_t CH2 = TIM3_CH2;
+    static constexpr alternate_function_t CH3 = TIM3_CH3;
+    static constexpr alternate_function_t CH4 = TIM3_CH4;
+    static constexpr alternate_function_t ETR = TIM3_ETR;
+};
+

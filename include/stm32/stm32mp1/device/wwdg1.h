@@ -69,3 +69,10 @@ struct peripheral_t<STM32MP15xxx, WWDG1>
 
 using wwdg1_t = peripheral_t<mcu_svd, WWDG1>;
 
+template<int INST> struct wwdg_traits {};
+
+template<> struct wwdg_traits<1>
+{
+    using wwdg = wwdg1_t;
+};
+

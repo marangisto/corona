@@ -451,3 +451,67 @@ using usart2_t = peripheral_t<mcu_svd, USART2>;
 using usart4_t = peripheral_t<mcu_svd, USART4>;
 using usart5_t = peripheral_t<mcu_svd, USART5>;
 
+template<int INST> struct lpuart_traits {};
+
+template<> struct lpuart_traits<1>
+{
+    using lpuart = lpuart1_t;
+    static constexpr alternate_function_t CTS = LPUART1_CTS;
+    static constexpr alternate_function_t DE = LPUART1_DE;
+    static constexpr alternate_function_t RTS = LPUART1_RTS;
+    static constexpr alternate_function_t RX = LPUART1_RX;
+    static constexpr alternate_function_t TX = LPUART1_TX;
+};
+
+template<int INST> struct lpusart_traits {};
+
+template<> struct lpusart_traits<1>
+{
+    using lpusart = lpusart1_t;
+};
+
+template<int INST> struct usart_traits {};
+
+template<> struct usart_traits<1>
+{
+    using usart = usart1_t;
+    static constexpr alternate_function_t CK = USART1_CK;
+    static constexpr alternate_function_t CTS = USART1_CTS;
+    static constexpr alternate_function_t DE = USART1_DE;
+    static constexpr alternate_function_t RTS = USART1_RTS;
+    static constexpr alternate_function_t RX = USART1_RX;
+    static constexpr alternate_function_t TX = USART1_TX;
+};
+
+template<> struct usart_traits<2>
+{
+    using usart = usart2_t;
+    static constexpr alternate_function_t CK = USART2_CK;
+    static constexpr alternate_function_t CTS = USART2_CTS;
+    static constexpr alternate_function_t DE = USART2_DE;
+    static constexpr alternate_function_t RTS = USART2_RTS;
+    static constexpr alternate_function_t RX = USART2_RX;
+    static constexpr alternate_function_t TX = USART2_TX;
+};
+
+template<> struct usart_traits<4>
+{
+    using usart = usart4_t;
+    static constexpr alternate_function_t CK = USART4_CK;
+    static constexpr alternate_function_t CTS = USART4_CTS;
+    static constexpr alternate_function_t DE = USART4_DE;
+    static constexpr alternate_function_t RTS = USART4_RTS;
+    static constexpr alternate_function_t RX = USART4_RX;
+    static constexpr alternate_function_t TX = USART4_TX;
+};
+
+template<> struct usart_traits<5>
+{
+    using usart = usart5_t;
+    static constexpr alternate_function_t CK = USART5_CK;
+    static constexpr alternate_function_t DE = USART5_DE;
+    static constexpr alternate_function_t RTS = USART5_RTS;
+    static constexpr alternate_function_t RX = USART5_RX;
+    static constexpr alternate_function_t TX = USART5_TX;
+};
+

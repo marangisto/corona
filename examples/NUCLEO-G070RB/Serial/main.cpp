@@ -24,7 +24,7 @@ int main()
 
     for (;;)
     {
-        static char buf[256];
+        static char buf[128];
 
         printf("> ");
         fflush(stdout);

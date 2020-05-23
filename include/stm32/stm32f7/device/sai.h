@@ -917,3 +917,31 @@ struct peripheral_t<STM32F777, SAI2>
 using sai1_t = peripheral_t<mcu_svd, SAI1>;
 using sai2_t = peripheral_t<mcu_svd, SAI2>;
 
+template<int INST> struct sai_traits {};
+
+template<> struct sai_traits<1>
+{
+    using sai = sai1_t;
+    static constexpr alternate_function_t FS_A = SAI1_FS_A;
+    static constexpr alternate_function_t FS_B = SAI1_FS_B;
+    static constexpr alternate_function_t MCLK_A = SAI1_MCLK_A;
+    static constexpr alternate_function_t MCLK_B = SAI1_MCLK_B;
+    static constexpr alternate_function_t SCK_A = SAI1_SCK_A;
+    static constexpr alternate_function_t SCK_B = SAI1_SCK_B;
+    static constexpr alternate_function_t SD_A = SAI1_SD_A;
+    static constexpr alternate_function_t SD_B = SAI1_SD_B;
+};
+
+template<> struct sai_traits<2>
+{
+    using sai = sai2_t;
+    static constexpr alternate_function_t FS_A = SAI2_FS_A;
+    static constexpr alternate_function_t FS_B = SAI2_FS_B;
+    static constexpr alternate_function_t MCLK_A = SAI2_MCLK_A;
+    static constexpr alternate_function_t MCLK_B = SAI2_MCLK_B;
+    static constexpr alternate_function_t SCK_A = SAI2_SCK_A;
+    static constexpr alternate_function_t SCK_B = SAI2_SCK_B;
+    static constexpr alternate_function_t SD_A = SAI2_SD_A;
+    static constexpr alternate_function_t SD_B = SAI2_SD_B;
+};
+

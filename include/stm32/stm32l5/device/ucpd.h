@@ -231,3 +231,19 @@ struct peripheral_t<STM32L562, SEC_UCPD1>
 using sec_ucpd1_t = peripheral_t<mcu_svd, SEC_UCPD1>;
 using ucpd1_t = peripheral_t<mcu_svd, UCPD1>;
 
+template<int INST> struct sec_ucpd_traits {};
+
+template<> struct sec_ucpd_traits<1>
+{
+    using sec_ucpd = sec_ucpd1_t;
+};
+
+template<int INST> struct ucpd_traits {};
+
+template<> struct ucpd_traits<1>
+{
+    using ucpd = ucpd1_t;
+    static constexpr alternate_function_t FRSTX1 = UCPD1_FRSTX1;
+    static constexpr alternate_function_t FRSTX2 = UCPD1_FRSTX2;
+};
+

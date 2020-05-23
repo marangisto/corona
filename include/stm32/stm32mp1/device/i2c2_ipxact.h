@@ -237,3 +237,53 @@ using i2c4_t = peripheral_t<mcu_svd, I2C4>;
 using i2c5_t = peripheral_t<mcu_svd, I2C5>;
 using i2c6_t = peripheral_t<mcu_svd, I2C6>;
 
+template<int INST> struct i2c_traits {};
+
+template<> struct i2c_traits<1>
+{
+    using i2c = i2c1_t;
+    static constexpr alternate_function_t SCL = I2C1_SCL;
+    static constexpr alternate_function_t SDA = I2C1_SDA;
+    static constexpr alternate_function_t SMBA = I2C1_SMBA;
+};
+
+template<> struct i2c_traits<2>
+{
+    using i2c = i2c2_t;
+    static constexpr alternate_function_t SCL = I2C2_SCL;
+    static constexpr alternate_function_t SDA = I2C2_SDA;
+    static constexpr alternate_function_t SMBA = I2C2_SMBA;
+};
+
+template<> struct i2c_traits<3>
+{
+    using i2c = i2c3_t;
+    static constexpr alternate_function_t SCL = I2C3_SCL;
+    static constexpr alternate_function_t SDA = I2C3_SDA;
+    static constexpr alternate_function_t SMBA = I2C3_SMBA;
+};
+
+template<> struct i2c_traits<4>
+{
+    using i2c = i2c4_t;
+    static constexpr alternate_function_t SCL = I2C4_SCL;
+    static constexpr alternate_function_t SDA = I2C4_SDA;
+    static constexpr alternate_function_t SMBA = I2C4_SMBA;
+};
+
+template<> struct i2c_traits<5>
+{
+    using i2c = i2c5_t;
+    static constexpr alternate_function_t SCL = I2C5_SCL;
+    static constexpr alternate_function_t SDA = I2C5_SDA;
+    static constexpr alternate_function_t SMBA = I2C5_SMBA;
+};
+
+template<> struct i2c_traits<6>
+{
+    using i2c = i2c6_t;
+    static constexpr alternate_function_t SCL = I2C6_SCL;
+    static constexpr alternate_function_t SDA = I2C6_SDA;
+    static constexpr alternate_function_t SMBA = I2C6_SMBA;
+};
+

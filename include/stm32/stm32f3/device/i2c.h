@@ -292,3 +292,29 @@ using i2c1_t = peripheral_t<mcu_svd, I2C1>;
 using i2c2_t = peripheral_t<mcu_svd, I2C2>;
 using i2c3_t = peripheral_t<mcu_svd, I2C3>;
 
+template<int INST> struct i2c_traits {};
+
+template<> struct i2c_traits<1>
+{
+    using i2c = i2c1_t;
+    static constexpr alternate_function_t SCL = I2C1_SCL;
+    static constexpr alternate_function_t SDA = I2C1_SDA;
+    static constexpr alternate_function_t SMBA = I2C1_SMBA;
+};
+
+template<> struct i2c_traits<2>
+{
+    using i2c = i2c2_t;
+    static constexpr alternate_function_t SCL = I2C2_SCL;
+    static constexpr alternate_function_t SDA = I2C2_SDA;
+    static constexpr alternate_function_t SMBA = I2C2_SMBA;
+};
+
+template<> struct i2c_traits<3>
+{
+    using i2c = i2c3_t;
+    static constexpr alternate_function_t SCL = I2C3_SCL;
+    static constexpr alternate_function_t SDA = I2C3_SDA;
+    static constexpr alternate_function_t SMBA = I2C3_SMBA;
+};
+

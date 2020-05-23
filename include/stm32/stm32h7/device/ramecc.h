@@ -567,3 +567,20 @@ using ramecc1_t = peripheral_t<mcu_svd, RAMECC1>;
 using ramecc2_t = peripheral_t<mcu_svd, RAMECC2>;
 using ramecc3_t = peripheral_t<mcu_svd, RAMECC3>;
 
+template<int INST> struct ramecc_traits {};
+
+template<> struct ramecc_traits<1>
+{
+    using ramecc = ramecc1_t;
+};
+
+template<> struct ramecc_traits<2>
+{
+    using ramecc = ramecc2_t;
+};
+
+template<> struct ramecc_traits<3>
+{
+    using ramecc = ramecc3_t;
+};
+

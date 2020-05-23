@@ -1544,3 +1544,15 @@ using bdma_t = peripheral_t<mcu_svd, BDMA>;
 using bdma1_t = peripheral_t<mcu_svd, BDMA1>;
 using bdma2_t = peripheral_t<mcu_svd, BDMA2>;
 
+template<int INST> struct bdma_traits {};
+
+template<> struct bdma_traits<1>
+{
+    using bdma = bdma1_t;
+};
+
+template<> struct bdma_traits<2>
+{
+    using bdma = bdma2_t;
+};
+

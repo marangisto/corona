@@ -210,3 +210,47 @@ using sec_lptim1_t = peripheral_t<mcu_svd, SEC_LPTIM1>;
 using sec_lptim2_t = peripheral_t<mcu_svd, SEC_LPTIM2>;
 using sec_lptim3_t = peripheral_t<mcu_svd, SEC_LPTIM3>;
 
+template<int INST> struct lptim_traits {};
+
+template<> struct lptim_traits<1>
+{
+    using lptim = lptim1_t;
+    static constexpr alternate_function_t ETR = LPTIM1_ETR;
+    static constexpr alternate_function_t IN1 = LPTIM1_IN1;
+    static constexpr alternate_function_t IN2 = LPTIM1_IN2;
+    static constexpr alternate_function_t OUT = LPTIM1_OUT;
+};
+
+template<> struct lptim_traits<2>
+{
+    using lptim = lptim2_t;
+    static constexpr alternate_function_t ETR = LPTIM2_ETR;
+    static constexpr alternate_function_t IN1 = LPTIM2_IN1;
+    static constexpr alternate_function_t OUT = LPTIM2_OUT;
+};
+
+template<> struct lptim_traits<3>
+{
+    using lptim = lptim3_t;
+    static constexpr alternate_function_t ETR = LPTIM3_ETR;
+    static constexpr alternate_function_t IN1 = LPTIM3_IN1;
+    static constexpr alternate_function_t OUT = LPTIM3_OUT;
+};
+
+template<int INST> struct sec_lptim_traits {};
+
+template<> struct sec_lptim_traits<1>
+{
+    using sec_lptim = sec_lptim1_t;
+};
+
+template<> struct sec_lptim_traits<2>
+{
+    using sec_lptim = sec_lptim2_t;
+};
+
+template<> struct sec_lptim_traits<3>
+{
+    using sec_lptim = sec_lptim3_t;
+};
+

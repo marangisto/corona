@@ -1045,3 +1045,74 @@ using tim6_t = peripheral_t<mcu_svd, TIM6>;
 using tim7_t = peripheral_t<mcu_svd, TIM7>;
 using tim9_t = peripheral_t<mcu_svd, TIM9>;
 
+template<int INST> struct tim_traits {};
+
+template<> struct tim_traits<10>
+{
+    using tim = tim10_t;
+    static constexpr alternate_function_t CH1 = TIM10_CH1;
+};
+
+template<> struct tim_traits<11>
+{
+    using tim = tim11_t;
+    static constexpr alternate_function_t CH1 = TIM11_CH1;
+};
+
+template<> struct tim_traits<2>
+{
+    using tim = tim2_t;
+    static constexpr alternate_function_t CH1 = TIM2_CH1;
+    static constexpr alternate_function_t CH2 = TIM2_CH2;
+    static constexpr alternate_function_t CH3 = TIM2_CH3;
+    static constexpr alternate_function_t CH4 = TIM2_CH4;
+    static constexpr alternate_function_t ETR = TIM2_ETR;
+};
+
+template<> struct tim_traits<3>
+{
+    using tim = tim3_t;
+    static constexpr alternate_function_t CH1 = TIM3_CH1;
+    static constexpr alternate_function_t CH2 = TIM3_CH2;
+    static constexpr alternate_function_t CH3 = TIM3_CH3;
+    static constexpr alternate_function_t CH4 = TIM3_CH4;
+    static constexpr alternate_function_t ETR = TIM3_ETR;
+};
+
+template<> struct tim_traits<4>
+{
+    using tim = tim4_t;
+    static constexpr alternate_function_t CH1 = TIM4_CH1;
+    static constexpr alternate_function_t CH2 = TIM4_CH2;
+    static constexpr alternate_function_t CH3 = TIM4_CH3;
+    static constexpr alternate_function_t CH4 = TIM4_CH4;
+    static constexpr alternate_function_t ETR = TIM4_ETR;
+};
+
+template<> struct tim_traits<5>
+{
+    using tim = tim5_t;
+    static constexpr alternate_function_t CH1 = TIM5_CH1;
+    static constexpr alternate_function_t CH2 = TIM5_CH2;
+    static constexpr alternate_function_t CH3 = TIM5_CH3;
+    static constexpr alternate_function_t CH4 = TIM5_CH4;
+    static constexpr alternate_function_t ETR = TIM5_ETR;
+};
+
+template<> struct tim_traits<6>
+{
+    using tim = tim6_t;
+};
+
+template<> struct tim_traits<7>
+{
+    using tim = tim7_t;
+};
+
+template<> struct tim_traits<9>
+{
+    using tim = tim9_t;
+    static constexpr alternate_function_t CH1 = TIM9_CH1;
+    static constexpr alternate_function_t CH2 = TIM9_CH2;
+};
+

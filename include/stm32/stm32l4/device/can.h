@@ -7345,3 +7345,19 @@ struct peripheral_t<STM32L4x5, CAN1>
 using can1_t = peripheral_t<mcu_svd, CAN1>;
 using can2_t = peripheral_t<mcu_svd, CAN2>;
 
+template<int INST> struct can_traits {};
+
+template<> struct can_traits<1>
+{
+    using can = can1_t;
+    static constexpr alternate_function_t RX = CAN1_RX;
+    static constexpr alternate_function_t TX = CAN1_TX;
+};
+
+template<> struct can_traits<2>
+{
+    using can = can2_t;
+    static constexpr alternate_function_t RX = CAN2_RX;
+    static constexpr alternate_function_t TX = CAN2_TX;
+};
+

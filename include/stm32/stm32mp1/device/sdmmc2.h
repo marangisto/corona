@@ -322,3 +322,58 @@ using sdmmc1_t = peripheral_t<mcu_svd, SDMMC1>;
 using sdmmc2_t = peripheral_t<mcu_svd, SDMMC2>;
 using sdmmc3_t = peripheral_t<mcu_svd, SDMMC3>;
 
+template<int INST> struct sdmmc_traits {};
+
+template<> struct sdmmc_traits<1>
+{
+    using sdmmc = sdmmc1_t;
+    static constexpr alternate_function_t CDIR = SDMMC1_CDIR;
+    static constexpr alternate_function_t CK = SDMMC1_CK;
+    static constexpr alternate_function_t CKIN = SDMMC1_CKIN;
+    static constexpr alternate_function_t CMD = SDMMC1_CMD;
+    static constexpr alternate_function_t D0 = SDMMC1_D0;
+    static constexpr alternate_function_t D0DIR = SDMMC1_D0DIR;
+    static constexpr alternate_function_t D1 = SDMMC1_D1;
+    static constexpr alternate_function_t D123DIR = SDMMC1_D123DIR;
+    static constexpr alternate_function_t D2 = SDMMC1_D2;
+    static constexpr alternate_function_t D3 = SDMMC1_D3;
+    static constexpr alternate_function_t D4 = SDMMC1_D4;
+    static constexpr alternate_function_t D5 = SDMMC1_D5;
+    static constexpr alternate_function_t D6 = SDMMC1_D6;
+    static constexpr alternate_function_t D7 = SDMMC1_D7;
+};
+
+template<> struct sdmmc_traits<2>
+{
+    using sdmmc = sdmmc2_t;
+    static constexpr alternate_function_t CDIR = SDMMC2_CDIR;
+    static constexpr alternate_function_t CK = SDMMC2_CK;
+    static constexpr alternate_function_t CKIN = SDMMC2_CKIN;
+    static constexpr alternate_function_t CMD = SDMMC2_CMD;
+    static constexpr alternate_function_t D0 = SDMMC2_D0;
+    static constexpr alternate_function_t D0DIR = SDMMC2_D0DIR;
+    static constexpr alternate_function_t D1 = SDMMC2_D1;
+    static constexpr alternate_function_t D123DIR = SDMMC2_D123DIR;
+    static constexpr alternate_function_t D2 = SDMMC2_D2;
+    static constexpr alternate_function_t D3 = SDMMC2_D3;
+    static constexpr alternate_function_t D4 = SDMMC2_D4;
+    static constexpr alternate_function_t D5 = SDMMC2_D5;
+    static constexpr alternate_function_t D6 = SDMMC2_D6;
+    static constexpr alternate_function_t D7 = SDMMC2_D7;
+};
+
+template<> struct sdmmc_traits<3>
+{
+    using sdmmc = sdmmc3_t;
+    static constexpr alternate_function_t CDIR = SDMMC3_CDIR;
+    static constexpr alternate_function_t CK = SDMMC3_CK;
+    static constexpr alternate_function_t CKIN = SDMMC3_CKIN;
+    static constexpr alternate_function_t CMD = SDMMC3_CMD;
+    static constexpr alternate_function_t D0 = SDMMC3_D0;
+    static constexpr alternate_function_t D0DIR = SDMMC3_D0DIR;
+    static constexpr alternate_function_t D1 = SDMMC3_D1;
+    static constexpr alternate_function_t D123DIR = SDMMC3_D123DIR;
+    static constexpr alternate_function_t D2 = SDMMC3_D2;
+    static constexpr alternate_function_t D3 = SDMMC3_D3;
+};
+

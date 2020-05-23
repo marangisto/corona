@@ -312,3 +312,29 @@ struct peripheral_t<STM32L562, SEC_OCTOSPI1>
 using octospi1_t = peripheral_t<mcu_svd, OCTOSPI1>;
 using sec_octospi1_t = peripheral_t<mcu_svd, SEC_OCTOSPI1>;
 
+template<int INST> struct octospi_traits {};
+
+template<> struct octospi_traits<1>
+{
+    using octospi = octospi1_t;
+    static constexpr alternate_function_t CLK = OCTOSPI1_CLK;
+    static constexpr alternate_function_t DQS = OCTOSPI1_DQS;
+    static constexpr alternate_function_t IO0 = OCTOSPI1_IO0;
+    static constexpr alternate_function_t IO1 = OCTOSPI1_IO1;
+    static constexpr alternate_function_t IO2 = OCTOSPI1_IO2;
+    static constexpr alternate_function_t IO3 = OCTOSPI1_IO3;
+    static constexpr alternate_function_t IO4 = OCTOSPI1_IO4;
+    static constexpr alternate_function_t IO5 = OCTOSPI1_IO5;
+    static constexpr alternate_function_t IO6 = OCTOSPI1_IO6;
+    static constexpr alternate_function_t IO7 = OCTOSPI1_IO7;
+    static constexpr alternate_function_t NCLK = OCTOSPI1_NCLK;
+    static constexpr alternate_function_t NCS = OCTOSPI1_NCS;
+};
+
+template<int INST> struct sec_octospi_traits {};
+
+template<> struct sec_octospi_traits<1>
+{
+    using sec_octospi = sec_octospi1_t;
+};
+

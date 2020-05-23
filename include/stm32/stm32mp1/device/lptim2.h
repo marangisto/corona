@@ -151,3 +151,14 @@ struct peripheral_t<STM32MP15xxx, LPTIM2>
 
 using lptim2_t = peripheral_t<mcu_svd, LPTIM2>;
 
+template<int INST> struct lptim_traits {};
+
+template<> struct lptim_traits<2>
+{
+    using lptim = lptim2_t;
+    static constexpr alternate_function_t ETR = LPTIM2_ETR;
+    static constexpr alternate_function_t IN1 = LPTIM2_IN1;
+    static constexpr alternate_function_t IN2 = LPTIM2_IN2;
+    static constexpr alternate_function_t OUT = LPTIM2_OUT;
+};
+

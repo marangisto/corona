@@ -107,3 +107,11 @@ struct peripheral_t<STM32MP15xxx, TIM13>
 
 using tim13_t = peripheral_t<mcu_svd, TIM13>;
 
+template<int INST> struct tim_traits {};
+
+template<> struct tim_traits<13>
+{
+    using tim = tim13_t;
+    static constexpr alternate_function_t CH1 = TIM13_CH1;
+};
+

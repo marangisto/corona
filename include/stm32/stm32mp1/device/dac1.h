@@ -231,3 +231,10 @@ struct peripheral_t<STM32MP15xxx, DAC1>
 
 using dac1_t = peripheral_t<mcu_svd, DAC1>;
 
+template<int INST> struct dac_traits {};
+
+template<> struct dac_traits<1>
+{
+    using dac = dac1_t;
+};
+

@@ -58,3 +58,15 @@ struct peripheral_t<STM32MP15xxx, CRC2>
 using crc1_t = peripheral_t<mcu_svd, CRC1>;
 using crc2_t = peripheral_t<mcu_svd, CRC2>;
 
+template<int INST> struct crc_traits {};
+
+template<> struct crc_traits<1>
+{
+    using crc = crc1_t;
+};
+
+template<> struct crc_traits<2>
+{
+    using crc = crc2_t;
+};
+

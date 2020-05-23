@@ -1594,3 +1594,27 @@ struct peripheral_t<STM32MP15xxx, DFSDM1>
 
 using dfsdm1_t = peripheral_t<mcu_svd, DFSDM1>;
 
+template<int INST> struct dfsdm_traits {};
+
+template<> struct dfsdm_traits<1>
+{
+    using dfsdm = dfsdm1_t;
+    static constexpr alternate_function_t CKIN0 = DFSDM1_CKIN0;
+    static constexpr alternate_function_t CKIN1 = DFSDM1_CKIN1;
+    static constexpr alternate_function_t CKIN2 = DFSDM1_CKIN2;
+    static constexpr alternate_function_t CKIN3 = DFSDM1_CKIN3;
+    static constexpr alternate_function_t CKIN4 = DFSDM1_CKIN4;
+    static constexpr alternate_function_t CKIN5 = DFSDM1_CKIN5;
+    static constexpr alternate_function_t CKIN6 = DFSDM1_CKIN6;
+    static constexpr alternate_function_t CKIN7 = DFSDM1_CKIN7;
+    static constexpr alternate_function_t CKOUT = DFSDM1_CKOUT;
+    static constexpr alternate_function_t DATIN0 = DFSDM1_DATIN0;
+    static constexpr alternate_function_t DATIN1 = DFSDM1_DATIN1;
+    static constexpr alternate_function_t DATIN2 = DFSDM1_DATIN2;
+    static constexpr alternate_function_t DATIN3 = DFSDM1_DATIN3;
+    static constexpr alternate_function_t DATIN4 = DFSDM1_DATIN4;
+    static constexpr alternate_function_t DATIN5 = DFSDM1_DATIN5;
+    static constexpr alternate_function_t DATIN6 = DFSDM1_DATIN6;
+    static constexpr alternate_function_t DATIN7 = DFSDM1_DATIN7;
+};
+

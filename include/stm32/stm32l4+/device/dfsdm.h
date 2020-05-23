@@ -1255,3 +1255,19 @@ struct peripheral_t<STM32L4S9, DFSDM1>
 
 using dfsdm1_t = peripheral_t<mcu_svd, DFSDM1>;
 
+template<int INST> struct dfsdm_traits {};
+
+template<> struct dfsdm_traits<1>
+{
+    using dfsdm = dfsdm1_t;
+    static constexpr alternate_function_t CKIN0 = DFSDM1_CKIN0;
+    static constexpr alternate_function_t CKIN1 = DFSDM1_CKIN1;
+    static constexpr alternate_function_t CKIN2 = DFSDM1_CKIN2;
+    static constexpr alternate_function_t CKIN3 = DFSDM1_CKIN3;
+    static constexpr alternate_function_t CKOUT = DFSDM1_CKOUT;
+    static constexpr alternate_function_t DATIN0 = DFSDM1_DATIN0;
+    static constexpr alternate_function_t DATIN1 = DFSDM1_DATIN1;
+    static constexpr alternate_function_t DATIN2 = DFSDM1_DATIN2;
+    static constexpr alternate_function_t DATIN3 = DFSDM1_DATIN3;
+};
+

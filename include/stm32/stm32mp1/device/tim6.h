@@ -319,3 +319,10 @@ struct peripheral_t<STM32MP15xxx, TIM6>
 
 using tim6_t = peripheral_t<mcu_svd, TIM6>;
 
+template<int INST> struct tim_traits {};
+
+template<> struct tim_traits<6>
+{
+    using tim = tim6_t;
+};
+

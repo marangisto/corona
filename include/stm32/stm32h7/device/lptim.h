@@ -909,3 +909,41 @@ using lptim3_t = peripheral_t<mcu_svd, LPTIM3>;
 using lptim4_t = peripheral_t<mcu_svd, LPTIM4>;
 using lptim5_t = peripheral_t<mcu_svd, LPTIM5>;
 
+template<int INST> struct lptim_traits {};
+
+template<> struct lptim_traits<1>
+{
+    using lptim = lptim1_t;
+    static constexpr alternate_function_t ETR = LPTIM1_ETR;
+    static constexpr alternate_function_t IN1 = LPTIM1_IN1;
+    static constexpr alternate_function_t IN2 = LPTIM1_IN2;
+    static constexpr alternate_function_t OUT = LPTIM1_OUT;
+};
+
+template<> struct lptim_traits<2>
+{
+    using lptim = lptim2_t;
+    static constexpr alternate_function_t ETR = LPTIM2_ETR;
+    static constexpr alternate_function_t IN1 = LPTIM2_IN1;
+    static constexpr alternate_function_t IN2 = LPTIM2_IN2;
+    static constexpr alternate_function_t OUT = LPTIM2_OUT;
+};
+
+template<> struct lptim_traits<3>
+{
+    using lptim = lptim3_t;
+    static constexpr alternate_function_t OUT = LPTIM3_OUT;
+};
+
+template<> struct lptim_traits<4>
+{
+    using lptim = lptim4_t;
+    static constexpr alternate_function_t OUT = LPTIM4_OUT;
+};
+
+template<> struct lptim_traits<5>
+{
+    using lptim = lptim5_t;
+    static constexpr alternate_function_t OUT = LPTIM5_OUT;
+};
+

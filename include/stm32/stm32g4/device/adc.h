@@ -1175,3 +1175,40 @@ using adc345_common_t = peripheral_t<mcu_svd, ADC345_Common>;
 using adc4_t = peripheral_t<mcu_svd, ADC4>;
 using adc5_t = peripheral_t<mcu_svd, ADC5>;
 
+template<int INST> struct adc_traits {};
+
+template<> struct adc_traits<1>
+{
+    using adc = adc1_t;
+};
+
+template<> struct adc_traits<12_Common>
+{
+    using adc = adc12_Common_t;
+};
+
+template<> struct adc_traits<2>
+{
+    using adc = adc2_t;
+};
+
+template<> struct adc_traits<3>
+{
+    using adc = adc3_t;
+};
+
+template<> struct adc_traits<345_Common>
+{
+    using adc = adc345_Common_t;
+};
+
+template<> struct adc_traits<4>
+{
+    using adc = adc4_t;
+};
+
+template<> struct adc_traits<5>
+{
+    using adc = adc5_t;
+};
+

@@ -895,3 +895,30 @@ using tim15_t = peripheral_t<mcu_svd, TIM15>;
 using tim16_t = peripheral_t<mcu_svd, TIM16>;
 using tim17_t = peripheral_t<mcu_svd, TIM17>;
 
+template<int INST> struct tim_traits {};
+
+template<> struct tim_traits<15>
+{
+    using tim = tim15_t;
+    static constexpr alternate_function_t BKIN = TIM15_BKIN;
+    static constexpr alternate_function_t CH1 = TIM15_CH1;
+    static constexpr alternate_function_t CH1N = TIM15_CH1N;
+    static constexpr alternate_function_t CH2 = TIM15_CH2;
+};
+
+template<> struct tim_traits<16>
+{
+    using tim = tim16_t;
+    static constexpr alternate_function_t BKIN = TIM16_BKIN;
+    static constexpr alternate_function_t CH1 = TIM16_CH1;
+    static constexpr alternate_function_t CH1N = TIM16_CH1N;
+};
+
+template<> struct tim_traits<17>
+{
+    using tim = tim17_t;
+    static constexpr alternate_function_t BKIN = TIM17_BKIN;
+    static constexpr alternate_function_t CH1 = TIM17_CH1;
+    static constexpr alternate_function_t CH1N = TIM17_CH1N;
+};
+

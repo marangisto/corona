@@ -91,3 +91,10 @@ struct peripheral_t<STM32F3x8, DAC2>
 
 using dac2_t = peripheral_t<mcu_svd, DAC2>;
 
+template<int INST> struct dac_traits {};
+
+template<> struct dac_traits<2>
+{
+    using dac = dac2_t;
+};
+

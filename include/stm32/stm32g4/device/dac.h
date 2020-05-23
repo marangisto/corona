@@ -459,3 +459,25 @@ using dac2_t = peripheral_t<mcu_svd, DAC2>;
 using dac3_t = peripheral_t<mcu_svd, DAC3>;
 using dac4_t = peripheral_t<mcu_svd, DAC4>;
 
+template<int INST> struct dac_traits {};
+
+template<> struct dac_traits<1>
+{
+    using dac = dac1_t;
+};
+
+template<> struct dac_traits<2>
+{
+    using dac = dac2_t;
+};
+
+template<> struct dac_traits<3>
+{
+    using dac = dac3_t;
+};
+
+template<> struct dac_traits<4>
+{
+    using dac = dac4_t;
+};
+

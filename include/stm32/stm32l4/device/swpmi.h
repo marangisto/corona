@@ -295,3 +295,14 @@ struct peripheral_t<STM32L4x5, SWPMI1>
 
 using swpmi1_t = peripheral_t<mcu_svd, SWPMI1>;
 
+template<int INST> struct swpmi_traits {};
+
+template<> struct swpmi_traits<1>
+{
+    using swpmi = swpmi1_t;
+    static constexpr alternate_function_t IO = SWPMI1_IO;
+    static constexpr alternate_function_t RX = SWPMI1_RX;
+    static constexpr alternate_function_t SUSPEND = SWPMI1_SUSPEND;
+    static constexpr alternate_function_t TX = SWPMI1_TX;
+};
+

@@ -279,3 +279,15 @@ struct peripheral_t<STM32H7B3x, LPUART1>
 
 using lpuart1_t = peripheral_t<mcu_svd, LPUART1>;
 
+template<int INST> struct lpuart_traits {};
+
+template<> struct lpuart_traits<1>
+{
+    using lpuart = lpuart1_t;
+    static constexpr alternate_function_t CTS = LPUART1_CTS;
+    static constexpr alternate_function_t DE = LPUART1_DE;
+    static constexpr alternate_function_t RTS = LPUART1_RTS;
+    static constexpr alternate_function_t RX = LPUART1_RX;
+    static constexpr alternate_function_t TX = LPUART1_TX;
+};
+

@@ -1683,3 +1683,15 @@ struct peripheral_t<STM32H7B3x, DMAMUX1>
 using dmamux1_t = peripheral_t<mcu_svd, DMAMUX1>;
 using dmamux2_t = peripheral_t<mcu_svd, DMAMUX2>;
 
+template<int INST> struct dmamux_traits {};
+
+template<> struct dmamux_traits<1>
+{
+    using dmamux = dmamux1_t;
+};
+
+template<> struct dmamux_traits<2>
+{
+    using dmamux = dmamux2_t;
+};
+

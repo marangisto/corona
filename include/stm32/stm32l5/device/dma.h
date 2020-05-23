@@ -508,3 +508,27 @@ using dma2_t = peripheral_t<mcu_svd, DMA2>;
 using sec_dma1_t = peripheral_t<mcu_svd, SEC_DMA1>;
 using sec_dma2_t = peripheral_t<mcu_svd, SEC_DMA2>;
 
+template<int INST> struct dma_traits {};
+
+template<> struct dma_traits<1>
+{
+    using dma = dma1_t;
+};
+
+template<> struct dma_traits<2>
+{
+    using dma = dma2_t;
+};
+
+template<int INST> struct sec_dma_traits {};
+
+template<> struct sec_dma_traits<1>
+{
+    using sec_dma = sec_dma1_t;
+};
+
+template<> struct sec_dma_traits<2>
+{
+    using sec_dma = sec_dma2_t;
+};
+

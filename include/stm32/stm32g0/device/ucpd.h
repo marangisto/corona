@@ -256,3 +256,21 @@ struct peripheral_t<STM32G081, UCPD2>
 using ucpd1_t = peripheral_t<mcu_svd, UCPD1>;
 using ucpd2_t = peripheral_t<mcu_svd, UCPD2>;
 
+template<int INST> struct ucpd_traits {};
+
+template<> struct ucpd_traits<1>
+{
+    using ucpd = ucpd1_t;
+    static constexpr alternate_function_t FRSTX = UCPD1_FRSTX;
+    static constexpr alternate_function_t TXDATA = UCPD1_TXDATA;
+    static constexpr alternate_function_t TXGND = UCPD1_TXGND;
+};
+
+template<> struct ucpd_traits<2>
+{
+    using ucpd = ucpd2_t;
+    static constexpr alternate_function_t FRSTX = UCPD2_FRSTX;
+    static constexpr alternate_function_t TXDATA = UCPD2_TXDATA;
+    static constexpr alternate_function_t TXGND = UCPD2_TXGND;
+};
+

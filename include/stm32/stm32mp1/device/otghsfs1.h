@@ -3041,3 +3041,10 @@ struct peripheral_t<STM32MP15xxx, OTGHSFS1>
 
 using otghsfs1_t = peripheral_t<mcu_svd, OTGHSFS1>;
 
+template<int INST> struct otghsfs_traits {};
+
+template<> struct otghsfs_traits<1>
+{
+    using otghsfs = otghsfs1_t;
+};
+

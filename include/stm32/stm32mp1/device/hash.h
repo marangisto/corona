@@ -281,3 +281,15 @@ struct peripheral_t<STM32MP15xxx, HASH2>
 using hash1_t = peripheral_t<mcu_svd, HASH1>;
 using hash2_t = peripheral_t<mcu_svd, HASH2>;
 
+template<int INST> struct hash_traits {};
+
+template<> struct hash_traits<1>
+{
+    using hash = hash1_t;
+};
+
+template<> struct hash_traits<2>
+{
+    using hash = hash2_t;
+};
+

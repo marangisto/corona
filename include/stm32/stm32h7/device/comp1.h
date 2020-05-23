@@ -267,3 +267,11 @@ struct peripheral_t<STM32H7B3x, COMP1>
 
 using comp1_t = peripheral_t<mcu_svd, COMP1>;
 
+template<int INST> struct comp_traits {};
+
+template<> struct comp_traits<1>
+{
+    using comp = comp1_t;
+    static constexpr alternate_function_t OUT = COMP1_OUT;
+};
+

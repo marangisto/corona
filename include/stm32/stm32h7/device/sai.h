@@ -657,3 +657,67 @@ using sai2_t = peripheral_t<mcu_svd, SAI2>;
 using sai3_t = peripheral_t<mcu_svd, SAI3>;
 using sai4_t = peripheral_t<mcu_svd, SAI4>;
 
+template<int INST> struct sai_traits {};
+
+template<> struct sai_traits<1>
+{
+    using sai = sai1_t;
+    static constexpr alternate_function_t CK1 = SAI1_CK1;
+    static constexpr alternate_function_t CK2 = SAI1_CK2;
+    static constexpr alternate_function_t D1 = SAI1_D1;
+    static constexpr alternate_function_t D2 = SAI1_D2;
+    static constexpr alternate_function_t D3 = SAI1_D3;
+    static constexpr alternate_function_t FS_A = SAI1_FS_A;
+    static constexpr alternate_function_t FS_B = SAI1_FS_B;
+    static constexpr alternate_function_t MCLK_A = SAI1_MCLK_A;
+    static constexpr alternate_function_t MCLK_B = SAI1_MCLK_B;
+    static constexpr alternate_function_t SCK_A = SAI1_SCK_A;
+    static constexpr alternate_function_t SCK_B = SAI1_SCK_B;
+    static constexpr alternate_function_t SD_A = SAI1_SD_A;
+    static constexpr alternate_function_t SD_B = SAI1_SD_B;
+};
+
+template<> struct sai_traits<2>
+{
+    using sai = sai2_t;
+    static constexpr alternate_function_t FS_A = SAI2_FS_A;
+    static constexpr alternate_function_t FS_B = SAI2_FS_B;
+    static constexpr alternate_function_t MCLK_A = SAI2_MCLK_A;
+    static constexpr alternate_function_t MCLK_B = SAI2_MCLK_B;
+    static constexpr alternate_function_t SCK_A = SAI2_SCK_A;
+    static constexpr alternate_function_t SCK_B = SAI2_SCK_B;
+    static constexpr alternate_function_t SD_A = SAI2_SD_A;
+    static constexpr alternate_function_t SD_B = SAI2_SD_B;
+};
+
+template<> struct sai_traits<3>
+{
+    using sai = sai3_t;
+    static constexpr alternate_function_t FS_A = SAI3_FS_A;
+    static constexpr alternate_function_t FS_B = SAI3_FS_B;
+    static constexpr alternate_function_t MCLK_A = SAI3_MCLK_A;
+    static constexpr alternate_function_t MCLK_B = SAI3_MCLK_B;
+    static constexpr alternate_function_t SCK_A = SAI3_SCK_A;
+    static constexpr alternate_function_t SCK_B = SAI3_SCK_B;
+    static constexpr alternate_function_t SD_A = SAI3_SD_A;
+    static constexpr alternate_function_t SD_B = SAI3_SD_B;
+};
+
+template<> struct sai_traits<4>
+{
+    using sai = sai4_t;
+    static constexpr alternate_function_t CK1 = SAI4_CK1;
+    static constexpr alternate_function_t CK2 = SAI4_CK2;
+    static constexpr alternate_function_t D1 = SAI4_D1;
+    static constexpr alternate_function_t D2 = SAI4_D2;
+    static constexpr alternate_function_t D3 = SAI4_D3;
+    static constexpr alternate_function_t FS_A = SAI4_FS_A;
+    static constexpr alternate_function_t FS_B = SAI4_FS_B;
+    static constexpr alternate_function_t MCLK_A = SAI4_MCLK_A;
+    static constexpr alternate_function_t MCLK_B = SAI4_MCLK_B;
+    static constexpr alternate_function_t SCK_A = SAI4_SCK_A;
+    static constexpr alternate_function_t SCK_B = SAI4_SCK_B;
+    static constexpr alternate_function_t SD_A = SAI4_SD_A;
+    static constexpr alternate_function_t SD_B = SAI4_SD_B;
+};
+

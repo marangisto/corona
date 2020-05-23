@@ -438,3 +438,10 @@ struct peripheral_t<STM32MP15xxx, ADC2>
 
 using adc2_t = peripheral_t<mcu_svd, ADC2>;
 
+template<int INST> struct adc_traits {};
+
+template<> struct adc_traits<2>
+{
+    using adc = adc2_t;
+};
+

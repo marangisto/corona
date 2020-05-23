@@ -9,8 +9,11 @@ static constexpr mcu_family_t mcu_family = mcu_traits<mcu>::mcu_family;
 static constexpr mcu_svd_t mcu_svd = mcu_traits<mcu>::mcu_svd;
 
 #include <device/peripheral.h>
+#include <device/pin.h>
 #include <device/nvic.h>
 #include <device/interrupt.h>
+#include <device/rcc.h>
+#include <device/control.h>
 
 template<interrupt::interrupt_t> void handler();
 

@@ -3468,3 +3468,45 @@ using otg2_hs_global_t = peripheral_t<mcu_svd, OTG2_HS_GLOBAL>;
 using otg2_hs_host_t = peripheral_t<mcu_svd, OTG2_HS_HOST>;
 using otg2_hs_pwrclk_t = peripheral_t<mcu_svd, OTG2_HS_PWRCLK>;
 
+template<int INST> struct otg_traits {};
+
+template<> struct otg_traits<1_HS_DEVICE>
+{
+    using otg = otg1_HS_DEVICE_t;
+};
+
+template<> struct otg_traits<1_HS_GLOBAL>
+{
+    using otg = otg1_HS_GLOBAL_t;
+};
+
+template<> struct otg_traits<1_HS_HOST>
+{
+    using otg = otg1_HS_HOST_t;
+};
+
+template<> struct otg_traits<1_HS_PWRCLK>
+{
+    using otg = otg1_HS_PWRCLK_t;
+};
+
+template<> struct otg_traits<2_HS_DEVICE>
+{
+    using otg = otg2_HS_DEVICE_t;
+};
+
+template<> struct otg_traits<2_HS_GLOBAL>
+{
+    using otg = otg2_HS_GLOBAL_t;
+};
+
+template<> struct otg_traits<2_HS_HOST>
+{
+    using otg = otg2_HS_HOST_t;
+};
+
+template<> struct otg_traits<2_HS_PWRCLK>
+{
+    using otg = otg2_HS_PWRCLK_t;
+};
+

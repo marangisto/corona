@@ -2317,3 +2317,41 @@ using dfsdm_t = peripheral_t<mcu_svd, DFSDM>;
 using dfsdm1_t = peripheral_t<mcu_svd, DFSDM1>;
 using dfsdm2_t = peripheral_t<mcu_svd, DFSDM2>;
 
+template<int INST> struct dfsdm_traits {};
+
+template<> struct dfsdm_traits<1>
+{
+    using dfsdm = dfsdm1_t;
+    static constexpr alternate_function_t CKIN0 = DFSDM1_CKIN0;
+    static constexpr alternate_function_t CKIN1 = DFSDM1_CKIN1;
+    static constexpr alternate_function_t CKIN2 = DFSDM1_CKIN2;
+    static constexpr alternate_function_t CKIN3 = DFSDM1_CKIN3;
+    static constexpr alternate_function_t CKOUT = DFSDM1_CKOUT;
+    static constexpr alternate_function_t DATIN0 = DFSDM1_DATIN0;
+    static constexpr alternate_function_t DATIN1 = DFSDM1_DATIN1;
+    static constexpr alternate_function_t DATIN2 = DFSDM1_DATIN2;
+    static constexpr alternate_function_t DATIN3 = DFSDM1_DATIN3;
+};
+
+template<> struct dfsdm_traits<2>
+{
+    using dfsdm = dfsdm2_t;
+    static constexpr alternate_function_t CKIN0 = DFSDM2_CKIN0;
+    static constexpr alternate_function_t CKIN1 = DFSDM2_CKIN1;
+    static constexpr alternate_function_t CKIN2 = DFSDM2_CKIN2;
+    static constexpr alternate_function_t CKIN3 = DFSDM2_CKIN3;
+    static constexpr alternate_function_t CKIN4 = DFSDM2_CKIN4;
+    static constexpr alternate_function_t CKIN5 = DFSDM2_CKIN5;
+    static constexpr alternate_function_t CKIN6 = DFSDM2_CKIN6;
+    static constexpr alternate_function_t CKIN7 = DFSDM2_CKIN7;
+    static constexpr alternate_function_t CKOUT = DFSDM2_CKOUT;
+    static constexpr alternate_function_t DATIN0 = DFSDM2_DATIN0;
+    static constexpr alternate_function_t DATIN1 = DFSDM2_DATIN1;
+    static constexpr alternate_function_t DATIN2 = DFSDM2_DATIN2;
+    static constexpr alternate_function_t DATIN3 = DFSDM2_DATIN3;
+    static constexpr alternate_function_t DATIN4 = DFSDM2_DATIN4;
+    static constexpr alternate_function_t DATIN5 = DFSDM2_DATIN5;
+    static constexpr alternate_function_t DATIN6 = DFSDM2_DATIN6;
+    static constexpr alternate_function_t DATIN7 = DFSDM2_DATIN7;
+};
+

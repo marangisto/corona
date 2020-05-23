@@ -285,3 +285,24 @@ struct peripheral_t<STM32WB55_CM4, SAI1>
 
 using sai1_t = peripheral_t<mcu_svd, SAI1>;
 
+template<int INST> struct sai_traits {};
+
+template<> struct sai_traits<1>
+{
+    using sai = sai1_t;
+    static constexpr alternate_function_t CK1 = SAI1_CK1;
+    static constexpr alternate_function_t CK2 = SAI1_CK2;
+    static constexpr alternate_function_t D1 = SAI1_D1;
+    static constexpr alternate_function_t D2 = SAI1_D2;
+    static constexpr alternate_function_t D3 = SAI1_D3;
+    static constexpr alternate_function_t EXTCLK = SAI1_EXTCLK;
+    static constexpr alternate_function_t FS_A = SAI1_FS_A;
+    static constexpr alternate_function_t FS_B = SAI1_FS_B;
+    static constexpr alternate_function_t MCLK_A = SAI1_MCLK_A;
+    static constexpr alternate_function_t MCLK_B = SAI1_MCLK_B;
+    static constexpr alternate_function_t SCK_A = SAI1_SCK_A;
+    static constexpr alternate_function_t SCK_B = SAI1_SCK_B;
+    static constexpr alternate_function_t SD_A = SAI1_SD_A;
+    static constexpr alternate_function_t SD_B = SAI1_SD_B;
+};
+

@@ -264,3 +264,20 @@ using sdadc1_t = peripheral_t<mcu_svd, SDADC1>;
 using sdadc2_t = peripheral_t<mcu_svd, SDADC2>;
 using sdadc3_t = peripheral_t<mcu_svd, SDADC3>;
 
+template<int INST> struct sdadc_traits {};
+
+template<> struct sdadc_traits<1>
+{
+    using sdadc = sdadc1_t;
+};
+
+template<> struct sdadc_traits<2>
+{
+    using sdadc = sdadc2_t;
+};
+
+template<> struct sdadc_traits<3>
+{
+    using sdadc = sdadc3_t;
+};
+

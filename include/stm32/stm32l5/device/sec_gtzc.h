@@ -4695,3 +4695,15 @@ struct peripheral_t<STM32L562, SEC_GTZC_MPCBB2>
 using sec_gtzc_mpcbb1_t = peripheral_t<mcu_svd, SEC_GTZC_MPCBB1>;
 using sec_gtzc_mpcbb2_t = peripheral_t<mcu_svd, SEC_GTZC_MPCBB2>;
 
+template<int INST> struct sec_gtzc_mpcbb_traits {};
+
+template<> struct sec_gtzc_mpcbb_traits<1>
+{
+    using sec_gtzc_mpcbb = sec_gtzc_mpcbb1_t;
+};
+
+template<> struct sec_gtzc_mpcbb_traits<2>
+{
+    using sec_gtzc_mpcbb = sec_gtzc_mpcbb2_t;
+};
+

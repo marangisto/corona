@@ -377,3 +377,27 @@ using delay_block_sdmmc2_t = peripheral_t<mcu_svd, DELAY_Block_SDMMC2>;
 using delay_block_octospi1_t = peripheral_t<mcu_svd, Delay_Block_OCTOSPI1>;
 using delay_block_octospi2_t = peripheral_t<mcu_svd, Delay_Block_OCTOSPI2>;
 
+template<int INST> struct delay_block_sdmmc_traits {};
+
+template<> struct delay_block_sdmmc_traits<1>
+{
+    using delay_block_sdmmc = delay_block_sdmmc1_t;
+};
+
+template<> struct delay_block_sdmmc_traits<2>
+{
+    using delay_block_sdmmc = delay_block_sdmmc2_t;
+};
+
+template<int INST> struct delay_block_octospi_traits {};
+
+template<> struct delay_block_octospi_traits<1>
+{
+    using delay_block_octospi = delay_block_octospi1_t;
+};
+
+template<> struct delay_block_octospi_traits<2>
+{
+    using delay_block_octospi = delay_block_octospi2_t;
+};
+

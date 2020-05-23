@@ -450,3 +450,19 @@ struct peripheral_t<STM32L562, SEC_FDCAN1>
 using fdcan1_t = peripheral_t<mcu_svd, FDCAN1>;
 using sec_fdcan1_t = peripheral_t<mcu_svd, SEC_FDCAN1>;
 
+template<int INST> struct fdcan_traits {};
+
+template<> struct fdcan_traits<1>
+{
+    using fdcan = fdcan1_t;
+    static constexpr alternate_function_t RX = FDCAN1_RX;
+    static constexpr alternate_function_t TX = FDCAN1_TX;
+};
+
+template<int INST> struct sec_fdcan_traits {};
+
+template<> struct sec_fdcan_traits<1>
+{
+    using sec_fdcan = sec_fdcan1_t;
+};
+

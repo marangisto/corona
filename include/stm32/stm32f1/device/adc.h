@@ -1107,3 +1107,20 @@ using adc1_t = peripheral_t<mcu_svd, ADC1>;
 using adc2_t = peripheral_t<mcu_svd, ADC2>;
 using adc3_t = peripheral_t<mcu_svd, ADC3>;
 
+template<int INST> struct adc_traits {};
+
+template<> struct adc_traits<1>
+{
+    using adc = adc1_t;
+};
+
+template<> struct adc_traits<2>
+{
+    using adc = adc2_t;
+};
+
+template<> struct adc_traits<3>
+{
+    using adc = adc3_t;
+};
+

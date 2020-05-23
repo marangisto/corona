@@ -355,3 +355,23 @@ struct peripheral_t<STM32G081, SPI2>
 using spi1_t = peripheral_t<mcu_svd, SPI1>;
 using spi2_t = peripheral_t<mcu_svd, SPI2>;
 
+template<int INST> struct spi_traits {};
+
+template<> struct spi_traits<1>
+{
+    using spi = spi1_t;
+    static constexpr alternate_function_t MISO = SPI1_MISO;
+    static constexpr alternate_function_t MOSI = SPI1_MOSI;
+    static constexpr alternate_function_t NSS = SPI1_NSS;
+    static constexpr alternate_function_t SCK = SPI1_SCK;
+};
+
+template<> struct spi_traits<2>
+{
+    using spi = spi2_t;
+    static constexpr alternate_function_t MISO = SPI2_MISO;
+    static constexpr alternate_function_t MOSI = SPI2_MOSI;
+    static constexpr alternate_function_t NSS = SPI2_NSS;
+    static constexpr alternate_function_t SCK = SPI2_SCK;
+};
+

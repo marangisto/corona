@@ -67,3 +67,15 @@ struct peripheral_t<STM32MP15xxx, RNG2>
 using rng1_t = peripheral_t<mcu_svd, RNG1>;
 using rng2_t = peripheral_t<mcu_svd, RNG2>;
 
+template<int INST> struct rng_traits {};
+
+template<> struct rng_traits<1>
+{
+    using rng = rng1_t;
+};
+
+template<> struct rng_traits<2>
+{
+    using rng = rng2_t;
+};
+

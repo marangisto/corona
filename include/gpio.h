@@ -2,9 +2,6 @@
 
 #include "corona.h"
 #include <device/gpio.h>
-#include <device/pin.h>
-#include <device/rcc.h>
-#include <device/control.h>
 
 enum output_type_t
     { push_pull

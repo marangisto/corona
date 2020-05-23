@@ -268,3 +268,31 @@ struct peripheral_t<STM32L562, SEC_SDMMC1>
 using sdmmc1_t = peripheral_t<mcu_svd, SDMMC1>;
 using sec_sdmmc1_t = peripheral_t<mcu_svd, SEC_SDMMC1>;
 
+template<int INST> struct sdmmc_traits {};
+
+template<> struct sdmmc_traits<1>
+{
+    using sdmmc = sdmmc1_t;
+    static constexpr alternate_function_t CDIR = SDMMC1_CDIR;
+    static constexpr alternate_function_t CK = SDMMC1_CK;
+    static constexpr alternate_function_t CKIN = SDMMC1_CKIN;
+    static constexpr alternate_function_t CMD = SDMMC1_CMD;
+    static constexpr alternate_function_t D0 = SDMMC1_D0;
+    static constexpr alternate_function_t D0DIR = SDMMC1_D0DIR;
+    static constexpr alternate_function_t D1 = SDMMC1_D1;
+    static constexpr alternate_function_t D123DIR = SDMMC1_D123DIR;
+    static constexpr alternate_function_t D2 = SDMMC1_D2;
+    static constexpr alternate_function_t D3 = SDMMC1_D3;
+    static constexpr alternate_function_t D4 = SDMMC1_D4;
+    static constexpr alternate_function_t D5 = SDMMC1_D5;
+    static constexpr alternate_function_t D6 = SDMMC1_D6;
+    static constexpr alternate_function_t D7 = SDMMC1_D7;
+};
+
+template<int INST> struct sec_sdmmc_traits {};
+
+template<> struct sec_sdmmc_traits<1>
+{
+    using sec_sdmmc = sec_sdmmc1_t;
+};
+

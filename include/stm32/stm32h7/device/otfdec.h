@@ -231,3 +231,15 @@ struct peripheral_t<STM32H7B3x, OTFDEC2>
 using otfdec1_t = peripheral_t<mcu_svd, OTFDEC1>;
 using otfdec2_t = peripheral_t<mcu_svd, OTFDEC2>;
 
+template<int INST> struct otfdec_traits {};
+
+template<> struct otfdec_traits<1>
+{
+    using otfdec = otfdec1_t;
+};
+
+template<> struct otfdec_traits<2>
+{
+    using otfdec = otfdec2_t;
+};
+

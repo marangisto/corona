@@ -4,22 +4,6 @@
 #include "fifo.h"
 #include <device/usart.h>
 
-template<int INST> struct usart_traits {};
-
-template<> struct usart_traits<1>
-{
-    using usart = usart1_t;
-    static constexpr alternate_function_t TX = USART1_TX;
-    static constexpr alternate_function_t RX = USART1_RX;
-};
-
-template<> struct usart_traits<2>
-{
-    using usart = usart2_t;
-    static constexpr alternate_function_t TX = USART2_TX;
-    static constexpr alternate_function_t RX = USART2_RX;
-};
-
 template<int INST, gpio_pin_t TX, gpio_pin_t RX> struct usart_t
 {
 public:

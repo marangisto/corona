@@ -84,3 +84,20 @@ using dlybsd1_t = peripheral_t<mcu_svd, DLYBSD1>;
 using dlybsd2_t = peripheral_t<mcu_svd, DLYBSD2>;
 using dlybsd3_t = peripheral_t<mcu_svd, DLYBSD3>;
 
+template<int INST> struct dlybsd_traits {};
+
+template<> struct dlybsd_traits<1>
+{
+    using dlybsd = dlybsd1_t;
+};
+
+template<> struct dlybsd_traits<2>
+{
+    using dlybsd = dlybsd2_t;
+};
+
+template<> struct dlybsd_traits<3>
+{
+    using dlybsd = dlybsd3_t;
+};
+

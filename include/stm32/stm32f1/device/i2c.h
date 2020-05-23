@@ -186,3 +186,17 @@ struct peripheral_t<STM32F107, I2C2>
 using i2c1_t = peripheral_t<mcu_svd, I2C1>;
 using i2c2_t = peripheral_t<mcu_svd, I2C2>;
 
+template<int INST> struct i2c_traits {};
+
+template<> struct i2c_traits<1>
+{
+    using i2c = i2c1_t;
+    static constexpr alternate_function_t SCL = I2C1_SCL;
+    static constexpr alternate_function_t SDA = I2C1_SDA;
+};
+
+template<> struct i2c_traits<2>
+{
+    using i2c = i2c2_t;
+};
+

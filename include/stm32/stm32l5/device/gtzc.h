@@ -5182,3 +5182,15 @@ using gtzc_tzsc_t = peripheral_t<mcu_svd, GTZC_TZSC>;
 using sec_gtzc_tzic_t = peripheral_t<mcu_svd, SEC_GTZC_TZIC>;
 using sec_gtzc_tzsc_t = peripheral_t<mcu_svd, SEC_GTZC_TZSC>;
 
+template<int INST> struct gtzc_mpcbb_traits {};
+
+template<> struct gtzc_mpcbb_traits<1>
+{
+    using gtzc_mpcbb = gtzc_mpcbb1_t;
+};
+
+template<> struct gtzc_mpcbb_traits<2>
+{
+    using gtzc_mpcbb = gtzc_mpcbb2_t;
+};
+

@@ -371,3 +371,10 @@ struct peripheral_t<STM32L0x3, DMA1>
 
 using dma1_t = peripheral_t<mcu_svd, DMA1>;
 
+template<int INST> struct dma_traits {};
+
+template<> struct dma_traits<1>
+{
+    using dma = dma1_t;
+};
+

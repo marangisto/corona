@@ -839,3 +839,19 @@ struct peripheral_t<STM32MP15xxx, FDCAN2>
 using fdcan1_t = peripheral_t<mcu_svd, FDCAN1>;
 using fdcan2_t = peripheral_t<mcu_svd, FDCAN2>;
 
+template<int INST> struct fdcan_traits {};
+
+template<> struct fdcan_traits<1>
+{
+    using fdcan = fdcan1_t;
+    static constexpr alternate_function_t RX = FDCAN1_RX;
+    static constexpr alternate_function_t TX = FDCAN1_TX;
+};
+
+template<> struct fdcan_traits<2>
+{
+    using fdcan = fdcan2_t;
+    static constexpr alternate_function_t RX = FDCAN2_RX;
+    static constexpr alternate_function_t TX = FDCAN2_TX;
+};
+

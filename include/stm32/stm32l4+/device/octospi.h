@@ -604,3 +604,15 @@ struct peripheral_t<STM32L4R5, OCTOSPI2>
 using octospi1_t = peripheral_t<mcu_svd, OCTOSPI1>;
 using octospi2_t = peripheral_t<mcu_svd, OCTOSPI2>;
 
+template<int INST> struct octospi_traits {};
+
+template<> struct octospi_traits<1>
+{
+    using octospi = octospi1_t;
+};
+
+template<> struct octospi_traits<2>
+{
+    using octospi = octospi2_t;
+};
+

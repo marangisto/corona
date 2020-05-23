@@ -330,3 +330,15 @@ struct peripheral_t<STM32MP15xxx, CRYP2>
 using cryp1_t = peripheral_t<mcu_svd, CRYP1>;
 using cryp2_t = peripheral_t<mcu_svd, CRYP2>;
 
+template<int INST> struct cryp_traits {};
+
+template<> struct cryp_traits<1>
+{
+    using cryp = cryp1_t;
+};
+
+template<> struct cryp_traits<2>
+{
+    using cryp = cryp2_t;
+};
+

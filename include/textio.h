@@ -40,3 +40,17 @@ int printf(const char *fmt, ...)
     return n;
 }
 
+template<typename READER>
+size_t getline(char *buf, size_t n)
+{
+    char *p = buf;
+
+    for (char c = 0; n > 1 && c != '\n'; ++p, --n)
+    {
+        while (!READER::read(c));
+        *p = c;
+    }
+    *p = 0;
+    return p - buf;
+}
+

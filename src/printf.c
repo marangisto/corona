@@ -32,9 +32,10 @@
 
 #include <stdbool.h>
 #include <stdint.h>
+#include <stdarg.h>
+#include <stddef.h>
 
-#include "printf.h"
-
+void _putchar(char character);
 
 // define this globally (e.g. gcc -DPRINTF_INCLUDE_CONFIG_H ...) to include the
 // printf_config.h header file
@@ -574,7 +575,7 @@ static size_t _etoa(out_fct_type out, char* buffer, size_t idx, size_t maxlen, d
 
 
 // internal vsnprintf
-static int _vsnprintf(out_fct_type out, char* buffer, const size_t maxlen, const char* format, va_list va)
+int _vsnprintf(out_fct_type out, char* buffer, const size_t maxlen, const char* format, va_list va)
 {
   unsigned int flags, width, precision, n;
   size_t idx = 0U;
@@ -870,7 +871,7 @@ int printf_(const char* format, ...)
 }
 
 
-int sprintf_(char* buffer, const char* format, ...)
+int sprintf(char* buffer, const char* format, ...)
 {
   va_list va;
   va_start(va, format);
@@ -880,7 +881,7 @@ int sprintf_(char* buffer, const char* format, ...)
 }
 
 
-int snprintf_(char* buffer, size_t count, const char* format, ...)
+int snprintf(char* buffer, size_t count, const char* format, ...)
 {
   va_list va;
   va_start(va, format);

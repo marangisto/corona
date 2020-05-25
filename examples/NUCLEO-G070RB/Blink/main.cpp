@@ -1,14 +1,15 @@
+#include <board.h>
 #include <gpio.h>
 
-using ld4 = output_t<PA5>;
+using led = output_t<board::LED1>;
 
 int main()
 {
-    ld4::setup();
+    led::setup();
 
     for (;;)
     {
-        ld4::toggle();
+        led::toggle();
         sys_tick::delay_ms(1000);
     }
 }

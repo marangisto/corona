@@ -1,6 +1,7 @@
 module Types
     ( MCU(..)
     , ARCH(..)
+    , Board(..)
     , ToolConfig(..)
     , Format(..)
     , Tool
@@ -10,6 +11,8 @@ module Types
 import STM32 as STM32
 
 data ARCH = AVR | ARM deriving (Read, Show)
+
+newtype Board = Board { unBoard :: String }
 
 data ToolConfig = ToolConfig
     { mcu       :: MCU

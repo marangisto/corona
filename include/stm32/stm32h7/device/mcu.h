@@ -152,7 +152,7 @@ enum mcu_svd_t
     };
 
 enum gpio_conf_t
-    { STM32H743 = 0x1
+    { STM32H743_ = 0x1
     , STM32H747 = 0x2
     , STM32H7A2 = 0x4
     };

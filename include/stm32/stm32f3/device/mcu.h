@@ -110,11 +110,11 @@ enum mcu_svd_t
     };
 
 enum gpio_conf_t
-    { STM32F302 = 0x1
-    , STM32F303 = 0x2
-    , STM32F303E = 0x4
+    { STM32F302_ = 0x1
+    , STM32F303E = 0x2
+    , STM32F303_ = 0x4
     , STM32F333 = 0x8
-    , STM32F373 = 0x10
+    , STM32F373_ = 0x10
     };
 
 template<mcu_t MCU> struct mcu_traits {};
@@ -123,140 +123,140 @@ template<> struct mcu_traits<STM32F301C6Tx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F301;
-    static constexpr gpio_conf_t gpio_conf = STM32F302;
+    static constexpr gpio_conf_t gpio_conf = STM32F302_;
 };
 
 template<> struct mcu_traits<STM32F301C8Tx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F301;
-    static constexpr gpio_conf_t gpio_conf = STM32F302;
+    static constexpr gpio_conf_t gpio_conf = STM32F302_;
 };
 
 template<> struct mcu_traits<STM32F301C8Yx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F301;
-    static constexpr gpio_conf_t gpio_conf = STM32F302;
+    static constexpr gpio_conf_t gpio_conf = STM32F302_;
 };
 
 template<> struct mcu_traits<STM32F301K6Tx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F301;
-    static constexpr gpio_conf_t gpio_conf = STM32F302;
+    static constexpr gpio_conf_t gpio_conf = STM32F302_;
 };
 
 template<> struct mcu_traits<STM32F301K8Tx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F301;
-    static constexpr gpio_conf_t gpio_conf = STM32F302;
+    static constexpr gpio_conf_t gpio_conf = STM32F302_;
 };
 
 template<> struct mcu_traits<STM32F301K6Ux>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F301;
-    static constexpr gpio_conf_t gpio_conf = STM32F302;
+    static constexpr gpio_conf_t gpio_conf = STM32F302_;
 };
 
 template<> struct mcu_traits<STM32F301K8Ux>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F301;
-    static constexpr gpio_conf_t gpio_conf = STM32F302;
+    static constexpr gpio_conf_t gpio_conf = STM32F302_;
 };
 
 template<> struct mcu_traits<STM32F301R6Tx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F301;
-    static constexpr gpio_conf_t gpio_conf = STM32F302;
+    static constexpr gpio_conf_t gpio_conf = STM32F302_;
 };
 
 template<> struct mcu_traits<STM32F301R8Tx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F301;
-    static constexpr gpio_conf_t gpio_conf = STM32F302;
+    static constexpr gpio_conf_t gpio_conf = STM32F302_;
 };
 
 template<> struct mcu_traits<STM32F302C6Tx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F302;
-    static constexpr gpio_conf_t gpio_conf = STM32F302;
+    static constexpr gpio_conf_t gpio_conf = STM32F302_;
 };
 
 template<> struct mcu_traits<STM32F302C8Tx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F302;
-    static constexpr gpio_conf_t gpio_conf = STM32F302;
+    static constexpr gpio_conf_t gpio_conf = STM32F302_;
 };
 
 template<> struct mcu_traits<STM32F302CBTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F302;
-    static constexpr gpio_conf_t gpio_conf = STM32F303;
+    static constexpr gpio_conf_t gpio_conf = STM32F303_;
 };
 
 template<> struct mcu_traits<STM32F302CCTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F302;
-    static constexpr gpio_conf_t gpio_conf = STM32F303;
+    static constexpr gpio_conf_t gpio_conf = STM32F303_;
 };
 
 template<> struct mcu_traits<STM32F302C8Yx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F302;
-    static constexpr gpio_conf_t gpio_conf = STM32F302;
+    static constexpr gpio_conf_t gpio_conf = STM32F302_;
 };
 
 template<> struct mcu_traits<STM32F302K6Ux>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F302;
-    static constexpr gpio_conf_t gpio_conf = STM32F302;
+    static constexpr gpio_conf_t gpio_conf = STM32F302_;
 };
 
 template<> struct mcu_traits<STM32F302K8Ux>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F302;
-    static constexpr gpio_conf_t gpio_conf = STM32F302;
+    static constexpr gpio_conf_t gpio_conf = STM32F302_;
 };
 
 template<> struct mcu_traits<STM32F302R6Tx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F302;
-    static constexpr gpio_conf_t gpio_conf = STM32F302;
+    static constexpr gpio_conf_t gpio_conf = STM32F302_;
 };
 
 template<> struct mcu_traits<STM32F302R8Tx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F302;
-    static constexpr gpio_conf_t gpio_conf = STM32F302;
+    static constexpr gpio_conf_t gpio_conf = STM32F302_;
 };
 
 template<> struct mcu_traits<STM32F302RBTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F302;
-    static constexpr gpio_conf_t gpio_conf = STM32F303;
+    static constexpr gpio_conf_t gpio_conf = STM32F303_;
 };
 
 template<> struct mcu_traits<STM32F302RCTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F302;
-    static constexpr gpio_conf_t gpio_conf = STM32F303;
+    static constexpr gpio_conf_t gpio_conf = STM32F303_;
 };
 
 template<> struct mcu_traits<STM32F302RDTx>
@@ -277,14 +277,14 @@ template<> struct mcu_traits<STM32F302VBTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F302;
-    static constexpr gpio_conf_t gpio_conf = STM32F303;
+    static constexpr gpio_conf_t gpio_conf = STM32F303_;
 };
 
 template<> struct mcu_traits<STM32F302VCTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F302;
-    static constexpr gpio_conf_t gpio_conf = STM32F303;
+    static constexpr gpio_conf_t gpio_conf = STM32F303_;
 };
 
 template<> struct mcu_traits<STM32F302VDHx>
@@ -319,7 +319,7 @@ template<> struct mcu_traits<STM32F302VCYx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F302;
-    static constexpr gpio_conf_t gpio_conf = STM32F303;
+    static constexpr gpio_conf_t gpio_conf = STM32F303_;
 };
 
 template<> struct mcu_traits<STM32F302ZDTx>
@@ -354,14 +354,14 @@ template<> struct mcu_traits<STM32F303CBTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F303;
-    static constexpr gpio_conf_t gpio_conf = STM32F303;
+    static constexpr gpio_conf_t gpio_conf = STM32F303_;
 };
 
 template<> struct mcu_traits<STM32F303CCTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F303;
-    static constexpr gpio_conf_t gpio_conf = STM32F303;
+    static constexpr gpio_conf_t gpio_conf = STM32F303_;
 };
 
 template<> struct mcu_traits<STM32F303C8Yx>
@@ -403,14 +403,14 @@ template<> struct mcu_traits<STM32F303RBTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F303;
-    static constexpr gpio_conf_t gpio_conf = STM32F303;
+    static constexpr gpio_conf_t gpio_conf = STM32F303_;
 };
 
 template<> struct mcu_traits<STM32F303RCTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F303;
-    static constexpr gpio_conf_t gpio_conf = STM32F303;
+    static constexpr gpio_conf_t gpio_conf = STM32F303_;
 };
 
 template<> struct mcu_traits<STM32F303RDTx>
@@ -431,14 +431,14 @@ template<> struct mcu_traits<STM32F303VBTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F303;
-    static constexpr gpio_conf_t gpio_conf = STM32F303;
+    static constexpr gpio_conf_t gpio_conf = STM32F303_;
 };
 
 template<> struct mcu_traits<STM32F303VCTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F303;
-    static constexpr gpio_conf_t gpio_conf = STM32F303;
+    static constexpr gpio_conf_t gpio_conf = STM32F303_;
 };
 
 template<> struct mcu_traits<STM32F303VDHx>
@@ -473,7 +473,7 @@ template<> struct mcu_traits<STM32F303VCYx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F303;
-    static constexpr gpio_conf_t gpio_conf = STM32F303;
+    static constexpr gpio_conf_t gpio_conf = STM32F303_;
 };
 
 template<> struct mcu_traits<STM32F303VEYx>
@@ -585,105 +585,105 @@ template<> struct mcu_traits<STM32F373C8Tx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F373;
-    static constexpr gpio_conf_t gpio_conf = STM32F373;
+    static constexpr gpio_conf_t gpio_conf = STM32F373_;
 };
 
 template<> struct mcu_traits<STM32F373CBTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F373;
-    static constexpr gpio_conf_t gpio_conf = STM32F373;
+    static constexpr gpio_conf_t gpio_conf = STM32F373_;
 };
 
 template<> struct mcu_traits<STM32F373CCTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F373;
-    static constexpr gpio_conf_t gpio_conf = STM32F373;
+    static constexpr gpio_conf_t gpio_conf = STM32F373_;
 };
 
 template<> struct mcu_traits<STM32F373R8Tx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F373;
-    static constexpr gpio_conf_t gpio_conf = STM32F373;
+    static constexpr gpio_conf_t gpio_conf = STM32F373_;
 };
 
 template<> struct mcu_traits<STM32F373RBTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F373;
-    static constexpr gpio_conf_t gpio_conf = STM32F373;
+    static constexpr gpio_conf_t gpio_conf = STM32F373_;
 };
 
 template<> struct mcu_traits<STM32F373RCTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F373;
-    static constexpr gpio_conf_t gpio_conf = STM32F373;
+    static constexpr gpio_conf_t gpio_conf = STM32F373_;
 };
 
 template<> struct mcu_traits<STM32F373V8Hx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F373;
-    static constexpr gpio_conf_t gpio_conf = STM32F373;
+    static constexpr gpio_conf_t gpio_conf = STM32F373_;
 };
 
 template<> struct mcu_traits<STM32F373VBHx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F373;
-    static constexpr gpio_conf_t gpio_conf = STM32F373;
+    static constexpr gpio_conf_t gpio_conf = STM32F373_;
 };
 
 template<> struct mcu_traits<STM32F373VCHx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F373;
-    static constexpr gpio_conf_t gpio_conf = STM32F373;
+    static constexpr gpio_conf_t gpio_conf = STM32F373_;
 };
 
 template<> struct mcu_traits<STM32F373V8Tx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F373;
-    static constexpr gpio_conf_t gpio_conf = STM32F373;
+    static constexpr gpio_conf_t gpio_conf = STM32F373_;
 };
 
 template<> struct mcu_traits<STM32F373VBTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F373;
-    static constexpr gpio_conf_t gpio_conf = STM32F373;
+    static constexpr gpio_conf_t gpio_conf = STM32F373_;
 };
 
 template<> struct mcu_traits<STM32F373VCTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F373;
-    static constexpr gpio_conf_t gpio_conf = STM32F373;
+    static constexpr gpio_conf_t gpio_conf = STM32F373_;
 };
 
 template<> struct mcu_traits<STM32F318C8Tx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F3x8;
-    static constexpr gpio_conf_t gpio_conf = STM32F302;
+    static constexpr gpio_conf_t gpio_conf = STM32F302_;
 };
 
 template<> struct mcu_traits<STM32F318C8Yx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F3x8;
-    static constexpr gpio_conf_t gpio_conf = STM32F302;
+    static constexpr gpio_conf_t gpio_conf = STM32F302_;
 };
 
 template<> struct mcu_traits<STM32F318K8Ux>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F3x8;
-    static constexpr gpio_conf_t gpio_conf = STM32F302;
+    static constexpr gpio_conf_t gpio_conf = STM32F302_;
 };
 
 template<> struct mcu_traits<STM32F328C8Tx>
@@ -697,56 +697,56 @@ template<> struct mcu_traits<STM32F358CCTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F3x8;
-    static constexpr gpio_conf_t gpio_conf = STM32F303;
+    static constexpr gpio_conf_t gpio_conf = STM32F303_;
 };
 
 template<> struct mcu_traits<STM32F358RCTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F3x8;
-    static constexpr gpio_conf_t gpio_conf = STM32F303;
+    static constexpr gpio_conf_t gpio_conf = STM32F303_;
 };
 
 template<> struct mcu_traits<STM32F358VCTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F3x8;
-    static constexpr gpio_conf_t gpio_conf = STM32F303;
+    static constexpr gpio_conf_t gpio_conf = STM32F303_;
 };
 
 template<> struct mcu_traits<STM32F378CCTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F3x8;
-    static constexpr gpio_conf_t gpio_conf = STM32F373;
+    static constexpr gpio_conf_t gpio_conf = STM32F373_;
 };
 
 template<> struct mcu_traits<STM32F378RCTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F3x8;
-    static constexpr gpio_conf_t gpio_conf = STM32F373;
+    static constexpr gpio_conf_t gpio_conf = STM32F373_;
 };
 
 template<> struct mcu_traits<STM32F378RCYx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F3x8;
-    static constexpr gpio_conf_t gpio_conf = STM32F373;
+    static constexpr gpio_conf_t gpio_conf = STM32F373_;
 };
 
 template<> struct mcu_traits<STM32F378VCHx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F3x8;
-    static constexpr gpio_conf_t gpio_conf = STM32F373;
+    static constexpr gpio_conf_t gpio_conf = STM32F373_;
 };
 
 template<> struct mcu_traits<STM32F378VCTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F3;
     static constexpr mcu_svd_t mcu_svd = STM32F3x8;
-    static constexpr gpio_conf_t gpio_conf = STM32F373;
+    static constexpr gpio_conf_t gpio_conf = STM32F373_;
 };
 
 template<> struct mcu_traits<STM32F398VETx>

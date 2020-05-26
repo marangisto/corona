@@ -209,9 +209,6 @@ enum alternate_function_t
     , SYS_TOUCH
     , SYS_USART
     , SYS_WKUP1
-    , SYS__ functionality on new pin (forecasted in Stingray 64K pinout file)
-    , SYS__ new functionality (not forecasted in Stingray 64K pinout file)
-    , SYS__ new pin (not existing on Stingray 64K)
     , TIM14_CH1
     , TIM15_BKIN
     , TIM15_CH1
@@ -651,17 +648,14 @@ template<> struct alt_fun_traits<PD2, USART3_RTS> { static const alt_fun<gpio_co
 template<> struct alt_fun_traits<PD2, USART5_RX> { static const alt_fun<gpio_conf & STM32F091> AF = AF2; };
 template<> struct alt_fun_traits<PD3, I2S2_MCK> { static const alt_fun<gpio_conf & (STM32F091|STM32F052)> AF = AF1; };
 template<> struct alt_fun_traits<PD3, SPI2_MISO> { static const alt_fun<gpio_conf & (STM32F091|STM32F052)> AF = AF1; };
-template<> struct alt_fun_traits<PD3, SYS__ new pin (not existing on Stingray 64K)> { static const alt_fun<gpio_conf & STM32F052> AF = AF4; };
 template<> struct alt_fun_traits<PD3, USART2_CTS> { static const alt_fun<gpio_conf & (STM32F091|STM32F052)> AF = AF0; };
 template<> struct alt_fun_traits<PD4, I2S2_SD> { static const alt_fun<gpio_conf & (STM32F091|STM32F052)> AF = AF1; };
 template<> struct alt_fun_traits<PD4, SPI2_MOSI> { static const alt_fun<gpio_conf & (STM32F091|STM32F052)> AF = AF1; };
-template<> struct alt_fun_traits<PD4, SYS__ new functionality (not forecasted in Stingray 64K pinout file)> { static const alt_fun<gpio_conf & STM32F052> AF = AF4; };
 template<> struct alt_fun_traits<PD4, USART2_DE> { static const alt_fun<gpio_conf & (STM32F091|STM32F052)> AF = AF0; };
 template<> struct alt_fun_traits<PD4, USART2_RTS> { static const alt_fun<gpio_conf & (STM32F091|STM32F052)> AF = AF0; };
 template<> struct alt_fun_traits<PD5, USART2_TX> { static const alt_fun<gpio_conf & (STM32F091|STM32F052)> AF = AF0; };
 template<> struct alt_fun_traits<PD6, USART2_RX> { static const alt_fun<gpio_conf & (STM32F091|STM32F052)> AF = AF0; };
 template<> struct alt_fun_traits<PD7, USART2_CK> { static const alt_fun<gpio_conf & (STM32F091|STM32F052)> AF = AF0; };
-template<> struct alt_fun_traits<PD8, SYS__ functionality on new pin (forecasted in Stingray 64K pinout file)> { static const alt_fun<gpio_conf & STM32F052> AF = AF4; };
 template<> struct alt_fun_traits<PD8, USART3_TX> { static const alt_fun<gpio_conf & (STM32F091|STM32F052)> AF = AF0; };
 template<> struct alt_fun_traits<PD9, USART3_RX> { static const alt_fun<gpio_conf & (STM32F091|STM32F052)> AF = AF0; };
 template<> struct alt_fun_traits<PE0, EVENTOUT> { static const alt_fun<gpio_conf & (STM32F091|STM32F052)> AF = AF1; };

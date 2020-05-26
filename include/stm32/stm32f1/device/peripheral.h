@@ -14,7 +14,6 @@ enum peripheral_enum_t
     , BKP
     , CAN1
     , CAN2
-    , CEC
     , CRC
     , DAC
     , DBG
@@ -34,6 +33,7 @@ enum peripheral_enum_t
     , GPIOE
     , GPIOF
     , GPIOG
+    , HDMI_CEC
     , I2C1
     , I2C2
     , IWDG

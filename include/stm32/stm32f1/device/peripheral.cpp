@@ -99,8 +99,8 @@ typename peripheral_t<STM32F107, CAN2>::T& peripheral_t<STM32F107, CAN2>::V =
 typename peripheral_t<STM32F107, CAN1>::T& peripheral_t<STM32F107, CAN1>::V =
     *reinterpret_cast<typename peripheral_t<STM32F107, CAN1>::T*>(0x40006400);
 
-typename peripheral_t<STM32F100, CEC>::T& peripheral_t<STM32F100, CEC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F100, CEC>::T*>(0x40007800);
+typename peripheral_t<STM32F100, HDMI_CEC>::T& peripheral_t<STM32F100, HDMI_CEC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F100, HDMI_CEC>::T*>(0x40007800);
 
 typename peripheral_t<STM32F100, CRC>::T& peripheral_t<STM32F100, CRC>::V =
     *reinterpret_cast<typename peripheral_t<STM32F100, CRC>::T*>(0x40023000);

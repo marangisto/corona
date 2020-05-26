@@ -16,7 +16,6 @@ enum peripheral_enum_t
     , ADC4
     , ADC_Common
     , CAN
-    , CEC
     , CRC
     , DAC
     , DAC1
@@ -37,6 +36,7 @@ enum peripheral_enum_t
     , GPIOF
     , GPIOG
     , GPIOH
+    , HDMI_CEC
     , HRTIM_Common
     , HRTIM_Master
     , HRTIM_TIMA

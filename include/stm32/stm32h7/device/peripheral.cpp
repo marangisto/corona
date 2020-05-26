@@ -381,50 +381,50 @@ typename peripheral_t<STM32H7B3x, BDMA2>::T& peripheral_t<STM32H7B3x, BDMA2>::V 
 typename peripheral_t<STM32H7B3x, BDMA1>::T& peripheral_t<STM32H7B3x, BDMA1>::V =
     *reinterpret_cast<typename peripheral_t<STM32H7B3x, BDMA1>::T*>(0x48022c00);
 
-typename peripheral_t<STM32H742x, CEC>::T& peripheral_t<STM32H742x, CEC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H742x, CEC>::T*>(0x40006c00);
+typename peripheral_t<STM32H742x, HDMI_CEC>::T& peripheral_t<STM32H742x, HDMI_CEC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H742x, HDMI_CEC>::T*>(0x40006c00);
 
-typename peripheral_t<STM32H743, CEC>::T& peripheral_t<STM32H743, CEC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H743, CEC>::T*>(0x40006c00);
+typename peripheral_t<STM32H743, HDMI_CEC>::T& peripheral_t<STM32H743, HDMI_CEC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H743, HDMI_CEC>::T*>(0x40006c00);
 
-typename peripheral_t<STM32H745_CM4, CEC>::T& peripheral_t<STM32H745_CM4, CEC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H745_CM4, CEC>::T*>(0x40006c00);
+typename peripheral_t<STM32H745_CM4, HDMI_CEC>::T& peripheral_t<STM32H745_CM4, HDMI_CEC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H745_CM4, HDMI_CEC>::T*>(0x40006c00);
 
-typename peripheral_t<STM32H745_CM7, CEC>::T& peripheral_t<STM32H745_CM7, CEC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H745_CM7, CEC>::T*>(0x40006c00);
+typename peripheral_t<STM32H745_CM7, HDMI_CEC>::T& peripheral_t<STM32H745_CM7, HDMI_CEC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H745_CM7, HDMI_CEC>::T*>(0x40006c00);
 
-typename peripheral_t<STM32H747_CM4, CEC>::T& peripheral_t<STM32H747_CM4, CEC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H747_CM4, CEC>::T*>(0x40006c00);
+typename peripheral_t<STM32H747_CM4, HDMI_CEC>::T& peripheral_t<STM32H747_CM4, HDMI_CEC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H747_CM4, HDMI_CEC>::T*>(0x40006c00);
 
-typename peripheral_t<STM32H747_CM7, CEC>::T& peripheral_t<STM32H747_CM7, CEC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H747_CM7, CEC>::T*>(0x40006c00);
+typename peripheral_t<STM32H747_CM7, HDMI_CEC>::T& peripheral_t<STM32H747_CM7, HDMI_CEC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H747_CM7, HDMI_CEC>::T*>(0x40006c00);
 
-typename peripheral_t<STM32H753, CEC>::T& peripheral_t<STM32H753, CEC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H753, CEC>::T*>(0x40006c00);
+typename peripheral_t<STM32H753, HDMI_CEC>::T& peripheral_t<STM32H753, HDMI_CEC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H753, HDMI_CEC>::T*>(0x40006c00);
 
-typename peripheral_t<STM32H755_CM4, CEC>::T& peripheral_t<STM32H755_CM4, CEC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H755_CM4, CEC>::T*>(0x40006c00);
+typename peripheral_t<STM32H755_CM4, HDMI_CEC>::T& peripheral_t<STM32H755_CM4, HDMI_CEC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H755_CM4, HDMI_CEC>::T*>(0x40006c00);
 
-typename peripheral_t<STM32H755_CM7, CEC>::T& peripheral_t<STM32H755_CM7, CEC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H755_CM7, CEC>::T*>(0x40006c00);
+typename peripheral_t<STM32H755_CM7, HDMI_CEC>::T& peripheral_t<STM32H755_CM7, HDMI_CEC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H755_CM7, HDMI_CEC>::T*>(0x40006c00);
 
-typename peripheral_t<STM32H757_CM4, CEC>::T& peripheral_t<STM32H757_CM4, CEC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H757_CM4, CEC>::T*>(0x40006c00);
+typename peripheral_t<STM32H757_CM4, HDMI_CEC>::T& peripheral_t<STM32H757_CM4, HDMI_CEC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H757_CM4, HDMI_CEC>::T*>(0x40006c00);
 
-typename peripheral_t<STM32H757_CM7, CEC>::T& peripheral_t<STM32H757_CM7, CEC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H757_CM7, CEC>::T*>(0x40006c00);
+typename peripheral_t<STM32H757_CM7, HDMI_CEC>::T& peripheral_t<STM32H757_CM7, HDMI_CEC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H757_CM7, HDMI_CEC>::T*>(0x40006c00);
 
-typename peripheral_t<STM32H7A3x, CEC>::T& peripheral_t<STM32H7A3x, CEC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7A3x, CEC>::T*>(0x40006c00);
+typename peripheral_t<STM32H7A3x, HDMI_CEC>::T& peripheral_t<STM32H7A3x, HDMI_CEC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7A3x, HDMI_CEC>::T*>(0x40006c00);
 
-typename peripheral_t<STM32H750x, CEC>::T& peripheral_t<STM32H750x, CEC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H750x, CEC>::T*>(0x40006c00);
+typename peripheral_t<STM32H750x, HDMI_CEC>::T& peripheral_t<STM32H750x, HDMI_CEC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H750x, HDMI_CEC>::T*>(0x40006c00);
 
-typename peripheral_t<STM32H7B0x, CEC>::T& peripheral_t<STM32H7B0x, CEC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7B0x, CEC>::T*>(0x40006c00);
+typename peripheral_t<STM32H7B0x, HDMI_CEC>::T& peripheral_t<STM32H7B0x, HDMI_CEC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7B0x, HDMI_CEC>::T*>(0x40006c00);
 
-typename peripheral_t<STM32H7B3x, CEC>::T& peripheral_t<STM32H7B3x, CEC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7B3x, CEC>::T*>(0x40006c00);
+typename peripheral_t<STM32H7B3x, HDMI_CEC>::T& peripheral_t<STM32H7B3x, HDMI_CEC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7B3x, HDMI_CEC>::T*>(0x40006c00);
 
 typename peripheral_t<STM32H742x, COMP1>::T& peripheral_t<STM32H742x, COMP1>::V =
     *reinterpret_cast<typename peripheral_t<STM32H742x, COMP1>::T*>(0x58003800);

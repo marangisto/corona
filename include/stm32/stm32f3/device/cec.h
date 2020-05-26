@@ -12,7 +12,7 @@
 //
 ////
 
-struct stm32f373_cec_t
+struct stm32f373_hdmi_cec_t
 {
     volatile uint32_t CR;   // [read-write] control register
     volatile uint32_t CFGR; // [read-write] configuration register
@@ -82,11 +82,11 @@ struct stm32f373_cec_t
 
 
 template<>
-struct peripheral_t<STM32F373, CEC>
+struct peripheral_t<STM32F373, HDMI_CEC>
 {
-    typedef stm32f373_cec_t T;
+    typedef stm32f373_hdmi_cec_t T;
     static T& V;
 };
 
-using cec_t = peripheral_t<mcu_svd, CEC>;
+using hdmi_cec_t = peripheral_t<mcu_svd, HDMI_CEC>;
 

@@ -19,7 +19,6 @@ enum peripheral_enum_t
     , BDMA1
     , BDMA2
     , CAN_CCU
-    , CEC
     , COMP1
     , CRC
     , CRS
@@ -62,6 +61,7 @@ enum peripheral_enum_t
     , GPIOJ
     , GPIOK
     , HASH
+    , HDMI_CEC
     , HRTIM_Common
     , HRTIM_Master
     , HRTIM_TIMA

@@ -12,7 +12,7 @@
 //
 ////
 
-struct stm32f745_cec_t
+struct stm32f745_hdmi_cec_t
 {
     volatile uint32_t CR;   // [read-write] control register
     volatile uint32_t CFGR; // [read-write] configuration register
@@ -84,81 +84,81 @@ struct stm32f745_cec_t
 
 
 template<>
-struct peripheral_t<STM32F745, CEC>
+struct peripheral_t<STM32F745, HDMI_CEC>
 {
-    typedef stm32f745_cec_t T;
+    typedef stm32f745_hdmi_cec_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F746, CEC>
+struct peripheral_t<STM32F746, HDMI_CEC>
 {
-    typedef stm32f745_cec_t T;
+    typedef stm32f745_hdmi_cec_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F750x, CEC>
+struct peripheral_t<STM32F750x, HDMI_CEC>
 {
-    typedef stm32f745_cec_t T;
+    typedef stm32f745_hdmi_cec_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F756, CEC>
+struct peripheral_t<STM32F756, HDMI_CEC>
 {
-    typedef stm32f745_cec_t T;
+    typedef stm32f745_hdmi_cec_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F765, CEC>
+struct peripheral_t<STM32F765, HDMI_CEC>
 {
-    typedef stm32f745_cec_t T;
+    typedef stm32f745_hdmi_cec_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F767, CEC>
+struct peripheral_t<STM32F767, HDMI_CEC>
 {
-    typedef stm32f745_cec_t T;
+    typedef stm32f745_hdmi_cec_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F768, CEC>
+struct peripheral_t<STM32F768, HDMI_CEC>
 {
-    typedef stm32f745_cec_t T;
+    typedef stm32f745_hdmi_cec_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F769, CEC>
+struct peripheral_t<STM32F769, HDMI_CEC>
 {
-    typedef stm32f745_cec_t T;
+    typedef stm32f745_hdmi_cec_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F777, CEC>
+struct peripheral_t<STM32F777, HDMI_CEC>
 {
-    typedef stm32f745_cec_t T;
+    typedef stm32f745_hdmi_cec_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F778, CEC>
+struct peripheral_t<STM32F778, HDMI_CEC>
 {
-    typedef stm32f745_cec_t T;
+    typedef stm32f745_hdmi_cec_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F779, CEC>
+struct peripheral_t<STM32F779, HDMI_CEC>
 {
-    typedef stm32f745_cec_t T;
+    typedef stm32f745_hdmi_cec_t T;
     static T& V;
 };
 
-using cec_t = peripheral_t<mcu_svd, CEC>;
+using hdmi_cec_t = peripheral_t<mcu_svd, HDMI_CEC>;
 

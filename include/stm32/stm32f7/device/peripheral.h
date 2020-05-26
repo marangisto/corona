@@ -15,7 +15,6 @@ enum peripheral_enum_t
     , CAN1
     , CAN2
     , CAN3
-    , CEC
     , CRC
     , CRYP
     , C_ADC
@@ -50,6 +49,7 @@ enum peripheral_enum_t
     , GPIOJ
     , GPIOK
     , HASH
+    , HDMI_CEC
     , I2C1
     , I2C2
     , I2C3

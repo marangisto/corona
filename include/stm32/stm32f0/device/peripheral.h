@@ -9,7 +9,6 @@
 enum peripheral_enum_t
     { ADC
     , CAN
-    , CEC
     , CRC
     , CRS
     , DAC
@@ -24,6 +23,7 @@ enum peripheral_enum_t
     , GPIOD
     , GPIOE
     , GPIOF
+    , HDMI_CEC
     , I2C1
     , I2C2
     , IWDG

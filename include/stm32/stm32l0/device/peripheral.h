@@ -16,8 +16,8 @@ enum peripheral_enum_t
     , DBGMCU
     , DMA1
     , EXTI
-    , Firewall
-    , Flash
+    , FIREWALL
+    , FLASH
     , GPIOA
     , GPIOB
     , GPIOC

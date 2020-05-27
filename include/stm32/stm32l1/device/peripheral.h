@@ -16,8 +16,8 @@ enum peripheral_enum_t
     , DMA1
     , DMA2
     , EXTI
+    , FLASH
     , FSMC
-    , Flash
     , GPIOA
     , GPIOB
     , GPIOC

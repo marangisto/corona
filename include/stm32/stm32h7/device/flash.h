@@ -884,109 +884,109 @@ struct stm32h7a3x_flash_t
 
 
 template<>
-struct peripheral_t<STM32H742x, Flash>
+struct peripheral_t<STM32H742x, FLASH>
 {
     typedef stm32h742x_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H743, Flash>
+struct peripheral_t<STM32H743, FLASH>
 {
     typedef stm32h742x_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H745_CM4, Flash>
+struct peripheral_t<STM32H745_CM4, FLASH>
 {
     typedef stm32h742x_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H745_CM7, Flash>
+struct peripheral_t<STM32H745_CM7, FLASH>
 {
     typedef stm32h742x_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H747_CM4, Flash>
+struct peripheral_t<STM32H747_CM4, FLASH>
 {
     typedef stm32h742x_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H747_CM7, Flash>
+struct peripheral_t<STM32H747_CM7, FLASH>
 {
     typedef stm32h742x_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H750x, Flash>
+struct peripheral_t<STM32H750x, FLASH>
 {
     typedef stm32h742x_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H753, Flash>
+struct peripheral_t<STM32H753, FLASH>
 {
     typedef stm32h742x_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H755_CM4, Flash>
+struct peripheral_t<STM32H755_CM4, FLASH>
 {
     typedef stm32h742x_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H755_CM7, Flash>
+struct peripheral_t<STM32H755_CM7, FLASH>
 {
     typedef stm32h742x_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H757_CM4, Flash>
+struct peripheral_t<STM32H757_CM4, FLASH>
 {
     typedef stm32h742x_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H757_CM7, Flash>
+struct peripheral_t<STM32H757_CM7, FLASH>
 {
     typedef stm32h742x_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7B0x, Flash>
+struct peripheral_t<STM32H7B0x, FLASH>
 {
     typedef stm32h742x_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7B3x, Flash>
+struct peripheral_t<STM32H7B3x, FLASH>
 {
     typedef stm32h742x_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7A3x, Flash>
+struct peripheral_t<STM32H7A3x, FLASH>
 {
     typedef stm32h7a3x_flash_t T;
     static T& V;
 };
 
-using flash_t = peripheral_t<mcu_svd, Flash>;
+using flash_t = peripheral_t<mcu_svd, FLASH>;
 

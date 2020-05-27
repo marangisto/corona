@@ -59,25 +59,25 @@ struct stm32h7a3x_octospii_o_manager_t
 
 
 template<>
-struct peripheral_t<STM32H7A3x, OctoSPII_O_Manager>
+struct peripheral_t<STM32H7A3x, OCTOSPII_O_MANAGER>
 {
     typedef stm32h7a3x_octospii_o_manager_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7B0x, OctoSPII_O_Manager>
+struct peripheral_t<STM32H7B0x, OCTOSPII_O_MANAGER>
 {
     typedef stm32h7a3x_octospii_o_manager_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7B3x, OctoSPII_O_Manager>
+struct peripheral_t<STM32H7B3x, OCTOSPII_O_MANAGER>
 {
     typedef stm32h7a3x_octospii_o_manager_t T;
     static T& V;
 };
 
-using octospii_o_manager_t = peripheral_t<mcu_svd, OctoSPII_O_Manager>;
+using octospii_o_manager_t = peripheral_t<mcu_svd, OCTOSPII_O_MANAGER>;
 

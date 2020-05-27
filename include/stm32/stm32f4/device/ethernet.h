@@ -478,147 +478,147 @@ struct stm32f405_ethernet_ptp_t
 
 
 template<>
-struct peripheral_t<STM32F405, Ethernet_MAC>
+struct peripheral_t<STM32F405, ETHERNET_MAC>
 {
     typedef stm32f405_ethernet_mac_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F407, Ethernet_MAC>
+struct peripheral_t<STM32F407, ETHERNET_MAC>
 {
     typedef stm32f405_ethernet_mac_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F427, Ethernet_MAC>
+struct peripheral_t<STM32F427, ETHERNET_MAC>
 {
     typedef stm32f405_ethernet_mac_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F429, Ethernet_MAC>
+struct peripheral_t<STM32F429, ETHERNET_MAC>
 {
     typedef stm32f405_ethernet_mac_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F469, Ethernet_MAC>
+struct peripheral_t<STM32F469, ETHERNET_MAC>
 {
     typedef stm32f405_ethernet_mac_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F405, Ethernet_MMC>
+struct peripheral_t<STM32F405, ETHERNET_MMC>
 {
     typedef stm32f405_ethernet_mmc_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F407, Ethernet_MMC>
+struct peripheral_t<STM32F407, ETHERNET_MMC>
 {
     typedef stm32f405_ethernet_mmc_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F427, Ethernet_MMC>
+struct peripheral_t<STM32F427, ETHERNET_MMC>
 {
     typedef stm32f405_ethernet_mmc_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F429, Ethernet_MMC>
+struct peripheral_t<STM32F429, ETHERNET_MMC>
 {
     typedef stm32f405_ethernet_mmc_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F469, Ethernet_MMC>
+struct peripheral_t<STM32F469, ETHERNET_MMC>
 {
     typedef stm32f405_ethernet_mmc_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F405, Ethernet_PTP>
+struct peripheral_t<STM32F405, ETHERNET_PTP>
 {
     typedef stm32f405_ethernet_ptp_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F407, Ethernet_PTP>
+struct peripheral_t<STM32F407, ETHERNET_PTP>
 {
     typedef stm32f405_ethernet_ptp_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F427, Ethernet_PTP>
+struct peripheral_t<STM32F427, ETHERNET_PTP>
 {
     typedef stm32f405_ethernet_ptp_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F429, Ethernet_PTP>
+struct peripheral_t<STM32F429, ETHERNET_PTP>
 {
     typedef stm32f405_ethernet_ptp_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F469, Ethernet_PTP>
+struct peripheral_t<STM32F469, ETHERNET_PTP>
 {
     typedef stm32f405_ethernet_ptp_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F405, Ethernet_DMA>
+struct peripheral_t<STM32F405, ETHERNET_DMA>
 {
     typedef stm32f405_ethernet_dma_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F407, Ethernet_DMA>
+struct peripheral_t<STM32F407, ETHERNET_DMA>
 {
     typedef stm32f405_ethernet_dma_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F427, Ethernet_DMA>
+struct peripheral_t<STM32F427, ETHERNET_DMA>
 {
     typedef stm32f405_ethernet_dma_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F429, Ethernet_DMA>
+struct peripheral_t<STM32F429, ETHERNET_DMA>
 {
     typedef stm32f405_ethernet_dma_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F469, Ethernet_DMA>
+struct peripheral_t<STM32F469, ETHERNET_DMA>
 {
     typedef stm32f405_ethernet_dma_t T;
     static T& V;
 };
 
-using ethernet_dma_t = peripheral_t<mcu_svd, Ethernet_DMA>;
-using ethernet_mac_t = peripheral_t<mcu_svd, Ethernet_MAC>;
-using ethernet_mmc_t = peripheral_t<mcu_svd, Ethernet_MMC>;
-using ethernet_ptp_t = peripheral_t<mcu_svd, Ethernet_PTP>;
+using ethernet_dma_t = peripheral_t<mcu_svd, ETHERNET_DMA>;
+using ethernet_mac_t = peripheral_t<mcu_svd, ETHERNET_MAC>;
+using ethernet_mmc_t = peripheral_t<mcu_svd, ETHERNET_MMC>;
+using ethernet_ptp_t = peripheral_t<mcu_svd, ETHERNET_PTP>;
 

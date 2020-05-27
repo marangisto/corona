@@ -8,10 +8,10 @@
 
 enum peripheral_enum_t
     { ADC1
-    , ADC12_Common
+    , ADC12_COMMON
     , ADC2
     , ADC3
-    , ADC345_Common
+    , ADC345_COMMON
     , ADC4
     , ADC5
     , AES
@@ -44,8 +44,8 @@ enum peripheral_enum_t
     , GPIOE
     , GPIOF
     , GPIOG
-    , HRTIM_Common
-    , HRTIM_Master
+    , HRTIM_COMMON
+    , HRTIM_MASTER
     , HRTIM_TIMA
     , HRTIM_TIMB
     , HRTIM_TIMC
@@ -96,7 +96,7 @@ enum peripheral_enum_t
     , USART1
     , USART2
     , USART3
-    , USB_FS_device
+    , USB_FS_DEVICE
     , VREFBUF
     , WWDG
     };

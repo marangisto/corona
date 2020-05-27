@@ -484,14 +484,14 @@ struct peripheral_t<STM32F301, SPI3>
 };
 
 template<>
-struct peripheral_t<STM32F301, I2S2ext>
+struct peripheral_t<STM32F301, I2S2EXT>
 {
     typedef stm32f301_spi1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F301, I2S3ext>
+struct peripheral_t<STM32F301, I2S3EXT>
 {
     typedef stm32f301_spi1_t T;
     static T& V;
@@ -519,14 +519,14 @@ struct peripheral_t<STM32F373, SPI3>
 };
 
 template<>
-struct peripheral_t<STM32F373, I2S2ext>
+struct peripheral_t<STM32F373, I2S2EXT>
 {
     typedef stm32f301_spi1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F373, I2S3ext>
+struct peripheral_t<STM32F373, I2S3EXT>
 {
     typedef stm32f301_spi1_t T;
     static T& V;
@@ -568,14 +568,14 @@ struct peripheral_t<STM32F3x8, SPI3>
 };
 
 template<>
-struct peripheral_t<STM32F3x8, I2S2ext>
+struct peripheral_t<STM32F3x8, I2S2EXT>
 {
     typedef stm32f301_spi1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F3x8, I2S3ext>
+struct peripheral_t<STM32F3x8, I2S3EXT>
 {
     typedef stm32f301_spi1_t T;
     static T& V;
@@ -645,28 +645,28 @@ struct peripheral_t<STM32F303, SPI4>
 };
 
 template<>
-struct peripheral_t<STM32F302, I2S2ext>
+struct peripheral_t<STM32F302, I2S2EXT>
 {
     typedef stm32f302_i2s2ext_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F302, I2S3ext>
+struct peripheral_t<STM32F302, I2S3EXT>
 {
     typedef stm32f302_i2s2ext_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F303, I2S2ext>
+struct peripheral_t<STM32F303, I2S2EXT>
 {
     typedef stm32f302_i2s2ext_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F303, I2S3ext>
+struct peripheral_t<STM32F303, I2S3EXT>
 {
     typedef stm32f302_i2s2ext_t T;
     static T& V;
@@ -680,21 +680,21 @@ struct peripheral_t<STM32F3x4, SPI2>
 };
 
 template<>
-struct peripheral_t<STM32F3x4, I2S2ext>
+struct peripheral_t<STM32F3x4, I2S2EXT>
 {
     typedef stm32f3x4_spi2_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F3x4, I2S3ext>
+struct peripheral_t<STM32F3x4, I2S3EXT>
 {
     typedef stm32f3x4_spi2_t T;
     static T& V;
 };
 
-using i2s2ext_t = peripheral_t<mcu_svd, I2S2ext>;
-using i2s3ext_t = peripheral_t<mcu_svd, I2S3ext>;
+using i2s2ext_t = peripheral_t<mcu_svd, I2S2EXT>;
+using i2s3ext_t = peripheral_t<mcu_svd, I2S3EXT>;
 using spi1_t = peripheral_t<mcu_svd, SPI1>;
 using spi2_t = peripheral_t<mcu_svd, SPI2>;
 using spi3_t = peripheral_t<mcu_svd, SPI3>;
@@ -702,14 +702,14 @@ using spi4_t = peripheral_t<mcu_svd, SPI4>;
 
 template<int INST> struct i_traits {};
 
-template<> struct i_traits<2S2ext>
+template<> struct i_traits<2S2EXT>
 {
-    using i = i2S2ext_t;
+    using i = i2S2EXT_t;
 };
 
-template<> struct i_traits<2S3ext>
+template<> struct i_traits<2S3EXT>
 {
-    using i = i2S3ext_t;
+    using i = i2S3EXT_t;
 };
 
 template<int INST> struct spi_traits {};

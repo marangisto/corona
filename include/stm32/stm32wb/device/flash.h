@@ -224,32 +224,32 @@ struct stm32wb30_cm4_flash_t
 
 
 template<>
-struct peripheral_t<STM32WB30_CM4, Flash>
+struct peripheral_t<STM32WB30_CM4, FLASH>
 {
     typedef stm32wb30_cm4_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32WB35_CM4, Flash>
+struct peripheral_t<STM32WB35_CM4, FLASH>
 {
     typedef stm32wb30_cm4_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32WB50_CM4, Flash>
+struct peripheral_t<STM32WB50_CM4, FLASH>
 {
     typedef stm32wb30_cm4_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32WB55_CM4, Flash>
+struct peripheral_t<STM32WB55_CM4, FLASH>
 {
     typedef stm32wb30_cm4_flash_t T;
     static T& V;
 };
 
-using flash_t = peripheral_t<mcu_svd, Flash>;
+using flash_t = peripheral_t<mcu_svd, FLASH>;
 

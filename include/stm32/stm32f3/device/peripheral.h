@@ -14,7 +14,7 @@ enum peripheral_enum_t
     , ADC3
     , ADC3_4
     , ADC4
-    , ADC_Common
+    , ADC_COMMON
     , CAN
     , CRC
     , DAC
@@ -24,10 +24,10 @@ enum peripheral_enum_t
     , DMA1
     , DMA2
     , EXTI
+    , FLASH
     , FMC
     , FPU
     , FPU_CPACR
-    , Flash
     , GPIOA
     , GPIOB
     , GPIOC
@@ -37,8 +37,8 @@ enum peripheral_enum_t
     , GPIOG
     , GPIOH
     , HDMI_CEC
-    , HRTIM_Common
-    , HRTIM_Master
+    , HRTIM_COMMON
+    , HRTIM_MASTER
     , HRTIM_TIMA
     , HRTIM_TIMB
     , HRTIM_TIMC
@@ -47,8 +47,8 @@ enum peripheral_enum_t
     , I2C1
     , I2C2
     , I2C3
-    , I2S2ext
-    , I2S3ext
+    , I2S2EXT
+    , I2S3EXT
     , IWDG
     , MPU
     , NVIC

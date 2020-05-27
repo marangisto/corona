@@ -9,10 +9,10 @@
 enum peripheral_enum_t
     { ADC
     , ADC1
-    , ADC123_Common
+    , ADC123_COMMON
     , ADC2
     , ADC3
-    , ADC_Common
+    , ADC_COMMON
     , AES
     , CAN1
     , CAN2

@@ -4406,14 +4406,14 @@ struct stm32g474xx_hrtim_timf_t
 
 
 template<>
-struct peripheral_t<STM32G474xx, HRTIM_Master>
+struct peripheral_t<STM32G474xx, HRTIM_MASTER>
 {
     typedef stm32g474xx_hrtim_master_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G484xx, HRTIM_Master>
+struct peripheral_t<STM32G484xx, HRTIM_MASTER>
 {
     typedef stm32g474xx_hrtim_master_t T;
     static T& V;
@@ -4504,21 +4504,21 @@ struct peripheral_t<STM32G484xx, HRTIM_TIMF>
 };
 
 template<>
-struct peripheral_t<STM32G474xx, HRTIM_Common>
+struct peripheral_t<STM32G474xx, HRTIM_COMMON>
 {
     typedef stm32g474xx_hrtim_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G484xx, HRTIM_Common>
+struct peripheral_t<STM32G484xx, HRTIM_COMMON>
 {
     typedef stm32g474xx_hrtim_common_t T;
     static T& V;
 };
 
-using hrtim_common_t = peripheral_t<mcu_svd, HRTIM_Common>;
-using hrtim_master_t = peripheral_t<mcu_svd, HRTIM_Master>;
+using hrtim_common_t = peripheral_t<mcu_svd, HRTIM_COMMON>;
+using hrtim_master_t = peripheral_t<mcu_svd, HRTIM_MASTER>;
 using hrtim_tima_t = peripheral_t<mcu_svd, HRTIM_TIMA>;
 using hrtim_timb_t = peripheral_t<mcu_svd, HRTIM_TIMB>;
 using hrtim_timc_t = peripheral_t<mcu_svd, HRTIM_TIMC>;

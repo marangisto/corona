@@ -60,8 +60,8 @@ typename peripheral_t<STM32F373, ADC>::T& peripheral_t<STM32F373, ADC>::V =
 typename peripheral_t<STM32F3x8, ADC1>::T& peripheral_t<STM32F3x8, ADC1>::V =
     *reinterpret_cast<typename peripheral_t<STM32F3x8, ADC1>::T*>(0x50000000);
 
-typename peripheral_t<STM32F3x4, ADC_Common>::T& peripheral_t<STM32F3x4, ADC_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F3x4, ADC_Common>::T*>(0x50000300);
+typename peripheral_t<STM32F3x4, ADC_COMMON>::T& peripheral_t<STM32F3x4, ADC_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F3x4, ADC_COMMON>::T*>(0x50000300);
 
 typename peripheral_t<STM32F302, CAN>::T& peripheral_t<STM32F302, CAN>::V =
     *reinterpret_cast<typename peripheral_t<STM32F302, CAN>::T*>(0x40006400);
@@ -240,23 +240,23 @@ typename peripheral_t<STM32F3x4, FPU_CPACR>::T& peripheral_t<STM32F3x4, FPU_CPAC
 typename peripheral_t<STM32F3x8, FPU_CPACR>::T& peripheral_t<STM32F3x8, FPU_CPACR>::V =
     *reinterpret_cast<typename peripheral_t<STM32F3x8, FPU_CPACR>::T*>(0xe000ed88);
 
-typename peripheral_t<STM32F301, Flash>::T& peripheral_t<STM32F301, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F301, Flash>::T*>(0x40022000);
+typename peripheral_t<STM32F301, FLASH>::T& peripheral_t<STM32F301, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F301, FLASH>::T*>(0x40022000);
 
-typename peripheral_t<STM32F302, Flash>::T& peripheral_t<STM32F302, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F302, Flash>::T*>(0x40022000);
+typename peripheral_t<STM32F302, FLASH>::T& peripheral_t<STM32F302, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F302, FLASH>::T*>(0x40022000);
 
-typename peripheral_t<STM32F303, Flash>::T& peripheral_t<STM32F303, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F303, Flash>::T*>(0x40022000);
+typename peripheral_t<STM32F303, FLASH>::T& peripheral_t<STM32F303, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F303, FLASH>::T*>(0x40022000);
 
-typename peripheral_t<STM32F3x4, Flash>::T& peripheral_t<STM32F3x4, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F3x4, Flash>::T*>(0x40022000);
+typename peripheral_t<STM32F3x4, FLASH>::T& peripheral_t<STM32F3x4, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F3x4, FLASH>::T*>(0x40022000);
 
-typename peripheral_t<STM32F373, Flash>::T& peripheral_t<STM32F373, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F373, Flash>::T*>(0x40022000);
+typename peripheral_t<STM32F373, FLASH>::T& peripheral_t<STM32F373, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F373, FLASH>::T*>(0x40022000);
 
-typename peripheral_t<STM32F3x8, Flash>::T& peripheral_t<STM32F3x8, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F3x8, Flash>::T*>(0x40022000);
+typename peripheral_t<STM32F3x8, FLASH>::T& peripheral_t<STM32F3x8, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F3x8, FLASH>::T*>(0x40022000);
 
 typename peripheral_t<STM32F301, GPIOA>::T& peripheral_t<STM32F301, GPIOA>::V =
     *reinterpret_cast<typename peripheral_t<STM32F301, GPIOA>::T*>(0x48000000);
@@ -378,8 +378,8 @@ typename peripheral_t<STM32F3x8, GPIOF>::T& peripheral_t<STM32F3x8, GPIOF>::V =
 typename peripheral_t<STM32F3x8, GPIOG>::T& peripheral_t<STM32F3x8, GPIOG>::V =
     *reinterpret_cast<typename peripheral_t<STM32F3x8, GPIOG>::T*>(0x48001800);
 
-typename peripheral_t<STM32F3x4, HRTIM_Master>::T& peripheral_t<STM32F3x4, HRTIM_Master>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F3x4, HRTIM_Master>::T*>(0x40017400);
+typename peripheral_t<STM32F3x4, HRTIM_MASTER>::T& peripheral_t<STM32F3x4, HRTIM_MASTER>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F3x4, HRTIM_MASTER>::T*>(0x40017400);
 
 typename peripheral_t<STM32F3x4, HRTIM_TIMA>::T& peripheral_t<STM32F3x4, HRTIM_TIMA>::V =
     *reinterpret_cast<typename peripheral_t<STM32F3x4, HRTIM_TIMA>::T*>(0x40017480);
@@ -396,8 +396,8 @@ typename peripheral_t<STM32F3x4, HRTIM_TIMD>::T& peripheral_t<STM32F3x4, HRTIM_T
 typename peripheral_t<STM32F3x4, HRTIM_TIME>::T& peripheral_t<STM32F3x4, HRTIM_TIME>::V =
     *reinterpret_cast<typename peripheral_t<STM32F3x4, HRTIM_TIME>::T*>(0x40017680);
 
-typename peripheral_t<STM32F3x4, HRTIM_Common>::T& peripheral_t<STM32F3x4, HRTIM_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F3x4, HRTIM_Common>::T*>(0x40017780);
+typename peripheral_t<STM32F3x4, HRTIM_COMMON>::T& peripheral_t<STM32F3x4, HRTIM_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F3x4, HRTIM_COMMON>::T*>(0x40017780);
 
 typename peripheral_t<STM32F301, I2C1>::T& peripheral_t<STM32F301, I2C1>::V =
     *reinterpret_cast<typename peripheral_t<STM32F301, I2C1>::T*>(0x40005400);
@@ -639,11 +639,11 @@ typename peripheral_t<STM32F301, SPI2>::T& peripheral_t<STM32F301, SPI2>::V =
 typename peripheral_t<STM32F301, SPI3>::T& peripheral_t<STM32F301, SPI3>::V =
     *reinterpret_cast<typename peripheral_t<STM32F301, SPI3>::T*>(0x40003c00);
 
-typename peripheral_t<STM32F301, I2S2ext>::T& peripheral_t<STM32F301, I2S2ext>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F301, I2S2ext>::T*>(0x40003400);
+typename peripheral_t<STM32F301, I2S2EXT>::T& peripheral_t<STM32F301, I2S2EXT>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F301, I2S2EXT>::T*>(0x40003400);
 
-typename peripheral_t<STM32F301, I2S3ext>::T& peripheral_t<STM32F301, I2S3ext>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F301, I2S3ext>::T*>(0x40004000);
+typename peripheral_t<STM32F301, I2S3EXT>::T& peripheral_t<STM32F301, I2S3EXT>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F301, I2S3EXT>::T*>(0x40004000);
 
 typename peripheral_t<STM32F373, SPI1>::T& peripheral_t<STM32F373, SPI1>::V =
     *reinterpret_cast<typename peripheral_t<STM32F373, SPI1>::T*>(0x40013000);
@@ -654,11 +654,11 @@ typename peripheral_t<STM32F373, SPI2>::T& peripheral_t<STM32F373, SPI2>::V =
 typename peripheral_t<STM32F373, SPI3>::T& peripheral_t<STM32F373, SPI3>::V =
     *reinterpret_cast<typename peripheral_t<STM32F373, SPI3>::T*>(0x40003c00);
 
-typename peripheral_t<STM32F373, I2S2ext>::T& peripheral_t<STM32F373, I2S2ext>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F373, I2S2ext>::T*>(0x40003400);
+typename peripheral_t<STM32F373, I2S2EXT>::T& peripheral_t<STM32F373, I2S2EXT>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F373, I2S2EXT>::T*>(0x40003400);
 
-typename peripheral_t<STM32F373, I2S3ext>::T& peripheral_t<STM32F373, I2S3ext>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F373, I2S3ext>::T*>(0x40004000);
+typename peripheral_t<STM32F373, I2S3EXT>::T& peripheral_t<STM32F373, I2S3EXT>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F373, I2S3EXT>::T*>(0x40004000);
 
 typename peripheral_t<STM32F3x4, SPI3>::T& peripheral_t<STM32F3x4, SPI3>::V =
     *reinterpret_cast<typename peripheral_t<STM32F3x4, SPI3>::T*>(0x40003c00);
@@ -675,11 +675,11 @@ typename peripheral_t<STM32F3x8, SPI2>::T& peripheral_t<STM32F3x8, SPI2>::V =
 typename peripheral_t<STM32F3x8, SPI3>::T& peripheral_t<STM32F3x8, SPI3>::V =
     *reinterpret_cast<typename peripheral_t<STM32F3x8, SPI3>::T*>(0x40003c00);
 
-typename peripheral_t<STM32F3x8, I2S2ext>::T& peripheral_t<STM32F3x8, I2S2ext>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F3x8, I2S2ext>::T*>(0x40003400);
+typename peripheral_t<STM32F3x8, I2S2EXT>::T& peripheral_t<STM32F3x8, I2S2EXT>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F3x8, I2S2EXT>::T*>(0x40003400);
 
-typename peripheral_t<STM32F3x8, I2S3ext>::T& peripheral_t<STM32F3x8, I2S3ext>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F3x8, I2S3ext>::T*>(0x40004000);
+typename peripheral_t<STM32F3x8, I2S3EXT>::T& peripheral_t<STM32F3x8, I2S3EXT>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F3x8, I2S3EXT>::T*>(0x40004000);
 
 typename peripheral_t<STM32F3x8, SPI4>::T& peripheral_t<STM32F3x8, SPI4>::V =
     *reinterpret_cast<typename peripheral_t<STM32F3x8, SPI4>::T*>(0x40013c00);
@@ -708,26 +708,26 @@ typename peripheral_t<STM32F303, SPI3>::T& peripheral_t<STM32F303, SPI3>::V =
 typename peripheral_t<STM32F303, SPI4>::T& peripheral_t<STM32F303, SPI4>::V =
     *reinterpret_cast<typename peripheral_t<STM32F303, SPI4>::T*>(0x40013c00);
 
-typename peripheral_t<STM32F302, I2S2ext>::T& peripheral_t<STM32F302, I2S2ext>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F302, I2S2ext>::T*>(0x40003400);
+typename peripheral_t<STM32F302, I2S2EXT>::T& peripheral_t<STM32F302, I2S2EXT>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F302, I2S2EXT>::T*>(0x40003400);
 
-typename peripheral_t<STM32F302, I2S3ext>::T& peripheral_t<STM32F302, I2S3ext>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F302, I2S3ext>::T*>(0x40004000);
+typename peripheral_t<STM32F302, I2S3EXT>::T& peripheral_t<STM32F302, I2S3EXT>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F302, I2S3EXT>::T*>(0x40004000);
 
-typename peripheral_t<STM32F303, I2S2ext>::T& peripheral_t<STM32F303, I2S2ext>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F303, I2S2ext>::T*>(0x40003400);
+typename peripheral_t<STM32F303, I2S2EXT>::T& peripheral_t<STM32F303, I2S2EXT>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F303, I2S2EXT>::T*>(0x40003400);
 
-typename peripheral_t<STM32F303, I2S3ext>::T& peripheral_t<STM32F303, I2S3ext>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F303, I2S3ext>::T*>(0x40004000);
+typename peripheral_t<STM32F303, I2S3EXT>::T& peripheral_t<STM32F303, I2S3EXT>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F303, I2S3EXT>::T*>(0x40004000);
 
 typename peripheral_t<STM32F3x4, SPI2>::T& peripheral_t<STM32F3x4, SPI2>::V =
     *reinterpret_cast<typename peripheral_t<STM32F3x4, SPI2>::T*>(0x40003800);
 
-typename peripheral_t<STM32F3x4, I2S2ext>::T& peripheral_t<STM32F3x4, I2S2ext>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F3x4, I2S2ext>::T*>(0x40003400);
+typename peripheral_t<STM32F3x4, I2S2EXT>::T& peripheral_t<STM32F3x4, I2S2EXT>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F3x4, I2S2EXT>::T*>(0x40003400);
 
-typename peripheral_t<STM32F3x4, I2S3ext>::T& peripheral_t<STM32F3x4, I2S3ext>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F3x4, I2S3ext>::T*>(0x40004000);
+typename peripheral_t<STM32F3x4, I2S3EXT>::T& peripheral_t<STM32F3x4, I2S3EXT>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F3x4, I2S3EXT>::T*>(0x40004000);
 
 typename peripheral_t<STM32F301, STK>::T& peripheral_t<STM32F301, STK>::V =
     *reinterpret_cast<typename peripheral_t<STM32F301, STK>::T*>(0xe000e010);

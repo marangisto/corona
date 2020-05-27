@@ -126,17 +126,17 @@ typename peripheral_t<STM32L152, FSMC>::T& peripheral_t<STM32L152, FSMC>::V =
 typename peripheral_t<STM32L162, FSMC>::T& peripheral_t<STM32L162, FSMC>::V =
     *reinterpret_cast<typename peripheral_t<STM32L162, FSMC>::T*>(0xa0000000);
 
-typename peripheral_t<STM32L100, Flash>::T& peripheral_t<STM32L100, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32L100, Flash>::T*>(0x40023c00);
+typename peripheral_t<STM32L100, FLASH>::T& peripheral_t<STM32L100, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32L100, FLASH>::T*>(0x40023c00);
 
-typename peripheral_t<STM32L151, Flash>::T& peripheral_t<STM32L151, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32L151, Flash>::T*>(0x40023c00);
+typename peripheral_t<STM32L151, FLASH>::T& peripheral_t<STM32L151, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32L151, FLASH>::T*>(0x40023c00);
 
-typename peripheral_t<STM32L152, Flash>::T& peripheral_t<STM32L152, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32L152, Flash>::T*>(0x40023c00);
+typename peripheral_t<STM32L152, FLASH>::T& peripheral_t<STM32L152, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32L152, FLASH>::T*>(0x40023c00);
 
-typename peripheral_t<STM32L162, Flash>::T& peripheral_t<STM32L162, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32L162, Flash>::T*>(0x40023c00);
+typename peripheral_t<STM32L162, FLASH>::T& peripheral_t<STM32L162, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32L162, FLASH>::T*>(0x40023c00);
 
 typename peripheral_t<STM32L100, GPIOA>::T& peripheral_t<STM32L100, GPIOA>::V =
     *reinterpret_cast<typename peripheral_t<STM32L100, GPIOA>::T*>(0x40020000);

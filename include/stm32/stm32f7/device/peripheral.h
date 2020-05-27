@@ -27,16 +27,15 @@ enum peripheral_enum_t
     , DMA2
     , DMA2D
     , DSI
+    , ETHERNET_DMA
+    , ETHERNET_MAC
+    , ETHERNET_MMC
+    , ETHERNET_PTP
     , EXTI
-    , Ethernet_DMA
-    , Ethernet_MAC
-    , Ethernet_MMC
-    , Ethernet_PTP
     , FLASH
     , FMC
     , FPU
     , FPU_CPACR
-    , Flash
     , GPIOA
     , GPIOB
     , GPIOC

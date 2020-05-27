@@ -9,8 +9,8 @@
 enum peripheral_enum_t
     { ADC
     , ADC2
-    , ADC_common
-    , AXIMC_Mx
+    , ADC_COMMON
+    , AXIMC_MX
     , BSEC
     , CCU
     , CRC1

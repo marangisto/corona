@@ -72,11 +72,11 @@ struct stm32f3x4_adc_common_t
 
 
 template<>
-struct peripheral_t<STM32F3x4, ADC_Common>
+struct peripheral_t<STM32F3x4, ADC_COMMON>
 {
     typedef stm32f3x4_adc_common_t T;
     static T& V;
 };
 
-using adc_common_t = peripheral_t<mcu_svd, ADC_Common>;
+using adc_common_t = peripheral_t<mcu_svd, ADC_COMMON>;
 

@@ -10,7 +10,7 @@ enum peripheral_enum_t
     { ADC1
     , ADC2
     , ADC3
-    , ADC_Common
+    , ADC_COMMON
     , CAN1
     , CAN2
     , CRC
@@ -20,11 +20,11 @@ enum peripheral_enum_t
     , DCMI
     , DMA1
     , DMA2
+    , ETHERNET_DMA
+    , ETHERNET_MAC
+    , ETHERNET_MMC
+    , ETHERNET_PTP
     , EXTI
-    , Ethernet_DMA
-    , Ethernet_MAC
-    , Ethernet_MMC
-    , Ethernet_PTP
     , FLASH
     , FSMC
     , GPIOA

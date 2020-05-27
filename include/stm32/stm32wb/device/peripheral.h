@@ -19,9 +19,9 @@ enum peripheral_enum_t
     , DMAMUX
     , DMAMUX1
     , EXTI
+    , FLASH
     , FPU
     , FPU_CPACR
-    , Flash
     , GPIOA
     , GPIOB
     , GPIOC

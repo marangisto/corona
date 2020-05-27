@@ -61,32 +61,32 @@ struct stm32l0x0_firewall_t
 
 
 template<>
-struct peripheral_t<STM32L0x0, Firewall>
+struct peripheral_t<STM32L0x0, FIREWALL>
 {
     typedef stm32l0x0_firewall_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L0x1, Firewall>
+struct peripheral_t<STM32L0x1, FIREWALL>
 {
     typedef stm32l0x0_firewall_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L0x2, Firewall>
+struct peripheral_t<STM32L0x2, FIREWALL>
 {
     typedef stm32l0x0_firewall_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L0x3, Firewall>
+struct peripheral_t<STM32L0x3, FIREWALL>
 {
     typedef stm32l0x0_firewall_t T;
     static T& V;
 };
 
-using firewall_t = peripheral_t<mcu_svd, Firewall>;
+using firewall_t = peripheral_t<mcu_svd, FIREWALL>;
 

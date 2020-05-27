@@ -114,33 +114,33 @@ struct stm32l552_icache_t
 
 
 template<>
-struct peripheral_t<STM32L552, ICache>
+struct peripheral_t<STM32L552, ICACHE>
 {
     typedef stm32l552_icache_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L552, SEC_ICache>
+struct peripheral_t<STM32L552, SEC_ICACHE>
 {
     typedef stm32l552_icache_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L562, ICache>
+struct peripheral_t<STM32L562, ICACHE>
 {
     typedef stm32l552_icache_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L562, SEC_ICache>
+struct peripheral_t<STM32L562, SEC_ICACHE>
 {
     typedef stm32l552_icache_t T;
     static T& V;
 };
 
-using icache_t = peripheral_t<mcu_svd, ICache>;
-using sec_icache_t = peripheral_t<mcu_svd, SEC_ICache>;
+using icache_t = peripheral_t<mcu_svd, ICACHE>;
+using sec_icache_t = peripheral_t<mcu_svd, SEC_ICACHE>;
 

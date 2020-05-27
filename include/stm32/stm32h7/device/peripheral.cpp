@@ -78,71 +78,71 @@ typename peripheral_t<STM32H753, ADC1>::T& peripheral_t<STM32H753, ADC1>::V =
 typename peripheral_t<STM32H753, ADC2>::T& peripheral_t<STM32H753, ADC2>::V =
     *reinterpret_cast<typename peripheral_t<STM32H753, ADC2>::T*>(0x40022100);
 
-typename peripheral_t<STM32H742x, ADC3_Common>::T& peripheral_t<STM32H742x, ADC3_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H742x, ADC3_Common>::T*>(0x58026300);
+typename peripheral_t<STM32H742x, ADC3_COMMON>::T& peripheral_t<STM32H742x, ADC3_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H742x, ADC3_COMMON>::T*>(0x58026300);
 
-typename peripheral_t<STM32H742x, ADC12_Common>::T& peripheral_t<STM32H742x, ADC12_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H742x, ADC12_Common>::T*>(0x40022300);
+typename peripheral_t<STM32H742x, ADC12_COMMON>::T& peripheral_t<STM32H742x, ADC12_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H742x, ADC12_COMMON>::T*>(0x40022300);
 
-typename peripheral_t<STM32H743, ADC3_Common>::T& peripheral_t<STM32H743, ADC3_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H743, ADC3_Common>::T*>(0x58026300);
+typename peripheral_t<STM32H743, ADC3_COMMON>::T& peripheral_t<STM32H743, ADC3_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H743, ADC3_COMMON>::T*>(0x58026300);
 
-typename peripheral_t<STM32H743, ADC12_Common>::T& peripheral_t<STM32H743, ADC12_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H743, ADC12_Common>::T*>(0x40022300);
+typename peripheral_t<STM32H743, ADC12_COMMON>::T& peripheral_t<STM32H743, ADC12_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H743, ADC12_COMMON>::T*>(0x40022300);
 
-typename peripheral_t<STM32H745_CM4, ADC3_Common>::T& peripheral_t<STM32H745_CM4, ADC3_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H745_CM4, ADC3_Common>::T*>(0x58026300);
+typename peripheral_t<STM32H745_CM4, ADC3_COMMON>::T& peripheral_t<STM32H745_CM4, ADC3_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H745_CM4, ADC3_COMMON>::T*>(0x58026300);
 
-typename peripheral_t<STM32H745_CM4, ADC12_Common>::T& peripheral_t<STM32H745_CM4, ADC12_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H745_CM4, ADC12_Common>::T*>(0x40022300);
+typename peripheral_t<STM32H745_CM4, ADC12_COMMON>::T& peripheral_t<STM32H745_CM4, ADC12_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H745_CM4, ADC12_COMMON>::T*>(0x40022300);
 
-typename peripheral_t<STM32H745_CM7, ADC3_Common>::T& peripheral_t<STM32H745_CM7, ADC3_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H745_CM7, ADC3_Common>::T*>(0x58026300);
+typename peripheral_t<STM32H745_CM7, ADC3_COMMON>::T& peripheral_t<STM32H745_CM7, ADC3_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H745_CM7, ADC3_COMMON>::T*>(0x58026300);
 
-typename peripheral_t<STM32H745_CM7, ADC12_Common>::T& peripheral_t<STM32H745_CM7, ADC12_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H745_CM7, ADC12_Common>::T*>(0x40022300);
+typename peripheral_t<STM32H745_CM7, ADC12_COMMON>::T& peripheral_t<STM32H745_CM7, ADC12_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H745_CM7, ADC12_COMMON>::T*>(0x40022300);
 
-typename peripheral_t<STM32H747_CM4, ADC3_Common>::T& peripheral_t<STM32H747_CM4, ADC3_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H747_CM4, ADC3_Common>::T*>(0x58026300);
+typename peripheral_t<STM32H747_CM4, ADC3_COMMON>::T& peripheral_t<STM32H747_CM4, ADC3_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H747_CM4, ADC3_COMMON>::T*>(0x58026300);
 
-typename peripheral_t<STM32H747_CM4, ADC12_Common>::T& peripheral_t<STM32H747_CM4, ADC12_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H747_CM4, ADC12_Common>::T*>(0x40022300);
+typename peripheral_t<STM32H747_CM4, ADC12_COMMON>::T& peripheral_t<STM32H747_CM4, ADC12_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H747_CM4, ADC12_COMMON>::T*>(0x40022300);
 
-typename peripheral_t<STM32H747_CM7, ADC3_Common>::T& peripheral_t<STM32H747_CM7, ADC3_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H747_CM7, ADC3_Common>::T*>(0x58026300);
+typename peripheral_t<STM32H747_CM7, ADC3_COMMON>::T& peripheral_t<STM32H747_CM7, ADC3_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H747_CM7, ADC3_COMMON>::T*>(0x58026300);
 
-typename peripheral_t<STM32H747_CM7, ADC12_Common>::T& peripheral_t<STM32H747_CM7, ADC12_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H747_CM7, ADC12_Common>::T*>(0x40022300);
+typename peripheral_t<STM32H747_CM7, ADC12_COMMON>::T& peripheral_t<STM32H747_CM7, ADC12_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H747_CM7, ADC12_COMMON>::T*>(0x40022300);
 
-typename peripheral_t<STM32H753, ADC3_Common>::T& peripheral_t<STM32H753, ADC3_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H753, ADC3_Common>::T*>(0x58026300);
+typename peripheral_t<STM32H753, ADC3_COMMON>::T& peripheral_t<STM32H753, ADC3_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H753, ADC3_COMMON>::T*>(0x58026300);
 
-typename peripheral_t<STM32H753, ADC12_Common>::T& peripheral_t<STM32H753, ADC12_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H753, ADC12_Common>::T*>(0x40022300);
+typename peripheral_t<STM32H753, ADC12_COMMON>::T& peripheral_t<STM32H753, ADC12_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H753, ADC12_COMMON>::T*>(0x40022300);
 
-typename peripheral_t<STM32H755_CM4, ADC3_Common>::T& peripheral_t<STM32H755_CM4, ADC3_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H755_CM4, ADC3_Common>::T*>(0x58026300);
+typename peripheral_t<STM32H755_CM4, ADC3_COMMON>::T& peripheral_t<STM32H755_CM4, ADC3_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H755_CM4, ADC3_COMMON>::T*>(0x58026300);
 
-typename peripheral_t<STM32H755_CM4, ADC12_Common>::T& peripheral_t<STM32H755_CM4, ADC12_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H755_CM4, ADC12_Common>::T*>(0x40022300);
+typename peripheral_t<STM32H755_CM4, ADC12_COMMON>::T& peripheral_t<STM32H755_CM4, ADC12_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H755_CM4, ADC12_COMMON>::T*>(0x40022300);
 
-typename peripheral_t<STM32H755_CM7, ADC3_Common>::T& peripheral_t<STM32H755_CM7, ADC3_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H755_CM7, ADC3_Common>::T*>(0x58026300);
+typename peripheral_t<STM32H755_CM7, ADC3_COMMON>::T& peripheral_t<STM32H755_CM7, ADC3_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H755_CM7, ADC3_COMMON>::T*>(0x58026300);
 
-typename peripheral_t<STM32H755_CM7, ADC12_Common>::T& peripheral_t<STM32H755_CM7, ADC12_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H755_CM7, ADC12_Common>::T*>(0x40022300);
+typename peripheral_t<STM32H755_CM7, ADC12_COMMON>::T& peripheral_t<STM32H755_CM7, ADC12_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H755_CM7, ADC12_COMMON>::T*>(0x40022300);
 
-typename peripheral_t<STM32H757_CM4, ADC3_Common>::T& peripheral_t<STM32H757_CM4, ADC3_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H757_CM4, ADC3_Common>::T*>(0x58026300);
+typename peripheral_t<STM32H757_CM4, ADC3_COMMON>::T& peripheral_t<STM32H757_CM4, ADC3_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H757_CM4, ADC3_COMMON>::T*>(0x58026300);
 
-typename peripheral_t<STM32H757_CM4, ADC12_Common>::T& peripheral_t<STM32H757_CM4, ADC12_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H757_CM4, ADC12_Common>::T*>(0x40022300);
+typename peripheral_t<STM32H757_CM4, ADC12_COMMON>::T& peripheral_t<STM32H757_CM4, ADC12_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H757_CM4, ADC12_COMMON>::T*>(0x40022300);
 
-typename peripheral_t<STM32H757_CM7, ADC3_Common>::T& peripheral_t<STM32H757_CM7, ADC3_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H757_CM7, ADC3_Common>::T*>(0x58026300);
+typename peripheral_t<STM32H757_CM7, ADC3_COMMON>::T& peripheral_t<STM32H757_CM7, ADC3_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H757_CM7, ADC3_COMMON>::T*>(0x58026300);
 
-typename peripheral_t<STM32H757_CM7, ADC12_Common>::T& peripheral_t<STM32H757_CM7, ADC12_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H757_CM7, ADC12_Common>::T*>(0x40022300);
+typename peripheral_t<STM32H757_CM7, ADC12_COMMON>::T& peripheral_t<STM32H757_CM7, ADC12_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H757_CM7, ADC12_COMMON>::T*>(0x40022300);
 
 typename peripheral_t<STM32H745_CM4, ADC3>::T& peripheral_t<STM32H745_CM4, ADC3>::V =
     *reinterpret_cast<typename peripheral_t<STM32H745_CM4, ADC3>::T*>(0x58026000);
@@ -225,20 +225,20 @@ typename peripheral_t<STM32H750x, ADC1>::T& peripheral_t<STM32H750x, ADC1>::V =
 typename peripheral_t<STM32H750x, ADC2>::T& peripheral_t<STM32H750x, ADC2>::V =
     *reinterpret_cast<typename peripheral_t<STM32H750x, ADC2>::T*>(0x40022100);
 
-typename peripheral_t<STM32H750x, ADC3_Common>::T& peripheral_t<STM32H750x, ADC3_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H750x, ADC3_Common>::T*>(0x58026300);
+typename peripheral_t<STM32H750x, ADC3_COMMON>::T& peripheral_t<STM32H750x, ADC3_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H750x, ADC3_COMMON>::T*>(0x58026300);
 
-typename peripheral_t<STM32H750x, ADC12_Common>::T& peripheral_t<STM32H750x, ADC12_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H750x, ADC12_Common>::T*>(0x40022300);
+typename peripheral_t<STM32H750x, ADC12_COMMON>::T& peripheral_t<STM32H750x, ADC12_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H750x, ADC12_COMMON>::T*>(0x40022300);
 
-typename peripheral_t<STM32H7A3x, ADC12_Common>::T& peripheral_t<STM32H7A3x, ADC12_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7A3x, ADC12_Common>::T*>(0x40022300);
+typename peripheral_t<STM32H7A3x, ADC12_COMMON>::T& peripheral_t<STM32H7A3x, ADC12_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7A3x, ADC12_COMMON>::T*>(0x40022300);
 
-typename peripheral_t<STM32H7B0x, ADC12_Common>::T& peripheral_t<STM32H7B0x, ADC12_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7B0x, ADC12_Common>::T*>(0x40022300);
+typename peripheral_t<STM32H7B0x, ADC12_COMMON>::T& peripheral_t<STM32H7B0x, ADC12_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7B0x, ADC12_COMMON>::T*>(0x40022300);
 
-typename peripheral_t<STM32H7B3x, ADC12_Common>::T& peripheral_t<STM32H7B3x, ADC12_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7B3x, ADC12_Common>::T*>(0x40022300);
+typename peripheral_t<STM32H7B3x, ADC12_COMMON>::T& peripheral_t<STM32H7B3x, ADC12_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7B3x, ADC12_COMMON>::T*>(0x40022300);
 
 typename peripheral_t<STM32H7A3x, ADC1>::T& peripheral_t<STM32H7A3x, ADC1>::V =
     *reinterpret_cast<typename peripheral_t<STM32H7A3x, ADC1>::T*>(0x40022000);
@@ -765,149 +765,149 @@ typename peripheral_t<STM32H7B3x, DFSDM>::T& peripheral_t<STM32H7B3x, DFSDM>::V 
 typename peripheral_t<STM32H743, DFSDM>::T& peripheral_t<STM32H743, DFSDM>::V =
     *reinterpret_cast<typename peripheral_t<STM32H743, DFSDM>::T*>(0x40017000);
 
-typename peripheral_t<STM32H742x, DELAY_Block_SDMMC1>::T& peripheral_t<STM32H742x, DELAY_Block_SDMMC1>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H742x, DELAY_Block_SDMMC1>::T*>(0x52008000);
+typename peripheral_t<STM32H742x, DELAY_BLOCK_SDMMC1>::T& peripheral_t<STM32H742x, DELAY_BLOCK_SDMMC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H742x, DELAY_BLOCK_SDMMC1>::T*>(0x52008000);
 
-typename peripheral_t<STM32H742x, DELAY_Block_QUADSPI>::T& peripheral_t<STM32H742x, DELAY_Block_QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H742x, DELAY_Block_QUADSPI>::T*>(0x52006000);
+typename peripheral_t<STM32H742x, DELAY_BLOCK_QUADSPI>::T& peripheral_t<STM32H742x, DELAY_BLOCK_QUADSPI>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H742x, DELAY_BLOCK_QUADSPI>::T*>(0x52006000);
 
-typename peripheral_t<STM32H742x, DELAY_Block_SDMMC2>::T& peripheral_t<STM32H742x, DELAY_Block_SDMMC2>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H742x, DELAY_Block_SDMMC2>::T*>(0x48022800);
+typename peripheral_t<STM32H742x, DELAY_BLOCK_SDMMC2>::T& peripheral_t<STM32H742x, DELAY_BLOCK_SDMMC2>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H742x, DELAY_BLOCK_SDMMC2>::T*>(0x48022800);
 
-typename peripheral_t<STM32H743, DELAY_Block_SDMMC1>::T& peripheral_t<STM32H743, DELAY_Block_SDMMC1>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H743, DELAY_Block_SDMMC1>::T*>(0x52008000);
+typename peripheral_t<STM32H743, DELAY_BLOCK_SDMMC1>::T& peripheral_t<STM32H743, DELAY_BLOCK_SDMMC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H743, DELAY_BLOCK_SDMMC1>::T*>(0x52008000);
 
-typename peripheral_t<STM32H743, DELAY_Block_QUADSPI>::T& peripheral_t<STM32H743, DELAY_Block_QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H743, DELAY_Block_QUADSPI>::T*>(0x52006000);
+typename peripheral_t<STM32H743, DELAY_BLOCK_QUADSPI>::T& peripheral_t<STM32H743, DELAY_BLOCK_QUADSPI>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H743, DELAY_BLOCK_QUADSPI>::T*>(0x52006000);
 
-typename peripheral_t<STM32H743, DELAY_Block_SDMMC2>::T& peripheral_t<STM32H743, DELAY_Block_SDMMC2>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H743, DELAY_Block_SDMMC2>::T*>(0x48022800);
+typename peripheral_t<STM32H743, DELAY_BLOCK_SDMMC2>::T& peripheral_t<STM32H743, DELAY_BLOCK_SDMMC2>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H743, DELAY_BLOCK_SDMMC2>::T*>(0x48022800);
 
-typename peripheral_t<STM32H745_CM4, DELAY_Block_SDMMC1>::T& peripheral_t<STM32H745_CM4, DELAY_Block_SDMMC1>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H745_CM4, DELAY_Block_SDMMC1>::T*>(0x52008000);
+typename peripheral_t<STM32H745_CM4, DELAY_BLOCK_SDMMC1>::T& peripheral_t<STM32H745_CM4, DELAY_BLOCK_SDMMC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H745_CM4, DELAY_BLOCK_SDMMC1>::T*>(0x52008000);
 
-typename peripheral_t<STM32H745_CM4, DELAY_Block_QUADSPI>::T& peripheral_t<STM32H745_CM4, DELAY_Block_QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H745_CM4, DELAY_Block_QUADSPI>::T*>(0x52006000);
+typename peripheral_t<STM32H745_CM4, DELAY_BLOCK_QUADSPI>::T& peripheral_t<STM32H745_CM4, DELAY_BLOCK_QUADSPI>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H745_CM4, DELAY_BLOCK_QUADSPI>::T*>(0x52006000);
 
-typename peripheral_t<STM32H745_CM4, DELAY_Block_SDMMC2>::T& peripheral_t<STM32H745_CM4, DELAY_Block_SDMMC2>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H745_CM4, DELAY_Block_SDMMC2>::T*>(0x48022800);
+typename peripheral_t<STM32H745_CM4, DELAY_BLOCK_SDMMC2>::T& peripheral_t<STM32H745_CM4, DELAY_BLOCK_SDMMC2>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H745_CM4, DELAY_BLOCK_SDMMC2>::T*>(0x48022800);
 
-typename peripheral_t<STM32H745_CM7, DELAY_Block_SDMMC1>::T& peripheral_t<STM32H745_CM7, DELAY_Block_SDMMC1>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H745_CM7, DELAY_Block_SDMMC1>::T*>(0x52008000);
+typename peripheral_t<STM32H745_CM7, DELAY_BLOCK_SDMMC1>::T& peripheral_t<STM32H745_CM7, DELAY_BLOCK_SDMMC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H745_CM7, DELAY_BLOCK_SDMMC1>::T*>(0x52008000);
 
-typename peripheral_t<STM32H745_CM7, DELAY_Block_QUADSPI>::T& peripheral_t<STM32H745_CM7, DELAY_Block_QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H745_CM7, DELAY_Block_QUADSPI>::T*>(0x52006000);
+typename peripheral_t<STM32H745_CM7, DELAY_BLOCK_QUADSPI>::T& peripheral_t<STM32H745_CM7, DELAY_BLOCK_QUADSPI>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H745_CM7, DELAY_BLOCK_QUADSPI>::T*>(0x52006000);
 
-typename peripheral_t<STM32H745_CM7, DELAY_Block_SDMMC2>::T& peripheral_t<STM32H745_CM7, DELAY_Block_SDMMC2>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H745_CM7, DELAY_Block_SDMMC2>::T*>(0x48022800);
+typename peripheral_t<STM32H745_CM7, DELAY_BLOCK_SDMMC2>::T& peripheral_t<STM32H745_CM7, DELAY_BLOCK_SDMMC2>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H745_CM7, DELAY_BLOCK_SDMMC2>::T*>(0x48022800);
 
-typename peripheral_t<STM32H747_CM4, DELAY_Block_SDMMC1>::T& peripheral_t<STM32H747_CM4, DELAY_Block_SDMMC1>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H747_CM4, DELAY_Block_SDMMC1>::T*>(0x52008000);
+typename peripheral_t<STM32H747_CM4, DELAY_BLOCK_SDMMC1>::T& peripheral_t<STM32H747_CM4, DELAY_BLOCK_SDMMC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H747_CM4, DELAY_BLOCK_SDMMC1>::T*>(0x52008000);
 
-typename peripheral_t<STM32H747_CM4, DELAY_Block_QUADSPI>::T& peripheral_t<STM32H747_CM4, DELAY_Block_QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H747_CM4, DELAY_Block_QUADSPI>::T*>(0x52006000);
+typename peripheral_t<STM32H747_CM4, DELAY_BLOCK_QUADSPI>::T& peripheral_t<STM32H747_CM4, DELAY_BLOCK_QUADSPI>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H747_CM4, DELAY_BLOCK_QUADSPI>::T*>(0x52006000);
 
-typename peripheral_t<STM32H747_CM4, DELAY_Block_SDMMC2>::T& peripheral_t<STM32H747_CM4, DELAY_Block_SDMMC2>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H747_CM4, DELAY_Block_SDMMC2>::T*>(0x48022800);
+typename peripheral_t<STM32H747_CM4, DELAY_BLOCK_SDMMC2>::T& peripheral_t<STM32H747_CM4, DELAY_BLOCK_SDMMC2>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H747_CM4, DELAY_BLOCK_SDMMC2>::T*>(0x48022800);
 
-typename peripheral_t<STM32H747_CM7, DELAY_Block_SDMMC1>::T& peripheral_t<STM32H747_CM7, DELAY_Block_SDMMC1>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H747_CM7, DELAY_Block_SDMMC1>::T*>(0x52008000);
+typename peripheral_t<STM32H747_CM7, DELAY_BLOCK_SDMMC1>::T& peripheral_t<STM32H747_CM7, DELAY_BLOCK_SDMMC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H747_CM7, DELAY_BLOCK_SDMMC1>::T*>(0x52008000);
 
-typename peripheral_t<STM32H747_CM7, DELAY_Block_QUADSPI>::T& peripheral_t<STM32H747_CM7, DELAY_Block_QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H747_CM7, DELAY_Block_QUADSPI>::T*>(0x52006000);
+typename peripheral_t<STM32H747_CM7, DELAY_BLOCK_QUADSPI>::T& peripheral_t<STM32H747_CM7, DELAY_BLOCK_QUADSPI>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H747_CM7, DELAY_BLOCK_QUADSPI>::T*>(0x52006000);
 
-typename peripheral_t<STM32H747_CM7, DELAY_Block_SDMMC2>::T& peripheral_t<STM32H747_CM7, DELAY_Block_SDMMC2>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H747_CM7, DELAY_Block_SDMMC2>::T*>(0x48022800);
+typename peripheral_t<STM32H747_CM7, DELAY_BLOCK_SDMMC2>::T& peripheral_t<STM32H747_CM7, DELAY_BLOCK_SDMMC2>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H747_CM7, DELAY_BLOCK_SDMMC2>::T*>(0x48022800);
 
-typename peripheral_t<STM32H750x, DELAY_Block_SDMMC1>::T& peripheral_t<STM32H750x, DELAY_Block_SDMMC1>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H750x, DELAY_Block_SDMMC1>::T*>(0x52008000);
+typename peripheral_t<STM32H750x, DELAY_BLOCK_SDMMC1>::T& peripheral_t<STM32H750x, DELAY_BLOCK_SDMMC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H750x, DELAY_BLOCK_SDMMC1>::T*>(0x52008000);
 
-typename peripheral_t<STM32H750x, DELAY_Block_QUADSPI>::T& peripheral_t<STM32H750x, DELAY_Block_QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H750x, DELAY_Block_QUADSPI>::T*>(0x52006000);
+typename peripheral_t<STM32H750x, DELAY_BLOCK_QUADSPI>::T& peripheral_t<STM32H750x, DELAY_BLOCK_QUADSPI>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H750x, DELAY_BLOCK_QUADSPI>::T*>(0x52006000);
 
-typename peripheral_t<STM32H750x, DELAY_Block_SDMMC2>::T& peripheral_t<STM32H750x, DELAY_Block_SDMMC2>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H750x, DELAY_Block_SDMMC2>::T*>(0x48022800);
+typename peripheral_t<STM32H750x, DELAY_BLOCK_SDMMC2>::T& peripheral_t<STM32H750x, DELAY_BLOCK_SDMMC2>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H750x, DELAY_BLOCK_SDMMC2>::T*>(0x48022800);
 
-typename peripheral_t<STM32H753, DELAY_Block_SDMMC1>::T& peripheral_t<STM32H753, DELAY_Block_SDMMC1>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H753, DELAY_Block_SDMMC1>::T*>(0x52008000);
+typename peripheral_t<STM32H753, DELAY_BLOCK_SDMMC1>::T& peripheral_t<STM32H753, DELAY_BLOCK_SDMMC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H753, DELAY_BLOCK_SDMMC1>::T*>(0x52008000);
 
-typename peripheral_t<STM32H753, DELAY_Block_QUADSPI>::T& peripheral_t<STM32H753, DELAY_Block_QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H753, DELAY_Block_QUADSPI>::T*>(0x52006000);
+typename peripheral_t<STM32H753, DELAY_BLOCK_QUADSPI>::T& peripheral_t<STM32H753, DELAY_BLOCK_QUADSPI>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H753, DELAY_BLOCK_QUADSPI>::T*>(0x52006000);
 
-typename peripheral_t<STM32H753, DELAY_Block_SDMMC2>::T& peripheral_t<STM32H753, DELAY_Block_SDMMC2>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H753, DELAY_Block_SDMMC2>::T*>(0x48022800);
+typename peripheral_t<STM32H753, DELAY_BLOCK_SDMMC2>::T& peripheral_t<STM32H753, DELAY_BLOCK_SDMMC2>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H753, DELAY_BLOCK_SDMMC2>::T*>(0x48022800);
 
-typename peripheral_t<STM32H755_CM4, DELAY_Block_SDMMC1>::T& peripheral_t<STM32H755_CM4, DELAY_Block_SDMMC1>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H755_CM4, DELAY_Block_SDMMC1>::T*>(0x52008000);
+typename peripheral_t<STM32H755_CM4, DELAY_BLOCK_SDMMC1>::T& peripheral_t<STM32H755_CM4, DELAY_BLOCK_SDMMC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H755_CM4, DELAY_BLOCK_SDMMC1>::T*>(0x52008000);
 
-typename peripheral_t<STM32H755_CM4, DELAY_Block_QUADSPI>::T& peripheral_t<STM32H755_CM4, DELAY_Block_QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H755_CM4, DELAY_Block_QUADSPI>::T*>(0x52006000);
+typename peripheral_t<STM32H755_CM4, DELAY_BLOCK_QUADSPI>::T& peripheral_t<STM32H755_CM4, DELAY_BLOCK_QUADSPI>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H755_CM4, DELAY_BLOCK_QUADSPI>::T*>(0x52006000);
 
-typename peripheral_t<STM32H755_CM4, DELAY_Block_SDMMC2>::T& peripheral_t<STM32H755_CM4, DELAY_Block_SDMMC2>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H755_CM4, DELAY_Block_SDMMC2>::T*>(0x48022800);
+typename peripheral_t<STM32H755_CM4, DELAY_BLOCK_SDMMC2>::T& peripheral_t<STM32H755_CM4, DELAY_BLOCK_SDMMC2>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H755_CM4, DELAY_BLOCK_SDMMC2>::T*>(0x48022800);
 
-typename peripheral_t<STM32H755_CM7, DELAY_Block_SDMMC1>::T& peripheral_t<STM32H755_CM7, DELAY_Block_SDMMC1>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H755_CM7, DELAY_Block_SDMMC1>::T*>(0x52008000);
+typename peripheral_t<STM32H755_CM7, DELAY_BLOCK_SDMMC1>::T& peripheral_t<STM32H755_CM7, DELAY_BLOCK_SDMMC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H755_CM7, DELAY_BLOCK_SDMMC1>::T*>(0x52008000);
 
-typename peripheral_t<STM32H755_CM7, DELAY_Block_QUADSPI>::T& peripheral_t<STM32H755_CM7, DELAY_Block_QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H755_CM7, DELAY_Block_QUADSPI>::T*>(0x52006000);
+typename peripheral_t<STM32H755_CM7, DELAY_BLOCK_QUADSPI>::T& peripheral_t<STM32H755_CM7, DELAY_BLOCK_QUADSPI>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H755_CM7, DELAY_BLOCK_QUADSPI>::T*>(0x52006000);
 
-typename peripheral_t<STM32H755_CM7, DELAY_Block_SDMMC2>::T& peripheral_t<STM32H755_CM7, DELAY_Block_SDMMC2>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H755_CM7, DELAY_Block_SDMMC2>::T*>(0x48022800);
+typename peripheral_t<STM32H755_CM7, DELAY_BLOCK_SDMMC2>::T& peripheral_t<STM32H755_CM7, DELAY_BLOCK_SDMMC2>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H755_CM7, DELAY_BLOCK_SDMMC2>::T*>(0x48022800);
 
-typename peripheral_t<STM32H757_CM4, DELAY_Block_SDMMC1>::T& peripheral_t<STM32H757_CM4, DELAY_Block_SDMMC1>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H757_CM4, DELAY_Block_SDMMC1>::T*>(0x52008000);
+typename peripheral_t<STM32H757_CM4, DELAY_BLOCK_SDMMC1>::T& peripheral_t<STM32H757_CM4, DELAY_BLOCK_SDMMC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H757_CM4, DELAY_BLOCK_SDMMC1>::T*>(0x52008000);
 
-typename peripheral_t<STM32H757_CM4, DELAY_Block_QUADSPI>::T& peripheral_t<STM32H757_CM4, DELAY_Block_QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H757_CM4, DELAY_Block_QUADSPI>::T*>(0x52006000);
+typename peripheral_t<STM32H757_CM4, DELAY_BLOCK_QUADSPI>::T& peripheral_t<STM32H757_CM4, DELAY_BLOCK_QUADSPI>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H757_CM4, DELAY_BLOCK_QUADSPI>::T*>(0x52006000);
 
-typename peripheral_t<STM32H757_CM4, DELAY_Block_SDMMC2>::T& peripheral_t<STM32H757_CM4, DELAY_Block_SDMMC2>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H757_CM4, DELAY_Block_SDMMC2>::T*>(0x48022800);
+typename peripheral_t<STM32H757_CM4, DELAY_BLOCK_SDMMC2>::T& peripheral_t<STM32H757_CM4, DELAY_BLOCK_SDMMC2>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H757_CM4, DELAY_BLOCK_SDMMC2>::T*>(0x48022800);
 
-typename peripheral_t<STM32H757_CM7, DELAY_Block_SDMMC1>::T& peripheral_t<STM32H757_CM7, DELAY_Block_SDMMC1>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H757_CM7, DELAY_Block_SDMMC1>::T*>(0x52008000);
+typename peripheral_t<STM32H757_CM7, DELAY_BLOCK_SDMMC1>::T& peripheral_t<STM32H757_CM7, DELAY_BLOCK_SDMMC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H757_CM7, DELAY_BLOCK_SDMMC1>::T*>(0x52008000);
 
-typename peripheral_t<STM32H757_CM7, DELAY_Block_QUADSPI>::T& peripheral_t<STM32H757_CM7, DELAY_Block_QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H757_CM7, DELAY_Block_QUADSPI>::T*>(0x52006000);
+typename peripheral_t<STM32H757_CM7, DELAY_BLOCK_QUADSPI>::T& peripheral_t<STM32H757_CM7, DELAY_BLOCK_QUADSPI>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H757_CM7, DELAY_BLOCK_QUADSPI>::T*>(0x52006000);
 
-typename peripheral_t<STM32H757_CM7, DELAY_Block_SDMMC2>::T& peripheral_t<STM32H757_CM7, DELAY_Block_SDMMC2>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H757_CM7, DELAY_Block_SDMMC2>::T*>(0x48022800);
+typename peripheral_t<STM32H757_CM7, DELAY_BLOCK_SDMMC2>::T& peripheral_t<STM32H757_CM7, DELAY_BLOCK_SDMMC2>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H757_CM7, DELAY_BLOCK_SDMMC2>::T*>(0x48022800);
 
-typename peripheral_t<STM32H7A3x, DELAY_Block_SDMMC1>::T& peripheral_t<STM32H7A3x, DELAY_Block_SDMMC1>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7A3x, DELAY_Block_SDMMC1>::T*>(0x52008000);
+typename peripheral_t<STM32H7A3x, DELAY_BLOCK_SDMMC1>::T& peripheral_t<STM32H7A3x, DELAY_BLOCK_SDMMC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7A3x, DELAY_BLOCK_SDMMC1>::T*>(0x52008000);
 
-typename peripheral_t<STM32H7A3x, DELAY_Block_SDMMC2>::T& peripheral_t<STM32H7A3x, DELAY_Block_SDMMC2>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7A3x, DELAY_Block_SDMMC2>::T*>(0x48022800);
+typename peripheral_t<STM32H7A3x, DELAY_BLOCK_SDMMC2>::T& peripheral_t<STM32H7A3x, DELAY_BLOCK_SDMMC2>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7A3x, DELAY_BLOCK_SDMMC2>::T*>(0x48022800);
 
-typename peripheral_t<STM32H7A3x, Delay_Block_OCTOSPI1>::T& peripheral_t<STM32H7A3x, Delay_Block_OCTOSPI1>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7A3x, Delay_Block_OCTOSPI1>::T*>(0x52006000);
+typename peripheral_t<STM32H7A3x, DELAY_BLOCK_OCTOSPI1>::T& peripheral_t<STM32H7A3x, DELAY_BLOCK_OCTOSPI1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7A3x, DELAY_BLOCK_OCTOSPI1>::T*>(0x52006000);
 
-typename peripheral_t<STM32H7A3x, Delay_Block_OCTOSPI2>::T& peripheral_t<STM32H7A3x, Delay_Block_OCTOSPI2>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7A3x, Delay_Block_OCTOSPI2>::T*>(0x5200b000);
+typename peripheral_t<STM32H7A3x, DELAY_BLOCK_OCTOSPI2>::T& peripheral_t<STM32H7A3x, DELAY_BLOCK_OCTOSPI2>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7A3x, DELAY_BLOCK_OCTOSPI2>::T*>(0x5200b000);
 
-typename peripheral_t<STM32H7B0x, DELAY_Block_SDMMC1>::T& peripheral_t<STM32H7B0x, DELAY_Block_SDMMC1>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7B0x, DELAY_Block_SDMMC1>::T*>(0x52008000);
+typename peripheral_t<STM32H7B0x, DELAY_BLOCK_SDMMC1>::T& peripheral_t<STM32H7B0x, DELAY_BLOCK_SDMMC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7B0x, DELAY_BLOCK_SDMMC1>::T*>(0x52008000);
 
-typename peripheral_t<STM32H7B0x, DELAY_Block_SDMMC2>::T& peripheral_t<STM32H7B0x, DELAY_Block_SDMMC2>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7B0x, DELAY_Block_SDMMC2>::T*>(0x48022800);
+typename peripheral_t<STM32H7B0x, DELAY_BLOCK_SDMMC2>::T& peripheral_t<STM32H7B0x, DELAY_BLOCK_SDMMC2>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7B0x, DELAY_BLOCK_SDMMC2>::T*>(0x48022800);
 
-typename peripheral_t<STM32H7B0x, Delay_Block_OCTOSPI1>::T& peripheral_t<STM32H7B0x, Delay_Block_OCTOSPI1>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7B0x, Delay_Block_OCTOSPI1>::T*>(0x52006000);
+typename peripheral_t<STM32H7B0x, DELAY_BLOCK_OCTOSPI1>::T& peripheral_t<STM32H7B0x, DELAY_BLOCK_OCTOSPI1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7B0x, DELAY_BLOCK_OCTOSPI1>::T*>(0x52006000);
 
-typename peripheral_t<STM32H7B0x, Delay_Block_OCTOSPI2>::T& peripheral_t<STM32H7B0x, Delay_Block_OCTOSPI2>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7B0x, Delay_Block_OCTOSPI2>::T*>(0x5200b000);
+typename peripheral_t<STM32H7B0x, DELAY_BLOCK_OCTOSPI2>::T& peripheral_t<STM32H7B0x, DELAY_BLOCK_OCTOSPI2>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7B0x, DELAY_BLOCK_OCTOSPI2>::T*>(0x5200b000);
 
-typename peripheral_t<STM32H7B3x, DELAY_Block_SDMMC1>::T& peripheral_t<STM32H7B3x, DELAY_Block_SDMMC1>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7B3x, DELAY_Block_SDMMC1>::T*>(0x52008000);
+typename peripheral_t<STM32H7B3x, DELAY_BLOCK_SDMMC1>::T& peripheral_t<STM32H7B3x, DELAY_BLOCK_SDMMC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7B3x, DELAY_BLOCK_SDMMC1>::T*>(0x52008000);
 
-typename peripheral_t<STM32H7B3x, DELAY_Block_SDMMC2>::T& peripheral_t<STM32H7B3x, DELAY_Block_SDMMC2>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7B3x, DELAY_Block_SDMMC2>::T*>(0x48022800);
+typename peripheral_t<STM32H7B3x, DELAY_BLOCK_SDMMC2>::T& peripheral_t<STM32H7B3x, DELAY_BLOCK_SDMMC2>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7B3x, DELAY_BLOCK_SDMMC2>::T*>(0x48022800);
 
-typename peripheral_t<STM32H7B3x, Delay_Block_OCTOSPI1>::T& peripheral_t<STM32H7B3x, Delay_Block_OCTOSPI1>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7B3x, Delay_Block_OCTOSPI1>::T*>(0x52006000);
+typename peripheral_t<STM32H7B3x, DELAY_BLOCK_OCTOSPI1>::T& peripheral_t<STM32H7B3x, DELAY_BLOCK_OCTOSPI1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7B3x, DELAY_BLOCK_OCTOSPI1>::T*>(0x52006000);
 
-typename peripheral_t<STM32H7B3x, Delay_Block_OCTOSPI2>::T& peripheral_t<STM32H7B3x, Delay_Block_OCTOSPI2>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7B3x, Delay_Block_OCTOSPI2>::T*>(0x5200b000);
+typename peripheral_t<STM32H7B3x, DELAY_BLOCK_OCTOSPI2>::T& peripheral_t<STM32H7B3x, DELAY_BLOCK_OCTOSPI2>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7B3x, DELAY_BLOCK_OCTOSPI2>::T*>(0x5200b000);
 
 typename peripheral_t<STM32H742x, DMA1>::T& peripheral_t<STM32H742x, DMA1>::V =
     *reinterpret_cast<typename peripheral_t<STM32H742x, DMA1>::T*>(0x40020000);
@@ -1203,59 +1203,59 @@ typename peripheral_t<STM32H7B0x, EXTI>::T& peripheral_t<STM32H7B0x, EXTI>::V =
 typename peripheral_t<STM32H7B3x, EXTI>::T& peripheral_t<STM32H7B3x, EXTI>::V =
     *reinterpret_cast<typename peripheral_t<STM32H7B3x, EXTI>::T*>(0x58000000);
 
-typename peripheral_t<STM32H742x, Ethernet_DMA>::T& peripheral_t<STM32H742x, Ethernet_DMA>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H742x, Ethernet_DMA>::T*>(0x40029000);
+typename peripheral_t<STM32H742x, ETHERNET_DMA>::T& peripheral_t<STM32H742x, ETHERNET_DMA>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H742x, ETHERNET_DMA>::T*>(0x40029000);
 
-typename peripheral_t<STM32H743, Ethernet_DMA>::T& peripheral_t<STM32H743, Ethernet_DMA>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H743, Ethernet_DMA>::T*>(0x40029000);
+typename peripheral_t<STM32H743, ETHERNET_DMA>::T& peripheral_t<STM32H743, ETHERNET_DMA>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H743, ETHERNET_DMA>::T*>(0x40029000);
 
-typename peripheral_t<STM32H753, Ethernet_DMA>::T& peripheral_t<STM32H753, Ethernet_DMA>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H753, Ethernet_DMA>::T*>(0x40029000);
+typename peripheral_t<STM32H753, ETHERNET_DMA>::T& peripheral_t<STM32H753, ETHERNET_DMA>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H753, ETHERNET_DMA>::T*>(0x40029000);
 
-typename peripheral_t<STM32H742x, Ethernet_MTL>::T& peripheral_t<STM32H742x, Ethernet_MTL>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H742x, Ethernet_MTL>::T*>(0x40028c00);
+typename peripheral_t<STM32H742x, ETHERNET_MTL>::T& peripheral_t<STM32H742x, ETHERNET_MTL>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H742x, ETHERNET_MTL>::T*>(0x40028c00);
 
-typename peripheral_t<STM32H743, Ethernet_MTL>::T& peripheral_t<STM32H743, Ethernet_MTL>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H743, Ethernet_MTL>::T*>(0x40028c00);
+typename peripheral_t<STM32H743, ETHERNET_MTL>::T& peripheral_t<STM32H743, ETHERNET_MTL>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H743, ETHERNET_MTL>::T*>(0x40028c00);
 
-typename peripheral_t<STM32H753, Ethernet_MTL>::T& peripheral_t<STM32H753, Ethernet_MTL>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H753, Ethernet_MTL>::T*>(0x40028c00);
+typename peripheral_t<STM32H753, ETHERNET_MTL>::T& peripheral_t<STM32H753, ETHERNET_MTL>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H753, ETHERNET_MTL>::T*>(0x40028c00);
 
-typename peripheral_t<STM32H742x, Ethernet_MAC>::T& peripheral_t<STM32H742x, Ethernet_MAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H742x, Ethernet_MAC>::T*>(0x40028000);
+typename peripheral_t<STM32H742x, ETHERNET_MAC>::T& peripheral_t<STM32H742x, ETHERNET_MAC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H742x, ETHERNET_MAC>::T*>(0x40028000);
 
-typename peripheral_t<STM32H743, Ethernet_MAC>::T& peripheral_t<STM32H743, Ethernet_MAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H743, Ethernet_MAC>::T*>(0x40028000);
+typename peripheral_t<STM32H743, ETHERNET_MAC>::T& peripheral_t<STM32H743, ETHERNET_MAC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H743, ETHERNET_MAC>::T*>(0x40028000);
 
-typename peripheral_t<STM32H753, Ethernet_MAC>::T& peripheral_t<STM32H753, Ethernet_MAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H753, Ethernet_MAC>::T*>(0x40028000);
+typename peripheral_t<STM32H753, ETHERNET_MAC>::T& peripheral_t<STM32H753, ETHERNET_MAC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H753, ETHERNET_MAC>::T*>(0x40028000);
 
-typename peripheral_t<STM32H745_CM4, Ethernet_MAC>::T& peripheral_t<STM32H745_CM4, Ethernet_MAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H745_CM4, Ethernet_MAC>::T*>(0x40028000);
+typename peripheral_t<STM32H745_CM4, ETHERNET_MAC>::T& peripheral_t<STM32H745_CM4, ETHERNET_MAC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H745_CM4, ETHERNET_MAC>::T*>(0x40028000);
 
-typename peripheral_t<STM32H745_CM7, Ethernet_MAC>::T& peripheral_t<STM32H745_CM7, Ethernet_MAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H745_CM7, Ethernet_MAC>::T*>(0x40028000);
+typename peripheral_t<STM32H745_CM7, ETHERNET_MAC>::T& peripheral_t<STM32H745_CM7, ETHERNET_MAC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H745_CM7, ETHERNET_MAC>::T*>(0x40028000);
 
-typename peripheral_t<STM32H747_CM4, Ethernet_MAC>::T& peripheral_t<STM32H747_CM4, Ethernet_MAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H747_CM4, Ethernet_MAC>::T*>(0x40028000);
+typename peripheral_t<STM32H747_CM4, ETHERNET_MAC>::T& peripheral_t<STM32H747_CM4, ETHERNET_MAC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H747_CM4, ETHERNET_MAC>::T*>(0x40028000);
 
-typename peripheral_t<STM32H747_CM7, Ethernet_MAC>::T& peripheral_t<STM32H747_CM7, Ethernet_MAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H747_CM7, Ethernet_MAC>::T*>(0x40028000);
+typename peripheral_t<STM32H747_CM7, ETHERNET_MAC>::T& peripheral_t<STM32H747_CM7, ETHERNET_MAC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H747_CM7, ETHERNET_MAC>::T*>(0x40028000);
 
-typename peripheral_t<STM32H755_CM4, Ethernet_MAC>::T& peripheral_t<STM32H755_CM4, Ethernet_MAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H755_CM4, Ethernet_MAC>::T*>(0x40028000);
+typename peripheral_t<STM32H755_CM4, ETHERNET_MAC>::T& peripheral_t<STM32H755_CM4, ETHERNET_MAC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H755_CM4, ETHERNET_MAC>::T*>(0x40028000);
 
-typename peripheral_t<STM32H755_CM7, Ethernet_MAC>::T& peripheral_t<STM32H755_CM7, Ethernet_MAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H755_CM7, Ethernet_MAC>::T*>(0x40028000);
+typename peripheral_t<STM32H755_CM7, ETHERNET_MAC>::T& peripheral_t<STM32H755_CM7, ETHERNET_MAC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H755_CM7, ETHERNET_MAC>::T*>(0x40028000);
 
-typename peripheral_t<STM32H757_CM4, Ethernet_MAC>::T& peripheral_t<STM32H757_CM4, Ethernet_MAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H757_CM4, Ethernet_MAC>::T*>(0x40028000);
+typename peripheral_t<STM32H757_CM4, ETHERNET_MAC>::T& peripheral_t<STM32H757_CM4, ETHERNET_MAC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H757_CM4, ETHERNET_MAC>::T*>(0x40028000);
 
-typename peripheral_t<STM32H757_CM7, Ethernet_MAC>::T& peripheral_t<STM32H757_CM7, Ethernet_MAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H757_CM7, Ethernet_MAC>::T*>(0x40028000);
+typename peripheral_t<STM32H757_CM7, ETHERNET_MAC>::T& peripheral_t<STM32H757_CM7, ETHERNET_MAC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H757_CM7, ETHERNET_MAC>::T*>(0x40028000);
 
-typename peripheral_t<STM32H750x, Ethernet_MAC>::T& peripheral_t<STM32H750x, Ethernet_MAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H750x, Ethernet_MAC>::T*>(0x40028000);
+typename peripheral_t<STM32H750x, ETHERNET_MAC>::T& peripheral_t<STM32H750x, ETHERNET_MAC>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H750x, ETHERNET_MAC>::T*>(0x40028000);
 
 typename peripheral_t<STM32H742x, FDCAN1>::T& peripheral_t<STM32H742x, FDCAN1>::V =
     *reinterpret_cast<typename peripheral_t<STM32H742x, FDCAN1>::T*>(0x4000a000);
@@ -1527,50 +1527,50 @@ typename peripheral_t<STM32H7B0x, FPU>::T& peripheral_t<STM32H7B0x, FPU>::V =
 typename peripheral_t<STM32H7B3x, FPU>::T& peripheral_t<STM32H7B3x, FPU>::V =
     *reinterpret_cast<typename peripheral_t<STM32H7B3x, FPU>::T*>(0xe000ef34);
 
-typename peripheral_t<STM32H742x, Flash>::T& peripheral_t<STM32H742x, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H742x, Flash>::T*>(0x52002000);
+typename peripheral_t<STM32H742x, FLASH>::T& peripheral_t<STM32H742x, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H742x, FLASH>::T*>(0x52002000);
 
-typename peripheral_t<STM32H743, Flash>::T& peripheral_t<STM32H743, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H743, Flash>::T*>(0x52002000);
+typename peripheral_t<STM32H743, FLASH>::T& peripheral_t<STM32H743, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H743, FLASH>::T*>(0x52002000);
 
-typename peripheral_t<STM32H745_CM4, Flash>::T& peripheral_t<STM32H745_CM4, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H745_CM4, Flash>::T*>(0x52002000);
+typename peripheral_t<STM32H745_CM4, FLASH>::T& peripheral_t<STM32H745_CM4, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H745_CM4, FLASH>::T*>(0x52002000);
 
-typename peripheral_t<STM32H745_CM7, Flash>::T& peripheral_t<STM32H745_CM7, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H745_CM7, Flash>::T*>(0x52002000);
+typename peripheral_t<STM32H745_CM7, FLASH>::T& peripheral_t<STM32H745_CM7, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H745_CM7, FLASH>::T*>(0x52002000);
 
-typename peripheral_t<STM32H747_CM4, Flash>::T& peripheral_t<STM32H747_CM4, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H747_CM4, Flash>::T*>(0x52002000);
+typename peripheral_t<STM32H747_CM4, FLASH>::T& peripheral_t<STM32H747_CM4, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H747_CM4, FLASH>::T*>(0x52002000);
 
-typename peripheral_t<STM32H747_CM7, Flash>::T& peripheral_t<STM32H747_CM7, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H747_CM7, Flash>::T*>(0x52002000);
+typename peripheral_t<STM32H747_CM7, FLASH>::T& peripheral_t<STM32H747_CM7, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H747_CM7, FLASH>::T*>(0x52002000);
 
-typename peripheral_t<STM32H750x, Flash>::T& peripheral_t<STM32H750x, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H750x, Flash>::T*>(0x52002000);
+typename peripheral_t<STM32H750x, FLASH>::T& peripheral_t<STM32H750x, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H750x, FLASH>::T*>(0x52002000);
 
-typename peripheral_t<STM32H753, Flash>::T& peripheral_t<STM32H753, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H753, Flash>::T*>(0x52002000);
+typename peripheral_t<STM32H753, FLASH>::T& peripheral_t<STM32H753, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H753, FLASH>::T*>(0x52002000);
 
-typename peripheral_t<STM32H755_CM4, Flash>::T& peripheral_t<STM32H755_CM4, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H755_CM4, Flash>::T*>(0x52002000);
+typename peripheral_t<STM32H755_CM4, FLASH>::T& peripheral_t<STM32H755_CM4, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H755_CM4, FLASH>::T*>(0x52002000);
 
-typename peripheral_t<STM32H755_CM7, Flash>::T& peripheral_t<STM32H755_CM7, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H755_CM7, Flash>::T*>(0x52002000);
+typename peripheral_t<STM32H755_CM7, FLASH>::T& peripheral_t<STM32H755_CM7, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H755_CM7, FLASH>::T*>(0x52002000);
 
-typename peripheral_t<STM32H757_CM4, Flash>::T& peripheral_t<STM32H757_CM4, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H757_CM4, Flash>::T*>(0x52002000);
+typename peripheral_t<STM32H757_CM4, FLASH>::T& peripheral_t<STM32H757_CM4, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H757_CM4, FLASH>::T*>(0x52002000);
 
-typename peripheral_t<STM32H757_CM7, Flash>::T& peripheral_t<STM32H757_CM7, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H757_CM7, Flash>::T*>(0x52002000);
+typename peripheral_t<STM32H757_CM7, FLASH>::T& peripheral_t<STM32H757_CM7, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H757_CM7, FLASH>::T*>(0x52002000);
 
-typename peripheral_t<STM32H7B0x, Flash>::T& peripheral_t<STM32H7B0x, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7B0x, Flash>::T*>(0x52002000);
+typename peripheral_t<STM32H7B0x, FLASH>::T& peripheral_t<STM32H7B0x, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7B0x, FLASH>::T*>(0x52002000);
 
-typename peripheral_t<STM32H7B3x, Flash>::T& peripheral_t<STM32H7B3x, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7B3x, Flash>::T*>(0x52002000);
+typename peripheral_t<STM32H7B3x, FLASH>::T& peripheral_t<STM32H7B3x, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7B3x, FLASH>::T*>(0x52002000);
 
-typename peripheral_t<STM32H7A3x, Flash>::T& peripheral_t<STM32H7A3x, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7A3x, Flash>::T*>(0x52002000);
+typename peripheral_t<STM32H7A3x, FLASH>::T& peripheral_t<STM32H7A3x, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7A3x, FLASH>::T*>(0x52002000);
 
 typename peripheral_t<STM32H742x, GPIOA>::T& peripheral_t<STM32H742x, GPIOA>::V =
     *reinterpret_cast<typename peripheral_t<STM32H742x, GPIOA>::T*>(0x58020000);
@@ -2091,50 +2091,50 @@ typename peripheral_t<STM32H7B0x, HASH>::T& peripheral_t<STM32H7B0x, HASH>::V =
 typename peripheral_t<STM32H7B3x, HASH>::T& peripheral_t<STM32H7B3x, HASH>::V =
     *reinterpret_cast<typename peripheral_t<STM32H7B3x, HASH>::T*>(0x48021400);
 
-typename peripheral_t<STM32H742x, HRTIM_Master>::T& peripheral_t<STM32H742x, HRTIM_Master>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H742x, HRTIM_Master>::T*>(0x40017400);
+typename peripheral_t<STM32H742x, HRTIM_MASTER>::T& peripheral_t<STM32H742x, HRTIM_MASTER>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H742x, HRTIM_MASTER>::T*>(0x40017400);
 
-typename peripheral_t<STM32H743, HRTIM_Master>::T& peripheral_t<STM32H743, HRTIM_Master>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H743, HRTIM_Master>::T*>(0x40017400);
+typename peripheral_t<STM32H743, HRTIM_MASTER>::T& peripheral_t<STM32H743, HRTIM_MASTER>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H743, HRTIM_MASTER>::T*>(0x40017400);
 
-typename peripheral_t<STM32H745_CM4, HRTIM_Master>::T& peripheral_t<STM32H745_CM4, HRTIM_Master>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H745_CM4, HRTIM_Master>::T*>(0x40017400);
+typename peripheral_t<STM32H745_CM4, HRTIM_MASTER>::T& peripheral_t<STM32H745_CM4, HRTIM_MASTER>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H745_CM4, HRTIM_MASTER>::T*>(0x40017400);
 
-typename peripheral_t<STM32H745_CM7, HRTIM_Master>::T& peripheral_t<STM32H745_CM7, HRTIM_Master>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H745_CM7, HRTIM_Master>::T*>(0x40017400);
+typename peripheral_t<STM32H745_CM7, HRTIM_MASTER>::T& peripheral_t<STM32H745_CM7, HRTIM_MASTER>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H745_CM7, HRTIM_MASTER>::T*>(0x40017400);
 
-typename peripheral_t<STM32H747_CM4, HRTIM_Master>::T& peripheral_t<STM32H747_CM4, HRTIM_Master>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H747_CM4, HRTIM_Master>::T*>(0x40017400);
+typename peripheral_t<STM32H747_CM4, HRTIM_MASTER>::T& peripheral_t<STM32H747_CM4, HRTIM_MASTER>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H747_CM4, HRTIM_MASTER>::T*>(0x40017400);
 
-typename peripheral_t<STM32H747_CM7, HRTIM_Master>::T& peripheral_t<STM32H747_CM7, HRTIM_Master>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H747_CM7, HRTIM_Master>::T*>(0x40017400);
+typename peripheral_t<STM32H747_CM7, HRTIM_MASTER>::T& peripheral_t<STM32H747_CM7, HRTIM_MASTER>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H747_CM7, HRTIM_MASTER>::T*>(0x40017400);
 
-typename peripheral_t<STM32H750x, HRTIM_Master>::T& peripheral_t<STM32H750x, HRTIM_Master>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H750x, HRTIM_Master>::T*>(0x40017400);
+typename peripheral_t<STM32H750x, HRTIM_MASTER>::T& peripheral_t<STM32H750x, HRTIM_MASTER>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H750x, HRTIM_MASTER>::T*>(0x40017400);
 
-typename peripheral_t<STM32H753, HRTIM_Master>::T& peripheral_t<STM32H753, HRTIM_Master>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H753, HRTIM_Master>::T*>(0x40017400);
+typename peripheral_t<STM32H753, HRTIM_MASTER>::T& peripheral_t<STM32H753, HRTIM_MASTER>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H753, HRTIM_MASTER>::T*>(0x40017400);
 
-typename peripheral_t<STM32H755_CM4, HRTIM_Master>::T& peripheral_t<STM32H755_CM4, HRTIM_Master>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H755_CM4, HRTIM_Master>::T*>(0x40017400);
+typename peripheral_t<STM32H755_CM4, HRTIM_MASTER>::T& peripheral_t<STM32H755_CM4, HRTIM_MASTER>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H755_CM4, HRTIM_MASTER>::T*>(0x40017400);
 
-typename peripheral_t<STM32H755_CM7, HRTIM_Master>::T& peripheral_t<STM32H755_CM7, HRTIM_Master>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H755_CM7, HRTIM_Master>::T*>(0x40017400);
+typename peripheral_t<STM32H755_CM7, HRTIM_MASTER>::T& peripheral_t<STM32H755_CM7, HRTIM_MASTER>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H755_CM7, HRTIM_MASTER>::T*>(0x40017400);
 
-typename peripheral_t<STM32H757_CM4, HRTIM_Master>::T& peripheral_t<STM32H757_CM4, HRTIM_Master>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H757_CM4, HRTIM_Master>::T*>(0x40017400);
+typename peripheral_t<STM32H757_CM4, HRTIM_MASTER>::T& peripheral_t<STM32H757_CM4, HRTIM_MASTER>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H757_CM4, HRTIM_MASTER>::T*>(0x40017400);
 
-typename peripheral_t<STM32H757_CM7, HRTIM_Master>::T& peripheral_t<STM32H757_CM7, HRTIM_Master>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H757_CM7, HRTIM_Master>::T*>(0x40017400);
+typename peripheral_t<STM32H757_CM7, HRTIM_MASTER>::T& peripheral_t<STM32H757_CM7, HRTIM_MASTER>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H757_CM7, HRTIM_MASTER>::T*>(0x40017400);
 
-typename peripheral_t<STM32H7A3x, HRTIM_Master>::T& peripheral_t<STM32H7A3x, HRTIM_Master>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7A3x, HRTIM_Master>::T*>(0x40017400);
+typename peripheral_t<STM32H7A3x, HRTIM_MASTER>::T& peripheral_t<STM32H7A3x, HRTIM_MASTER>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7A3x, HRTIM_MASTER>::T*>(0x40017400);
 
-typename peripheral_t<STM32H7B0x, HRTIM_Master>::T& peripheral_t<STM32H7B0x, HRTIM_Master>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7B0x, HRTIM_Master>::T*>(0x40017400);
+typename peripheral_t<STM32H7B0x, HRTIM_MASTER>::T& peripheral_t<STM32H7B0x, HRTIM_MASTER>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7B0x, HRTIM_MASTER>::T*>(0x40017400);
 
-typename peripheral_t<STM32H7B3x, HRTIM_Master>::T& peripheral_t<STM32H7B3x, HRTIM_Master>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7B3x, HRTIM_Master>::T*>(0x40017400);
+typename peripheral_t<STM32H7B3x, HRTIM_MASTER>::T& peripheral_t<STM32H7B3x, HRTIM_MASTER>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7B3x, HRTIM_MASTER>::T*>(0x40017400);
 
 typename peripheral_t<STM32H742x, HRTIM_TIMA>::T& peripheral_t<STM32H742x, HRTIM_TIMA>::V =
     *reinterpret_cast<typename peripheral_t<STM32H742x, HRTIM_TIMA>::T*>(0x40017480);
@@ -2361,50 +2361,50 @@ typename peripheral_t<STM32H7B0x, HRTIM_TIME>::T& peripheral_t<STM32H7B0x, HRTIM
 typename peripheral_t<STM32H7B3x, HRTIM_TIME>::T& peripheral_t<STM32H7B3x, HRTIM_TIME>::V =
     *reinterpret_cast<typename peripheral_t<STM32H7B3x, HRTIM_TIME>::T*>(0x40017680);
 
-typename peripheral_t<STM32H742x, HRTIM_Common>::T& peripheral_t<STM32H742x, HRTIM_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H742x, HRTIM_Common>::T*>(0x40017780);
+typename peripheral_t<STM32H742x, HRTIM_COMMON>::T& peripheral_t<STM32H742x, HRTIM_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H742x, HRTIM_COMMON>::T*>(0x40017780);
 
-typename peripheral_t<STM32H743, HRTIM_Common>::T& peripheral_t<STM32H743, HRTIM_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H743, HRTIM_Common>::T*>(0x40017780);
+typename peripheral_t<STM32H743, HRTIM_COMMON>::T& peripheral_t<STM32H743, HRTIM_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H743, HRTIM_COMMON>::T*>(0x40017780);
 
-typename peripheral_t<STM32H745_CM4, HRTIM_Common>::T& peripheral_t<STM32H745_CM4, HRTIM_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H745_CM4, HRTIM_Common>::T*>(0x40017780);
+typename peripheral_t<STM32H745_CM4, HRTIM_COMMON>::T& peripheral_t<STM32H745_CM4, HRTIM_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H745_CM4, HRTIM_COMMON>::T*>(0x40017780);
 
-typename peripheral_t<STM32H745_CM7, HRTIM_Common>::T& peripheral_t<STM32H745_CM7, HRTIM_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H745_CM7, HRTIM_Common>::T*>(0x40017780);
+typename peripheral_t<STM32H745_CM7, HRTIM_COMMON>::T& peripheral_t<STM32H745_CM7, HRTIM_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H745_CM7, HRTIM_COMMON>::T*>(0x40017780);
 
-typename peripheral_t<STM32H747_CM4, HRTIM_Common>::T& peripheral_t<STM32H747_CM4, HRTIM_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H747_CM4, HRTIM_Common>::T*>(0x40017780);
+typename peripheral_t<STM32H747_CM4, HRTIM_COMMON>::T& peripheral_t<STM32H747_CM4, HRTIM_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H747_CM4, HRTIM_COMMON>::T*>(0x40017780);
 
-typename peripheral_t<STM32H747_CM7, HRTIM_Common>::T& peripheral_t<STM32H747_CM7, HRTIM_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H747_CM7, HRTIM_Common>::T*>(0x40017780);
+typename peripheral_t<STM32H747_CM7, HRTIM_COMMON>::T& peripheral_t<STM32H747_CM7, HRTIM_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H747_CM7, HRTIM_COMMON>::T*>(0x40017780);
 
-typename peripheral_t<STM32H750x, HRTIM_Common>::T& peripheral_t<STM32H750x, HRTIM_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H750x, HRTIM_Common>::T*>(0x40017780);
+typename peripheral_t<STM32H750x, HRTIM_COMMON>::T& peripheral_t<STM32H750x, HRTIM_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H750x, HRTIM_COMMON>::T*>(0x40017780);
 
-typename peripheral_t<STM32H753, HRTIM_Common>::T& peripheral_t<STM32H753, HRTIM_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H753, HRTIM_Common>::T*>(0x40017780);
+typename peripheral_t<STM32H753, HRTIM_COMMON>::T& peripheral_t<STM32H753, HRTIM_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H753, HRTIM_COMMON>::T*>(0x40017780);
 
-typename peripheral_t<STM32H755_CM4, HRTIM_Common>::T& peripheral_t<STM32H755_CM4, HRTIM_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H755_CM4, HRTIM_Common>::T*>(0x40017780);
+typename peripheral_t<STM32H755_CM4, HRTIM_COMMON>::T& peripheral_t<STM32H755_CM4, HRTIM_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H755_CM4, HRTIM_COMMON>::T*>(0x40017780);
 
-typename peripheral_t<STM32H755_CM7, HRTIM_Common>::T& peripheral_t<STM32H755_CM7, HRTIM_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H755_CM7, HRTIM_Common>::T*>(0x40017780);
+typename peripheral_t<STM32H755_CM7, HRTIM_COMMON>::T& peripheral_t<STM32H755_CM7, HRTIM_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H755_CM7, HRTIM_COMMON>::T*>(0x40017780);
 
-typename peripheral_t<STM32H757_CM4, HRTIM_Common>::T& peripheral_t<STM32H757_CM4, HRTIM_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H757_CM4, HRTIM_Common>::T*>(0x40017780);
+typename peripheral_t<STM32H757_CM4, HRTIM_COMMON>::T& peripheral_t<STM32H757_CM4, HRTIM_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H757_CM4, HRTIM_COMMON>::T*>(0x40017780);
 
-typename peripheral_t<STM32H757_CM7, HRTIM_Common>::T& peripheral_t<STM32H757_CM7, HRTIM_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H757_CM7, HRTIM_Common>::T*>(0x40017780);
+typename peripheral_t<STM32H757_CM7, HRTIM_COMMON>::T& peripheral_t<STM32H757_CM7, HRTIM_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H757_CM7, HRTIM_COMMON>::T*>(0x40017780);
 
-typename peripheral_t<STM32H7A3x, HRTIM_Common>::T& peripheral_t<STM32H7A3x, HRTIM_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7A3x, HRTIM_Common>::T*>(0x40017780);
+typename peripheral_t<STM32H7A3x, HRTIM_COMMON>::T& peripheral_t<STM32H7A3x, HRTIM_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7A3x, HRTIM_COMMON>::T*>(0x40017780);
 
-typename peripheral_t<STM32H7B0x, HRTIM_Common>::T& peripheral_t<STM32H7B0x, HRTIM_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7B0x, HRTIM_Common>::T*>(0x40017780);
+typename peripheral_t<STM32H7B0x, HRTIM_COMMON>::T& peripheral_t<STM32H7B0x, HRTIM_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7B0x, HRTIM_COMMON>::T*>(0x40017780);
 
-typename peripheral_t<STM32H7B3x, HRTIM_Common>::T& peripheral_t<STM32H7B3x, HRTIM_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7B3x, HRTIM_Common>::T*>(0x40017780);
+typename peripheral_t<STM32H7B3x, HRTIM_COMMON>::T& peripheral_t<STM32H7B3x, HRTIM_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7B3x, HRTIM_COMMON>::T*>(0x40017780);
 
 typename peripheral_t<STM32H742x, HSEM>::T& peripheral_t<STM32H742x, HSEM>::V =
     *reinterpret_cast<typename peripheral_t<STM32H742x, HSEM>::T*>(0x58026400);
@@ -3342,14 +3342,14 @@ typename peripheral_t<STM32H7B3x, OCTOSPI2>::T& peripheral_t<STM32H7B3x, OCTOSPI
 typename peripheral_t<STM32H7B3x, OCTOSPI1_CONTROL_REGISTER>::T& peripheral_t<STM32H7B3x, OCTOSPI1_CONTROL_REGISTER>::V =
     *reinterpret_cast<typename peripheral_t<STM32H7B3x, OCTOSPI1_CONTROL_REGISTER>::T*>(0x52005000);
 
-typename peripheral_t<STM32H7A3x, OctoSPII_O_Manager>::T& peripheral_t<STM32H7A3x, OctoSPII_O_Manager>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7A3x, OctoSPII_O_Manager>::T*>(0x5200b400);
+typename peripheral_t<STM32H7A3x, OCTOSPII_O_MANAGER>::T& peripheral_t<STM32H7A3x, OCTOSPII_O_MANAGER>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7A3x, OCTOSPII_O_MANAGER>::T*>(0x5200b400);
 
-typename peripheral_t<STM32H7B0x, OctoSPII_O_Manager>::T& peripheral_t<STM32H7B0x, OctoSPII_O_Manager>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7B0x, OctoSPII_O_Manager>::T*>(0x5200b400);
+typename peripheral_t<STM32H7B0x, OCTOSPII_O_MANAGER>::T& peripheral_t<STM32H7B0x, OCTOSPII_O_MANAGER>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7B0x, OCTOSPII_O_MANAGER>::T*>(0x5200b400);
 
-typename peripheral_t<STM32H7B3x, OctoSPII_O_Manager>::T& peripheral_t<STM32H7B3x, OctoSPII_O_Manager>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7B3x, OctoSPII_O_Manager>::T*>(0x5200b400);
+typename peripheral_t<STM32H7B3x, OCTOSPII_O_MANAGER>::T& peripheral_t<STM32H7B3x, OCTOSPII_O_MANAGER>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7B3x, OCTOSPII_O_MANAGER>::T*>(0x5200b400);
 
 typename peripheral_t<STM32H742x, PF>::T& peripheral_t<STM32H742x, PF>::V =
     *reinterpret_cast<typename peripheral_t<STM32H742x, PF>::T*>(0xe000ed78);

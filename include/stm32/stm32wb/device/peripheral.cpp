@@ -153,17 +153,17 @@ typename peripheral_t<STM32WB50_CM4, FPU_CPACR>::T& peripheral_t<STM32WB50_CM4, 
 typename peripheral_t<STM32WB55_CM4, FPU_CPACR>::T& peripheral_t<STM32WB55_CM4, FPU_CPACR>::V =
     *reinterpret_cast<typename peripheral_t<STM32WB55_CM4, FPU_CPACR>::T*>(0xe000ed88);
 
-typename peripheral_t<STM32WB30_CM4, Flash>::T& peripheral_t<STM32WB30_CM4, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32WB30_CM4, Flash>::T*>(0x58004000);
+typename peripheral_t<STM32WB30_CM4, FLASH>::T& peripheral_t<STM32WB30_CM4, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32WB30_CM4, FLASH>::T*>(0x58004000);
 
-typename peripheral_t<STM32WB35_CM4, Flash>::T& peripheral_t<STM32WB35_CM4, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32WB35_CM4, Flash>::T*>(0x58004000);
+typename peripheral_t<STM32WB35_CM4, FLASH>::T& peripheral_t<STM32WB35_CM4, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32WB35_CM4, FLASH>::T*>(0x58004000);
 
-typename peripheral_t<STM32WB50_CM4, Flash>::T& peripheral_t<STM32WB50_CM4, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32WB50_CM4, Flash>::T*>(0x58004000);
+typename peripheral_t<STM32WB50_CM4, FLASH>::T& peripheral_t<STM32WB50_CM4, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32WB50_CM4, FLASH>::T*>(0x58004000);
 
-typename peripheral_t<STM32WB55_CM4, Flash>::T& peripheral_t<STM32WB55_CM4, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32WB55_CM4, Flash>::T*>(0x58004000);
+typename peripheral_t<STM32WB55_CM4, FLASH>::T& peripheral_t<STM32WB55_CM4, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32WB55_CM4, FLASH>::T*>(0x58004000);
 
 typename peripheral_t<STM32WB30_CM4, GPIOA>::T& peripheral_t<STM32WB30_CM4, GPIOA>::V =
     *reinterpret_cast<typename peripheral_t<STM32WB30_CM4, GPIOA>::T*>(0x48000000);

@@ -40,7 +40,7 @@ struct clock_control_t<peripheral_t<STM32F0x0, DMA1>>
 };
 
 template<>
-struct clock_control_t<peripheral_t<STM32F0x0, FLITF>>
+struct clock_control_t<peripheral_t<STM32F0x0, FLASH>>
 {
     static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_FLITFEN; }
     static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_FLITFEN; }
@@ -313,7 +313,7 @@ struct clock_control_t<peripheral_t<STM32F0x1, DMA2>>
 };
 
 template<>
-struct clock_control_t<peripheral_t<STM32F0x1, FLITF>>
+struct clock_control_t<peripheral_t<STM32F0x1, FLASH>>
 {
     static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_FLITFEN; }
     static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_FLITFEN; }
@@ -618,7 +618,7 @@ struct clock_control_t<peripheral_t<STM32F0x2, DMA1>>
 };
 
 template<>
-struct clock_control_t<peripheral_t<STM32F0x2, FLITF>>
+struct clock_control_t<peripheral_t<STM32F0x2, FLASH>>
 {
     static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_FLITFEN; }
     static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_FLITFEN; }
@@ -901,7 +901,7 @@ struct clock_control_t<peripheral_t<STM32F0x8, DMA2>>
 };
 
 template<>
-struct clock_control_t<peripheral_t<STM32F0x8, FLITF>>
+struct clock_control_t<peripheral_t<STM32F0x8, FLASH>>
 {
     static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_FLITFEN; }
     static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_FLITFEN; }

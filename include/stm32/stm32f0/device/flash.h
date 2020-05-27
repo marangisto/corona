@@ -153,32 +153,32 @@ struct stm32f0x1_flash_t
 
 
 template<>
-struct peripheral_t<STM32F0x0, Flash>
+struct peripheral_t<STM32F0x0, FLASH>
 {
     typedef stm32f0x0_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F0x1, Flash>
+struct peripheral_t<STM32F0x1, FLASH>
 {
     typedef stm32f0x1_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F0x2, Flash>
+struct peripheral_t<STM32F0x2, FLASH>
 {
     typedef stm32f0x1_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F0x8, Flash>
+struct peripheral_t<STM32F0x8, FLASH>
 {
     typedef stm32f0x1_flash_t T;
     static T& V;
 };
 
-using flash_t = peripheral_t<mcu_svd, Flash>;
+using flash_t = peripheral_t<mcu_svd, FLASH>;
 

@@ -6,17 +6,17 @@
 //
 ////
 
-typename peripheral_t<STM32L552, ADC_Common>::T& peripheral_t<STM32L552, ADC_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32L552, ADC_Common>::T*>(0x42028300);
+typename peripheral_t<STM32L552, ADC_COMMON>::T& peripheral_t<STM32L552, ADC_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32L552, ADC_COMMON>::T*>(0x42028300);
 
-typename peripheral_t<STM32L552, SEC_ADC_Common>::T& peripheral_t<STM32L552, SEC_ADC_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32L552, SEC_ADC_Common>::T*>(0x52028300);
+typename peripheral_t<STM32L552, SEC_ADC_COMMON>::T& peripheral_t<STM32L552, SEC_ADC_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32L552, SEC_ADC_COMMON>::T*>(0x52028300);
 
-typename peripheral_t<STM32L562, ADC_Common>::T& peripheral_t<STM32L562, ADC_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32L562, ADC_Common>::T*>(0x42028300);
+typename peripheral_t<STM32L562, ADC_COMMON>::T& peripheral_t<STM32L562, ADC_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32L562, ADC_COMMON>::T*>(0x42028300);
 
-typename peripheral_t<STM32L562, SEC_ADC_Common>::T& peripheral_t<STM32L562, SEC_ADC_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32L562, SEC_ADC_Common>::T*>(0x52028300);
+typename peripheral_t<STM32L562, SEC_ADC_COMMON>::T& peripheral_t<STM32L562, SEC_ADC_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32L562, SEC_ADC_COMMON>::T*>(0x52028300);
 
 typename peripheral_t<STM32L552, ADC>::T& peripheral_t<STM32L552, ADC>::V =
     *reinterpret_cast<typename peripheral_t<STM32L552, ADC>::T*>(0x42028000);
@@ -372,17 +372,17 @@ typename peripheral_t<STM32L562, SEC_I2C3>::T& peripheral_t<STM32L562, SEC_I2C3>
 typename peripheral_t<STM32L562, SEC_I2C4>::T& peripheral_t<STM32L562, SEC_I2C4>::V =
     *reinterpret_cast<typename peripheral_t<STM32L562, SEC_I2C4>::T*>(0x50008400);
 
-typename peripheral_t<STM32L552, ICache>::T& peripheral_t<STM32L552, ICache>::V =
-    *reinterpret_cast<typename peripheral_t<STM32L552, ICache>::T*>(0x40030400);
+typename peripheral_t<STM32L552, ICACHE>::T& peripheral_t<STM32L552, ICACHE>::V =
+    *reinterpret_cast<typename peripheral_t<STM32L552, ICACHE>::T*>(0x40030400);
 
-typename peripheral_t<STM32L552, SEC_ICache>::T& peripheral_t<STM32L552, SEC_ICache>::V =
-    *reinterpret_cast<typename peripheral_t<STM32L552, SEC_ICache>::T*>(0x50030400);
+typename peripheral_t<STM32L552, SEC_ICACHE>::T& peripheral_t<STM32L552, SEC_ICACHE>::V =
+    *reinterpret_cast<typename peripheral_t<STM32L552, SEC_ICACHE>::T*>(0x50030400);
 
-typename peripheral_t<STM32L562, ICache>::T& peripheral_t<STM32L562, ICache>::V =
-    *reinterpret_cast<typename peripheral_t<STM32L562, ICache>::T*>(0x40030400);
+typename peripheral_t<STM32L562, ICACHE>::T& peripheral_t<STM32L562, ICACHE>::V =
+    *reinterpret_cast<typename peripheral_t<STM32L562, ICACHE>::T*>(0x40030400);
 
-typename peripheral_t<STM32L562, SEC_ICache>::T& peripheral_t<STM32L562, SEC_ICache>::V =
-    *reinterpret_cast<typename peripheral_t<STM32L562, SEC_ICache>::T*>(0x50030400);
+typename peripheral_t<STM32L562, SEC_ICACHE>::T& peripheral_t<STM32L562, SEC_ICACHE>::V =
+    *reinterpret_cast<typename peripheral_t<STM32L562, SEC_ICACHE>::T*>(0x50030400);
 
 typename peripheral_t<STM32L552, IWDG>::T& peripheral_t<STM32L552, IWDG>::V =
     *reinterpret_cast<typename peripheral_t<STM32L552, IWDG>::T*>(0x40003000);

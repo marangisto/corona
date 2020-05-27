@@ -361,11 +361,11 @@ struct stm32mp15xxx_aximc_mx_t
 
 
 template<>
-struct peripheral_t<STM32MP15xxx, AXIMC_Mx>
+struct peripheral_t<STM32MP15xxx, AXIMC_MX>
 {
     typedef stm32mp15xxx_aximc_mx_t T;
     static T& V;
 };
 
-using aximc_mx_t = peripheral_t<mcu_svd, AXIMC_Mx>;
+using aximc_mx_t = peripheral_t<mcu_svd, AXIMC_MX>;
 

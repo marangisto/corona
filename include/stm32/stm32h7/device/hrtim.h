@@ -3259,105 +3259,105 @@ struct stm32h742x_hrtim_time_t
 
 
 template<>
-struct peripheral_t<STM32H742x, HRTIM_Master>
+struct peripheral_t<STM32H742x, HRTIM_MASTER>
 {
     typedef stm32h742x_hrtim_master_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H743, HRTIM_Master>
+struct peripheral_t<STM32H743, HRTIM_MASTER>
 {
     typedef stm32h742x_hrtim_master_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H745_CM4, HRTIM_Master>
+struct peripheral_t<STM32H745_CM4, HRTIM_MASTER>
 {
     typedef stm32h742x_hrtim_master_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H745_CM7, HRTIM_Master>
+struct peripheral_t<STM32H745_CM7, HRTIM_MASTER>
 {
     typedef stm32h742x_hrtim_master_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H747_CM4, HRTIM_Master>
+struct peripheral_t<STM32H747_CM4, HRTIM_MASTER>
 {
     typedef stm32h742x_hrtim_master_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H747_CM7, HRTIM_Master>
+struct peripheral_t<STM32H747_CM7, HRTIM_MASTER>
 {
     typedef stm32h742x_hrtim_master_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H750x, HRTIM_Master>
+struct peripheral_t<STM32H750x, HRTIM_MASTER>
 {
     typedef stm32h742x_hrtim_master_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H753, HRTIM_Master>
+struct peripheral_t<STM32H753, HRTIM_MASTER>
 {
     typedef stm32h742x_hrtim_master_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H755_CM4, HRTIM_Master>
+struct peripheral_t<STM32H755_CM4, HRTIM_MASTER>
 {
     typedef stm32h742x_hrtim_master_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H755_CM7, HRTIM_Master>
+struct peripheral_t<STM32H755_CM7, HRTIM_MASTER>
 {
     typedef stm32h742x_hrtim_master_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H757_CM4, HRTIM_Master>
+struct peripheral_t<STM32H757_CM4, HRTIM_MASTER>
 {
     typedef stm32h742x_hrtim_master_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H757_CM7, HRTIM_Master>
+struct peripheral_t<STM32H757_CM7, HRTIM_MASTER>
 {
     typedef stm32h742x_hrtim_master_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7A3x, HRTIM_Master>
+struct peripheral_t<STM32H7A3x, HRTIM_MASTER>
 {
     typedef stm32h742x_hrtim_master_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7B0x, HRTIM_Master>
+struct peripheral_t<STM32H7B0x, HRTIM_MASTER>
 {
     typedef stm32h742x_hrtim_master_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7B3x, HRTIM_Master>
+struct peripheral_t<STM32H7B3x, HRTIM_MASTER>
 {
     typedef stm32h742x_hrtim_master_t T;
     static T& V;
@@ -3889,112 +3889,112 @@ struct peripheral_t<STM32H7B3x, HRTIM_TIME>
 };
 
 template<>
-struct peripheral_t<STM32H742x, HRTIM_Common>
+struct peripheral_t<STM32H742x, HRTIM_COMMON>
 {
     typedef stm32h742x_hrtim_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H743, HRTIM_Common>
+struct peripheral_t<STM32H743, HRTIM_COMMON>
 {
     typedef stm32h742x_hrtim_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H745_CM4, HRTIM_Common>
+struct peripheral_t<STM32H745_CM4, HRTIM_COMMON>
 {
     typedef stm32h742x_hrtim_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H745_CM7, HRTIM_Common>
+struct peripheral_t<STM32H745_CM7, HRTIM_COMMON>
 {
     typedef stm32h742x_hrtim_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H747_CM4, HRTIM_Common>
+struct peripheral_t<STM32H747_CM4, HRTIM_COMMON>
 {
     typedef stm32h742x_hrtim_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H747_CM7, HRTIM_Common>
+struct peripheral_t<STM32H747_CM7, HRTIM_COMMON>
 {
     typedef stm32h742x_hrtim_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H750x, HRTIM_Common>
+struct peripheral_t<STM32H750x, HRTIM_COMMON>
 {
     typedef stm32h742x_hrtim_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H753, HRTIM_Common>
+struct peripheral_t<STM32H753, HRTIM_COMMON>
 {
     typedef stm32h742x_hrtim_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H755_CM4, HRTIM_Common>
+struct peripheral_t<STM32H755_CM4, HRTIM_COMMON>
 {
     typedef stm32h742x_hrtim_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H755_CM7, HRTIM_Common>
+struct peripheral_t<STM32H755_CM7, HRTIM_COMMON>
 {
     typedef stm32h742x_hrtim_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H757_CM4, HRTIM_Common>
+struct peripheral_t<STM32H757_CM4, HRTIM_COMMON>
 {
     typedef stm32h742x_hrtim_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H757_CM7, HRTIM_Common>
+struct peripheral_t<STM32H757_CM7, HRTIM_COMMON>
 {
     typedef stm32h742x_hrtim_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7A3x, HRTIM_Common>
+struct peripheral_t<STM32H7A3x, HRTIM_COMMON>
 {
     typedef stm32h742x_hrtim_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7B0x, HRTIM_Common>
+struct peripheral_t<STM32H7B0x, HRTIM_COMMON>
 {
     typedef stm32h742x_hrtim_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7B3x, HRTIM_Common>
+struct peripheral_t<STM32H7B3x, HRTIM_COMMON>
 {
     typedef stm32h742x_hrtim_common_t T;
     static T& V;
 };
 
-using hrtim_common_t = peripheral_t<mcu_svd, HRTIM_Common>;
-using hrtim_master_t = peripheral_t<mcu_svd, HRTIM_Master>;
+using hrtim_common_t = peripheral_t<mcu_svd, HRTIM_COMMON>;
+using hrtim_master_t = peripheral_t<mcu_svd, HRTIM_MASTER>;
 using hrtim_tima_t = peripheral_t<mcu_svd, HRTIM_TIMA>;
 using hrtim_timb_t = peripheral_t<mcu_svd, HRTIM_TIMB>;
 using hrtim_timc_t = peripheral_t<mcu_svd, HRTIM_TIMC>;

@@ -36,358 +36,346 @@ struct stm32h742x_delay_block_sdmmc1_t
 
 
 template<>
-struct peripheral_t<STM32H742x, DELAY_Block_SDMMC1>
+struct peripheral_t<STM32H742x, DELAY_BLOCK_SDMMC1>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H742x, DELAY_Block_QUADSPI>
+struct peripheral_t<STM32H742x, DELAY_BLOCK_QUADSPI>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H742x, DELAY_Block_SDMMC2>
+struct peripheral_t<STM32H742x, DELAY_BLOCK_SDMMC2>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H743, DELAY_Block_SDMMC1>
+struct peripheral_t<STM32H743, DELAY_BLOCK_SDMMC1>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H743, DELAY_Block_QUADSPI>
+struct peripheral_t<STM32H743, DELAY_BLOCK_QUADSPI>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H743, DELAY_Block_SDMMC2>
+struct peripheral_t<STM32H743, DELAY_BLOCK_SDMMC2>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H745_CM4, DELAY_Block_SDMMC1>
+struct peripheral_t<STM32H745_CM4, DELAY_BLOCK_SDMMC1>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H745_CM4, DELAY_Block_QUADSPI>
+struct peripheral_t<STM32H745_CM4, DELAY_BLOCK_QUADSPI>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H745_CM4, DELAY_Block_SDMMC2>
+struct peripheral_t<STM32H745_CM4, DELAY_BLOCK_SDMMC2>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H745_CM7, DELAY_Block_SDMMC1>
+struct peripheral_t<STM32H745_CM7, DELAY_BLOCK_SDMMC1>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H745_CM7, DELAY_Block_QUADSPI>
+struct peripheral_t<STM32H745_CM7, DELAY_BLOCK_QUADSPI>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H745_CM7, DELAY_Block_SDMMC2>
+struct peripheral_t<STM32H745_CM7, DELAY_BLOCK_SDMMC2>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H747_CM4, DELAY_Block_SDMMC1>
+struct peripheral_t<STM32H747_CM4, DELAY_BLOCK_SDMMC1>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H747_CM4, DELAY_Block_QUADSPI>
+struct peripheral_t<STM32H747_CM4, DELAY_BLOCK_QUADSPI>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H747_CM4, DELAY_Block_SDMMC2>
+struct peripheral_t<STM32H747_CM4, DELAY_BLOCK_SDMMC2>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H747_CM7, DELAY_Block_SDMMC1>
+struct peripheral_t<STM32H747_CM7, DELAY_BLOCK_SDMMC1>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H747_CM7, DELAY_Block_QUADSPI>
+struct peripheral_t<STM32H747_CM7, DELAY_BLOCK_QUADSPI>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H747_CM7, DELAY_Block_SDMMC2>
+struct peripheral_t<STM32H747_CM7, DELAY_BLOCK_SDMMC2>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H750x, DELAY_Block_SDMMC1>
+struct peripheral_t<STM32H750x, DELAY_BLOCK_SDMMC1>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H750x, DELAY_Block_QUADSPI>
+struct peripheral_t<STM32H750x, DELAY_BLOCK_QUADSPI>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H750x, DELAY_Block_SDMMC2>
+struct peripheral_t<STM32H750x, DELAY_BLOCK_SDMMC2>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H753, DELAY_Block_SDMMC1>
+struct peripheral_t<STM32H753, DELAY_BLOCK_SDMMC1>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H753, DELAY_Block_QUADSPI>
+struct peripheral_t<STM32H753, DELAY_BLOCK_QUADSPI>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H753, DELAY_Block_SDMMC2>
+struct peripheral_t<STM32H753, DELAY_BLOCK_SDMMC2>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H755_CM4, DELAY_Block_SDMMC1>
+struct peripheral_t<STM32H755_CM4, DELAY_BLOCK_SDMMC1>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H755_CM4, DELAY_Block_QUADSPI>
+struct peripheral_t<STM32H755_CM4, DELAY_BLOCK_QUADSPI>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H755_CM4, DELAY_Block_SDMMC2>
+struct peripheral_t<STM32H755_CM4, DELAY_BLOCK_SDMMC2>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H755_CM7, DELAY_Block_SDMMC1>
+struct peripheral_t<STM32H755_CM7, DELAY_BLOCK_SDMMC1>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H755_CM7, DELAY_Block_QUADSPI>
+struct peripheral_t<STM32H755_CM7, DELAY_BLOCK_QUADSPI>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H755_CM7, DELAY_Block_SDMMC2>
+struct peripheral_t<STM32H755_CM7, DELAY_BLOCK_SDMMC2>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H757_CM4, DELAY_Block_SDMMC1>
+struct peripheral_t<STM32H757_CM4, DELAY_BLOCK_SDMMC1>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H757_CM4, DELAY_Block_QUADSPI>
+struct peripheral_t<STM32H757_CM4, DELAY_BLOCK_QUADSPI>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H757_CM4, DELAY_Block_SDMMC2>
+struct peripheral_t<STM32H757_CM4, DELAY_BLOCK_SDMMC2>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H757_CM7, DELAY_Block_SDMMC1>
+struct peripheral_t<STM32H757_CM7, DELAY_BLOCK_SDMMC1>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H757_CM7, DELAY_Block_QUADSPI>
+struct peripheral_t<STM32H757_CM7, DELAY_BLOCK_QUADSPI>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H757_CM7, DELAY_Block_SDMMC2>
+struct peripheral_t<STM32H757_CM7, DELAY_BLOCK_SDMMC2>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7A3x, DELAY_Block_SDMMC1>
+struct peripheral_t<STM32H7A3x, DELAY_BLOCK_SDMMC1>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7A3x, DELAY_Block_SDMMC2>
+struct peripheral_t<STM32H7A3x, DELAY_BLOCK_SDMMC2>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7A3x, Delay_Block_OCTOSPI1>
+struct peripheral_t<STM32H7A3x, DELAY_BLOCK_OCTOSPI1>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7A3x, Delay_Block_OCTOSPI2>
+struct peripheral_t<STM32H7A3x, DELAY_BLOCK_OCTOSPI2>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7B0x, DELAY_Block_SDMMC1>
+struct peripheral_t<STM32H7B0x, DELAY_BLOCK_SDMMC1>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7B0x, DELAY_Block_SDMMC2>
+struct peripheral_t<STM32H7B0x, DELAY_BLOCK_SDMMC2>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7B0x, Delay_Block_OCTOSPI1>
+struct peripheral_t<STM32H7B0x, DELAY_BLOCK_OCTOSPI1>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7B0x, Delay_Block_OCTOSPI2>
+struct peripheral_t<STM32H7B0x, DELAY_BLOCK_OCTOSPI2>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7B3x, DELAY_Block_SDMMC1>
+struct peripheral_t<STM32H7B3x, DELAY_BLOCK_SDMMC1>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7B3x, DELAY_Block_SDMMC2>
+struct peripheral_t<STM32H7B3x, DELAY_BLOCK_SDMMC2>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7B3x, Delay_Block_OCTOSPI1>
+struct peripheral_t<STM32H7B3x, DELAY_BLOCK_OCTOSPI1>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7B3x, Delay_Block_OCTOSPI2>
+struct peripheral_t<STM32H7B3x, DELAY_BLOCK_OCTOSPI2>
 {
     typedef stm32h742x_delay_block_sdmmc1_t T;
     static T& V;
 };
 
-using delay_block_quadspi_t = peripheral_t<mcu_svd, DELAY_Block_QUADSPI>;
-using delay_block_sdmmc1_t = peripheral_t<mcu_svd, DELAY_Block_SDMMC1>;
-using delay_block_sdmmc2_t = peripheral_t<mcu_svd, DELAY_Block_SDMMC2>;
-using delay_block_octospi1_t = peripheral_t<mcu_svd, Delay_Block_OCTOSPI1>;
-using delay_block_octospi2_t = peripheral_t<mcu_svd, Delay_Block_OCTOSPI2>;
-
-template<int INST> struct delay_block_sdmmc_traits {};
-
-template<> struct delay_block_sdmmc_traits<1>
-{
-    using delay_block_sdmmc = delay_block_sdmmc1_t;
-};
-
-template<> struct delay_block_sdmmc_traits<2>
-{
-    using delay_block_sdmmc = delay_block_sdmmc2_t;
-};
+using delay_block_octospi1_t = peripheral_t<mcu_svd, DELAY_BLOCK_OCTOSPI1>;
+using delay_block_octospi2_t = peripheral_t<mcu_svd, DELAY_BLOCK_OCTOSPI2>;
+using delay_block_quadspi_t = peripheral_t<mcu_svd, DELAY_BLOCK_QUADSPI>;
+using delay_block_sdmmc1_t = peripheral_t<mcu_svd, DELAY_BLOCK_SDMMC1>;
+using delay_block_sdmmc2_t = peripheral_t<mcu_svd, DELAY_BLOCK_SDMMC2>;
 
 template<int INST> struct delay_block_octospi_traits {};
 
@@ -399,5 +387,17 @@ template<> struct delay_block_octospi_traits<1>
 template<> struct delay_block_octospi_traits<2>
 {
     using delay_block_octospi = delay_block_octospi2_t;
+};
+
+template<int INST> struct delay_block_sdmmc_traits {};
+
+template<> struct delay_block_sdmmc_traits<1>
+{
+    using delay_block_sdmmc = delay_block_sdmmc1_t;
+};
+
+template<> struct delay_block_sdmmc_traits<2>
+{
+    using delay_block_sdmmc = delay_block_sdmmc2_t;
 };
 

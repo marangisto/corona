@@ -8,7 +8,7 @@
 
 enum peripheral_enum_t
     { ADC
-    , ADC_Common
+    , ADC_COMMON
     , AES
     , CAN1
     , COMP

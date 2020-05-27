@@ -506,47 +506,46 @@ struct peripheral_t<STM32F756, FLASH>
 };
 
 template<>
-struct peripheral_t<STM32F767, Flash>
+struct peripheral_t<STM32F767, FLASH>
 {
     typedef stm32f767_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F768, Flash>
+struct peripheral_t<STM32F768, FLASH>
 {
     typedef stm32f767_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F769, Flash>
+struct peripheral_t<STM32F769, FLASH>
 {
     typedef stm32f767_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F777, Flash>
+struct peripheral_t<STM32F777, FLASH>
 {
     typedef stm32f767_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F778, Flash>
+struct peripheral_t<STM32F778, FLASH>
 {
     typedef stm32f767_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F779, Flash>
+struct peripheral_t<STM32F779, FLASH>
 {
     typedef stm32f767_flash_t T;
     static T& V;
 };
 
 using flash_t = peripheral_t<mcu_svd, FLASH>;
-using flash_t = peripheral_t<mcu_svd, Flash>;
 

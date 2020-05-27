@@ -489,63 +489,63 @@ struct stm32f215_ethernet_ptp_t
 
 
 template<>
-struct peripheral_t<STM32F215, Ethernet_MAC>
+struct peripheral_t<STM32F215, ETHERNET_MAC>
 {
     typedef stm32f215_ethernet_mac_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F217, Ethernet_MAC>
+struct peripheral_t<STM32F217, ETHERNET_MAC>
 {
     typedef stm32f215_ethernet_mac_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F215, Ethernet_MMC>
+struct peripheral_t<STM32F215, ETHERNET_MMC>
 {
     typedef stm32f215_ethernet_mmc_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F217, Ethernet_MMC>
+struct peripheral_t<STM32F217, ETHERNET_MMC>
 {
     typedef stm32f215_ethernet_mmc_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F215, Ethernet_PTP>
+struct peripheral_t<STM32F215, ETHERNET_PTP>
 {
     typedef stm32f215_ethernet_ptp_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F217, Ethernet_PTP>
+struct peripheral_t<STM32F217, ETHERNET_PTP>
 {
     typedef stm32f215_ethernet_ptp_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F215, Ethernet_DMA>
+struct peripheral_t<STM32F215, ETHERNET_DMA>
 {
     typedef stm32f215_ethernet_dma_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F217, Ethernet_DMA>
+struct peripheral_t<STM32F217, ETHERNET_DMA>
 {
     typedef stm32f215_ethernet_dma_t T;
     static T& V;
 };
 
-using ethernet_dma_t = peripheral_t<mcu_svd, Ethernet_DMA>;
-using ethernet_mac_t = peripheral_t<mcu_svd, Ethernet_MAC>;
-using ethernet_mmc_t = peripheral_t<mcu_svd, Ethernet_MMC>;
-using ethernet_ptp_t = peripheral_t<mcu_svd, Ethernet_PTP>;
+using ethernet_dma_t = peripheral_t<mcu_svd, ETHERNET_DMA>;
+using ethernet_mac_t = peripheral_t<mcu_svd, ETHERNET_MAC>;
+using ethernet_mmc_t = peripheral_t<mcu_svd, ETHERNET_MMC>;
+using ethernet_ptp_t = peripheral_t<mcu_svd, ETHERNET_PTP>;
 

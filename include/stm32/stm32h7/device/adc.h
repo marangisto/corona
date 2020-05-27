@@ -2225,154 +2225,154 @@ struct peripheral_t<STM32H753, ADC2>
 };
 
 template<>
-struct peripheral_t<STM32H742x, ADC3_Common>
+struct peripheral_t<STM32H742x, ADC3_COMMON>
 {
     typedef stm32h742x_adc3_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H742x, ADC12_Common>
+struct peripheral_t<STM32H742x, ADC12_COMMON>
 {
     typedef stm32h742x_adc3_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H743, ADC3_Common>
+struct peripheral_t<STM32H743, ADC3_COMMON>
 {
     typedef stm32h742x_adc3_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H743, ADC12_Common>
+struct peripheral_t<STM32H743, ADC12_COMMON>
 {
     typedef stm32h742x_adc3_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H745_CM4, ADC3_Common>
+struct peripheral_t<STM32H745_CM4, ADC3_COMMON>
 {
     typedef stm32h742x_adc3_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H745_CM4, ADC12_Common>
+struct peripheral_t<STM32H745_CM4, ADC12_COMMON>
 {
     typedef stm32h742x_adc3_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H745_CM7, ADC3_Common>
+struct peripheral_t<STM32H745_CM7, ADC3_COMMON>
 {
     typedef stm32h742x_adc3_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H745_CM7, ADC12_Common>
+struct peripheral_t<STM32H745_CM7, ADC12_COMMON>
 {
     typedef stm32h742x_adc3_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H747_CM4, ADC3_Common>
+struct peripheral_t<STM32H747_CM4, ADC3_COMMON>
 {
     typedef stm32h742x_adc3_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H747_CM4, ADC12_Common>
+struct peripheral_t<STM32H747_CM4, ADC12_COMMON>
 {
     typedef stm32h742x_adc3_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H747_CM7, ADC3_Common>
+struct peripheral_t<STM32H747_CM7, ADC3_COMMON>
 {
     typedef stm32h742x_adc3_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H747_CM7, ADC12_Common>
+struct peripheral_t<STM32H747_CM7, ADC12_COMMON>
 {
     typedef stm32h742x_adc3_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H753, ADC3_Common>
+struct peripheral_t<STM32H753, ADC3_COMMON>
 {
     typedef stm32h742x_adc3_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H753, ADC12_Common>
+struct peripheral_t<STM32H753, ADC12_COMMON>
 {
     typedef stm32h742x_adc3_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H755_CM4, ADC3_Common>
+struct peripheral_t<STM32H755_CM4, ADC3_COMMON>
 {
     typedef stm32h742x_adc3_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H755_CM4, ADC12_Common>
+struct peripheral_t<STM32H755_CM4, ADC12_COMMON>
 {
     typedef stm32h742x_adc3_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H755_CM7, ADC3_Common>
+struct peripheral_t<STM32H755_CM7, ADC3_COMMON>
 {
     typedef stm32h742x_adc3_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H755_CM7, ADC12_Common>
+struct peripheral_t<STM32H755_CM7, ADC12_COMMON>
 {
     typedef stm32h742x_adc3_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H757_CM4, ADC3_Common>
+struct peripheral_t<STM32H757_CM4, ADC3_COMMON>
 {
     typedef stm32h742x_adc3_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H757_CM4, ADC12_Common>
+struct peripheral_t<STM32H757_CM4, ADC12_COMMON>
 {
     typedef stm32h742x_adc3_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H757_CM7, ADC3_Common>
+struct peripheral_t<STM32H757_CM7, ADC3_COMMON>
 {
     typedef stm32h742x_adc3_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H757_CM7, ADC12_Common>
+struct peripheral_t<STM32H757_CM7, ADC12_COMMON>
 {
     typedef stm32h742x_adc3_common_t T;
     static T& V;
@@ -2568,35 +2568,35 @@ struct peripheral_t<STM32H750x, ADC2>
 };
 
 template<>
-struct peripheral_t<STM32H750x, ADC3_Common>
+struct peripheral_t<STM32H750x, ADC3_COMMON>
 {
     typedef stm32h750x_adc3_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H750x, ADC12_Common>
+struct peripheral_t<STM32H750x, ADC12_COMMON>
 {
     typedef stm32h750x_adc3_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7A3x, ADC12_Common>
+struct peripheral_t<STM32H7A3x, ADC12_COMMON>
 {
     typedef stm32h750x_adc3_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7B0x, ADC12_Common>
+struct peripheral_t<STM32H7B0x, ADC12_COMMON>
 {
     typedef stm32h750x_adc3_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7B3x, ADC12_Common>
+struct peripheral_t<STM32H7B3x, ADC12_COMMON>
 {
     typedef stm32h750x_adc3_common_t T;
     static T& V;
@@ -2645,10 +2645,10 @@ struct peripheral_t<STM32H7B3x, ADC2>
 };
 
 using adc1_t = peripheral_t<mcu_svd, ADC1>;
-using adc12_common_t = peripheral_t<mcu_svd, ADC12_Common>;
+using adc12_common_t = peripheral_t<mcu_svd, ADC12_COMMON>;
 using adc2_t = peripheral_t<mcu_svd, ADC2>;
 using adc3_t = peripheral_t<mcu_svd, ADC3>;
-using adc3_common_t = peripheral_t<mcu_svd, ADC3_Common>;
+using adc3_common_t = peripheral_t<mcu_svd, ADC3_COMMON>;
 
 template<int INST> struct adc_traits {};
 
@@ -2657,9 +2657,9 @@ template<> struct adc_traits<1>
     using adc = adc1_t;
 };
 
-template<> struct adc_traits<12_Common>
+template<> struct adc_traits<12_COMMON>
 {
-    using adc = adc12_Common_t;
+    using adc = adc12_COMMON_t;
 };
 
 template<> struct adc_traits<2>
@@ -2672,8 +2672,8 @@ template<> struct adc_traits<3>
     using adc = adc3_t;
 };
 
-template<> struct adc_traits<3_Common>
+template<> struct adc_traits<3_COMMON>
 {
-    using adc = adc3_Common_t;
+    using adc = adc3_COMMON_t;
 };
 

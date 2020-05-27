@@ -40,7 +40,7 @@ struct clock_control_t<peripheral_t<STM32F301, DMA>>
 };
 
 template<>
-struct clock_control_t<peripheral_t<STM32F301, FLITF>>
+struct clock_control_t<peripheral_t<STM32F301, FLASH>>
 {
     static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_FLITFEN; }
     static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_FLITFEN; }
@@ -276,7 +276,7 @@ struct clock_control_t<peripheral_t<STM32F302, DMA2>>
 };
 
 template<>
-struct clock_control_t<peripheral_t<STM32F302, FLITF>>
+struct clock_control_t<peripheral_t<STM32F302, FLASH>>
 {
     static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_FLITFEN; }
     static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_FLITFEN; }
@@ -585,7 +585,7 @@ struct clock_control_t<peripheral_t<STM32F303, DMA2>>
 };
 
 template<>
-struct clock_control_t<peripheral_t<STM32F303, FLITF>>
+struct clock_control_t<peripheral_t<STM32F303, FLASH>>
 {
     static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_FLITFEN; }
     static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_FLITFEN; }
@@ -942,7 +942,7 @@ struct clock_control_t<peripheral_t<STM32F373, DMA2>>
 };
 
 template<>
-struct clock_control_t<peripheral_t<STM32F373, FLITF>>
+struct clock_control_t<peripheral_t<STM32F373, FLASH>>
 {
     static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_FLITFEN; }
     static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_FLITFEN; }
@@ -1297,7 +1297,7 @@ struct clock_control_t<peripheral_t<STM32F3x4, DMA2>>
 };
 
 template<>
-struct clock_control_t<peripheral_t<STM32F3x4, FLITF>>
+struct clock_control_t<peripheral_t<STM32F3x4, FLASH>>
 {
     static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_FLITFEN; }
     static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_FLITFEN; }
@@ -1606,7 +1606,7 @@ struct clock_control_t<peripheral_t<STM32F3x8, DMA2>>
 };
 
 template<>
-struct clock_control_t<peripheral_t<STM32F3x8, FLITF>>
+struct clock_control_t<peripheral_t<STM32F3x8, FLASH>>
 {
     static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_FLITFEN; }
     static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_FLITFEN; }

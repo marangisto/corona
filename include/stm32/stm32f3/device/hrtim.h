@@ -3352,7 +3352,7 @@ struct stm32f3x4_hrtim_time_t
 
 
 template<>
-struct peripheral_t<STM32F3x4, HRTIM_Master>
+struct peripheral_t<STM32F3x4, HRTIM_MASTER>
 {
     typedef stm32f3x4_hrtim_master_t T;
     static T& V;
@@ -3394,14 +3394,14 @@ struct peripheral_t<STM32F3x4, HRTIM_TIME>
 };
 
 template<>
-struct peripheral_t<STM32F3x4, HRTIM_Common>
+struct peripheral_t<STM32F3x4, HRTIM_COMMON>
 {
     typedef stm32f3x4_hrtim_common_t T;
     static T& V;
 };
 
-using hrtim_common_t = peripheral_t<mcu_svd, HRTIM_Common>;
-using hrtim_master_t = peripheral_t<mcu_svd, HRTIM_Master>;
+using hrtim_common_t = peripheral_t<mcu_svd, HRTIM_COMMON>;
+using hrtim_master_t = peripheral_t<mcu_svd, HRTIM_MASTER>;
 using hrtim_tima_t = peripheral_t<mcu_svd, HRTIM_TIMA>;
 using hrtim_timb_t = peripheral_t<mcu_svd, HRTIM_TIMB>;
 using hrtim_timc_t = peripheral_t<mcu_svd, HRTIM_TIMC>;

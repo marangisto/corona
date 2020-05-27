@@ -12,29 +12,29 @@ typename peripheral_t<STM32L4P5, ADC>::T& peripheral_t<STM32L4P5, ADC>::V =
 typename peripheral_t<STM32L4Q5, ADC>::T& peripheral_t<STM32L4Q5, ADC>::V =
     *reinterpret_cast<typename peripheral_t<STM32L4Q5, ADC>::T*>(0x50040000);
 
-typename peripheral_t<STM32L4P5, ADC_Common>::T& peripheral_t<STM32L4P5, ADC_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32L4P5, ADC_Common>::T*>(0x50040300);
+typename peripheral_t<STM32L4P5, ADC_COMMON>::T& peripheral_t<STM32L4P5, ADC_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32L4P5, ADC_COMMON>::T*>(0x50040300);
 
-typename peripheral_t<STM32L4Q5, ADC_Common>::T& peripheral_t<STM32L4Q5, ADC_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32L4Q5, ADC_Common>::T*>(0x50040300);
+typename peripheral_t<STM32L4Q5, ADC_COMMON>::T& peripheral_t<STM32L4Q5, ADC_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32L4Q5, ADC_COMMON>::T*>(0x50040300);
 
-typename peripheral_t<STM32L4R5, ADC_Common>::T& peripheral_t<STM32L4R5, ADC_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32L4R5, ADC_Common>::T*>(0x50040300);
+typename peripheral_t<STM32L4R5, ADC_COMMON>::T& peripheral_t<STM32L4R5, ADC_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32L4R5, ADC_COMMON>::T*>(0x50040300);
 
-typename peripheral_t<STM32L4R7, ADC_Common>::T& peripheral_t<STM32L4R7, ADC_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32L4R7, ADC_Common>::T*>(0x50040300);
+typename peripheral_t<STM32L4R7, ADC_COMMON>::T& peripheral_t<STM32L4R7, ADC_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32L4R7, ADC_COMMON>::T*>(0x50040300);
 
-typename peripheral_t<STM32L4R9, ADC_Common>::T& peripheral_t<STM32L4R9, ADC_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32L4R9, ADC_Common>::T*>(0x50040300);
+typename peripheral_t<STM32L4R9, ADC_COMMON>::T& peripheral_t<STM32L4R9, ADC_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32L4R9, ADC_COMMON>::T*>(0x50040300);
 
-typename peripheral_t<STM32L4S5, ADC_Common>::T& peripheral_t<STM32L4S5, ADC_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32L4S5, ADC_Common>::T*>(0x50040300);
+typename peripheral_t<STM32L4S5, ADC_COMMON>::T& peripheral_t<STM32L4S5, ADC_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32L4S5, ADC_COMMON>::T*>(0x50040300);
 
-typename peripheral_t<STM32L4S7, ADC_Common>::T& peripheral_t<STM32L4S7, ADC_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32L4S7, ADC_Common>::T*>(0x50040300);
+typename peripheral_t<STM32L4S7, ADC_COMMON>::T& peripheral_t<STM32L4S7, ADC_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32L4S7, ADC_COMMON>::T*>(0x50040300);
 
-typename peripheral_t<STM32L4S9, ADC_Common>::T& peripheral_t<STM32L4S9, ADC_Common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32L4S9, ADC_Common>::T*>(0x50040300);
+typename peripheral_t<STM32L4S9, ADC_COMMON>::T& peripheral_t<STM32L4S9, ADC_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32L4S9, ADC_COMMON>::T*>(0x50040300);
 
 typename peripheral_t<STM32L4R5, ADC>::T& peripheral_t<STM32L4R5, ADC>::V =
     *reinterpret_cast<typename peripheral_t<STM32L4R5, ADC>::T*>(0x50040000);

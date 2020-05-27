@@ -329,35 +329,35 @@ struct stm32f405_c_adc_t
 
 
 template<>
-struct peripheral_t<STM32F401, ADC_Common>
+struct peripheral_t<STM32F401, ADC_COMMON>
 {
     typedef stm32f401_adc_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F410, ADC_Common>
+struct peripheral_t<STM32F410, ADC_COMMON>
 {
     typedef stm32f401_adc_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F411, ADC_Common>
+struct peripheral_t<STM32F411, ADC_COMMON>
 {
     typedef stm32f401_adc_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F412, ADC_Common>
+struct peripheral_t<STM32F412, ADC_COMMON>
 {
     typedef stm32f401_adc_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F413, ADC_Common>
+struct peripheral_t<STM32F413, ADC_COMMON>
 {
     typedef stm32f401_adc_common_t T;
     static T& V;
@@ -569,7 +569,7 @@ struct peripheral_t<STM32F469, C_ADC>
 using adc1_t = peripheral_t<mcu_svd, ADC1>;
 using adc2_t = peripheral_t<mcu_svd, ADC2>;
 using adc3_t = peripheral_t<mcu_svd, ADC3>;
-using adc_common_t = peripheral_t<mcu_svd, ADC_Common>;
+using adc_common_t = peripheral_t<mcu_svd, ADC_COMMON>;
 using c_adc_t = peripheral_t<mcu_svd, C_ADC>;
 
 template<int INST> struct adc_traits {};

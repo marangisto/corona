@@ -1764,42 +1764,42 @@ struct peripheral_t<STM32L4x6, ADC3>
 };
 
 template<>
-struct peripheral_t<STM32L476, ADC_Common>
+struct peripheral_t<STM32L476, ADC_COMMON>
 {
     typedef stm32l476_adc_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L496, ADC_Common>
+struct peripheral_t<STM32L496, ADC_COMMON>
 {
     typedef stm32l476_adc_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L4x1, ADC123_Common>
+struct peripheral_t<STM32L4x1, ADC123_COMMON>
 {
     typedef stm32l476_adc_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L4x2, ADC123_Common>
+struct peripheral_t<STM32L4x2, ADC123_COMMON>
 {
     typedef stm32l476_adc_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L4x3, ADC123_Common>
+struct peripheral_t<STM32L4x3, ADC123_COMMON>
 {
     typedef stm32l476_adc_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L4x6, ADC_Common>
+struct peripheral_t<STM32L4x6, ADC_COMMON>
 {
     typedef stm32l476_adc_common_t T;
     static T& V;
@@ -1890,7 +1890,7 @@ struct peripheral_t<STM32L4x5, ADC3>
 };
 
 template<>
-struct peripheral_t<STM32L4x5, ADC123_Common>
+struct peripheral_t<STM32L4x5, ADC123_COMMON>
 {
     typedef stm32l4x5_adc123_common_t T;
     static T& V;
@@ -1898,10 +1898,10 @@ struct peripheral_t<STM32L4x5, ADC123_Common>
 
 using adc_t = peripheral_t<mcu_svd, ADC>;
 using adc1_t = peripheral_t<mcu_svd, ADC1>;
-using adc123_common_t = peripheral_t<mcu_svd, ADC123_Common>;
+using adc123_common_t = peripheral_t<mcu_svd, ADC123_COMMON>;
 using adc2_t = peripheral_t<mcu_svd, ADC2>;
 using adc3_t = peripheral_t<mcu_svd, ADC3>;
-using adc_common_t = peripheral_t<mcu_svd, ADC_Common>;
+using adc_common_t = peripheral_t<mcu_svd, ADC_COMMON>;
 
 template<int INST> struct adc_traits {};
 
@@ -1910,9 +1910,9 @@ template<> struct adc_traits<1>
     using adc = adc1_t;
 };
 
-template<> struct adc_traits<123_Common>
+template<> struct adc_traits<123_COMMON>
 {
-    using adc = adc123_Common_t;
+    using adc = adc123_COMMON_t;
 };
 
 template<> struct adc_traits<2>

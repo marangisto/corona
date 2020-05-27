@@ -108,17 +108,17 @@ typename peripheral_t<STM32F0x8, EXTI>::T& peripheral_t<STM32F0x8, EXTI>::V =
 typename peripheral_t<STM32F0x2, EXTI>::T& peripheral_t<STM32F0x2, EXTI>::V =
     *reinterpret_cast<typename peripheral_t<STM32F0x2, EXTI>::T*>(0x40010400);
 
-typename peripheral_t<STM32F0x0, Flash>::T& peripheral_t<STM32F0x0, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F0x0, Flash>::T*>(0x40022000);
+typename peripheral_t<STM32F0x0, FLASH>::T& peripheral_t<STM32F0x0, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F0x0, FLASH>::T*>(0x40022000);
 
-typename peripheral_t<STM32F0x1, Flash>::T& peripheral_t<STM32F0x1, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F0x1, Flash>::T*>(0x40022000);
+typename peripheral_t<STM32F0x1, FLASH>::T& peripheral_t<STM32F0x1, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F0x1, FLASH>::T*>(0x40022000);
 
-typename peripheral_t<STM32F0x2, Flash>::T& peripheral_t<STM32F0x2, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F0x2, Flash>::T*>(0x40022000);
+typename peripheral_t<STM32F0x2, FLASH>::T& peripheral_t<STM32F0x2, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F0x2, FLASH>::T*>(0x40022000);
 
-typename peripheral_t<STM32F0x8, Flash>::T& peripheral_t<STM32F0x8, Flash>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F0x8, Flash>::T*>(0x40022000);
+typename peripheral_t<STM32F0x8, FLASH>::T& peripheral_t<STM32F0x8, FLASH>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F0x8, FLASH>::T*>(0x40022000);
 
 typename peripheral_t<STM32F0x0, GPIOF>::T& peripheral_t<STM32F0x0, GPIOF>::V =
     *reinterpret_cast<typename peripheral_t<STM32F0x0, GPIOF>::T*>(0x48001400);

@@ -2257,132 +2257,132 @@ struct stm32h742x_ethernet_mtl_t
 
 
 template<>
-struct peripheral_t<STM32H742x, Ethernet_DMA>
+struct peripheral_t<STM32H742x, ETHERNET_DMA>
 {
     typedef stm32h742x_ethernet_dma_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H743, Ethernet_DMA>
+struct peripheral_t<STM32H743, ETHERNET_DMA>
 {
     typedef stm32h742x_ethernet_dma_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H753, Ethernet_DMA>
+struct peripheral_t<STM32H753, ETHERNET_DMA>
 {
     typedef stm32h742x_ethernet_dma_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H742x, Ethernet_MTL>
+struct peripheral_t<STM32H742x, ETHERNET_MTL>
 {
     typedef stm32h742x_ethernet_mtl_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H743, Ethernet_MTL>
+struct peripheral_t<STM32H743, ETHERNET_MTL>
 {
     typedef stm32h742x_ethernet_mtl_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H753, Ethernet_MTL>
+struct peripheral_t<STM32H753, ETHERNET_MTL>
 {
     typedef stm32h742x_ethernet_mtl_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H742x, Ethernet_MAC>
+struct peripheral_t<STM32H742x, ETHERNET_MAC>
 {
     typedef stm32h742x_ethernet_mac_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H743, Ethernet_MAC>
+struct peripheral_t<STM32H743, ETHERNET_MAC>
 {
     typedef stm32h742x_ethernet_mac_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H753, Ethernet_MAC>
+struct peripheral_t<STM32H753, ETHERNET_MAC>
 {
     typedef stm32h742x_ethernet_mac_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H745_CM4, Ethernet_MAC>
+struct peripheral_t<STM32H745_CM4, ETHERNET_MAC>
 {
     typedef stm32h745_cm4_ethernet_mac_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H745_CM7, Ethernet_MAC>
+struct peripheral_t<STM32H745_CM7, ETHERNET_MAC>
 {
     typedef stm32h745_cm4_ethernet_mac_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H747_CM4, Ethernet_MAC>
+struct peripheral_t<STM32H747_CM4, ETHERNET_MAC>
 {
     typedef stm32h745_cm4_ethernet_mac_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H747_CM7, Ethernet_MAC>
+struct peripheral_t<STM32H747_CM7, ETHERNET_MAC>
 {
     typedef stm32h745_cm4_ethernet_mac_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H755_CM4, Ethernet_MAC>
+struct peripheral_t<STM32H755_CM4, ETHERNET_MAC>
 {
     typedef stm32h745_cm4_ethernet_mac_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H755_CM7, Ethernet_MAC>
+struct peripheral_t<STM32H755_CM7, ETHERNET_MAC>
 {
     typedef stm32h745_cm4_ethernet_mac_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H757_CM4, Ethernet_MAC>
+struct peripheral_t<STM32H757_CM4, ETHERNET_MAC>
 {
     typedef stm32h745_cm4_ethernet_mac_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H757_CM7, Ethernet_MAC>
+struct peripheral_t<STM32H757_CM7, ETHERNET_MAC>
 {
     typedef stm32h745_cm4_ethernet_mac_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H750x, Ethernet_MAC>
+struct peripheral_t<STM32H750x, ETHERNET_MAC>
 {
     typedef stm32h750x_ethernet_mac_t T;
     static T& V;
 };
 
-using ethernet_dma_t = peripheral_t<mcu_svd, Ethernet_DMA>;
-using ethernet_mac_t = peripheral_t<mcu_svd, Ethernet_MAC>;
-using ethernet_mtl_t = peripheral_t<mcu_svd, Ethernet_MTL>;
+using ethernet_dma_t = peripheral_t<mcu_svd, ETHERNET_DMA>;
+using ethernet_mac_t = peripheral_t<mcu_svd, ETHERNET_MAC>;
+using ethernet_mtl_t = peripheral_t<mcu_svd, ETHERNET_MTL>;
 

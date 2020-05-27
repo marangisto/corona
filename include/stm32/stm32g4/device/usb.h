@@ -246,53 +246,53 @@ struct stm32g431xx_usb_fs_device_t
 
 
 template<>
-struct peripheral_t<STM32G431xx, USB_FS_device>
+struct peripheral_t<STM32G431xx, USB_FS_DEVICE>
 {
     typedef stm32g431xx_usb_fs_device_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G441xx, USB_FS_device>
+struct peripheral_t<STM32G441xx, USB_FS_DEVICE>
 {
     typedef stm32g431xx_usb_fs_device_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G471xx, USB_FS_device>
+struct peripheral_t<STM32G471xx, USB_FS_DEVICE>
 {
     typedef stm32g431xx_usb_fs_device_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G473xx, USB_FS_device>
+struct peripheral_t<STM32G473xx, USB_FS_DEVICE>
 {
     typedef stm32g431xx_usb_fs_device_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G474xx, USB_FS_device>
+struct peripheral_t<STM32G474xx, USB_FS_DEVICE>
 {
     typedef stm32g431xx_usb_fs_device_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G483xx, USB_FS_device>
+struct peripheral_t<STM32G483xx, USB_FS_DEVICE>
 {
     typedef stm32g431xx_usb_fs_device_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G484xx, USB_FS_device>
+struct peripheral_t<STM32G484xx, USB_FS_DEVICE>
 {
     typedef stm32g431xx_usb_fs_device_t T;
     static T& V;
 };
 
-using usb_fs_device_t = peripheral_t<mcu_svd, USB_FS_device>;
+using usb_fs_device_t = peripheral_t<mcu_svd, USB_FS_DEVICE>;
 

@@ -9,10 +9,10 @@
 enum peripheral_enum_t
     { AC
     , ADC1
-    , ADC12_Common
+    , ADC12_COMMON
     , ADC2
     , ADC3
-    , ADC3_Common
+    , ADC3_COMMON
     , ART
     , AXI
     , BDMA
@@ -26,9 +26,11 @@ enum peripheral_enum_t
     , DAC
     , DBGMCU
     , DCMI
-    , DELAY_Block_QUADSPI
-    , DELAY_Block_SDMMC1
-    , DELAY_Block_SDMMC2
+    , DELAY_BLOCK_OCTOSPI1
+    , DELAY_BLOCK_OCTOSPI2
+    , DELAY_BLOCK_QUADSPI
+    , DELAY_BLOCK_SDMMC1
+    , DELAY_BLOCK_SDMMC2
     , DFSDM
     , DMA1
     , DMA2
@@ -36,19 +38,17 @@ enum peripheral_enum_t
     , DMAMUX1
     , DMAMUX2
     , DSIHOST
-    , Delay_Block_OCTOSPI1
-    , Delay_Block_OCTOSPI2
+    , ETHERNET_DMA
+    , ETHERNET_MAC
+    , ETHERNET_MTL
     , EXTI
-    , Ethernet_DMA
-    , Ethernet_MAC
-    , Ethernet_MTL
     , FDCAN
     , FDCAN1
     , FDCAN2
+    , FLASH
     , FMC
     , FPU
     , FPU_CPACR
-    , Flash
     , GPIOA
     , GPIOB
     , GPIOC
@@ -62,8 +62,8 @@ enum peripheral_enum_t
     , GPIOK
     , HASH
     , HDMI_CEC
-    , HRTIM_Common
-    , HRTIM_Master
+    , HRTIM_COMMON
+    , HRTIM_MASTER
     , HRTIM_TIMA
     , HRTIM_TIMB
     , HRTIM_TIMC
@@ -92,6 +92,7 @@ enum peripheral_enum_t
     , NVIC_STIR
     , OCTOSPI1_CONTROL_REGISTER
     , OCTOSPI2
+    , OCTOSPII_O_MANAGER
     , OPAMP
     , OTFDEC1
     , OTFDEC2
@@ -103,7 +104,6 @@ enum peripheral_enum_t
     , OTG2_HS_GLOBAL
     , OTG2_HS_HOST
     , OTG2_HS_PWRCLK
-    , OctoSPII_O_Manager
     , PF
     , PWR
     , QUADSPI

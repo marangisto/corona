@@ -503,12 +503,12 @@ struct peripheral_t<STM32MP15xxx, ADC>
 };
 
 template<>
-struct peripheral_t<STM32MP15xxx, ADC_common>
+struct peripheral_t<STM32MP15xxx, ADC_COMMON>
 {
     typedef stm32mp15xxx_adc_common_t T;
     static T& V;
 };
 
 using adc_t = peripheral_t<mcu_svd, ADC>;
-using adc_common_t = peripheral_t<mcu_svd, ADC_common>;
+using adc_common_t = peripheral_t<mcu_svd, ADC_COMMON>;
 

@@ -1007,98 +1007,98 @@ struct peripheral_t<STM32G484xx, ADC4>
 };
 
 template<>
-struct peripheral_t<STM32G431xx, ADC12_Common>
+struct peripheral_t<STM32G431xx, ADC12_COMMON>
 {
     typedef stm32g431xx_adc12_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G431xx, ADC345_Common>
+struct peripheral_t<STM32G431xx, ADC345_COMMON>
 {
     typedef stm32g431xx_adc12_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G441xx, ADC12_Common>
+struct peripheral_t<STM32G441xx, ADC12_COMMON>
 {
     typedef stm32g431xx_adc12_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G441xx, ADC345_Common>
+struct peripheral_t<STM32G441xx, ADC345_COMMON>
 {
     typedef stm32g431xx_adc12_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G471xx, ADC12_Common>
+struct peripheral_t<STM32G471xx, ADC12_COMMON>
 {
     typedef stm32g431xx_adc12_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G471xx, ADC345_Common>
+struct peripheral_t<STM32G471xx, ADC345_COMMON>
 {
     typedef stm32g431xx_adc12_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G473xx, ADC12_Common>
+struct peripheral_t<STM32G473xx, ADC12_COMMON>
 {
     typedef stm32g431xx_adc12_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G473xx, ADC345_Common>
+struct peripheral_t<STM32G473xx, ADC345_COMMON>
 {
     typedef stm32g431xx_adc12_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G474xx, ADC12_Common>
+struct peripheral_t<STM32G474xx, ADC12_COMMON>
 {
     typedef stm32g431xx_adc12_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G474xx, ADC345_Common>
+struct peripheral_t<STM32G474xx, ADC345_COMMON>
 {
     typedef stm32g431xx_adc12_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G483xx, ADC12_Common>
+struct peripheral_t<STM32G483xx, ADC12_COMMON>
 {
     typedef stm32g431xx_adc12_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G483xx, ADC345_Common>
+struct peripheral_t<STM32G483xx, ADC345_COMMON>
 {
     typedef stm32g431xx_adc12_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G484xx, ADC12_Common>
+struct peripheral_t<STM32G484xx, ADC12_COMMON>
 {
     typedef stm32g431xx_adc12_common_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G484xx, ADC345_Common>
+struct peripheral_t<STM32G484xx, ADC345_COMMON>
 {
     typedef stm32g431xx_adc12_common_t T;
     static T& V;
@@ -1168,10 +1168,10 @@ struct peripheral_t<STM32G484xx, ADC5>
 };
 
 using adc1_t = peripheral_t<mcu_svd, ADC1>;
-using adc12_common_t = peripheral_t<mcu_svd, ADC12_Common>;
+using adc12_common_t = peripheral_t<mcu_svd, ADC12_COMMON>;
 using adc2_t = peripheral_t<mcu_svd, ADC2>;
 using adc3_t = peripheral_t<mcu_svd, ADC3>;
-using adc345_common_t = peripheral_t<mcu_svd, ADC345_Common>;
+using adc345_common_t = peripheral_t<mcu_svd, ADC345_COMMON>;
 using adc4_t = peripheral_t<mcu_svd, ADC4>;
 using adc5_t = peripheral_t<mcu_svd, ADC5>;
 
@@ -1182,9 +1182,9 @@ template<> struct adc_traits<1>
     using adc = adc1_t;
 };
 
-template<> struct adc_traits<12_Common>
+template<> struct adc_traits<12_COMMON>
 {
-    using adc = adc12_Common_t;
+    using adc = adc12_COMMON_t;
 };
 
 template<> struct adc_traits<2>
@@ -1197,9 +1197,9 @@ template<> struct adc_traits<3>
     using adc = adc3_t;
 };
 
-template<> struct adc_traits<345_Common>
+template<> struct adc_traits<345_COMMON>
 {
-    using adc = adc345_Common_t;
+    using adc = adc345_COMMON_t;
 };
 
 template<> struct adc_traits<4>

@@ -10,7 +10,7 @@ enum peripheral_enum_t
     { ADC1
     , ADC2
     , ADC3
-    , ADC_Common
+    , ADC_COMMON
     , AES
     , CAN1
     , CAN2
@@ -28,11 +28,11 @@ enum peripheral_enum_t
     , DMA2
     , DMA2D
     , DSIHOST
+    , ETHERNET_DMA
+    , ETHERNET_MAC
+    , ETHERNET_MMC
+    , ETHERNET_PTP
     , EXTI
-    , Ethernet_DMA
-    , Ethernet_MAC
-    , Ethernet_MMC
-    , Ethernet_PTP
     , FLASH
     , FMC
     , FMPI2C
@@ -56,8 +56,8 @@ enum peripheral_enum_t
     , I2C2
     , I2C3
     , I2C4
-    , I2S2ext
-    , I2S3ext
+    , I2S2EXT
+    , I2S3EXT
     , IWDG
     , LPTIM
     , LPTIM1

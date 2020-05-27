@@ -9,14 +9,14 @@
 typename peripheral_t<STM32MP15xxx, ADC>::T& peripheral_t<STM32MP15xxx, ADC>::V =
     *reinterpret_cast<typename peripheral_t<STM32MP15xxx, ADC>::T*>(0x48003000);
 
-typename peripheral_t<STM32MP15xxx, ADC_common>::T& peripheral_t<STM32MP15xxx, ADC_common>::V =
-    *reinterpret_cast<typename peripheral_t<STM32MP15xxx, ADC_common>::T*>(0x48003300);
+typename peripheral_t<STM32MP15xxx, ADC_COMMON>::T& peripheral_t<STM32MP15xxx, ADC_COMMON>::V =
+    *reinterpret_cast<typename peripheral_t<STM32MP15xxx, ADC_COMMON>::T*>(0x48003300);
 
 typename peripheral_t<STM32MP15xxx, ADC2>::T& peripheral_t<STM32MP15xxx, ADC2>::V =
     *reinterpret_cast<typename peripheral_t<STM32MP15xxx, ADC2>::T*>(0x48003100);
 
-typename peripheral_t<STM32MP15xxx, AXIMC_Mx>::T& peripheral_t<STM32MP15xxx, AXIMC_Mx>::V =
-    *reinterpret_cast<typename peripheral_t<STM32MP15xxx, AXIMC_Mx>::T*>(0x57042024);
+typename peripheral_t<STM32MP15xxx, AXIMC_MX>::T& peripheral_t<STM32MP15xxx, AXIMC_MX>::V =
+    *reinterpret_cast<typename peripheral_t<STM32MP15xxx, AXIMC_MX>::T*>(0x57042024);
 
 typename peripheral_t<STM32MP15xxx, BSEC>::T& peripheral_t<STM32MP15xxx, BSEC>::V =
     *reinterpret_cast<typename peripheral_t<STM32MP15xxx, BSEC>::T*>(0x5c005000);

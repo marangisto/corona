@@ -8,7 +8,7 @@
 
 enum peripheral_enum_t
     { ADC
-    , ADC_Common
+    , ADC_COMMON
     , AES
     , COMP
     , CRC
@@ -40,7 +40,7 @@ enum peripheral_enum_t
     , I2C2
     , I2C3
     , I2C4
-    , ICache
+    , ICACHE
     , IWDG
     , LPTIM1
     , LPTIM2
@@ -60,7 +60,7 @@ enum peripheral_enum_t
     , SAI2
     , SDMMC1
     , SEC_ADC
-    , SEC_ADC_Common
+    , SEC_ADC_COMMON
     , SEC_AES
     , SEC_COMP
     , SEC_CRC
@@ -90,7 +90,7 @@ enum peripheral_enum_t
     , SEC_I2C2
     , SEC_I2C3
     , SEC_I2C4
-    , SEC_ICache
+    , SEC_ICACHE
     , SEC_IWDG
     , SEC_LPTIM1
     , SEC_LPTIM2

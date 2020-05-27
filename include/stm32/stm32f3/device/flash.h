@@ -221,46 +221,46 @@ struct stm32f373_flash_t
 
 
 template<>
-struct peripheral_t<STM32F301, Flash>
+struct peripheral_t<STM32F301, FLASH>
 {
     typedef stm32f301_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F302, Flash>
+struct peripheral_t<STM32F302, FLASH>
 {
     typedef stm32f302_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F303, Flash>
+struct peripheral_t<STM32F303, FLASH>
 {
     typedef stm32f302_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F3x4, Flash>
+struct peripheral_t<STM32F3x4, FLASH>
 {
     typedef stm32f302_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F373, Flash>
+struct peripheral_t<STM32F373, FLASH>
 {
     typedef stm32f373_flash_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F3x8, Flash>
+struct peripheral_t<STM32F3x8, FLASH>
 {
     typedef stm32f373_flash_t T;
     static T& V;
 };
 
-using flash_t = peripheral_t<mcu_svd, Flash>;
+using flash_t = peripheral_t<mcu_svd, FLASH>;
 

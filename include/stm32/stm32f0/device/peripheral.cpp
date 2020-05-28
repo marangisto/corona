@@ -57,14 +57,14 @@ typename peripheral_t<STM32F0x2, CRS>::T& peripheral_t<STM32F0x2, CRS>::V =
 typename peripheral_t<STM32F0x8, CRS>::T& peripheral_t<STM32F0x8, CRS>::V =
     *reinterpret_cast<typename peripheral_t<STM32F0x8, CRS>::T*>(0x40006c00);
 
-typename peripheral_t<STM32F0x1, DAC>::T& peripheral_t<STM32F0x1, DAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F0x1, DAC>::T*>(0x40007400);
+typename peripheral_t<STM32F0x1, DAC1>::T& peripheral_t<STM32F0x1, DAC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F0x1, DAC1>::T*>(0x40007400);
 
-typename peripheral_t<STM32F0x2, DAC>::T& peripheral_t<STM32F0x2, DAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F0x2, DAC>::T*>(0x40007400);
+typename peripheral_t<STM32F0x2, DAC1>::T& peripheral_t<STM32F0x2, DAC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F0x2, DAC1>::T*>(0x40007400);
 
-typename peripheral_t<STM32F0x8, DAC>::T& peripheral_t<STM32F0x8, DAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F0x8, DAC>::T*>(0x40007400);
+typename peripheral_t<STM32F0x8, DAC1>::T& peripheral_t<STM32F0x8, DAC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F0x8, DAC1>::T*>(0x40007400);
 
 typename peripheral_t<STM32F0x0, DBGMCU>::T& peripheral_t<STM32F0x0, DBGMCU>::V =
     *reinterpret_cast<typename peripheral_t<STM32F0x0, DBGMCU>::T*>(0x40015800);

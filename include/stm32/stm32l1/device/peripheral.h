@@ -11,7 +11,7 @@ enum peripheral_enum_t
     , AES
     , COMP
     , CRC
-    , DAC
+    , DAC1
     , DBGMCU
     , DMA1
     , DMA2

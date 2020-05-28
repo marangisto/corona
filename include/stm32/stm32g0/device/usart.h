@@ -12,7 +12,7 @@
 //
 ////
 
-struct stm32g031_lpuart_t
+struct stm32g031_lpuart1_t
 {
     volatile uint32_t CR1;   // [read-write] Control register 1
     volatile uint32_t CR2;   // [read-write] Control register 2
@@ -164,7 +164,7 @@ struct stm32g031_lpuart_t
 //
 ////
 
-struct stm32g070_lpuart_t
+struct stm32g070_lpuart1_t
 {
     volatile uint32_t CR1;     // [read-write] Control register 1
     volatile uint32_t CR2;     // [read-write] Control register 2
@@ -700,45 +700,57 @@ struct peripheral_t<STM32G081, USART4>
 };
 
 template<>
-struct peripheral_t<STM32G031, LPUART>
+struct peripheral_t<STM32G031, LPUART1>
 {
-    typedef stm32g031_lpuart_t T;
+    typedef stm32g031_lpuart1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G041, LPUART>
+struct peripheral_t<STM32G041, LPUART1>
 {
-    typedef stm32g031_lpuart_t T;
+    typedef stm32g031_lpuart1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G070, LPUART>
+struct peripheral_t<STM32G070, LPUART1>
 {
-    typedef stm32g070_lpuart_t T;
+    typedef stm32g070_lpuart1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G071, LPUART>
+struct peripheral_t<STM32G071, LPUART1>
 {
-    typedef stm32g070_lpuart_t T;
+    typedef stm32g070_lpuart1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G081, LPUART>
+struct peripheral_t<STM32G081, LPUART1>
 {
-    typedef stm32g070_lpuart_t T;
+    typedef stm32g070_lpuart1_t T;
     static T& V;
 };
 
-using lpuart_t = peripheral_t<mcu_svd, LPUART>;
+using lpuart1_t = peripheral_t<mcu_svd, LPUART1>;
 using usart1_t = peripheral_t<mcu_svd, USART1>;
 using usart2_t = peripheral_t<mcu_svd, USART2>;
 using usart3_t = peripheral_t<mcu_svd, USART3>;
 using usart4_t = peripheral_t<mcu_svd, USART4>;
+
+template<int INST> struct lpuart_traits {};
+
+template<> struct lpuart_traits<1>
+{
+    using lpuart = lpuart1_t;
+    static constexpr alternate_function_t CTS = LPUART1_CTS;
+    static constexpr alternate_function_t DE = LPUART1_DE;
+    static constexpr alternate_function_t RTS = LPUART1_RTS;
+    static constexpr alternate_function_t RX = LPUART1_RX;
+    static constexpr alternate_function_t TX = LPUART1_TX;
+};
 
 template<int INST> struct usart_traits {};
 

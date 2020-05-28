@@ -18,7 +18,7 @@ enum peripheral_enum_t
     , CRC
     , CRYP
     , C_ADC
-    , DAC
+    , DAC1
     , DBG
     , DBGMCU
     , DCMI

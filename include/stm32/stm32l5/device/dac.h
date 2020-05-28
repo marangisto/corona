@@ -12,7 +12,7 @@
 //
 ////
 
-struct stm32l552_dac_t
+struct stm32l552_dac1_t
 {
     volatile uint32_t DAC_CR;      // [read-write] DAC control register
     volatile uint32_t DAC_SWTRGR;  // [write-only] DAC software trigger register
@@ -189,33 +189,45 @@ struct stm32l552_dac_t
 
 
 template<>
-struct peripheral_t<STM32L552, DAC>
+struct peripheral_t<STM32L552, DAC1>
 {
-    typedef stm32l552_dac_t T;
+    typedef stm32l552_dac1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L552, SEC_DAC>
+struct peripheral_t<STM32L552, DAC2>
 {
-    typedef stm32l552_dac_t T;
+    typedef stm32l552_dac1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L562, DAC>
+struct peripheral_t<STM32L562, DAC1>
 {
-    typedef stm32l552_dac_t T;
+    typedef stm32l552_dac1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L562, SEC_DAC>
+struct peripheral_t<STM32L562, DAC2>
 {
-    typedef stm32l552_dac_t T;
+    typedef stm32l552_dac1_t T;
     static T& V;
 };
 
-using dac_t = peripheral_t<mcu_svd, DAC>;
-using sec_dac_t = peripheral_t<mcu_svd, SEC_DAC>;
+using dac1_t = peripheral_t<mcu_svd, DAC1>;
+using dac2_t = peripheral_t<mcu_svd, DAC2>;
+
+template<int INST> struct dac_traits {};
+
+template<> struct dac_traits<1>
+{
+    using dac = dac1_t;
+};
+
+template<> struct dac_traits<2>
+{
+    using dac = dac2_t;
+};
 

@@ -66,14 +66,14 @@ typename peripheral_t<STM32G071, CRC>::T& peripheral_t<STM32G071, CRC>::V =
 typename peripheral_t<STM32G081, CRC>::T& peripheral_t<STM32G081, CRC>::V =
     *reinterpret_cast<typename peripheral_t<STM32G081, CRC>::T*>(0x40023000);
 
-typename peripheral_t<STM32G070, DAC>::T& peripheral_t<STM32G070, DAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32G070, DAC>::T*>(0x40007400);
+typename peripheral_t<STM32G070, DAC1>::T& peripheral_t<STM32G070, DAC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32G070, DAC1>::T*>(0x40007400);
 
-typename peripheral_t<STM32G071, DAC>::T& peripheral_t<STM32G071, DAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32G071, DAC>::T*>(0x40007400);
+typename peripheral_t<STM32G071, DAC1>::T& peripheral_t<STM32G071, DAC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32G071, DAC1>::T*>(0x40007400);
 
-typename peripheral_t<STM32G081, DAC>::T& peripheral_t<STM32G081, DAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32G081, DAC>::T*>(0x40007400);
+typename peripheral_t<STM32G081, DAC1>::T& peripheral_t<STM32G081, DAC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32G081, DAC1>::T*>(0x40007400);
 
 typename peripheral_t<STM32G030, DBG>::T& peripheral_t<STM32G030, DBG>::V =
     *reinterpret_cast<typename peripheral_t<STM32G030, DBG>::T*>(0x40015800);
@@ -801,20 +801,20 @@ typename peripheral_t<STM32G081, USART3>::T& peripheral_t<STM32G081, USART3>::V 
 typename peripheral_t<STM32G081, USART4>::T& peripheral_t<STM32G081, USART4>::V =
     *reinterpret_cast<typename peripheral_t<STM32G081, USART4>::T*>(0x40004c00);
 
-typename peripheral_t<STM32G031, LPUART>::T& peripheral_t<STM32G031, LPUART>::V =
-    *reinterpret_cast<typename peripheral_t<STM32G031, LPUART>::T*>(0x40008000);
+typename peripheral_t<STM32G031, LPUART1>::T& peripheral_t<STM32G031, LPUART1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32G031, LPUART1>::T*>(0x40008000);
 
-typename peripheral_t<STM32G041, LPUART>::T& peripheral_t<STM32G041, LPUART>::V =
-    *reinterpret_cast<typename peripheral_t<STM32G041, LPUART>::T*>(0x40008000);
+typename peripheral_t<STM32G041, LPUART1>::T& peripheral_t<STM32G041, LPUART1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32G041, LPUART1>::T*>(0x40008000);
 
-typename peripheral_t<STM32G070, LPUART>::T& peripheral_t<STM32G070, LPUART>::V =
-    *reinterpret_cast<typename peripheral_t<STM32G070, LPUART>::T*>(0x40008000);
+typename peripheral_t<STM32G070, LPUART1>::T& peripheral_t<STM32G070, LPUART1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32G070, LPUART1>::T*>(0x40008000);
 
-typename peripheral_t<STM32G071, LPUART>::T& peripheral_t<STM32G071, LPUART>::V =
-    *reinterpret_cast<typename peripheral_t<STM32G071, LPUART>::T*>(0x40008000);
+typename peripheral_t<STM32G071, LPUART1>::T& peripheral_t<STM32G071, LPUART1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32G071, LPUART1>::T*>(0x40008000);
 
-typename peripheral_t<STM32G081, LPUART>::T& peripheral_t<STM32G081, LPUART>::V =
-    *reinterpret_cast<typename peripheral_t<STM32G081, LPUART>::T*>(0x40008000);
+typename peripheral_t<STM32G081, LPUART1>::T& peripheral_t<STM32G081, LPUART1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32G081, LPUART1>::T*>(0x40008000);
 
 typename peripheral_t<STM32G030, VREFBUF>::T& peripheral_t<STM32G030, VREFBUF>::V =
     *reinterpret_cast<typename peripheral_t<STM32G030, VREFBUF>::T*>(0x40010030);

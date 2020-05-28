@@ -6,2613 +6,2613 @@
 //
 ////
 
-template<typename PERIPHERAL>
+template<typename RCC, typename PERIPHERAL>
 struct clock_control_t {};
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, ADC1>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, ADC1>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_ADC1EN; }
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_ADC1RST; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_ADC1EN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_ADC1EN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_ADC1RST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_ADC1EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, ADC1LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, ADC1LP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_ADC1LPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_ADC1LPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_ADC1LPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_ADC1LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, COMP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, COMP>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_COMPEN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_COMPRST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_COMPEN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_COMPEN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_COMPRST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_COMPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, COMPLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, COMPLP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_COMPLPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_COMPLPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_COMPLPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_COMPLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, CRC>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, CRC>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_CRCEN; }
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_CRCRST; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_CRCEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_CRCEN; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_CRCRST; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_CRCEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, CRCLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, CRCLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_CRCLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_CRCLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_CRCLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_CRCLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, DAC>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, DAC>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_DACEN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_DACRST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_DACEN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_DACEN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_DACRST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_DACEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, DACLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, DACLP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_DACLPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_DACLPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_DACLPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_DACLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, DMA1>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, DMA1>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_DMA1EN; }
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_DMA1RST; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_DMA1EN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_DMA1EN; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_DMA1RST; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_DMA1EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, DMA1LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, DMA1LP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_DMA1LPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_DMA1LPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_DMA1LPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_DMA1LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, DMA2>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, DMA2>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_DMA2EN; }
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_DMA2RST; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_DMA2EN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_DMA2EN; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_DMA2RST; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_DMA2EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, DMA2LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, DMA2LP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_DMA2LPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_DMA2LPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_DMA2LPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_DMA2LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, FLASH>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, FLASH>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_FLITFEN; }
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_FLITFRST; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_FLITFEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_FLITFEN; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_FLITFRST; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_FLITFEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, FLITFLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, FLITFLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_FLITFLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_FLITFLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_FLITFLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_FLITFLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, FSMC>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, FSMC>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_FSMCEN; }
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_FSMCRST; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_FSMCEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_FSMCEN; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_FSMCRST; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_FSMCEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, GPIOA>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, GPIOA>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOARST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOARST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, GPIOALP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, GPIOALP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOALPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOALPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOALPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOALPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, GPIOB>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, GPIOB>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOBRST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOBRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, GPIOBLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, GPIOBLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOBLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOBLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOBLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOBLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, GPIOC>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, GPIOC>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOCRST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOCRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, GPIOCLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, GPIOCLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOCLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOCLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOCLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOCLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, GPIOD>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, GPIOD>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIODRST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIODRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, GPIODLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, GPIODLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIODLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIODLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIODLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIODLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, GPIOE>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, GPIOE>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOERST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOERST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, GPIOELP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, GPIOELP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOELPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOELPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOELPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOELPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, GPIOF>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, GPIOF>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOFRST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOFRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, GPIOFLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, GPIOFLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOFLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOFLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOFLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOFLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, GPIOG>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, GPIOG>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOGRST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOGRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, GPIOGLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, GPIOGLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOGLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOGLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOGLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOGLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, GPIOH>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, GPIOH>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOHRST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOHRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, GPIOHLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, GPIOHLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOHLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOHLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOHLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOHLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, GPIOPA>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, GPIOPA>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPAEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPAEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPAEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPAEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, GPIOPB>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, GPIOPB>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPBEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPBEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPBEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPBEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, GPIOPC>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, GPIOPC>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPCEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPCEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPCEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPCEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, GPIOPD>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, GPIOPD>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPDEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPDEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPDEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPDEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, GPIOPE>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, GPIOPE>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPEEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPEEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPEEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPEEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, GPIOPF>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, GPIOPF>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPFEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPFEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPFEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPFEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, GPIOPG>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, GPIOPG>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPGEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPGEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPGEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPGEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, GPIOPH>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, GPIOPH>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPHEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPHEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPHEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPHEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, I2C1>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, I2C1>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_I2C1EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_I2C1RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_I2C1EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_I2C1EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_I2C1RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_I2C1EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, I2C1LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, I2C1LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_I2C1LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_I2C1LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_I2C1LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_I2C1LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, I2C2>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, I2C2>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_I2C2EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_I2C2RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_I2C2EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_I2C2EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_I2C2RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_I2C2EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, I2C2LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, I2C2LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_I2C2LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_I2C2LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_I2C2LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_I2C2LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, LCD>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, LCD>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_LCDEN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_LCDRST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_LCDEN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_LCDEN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_LCDRST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_LCDEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, LCDLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, LCDLP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_LCDLPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_LCDLPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_LCDLPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_LCDLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, PWR>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, PWR>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_PWREN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_PWRRST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_PWREN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_PWREN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_PWRRST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_PWREN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, PWRLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, PWRLP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_PWRLPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_PWRLPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_PWRLPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_PWRLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, SDIO>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, SDIO>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_SDIOEN; }
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_SDIORST; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_SDIOEN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_SDIOEN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_SDIORST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_SDIOEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, SDIOLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, SDIOLP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_SDIOLPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_SDIOLPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_SDIOLPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_SDIOLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, SPI1>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, SPI1>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_SPI1EN; }
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_SPI1RST; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_SPI1EN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_SPI1EN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_SPI1RST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_SPI1EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, SPI1LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, SPI1LP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_SPI1LPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_SPI1LPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_SPI1LPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_SPI1LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, SPI2>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, SPI2>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_SPI2EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_SPI2RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_SPI2EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_SPI2EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_SPI2RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_SPI2EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, SPI2LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, SPI2LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_SPI2LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_SPI2LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_SPI2LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_SPI2LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, SPI3>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, SPI3>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_SPI3EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_SPI3RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_SPI3EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_SPI3EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_SPI3RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_SPI3EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, SRAMLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, SRAMLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_SRAMLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_SRAMLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_SRAMLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_SRAMLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, SYSCFG>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, SYSCFG>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_SYSCFGEN; }
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_SYSCFGRST; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_SYSCFGEN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_SYSCFGEN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_SYSCFGRST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_SYSCFGEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, SYSCFGLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, SYSCFGLP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_SYSCFGLPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_SYSCFGLPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_SYSCFGLPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_SYSCFGLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, TIM10>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, TIM10>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_TIM10EN; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_TIM10EN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_TIM10EN; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_TIM10EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, TIM10LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, TIM10LP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_TIM10LPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_TIM10LPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_TIM10LPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_TIM10LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, TIM11>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, TIM11>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_TIM11EN; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_TIM11EN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_TIM11EN; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_TIM11EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, TIM11LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, TIM11LP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_TIM11LPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_TIM11LPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_TIM11LPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_TIM11LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, TIM2>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, TIM2>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_TIM2EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_TIM2RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_TIM2EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_TIM2EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_TIM2RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_TIM2EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, TIM2LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, TIM2LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_TIM2LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_TIM2LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_TIM2LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_TIM2LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, TIM3>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, TIM3>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_TIM3EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_TIM3RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_TIM3EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_TIM3EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_TIM3RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_TIM3EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, TIM3LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, TIM3LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_TIM3LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_TIM3LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_TIM3LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_TIM3LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, TIM4>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, TIM4>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_TIM4EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_TIM4RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_TIM4EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_TIM4EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_TIM4RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_TIM4EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, TIM4LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, TIM4LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_TIM4LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_TIM4LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_TIM4LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_TIM4LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, TIM5>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, TIM5>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_TIM5EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_TIM5RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_TIM5EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_TIM5EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_TIM5RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_TIM5EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, TIM6>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, TIM6>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_TIM6EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_TIM6RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_TIM6EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_TIM6EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_TIM6RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_TIM6EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, TIM6LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, TIM6LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_TIM6LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_TIM6LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_TIM6LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_TIM6LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, TIM7>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, TIM7>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_TIM7EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_TIM7RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_TIM7EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_TIM7EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_TIM7RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_TIM7EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, TIM7LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, TIM7LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_TIM7LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_TIM7LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_TIM7LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_TIM7LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, TIM9>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, TIM9>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_TIM9EN; }
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_TIM9RST; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_TIM9EN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_TIM9EN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_TIM9RST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_TIM9EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, TIM9LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, TIM9LP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_TIM9LPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_TIM9LPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_TIM9LPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_TIM9LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, TM10>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, TM10>>
 {
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_TM10RST; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_TM10RST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, TM11>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, TM11>>
 {
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_TM11RST; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_TM11RST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, UART4>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, UART4>>
 {
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_UART4RST; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_UART4RST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, UART5>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, UART5>>
 {
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_UART5RST; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_UART5RST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, USART1>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, USART1>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_USART1EN; }
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_USART1RST; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_USART1EN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_USART1EN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_USART1RST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_USART1EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, USART1LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, USART1LP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_USART1LPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_USART1LPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_USART1LPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_USART1LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, USART2>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, USART2>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_USART2EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_USART2RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_USART2EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_USART2EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_USART2RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_USART2EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, USART2LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, USART2LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_USART2LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_USART2LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_USART2LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_USART2LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, USART3>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, USART3>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_USART3EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_USART3RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_USART3EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_USART3EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_USART3RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_USART3EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, USART3LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, USART3LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_USART3LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_USART3LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_USART3LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_USART3LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, USART4>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, USART4>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_USART4EN; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_USART4EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_USART4EN; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_USART4EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, USART5>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, USART5>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_USART5EN; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_USART5EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_USART5EN; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_USART5EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, USB>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, USB>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_USBEN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_USBRST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_USBEN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_USBEN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_USBRST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_USBEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, USBLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, USBLP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_USBLPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_USBLPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_USBLPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_USBLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, WWD>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, WWD>>
 {
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_WWDRST; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_WWDRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, WWDG>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, WWDG>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_WWDGEN; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_WWDGEN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_WWDGEN; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_WWDGEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L100, WWDGLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L100, WWDGLP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_WWDGLPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_WWDGLPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_WWDGLPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_WWDGLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, ADC1>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, ADC1>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_ADC1EN; }
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_ADC1RST; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_ADC1EN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_ADC1EN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_ADC1RST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_ADC1EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, ADC1LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, ADC1LP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_ADC1LPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_ADC1LPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_ADC1LPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_ADC1LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, COMP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, COMP>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_COMPEN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_COMPRST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_COMPEN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_COMPEN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_COMPRST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_COMPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, COMPLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, COMPLP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_COMPLPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_COMPLPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_COMPLPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_COMPLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, CRC>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, CRC>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_CRCEN; }
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_CRCRST; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_CRCEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_CRCEN; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_CRCRST; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_CRCEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, CRCLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, CRCLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_CRCLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_CRCLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_CRCLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_CRCLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, DAC>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, DAC>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_DACEN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_DACRST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_DACEN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_DACEN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_DACRST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_DACEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, DACLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, DACLP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_DACLPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_DACLPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_DACLPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_DACLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, DMA1>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, DMA1>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_DMA1EN; }
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_DMA1RST; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_DMA1EN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_DMA1EN; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_DMA1RST; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_DMA1EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, DMA1LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, DMA1LP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_DMA1LPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_DMA1LPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_DMA1LPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_DMA1LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, DMA2>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, DMA2>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_DMA2EN; }
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_DMA2RST; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_DMA2EN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_DMA2EN; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_DMA2RST; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_DMA2EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, DMA2LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, DMA2LP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_DMA2LPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_DMA2LPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_DMA2LPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_DMA2LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, FLASH>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, FLASH>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_FLITFEN; }
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_FLITFRST; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_FLITFEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_FLITFEN; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_FLITFRST; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_FLITFEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, FLITFLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, FLITFLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_FLITFLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_FLITFLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_FLITFLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_FLITFLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, FSMC>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, FSMC>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_FSMCEN; }
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_FSMCRST; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_FSMCEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_FSMCEN; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_FSMCRST; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_FSMCEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, GPIOA>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, GPIOA>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOARST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOARST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, GPIOALP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, GPIOALP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOALPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOALPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOALPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOALPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, GPIOB>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, GPIOB>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOBRST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOBRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, GPIOBLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, GPIOBLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOBLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOBLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOBLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOBLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, GPIOC>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, GPIOC>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOCRST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOCRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, GPIOCLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, GPIOCLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOCLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOCLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOCLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOCLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, GPIOD>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, GPIOD>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIODRST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIODRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, GPIODLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, GPIODLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIODLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIODLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIODLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIODLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, GPIOE>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, GPIOE>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOERST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOERST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, GPIOELP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, GPIOELP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOELPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOELPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOELPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOELPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, GPIOF>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, GPIOF>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOFRST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOFRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, GPIOFLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, GPIOFLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOFLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOFLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOFLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOFLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, GPIOG>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, GPIOG>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOGRST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOGRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, GPIOGLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, GPIOGLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOGLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOGLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOGLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOGLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, GPIOH>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, GPIOH>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOHRST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOHRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, GPIOHLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, GPIOHLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOHLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOHLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOHLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOHLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, GPIOPA>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, GPIOPA>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPAEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPAEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPAEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPAEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, GPIOPB>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, GPIOPB>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPBEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPBEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPBEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPBEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, GPIOPC>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, GPIOPC>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPCEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPCEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPCEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPCEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, GPIOPD>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, GPIOPD>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPDEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPDEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPDEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPDEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, GPIOPE>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, GPIOPE>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPEEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPEEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPEEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPEEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, GPIOPF>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, GPIOPF>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPFEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPFEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPFEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPFEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, GPIOPG>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, GPIOPG>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPGEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPGEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPGEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPGEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, GPIOPH>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, GPIOPH>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPHEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPHEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPHEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPHEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, I2C1>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, I2C1>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_I2C1EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_I2C1RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_I2C1EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_I2C1EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_I2C1RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_I2C1EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, I2C1LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, I2C1LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_I2C1LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_I2C1LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_I2C1LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_I2C1LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, I2C2>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, I2C2>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_I2C2EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_I2C2RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_I2C2EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_I2C2EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_I2C2RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_I2C2EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, I2C2LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, I2C2LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_I2C2LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_I2C2LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_I2C2LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_I2C2LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, LCD>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, LCD>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_LCDEN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_LCDRST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_LCDEN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_LCDEN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_LCDRST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_LCDEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, LCDLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, LCDLP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_LCDLPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_LCDLPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_LCDLPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_LCDLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, PWR>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, PWR>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_PWREN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_PWRRST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_PWREN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_PWREN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_PWRRST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_PWREN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, PWRLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, PWRLP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_PWRLPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_PWRLPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_PWRLPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_PWRLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, SDIO>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, SDIO>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_SDIOEN; }
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_SDIORST; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_SDIOEN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_SDIOEN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_SDIORST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_SDIOEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, SDIOLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, SDIOLP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_SDIOLPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_SDIOLPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_SDIOLPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_SDIOLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, SPI1>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, SPI1>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_SPI1EN; }
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_SPI1RST; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_SPI1EN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_SPI1EN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_SPI1RST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_SPI1EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, SPI1LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, SPI1LP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_SPI1LPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_SPI1LPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_SPI1LPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_SPI1LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, SPI2>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, SPI2>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_SPI2EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_SPI2RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_SPI2EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_SPI2EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_SPI2RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_SPI2EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, SPI2LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, SPI2LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_SPI2LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_SPI2LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_SPI2LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_SPI2LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, SPI3>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, SPI3>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_SPI3EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_SPI3RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_SPI3EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_SPI3EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_SPI3RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_SPI3EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, SRAMLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, SRAMLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_SRAMLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_SRAMLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_SRAMLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_SRAMLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, SYSCFG>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, SYSCFG>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_SYSCFGEN; }
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_SYSCFGRST; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_SYSCFGEN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_SYSCFGEN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_SYSCFGRST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_SYSCFGEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, SYSCFGLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, SYSCFGLP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_SYSCFGLPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_SYSCFGLPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_SYSCFGLPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_SYSCFGLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, TIM10>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, TIM10>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_TIM10EN; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_TIM10EN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_TIM10EN; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_TIM10EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, TIM10LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, TIM10LP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_TIM10LPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_TIM10LPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_TIM10LPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_TIM10LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, TIM11>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, TIM11>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_TIM11EN; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_TIM11EN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_TIM11EN; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_TIM11EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, TIM11LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, TIM11LP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_TIM11LPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_TIM11LPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_TIM11LPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_TIM11LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, TIM2>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, TIM2>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_TIM2EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_TIM2RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_TIM2EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_TIM2EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_TIM2RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_TIM2EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, TIM2LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, TIM2LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_TIM2LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_TIM2LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_TIM2LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_TIM2LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, TIM3>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, TIM3>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_TIM3EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_TIM3RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_TIM3EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_TIM3EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_TIM3RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_TIM3EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, TIM3LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, TIM3LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_TIM3LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_TIM3LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_TIM3LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_TIM3LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, TIM4>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, TIM4>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_TIM4EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_TIM4RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_TIM4EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_TIM4EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_TIM4RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_TIM4EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, TIM4LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, TIM4LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_TIM4LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_TIM4LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_TIM4LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_TIM4LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, TIM5>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, TIM5>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_TIM5EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_TIM5RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_TIM5EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_TIM5EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_TIM5RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_TIM5EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, TIM6>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, TIM6>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_TIM6EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_TIM6RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_TIM6EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_TIM6EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_TIM6RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_TIM6EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, TIM6LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, TIM6LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_TIM6LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_TIM6LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_TIM6LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_TIM6LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, TIM7>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, TIM7>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_TIM7EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_TIM7RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_TIM7EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_TIM7EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_TIM7RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_TIM7EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, TIM7LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, TIM7LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_TIM7LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_TIM7LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_TIM7LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_TIM7LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, TIM9>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, TIM9>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_TIM9EN; }
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_TIM9RST; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_TIM9EN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_TIM9EN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_TIM9RST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_TIM9EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, TIM9LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, TIM9LP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_TIM9LPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_TIM9LPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_TIM9LPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_TIM9LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, TM10>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, TM10>>
 {
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_TM10RST; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_TM10RST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, TM11>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, TM11>>
 {
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_TM11RST; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_TM11RST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, UART4>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, UART4>>
 {
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_UART4RST; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_UART4RST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, UART5>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, UART5>>
 {
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_UART5RST; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_UART5RST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, USART1>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, USART1>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_USART1EN; }
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_USART1RST; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_USART1EN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_USART1EN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_USART1RST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_USART1EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, USART1LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, USART1LP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_USART1LPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_USART1LPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_USART1LPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_USART1LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, USART2>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, USART2>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_USART2EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_USART2RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_USART2EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_USART2EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_USART2RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_USART2EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, USART2LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, USART2LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_USART2LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_USART2LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_USART2LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_USART2LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, USART3>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, USART3>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_USART3EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_USART3RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_USART3EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_USART3EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_USART3RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_USART3EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, USART3LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, USART3LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_USART3LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_USART3LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_USART3LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_USART3LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, USART4>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, USART4>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_USART4EN; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_USART4EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_USART4EN; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_USART4EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, USART5>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, USART5>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_USART5EN; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_USART5EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_USART5EN; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_USART5EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, USB>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, USB>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_USBEN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_USBRST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_USBEN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_USBEN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_USBRST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_USBEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, USBLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, USBLP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_USBLPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_USBLPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_USBLPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_USBLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, WWD>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, WWD>>
 {
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_WWDRST; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_WWDRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, WWDG>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, WWDG>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_WWDGEN; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_WWDGEN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_WWDGEN; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_WWDGEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L151, WWDGLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L151, WWDGLP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_WWDGLPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_WWDGLPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_WWDGLPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_WWDGLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, ADC1>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, ADC1>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_ADC1EN; }
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_ADC1RST; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_ADC1EN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_ADC1EN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_ADC1RST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_ADC1EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, ADC1LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, ADC1LP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_ADC1LPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_ADC1LPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_ADC1LPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_ADC1LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, COMP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, COMP>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_COMPEN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_COMPRST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_COMPEN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_COMPEN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_COMPRST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_COMPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, COMPLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, COMPLP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_COMPLPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_COMPLPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_COMPLPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_COMPLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, CRC>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, CRC>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_CRCEN; }
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_CRCRST; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_CRCEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_CRCEN; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_CRCRST; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_CRCEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, CRCLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, CRCLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_CRCLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_CRCLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_CRCLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_CRCLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, DAC>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, DAC>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_DACEN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_DACRST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_DACEN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_DACEN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_DACRST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_DACEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, DACLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, DACLP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_DACLPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_DACLPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_DACLPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_DACLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, DMA1>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, DMA1>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_DMA1EN; }
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_DMA1RST; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_DMA1EN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_DMA1EN; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_DMA1RST; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_DMA1EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, DMA1LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, DMA1LP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_DMA1LPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_DMA1LPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_DMA1LPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_DMA1LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, DMA2>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, DMA2>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_DMA2EN; }
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_DMA2RST; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_DMA2EN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_DMA2EN; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_DMA2RST; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_DMA2EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, DMA2LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, DMA2LP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_DMA2LPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_DMA2LPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_DMA2LPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_DMA2LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, FLASH>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, FLASH>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_FLITFEN; }
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_FLITFRST; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_FLITFEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_FLITFEN; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_FLITFRST; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_FLITFEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, FLITFLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, FLITFLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_FLITFLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_FLITFLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_FLITFLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_FLITFLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, FSMC>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, FSMC>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_FSMCEN; }
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_FSMCRST; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_FSMCEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_FSMCEN; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_FSMCRST; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_FSMCEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, GPIOA>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, GPIOA>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOARST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOARST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, GPIOALP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, GPIOALP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOALPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOALPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOALPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOALPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, GPIOB>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, GPIOB>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOBRST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOBRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, GPIOBLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, GPIOBLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOBLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOBLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOBLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOBLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, GPIOC>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, GPIOC>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOCRST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOCRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, GPIOCLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, GPIOCLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOCLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOCLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOCLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOCLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, GPIOD>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, GPIOD>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIODRST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIODRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, GPIODLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, GPIODLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIODLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIODLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIODLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIODLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, GPIOE>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, GPIOE>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOERST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOERST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, GPIOELP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, GPIOELP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOELPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOELPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOELPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOELPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, GPIOF>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, GPIOF>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOFRST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOFRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, GPIOFLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, GPIOFLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOFLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOFLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOFLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOFLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, GPIOG>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, GPIOG>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOGRST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOGRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, GPIOGLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, GPIOGLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOGLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOGLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOGLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOGLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, GPIOH>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, GPIOH>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOHRST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOHRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, GPIOHLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, GPIOHLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOHLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOHLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOHLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOHLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, GPIOPA>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, GPIOPA>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPAEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPAEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPAEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPAEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, GPIOPB>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, GPIOPB>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPBEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPBEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPBEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPBEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, GPIOPC>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, GPIOPC>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPCEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPCEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPCEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPCEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, GPIOPD>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, GPIOPD>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPDEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPDEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPDEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPDEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, GPIOPE>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, GPIOPE>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPEEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPEEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPEEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPEEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, GPIOPF>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, GPIOPF>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPFEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPFEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPFEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPFEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, GPIOPG>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, GPIOPG>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPGEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPGEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPGEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPGEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, GPIOPH>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, GPIOPH>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPHEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPHEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPHEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPHEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, I2C1>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, I2C1>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_I2C1EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_I2C1RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_I2C1EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_I2C1EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_I2C1RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_I2C1EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, I2C1LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, I2C1LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_I2C1LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_I2C1LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_I2C1LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_I2C1LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, I2C2>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, I2C2>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_I2C2EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_I2C2RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_I2C2EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_I2C2EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_I2C2RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_I2C2EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, I2C2LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, I2C2LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_I2C2LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_I2C2LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_I2C2LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_I2C2LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, LCD>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, LCD>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_LCDEN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_LCDRST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_LCDEN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_LCDEN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_LCDRST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_LCDEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, LCDLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, LCDLP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_LCDLPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_LCDLPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_LCDLPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_LCDLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, PWR>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, PWR>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_PWREN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_PWRRST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_PWREN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_PWREN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_PWRRST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_PWREN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, PWRLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, PWRLP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_PWRLPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_PWRLPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_PWRLPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_PWRLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, SDIO>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, SDIO>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_SDIOEN; }
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_SDIORST; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_SDIOEN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_SDIOEN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_SDIORST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_SDIOEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, SDIOLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, SDIOLP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_SDIOLPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_SDIOLPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_SDIOLPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_SDIOLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, SPI1>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, SPI1>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_SPI1EN; }
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_SPI1RST; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_SPI1EN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_SPI1EN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_SPI1RST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_SPI1EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, SPI1LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, SPI1LP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_SPI1LPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_SPI1LPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_SPI1LPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_SPI1LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, SPI2>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, SPI2>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_SPI2EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_SPI2RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_SPI2EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_SPI2EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_SPI2RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_SPI2EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, SPI2LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, SPI2LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_SPI2LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_SPI2LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_SPI2LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_SPI2LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, SPI3>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, SPI3>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_SPI3EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_SPI3RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_SPI3EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_SPI3EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_SPI3RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_SPI3EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, SRAMLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, SRAMLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_SRAMLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_SRAMLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_SRAMLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_SRAMLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, SYSCFG>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, SYSCFG>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_SYSCFGEN; }
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_SYSCFGRST; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_SYSCFGEN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_SYSCFGEN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_SYSCFGRST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_SYSCFGEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, SYSCFGLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, SYSCFGLP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_SYSCFGLPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_SYSCFGLPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_SYSCFGLPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_SYSCFGLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, TIM10>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, TIM10>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_TIM10EN; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_TIM10EN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_TIM10EN; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_TIM10EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, TIM10LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, TIM10LP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_TIM10LPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_TIM10LPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_TIM10LPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_TIM10LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, TIM11>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, TIM11>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_TIM11EN; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_TIM11EN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_TIM11EN; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_TIM11EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, TIM11LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, TIM11LP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_TIM11LPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_TIM11LPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_TIM11LPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_TIM11LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, TIM2>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, TIM2>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_TIM2EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_TIM2RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_TIM2EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_TIM2EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_TIM2RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_TIM2EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, TIM2LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, TIM2LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_TIM2LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_TIM2LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_TIM2LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_TIM2LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, TIM3>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, TIM3>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_TIM3EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_TIM3RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_TIM3EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_TIM3EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_TIM3RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_TIM3EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, TIM3LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, TIM3LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_TIM3LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_TIM3LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_TIM3LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_TIM3LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, TIM4>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, TIM4>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_TIM4EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_TIM4RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_TIM4EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_TIM4EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_TIM4RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_TIM4EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, TIM4LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, TIM4LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_TIM4LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_TIM4LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_TIM4LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_TIM4LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, TIM5>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, TIM5>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_TIM5EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_TIM5RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_TIM5EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_TIM5EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_TIM5RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_TIM5EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, TIM6>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, TIM6>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_TIM6EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_TIM6RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_TIM6EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_TIM6EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_TIM6RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_TIM6EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, TIM6LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, TIM6LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_TIM6LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_TIM6LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_TIM6LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_TIM6LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, TIM7>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, TIM7>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_TIM7EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_TIM7RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_TIM7EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_TIM7EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_TIM7RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_TIM7EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, TIM7LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, TIM7LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_TIM7LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_TIM7LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_TIM7LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_TIM7LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, TIM9>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, TIM9>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_TIM9EN; }
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_TIM9RST; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_TIM9EN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_TIM9EN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_TIM9RST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_TIM9EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, TIM9LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, TIM9LP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_TIM9LPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_TIM9LPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_TIM9LPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_TIM9LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, TM10>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, TM10>>
 {
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_TM10RST; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_TM10RST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, TM11>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, TM11>>
 {
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_TM11RST; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_TM11RST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, UART4>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, UART4>>
 {
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_UART4RST; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_UART4RST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, UART5>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, UART5>>
 {
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_UART5RST; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_UART5RST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, USART1>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, USART1>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_USART1EN; }
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_USART1RST; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_USART1EN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_USART1EN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_USART1RST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_USART1EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, USART1LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, USART1LP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_USART1LPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_USART1LPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_USART1LPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_USART1LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, USART2>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, USART2>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_USART2EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_USART2RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_USART2EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_USART2EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_USART2RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_USART2EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, USART2LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, USART2LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_USART2LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_USART2LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_USART2LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_USART2LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, USART3>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, USART3>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_USART3EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_USART3RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_USART3EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_USART3EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_USART3RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_USART3EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, USART3LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, USART3LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_USART3LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_USART3LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_USART3LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_USART3LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, USART4>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, USART4>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_USART4EN; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_USART4EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_USART4EN; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_USART4EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, USART5>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, USART5>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_USART5EN; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_USART5EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_USART5EN; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_USART5EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, USB>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, USB>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_USBEN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_USBRST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_USBEN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_USBEN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_USBRST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_USBEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, USBLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, USBLP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_USBLPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_USBLPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_USBLPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_USBLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, WWD>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, WWD>>
 {
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_WWDRST; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_WWDRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, WWDG>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, WWDG>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_WWDGEN; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_WWDGEN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_WWDGEN; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_WWDGEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L152, WWDGLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L152, WWDGLP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_WWDGLPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_WWDGLPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_WWDGLPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_WWDGLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, ADC1>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, ADC1>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_ADC1EN; }
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_ADC1RST; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_ADC1EN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_ADC1EN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_ADC1RST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_ADC1EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, ADC1LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, ADC1LP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_ADC1LPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_ADC1LPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_ADC1LPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_ADC1LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, COMP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, COMP>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_COMPEN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_COMPRST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_COMPEN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_COMPEN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_COMPRST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_COMPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, COMPLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, COMPLP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_COMPLPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_COMPLPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_COMPLPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_COMPLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, CRC>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, CRC>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_CRCEN; }
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_CRCRST; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_CRCEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_CRCEN; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_CRCRST; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_CRCEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, CRCLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, CRCLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_CRCLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_CRCLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_CRCLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_CRCLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, DAC>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, DAC>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_DACEN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_DACRST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_DACEN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_DACEN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_DACRST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_DACEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, DACLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, DACLP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_DACLPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_DACLPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_DACLPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_DACLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, DMA1>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, DMA1>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_DMA1EN; }
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_DMA1RST; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_DMA1EN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_DMA1EN; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_DMA1RST; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_DMA1EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, DMA1LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, DMA1LP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_DMA1LPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_DMA1LPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_DMA1LPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_DMA1LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, DMA2>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, DMA2>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_DMA2EN; }
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_DMA2RST; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_DMA2EN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_DMA2EN; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_DMA2RST; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_DMA2EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, DMA2LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, DMA2LP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_DMA2LPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_DMA2LPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_DMA2LPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_DMA2LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, FLASH>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, FLASH>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_FLITFEN; }
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_FLITFRST; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_FLITFEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_FLITFEN; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_FLITFRST; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_FLITFEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, FLITFLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, FLITFLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_FLITFLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_FLITFLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_FLITFLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_FLITFLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, FSMC>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, FSMC>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_FSMCEN; }
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_FSMCRST; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_FSMCEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_FSMCEN; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_FSMCRST; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_FSMCEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, GPIOA>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, GPIOA>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOARST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOARST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, GPIOALP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, GPIOALP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOALPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOALPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOALPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOALPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, GPIOB>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, GPIOB>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOBRST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOBRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, GPIOBLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, GPIOBLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOBLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOBLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOBLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOBLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, GPIOC>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, GPIOC>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOCRST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOCRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, GPIOCLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, GPIOCLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOCLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOCLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOCLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOCLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, GPIOD>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, GPIOD>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIODRST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIODRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, GPIODLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, GPIODLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIODLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIODLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIODLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIODLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, GPIOE>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, GPIOE>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOERST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOERST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, GPIOELP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, GPIOELP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOELPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOELPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOELPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOELPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, GPIOF>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, GPIOF>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOFRST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOFRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, GPIOFLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, GPIOFLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOFLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOFLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOFLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOFLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, GPIOG>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, GPIOG>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOGRST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOGRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, GPIOGLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, GPIOGLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOGLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOGLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOGLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOGLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, GPIOH>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, GPIOH>>
 {
-    static void reset() { rcc_t::V.AHBRSTR |= rcc_t::T::AHBRSTR_GPIOHRST; }
+    static void reset() { rcc_t::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOHRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, GPIOHLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, GPIOHLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_GPIOHLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_GPIOHLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_GPIOHLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_GPIOHLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, GPIOPA>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, GPIOPA>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPAEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPAEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPAEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPAEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, GPIOPB>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, GPIOPB>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPBEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPBEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPBEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPBEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, GPIOPC>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, GPIOPC>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPCEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPCEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPCEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPCEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, GPIOPD>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, GPIOPD>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPDEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPDEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPDEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPDEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, GPIOPE>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, GPIOPE>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPEEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPEEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPEEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPEEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, GPIOPF>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, GPIOPF>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPFEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPFEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPFEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPFEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, GPIOPG>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, GPIOPG>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPGEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPGEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPGEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPGEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, GPIOPH>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, GPIOPH>>
 {
-    static void enable() { rcc_t::V.AHBENR |= rcc_t::T::AHBENR_GPIOPHEN; }
-    static void disable() { rcc_t::V.AHBENR &= ~rcc_t::T::AHBENR_GPIOPHEN; }
+    static void enable() { rcc_t::V.AHBENR |= RCC::T::AHBENR_GPIOPHEN; }
+    static void disable() { rcc_t::V.AHBENR &= ~RCC::T::AHBENR_GPIOPHEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, I2C1>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, I2C1>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_I2C1EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_I2C1RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_I2C1EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_I2C1EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_I2C1RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_I2C1EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, I2C1LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, I2C1LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_I2C1LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_I2C1LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_I2C1LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_I2C1LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, I2C2>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, I2C2>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_I2C2EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_I2C2RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_I2C2EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_I2C2EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_I2C2RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_I2C2EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, I2C2LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, I2C2LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_I2C2LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_I2C2LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_I2C2LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_I2C2LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, LCD>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, LCD>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_LCDEN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_LCDRST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_LCDEN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_LCDEN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_LCDRST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_LCDEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, LCDLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, LCDLP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_LCDLPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_LCDLPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_LCDLPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_LCDLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, PWR>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, PWR>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_PWREN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_PWRRST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_PWREN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_PWREN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_PWRRST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_PWREN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, PWRLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, PWRLP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_PWRLPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_PWRLPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_PWRLPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_PWRLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, SDIO>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, SDIO>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_SDIOEN; }
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_SDIORST; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_SDIOEN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_SDIOEN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_SDIORST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_SDIOEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, SDIOLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, SDIOLP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_SDIOLPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_SDIOLPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_SDIOLPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_SDIOLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, SPI1>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, SPI1>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_SPI1EN; }
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_SPI1RST; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_SPI1EN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_SPI1EN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_SPI1RST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_SPI1EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, SPI1LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, SPI1LP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_SPI1LPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_SPI1LPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_SPI1LPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_SPI1LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, SPI2>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, SPI2>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_SPI2EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_SPI2RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_SPI2EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_SPI2EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_SPI2RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_SPI2EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, SPI2LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, SPI2LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_SPI2LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_SPI2LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_SPI2LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_SPI2LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, SPI3>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, SPI3>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_SPI3EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_SPI3RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_SPI3EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_SPI3EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_SPI3RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_SPI3EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, SRAMLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, SRAMLP>>
 {
-    static void enable() { rcc_t::V.AHBLPENR |= rcc_t::T::AHBLPENR_SRAMLPEN; }
-    static void disable() { rcc_t::V.AHBLPENR &= ~rcc_t::T::AHBLPENR_SRAMLPEN; }
+    static void enable() { rcc_t::V.AHBLPENR |= RCC::T::AHBLPENR_SRAMLPEN; }
+    static void disable() { rcc_t::V.AHBLPENR &= ~RCC::T::AHBLPENR_SRAMLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, SYSCFG>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, SYSCFG>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_SYSCFGEN; }
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_SYSCFGRST; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_SYSCFGEN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_SYSCFGEN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_SYSCFGRST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_SYSCFGEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, SYSCFGLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, SYSCFGLP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_SYSCFGLPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_SYSCFGLPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_SYSCFGLPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_SYSCFGLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, TIM10>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, TIM10>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_TIM10EN; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_TIM10EN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_TIM10EN; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_TIM10EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, TIM10LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, TIM10LP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_TIM10LPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_TIM10LPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_TIM10LPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_TIM10LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, TIM11>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, TIM11>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_TIM11EN; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_TIM11EN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_TIM11EN; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_TIM11EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, TIM11LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, TIM11LP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_TIM11LPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_TIM11LPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_TIM11LPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_TIM11LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, TIM2>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, TIM2>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_TIM2EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_TIM2RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_TIM2EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_TIM2EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_TIM2RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_TIM2EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, TIM2LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, TIM2LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_TIM2LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_TIM2LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_TIM2LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_TIM2LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, TIM3>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, TIM3>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_TIM3EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_TIM3RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_TIM3EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_TIM3EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_TIM3RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_TIM3EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, TIM3LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, TIM3LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_TIM3LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_TIM3LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_TIM3LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_TIM3LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, TIM4>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, TIM4>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_TIM4EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_TIM4RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_TIM4EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_TIM4EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_TIM4RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_TIM4EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, TIM4LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, TIM4LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_TIM4LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_TIM4LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_TIM4LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_TIM4LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, TIM5>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, TIM5>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_TIM5EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_TIM5RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_TIM5EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_TIM5EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_TIM5RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_TIM5EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, TIM6>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, TIM6>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_TIM6EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_TIM6RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_TIM6EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_TIM6EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_TIM6RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_TIM6EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, TIM6LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, TIM6LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_TIM6LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_TIM6LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_TIM6LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_TIM6LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, TIM7>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, TIM7>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_TIM7EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_TIM7RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_TIM7EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_TIM7EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_TIM7RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_TIM7EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, TIM7LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, TIM7LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_TIM7LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_TIM7LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_TIM7LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_TIM7LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, TIM9>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, TIM9>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_TIM9EN; }
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_TIM9RST; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_TIM9EN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_TIM9EN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_TIM9RST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_TIM9EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, TIM9LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, TIM9LP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_TIM9LPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_TIM9LPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_TIM9LPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_TIM9LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, TM10>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, TM10>>
 {
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_TM10RST; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_TM10RST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, TM11>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, TM11>>
 {
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_TM11RST; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_TM11RST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, UART4>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, UART4>>
 {
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_UART4RST; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_UART4RST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, UART5>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, UART5>>
 {
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_UART5RST; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_UART5RST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, USART1>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, USART1>>
 {
-    static void enable() { rcc_t::V.APB2ENR |= rcc_t::T::APB2ENR_USART1EN; }
-    static void reset() { rcc_t::V.APB2RSTR |= rcc_t::T::APB2RSTR_USART1RST; }
-    static void disable() { rcc_t::V.APB2ENR &= ~rcc_t::T::APB2ENR_USART1EN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_USART1EN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_USART1RST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_USART1EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, USART1LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, USART1LP>>
 {
-    static void enable() { rcc_t::V.APB2LPENR |= rcc_t::T::APB2LPENR_USART1LPEN; }
-    static void disable() { rcc_t::V.APB2LPENR &= ~rcc_t::T::APB2LPENR_USART1LPEN; }
+    static void enable() { rcc_t::V.APB2LPENR |= RCC::T::APB2LPENR_USART1LPEN; }
+    static void disable() { rcc_t::V.APB2LPENR &= ~RCC::T::APB2LPENR_USART1LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, USART2>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, USART2>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_USART2EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_USART2RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_USART2EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_USART2EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_USART2RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_USART2EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, USART2LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, USART2LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_USART2LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_USART2LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_USART2LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_USART2LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, USART3>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, USART3>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_USART3EN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_USART3RST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_USART3EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_USART3EN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_USART3RST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_USART3EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, USART3LP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, USART3LP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_USART3LPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_USART3LPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_USART3LPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_USART3LPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, USART4>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, USART4>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_USART4EN; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_USART4EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_USART4EN; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_USART4EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, USART5>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, USART5>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_USART5EN; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_USART5EN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_USART5EN; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_USART5EN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, USB>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, USB>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_USBEN; }
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_USBRST; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_USBEN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_USBEN; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_USBRST; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_USBEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, USBLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, USBLP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_USBLPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_USBLPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_USBLPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_USBLPEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, WWD>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, WWD>>
 {
-    static void reset() { rcc_t::V.APB1RSTR |= rcc_t::T::APB1RSTR_WWDRST; }
+    static void reset() { rcc_t::V.APB1RSTR |= RCC::T::APB1RSTR_WWDRST; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, WWDG>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, WWDG>>
 {
-    static void enable() { rcc_t::V.APB1ENR |= rcc_t::T::APB1ENR_WWDGEN; }
-    static void disable() { rcc_t::V.APB1ENR &= ~rcc_t::T::APB1ENR_WWDGEN; }
+    static void enable() { rcc_t::V.APB1ENR |= RCC::T::APB1ENR_WWDGEN; }
+    static void disable() { rcc_t::V.APB1ENR &= ~RCC::T::APB1ENR_WWDGEN; }
 };
 
-template<>
-struct clock_control_t<peripheral_t<STM32L162, WWDGLP>>
+template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32L162, WWDGLP>>
 {
-    static void enable() { rcc_t::V.APB1LPENR |= rcc_t::T::APB1LPENR_WWDGLPEN; }
-    static void disable() { rcc_t::V.APB1LPENR &= ~rcc_t::T::APB1LPENR_WWDGLPEN; }
+    static void enable() { rcc_t::V.APB1LPENR |= RCC::T::APB1LPENR_WWDGLPEN; }
+    static void disable() { rcc_t::V.APB1LPENR &= ~RCC::T::APB1LPENR_WWDGLPEN; }
 };

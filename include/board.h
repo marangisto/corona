@@ -103,6 +103,12 @@ struct board_traits_t<NUCLEO_G070RB>
     static constexpr gpio_pin_t LED1 = PA5;
 };
 
+template<>
+struct board_traits_t<NUCLEO_G431RB>
+{
+    static constexpr gpio_pin_t LED1 = PA5;
+};
+
 static constexpr board_t target_board = BOARD;
 
 using board = board_traits_t<target_board>;

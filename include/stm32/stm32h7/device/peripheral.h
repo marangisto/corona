@@ -23,7 +23,7 @@ enum peripheral_enum_t
     , CRC
     , CRS
     , CRYP
-    , DAC
+    , DAC1
     , DBGMCU
     , DCMI
     , DELAY_BLOCK_OCTOSPI1

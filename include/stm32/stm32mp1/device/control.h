@@ -6,5 +6,5 @@
 //
 ////
 
-template<typename PERIPHERAL>
+template<typename RCC, typename PERIPHERAL>
 struct clock_control_t {};

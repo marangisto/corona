@@ -12,7 +12,7 @@
 //
 ////
 
-struct stm32g070_dac_t
+struct stm32g070_dac1_t
 {
     volatile uint32_t DAC_CR;      // [read-write] DAC control register
     volatile uint32_t DAC_SWTRGR;  // [write-only] DAC software trigger register
@@ -220,25 +220,32 @@ struct stm32g070_dac_t
 
 
 template<>
-struct peripheral_t<STM32G070, DAC>
+struct peripheral_t<STM32G070, DAC1>
 {
-    typedef stm32g070_dac_t T;
+    typedef stm32g070_dac1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G071, DAC>
+struct peripheral_t<STM32G071, DAC1>
 {
-    typedef stm32g070_dac_t T;
+    typedef stm32g070_dac1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G081, DAC>
+struct peripheral_t<STM32G081, DAC1>
 {
-    typedef stm32g070_dac_t T;
+    typedef stm32g070_dac1_t T;
     static T& V;
 };
 
-using dac_t = peripheral_t<mcu_svd, DAC>;
+using dac1_t = peripheral_t<mcu_svd, DAC1>;
+
+template<int INST> struct dac_traits {};
+
+template<> struct dac_traits<1>
+{
+    using dac = dac1_t;
+};
 

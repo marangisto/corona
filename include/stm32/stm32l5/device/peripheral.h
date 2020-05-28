@@ -13,7 +13,8 @@ enum peripheral_enum_t
     , COMP
     , CRC
     , CRS
-    , DAC
+    , DAC1
+    , DAC2
     , DBGMCU
     , DCB
     , DFSDM1
@@ -65,7 +66,6 @@ enum peripheral_enum_t
     , SEC_COMP
     , SEC_CRC
     , SEC_CRS
-    , SEC_DAC
     , SEC_DFSDM1
     , SEC_DMA1
     , SEC_DMA2

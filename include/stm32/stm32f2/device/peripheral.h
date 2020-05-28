@@ -15,7 +15,7 @@ enum peripheral_enum_t
     , CAN2
     , CRC
     , CRYP
-    , DAC
+    , DAC1
     , DBG
     , DCMI
     , DMA1

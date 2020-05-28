@@ -11,7 +11,7 @@ enum peripheral_enum_t
     , AES
     , COMP
     , CRC
-    , DAC
+    , DAC1
     , DBG
     , DMA
     , DMAMUX
@@ -30,7 +30,7 @@ enum peripheral_enum_t
     , IWDG
     , LPTIM1
     , LPTIM2
-    , LPUART
+    , LPUART1
     , MPU
     , NVIC
     , NVIC_STIR

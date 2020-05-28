@@ -17,7 +17,6 @@ enum peripheral_enum_t
     , ADC_COMMON
     , CAN
     , CRC
-    , DAC
     , DAC1
     , DAC2
     , DBGMCU

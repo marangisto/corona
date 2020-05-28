@@ -12,7 +12,7 @@
 //
 ////
 
-struct stm32l476_dac_t
+struct stm32l476_dac1_t
 {
     volatile uint32_t CR;      // [read-write] control register
     volatile uint32_t SWTRIGR; // [write-only] software trigger register
@@ -186,55 +186,54 @@ struct stm32l476_dac_t
 
 
 template<>
-struct peripheral_t<STM32L476, DAC>
+struct peripheral_t<STM32L476, DAC1>
 {
-    typedef stm32l476_dac_t T;
+    typedef stm32l476_dac1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L496, DAC>
+struct peripheral_t<STM32L496, DAC1>
 {
-    typedef stm32l476_dac_t T;
+    typedef stm32l476_dac1_t T;
     static T& V;
 };
 
 template<>
 struct peripheral_t<STM32L4x1, DAC1>
 {
-    typedef stm32l476_dac_t T;
+    typedef stm32l476_dac1_t T;
     static T& V;
 };
 
 template<>
 struct peripheral_t<STM32L4x2, DAC1>
 {
-    typedef stm32l476_dac_t T;
+    typedef stm32l476_dac1_t T;
     static T& V;
 };
 
 template<>
 struct peripheral_t<STM32L4x3, DAC1>
 {
-    typedef stm32l476_dac_t T;
+    typedef stm32l476_dac1_t T;
     static T& V;
 };
 
 template<>
 struct peripheral_t<STM32L4x5, DAC1>
 {
-    typedef stm32l476_dac_t T;
+    typedef stm32l476_dac1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L4x6, DAC>
+struct peripheral_t<STM32L4x6, DAC1>
 {
-    typedef stm32l476_dac_t T;
+    typedef stm32l476_dac1_t T;
     static T& V;
 };
 
-using dac_t = peripheral_t<mcu_svd, DAC>;
 using dac1_t = peripheral_t<mcu_svd, DAC1>;
 
 template<int INST> struct dac_traits {};

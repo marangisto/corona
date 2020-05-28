@@ -585,50 +585,50 @@ typename peripheral_t<STM32H7B3x, CRYP>::T& peripheral_t<STM32H7B3x, CRYP>::V =
 typename peripheral_t<STM32H753, CRYP>::T& peripheral_t<STM32H753, CRYP>::V =
     *reinterpret_cast<typename peripheral_t<STM32H753, CRYP>::T*>(0x48021000);
 
-typename peripheral_t<STM32H742x, DAC>::T& peripheral_t<STM32H742x, DAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H742x, DAC>::T*>(0x40007400);
+typename peripheral_t<STM32H742x, DAC1>::T& peripheral_t<STM32H742x, DAC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H742x, DAC1>::T*>(0x40007400);
 
-typename peripheral_t<STM32H743, DAC>::T& peripheral_t<STM32H743, DAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H743, DAC>::T*>(0x40007400);
+typename peripheral_t<STM32H743, DAC1>::T& peripheral_t<STM32H743, DAC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H743, DAC1>::T*>(0x40007400);
 
-typename peripheral_t<STM32H745_CM4, DAC>::T& peripheral_t<STM32H745_CM4, DAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H745_CM4, DAC>::T*>(0x40007400);
+typename peripheral_t<STM32H745_CM4, DAC1>::T& peripheral_t<STM32H745_CM4, DAC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H745_CM4, DAC1>::T*>(0x40007400);
 
-typename peripheral_t<STM32H745_CM7, DAC>::T& peripheral_t<STM32H745_CM7, DAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H745_CM7, DAC>::T*>(0x40007400);
+typename peripheral_t<STM32H745_CM7, DAC1>::T& peripheral_t<STM32H745_CM7, DAC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H745_CM7, DAC1>::T*>(0x40007400);
 
-typename peripheral_t<STM32H747_CM4, DAC>::T& peripheral_t<STM32H747_CM4, DAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H747_CM4, DAC>::T*>(0x40007400);
+typename peripheral_t<STM32H747_CM4, DAC1>::T& peripheral_t<STM32H747_CM4, DAC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H747_CM4, DAC1>::T*>(0x40007400);
 
-typename peripheral_t<STM32H747_CM7, DAC>::T& peripheral_t<STM32H747_CM7, DAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H747_CM7, DAC>::T*>(0x40007400);
+typename peripheral_t<STM32H747_CM7, DAC1>::T& peripheral_t<STM32H747_CM7, DAC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H747_CM7, DAC1>::T*>(0x40007400);
 
-typename peripheral_t<STM32H753, DAC>::T& peripheral_t<STM32H753, DAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H753, DAC>::T*>(0x40007400);
+typename peripheral_t<STM32H753, DAC1>::T& peripheral_t<STM32H753, DAC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H753, DAC1>::T*>(0x40007400);
 
-typename peripheral_t<STM32H755_CM4, DAC>::T& peripheral_t<STM32H755_CM4, DAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H755_CM4, DAC>::T*>(0x40007400);
+typename peripheral_t<STM32H755_CM4, DAC1>::T& peripheral_t<STM32H755_CM4, DAC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H755_CM4, DAC1>::T*>(0x40007400);
 
-typename peripheral_t<STM32H755_CM7, DAC>::T& peripheral_t<STM32H755_CM7, DAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H755_CM7, DAC>::T*>(0x40007400);
+typename peripheral_t<STM32H755_CM7, DAC1>::T& peripheral_t<STM32H755_CM7, DAC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H755_CM7, DAC1>::T*>(0x40007400);
 
-typename peripheral_t<STM32H757_CM4, DAC>::T& peripheral_t<STM32H757_CM4, DAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H757_CM4, DAC>::T*>(0x40007400);
+typename peripheral_t<STM32H757_CM4, DAC1>::T& peripheral_t<STM32H757_CM4, DAC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H757_CM4, DAC1>::T*>(0x40007400);
 
-typename peripheral_t<STM32H757_CM7, DAC>::T& peripheral_t<STM32H757_CM7, DAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H757_CM7, DAC>::T*>(0x40007400);
+typename peripheral_t<STM32H757_CM7, DAC1>::T& peripheral_t<STM32H757_CM7, DAC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H757_CM7, DAC1>::T*>(0x40007400);
 
-typename peripheral_t<STM32H7A3x, DAC>::T& peripheral_t<STM32H7A3x, DAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7A3x, DAC>::T*>(0x40007400);
+typename peripheral_t<STM32H7A3x, DAC1>::T& peripheral_t<STM32H7A3x, DAC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7A3x, DAC1>::T*>(0x40007400);
 
-typename peripheral_t<STM32H750x, DAC>::T& peripheral_t<STM32H750x, DAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H750x, DAC>::T*>(0x40007400);
+typename peripheral_t<STM32H750x, DAC1>::T& peripheral_t<STM32H750x, DAC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H750x, DAC1>::T*>(0x40007400);
 
-typename peripheral_t<STM32H7B0x, DAC>::T& peripheral_t<STM32H7B0x, DAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7B0x, DAC>::T*>(0x40007400);
+typename peripheral_t<STM32H7B0x, DAC1>::T& peripheral_t<STM32H7B0x, DAC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7B0x, DAC1>::T*>(0x40007400);
 
-typename peripheral_t<STM32H7B3x, DAC>::T& peripheral_t<STM32H7B3x, DAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32H7B3x, DAC>::T*>(0x40007400);
+typename peripheral_t<STM32H7B3x, DAC1>::T& peripheral_t<STM32H7B3x, DAC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32H7B3x, DAC1>::T*>(0x40007400);
 
 typename peripheral_t<STM32H742x, DBGMCU>::T& peripheral_t<STM32H742x, DBGMCU>::V =
     *reinterpret_cast<typename peripheral_t<STM32H742x, DBGMCU>::T*>(0x5c001000);

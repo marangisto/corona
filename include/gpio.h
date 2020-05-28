@@ -60,7 +60,7 @@ public:
     {
         typename gpio_t<PORT>::T& GPIO = gpio_t<PORT>::V;
 
-        clock_control_t<gpio_t<PORT>>::enable();
+        clock_control_t<rcc_t, gpio_t<PORT>>::enable();
 
         // FIXME: feature for STM32F1 family!
         GPIO.MODER &= ~(0x3 << (POS*2));
@@ -116,7 +116,7 @@ public:
     {
         typename gpio_t<PORT>::T& GPIO = gpio_t<PORT>::V;
 
-        clock_control_t<gpio_t<PORT>>::enable();
+        clock_control_t<rcc_t, gpio_t<PORT>>::enable();
         GPIO.MODER &= ~(0x3 << (POS*2));
         GPIO.MODER |= alternate_mode << (POS*2);
         if (speed != low_speed)
@@ -124,9 +124,9 @@ public:
         if (output_type == open_drain)
             GPIO.OTYPER |= MASK;
         if (POS < 8)
-            GPIO.AFRL |= alt_fun_traits<PIN, ALT>::AF << (POS*4);
+            GPIO.AFRL |= alt_fun_traits<gpio_conf, PIN, ALT>::AF << (POS*4);
         else
-            GPIO.AFRH |= alt_fun_traits<PIN, ALT>::AF << ((POS-8)*4);
+            GPIO.AFRH |= alt_fun_traits<gpio_conf, PIN, ALT>::AF << ((POS-8)*4);
     }
 
     template<input_type_t input_type = floating>
@@ -134,15 +134,15 @@ public:
     {
         typename gpio_t<PORT>::T& GPIO = gpio_t<PORT>::V;
 
-        clock_control_t<gpio_t<PORT>>::enable();
+        clock_control_t<rcc_t, gpio_t<PORT>>::enable();
         GPIO.MODER &= ~(0x3 << (POS*2));
         GPIO.MODER |= alternate_mode << (POS*2);
         if (input_type != floating)
             GPIO.PUPDR |= input_type << (POS*2);
         if (POS < 8)
-            GPIO.AFRL |= alt_fun_traits<PIN, ALT>::AF << (POS*4);
+            GPIO.AFRL |= alt_fun_traits<gpio_conf, PIN, ALT>::AF << (POS*4);
         else
-            GPIO.AFRH |= alt_fun_traits<PIN, ALT>::AF << ((POS-8)*4);
+            GPIO.AFRH |= alt_fun_traits<gpio_conf, PIN, ALT>::AF << ((POS-8)*4);
     }
 
 private:

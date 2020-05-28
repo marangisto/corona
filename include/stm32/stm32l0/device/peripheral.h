@@ -11,7 +11,7 @@ enum peripheral_enum_t
     , AES
     , CRC
     , CRS
-    , DAC
+    , DAC1
     , DBG
     , DBGMCU
     , DMA1

@@ -54,11 +54,11 @@ typename peripheral_t<STM32F215, CRYP>::T& peripheral_t<STM32F215, CRYP>::V =
 typename peripheral_t<STM32F217, CRYP>::T& peripheral_t<STM32F217, CRYP>::V =
     *reinterpret_cast<typename peripheral_t<STM32F217, CRYP>::T*>(0x50060000);
 
-typename peripheral_t<STM32F215, DAC>::T& peripheral_t<STM32F215, DAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F215, DAC>::T*>(0x40007400);
+typename peripheral_t<STM32F215, DAC1>::T& peripheral_t<STM32F215, DAC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F215, DAC1>::T*>(0x40007400);
 
-typename peripheral_t<STM32F217, DAC>::T& peripheral_t<STM32F217, DAC>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F217, DAC>::T*>(0x40007400);
+typename peripheral_t<STM32F217, DAC1>::T& peripheral_t<STM32F217, DAC1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F217, DAC1>::T*>(0x40007400);
 
 typename peripheral_t<STM32F215, DBG>::T& peripheral_t<STM32F215, DBG>::V =
     *reinterpret_cast<typename peripheral_t<STM32F215, DBG>::T*>(0xe0042000);

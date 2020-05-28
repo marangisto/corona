@@ -12,7 +12,7 @@
 //
 ////
 
-struct stm32f722_dac_t
+struct stm32f722_dac1_t
 {
     volatile uint32_t CR;      // [read-write] control register
     volatile uint32_t SWTRIGR; // [write-only] software trigger register
@@ -134,116 +134,123 @@ struct stm32f722_dac_t
 
 
 template<>
-struct peripheral_t<STM32F722, DAC>
+struct peripheral_t<STM32F722, DAC1>
 {
-    typedef stm32f722_dac_t T;
+    typedef stm32f722_dac1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F723, DAC>
+struct peripheral_t<STM32F723, DAC1>
 {
-    typedef stm32f722_dac_t T;
+    typedef stm32f722_dac1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F730, DAC>
+struct peripheral_t<STM32F730, DAC1>
 {
-    typedef stm32f722_dac_t T;
+    typedef stm32f722_dac1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F732, DAC>
+struct peripheral_t<STM32F732, DAC1>
 {
-    typedef stm32f722_dac_t T;
+    typedef stm32f722_dac1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F733, DAC>
+struct peripheral_t<STM32F733, DAC1>
 {
-    typedef stm32f722_dac_t T;
+    typedef stm32f722_dac1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F745, DAC>
+struct peripheral_t<STM32F745, DAC1>
 {
-    typedef stm32f722_dac_t T;
+    typedef stm32f722_dac1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F746, DAC>
+struct peripheral_t<STM32F746, DAC1>
 {
-    typedef stm32f722_dac_t T;
+    typedef stm32f722_dac1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F750x, DAC>
+struct peripheral_t<STM32F750x, DAC1>
 {
-    typedef stm32f722_dac_t T;
+    typedef stm32f722_dac1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F756, DAC>
+struct peripheral_t<STM32F756, DAC1>
 {
-    typedef stm32f722_dac_t T;
+    typedef stm32f722_dac1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F765, DAC>
+struct peripheral_t<STM32F765, DAC1>
 {
-    typedef stm32f722_dac_t T;
+    typedef stm32f722_dac1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F767, DAC>
+struct peripheral_t<STM32F767, DAC1>
 {
-    typedef stm32f722_dac_t T;
+    typedef stm32f722_dac1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F768, DAC>
+struct peripheral_t<STM32F768, DAC1>
 {
-    typedef stm32f722_dac_t T;
+    typedef stm32f722_dac1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F769, DAC>
+struct peripheral_t<STM32F769, DAC1>
 {
-    typedef stm32f722_dac_t T;
+    typedef stm32f722_dac1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F777, DAC>
+struct peripheral_t<STM32F777, DAC1>
 {
-    typedef stm32f722_dac_t T;
+    typedef stm32f722_dac1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F778, DAC>
+struct peripheral_t<STM32F778, DAC1>
 {
-    typedef stm32f722_dac_t T;
+    typedef stm32f722_dac1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F779, DAC>
+struct peripheral_t<STM32F779, DAC1>
 {
-    typedef stm32f722_dac_t T;
+    typedef stm32f722_dac1_t T;
     static T& V;
 };
 
-using dac_t = peripheral_t<mcu_svd, DAC>;
+using dac1_t = peripheral_t<mcu_svd, DAC1>;
+
+template<int INST> struct dac_traits {};
+
+template<> struct dac_traits<1>
+{
+    using dac = dac1_t;
+};
 

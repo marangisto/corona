@@ -14,7 +14,7 @@ enum peripheral_enum_t
     , COMP
     , CRC
     , CRS
-    , DAC
+    , DAC1
     , DBGMCU
     , DCMI
     , DFSDM1

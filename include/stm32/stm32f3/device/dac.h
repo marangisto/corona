@@ -141,14 +141,14 @@ struct peripheral_t<STM32F301, DAC1>
 };
 
 template<>
-struct peripheral_t<STM32F302, DAC>
+struct peripheral_t<STM32F302, DAC1>
 {
     typedef stm32f301_dac1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F303, DAC>
+struct peripheral_t<STM32F303, DAC1>
 {
     typedef stm32f301_dac1_t T;
     static T& V;
@@ -182,7 +182,6 @@ struct peripheral_t<STM32F3x8, DAC1>
     static T& V;
 };
 
-using dac_t = peripheral_t<mcu_svd, DAC>;
 using dac1_t = peripheral_t<mcu_svd, DAC1>;
 using dac2_t = peripheral_t<mcu_svd, DAC2>;
 

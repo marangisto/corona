@@ -2657,11 +2657,6 @@ template<> struct adc_traits<1>
     using adc = adc1_t;
 };
 
-template<> struct adc_traits<12_COMMON>
-{
-    using adc = adc12_COMMON_t;
-};
-
 template<> struct adc_traits<2>
 {
     using adc = adc2_t;

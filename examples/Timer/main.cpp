@@ -2,7 +2,7 @@
 #include <timer.h>
 
 using led = board::led1;
-using tim = tim_t<3>;
+using tim = timer_t<3>;
 
 template<> void handler<interrupt::TIM3>()
 {
@@ -13,6 +13,8 @@ template<> void handler<interrupt::TIM3>()
 int main()
 {
     led::setup();
+
+    // f_tim = f_sysclock / ((psc + 1) (arr + 1))
 
     tim::setup(sys_clock::freq() / 10000, 9999);
     tim::enable_update_interrupt();

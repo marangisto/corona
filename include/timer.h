@@ -7,10 +7,10 @@ template<> struct counter_traits<2> { using type = uint32_t; };
 template<> struct counter_traits<5> { using type = uint32_t; };
 
 template<int INST>
-class tim_t
+class timer_t
 {
 public:
-    typedef typename counter_traits<INST>::type count_t;
+    using count_t = typename counter_traits<INST>::type;
     enum master_mode_t { mm_reset, mm_enable, mm_update };
 
     static inline void setup(uint16_t psc, count_t arr)

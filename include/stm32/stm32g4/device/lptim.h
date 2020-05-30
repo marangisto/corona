@@ -12,7 +12,7 @@
 //
 ////
 
-struct stm32g431xx_lptimer1_t
+struct stm32g431xx_lptim1_t
 {
     volatile uint32_t ISR;  // [read-only] Interrupt and Status Register
     volatile uint32_t ICR;  // [write-only] Interrupt Clear Register
@@ -113,60 +113,64 @@ struct stm32g431xx_lptimer1_t
 
 
 template<>
-struct peripheral_t<STM32G431xx, LPTIMER1>
+struct peripheral_t<STM32G431xx, LPTIM1>
 {
-    typedef stm32g431xx_lptimer1_t T;
+    typedef stm32g431xx_lptim1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G441xx, LPTIMER1>
+struct peripheral_t<STM32G441xx, LPTIM1>
 {
-    typedef stm32g431xx_lptimer1_t T;
+    typedef stm32g431xx_lptim1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G471xx, LPTIMER1>
+struct peripheral_t<STM32G471xx, LPTIM1>
 {
-    typedef stm32g431xx_lptimer1_t T;
+    typedef stm32g431xx_lptim1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G473xx, LPTIMER1>
+struct peripheral_t<STM32G473xx, LPTIM1>
 {
-    typedef stm32g431xx_lptimer1_t T;
+    typedef stm32g431xx_lptim1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G474xx, LPTIMER1>
+struct peripheral_t<STM32G474xx, LPTIM1>
 {
-    typedef stm32g431xx_lptimer1_t T;
+    typedef stm32g431xx_lptim1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G483xx, LPTIMER1>
+struct peripheral_t<STM32G483xx, LPTIM1>
 {
-    typedef stm32g431xx_lptimer1_t T;
+    typedef stm32g431xx_lptim1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G484xx, LPTIMER1>
+struct peripheral_t<STM32G484xx, LPTIM1>
 {
-    typedef stm32g431xx_lptimer1_t T;
+    typedef stm32g431xx_lptim1_t T;
     static T& V;
 };
 
-using lptimer1_t = peripheral_t<mcu_svd, LPTIMER1>;
+using lptim1_t = peripheral_t<mcu_svd, LPTIM1>;
 
-template<int INST> struct lptimer_traits {};
+template<int INST> struct lptim_traits {};
 
-template<> struct lptimer_traits<1>
+template<> struct lptim_traits<1>
 {
-    using lptimer = lptimer1_t;
+    using lptim = lptim1_t;
+    static constexpr alternate_function_t ETR = LPTIM1_ETR;
+    static constexpr alternate_function_t IN1 = LPTIM1_IN1;
+    static constexpr alternate_function_t IN2 = LPTIM1_IN2;
+    static constexpr alternate_function_t OUT = LPTIM1_OUT;
 };
 

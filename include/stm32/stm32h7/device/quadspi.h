@@ -12,7 +12,7 @@
 //
 ////
 
-struct stm32h742x_quadspi_t
+struct stm32h742x_quadspi1_t
 {
     volatile uint32_t CR;    // [read-write] QUADSPI control register
     volatile uint32_t DCR;   // [read-write] QUADSPI device configuration register
@@ -138,7 +138,7 @@ struct stm32h742x_quadspi_t
 //
 ////
 
-struct stm32h750x_quadspi_t
+struct stm32h750x_quadspi1_t
 {
     volatile uint32_t QUADSPI_CR;    // [read-write] QUADSPI control register
     volatile uint32_t QUADSPI_DCR;   // [read-write] QUADSPI device configuration register
@@ -259,88 +259,95 @@ struct stm32h750x_quadspi_t
 
 
 template<>
-struct peripheral_t<STM32H742x, QUADSPI>
+struct peripheral_t<STM32H742x, QUADSPI1>
 {
-    typedef stm32h742x_quadspi_t T;
+    typedef stm32h742x_quadspi1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H743, QUADSPI>
+struct peripheral_t<STM32H743, QUADSPI1>
 {
-    typedef stm32h742x_quadspi_t T;
+    typedef stm32h742x_quadspi1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H745_CM4, QUADSPI>
+struct peripheral_t<STM32H745_CM4, QUADSPI1>
 {
-    typedef stm32h742x_quadspi_t T;
+    typedef stm32h742x_quadspi1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H745_CM7, QUADSPI>
+struct peripheral_t<STM32H745_CM7, QUADSPI1>
 {
-    typedef stm32h742x_quadspi_t T;
+    typedef stm32h742x_quadspi1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H747_CM4, QUADSPI>
+struct peripheral_t<STM32H747_CM4, QUADSPI1>
 {
-    typedef stm32h742x_quadspi_t T;
+    typedef stm32h742x_quadspi1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H747_CM7, QUADSPI>
+struct peripheral_t<STM32H747_CM7, QUADSPI1>
 {
-    typedef stm32h742x_quadspi_t T;
+    typedef stm32h742x_quadspi1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H753, QUADSPI>
+struct peripheral_t<STM32H753, QUADSPI1>
 {
-    typedef stm32h742x_quadspi_t T;
+    typedef stm32h742x_quadspi1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H755_CM4, QUADSPI>
+struct peripheral_t<STM32H755_CM4, QUADSPI1>
 {
-    typedef stm32h742x_quadspi_t T;
+    typedef stm32h742x_quadspi1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H755_CM7, QUADSPI>
+struct peripheral_t<STM32H755_CM7, QUADSPI1>
 {
-    typedef stm32h742x_quadspi_t T;
+    typedef stm32h742x_quadspi1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H757_CM4, QUADSPI>
+struct peripheral_t<STM32H757_CM4, QUADSPI1>
 {
-    typedef stm32h742x_quadspi_t T;
+    typedef stm32h742x_quadspi1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H757_CM7, QUADSPI>
+struct peripheral_t<STM32H757_CM7, QUADSPI1>
 {
-    typedef stm32h742x_quadspi_t T;
+    typedef stm32h742x_quadspi1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H750x, QUADSPI>
+struct peripheral_t<STM32H750x, QUADSPI1>
 {
-    typedef stm32h750x_quadspi_t T;
+    typedef stm32h750x_quadspi1_t T;
     static T& V;
 };
 
-using quadspi_t = peripheral_t<mcu_svd, QUADSPI>;
+using quadspi1_t = peripheral_t<mcu_svd, QUADSPI1>;
+
+template<int INST> struct quadspi_traits {};
+
+template<> struct quadspi_traits<1>
+{
+    using quadspi = quadspi1_t;
+};
 

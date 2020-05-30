@@ -42,7 +42,7 @@ enum peripheral_enum_t
     , NVIC_STIR
     , PKA
     , PWR
-    , QUADSPI
+    , QUADSPI1
     , RCC
     , RNG
     , RTC

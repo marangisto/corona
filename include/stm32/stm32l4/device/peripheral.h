@@ -61,7 +61,7 @@ enum peripheral_enum_t
     , OTG_FS_HOST
     , OTG_FS_PWRCLK
     , PWR
-    , QUADSPI
+    , QUADSPI1
     , RCC
     , RNG
     , RTC

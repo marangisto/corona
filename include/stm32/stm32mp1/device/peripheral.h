@@ -81,7 +81,7 @@ enum peripheral_enum_t
     , NVIC
     , OTGHSFS1
     , PWR
-    , QUADSPI
+    , QUADSPI1
     , RCC
     , RNG1
     , RNG2

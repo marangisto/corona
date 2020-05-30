@@ -57,18 +57,18 @@ enum peripheral_enum_t
     , I2C3
     , I2C4
     , IWDG
-    , LPTIMER1
+    , LPTIM1
     , LPUART1
     , MPU
     , NVIC
     , NVIC_STIR
     , OPAMP
     , PWR
-    , QUADSPI
+    , QUADSPI1
     , RCC
     , RNG
     , RTC
-    , SAI
+    , SAI1
     , SCB
     , SCB_ACTRL
     , SPI1
@@ -96,7 +96,7 @@ enum peripheral_enum_t
     , USART1
     , USART2
     , USART3
-    , USB_FS_DEVICE
+    , USB
     , VREFBUF
     , WWDG
     };

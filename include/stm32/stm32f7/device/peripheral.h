@@ -72,7 +72,7 @@ enum peripheral_enum_t
     , OTG_HS_PWRCLK
     , PF
     , PWR
-    , QUADSPI
+    , QUADSPI1
     , RCC
     , RNG
     , RTC

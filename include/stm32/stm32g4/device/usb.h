@@ -12,7 +12,7 @@
 //
 ////
 
-struct stm32g431xx_usb_fs_device_t
+struct stm32g431xx_usb_t
 {
     volatile uint32_t EP0R;   // [read-write] USB endpoint n register
     volatile uint32_t EP1R;   // [read-write] USB endpoint n register
@@ -246,53 +246,53 @@ struct stm32g431xx_usb_fs_device_t
 
 
 template<>
-struct peripheral_t<STM32G431xx, USB_FS_DEVICE>
+struct peripheral_t<STM32G431xx, USB>
 {
-    typedef stm32g431xx_usb_fs_device_t T;
+    typedef stm32g431xx_usb_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G441xx, USB_FS_DEVICE>
+struct peripheral_t<STM32G441xx, USB>
 {
-    typedef stm32g431xx_usb_fs_device_t T;
+    typedef stm32g431xx_usb_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G471xx, USB_FS_DEVICE>
+struct peripheral_t<STM32G471xx, USB>
 {
-    typedef stm32g431xx_usb_fs_device_t T;
+    typedef stm32g431xx_usb_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G473xx, USB_FS_DEVICE>
+struct peripheral_t<STM32G473xx, USB>
 {
-    typedef stm32g431xx_usb_fs_device_t T;
+    typedef stm32g431xx_usb_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G474xx, USB_FS_DEVICE>
+struct peripheral_t<STM32G474xx, USB>
 {
-    typedef stm32g431xx_usb_fs_device_t T;
+    typedef stm32g431xx_usb_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G483xx, USB_FS_DEVICE>
+struct peripheral_t<STM32G483xx, USB>
 {
-    typedef stm32g431xx_usb_fs_device_t T;
+    typedef stm32g431xx_usb_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G484xx, USB_FS_DEVICE>
+struct peripheral_t<STM32G484xx, USB>
 {
-    typedef stm32g431xx_usb_fs_device_t T;
+    typedef stm32g431xx_usb_t T;
     static T& V;
 };
 
-using usb_fs_device_t = peripheral_t<mcu_svd, USB_FS_DEVICE>;
+using usb_t = peripheral_t<mcu_svd, USB>;
 

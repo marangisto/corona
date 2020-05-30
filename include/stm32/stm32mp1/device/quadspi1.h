@@ -12,7 +12,7 @@
 //
 ////
 
-struct stm32mp15xxx_quadspi_t
+struct stm32mp15xxx_quadspi1_t
 {
     volatile uint32_t QUADSPI_CR;     // [read-write] QUADSPI control register
     volatile uint32_t QUADSPI_DCR;    // [read-write] QUADSPI device configuration register
@@ -165,11 +165,18 @@ struct stm32mp15xxx_quadspi_t
 
 
 template<>
-struct peripheral_t<STM32MP15xxx, QUADSPI>
+struct peripheral_t<STM32MP15xxx, QUADSPI1>
 {
-    typedef stm32mp15xxx_quadspi_t T;
+    typedef stm32mp15xxx_quadspi1_t T;
     static T& V;
 };
 
-using quadspi_t = peripheral_t<mcu_svd, QUADSPI>;
+using quadspi1_t = peripheral_t<mcu_svd, QUADSPI1>;
+
+template<int INST> struct quadspi_traits {};
+
+template<> struct quadspi_traits<1>
+{
+    using quadspi = quadspi1_t;
+};
 

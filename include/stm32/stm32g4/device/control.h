@@ -10,27 +10,33 @@ template<typename RCC, typename PERIPHERAL>
 struct clock_control_t {};
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G431xx, AD12C>>
+struct clock_control_t<RCC, peripheral_t<STM32G431xx, ADC12_COMMON>>
 {
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_AD12CSMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_AD12CSMEN; }
+    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC12_COMMONEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_ADC12_COMMONSMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADC12_COMMONRST; }
+    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC12_COMMONEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_ADC12_COMMONSMEN; }
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G431xx, ADC12>>
+struct clock_control_t<RCC, peripheral_t<STM32G431xx, ADC345_COMMON>>
 {
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC12EN; }
-    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADC12RST; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC12EN; }
+    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC345_COMMONEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_ADC345_COMMONSMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADC345_COMMONRST; }
+    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC345_COMMONEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_ADC345_COMMONSMEN; }
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G431xx, ADC345>>
+struct clock_control_t<RCC, peripheral_t<STM32G431xx, AES>>
 {
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC345EN; }
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_ADC345SMEN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC345EN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_ADC345SMEN; }
+    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_AESEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_AESSMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_AESRST; }
+    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_AESEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_AESSMEN; }
 };
 
 template<typename RCC>
@@ -64,19 +70,10 @@ struct clock_control_t<RCC, peripheral_t<STM32G431xx, CRS>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G431xx, CRYPT>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_CRYPTEN; }
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_CRYPTSMEN; }
-    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_CRYPTRST; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_CRYPTEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_CRYPTSMEN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G431xx, DAC1>>
 {
     static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_DAC1SMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_DAC1RST; }
     static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_DAC1SMEN; }
 };
 
@@ -128,15 +125,10 @@ template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G431xx, DMAMUX>>
 {
     static void enable() { rcc_t::V.AHB1ENR |= RCC::T::AHB1ENR_DMAMUXEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_DMAMUXSMEN; }
+    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_DMAMUXRST; }
     static void disable() { rcc_t::V.AHB1ENR &= ~RCC::T::AHB1ENR_DMAMUXEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G431xx, DMAMUX1>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_DMAMUX1SMEN; }
-    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_DMAMUX1RST; }
-    static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_DMAMUX1SMEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_DMAMUXSMEN; }
 };
 
 template<typename RCC>
@@ -152,15 +144,11 @@ struct clock_control_t<RCC, peripheral_t<STM32G431xx, FDCAN>>
 template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G431xx, FLASH>>
 {
+    static void enable() { rcc_t::V.AHB1ENR |= RCC::T::AHB1ENR_FLASHEN; }
     static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_FLASHSMEN; }
+    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_FLASHRST; }
+    static void disable() { rcc_t::V.AHB1ENR &= ~RCC::T::AHB1ENR_FLASHEN; }
     static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_FLASHSMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G431xx, FLASH>>
-{
-    static void enable() { rcc_t::V.AHB1ENR |= RCC::T::AHB1ENR_FLITFEN; }
-    static void disable() { rcc_t::V.AHB1ENR &= ~RCC::T::AHB1ENR_FLITFEN; }
 };
 
 template<typename RCC>
@@ -253,18 +241,13 @@ struct clock_control_t<RCC, peripheral_t<STM32G431xx, GPIOG>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G431xx, HRTIM1>>
+struct clock_control_t<RCC, peripheral_t<STM32G431xx, HRTIM_MASTER>>
 {
-    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_HRTIM1RST; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G431xx, HRTIMER>>
-{
-    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_HRTIMEREN; }
-    static void enable_sleep_mode() { rcc_t::V.APB2SMENR |= RCC::T::APB2SMENR_HRTIMERSMEN; }
-    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_HRTIMEREN; }
-    static void disable_sleep_mode() { rcc_t::V.APB2SMENR &= ~RCC::T::APB2SMENR_HRTIMERSMEN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_HRTIM_MASTEREN; }
+    static void enable_sleep_mode() { rcc_t::V.APB2SMENR |= RCC::T::APB2SMENR_HRTIM_MASTERSMEN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_HRTIM_MASTERRST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_HRTIM_MASTEREN; }
+    static void disable_sleep_mode() { rcc_t::V.APB2SMENR &= ~RCC::T::APB2SMENR_HRTIM_MASTERSMEN; }
 };
 
 template<typename RCC>
@@ -325,12 +308,6 @@ struct clock_control_t<RCC, peripheral_t<STM32G431xx, LPUART1>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G431xx, MATRIX>>
-{
-    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_MATRIXRST; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G431xx, PWR>>
 {
     static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_PWREN; }
@@ -371,15 +348,6 @@ struct clock_control_t<RCC, peripheral_t<STM32G431xx, SAI1>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G431xx, SP3>>
-{
-    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_SP3EN; }
-    static void enable_sleep_mode() { rcc_t::V.APB1SMENR1 |= RCC::T::APB1SMENR1_SP3SMEN; }
-    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_SP3EN; }
-    static void disable_sleep_mode() { rcc_t::V.APB1SMENR1 &= ~RCC::T::APB1SMENR1_SP3SMEN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G431xx, SPI1>>
 {
     static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_SPI1EN; }
@@ -402,7 +370,11 @@ struct clock_control_t<RCC, peripheral_t<STM32G431xx, SPI2>>
 template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G431xx, SPI3>>
 {
+    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_SPI3EN; }
+    static void enable_sleep_mode() { rcc_t::V.APB1SMENR1 |= RCC::T::APB1SMENR1_SPI3SMEN; }
     static void reset() { rcc_t::V.APB1RSTR1 |= RCC::T::APB1RSTR1_SPI3RST; }
+    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_SPI3EN; }
+    static void disable_sleep_mode() { rcc_t::V.APB1SMENR1 &= ~RCC::T::APB1SMENR1_SPI3SMEN; }
 };
 
 template<typename RCC>
@@ -413,27 +385,6 @@ struct clock_control_t<RCC, peripheral_t<STM32G431xx, SPI4>>
     static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_SPI4RST; }
     static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_SPI4EN; }
     static void disable_sleep_mode() { rcc_t::V.APB2SMENR &= ~RCC::T::APB2SMENR_SPI4SMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G431xx, SRAM1>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_SRAM1SMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_SRAM1SMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G431xx, SRAM2>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_SRAM2SMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_SRAM2SMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G431xx, SRAM3>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_SRAM3SMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_SRAM3SMEN; }
 };
 
 template<typename RCC>
@@ -587,6 +538,16 @@ struct clock_control_t<RCC, peripheral_t<STM32G431xx, UART5>>
 };
 
 template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32G431xx, UCPD1>>
+{
+    static void enable() { rcc_t::V.APB1ENR2 |= RCC::T::APB1ENR2_UCPD1EN; }
+    static void enable_sleep_mode() { rcc_t::V.APB1SMENR2 |= RCC::T::APB1SMENR2_UCPD1SMEN; }
+    static void reset() { rcc_t::V.APB1RSTR2 |= RCC::T::APB1RSTR2_UCPD1RST; }
+    static void disable() { rcc_t::V.APB1ENR2 &= ~RCC::T::APB1ENR2_UCPD1EN; }
+    static void disable_sleep_mode() { rcc_t::V.APB1SMENR2 &= ~RCC::T::APB1SMENR2_UCPD1SMEN; }
+};
+
+template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G431xx, USART1>>
 {
     static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_USART1EN; }
@@ -617,21 +578,11 @@ struct clock_control_t<RCC, peripheral_t<STM32G431xx, USART3>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G431xx, USBD>>
+struct clock_control_t<RCC, peripheral_t<STM32G431xx, USB>>
 {
-    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_USBDEN; }
-    static void reset() { rcc_t::V.APB1RSTR1 |= RCC::T::APB1RSTR1_USBDRST; }
-    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_USBDEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G431xx, USBPD>>
-{
-    static void enable() { rcc_t::V.APB1ENR2 |= RCC::T::APB1ENR2_USBPDEN; }
-    static void enable_sleep_mode() { rcc_t::V.APB1SMENR2 |= RCC::T::APB1SMENR2_USBPDSMEN; }
-    static void reset() { rcc_t::V.APB1RSTR2 |= RCC::T::APB1RSTR2_USBPDRST; }
-    static void disable() { rcc_t::V.APB1ENR2 &= ~RCC::T::APB1ENR2_USBPDEN; }
-    static void disable_sleep_mode() { rcc_t::V.APB1SMENR2 &= ~RCC::T::APB1SMENR2_USBPDSMEN; }
+    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_USBEN; }
+    static void reset() { rcc_t::V.APB1RSTR1 |= RCC::T::APB1RSTR1_USBRST; }
+    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_USBEN; }
 };
 
 template<typename RCC>
@@ -644,27 +595,33 @@ struct clock_control_t<RCC, peripheral_t<STM32G431xx, WWDG>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G441xx, AD12C>>
+struct clock_control_t<RCC, peripheral_t<STM32G441xx, ADC12_COMMON>>
 {
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_AD12CSMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_AD12CSMEN; }
+    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC12_COMMONEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_ADC12_COMMONSMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADC12_COMMONRST; }
+    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC12_COMMONEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_ADC12_COMMONSMEN; }
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G441xx, ADC12>>
+struct clock_control_t<RCC, peripheral_t<STM32G441xx, ADC345_COMMON>>
 {
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC12EN; }
-    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADC12RST; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC12EN; }
+    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC345_COMMONEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_ADC345_COMMONSMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADC345_COMMONRST; }
+    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC345_COMMONEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_ADC345_COMMONSMEN; }
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G441xx, ADC345>>
+struct clock_control_t<RCC, peripheral_t<STM32G441xx, AES>>
 {
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC345EN; }
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_ADC345SMEN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC345EN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_ADC345SMEN; }
+    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_AESEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_AESSMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_AESRST; }
+    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_AESEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_AESSMEN; }
 };
 
 template<typename RCC>
@@ -698,19 +655,10 @@ struct clock_control_t<RCC, peripheral_t<STM32G441xx, CRS>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G441xx, CRYPT>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_CRYPTEN; }
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_CRYPTSMEN; }
-    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_CRYPTRST; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_CRYPTEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_CRYPTSMEN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G441xx, DAC1>>
 {
     static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_DAC1SMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_DAC1RST; }
     static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_DAC1SMEN; }
 };
 
@@ -762,15 +710,10 @@ template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G441xx, DMAMUX>>
 {
     static void enable() { rcc_t::V.AHB1ENR |= RCC::T::AHB1ENR_DMAMUXEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_DMAMUXSMEN; }
+    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_DMAMUXRST; }
     static void disable() { rcc_t::V.AHB1ENR &= ~RCC::T::AHB1ENR_DMAMUXEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G441xx, DMAMUX1>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_DMAMUX1SMEN; }
-    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_DMAMUX1RST; }
-    static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_DMAMUX1SMEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_DMAMUXSMEN; }
 };
 
 template<typename RCC>
@@ -786,15 +729,11 @@ struct clock_control_t<RCC, peripheral_t<STM32G441xx, FDCAN>>
 template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G441xx, FLASH>>
 {
+    static void enable() { rcc_t::V.AHB1ENR |= RCC::T::AHB1ENR_FLASHEN; }
     static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_FLASHSMEN; }
+    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_FLASHRST; }
+    static void disable() { rcc_t::V.AHB1ENR &= ~RCC::T::AHB1ENR_FLASHEN; }
     static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_FLASHSMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G441xx, FLASH>>
-{
-    static void enable() { rcc_t::V.AHB1ENR |= RCC::T::AHB1ENR_FLITFEN; }
-    static void disable() { rcc_t::V.AHB1ENR &= ~RCC::T::AHB1ENR_FLITFEN; }
 };
 
 template<typename RCC>
@@ -887,18 +826,13 @@ struct clock_control_t<RCC, peripheral_t<STM32G441xx, GPIOG>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G441xx, HRTIM1>>
+struct clock_control_t<RCC, peripheral_t<STM32G441xx, HRTIM_MASTER>>
 {
-    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_HRTIM1RST; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G441xx, HRTIMER>>
-{
-    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_HRTIMEREN; }
-    static void enable_sleep_mode() { rcc_t::V.APB2SMENR |= RCC::T::APB2SMENR_HRTIMERSMEN; }
-    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_HRTIMEREN; }
-    static void disable_sleep_mode() { rcc_t::V.APB2SMENR &= ~RCC::T::APB2SMENR_HRTIMERSMEN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_HRTIM_MASTEREN; }
+    static void enable_sleep_mode() { rcc_t::V.APB2SMENR |= RCC::T::APB2SMENR_HRTIM_MASTERSMEN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_HRTIM_MASTERRST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_HRTIM_MASTEREN; }
+    static void disable_sleep_mode() { rcc_t::V.APB2SMENR &= ~RCC::T::APB2SMENR_HRTIM_MASTERSMEN; }
 };
 
 template<typename RCC>
@@ -959,12 +893,6 @@ struct clock_control_t<RCC, peripheral_t<STM32G441xx, LPUART1>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G441xx, MATRIX>>
-{
-    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_MATRIXRST; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G441xx, PWR>>
 {
     static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_PWREN; }
@@ -1005,15 +933,6 @@ struct clock_control_t<RCC, peripheral_t<STM32G441xx, SAI1>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G441xx, SP3>>
-{
-    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_SP3EN; }
-    static void enable_sleep_mode() { rcc_t::V.APB1SMENR1 |= RCC::T::APB1SMENR1_SP3SMEN; }
-    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_SP3EN; }
-    static void disable_sleep_mode() { rcc_t::V.APB1SMENR1 &= ~RCC::T::APB1SMENR1_SP3SMEN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G441xx, SPI1>>
 {
     static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_SPI1EN; }
@@ -1036,7 +955,11 @@ struct clock_control_t<RCC, peripheral_t<STM32G441xx, SPI2>>
 template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G441xx, SPI3>>
 {
+    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_SPI3EN; }
+    static void enable_sleep_mode() { rcc_t::V.APB1SMENR1 |= RCC::T::APB1SMENR1_SPI3SMEN; }
     static void reset() { rcc_t::V.APB1RSTR1 |= RCC::T::APB1RSTR1_SPI3RST; }
+    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_SPI3EN; }
+    static void disable_sleep_mode() { rcc_t::V.APB1SMENR1 &= ~RCC::T::APB1SMENR1_SPI3SMEN; }
 };
 
 template<typename RCC>
@@ -1047,27 +970,6 @@ struct clock_control_t<RCC, peripheral_t<STM32G441xx, SPI4>>
     static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_SPI4RST; }
     static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_SPI4EN; }
     static void disable_sleep_mode() { rcc_t::V.APB2SMENR &= ~RCC::T::APB2SMENR_SPI4SMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G441xx, SRAM1>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_SRAM1SMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_SRAM1SMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G441xx, SRAM2>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_SRAM2SMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_SRAM2SMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G441xx, SRAM3>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_SRAM3SMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_SRAM3SMEN; }
 };
 
 template<typename RCC>
@@ -1221,6 +1123,16 @@ struct clock_control_t<RCC, peripheral_t<STM32G441xx, UART5>>
 };
 
 template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32G441xx, UCPD1>>
+{
+    static void enable() { rcc_t::V.APB1ENR2 |= RCC::T::APB1ENR2_UCPD1EN; }
+    static void enable_sleep_mode() { rcc_t::V.APB1SMENR2 |= RCC::T::APB1SMENR2_UCPD1SMEN; }
+    static void reset() { rcc_t::V.APB1RSTR2 |= RCC::T::APB1RSTR2_UCPD1RST; }
+    static void disable() { rcc_t::V.APB1ENR2 &= ~RCC::T::APB1ENR2_UCPD1EN; }
+    static void disable_sleep_mode() { rcc_t::V.APB1SMENR2 &= ~RCC::T::APB1SMENR2_UCPD1SMEN; }
+};
+
+template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G441xx, USART1>>
 {
     static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_USART1EN; }
@@ -1251,21 +1163,11 @@ struct clock_control_t<RCC, peripheral_t<STM32G441xx, USART3>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G441xx, USBD>>
+struct clock_control_t<RCC, peripheral_t<STM32G441xx, USB>>
 {
-    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_USBDEN; }
-    static void reset() { rcc_t::V.APB1RSTR1 |= RCC::T::APB1RSTR1_USBDRST; }
-    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_USBDEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G441xx, USBPD>>
-{
-    static void enable() { rcc_t::V.APB1ENR2 |= RCC::T::APB1ENR2_USBPDEN; }
-    static void enable_sleep_mode() { rcc_t::V.APB1SMENR2 |= RCC::T::APB1SMENR2_USBPDSMEN; }
-    static void reset() { rcc_t::V.APB1RSTR2 |= RCC::T::APB1RSTR2_USBPDRST; }
-    static void disable() { rcc_t::V.APB1ENR2 &= ~RCC::T::APB1ENR2_USBPDEN; }
-    static void disable_sleep_mode() { rcc_t::V.APB1SMENR2 &= ~RCC::T::APB1SMENR2_USBPDSMEN; }
+    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_USBEN; }
+    static void reset() { rcc_t::V.APB1RSTR1 |= RCC::T::APB1RSTR1_USBRST; }
+    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_USBEN; }
 };
 
 template<typename RCC>
@@ -1278,27 +1180,33 @@ struct clock_control_t<RCC, peripheral_t<STM32G441xx, WWDG>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G471xx, AD12C>>
+struct clock_control_t<RCC, peripheral_t<STM32G471xx, ADC12_COMMON>>
 {
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_AD12CSMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_AD12CSMEN; }
+    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC12_COMMONEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_ADC12_COMMONSMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADC12_COMMONRST; }
+    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC12_COMMONEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_ADC12_COMMONSMEN; }
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G471xx, ADC12>>
+struct clock_control_t<RCC, peripheral_t<STM32G471xx, ADC345_COMMON>>
 {
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC12EN; }
-    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADC12RST; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC12EN; }
+    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC345_COMMONEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_ADC345_COMMONSMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADC345_COMMONRST; }
+    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC345_COMMONEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_ADC345_COMMONSMEN; }
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G471xx, ADC345>>
+struct clock_control_t<RCC, peripheral_t<STM32G471xx, AES>>
 {
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC345EN; }
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_ADC345SMEN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC345EN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_ADC345SMEN; }
+    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_AESEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_AESSMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_AESRST; }
+    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_AESEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_AESSMEN; }
 };
 
 template<typename RCC>
@@ -1332,19 +1240,10 @@ struct clock_control_t<RCC, peripheral_t<STM32G471xx, CRS>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G471xx, CRYPT>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_CRYPTEN; }
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_CRYPTSMEN; }
-    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_CRYPTRST; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_CRYPTEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_CRYPTSMEN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G471xx, DAC1>>
 {
     static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_DAC1SMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_DAC1RST; }
     static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_DAC1SMEN; }
 };
 
@@ -1396,15 +1295,10 @@ template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G471xx, DMAMUX>>
 {
     static void enable() { rcc_t::V.AHB1ENR |= RCC::T::AHB1ENR_DMAMUXEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_DMAMUXSMEN; }
+    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_DMAMUXRST; }
     static void disable() { rcc_t::V.AHB1ENR &= ~RCC::T::AHB1ENR_DMAMUXEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G471xx, DMAMUX1>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_DMAMUX1SMEN; }
-    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_DMAMUX1RST; }
-    static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_DMAMUX1SMEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_DMAMUXSMEN; }
 };
 
 template<typename RCC>
@@ -1420,15 +1314,11 @@ struct clock_control_t<RCC, peripheral_t<STM32G471xx, FDCAN>>
 template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G471xx, FLASH>>
 {
+    static void enable() { rcc_t::V.AHB1ENR |= RCC::T::AHB1ENR_FLASHEN; }
     static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_FLASHSMEN; }
+    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_FLASHRST; }
+    static void disable() { rcc_t::V.AHB1ENR &= ~RCC::T::AHB1ENR_FLASHEN; }
     static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_FLASHSMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G471xx, FLASH>>
-{
-    static void enable() { rcc_t::V.AHB1ENR |= RCC::T::AHB1ENR_FLITFEN; }
-    static void disable() { rcc_t::V.AHB1ENR &= ~RCC::T::AHB1ENR_FLITFEN; }
 };
 
 template<typename RCC>
@@ -1521,18 +1411,13 @@ struct clock_control_t<RCC, peripheral_t<STM32G471xx, GPIOG>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G471xx, HRTIM1>>
+struct clock_control_t<RCC, peripheral_t<STM32G471xx, HRTIM_MASTER>>
 {
-    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_HRTIM1RST; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G471xx, HRTIMER>>
-{
-    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_HRTIMEREN; }
-    static void enable_sleep_mode() { rcc_t::V.APB2SMENR |= RCC::T::APB2SMENR_HRTIMERSMEN; }
-    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_HRTIMEREN; }
-    static void disable_sleep_mode() { rcc_t::V.APB2SMENR &= ~RCC::T::APB2SMENR_HRTIMERSMEN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_HRTIM_MASTEREN; }
+    static void enable_sleep_mode() { rcc_t::V.APB2SMENR |= RCC::T::APB2SMENR_HRTIM_MASTERSMEN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_HRTIM_MASTERRST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_HRTIM_MASTEREN; }
+    static void disable_sleep_mode() { rcc_t::V.APB2SMENR &= ~RCC::T::APB2SMENR_HRTIM_MASTERSMEN; }
 };
 
 template<typename RCC>
@@ -1593,12 +1478,6 @@ struct clock_control_t<RCC, peripheral_t<STM32G471xx, LPUART1>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G471xx, MATRIX>>
-{
-    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_MATRIXRST; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G471xx, PWR>>
 {
     static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_PWREN; }
@@ -1639,15 +1518,6 @@ struct clock_control_t<RCC, peripheral_t<STM32G471xx, SAI1>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G471xx, SP3>>
-{
-    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_SP3EN; }
-    static void enable_sleep_mode() { rcc_t::V.APB1SMENR1 |= RCC::T::APB1SMENR1_SP3SMEN; }
-    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_SP3EN; }
-    static void disable_sleep_mode() { rcc_t::V.APB1SMENR1 &= ~RCC::T::APB1SMENR1_SP3SMEN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G471xx, SPI1>>
 {
     static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_SPI1EN; }
@@ -1670,7 +1540,11 @@ struct clock_control_t<RCC, peripheral_t<STM32G471xx, SPI2>>
 template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G471xx, SPI3>>
 {
+    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_SPI3EN; }
+    static void enable_sleep_mode() { rcc_t::V.APB1SMENR1 |= RCC::T::APB1SMENR1_SPI3SMEN; }
     static void reset() { rcc_t::V.APB1RSTR1 |= RCC::T::APB1RSTR1_SPI3RST; }
+    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_SPI3EN; }
+    static void disable_sleep_mode() { rcc_t::V.APB1SMENR1 &= ~RCC::T::APB1SMENR1_SPI3SMEN; }
 };
 
 template<typename RCC>
@@ -1681,27 +1555,6 @@ struct clock_control_t<RCC, peripheral_t<STM32G471xx, SPI4>>
     static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_SPI4RST; }
     static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_SPI4EN; }
     static void disable_sleep_mode() { rcc_t::V.APB2SMENR &= ~RCC::T::APB2SMENR_SPI4SMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G471xx, SRAM1>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_SRAM1SMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_SRAM1SMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G471xx, SRAM2>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_SRAM2SMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_SRAM2SMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G471xx, SRAM3>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_SRAM3SMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_SRAM3SMEN; }
 };
 
 template<typename RCC>
@@ -1855,6 +1708,16 @@ struct clock_control_t<RCC, peripheral_t<STM32G471xx, UART5>>
 };
 
 template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32G471xx, UCPD1>>
+{
+    static void enable() { rcc_t::V.APB1ENR2 |= RCC::T::APB1ENR2_UCPD1EN; }
+    static void enable_sleep_mode() { rcc_t::V.APB1SMENR2 |= RCC::T::APB1SMENR2_UCPD1SMEN; }
+    static void reset() { rcc_t::V.APB1RSTR2 |= RCC::T::APB1RSTR2_UCPD1RST; }
+    static void disable() { rcc_t::V.APB1ENR2 &= ~RCC::T::APB1ENR2_UCPD1EN; }
+    static void disable_sleep_mode() { rcc_t::V.APB1SMENR2 &= ~RCC::T::APB1SMENR2_UCPD1SMEN; }
+};
+
+template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G471xx, USART1>>
 {
     static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_USART1EN; }
@@ -1885,21 +1748,11 @@ struct clock_control_t<RCC, peripheral_t<STM32G471xx, USART3>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G471xx, USBD>>
+struct clock_control_t<RCC, peripheral_t<STM32G471xx, USB>>
 {
-    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_USBDEN; }
-    static void reset() { rcc_t::V.APB1RSTR1 |= RCC::T::APB1RSTR1_USBDRST; }
-    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_USBDEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G471xx, USBPD>>
-{
-    static void enable() { rcc_t::V.APB1ENR2 |= RCC::T::APB1ENR2_USBPDEN; }
-    static void enable_sleep_mode() { rcc_t::V.APB1SMENR2 |= RCC::T::APB1SMENR2_USBPDSMEN; }
-    static void reset() { rcc_t::V.APB1RSTR2 |= RCC::T::APB1RSTR2_USBPDRST; }
-    static void disable() { rcc_t::V.APB1ENR2 &= ~RCC::T::APB1ENR2_USBPDEN; }
-    static void disable_sleep_mode() { rcc_t::V.APB1SMENR2 &= ~RCC::T::APB1SMENR2_USBPDSMEN; }
+    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_USBEN; }
+    static void reset() { rcc_t::V.APB1RSTR1 |= RCC::T::APB1RSTR1_USBRST; }
+    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_USBEN; }
 };
 
 template<typename RCC>
@@ -1912,27 +1765,33 @@ struct clock_control_t<RCC, peripheral_t<STM32G471xx, WWDG>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G473xx, AD12C>>
+struct clock_control_t<RCC, peripheral_t<STM32G473xx, ADC12_COMMON>>
 {
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_AD12CSMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_AD12CSMEN; }
+    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC12_COMMONEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_ADC12_COMMONSMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADC12_COMMONRST; }
+    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC12_COMMONEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_ADC12_COMMONSMEN; }
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G473xx, ADC12>>
+struct clock_control_t<RCC, peripheral_t<STM32G473xx, ADC345_COMMON>>
 {
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC12EN; }
-    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADC12RST; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC12EN; }
+    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC345_COMMONEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_ADC345_COMMONSMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADC345_COMMONRST; }
+    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC345_COMMONEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_ADC345_COMMONSMEN; }
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G473xx, ADC345>>
+struct clock_control_t<RCC, peripheral_t<STM32G473xx, AES>>
 {
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC345EN; }
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_ADC345SMEN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC345EN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_ADC345SMEN; }
+    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_AESEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_AESSMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_AESRST; }
+    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_AESEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_AESSMEN; }
 };
 
 template<typename RCC>
@@ -1966,19 +1825,10 @@ struct clock_control_t<RCC, peripheral_t<STM32G473xx, CRS>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G473xx, CRYPT>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_CRYPTEN; }
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_CRYPTSMEN; }
-    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_CRYPTRST; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_CRYPTEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_CRYPTSMEN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G473xx, DAC1>>
 {
     static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_DAC1SMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_DAC1RST; }
     static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_DAC1SMEN; }
 };
 
@@ -2030,15 +1880,10 @@ template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G473xx, DMAMUX>>
 {
     static void enable() { rcc_t::V.AHB1ENR |= RCC::T::AHB1ENR_DMAMUXEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_DMAMUXSMEN; }
+    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_DMAMUXRST; }
     static void disable() { rcc_t::V.AHB1ENR &= ~RCC::T::AHB1ENR_DMAMUXEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G473xx, DMAMUX1>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_DMAMUX1SMEN; }
-    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_DMAMUX1RST; }
-    static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_DMAMUX1SMEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_DMAMUXSMEN; }
 };
 
 template<typename RCC>
@@ -2054,15 +1899,11 @@ struct clock_control_t<RCC, peripheral_t<STM32G473xx, FDCAN>>
 template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G473xx, FLASH>>
 {
+    static void enable() { rcc_t::V.AHB1ENR |= RCC::T::AHB1ENR_FLASHEN; }
     static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_FLASHSMEN; }
+    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_FLASHRST; }
+    static void disable() { rcc_t::V.AHB1ENR &= ~RCC::T::AHB1ENR_FLASHEN; }
     static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_FLASHSMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G473xx, FLASH>>
-{
-    static void enable() { rcc_t::V.AHB1ENR |= RCC::T::AHB1ENR_FLITFEN; }
-    static void disable() { rcc_t::V.AHB1ENR &= ~RCC::T::AHB1ENR_FLITFEN; }
 };
 
 template<typename RCC>
@@ -2155,18 +1996,13 @@ struct clock_control_t<RCC, peripheral_t<STM32G473xx, GPIOG>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G473xx, HRTIM1>>
+struct clock_control_t<RCC, peripheral_t<STM32G473xx, HRTIM_MASTER>>
 {
-    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_HRTIM1RST; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G473xx, HRTIMER>>
-{
-    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_HRTIMEREN; }
-    static void enable_sleep_mode() { rcc_t::V.APB2SMENR |= RCC::T::APB2SMENR_HRTIMERSMEN; }
-    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_HRTIMEREN; }
-    static void disable_sleep_mode() { rcc_t::V.APB2SMENR &= ~RCC::T::APB2SMENR_HRTIMERSMEN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_HRTIM_MASTEREN; }
+    static void enable_sleep_mode() { rcc_t::V.APB2SMENR |= RCC::T::APB2SMENR_HRTIM_MASTERSMEN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_HRTIM_MASTERRST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_HRTIM_MASTEREN; }
+    static void disable_sleep_mode() { rcc_t::V.APB2SMENR &= ~RCC::T::APB2SMENR_HRTIM_MASTERSMEN; }
 };
 
 template<typename RCC>
@@ -2227,12 +2063,6 @@ struct clock_control_t<RCC, peripheral_t<STM32G473xx, LPUART1>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G473xx, MATRIX>>
-{
-    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_MATRIXRST; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G473xx, PWR>>
 {
     static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_PWREN; }
@@ -2273,15 +2103,6 @@ struct clock_control_t<RCC, peripheral_t<STM32G473xx, SAI1>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G473xx, SP3>>
-{
-    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_SP3EN; }
-    static void enable_sleep_mode() { rcc_t::V.APB1SMENR1 |= RCC::T::APB1SMENR1_SP3SMEN; }
-    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_SP3EN; }
-    static void disable_sleep_mode() { rcc_t::V.APB1SMENR1 &= ~RCC::T::APB1SMENR1_SP3SMEN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G473xx, SPI1>>
 {
     static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_SPI1EN; }
@@ -2304,7 +2125,11 @@ struct clock_control_t<RCC, peripheral_t<STM32G473xx, SPI2>>
 template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G473xx, SPI3>>
 {
+    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_SPI3EN; }
+    static void enable_sleep_mode() { rcc_t::V.APB1SMENR1 |= RCC::T::APB1SMENR1_SPI3SMEN; }
     static void reset() { rcc_t::V.APB1RSTR1 |= RCC::T::APB1RSTR1_SPI3RST; }
+    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_SPI3EN; }
+    static void disable_sleep_mode() { rcc_t::V.APB1SMENR1 &= ~RCC::T::APB1SMENR1_SPI3SMEN; }
 };
 
 template<typename RCC>
@@ -2315,27 +2140,6 @@ struct clock_control_t<RCC, peripheral_t<STM32G473xx, SPI4>>
     static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_SPI4RST; }
     static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_SPI4EN; }
     static void disable_sleep_mode() { rcc_t::V.APB2SMENR &= ~RCC::T::APB2SMENR_SPI4SMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G473xx, SRAM1>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_SRAM1SMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_SRAM1SMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G473xx, SRAM2>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_SRAM2SMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_SRAM2SMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G473xx, SRAM3>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_SRAM3SMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_SRAM3SMEN; }
 };
 
 template<typename RCC>
@@ -2489,6 +2293,16 @@ struct clock_control_t<RCC, peripheral_t<STM32G473xx, UART5>>
 };
 
 template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32G473xx, UCPD1>>
+{
+    static void enable() { rcc_t::V.APB1ENR2 |= RCC::T::APB1ENR2_UCPD1EN; }
+    static void enable_sleep_mode() { rcc_t::V.APB1SMENR2 |= RCC::T::APB1SMENR2_UCPD1SMEN; }
+    static void reset() { rcc_t::V.APB1RSTR2 |= RCC::T::APB1RSTR2_UCPD1RST; }
+    static void disable() { rcc_t::V.APB1ENR2 &= ~RCC::T::APB1ENR2_UCPD1EN; }
+    static void disable_sleep_mode() { rcc_t::V.APB1SMENR2 &= ~RCC::T::APB1SMENR2_UCPD1SMEN; }
+};
+
+template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G473xx, USART1>>
 {
     static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_USART1EN; }
@@ -2519,21 +2333,11 @@ struct clock_control_t<RCC, peripheral_t<STM32G473xx, USART3>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G473xx, USBD>>
+struct clock_control_t<RCC, peripheral_t<STM32G473xx, USB>>
 {
-    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_USBDEN; }
-    static void reset() { rcc_t::V.APB1RSTR1 |= RCC::T::APB1RSTR1_USBDRST; }
-    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_USBDEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G473xx, USBPD>>
-{
-    static void enable() { rcc_t::V.APB1ENR2 |= RCC::T::APB1ENR2_USBPDEN; }
-    static void enable_sleep_mode() { rcc_t::V.APB1SMENR2 |= RCC::T::APB1SMENR2_USBPDSMEN; }
-    static void reset() { rcc_t::V.APB1RSTR2 |= RCC::T::APB1RSTR2_USBPDRST; }
-    static void disable() { rcc_t::V.APB1ENR2 &= ~RCC::T::APB1ENR2_USBPDEN; }
-    static void disable_sleep_mode() { rcc_t::V.APB1SMENR2 &= ~RCC::T::APB1SMENR2_USBPDSMEN; }
+    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_USBEN; }
+    static void reset() { rcc_t::V.APB1RSTR1 |= RCC::T::APB1RSTR1_USBRST; }
+    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_USBEN; }
 };
 
 template<typename RCC>
@@ -2546,27 +2350,33 @@ struct clock_control_t<RCC, peripheral_t<STM32G473xx, WWDG>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G474xx, AD12C>>
+struct clock_control_t<RCC, peripheral_t<STM32G474xx, ADC12_COMMON>>
 {
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_AD12CSMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_AD12CSMEN; }
+    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC12_COMMONEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_ADC12_COMMONSMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADC12_COMMONRST; }
+    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC12_COMMONEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_ADC12_COMMONSMEN; }
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G474xx, ADC12>>
+struct clock_control_t<RCC, peripheral_t<STM32G474xx, ADC345_COMMON>>
 {
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC12EN; }
-    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADC12RST; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC12EN; }
+    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC345_COMMONEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_ADC345_COMMONSMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADC345_COMMONRST; }
+    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC345_COMMONEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_ADC345_COMMONSMEN; }
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G474xx, ADC345>>
+struct clock_control_t<RCC, peripheral_t<STM32G474xx, AES>>
 {
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC345EN; }
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_ADC345SMEN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC345EN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_ADC345SMEN; }
+    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_AESEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_AESSMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_AESRST; }
+    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_AESEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_AESSMEN; }
 };
 
 template<typename RCC>
@@ -2600,19 +2410,10 @@ struct clock_control_t<RCC, peripheral_t<STM32G474xx, CRS>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G474xx, CRYPT>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_CRYPTEN; }
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_CRYPTSMEN; }
-    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_CRYPTRST; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_CRYPTEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_CRYPTSMEN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G474xx, DAC1>>
 {
     static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_DAC1SMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_DAC1RST; }
     static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_DAC1SMEN; }
 };
 
@@ -2664,15 +2465,10 @@ template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G474xx, DMAMUX>>
 {
     static void enable() { rcc_t::V.AHB1ENR |= RCC::T::AHB1ENR_DMAMUXEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_DMAMUXSMEN; }
+    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_DMAMUXRST; }
     static void disable() { rcc_t::V.AHB1ENR &= ~RCC::T::AHB1ENR_DMAMUXEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G474xx, DMAMUX1>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_DMAMUX1SMEN; }
-    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_DMAMUX1RST; }
-    static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_DMAMUX1SMEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_DMAMUXSMEN; }
 };
 
 template<typename RCC>
@@ -2688,15 +2484,11 @@ struct clock_control_t<RCC, peripheral_t<STM32G474xx, FDCAN>>
 template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G474xx, FLASH>>
 {
+    static void enable() { rcc_t::V.AHB1ENR |= RCC::T::AHB1ENR_FLASHEN; }
     static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_FLASHSMEN; }
+    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_FLASHRST; }
+    static void disable() { rcc_t::V.AHB1ENR &= ~RCC::T::AHB1ENR_FLASHEN; }
     static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_FLASHSMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G474xx, FLASH>>
-{
-    static void enable() { rcc_t::V.AHB1ENR |= RCC::T::AHB1ENR_FLITFEN; }
-    static void disable() { rcc_t::V.AHB1ENR &= ~RCC::T::AHB1ENR_FLITFEN; }
 };
 
 template<typename RCC>
@@ -2789,18 +2581,13 @@ struct clock_control_t<RCC, peripheral_t<STM32G474xx, GPIOG>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G474xx, HRTIM1>>
+struct clock_control_t<RCC, peripheral_t<STM32G474xx, HRTIM_MASTER>>
 {
-    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_HRTIM1RST; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G474xx, HRTIMER>>
-{
-    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_HRTIMEREN; }
-    static void enable_sleep_mode() { rcc_t::V.APB2SMENR |= RCC::T::APB2SMENR_HRTIMERSMEN; }
-    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_HRTIMEREN; }
-    static void disable_sleep_mode() { rcc_t::V.APB2SMENR &= ~RCC::T::APB2SMENR_HRTIMERSMEN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_HRTIM_MASTEREN; }
+    static void enable_sleep_mode() { rcc_t::V.APB2SMENR |= RCC::T::APB2SMENR_HRTIM_MASTERSMEN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_HRTIM_MASTERRST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_HRTIM_MASTEREN; }
+    static void disable_sleep_mode() { rcc_t::V.APB2SMENR &= ~RCC::T::APB2SMENR_HRTIM_MASTERSMEN; }
 };
 
 template<typename RCC>
@@ -2861,12 +2648,6 @@ struct clock_control_t<RCC, peripheral_t<STM32G474xx, LPUART1>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G474xx, MATRIX>>
-{
-    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_MATRIXRST; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G474xx, PWR>>
 {
     static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_PWREN; }
@@ -2907,15 +2688,6 @@ struct clock_control_t<RCC, peripheral_t<STM32G474xx, SAI1>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G474xx, SP3>>
-{
-    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_SP3EN; }
-    static void enable_sleep_mode() { rcc_t::V.APB1SMENR1 |= RCC::T::APB1SMENR1_SP3SMEN; }
-    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_SP3EN; }
-    static void disable_sleep_mode() { rcc_t::V.APB1SMENR1 &= ~RCC::T::APB1SMENR1_SP3SMEN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G474xx, SPI1>>
 {
     static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_SPI1EN; }
@@ -2938,7 +2710,11 @@ struct clock_control_t<RCC, peripheral_t<STM32G474xx, SPI2>>
 template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G474xx, SPI3>>
 {
+    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_SPI3EN; }
+    static void enable_sleep_mode() { rcc_t::V.APB1SMENR1 |= RCC::T::APB1SMENR1_SPI3SMEN; }
     static void reset() { rcc_t::V.APB1RSTR1 |= RCC::T::APB1RSTR1_SPI3RST; }
+    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_SPI3EN; }
+    static void disable_sleep_mode() { rcc_t::V.APB1SMENR1 &= ~RCC::T::APB1SMENR1_SPI3SMEN; }
 };
 
 template<typename RCC>
@@ -2949,27 +2725,6 @@ struct clock_control_t<RCC, peripheral_t<STM32G474xx, SPI4>>
     static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_SPI4RST; }
     static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_SPI4EN; }
     static void disable_sleep_mode() { rcc_t::V.APB2SMENR &= ~RCC::T::APB2SMENR_SPI4SMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G474xx, SRAM1>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_SRAM1SMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_SRAM1SMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G474xx, SRAM2>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_SRAM2SMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_SRAM2SMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G474xx, SRAM3>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_SRAM3SMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_SRAM3SMEN; }
 };
 
 template<typename RCC>
@@ -3123,6 +2878,16 @@ struct clock_control_t<RCC, peripheral_t<STM32G474xx, UART5>>
 };
 
 template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32G474xx, UCPD1>>
+{
+    static void enable() { rcc_t::V.APB1ENR2 |= RCC::T::APB1ENR2_UCPD1EN; }
+    static void enable_sleep_mode() { rcc_t::V.APB1SMENR2 |= RCC::T::APB1SMENR2_UCPD1SMEN; }
+    static void reset() { rcc_t::V.APB1RSTR2 |= RCC::T::APB1RSTR2_UCPD1RST; }
+    static void disable() { rcc_t::V.APB1ENR2 &= ~RCC::T::APB1ENR2_UCPD1EN; }
+    static void disable_sleep_mode() { rcc_t::V.APB1SMENR2 &= ~RCC::T::APB1SMENR2_UCPD1SMEN; }
+};
+
+template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G474xx, USART1>>
 {
     static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_USART1EN; }
@@ -3153,21 +2918,11 @@ struct clock_control_t<RCC, peripheral_t<STM32G474xx, USART3>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G474xx, USBD>>
+struct clock_control_t<RCC, peripheral_t<STM32G474xx, USB>>
 {
-    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_USBDEN; }
-    static void reset() { rcc_t::V.APB1RSTR1 |= RCC::T::APB1RSTR1_USBDRST; }
-    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_USBDEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G474xx, USBPD>>
-{
-    static void enable() { rcc_t::V.APB1ENR2 |= RCC::T::APB1ENR2_USBPDEN; }
-    static void enable_sleep_mode() { rcc_t::V.APB1SMENR2 |= RCC::T::APB1SMENR2_USBPDSMEN; }
-    static void reset() { rcc_t::V.APB1RSTR2 |= RCC::T::APB1RSTR2_USBPDRST; }
-    static void disable() { rcc_t::V.APB1ENR2 &= ~RCC::T::APB1ENR2_USBPDEN; }
-    static void disable_sleep_mode() { rcc_t::V.APB1SMENR2 &= ~RCC::T::APB1SMENR2_USBPDSMEN; }
+    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_USBEN; }
+    static void reset() { rcc_t::V.APB1RSTR1 |= RCC::T::APB1RSTR1_USBRST; }
+    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_USBEN; }
 };
 
 template<typename RCC>
@@ -3180,27 +2935,33 @@ struct clock_control_t<RCC, peripheral_t<STM32G474xx, WWDG>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G483xx, AD12C>>
+struct clock_control_t<RCC, peripheral_t<STM32G483xx, ADC12_COMMON>>
 {
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_AD12CSMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_AD12CSMEN; }
+    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC12_COMMONEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_ADC12_COMMONSMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADC12_COMMONRST; }
+    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC12_COMMONEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_ADC12_COMMONSMEN; }
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G483xx, ADC12>>
+struct clock_control_t<RCC, peripheral_t<STM32G483xx, ADC345_COMMON>>
 {
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC12EN; }
-    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADC12RST; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC12EN; }
+    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC345_COMMONEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_ADC345_COMMONSMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADC345_COMMONRST; }
+    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC345_COMMONEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_ADC345_COMMONSMEN; }
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G483xx, ADC345>>
+struct clock_control_t<RCC, peripheral_t<STM32G483xx, AES>>
 {
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC345EN; }
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_ADC345SMEN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC345EN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_ADC345SMEN; }
+    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_AESEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_AESSMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_AESRST; }
+    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_AESEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_AESSMEN; }
 };
 
 template<typename RCC>
@@ -3234,19 +2995,10 @@ struct clock_control_t<RCC, peripheral_t<STM32G483xx, CRS>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G483xx, CRYPT>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_CRYPTEN; }
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_CRYPTSMEN; }
-    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_CRYPTRST; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_CRYPTEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_CRYPTSMEN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G483xx, DAC1>>
 {
     static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_DAC1SMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_DAC1RST; }
     static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_DAC1SMEN; }
 };
 
@@ -3298,15 +3050,10 @@ template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G483xx, DMAMUX>>
 {
     static void enable() { rcc_t::V.AHB1ENR |= RCC::T::AHB1ENR_DMAMUXEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_DMAMUXSMEN; }
+    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_DMAMUXRST; }
     static void disable() { rcc_t::V.AHB1ENR &= ~RCC::T::AHB1ENR_DMAMUXEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G483xx, DMAMUX1>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_DMAMUX1SMEN; }
-    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_DMAMUX1RST; }
-    static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_DMAMUX1SMEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_DMAMUXSMEN; }
 };
 
 template<typename RCC>
@@ -3322,15 +3069,11 @@ struct clock_control_t<RCC, peripheral_t<STM32G483xx, FDCAN>>
 template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G483xx, FLASH>>
 {
+    static void enable() { rcc_t::V.AHB1ENR |= RCC::T::AHB1ENR_FLASHEN; }
     static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_FLASHSMEN; }
+    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_FLASHRST; }
+    static void disable() { rcc_t::V.AHB1ENR &= ~RCC::T::AHB1ENR_FLASHEN; }
     static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_FLASHSMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G483xx, FLASH>>
-{
-    static void enable() { rcc_t::V.AHB1ENR |= RCC::T::AHB1ENR_FLITFEN; }
-    static void disable() { rcc_t::V.AHB1ENR &= ~RCC::T::AHB1ENR_FLITFEN; }
 };
 
 template<typename RCC>
@@ -3423,18 +3166,13 @@ struct clock_control_t<RCC, peripheral_t<STM32G483xx, GPIOG>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G483xx, HRTIM1>>
+struct clock_control_t<RCC, peripheral_t<STM32G483xx, HRTIM_MASTER>>
 {
-    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_HRTIM1RST; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G483xx, HRTIMER>>
-{
-    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_HRTIMEREN; }
-    static void enable_sleep_mode() { rcc_t::V.APB2SMENR |= RCC::T::APB2SMENR_HRTIMERSMEN; }
-    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_HRTIMEREN; }
-    static void disable_sleep_mode() { rcc_t::V.APB2SMENR &= ~RCC::T::APB2SMENR_HRTIMERSMEN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_HRTIM_MASTEREN; }
+    static void enable_sleep_mode() { rcc_t::V.APB2SMENR |= RCC::T::APB2SMENR_HRTIM_MASTERSMEN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_HRTIM_MASTERRST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_HRTIM_MASTEREN; }
+    static void disable_sleep_mode() { rcc_t::V.APB2SMENR &= ~RCC::T::APB2SMENR_HRTIM_MASTERSMEN; }
 };
 
 template<typename RCC>
@@ -3495,12 +3233,6 @@ struct clock_control_t<RCC, peripheral_t<STM32G483xx, LPUART1>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G483xx, MATRIX>>
-{
-    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_MATRIXRST; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G483xx, PWR>>
 {
     static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_PWREN; }
@@ -3541,15 +3273,6 @@ struct clock_control_t<RCC, peripheral_t<STM32G483xx, SAI1>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G483xx, SP3>>
-{
-    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_SP3EN; }
-    static void enable_sleep_mode() { rcc_t::V.APB1SMENR1 |= RCC::T::APB1SMENR1_SP3SMEN; }
-    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_SP3EN; }
-    static void disable_sleep_mode() { rcc_t::V.APB1SMENR1 &= ~RCC::T::APB1SMENR1_SP3SMEN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G483xx, SPI1>>
 {
     static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_SPI1EN; }
@@ -3572,7 +3295,11 @@ struct clock_control_t<RCC, peripheral_t<STM32G483xx, SPI2>>
 template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G483xx, SPI3>>
 {
+    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_SPI3EN; }
+    static void enable_sleep_mode() { rcc_t::V.APB1SMENR1 |= RCC::T::APB1SMENR1_SPI3SMEN; }
     static void reset() { rcc_t::V.APB1RSTR1 |= RCC::T::APB1RSTR1_SPI3RST; }
+    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_SPI3EN; }
+    static void disable_sleep_mode() { rcc_t::V.APB1SMENR1 &= ~RCC::T::APB1SMENR1_SPI3SMEN; }
 };
 
 template<typename RCC>
@@ -3583,27 +3310,6 @@ struct clock_control_t<RCC, peripheral_t<STM32G483xx, SPI4>>
     static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_SPI4RST; }
     static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_SPI4EN; }
     static void disable_sleep_mode() { rcc_t::V.APB2SMENR &= ~RCC::T::APB2SMENR_SPI4SMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G483xx, SRAM1>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_SRAM1SMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_SRAM1SMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G483xx, SRAM2>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_SRAM2SMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_SRAM2SMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G483xx, SRAM3>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_SRAM3SMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_SRAM3SMEN; }
 };
 
 template<typename RCC>
@@ -3757,6 +3463,16 @@ struct clock_control_t<RCC, peripheral_t<STM32G483xx, UART5>>
 };
 
 template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32G483xx, UCPD1>>
+{
+    static void enable() { rcc_t::V.APB1ENR2 |= RCC::T::APB1ENR2_UCPD1EN; }
+    static void enable_sleep_mode() { rcc_t::V.APB1SMENR2 |= RCC::T::APB1SMENR2_UCPD1SMEN; }
+    static void reset() { rcc_t::V.APB1RSTR2 |= RCC::T::APB1RSTR2_UCPD1RST; }
+    static void disable() { rcc_t::V.APB1ENR2 &= ~RCC::T::APB1ENR2_UCPD1EN; }
+    static void disable_sleep_mode() { rcc_t::V.APB1SMENR2 &= ~RCC::T::APB1SMENR2_UCPD1SMEN; }
+};
+
+template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G483xx, USART1>>
 {
     static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_USART1EN; }
@@ -3787,21 +3503,11 @@ struct clock_control_t<RCC, peripheral_t<STM32G483xx, USART3>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G483xx, USBD>>
+struct clock_control_t<RCC, peripheral_t<STM32G483xx, USB>>
 {
-    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_USBDEN; }
-    static void reset() { rcc_t::V.APB1RSTR1 |= RCC::T::APB1RSTR1_USBDRST; }
-    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_USBDEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G483xx, USBPD>>
-{
-    static void enable() { rcc_t::V.APB1ENR2 |= RCC::T::APB1ENR2_USBPDEN; }
-    static void enable_sleep_mode() { rcc_t::V.APB1SMENR2 |= RCC::T::APB1SMENR2_USBPDSMEN; }
-    static void reset() { rcc_t::V.APB1RSTR2 |= RCC::T::APB1RSTR2_USBPDRST; }
-    static void disable() { rcc_t::V.APB1ENR2 &= ~RCC::T::APB1ENR2_USBPDEN; }
-    static void disable_sleep_mode() { rcc_t::V.APB1SMENR2 &= ~RCC::T::APB1SMENR2_USBPDSMEN; }
+    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_USBEN; }
+    static void reset() { rcc_t::V.APB1RSTR1 |= RCC::T::APB1RSTR1_USBRST; }
+    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_USBEN; }
 };
 
 template<typename RCC>
@@ -3814,27 +3520,33 @@ struct clock_control_t<RCC, peripheral_t<STM32G483xx, WWDG>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G484xx, AD12C>>
+struct clock_control_t<RCC, peripheral_t<STM32G484xx, ADC12_COMMON>>
 {
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_AD12CSMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_AD12CSMEN; }
+    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC12_COMMONEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_ADC12_COMMONSMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADC12_COMMONRST; }
+    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC12_COMMONEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_ADC12_COMMONSMEN; }
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G484xx, ADC12>>
+struct clock_control_t<RCC, peripheral_t<STM32G484xx, ADC345_COMMON>>
 {
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC12EN; }
-    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADC12RST; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC12EN; }
+    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC345_COMMONEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_ADC345_COMMONSMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADC345_COMMONRST; }
+    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC345_COMMONEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_ADC345_COMMONSMEN; }
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G484xx, ADC345>>
+struct clock_control_t<RCC, peripheral_t<STM32G484xx, AES>>
 {
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_ADC345EN; }
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_ADC345SMEN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC345EN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_ADC345SMEN; }
+    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_AESEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_AESSMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_AESRST; }
+    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_AESEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_AESSMEN; }
 };
 
 template<typename RCC>
@@ -3868,19 +3580,10 @@ struct clock_control_t<RCC, peripheral_t<STM32G484xx, CRS>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G484xx, CRYPT>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_CRYPTEN; }
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_CRYPTSMEN; }
-    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_CRYPTRST; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_CRYPTEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_CRYPTSMEN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G484xx, DAC1>>
 {
     static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_DAC1SMEN; }
+    static void reset() { rcc_t::V.AHB2RSTR |= RCC::T::AHB2RSTR_DAC1RST; }
     static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_DAC1SMEN; }
 };
 
@@ -3932,15 +3635,10 @@ template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G484xx, DMAMUX>>
 {
     static void enable() { rcc_t::V.AHB1ENR |= RCC::T::AHB1ENR_DMAMUXEN; }
+    static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_DMAMUXSMEN; }
+    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_DMAMUXRST; }
     static void disable() { rcc_t::V.AHB1ENR &= ~RCC::T::AHB1ENR_DMAMUXEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G484xx, DMAMUX1>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_DMAMUX1SMEN; }
-    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_DMAMUX1RST; }
-    static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_DMAMUX1SMEN; }
+    static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_DMAMUXSMEN; }
 };
 
 template<typename RCC>
@@ -3956,15 +3654,11 @@ struct clock_control_t<RCC, peripheral_t<STM32G484xx, FDCAN>>
 template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G484xx, FLASH>>
 {
+    static void enable() { rcc_t::V.AHB1ENR |= RCC::T::AHB1ENR_FLASHEN; }
     static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_FLASHSMEN; }
+    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_FLASHRST; }
+    static void disable() { rcc_t::V.AHB1ENR &= ~RCC::T::AHB1ENR_FLASHEN; }
     static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_FLASHSMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G484xx, FLASH>>
-{
-    static void enable() { rcc_t::V.AHB1ENR |= RCC::T::AHB1ENR_FLITFEN; }
-    static void disable() { rcc_t::V.AHB1ENR &= ~RCC::T::AHB1ENR_FLITFEN; }
 };
 
 template<typename RCC>
@@ -4057,18 +3751,13 @@ struct clock_control_t<RCC, peripheral_t<STM32G484xx, GPIOG>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G484xx, HRTIM1>>
+struct clock_control_t<RCC, peripheral_t<STM32G484xx, HRTIM_MASTER>>
 {
-    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_HRTIM1RST; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G484xx, HRTIMER>>
-{
-    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_HRTIMEREN; }
-    static void enable_sleep_mode() { rcc_t::V.APB2SMENR |= RCC::T::APB2SMENR_HRTIMERSMEN; }
-    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_HRTIMEREN; }
-    static void disable_sleep_mode() { rcc_t::V.APB2SMENR &= ~RCC::T::APB2SMENR_HRTIMERSMEN; }
+    static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_HRTIM_MASTEREN; }
+    static void enable_sleep_mode() { rcc_t::V.APB2SMENR |= RCC::T::APB2SMENR_HRTIM_MASTERSMEN; }
+    static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_HRTIM_MASTERRST; }
+    static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_HRTIM_MASTEREN; }
+    static void disable_sleep_mode() { rcc_t::V.APB2SMENR &= ~RCC::T::APB2SMENR_HRTIM_MASTERSMEN; }
 };
 
 template<typename RCC>
@@ -4129,12 +3818,6 @@ struct clock_control_t<RCC, peripheral_t<STM32G484xx, LPUART1>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G484xx, MATRIX>>
-{
-    static void reset() { rcc_t::V.AHB1RSTR |= RCC::T::AHB1RSTR_MATRIXRST; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G484xx, PWR>>
 {
     static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_PWREN; }
@@ -4175,15 +3858,6 @@ struct clock_control_t<RCC, peripheral_t<STM32G484xx, SAI1>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G484xx, SP3>>
-{
-    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_SP3EN; }
-    static void enable_sleep_mode() { rcc_t::V.APB1SMENR1 |= RCC::T::APB1SMENR1_SP3SMEN; }
-    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_SP3EN; }
-    static void disable_sleep_mode() { rcc_t::V.APB1SMENR1 &= ~RCC::T::APB1SMENR1_SP3SMEN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G484xx, SPI1>>
 {
     static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_SPI1EN; }
@@ -4206,7 +3880,11 @@ struct clock_control_t<RCC, peripheral_t<STM32G484xx, SPI2>>
 template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G484xx, SPI3>>
 {
+    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_SPI3EN; }
+    static void enable_sleep_mode() { rcc_t::V.APB1SMENR1 |= RCC::T::APB1SMENR1_SPI3SMEN; }
     static void reset() { rcc_t::V.APB1RSTR1 |= RCC::T::APB1RSTR1_SPI3RST; }
+    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_SPI3EN; }
+    static void disable_sleep_mode() { rcc_t::V.APB1SMENR1 &= ~RCC::T::APB1SMENR1_SPI3SMEN; }
 };
 
 template<typename RCC>
@@ -4217,27 +3895,6 @@ struct clock_control_t<RCC, peripheral_t<STM32G484xx, SPI4>>
     static void reset() { rcc_t::V.APB2RSTR |= RCC::T::APB2RSTR_SPI4RST; }
     static void disable() { rcc_t::V.APB2ENR &= ~RCC::T::APB2ENR_SPI4EN; }
     static void disable_sleep_mode() { rcc_t::V.APB2SMENR &= ~RCC::T::APB2SMENR_SPI4SMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G484xx, SRAM1>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_SRAM1SMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_SRAM1SMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G484xx, SRAM2>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_SRAM2SMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_SRAM2SMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G484xx, SRAM3>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_SRAM3SMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_SRAM3SMEN; }
 };
 
 template<typename RCC>
@@ -4391,6 +4048,16 @@ struct clock_control_t<RCC, peripheral_t<STM32G484xx, UART5>>
 };
 
 template<typename RCC>
+struct clock_control_t<RCC, peripheral_t<STM32G484xx, UCPD1>>
+{
+    static void enable() { rcc_t::V.APB1ENR2 |= RCC::T::APB1ENR2_UCPD1EN; }
+    static void enable_sleep_mode() { rcc_t::V.APB1SMENR2 |= RCC::T::APB1SMENR2_UCPD1SMEN; }
+    static void reset() { rcc_t::V.APB1RSTR2 |= RCC::T::APB1RSTR2_UCPD1RST; }
+    static void disable() { rcc_t::V.APB1ENR2 &= ~RCC::T::APB1ENR2_UCPD1EN; }
+    static void disable_sleep_mode() { rcc_t::V.APB1SMENR2 &= ~RCC::T::APB1SMENR2_UCPD1SMEN; }
+};
+
+template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32G484xx, USART1>>
 {
     static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_USART1EN; }
@@ -4421,21 +4088,11 @@ struct clock_control_t<RCC, peripheral_t<STM32G484xx, USART3>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G484xx, USBD>>
+struct clock_control_t<RCC, peripheral_t<STM32G484xx, USB>>
 {
-    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_USBDEN; }
-    static void reset() { rcc_t::V.APB1RSTR1 |= RCC::T::APB1RSTR1_USBDRST; }
-    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_USBDEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32G484xx, USBPD>>
-{
-    static void enable() { rcc_t::V.APB1ENR2 |= RCC::T::APB1ENR2_USBPDEN; }
-    static void enable_sleep_mode() { rcc_t::V.APB1SMENR2 |= RCC::T::APB1SMENR2_USBPDSMEN; }
-    static void reset() { rcc_t::V.APB1RSTR2 |= RCC::T::APB1RSTR2_USBPDRST; }
-    static void disable() { rcc_t::V.APB1ENR2 &= ~RCC::T::APB1ENR2_USBPDEN; }
-    static void disable_sleep_mode() { rcc_t::V.APB1SMENR2 &= ~RCC::T::APB1SMENR2_USBPDSMEN; }
+    static void enable() { rcc_t::V.APB1ENR1 |= RCC::T::APB1ENR1_USBEN; }
+    static void reset() { rcc_t::V.APB1RSTR1 |= RCC::T::APB1RSTR1_USBRST; }
+    static void disable() { rcc_t::V.APB1ENR1 &= ~RCC::T::APB1ENR1_USBEN; }
 };
 
 template<typename RCC>

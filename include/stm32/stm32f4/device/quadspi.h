@@ -12,7 +12,7 @@
 //
 ////
 
-struct stm32f412_quadspi_t
+struct stm32f412_quadspi1_t
 {
     volatile uint32_t CR;    // [read-write] control register
     volatile uint32_t DCR;   // [read-write] device configuration register
@@ -133,32 +133,39 @@ struct stm32f412_quadspi_t
 
 
 template<>
-struct peripheral_t<STM32F412, QUADSPI>
+struct peripheral_t<STM32F412, QUADSPI1>
 {
-    typedef stm32f412_quadspi_t T;
+    typedef stm32f412_quadspi1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F413, QUADSPI>
+struct peripheral_t<STM32F413, QUADSPI1>
 {
-    typedef stm32f412_quadspi_t T;
+    typedef stm32f412_quadspi1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F446, QUADSPI>
+struct peripheral_t<STM32F446, QUADSPI1>
 {
-    typedef stm32f412_quadspi_t T;
+    typedef stm32f412_quadspi1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F469, QUADSPI>
+struct peripheral_t<STM32F469, QUADSPI1>
 {
-    typedef stm32f412_quadspi_t T;
+    typedef stm32f412_quadspi1_t T;
     static T& V;
 };
 
-using quadspi_t = peripheral_t<mcu_svd, QUADSPI>;
+using quadspi1_t = peripheral_t<mcu_svd, QUADSPI1>;
+
+template<int INST> struct quadspi_traits {};
+
+template<> struct quadspi_traits<1>
+{
+    using quadspi = quadspi1_t;
+};
 

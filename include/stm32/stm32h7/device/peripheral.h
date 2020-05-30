@@ -106,7 +106,7 @@ enum peripheral_enum_t
     , OTG2_HS_PWRCLK
     , PF
     , PWR
-    , QUADSPI
+    , QUADSPI1
     , RAMECC
     , RAMECC1
     , RAMECC2

@@ -12,7 +12,7 @@
 //
 ////
 
-struct stm32g473xx_quadspi_t
+struct stm32g473xx_quadspi1_t
 {
     volatile uint32_t CR;    // [read-write] control register
     volatile uint32_t DCR;   // [read-write] device configuration register
@@ -132,32 +132,50 @@ struct stm32g473xx_quadspi_t
 
 
 template<>
-struct peripheral_t<STM32G473xx, QUADSPI>
+struct peripheral_t<STM32G473xx, QUADSPI1>
 {
-    typedef stm32g473xx_quadspi_t T;
+    typedef stm32g473xx_quadspi1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G474xx, QUADSPI>
+struct peripheral_t<STM32G474xx, QUADSPI1>
 {
-    typedef stm32g473xx_quadspi_t T;
+    typedef stm32g473xx_quadspi1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G483xx, QUADSPI>
+struct peripheral_t<STM32G483xx, QUADSPI1>
 {
-    typedef stm32g473xx_quadspi_t T;
+    typedef stm32g473xx_quadspi1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G484xx, QUADSPI>
+struct peripheral_t<STM32G484xx, QUADSPI1>
 {
-    typedef stm32g473xx_quadspi_t T;
+    typedef stm32g473xx_quadspi1_t T;
     static T& V;
 };
 
-using quadspi_t = peripheral_t<mcu_svd, QUADSPI>;
+using quadspi1_t = peripheral_t<mcu_svd, QUADSPI1>;
+
+template<int INST> struct quadspi_traits {};
+
+template<> struct quadspi_traits<1>
+{
+    using quadspi = quadspi1_t;
+    static constexpr alternate_function_t BK1_IO0 = QUADSPI1_BK1_IO0;
+    static constexpr alternate_function_t BK1_IO1 = QUADSPI1_BK1_IO1;
+    static constexpr alternate_function_t BK1_IO2 = QUADSPI1_BK1_IO2;
+    static constexpr alternate_function_t BK1_IO3 = QUADSPI1_BK1_IO3;
+    static constexpr alternate_function_t BK1_NCS = QUADSPI1_BK1_NCS;
+    static constexpr alternate_function_t BK2_IO0 = QUADSPI1_BK2_IO0;
+    static constexpr alternate_function_t BK2_IO1 = QUADSPI1_BK2_IO1;
+    static constexpr alternate_function_t BK2_IO2 = QUADSPI1_BK2_IO2;
+    static constexpr alternate_function_t BK2_IO3 = QUADSPI1_BK2_IO3;
+    static constexpr alternate_function_t BK2_NCS = QUADSPI1_BK2_NCS;
+    static constexpr alternate_function_t CLK = QUADSPI1_CLK;
+};
 

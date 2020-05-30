@@ -2223,53 +2223,53 @@ typename peripheral_t<STM32F778, PWR>::T& peripheral_t<STM32F778, PWR>::V =
 typename peripheral_t<STM32F779, PWR>::T& peripheral_t<STM32F779, PWR>::V =
     *reinterpret_cast<typename peripheral_t<STM32F779, PWR>::T*>(0x40007000);
 
-typename peripheral_t<STM32F722, QUADSPI>::T& peripheral_t<STM32F722, QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F722, QUADSPI>::T*>(0xa0001000);
+typename peripheral_t<STM32F722, QUADSPI1>::T& peripheral_t<STM32F722, QUADSPI1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F722, QUADSPI1>::T*>(0xa0001000);
 
-typename peripheral_t<STM32F723, QUADSPI>::T& peripheral_t<STM32F723, QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F723, QUADSPI>::T*>(0xa0001000);
+typename peripheral_t<STM32F723, QUADSPI1>::T& peripheral_t<STM32F723, QUADSPI1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F723, QUADSPI1>::T*>(0xa0001000);
 
-typename peripheral_t<STM32F730, QUADSPI>::T& peripheral_t<STM32F730, QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F730, QUADSPI>::T*>(0xa0001000);
+typename peripheral_t<STM32F730, QUADSPI1>::T& peripheral_t<STM32F730, QUADSPI1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F730, QUADSPI1>::T*>(0xa0001000);
 
-typename peripheral_t<STM32F732, QUADSPI>::T& peripheral_t<STM32F732, QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F732, QUADSPI>::T*>(0xa0001000);
+typename peripheral_t<STM32F732, QUADSPI1>::T& peripheral_t<STM32F732, QUADSPI1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F732, QUADSPI1>::T*>(0xa0001000);
 
-typename peripheral_t<STM32F733, QUADSPI>::T& peripheral_t<STM32F733, QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F733, QUADSPI>::T*>(0xa0001000);
+typename peripheral_t<STM32F733, QUADSPI1>::T& peripheral_t<STM32F733, QUADSPI1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F733, QUADSPI1>::T*>(0xa0001000);
 
-typename peripheral_t<STM32F745, QUADSPI>::T& peripheral_t<STM32F745, QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F745, QUADSPI>::T*>(0xa0001000);
+typename peripheral_t<STM32F745, QUADSPI1>::T& peripheral_t<STM32F745, QUADSPI1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F745, QUADSPI1>::T*>(0xa0001000);
 
-typename peripheral_t<STM32F746, QUADSPI>::T& peripheral_t<STM32F746, QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F746, QUADSPI>::T*>(0xa0001000);
+typename peripheral_t<STM32F746, QUADSPI1>::T& peripheral_t<STM32F746, QUADSPI1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F746, QUADSPI1>::T*>(0xa0001000);
 
-typename peripheral_t<STM32F750x, QUADSPI>::T& peripheral_t<STM32F750x, QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F750x, QUADSPI>::T*>(0xa0001000);
+typename peripheral_t<STM32F750x, QUADSPI1>::T& peripheral_t<STM32F750x, QUADSPI1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F750x, QUADSPI1>::T*>(0xa0001000);
 
-typename peripheral_t<STM32F756, QUADSPI>::T& peripheral_t<STM32F756, QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F756, QUADSPI>::T*>(0xa0001000);
+typename peripheral_t<STM32F756, QUADSPI1>::T& peripheral_t<STM32F756, QUADSPI1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F756, QUADSPI1>::T*>(0xa0001000);
 
-typename peripheral_t<STM32F765, QUADSPI>::T& peripheral_t<STM32F765, QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F765, QUADSPI>::T*>(0xa0001000);
+typename peripheral_t<STM32F765, QUADSPI1>::T& peripheral_t<STM32F765, QUADSPI1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F765, QUADSPI1>::T*>(0xa0001000);
 
-typename peripheral_t<STM32F767, QUADSPI>::T& peripheral_t<STM32F767, QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F767, QUADSPI>::T*>(0xa0001000);
+typename peripheral_t<STM32F767, QUADSPI1>::T& peripheral_t<STM32F767, QUADSPI1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F767, QUADSPI1>::T*>(0xa0001000);
 
-typename peripheral_t<STM32F768, QUADSPI>::T& peripheral_t<STM32F768, QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F768, QUADSPI>::T*>(0xa0001000);
+typename peripheral_t<STM32F768, QUADSPI1>::T& peripheral_t<STM32F768, QUADSPI1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F768, QUADSPI1>::T*>(0xa0001000);
 
-typename peripheral_t<STM32F769, QUADSPI>::T& peripheral_t<STM32F769, QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F769, QUADSPI>::T*>(0xa0001000);
+typename peripheral_t<STM32F769, QUADSPI1>::T& peripheral_t<STM32F769, QUADSPI1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F769, QUADSPI1>::T*>(0xa0001000);
 
-typename peripheral_t<STM32F777, QUADSPI>::T& peripheral_t<STM32F777, QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F777, QUADSPI>::T*>(0xa0001000);
+typename peripheral_t<STM32F777, QUADSPI1>::T& peripheral_t<STM32F777, QUADSPI1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F777, QUADSPI1>::T*>(0xa0001000);
 
-typename peripheral_t<STM32F778, QUADSPI>::T& peripheral_t<STM32F778, QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F778, QUADSPI>::T*>(0xa0001000);
+typename peripheral_t<STM32F778, QUADSPI1>::T& peripheral_t<STM32F778, QUADSPI1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F778, QUADSPI1>::T*>(0xa0001000);
 
-typename peripheral_t<STM32F779, QUADSPI>::T& peripheral_t<STM32F779, QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32F779, QUADSPI>::T*>(0xa0001000);
+typename peripheral_t<STM32F779, QUADSPI1>::T& peripheral_t<STM32F779, QUADSPI1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32F779, QUADSPI1>::T*>(0xa0001000);
 
 typename peripheral_t<STM32F722, RCC>::T& peripheral_t<STM32F722, RCC>::V =
     *reinterpret_cast<typename peripheral_t<STM32F722, RCC>::T*>(0x40023800);

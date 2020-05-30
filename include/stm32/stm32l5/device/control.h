@@ -447,20 +447,6 @@ struct clock_control_t<RCC, peripheral_t<STM32L552, SPI3>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32L552, SRAM1>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_SRAM1SMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_SRAM1SMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32L552, SRAM2>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_SRAM2SMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_SRAM2SMEN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32L552, SYSCFG>>
 {
     static void enable() { rcc_t::V.APB2ENR |= RCC::T::APB2ENR_SYSCFGEN; }
@@ -1104,20 +1090,6 @@ template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32L562, SPI3>>
 {
     static void reset() { rcc_t::V.APB1RSTR1 |= RCC::T::APB1RSTR1_SPI3RST; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32L562, SRAM1>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB1SMENR |= RCC::T::AHB1SMENR_SRAM1SMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_SRAM1SMEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32L562, SRAM2>>
-{
-    static void enable_sleep_mode() { rcc_t::V.AHB2SMENR |= RCC::T::AHB2SMENR_SRAM2SMEN; }
-    static void disable_sleep_mode() { rcc_t::V.AHB2SMENR &= ~RCC::T::AHB2SMENR_SRAM2SMEN; }
 };
 
 template<typename RCC>

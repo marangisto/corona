@@ -228,8 +228,8 @@ typename peripheral_t<STM32MP15xxx, OTGHSFS1>::T& peripheral_t<STM32MP15xxx, OTG
 typename peripheral_t<STM32MP15xxx, PWR>::T& peripheral_t<STM32MP15xxx, PWR>::V =
     *reinterpret_cast<typename peripheral_t<STM32MP15xxx, PWR>::T*>(0x50001000);
 
-typename peripheral_t<STM32MP15xxx, QUADSPI>::T& peripheral_t<STM32MP15xxx, QUADSPI>::V =
-    *reinterpret_cast<typename peripheral_t<STM32MP15xxx, QUADSPI>::T*>(0x58003000);
+typename peripheral_t<STM32MP15xxx, QUADSPI1>::T& peripheral_t<STM32MP15xxx, QUADSPI1>::V =
+    *reinterpret_cast<typename peripheral_t<STM32MP15xxx, QUADSPI1>::T*>(0x58003000);
 
 typename peripheral_t<STM32MP15xxx, RCC>::T& peripheral_t<STM32MP15xxx, RCC>::V =
     *reinterpret_cast<typename peripheral_t<STM32MP15xxx, RCC>::T*>(0x50000000);

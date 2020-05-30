@@ -12,7 +12,7 @@
 //
 ////
 
-struct stm32g431xx_sai_t
+struct stm32g431xx_sai1_t
 {
     volatile uint32_t ACR1;   // [read-write] AConfiguration register 1
     volatile uint32_t ACR2;   // [read-write] AConfiguration register 2
@@ -268,53 +268,73 @@ struct stm32g431xx_sai_t
 
 
 template<>
-struct peripheral_t<STM32G431xx, SAI>
+struct peripheral_t<STM32G431xx, SAI1>
 {
-    typedef stm32g431xx_sai_t T;
+    typedef stm32g431xx_sai1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G441xx, SAI>
+struct peripheral_t<STM32G441xx, SAI1>
 {
-    typedef stm32g431xx_sai_t T;
+    typedef stm32g431xx_sai1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G471xx, SAI>
+struct peripheral_t<STM32G471xx, SAI1>
 {
-    typedef stm32g431xx_sai_t T;
+    typedef stm32g431xx_sai1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G473xx, SAI>
+struct peripheral_t<STM32G473xx, SAI1>
 {
-    typedef stm32g431xx_sai_t T;
+    typedef stm32g431xx_sai1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G474xx, SAI>
+struct peripheral_t<STM32G474xx, SAI1>
 {
-    typedef stm32g431xx_sai_t T;
+    typedef stm32g431xx_sai1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G483xx, SAI>
+struct peripheral_t<STM32G483xx, SAI1>
 {
-    typedef stm32g431xx_sai_t T;
+    typedef stm32g431xx_sai1_t T;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G484xx, SAI>
+struct peripheral_t<STM32G484xx, SAI1>
 {
-    typedef stm32g431xx_sai_t T;
+    typedef stm32g431xx_sai1_t T;
     static T& V;
 };
 
-using sai_t = peripheral_t<mcu_svd, SAI>;
+using sai1_t = peripheral_t<mcu_svd, SAI1>;
+
+template<int INST> struct sai_traits {};
+
+template<> struct sai_traits<1>
+{
+    using sai = sai1_t;
+    static constexpr alternate_function_t CK1 = SAI1_CK1;
+    static constexpr alternate_function_t CK2 = SAI1_CK2;
+    static constexpr alternate_function_t D1 = SAI1_D1;
+    static constexpr alternate_function_t D2 = SAI1_D2;
+    static constexpr alternate_function_t D3 = SAI1_D3;
+    static constexpr alternate_function_t FS_A = SAI1_FS_A;
+    static constexpr alternate_function_t FS_B = SAI1_FS_B;
+    static constexpr alternate_function_t MCLK_A = SAI1_MCLK_A;
+    static constexpr alternate_function_t MCLK_B = SAI1_MCLK_B;
+    static constexpr alternate_function_t SCK_A = SAI1_SCK_A;
+    static constexpr alternate_function_t SCK_B = SAI1_SCK_B;
+    static constexpr alternate_function_t SD_A = SAI1_SD_A;
+    static constexpr alternate_function_t SD_B = SAI1_SD_B;
+};
 

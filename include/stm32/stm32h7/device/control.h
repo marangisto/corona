@@ -1000,13 +1000,6 @@ struct clock_control_t<RCC, peripheral_t<STM32H742x, SPI6LP>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H742x, SRAM1>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM1EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM1EN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32H742x, SRAM1LP>>
 {
     static void enable() { rcc_t::V.AHB2LPENR |= RCC::T::AHB2LPENR_SRAM1LPEN; }
@@ -1014,24 +1007,10 @@ struct clock_control_t<RCC, peripheral_t<STM32H742x, SRAM1LP>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H742x, SRAM2>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM2EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM2EN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32H742x, SRAM2LP>>
 {
     static void enable() { rcc_t::V.AHB2LPENR |= RCC::T::AHB2LPENR_SRAM2LPEN; }
     static void disable() { rcc_t::V.AHB2LPENR &= ~RCC::T::AHB2LPENR_SRAM2LPEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H742x, SRAM3>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM3EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM3EN; }
 };
 
 template<typename RCC>
@@ -2493,13 +2472,6 @@ struct clock_control_t<RCC, peripheral_t<STM32H743, SPI6LP>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H743, SRAM1>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM1EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM1EN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32H743, SRAM1LP>>
 {
     static void enable() { rcc_t::V.AHB2LPENR |= RCC::T::AHB2LPENR_SRAM1LPEN; }
@@ -2507,24 +2479,10 @@ struct clock_control_t<RCC, peripheral_t<STM32H743, SRAM1LP>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H743, SRAM2>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM2EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM2EN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32H743, SRAM2LP>>
 {
     static void enable() { rcc_t::V.AHB2LPENR |= RCC::T::AHB2LPENR_SRAM2LPEN; }
     static void disable() { rcc_t::V.AHB2LPENR &= ~RCC::T::AHB2LPENR_SRAM2LPEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H743, SRAM3>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM3EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM3EN; }
 };
 
 template<typename RCC>
@@ -3994,13 +3952,6 @@ struct clock_control_t<RCC, peripheral_t<STM32H745_CM4, SPI6LP>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H745_CM4, SRAM1>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM1EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM1EN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32H745_CM4, SRAM1LP>>
 {
     static void enable() { rcc_t::V.AHB2LPENR |= RCC::T::AHB2LPENR_SRAM1LPEN; }
@@ -4008,24 +3959,10 @@ struct clock_control_t<RCC, peripheral_t<STM32H745_CM4, SRAM1LP>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H745_CM4, SRAM2>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM2EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM2EN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32H745_CM4, SRAM2LP>>
 {
     static void enable() { rcc_t::V.AHB2LPENR |= RCC::T::AHB2LPENR_SRAM2LPEN; }
     static void disable() { rcc_t::V.AHB2LPENR &= ~RCC::T::AHB2LPENR_SRAM2LPEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H745_CM4, SRAM3>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM3EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM3EN; }
 };
 
 template<typename RCC>
@@ -5488,13 +5425,6 @@ struct clock_control_t<RCC, peripheral_t<STM32H745_CM7, SPI6LP>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H745_CM7, SRAM1>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM1EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM1EN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32H745_CM7, SRAM1LP>>
 {
     static void enable() { rcc_t::V.AHB2LPENR |= RCC::T::AHB2LPENR_SRAM1LPEN; }
@@ -5502,24 +5432,10 @@ struct clock_control_t<RCC, peripheral_t<STM32H745_CM7, SRAM1LP>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H745_CM7, SRAM2>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM2EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM2EN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32H745_CM7, SRAM2LP>>
 {
     static void enable() { rcc_t::V.AHB2LPENR |= RCC::T::AHB2LPENR_SRAM2LPEN; }
     static void disable() { rcc_t::V.AHB2LPENR &= ~RCC::T::AHB2LPENR_SRAM2LPEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H745_CM7, SRAM3>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM3EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM3EN; }
 };
 
 template<typename RCC>
@@ -6982,13 +6898,6 @@ struct clock_control_t<RCC, peripheral_t<STM32H747_CM4, SPI6LP>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H747_CM4, SRAM1>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM1EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM1EN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32H747_CM4, SRAM1LP>>
 {
     static void enable() { rcc_t::V.AHB2LPENR |= RCC::T::AHB2LPENR_SRAM1LPEN; }
@@ -6996,24 +6905,10 @@ struct clock_control_t<RCC, peripheral_t<STM32H747_CM4, SRAM1LP>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H747_CM4, SRAM2>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM2EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM2EN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32H747_CM4, SRAM2LP>>
 {
     static void enable() { rcc_t::V.AHB2LPENR |= RCC::T::AHB2LPENR_SRAM2LPEN; }
     static void disable() { rcc_t::V.AHB2LPENR &= ~RCC::T::AHB2LPENR_SRAM2LPEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H747_CM4, SRAM3>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM3EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM3EN; }
 };
 
 template<typename RCC>
@@ -8476,13 +8371,6 @@ struct clock_control_t<RCC, peripheral_t<STM32H747_CM7, SPI6LP>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H747_CM7, SRAM1>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM1EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM1EN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32H747_CM7, SRAM1LP>>
 {
     static void enable() { rcc_t::V.AHB2LPENR |= RCC::T::AHB2LPENR_SRAM1LPEN; }
@@ -8490,24 +8378,10 @@ struct clock_control_t<RCC, peripheral_t<STM32H747_CM7, SRAM1LP>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H747_CM7, SRAM2>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM2EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM2EN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32H747_CM7, SRAM2LP>>
 {
     static void enable() { rcc_t::V.AHB2LPENR |= RCC::T::AHB2LPENR_SRAM2LPEN; }
     static void disable() { rcc_t::V.AHB2LPENR &= ~RCC::T::AHB2LPENR_SRAM2LPEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H747_CM7, SRAM3>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM3EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM3EN; }
 };
 
 template<typename RCC>
@@ -9970,13 +9844,6 @@ struct clock_control_t<RCC, peripheral_t<STM32H750x, SPI6LP>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H750x, SRAM1>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM1EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM1EN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32H750x, SRAM1LP>>
 {
     static void enable() { rcc_t::V.AHB2LPENR |= RCC::T::AHB2LPENR_SRAM1LPEN; }
@@ -9984,24 +9851,10 @@ struct clock_control_t<RCC, peripheral_t<STM32H750x, SRAM1LP>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H750x, SRAM2>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM2EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM2EN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32H750x, SRAM2LP>>
 {
     static void enable() { rcc_t::V.AHB2LPENR |= RCC::T::AHB2LPENR_SRAM2LPEN; }
     static void disable() { rcc_t::V.AHB2LPENR &= ~RCC::T::AHB2LPENR_SRAM2LPEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H750x, SRAM3>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM3EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM3EN; }
 };
 
 template<typename RCC>
@@ -11456,13 +11309,6 @@ struct clock_control_t<RCC, peripheral_t<STM32H753, SPI6LP>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H753, SRAM1>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM1EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM1EN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32H753, SRAM1LP>>
 {
     static void enable() { rcc_t::V.AHB2LPENR |= RCC::T::AHB2LPENR_SRAM1LPEN; }
@@ -11470,24 +11316,10 @@ struct clock_control_t<RCC, peripheral_t<STM32H753, SRAM1LP>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H753, SRAM2>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM2EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM2EN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32H753, SRAM2LP>>
 {
     static void enable() { rcc_t::V.AHB2LPENR |= RCC::T::AHB2LPENR_SRAM2LPEN; }
     static void disable() { rcc_t::V.AHB2LPENR &= ~RCC::T::AHB2LPENR_SRAM2LPEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H753, SRAM3>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM3EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM3EN; }
 };
 
 template<typename RCC>
@@ -12957,13 +12789,6 @@ struct clock_control_t<RCC, peripheral_t<STM32H755_CM4, SPI6LP>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H755_CM4, SRAM1>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM1EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM1EN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32H755_CM4, SRAM1LP>>
 {
     static void enable() { rcc_t::V.AHB2LPENR |= RCC::T::AHB2LPENR_SRAM1LPEN; }
@@ -12971,24 +12796,10 @@ struct clock_control_t<RCC, peripheral_t<STM32H755_CM4, SRAM1LP>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H755_CM4, SRAM2>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM2EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM2EN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32H755_CM4, SRAM2LP>>
 {
     static void enable() { rcc_t::V.AHB2LPENR |= RCC::T::AHB2LPENR_SRAM2LPEN; }
     static void disable() { rcc_t::V.AHB2LPENR &= ~RCC::T::AHB2LPENR_SRAM2LPEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H755_CM4, SRAM3>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM3EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM3EN; }
 };
 
 template<typename RCC>
@@ -14451,13 +14262,6 @@ struct clock_control_t<RCC, peripheral_t<STM32H755_CM7, SPI6LP>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H755_CM7, SRAM1>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM1EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM1EN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32H755_CM7, SRAM1LP>>
 {
     static void enable() { rcc_t::V.AHB2LPENR |= RCC::T::AHB2LPENR_SRAM1LPEN; }
@@ -14465,24 +14269,10 @@ struct clock_control_t<RCC, peripheral_t<STM32H755_CM7, SRAM1LP>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H755_CM7, SRAM2>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM2EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM2EN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32H755_CM7, SRAM2LP>>
 {
     static void enable() { rcc_t::V.AHB2LPENR |= RCC::T::AHB2LPENR_SRAM2LPEN; }
     static void disable() { rcc_t::V.AHB2LPENR &= ~RCC::T::AHB2LPENR_SRAM2LPEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H755_CM7, SRAM3>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM3EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM3EN; }
 };
 
 template<typename RCC>
@@ -15945,13 +15735,6 @@ struct clock_control_t<RCC, peripheral_t<STM32H757_CM4, SPI6LP>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H757_CM4, SRAM1>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM1EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM1EN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32H757_CM4, SRAM1LP>>
 {
     static void enable() { rcc_t::V.AHB2LPENR |= RCC::T::AHB2LPENR_SRAM1LPEN; }
@@ -15959,24 +15742,10 @@ struct clock_control_t<RCC, peripheral_t<STM32H757_CM4, SRAM1LP>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H757_CM4, SRAM2>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM2EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM2EN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32H757_CM4, SRAM2LP>>
 {
     static void enable() { rcc_t::V.AHB2LPENR |= RCC::T::AHB2LPENR_SRAM2LPEN; }
     static void disable() { rcc_t::V.AHB2LPENR &= ~RCC::T::AHB2LPENR_SRAM2LPEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H757_CM4, SRAM3>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM3EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM3EN; }
 };
 
 template<typename RCC>
@@ -17439,13 +17208,6 @@ struct clock_control_t<RCC, peripheral_t<STM32H757_CM7, SPI6LP>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H757_CM7, SRAM1>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM1EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM1EN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32H757_CM7, SRAM1LP>>
 {
     static void enable() { rcc_t::V.AHB2LPENR |= RCC::T::AHB2LPENR_SRAM1LPEN; }
@@ -17453,24 +17215,10 @@ struct clock_control_t<RCC, peripheral_t<STM32H757_CM7, SRAM1LP>>
 };
 
 template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H757_CM7, SRAM2>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM2EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM2EN; }
-};
-
-template<typename RCC>
 struct clock_control_t<RCC, peripheral_t<STM32H757_CM7, SRAM2LP>>
 {
     static void enable() { rcc_t::V.AHB2LPENR |= RCC::T::AHB2LPENR_SRAM2LPEN; }
     static void disable() { rcc_t::V.AHB2LPENR &= ~RCC::T::AHB2LPENR_SRAM2LPEN; }
-};
-
-template<typename RCC>
-struct clock_control_t<RCC, peripheral_t<STM32H757_CM7, SRAM3>>
-{
-    static void enable() { rcc_t::V.AHB2ENR |= RCC::T::AHB2ENR_SRAM3EN; }
-    static void disable() { rcc_t::V.AHB2ENR &= ~RCC::T::AHB2ENR_SRAM3EN; }
 };
 
 template<typename RCC>

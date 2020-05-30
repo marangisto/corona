@@ -74,11 +74,10 @@ enum peripheral_enum_t
     , OTG_HS_HOST
     , OTG_HS_PWRCLK
     , PWR
-    , QUADSPI
+    , QUADSPI1
     , RCC
     , RNG
     , RTC
-    , SAI
     , SAI1
     , SAI2
     , SCB

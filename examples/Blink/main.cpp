@@ -1,7 +1,7 @@
 #include <board.h>
 #include <gpio.h>
 
-using led = output_t<board::LED1>;
+using led = board::led1;
 
 int main()
 {

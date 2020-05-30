@@ -1,21 +1,21 @@
 #include <cstring>
-#include <usart.h>
 #include <textio.h>
+#include <board.h>
 
-using serial = usart_t<2, PA2, PA3>;
-using ld4 = output_t<PA5>;
+using serial = board::serial;
+using led = board::led1;
 
-template<> void handler<interrupt::USART2>()
+template<> void handler<board::serial_interrupt>()
 {
-    ld4::toggle();
+    led::toggle();
     serial::isr();
 }
 
 int main()
 {
-    ld4::setup();
+    led::setup();
     serial::setup<230400>();
-    interrupt::set<interrupt::USART2>();
+    interrupt::set<board::serial_interrupt>();
     interrupt::enable();
 
     printf<serial>("Hello STM32G070!\n");

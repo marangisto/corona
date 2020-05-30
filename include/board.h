@@ -1,6 +1,7 @@
 #pragma once
 
 #include <corona.h>
+#include <usart.h>
 
 enum board_t
     { BLUE_PILL
@@ -100,13 +101,17 @@ template<board_t> struct board_traits_t {};
 template<>
 struct board_traits_t<NUCLEO_G070RB>
 {
-    static constexpr gpio_pin_t LED1 = PA5;
+    using led1 = output_t<PA5>;
+    using serial = usart_t<2, PA2, PA3>;
+    static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART2;
 };
 
 template<>
 struct board_traits_t<NUCLEO_G431RB>
 {
-    static constexpr gpio_pin_t LED1 = PA5;
+    using led1 = output_t<PA5>;
+    using serial = usart_t<2, PA2, PA3>;
+    static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART2;
 };
 
 static constexpr board_t target_board = BOARD;

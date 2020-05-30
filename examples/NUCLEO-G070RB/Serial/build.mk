@@ -1,2 +1,0 @@
-BASE_DIR=../../../..
-MCU=STM32G070RBTx

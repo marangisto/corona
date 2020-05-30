@@ -21,8 +21,8 @@ public:
         alternate_t<TX, traits::TX>::template setup<speed>();
         alternate_t<RX, traits::RX>::template setup<pull_up>();
 
-        clock_control_t<usart>::enable(); // enable clock
-        USART.BRR = sys_clock::freq() / baud;   // set baud-rate FIXME: need clock reference!
+        clock_control_t<rcc_t, usart>::enable();    // enable clock
+        USART.BRR = sys_clock::freq() / baud;       // set baud-rate FIXME: need clock reference!
         USART.CR1 |= _::CR1_RESET_VALUE     // reset control register 1
                   | _::CR1_TE               // enable transmitter
                   | _::CR1_RE               // enable receiver

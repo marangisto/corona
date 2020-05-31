@@ -89,7 +89,7 @@ template<typename TIMER> struct timch_traits<TIMER, CH1>
 
     static constexpr alternate_function_t CH = TIMER::traits::CH1;
 
-    static void setup(typename TIMER::count_t initial_duty)
+    static void setup_pwm(typename TIMER::count_t initial_duty)
     {
         tim::V.CCMR1 |= _::template CCMR1_Output_OC1M<0x6>
                      |  _::CCMR1_Output_OC1PE
@@ -108,7 +108,7 @@ template<typename TIMER> struct timch_traits<TIMER, CH2>
 
     static constexpr alternate_function_t CH = TIMER::traits::CH2;
 
-    static void setup(typename TIMER::count_t initial_duty)
+    static void setup_pwm(typename TIMER::count_t initial_duty)
     {
         tim::V.CCMR1 |= _::template CCMR1_Output_OC2M<0x6>
                      |  _::CCMR1_Output_OC2PE
@@ -127,7 +127,7 @@ template<typename TIMER> struct timch_traits<TIMER, CH3>
 
     static constexpr alternate_function_t CH = TIMER::traits::CH3;
 
-    static void setup(typename TIMER::count_t initial_duty)
+    static void setup_pwm(typename TIMER::count_t initial_duty)
     {
         tim::V.CCMR2 |= _::template CCMR2_Output_OC3M<0x6>
                      |  _::CCMR2_Output_OC3PE
@@ -146,7 +146,7 @@ template<typename TIMER> struct timch_traits<TIMER, CH4>
 
     static constexpr alternate_function_t CH = TIMER::traits::CH4;
 
-    static void setup(typename TIMER::count_t initial_duty)
+    static void setup_pwm(typename TIMER::count_t initial_duty)
     {
         tim::V.CCMR2 |= _::template CCMR2_Output_OC4M<0x6>
                      |  _::CCMR2_Output_OC4PE
@@ -169,7 +169,7 @@ public:
     static void setup(typename TIMER::count_t initial_duty = 0)
     {
         alternate_t<PIN, traits::CH>::template setup<high_speed>();
-        traits::setup(initial_duty);
+        traits::setup_pwm(initial_duty);
     }
 
     static typename TIMER::count_t duty()

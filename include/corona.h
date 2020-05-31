@@ -50,3 +50,10 @@ private:
     static uint32_t m_freq;
 };
 
+enum channel_t
+    { CH1
+    , CH2
+    , CH3
+    , CH4
+    };
+

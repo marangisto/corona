@@ -10,6 +10,9 @@ template<int INST>
 class timer_t
 {
 public:
+    using traits = tim_traits<INST>;
+    using tim = typename traits::tim;
+    using _ = typename tim::T;
     using count_t = typename counter_traits<INST>::type;
     enum master_mode_t { mm_reset, mm_enable, mm_update };
 
@@ -75,10 +78,108 @@ public:
     {
         tim::V.ARR = arr;
     }
+};
 
-private:
-    using traits = tim_traits<INST>;
-    using tim = typename traits::tim;
+template<typename TIMER, channel_t CH> struct timch_traits {};
+
+template<typename TIMER> struct timch_traits<TIMER, CH1>
+{
+    using tim = typename TIMER::tim;
     using _ = typename tim::T;
+
+    static constexpr alternate_function_t CH = TIMER::traits::CH1;
+
+    static void setup(typename TIMER::count_t initial_duty)
+    {
+        tim::V.CCMR1 |= _::template CCMR1_Output_OC1M<0x6>
+                     |  _::CCMR1_Output_OC1PE
+                     ;
+        tim::V.CCR1  = initial_duty;
+        tim::V.CCER  |= _::CCER_CC1E;
+    }
+
+    static inline volatile uint32_t& CCR() { return tim::V.CCR1; }
+};
+
+template<typename TIMER> struct timch_traits<TIMER, CH2>
+{
+    using tim = typename TIMER::tim;
+    using _ = typename tim::T;
+
+    static constexpr alternate_function_t CH = TIMER::traits::CH2;
+
+    static void setup(typename TIMER::count_t initial_duty)
+    {
+        tim::V.CCMR1 |= _::template CCMR1_Output_OC2M<0x6>
+                     |  _::CCMR1_Output_OC2PE
+                     ;
+        tim::V.CCR2  = initial_duty;
+        tim::V.CCER  |= _::CCER_CC2E;
+    }
+
+    static inline volatile uint32_t& CCR() { return tim::V.CCR2; }
+};
+
+template<typename TIMER> struct timch_traits<TIMER, CH3>
+{
+    using tim = typename TIMER::tim;
+    using _ = typename tim::T;
+
+    static constexpr alternate_function_t CH = TIMER::traits::CH3;
+
+    static void setup(typename TIMER::count_t initial_duty)
+    {
+        tim::V.CCMR2 |= _::template CCMR2_Output_OC3M<0x6>
+                     |  _::CCMR2_Output_OC3PE
+                     ;
+        tim::V.CCR3  = initial_duty;
+        tim::V.CCER  |= _::CCER_CC3E;
+    }
+
+    static inline volatile uint32_t& CCR() { return tim::V.CCR3; }
+};
+
+template<typename TIMER> struct timch_traits<TIMER, CH4>
+{
+    using tim = typename TIMER::tim;
+    using _ = typename tim::T;
+
+    static constexpr alternate_function_t CH = TIMER::traits::CH4;
+
+    static void setup(typename TIMER::count_t initial_duty)
+    {
+        tim::V.CCMR2 |= _::template CCMR2_Output_OC4M<0x6>
+                     |  _::CCMR2_Output_OC4PE
+                     ;
+        tim::V.CCR4  = initial_duty;
+        tim::V.CCER  |= _::CCER_CC4E;
+    }
+
+    static inline volatile uint32_t& CCR() { return tim::V.CCR4; }
+};
+
+template<typename TIMER, channel_t CH, gpio_pin_t PIN>
+class pwm_t
+{
+public:
+    using tim = typename TIMER::tim;
+    using _ = typename tim::T;
+    using traits = timch_traits<TIMER, CH>;
+
+    static void setup(typename TIMER::count_t initial_duty = 0)
+    {
+        alternate_t<PIN, traits::CH>::template setup<high_speed>();
+        traits::setup(initial_duty);
+    }
+
+    static typename TIMER::count_t duty()
+    {
+        return traits::CCR();
+    }
+
+    static void duty(typename TIMER::count_t x)
+    {
+        traits::CCR() = x;
+    }
 };
 

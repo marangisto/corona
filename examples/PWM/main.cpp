@@ -3,10 +3,10 @@
 
 using tim = tim_t<3>;
 using aux = tim_t<2>;
-using pwma = pwm_t<tim, CH1, PB4>;
-using pwmb = pwm_t<tim, CH2, PB5>;
-using pwmc = pwm_t<tim, CH3, PB0>;
-using pwmd = pwm_t<tim, CH4, PB1>;
+using pwma = tim::pwm<CH1, PB4>;
+using pwmb = tim::pwm<CH2, PB5>;
+using pwmc = tim::pwm<CH3, PB0>;
+using pwmd = tim::pwm<CH4, PB1>;
 using led = board::led1;
 
 template<> void handler<interrupt::TIM2>()

@@ -3,7 +3,7 @@
 #include "timer.h"
 
 template<int TIMER_INSTANCE>
-struct servo_master_t
+struct servos_t
 {
     using timer = tim_t<TIMER_INSTANCE>;
 
@@ -30,9 +30,9 @@ struct servo_master_t
     }
 
     template<channel_t CH, gpio_pin_t PIN>
-    struct chan_t
+    struct servo
     {
-        using pwm = pwm_t<timer, CH, PIN>;
+        using pwm = typename timer::template pwm<CH, PIN>;
 
         static void setup
             ( float x = 0
@@ -56,9 +56,9 @@ struct servo_master_t
 
 template<int TIMER_INSTANCE>
 template<channel_t CH, gpio_pin_t PIN>
-float servo_master_t<TIMER_INSTANCE>::chan_t<CH, PIN>::m_k;
+float servos_t<TIMER_INSTANCE>::servo<CH, PIN>::m_k;
 
 template<int TIMER_INSTANCE>
 template<channel_t CH, gpio_pin_t PIN>
-float servo_master_t<TIMER_INSTANCE>::chan_t<CH, PIN>::m_a;
+float servos_t<TIMER_INSTANCE>::servo<CH, PIN>::m_a;
 

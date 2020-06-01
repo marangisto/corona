@@ -3,6 +3,10 @@
 #include <math.h>
 
 using master = servo_master_t<3>;
+
+using cha = master::chan_t<CH1, PB4>;
+using chb = master::chan_t<CH2, PB5>;
+
 using aux = tim_t<2>;
 using led = board::led1;
 
@@ -15,14 +19,11 @@ template<> void handler<interrupt::TIM2>()
 static volatile float g_x = 0;
 static volatile float g_dx = 0;
 
-static std::function<void(float)> fa;
-static std::function<void(float)> fb;
-
 template<> void handler<interrupt::TIM3>()
 {
     master::clear_update_interrupt_flag();
-    fa(sin(g_x));
-    fb(cos(g_x));
+    cha::set(sin(g_x));
+    chb::set(cos(g_x));
     g_x += g_dx;
 }
 
@@ -32,8 +33,8 @@ int main()
 
     master::setup();
     master::enable_update_interrupt();
-    fa = master::chan<CH1, PB4>();
-    fb = master::chan<CH2, PB5>();
+    cha::setup();
+    chb::setup();
 
     interrupt::set<interrupt::TIM3>();
 

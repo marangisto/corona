@@ -1,6 +1,5 @@
 #pragma once
 
-#include <functional>
 #include "timer.h"
 
 template<int TIMER_INSTANCE>
@@ -31,49 +30,35 @@ struct servo_master_t
     }
 
     template<channel_t CH, gpio_pin_t PIN>
-    static auto chan
-        ( float x = 0
-        , float t_min = 0.6e-3
-        , float t_max = 2.4e-3
-        )
+    struct chan_t
     {
         using pwm = pwm_t<timer, CH, PIN>;
 
-        float k = t_c * (t_max - t_min) / 2.;
-        float a = t_c * t_min + k;
+        static void setup
+            ( float x = 0
+            , float t_min = 0.6e-3
+            , float t_max = 2.4e-3
+            )
+        {
+            m_k = t_c * (t_max - t_min) / 2.;
+            m_a = t_c * t_min + m_k;
+            pwm::setup(m_a + m_k * x);
+        }
 
-        pwm::setup(a + k * x);
+        static void set(float x)
+        {
+            pwm::duty(static_cast<uint16_t>(m_a + m_k * x));
+        }
 
-        return [k, a](float x)
-            {
-                pwm::duty(static_cast<uint16_t>(a + k * x));
-            };
-    }
+        static float m_k, m_a;
+    };
 };
 
-template<typename MASTER, channel_t CH, gpio_pin_t PIN>
-class servo_channel_t
-{
-public:
-    using pwm = pwm_t<typename MASTER::timer, CH, PIN>;
+template<int TIMER_INSTANCE>
+template<channel_t CH, gpio_pin_t PIN>
+float servo_master_t<TIMER_INSTANCE>::chan_t<CH, PIN>::m_k;
 
-    servo_channel_t
-        ( float x = 0
-        , float t_min = 0.6e-3
-        , float t_max = 2.4e-3
-        ) : m_k(MASTER::t_c * (t_max - t_min) / 2.)
-          , m_a(MASTER::t_c * t_min + m_k)
-    {
-        pwm::setup(m_a + m_k * x);
-    }
-
-    void set(float x)
-    {
-        pwm::duty(static_cast<uint16_t>(m_a + m_k * x));
-    }
-
-private:
-    const float m_k, m_a;
-};
-
+template<int TIMER_INSTANCE>
+template<channel_t CH, gpio_pin_t PIN>
+float servo_master_t<TIMER_INSTANCE>::chan_t<CH, PIN>::m_a;
 

@@ -1,8 +1,8 @@
 #include <board.h>
 #include <timer.h>
 
-using tim = timer_t<3>;
-using aux = timer_t<2>;
+using tim = tim_t<3>;
+using aux = tim_t<2>;
 using pwma = pwm_t<tim, CH1, PB4>;
 using pwmb = pwm_t<tim, CH2, PB5>;
 using pwmc = pwm_t<tim, CH3, PB0>;

@@ -2,7 +2,7 @@
 #include <timer.h>
 
 using led = board::led1;
-using tim = timer_t<3>;
+using tim = tim_t<3>;
 
 template<> void handler<interrupt::TIM3>()
 {

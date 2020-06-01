@@ -7,7 +7,7 @@ template<> struct counter_traits<2> { using type = uint32_t; };
 template<> struct counter_traits<5> { using type = uint32_t; };
 
 template<int INST>
-class timer_t
+class tim_t
 {
 public:
     using traits = tim_traits<INST>;

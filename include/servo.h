@@ -2,10 +2,10 @@
 
 #include "timer.h"
 
-template<int TIMER_INSTANCE>
-struct servos_t
+template<int TIMER_INST>
+struct servo_timer_t: tim_t<TIMER_INST>
 {
-    using timer = tim_t<TIMER_INSTANCE>;
+    using timer = tim_t<TIMER_INST>;
 
     static constexpr uint32_t arr = 0xffff;
     static constexpr float f_pwm = 50;
@@ -17,16 +17,6 @@ struct servos_t
         const auto psc = f_sys / (f_pwm * (arr + 1)) - 1;
 
         timer::setup(psc, arr);
-    }
-
-    static void enable_update_interrupt()
-    {
-        timer::enable_update_interrupt();
-    }
-
-    static void clear_update_interrupt_flag()
-    {
-        timer::clear_update_interrupt_flag();
     }
 
     template<channel_t CH, gpio_pin_t PIN>
@@ -54,11 +44,11 @@ struct servos_t
     };
 };
 
-template<int TIMER_INSTANCE>
+template<int TIMER_INST>
 template<channel_t CH, gpio_pin_t PIN>
-float servos_t<TIMER_INSTANCE>::servo<CH, PIN>::m_k;
+float servo_timer_t<TIMER_INST>::servo<CH, PIN>::m_k;
 
-template<int TIMER_INSTANCE>
+template<int TIMER_INST>
 template<channel_t CH, gpio_pin_t PIN>
-float servos_t<TIMER_INSTANCE>::servo<CH, PIN>::m_a;
+float servo_timer_t<TIMER_INST>::servo<CH, PIN>::m_a;
 

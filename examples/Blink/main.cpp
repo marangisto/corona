@@ -1,5 +1,4 @@
 #include <board.h>
-#include <gpio.h>
 
 using led = board::led1;
 

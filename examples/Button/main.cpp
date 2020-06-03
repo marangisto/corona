@@ -1,6 +1,5 @@
 #include <board.h>
 #include <timer.h>
-#include <button.h>
 
 using aux = tim_t<3>;
 using btn =  board::btn1;

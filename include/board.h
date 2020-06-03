@@ -1,6 +1,7 @@
 #pragma once
 
 #include <corona.h>
+#include <button.h>
 #include <usart.h>
 
 enum board_t
@@ -102,6 +103,8 @@ template<>
 struct board_traits_t<NUCLEO_G070RB>
 {
     using led1 = output_t<PA5>;
+    using btn1 = button_t<PC13>;
+    static constexpr input_type_t btn_type = pull_up;
     using serial = usart_t<2, PA2, PA3>;
     static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART2;
 };
@@ -110,6 +113,8 @@ template<>
 struct board_traits_t<NUCLEO_G431RB>
 {
     using led1 = output_t<PA5>;
+    using btn1 = button_t<PC13>;
+    static constexpr input_type_t btn_type = pull_down;
     using serial = usart_t<2, PA2, PA3>;
     static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART2;
 };

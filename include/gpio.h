@@ -88,13 +88,11 @@ public:
 
     static inline bool write(bool x)
     {
-        // FIXME: be smarter!
         x ? set() : clear(); return x;
     }
 
     static inline void toggle()
     {
-        // FIXME: be smarter!
         write(!read());
     }
 
@@ -103,6 +101,76 @@ private:
     static constexpr uint8_t POS = pin_bit<PIN>();
     static constexpr uint32_t MASK = 1 << POS;
 };
+
+template<gpio_pin_t PIN>
+class input_t
+{
+public:
+    template<input_type_t input_type = floating>
+    static inline void setup()
+    {
+        typename gpio_t<PORT>::T& GPIO = gpio_t<PORT>::V;
+
+        clock_control_t<rcc_t, gpio_t<PORT>>::enable();
+        // FIXME: refactor and feature for F1 series
+        GPIO.MODER &= ~(0x3 << (POS*2));    // N.B. input_mode is 0
+        if (input_type != floating)
+            GPIO.PUPDR |= input_type << (POS*2);
+    }
+
+    static inline bool read() { return gpio_t<PORT>::V.IDR & MASK; }
+
+    /*
+    // FIXME: refactor and feature for other series
+    template<trigger_edge_t EDGE = rising_edge>
+    static void enable_interrupt()
+    {
+        using namespace device;
+
+        peripheral_traits<syscfg_t>::enable();
+        constexpr gpio_port_t port = pin_port(PIN);
+        constexpr uint8_t shift = (pin_bit(PIN) & 0x3) << 2;
+        volatile uint32_t& EXTICR = syscfg_traits<pin_bit(PIN)>::EXTICR();
+
+        EXTICR &= ~(0xf << shift);
+        EXTICR |= (port << shift);
+        EXTI.IMR1 |= pin::bit_mask;
+        if (EDGE == rising_edge || EDGE == both_edges)
+            EXTI.RTSR1 |= pin::bit_mask;
+        if (EDGE == falling_edge || EDGE == both_edges)
+            EXTI.FTSR1 |= pin::bit_mask;
+
+    }
+
+    static inline bool interrupt_pending() { return (device::EXTI.PR1 & pin::bit_mask) != 0; }
+    static inline void clear_interrupt() { device::EXTI.PR1 = pin::bit_mask; }
+    */
+
+private:
+    static constexpr gpio_port_t PORT = port_pin<PIN>();
+    static constexpr uint8_t POS = pin_bit<PIN>();
+    static constexpr uint32_t MASK = 1 << POS;
+};
+
+/*
+template<gpio_pin_t PIN>
+class analog_t
+{
+public:
+    template<input_type_t input_type = floating>
+    static inline void setup()
+    {
+        device::peripheral_traits<typename port_traits<pin_port(PIN)>::gpio_t>::enable();
+        pin::gpio().MODER |= 0x3 << (pin::bit_pos*2);
+        static_assert(input_type != pull_up, "only floating or pull-down modes allowed for analog pins");
+        if (input_type != floating)
+            pin::gpio().PUPDR |= input_type << (pin::bit_pos*2);
+    }
+
+private:
+    typedef pin_t<PIN> pin;
+};
+ */
 
 template<gpio_pin_t PIN, alternate_function_t ALT>
 class alternate_t

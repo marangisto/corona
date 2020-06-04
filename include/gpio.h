@@ -2,6 +2,8 @@
 
 #include "corona.h"
 #include <device/gpio.h>
+#include <device/exti.h>
+#include <device/syscfg.h>
 
 enum output_type_t
     { push_pull
@@ -40,7 +42,7 @@ static constexpr int pin_bit()
 }
 
 template<gpio_pin_t PIN>
-static constexpr gpio_port_t port_pin()
+static constexpr gpio_port_t pin_port()
 {
     return static_cast<gpio_port_t>(static_cast<int>(PIN) >> 4);
 }
@@ -97,9 +99,60 @@ public:
     }
 
 private:
-    static constexpr gpio_port_t PORT = port_pin<PIN>();
+    static constexpr gpio_port_t PORT = pin_port<PIN>();
     static constexpr uint8_t POS = pin_bit<PIN>();
     static constexpr uint32_t MASK = 1 << POS;
+};
+
+template<gpio_port_t PORT, int POS, typename = is_in_range<true> >
+struct exticr_traits
+{
+    static_assert(always_false_i<POS>::value, "pin out of range");
+};
+
+// FIXME: refactor and feature for other series
+template<gpio_port_t PORT, int POS>
+struct exticr_traits<PORT, POS, is_in_range<(0 <= POS && POS < 4)> >
+{
+    static void select()
+    {
+        constexpr uint8_t shift = (POS & 0x3) << 2;
+        syscfg_t::V.EXTICR1 &= ~(0xf << shift);
+        syscfg_t::V.EXTICR1 |= (PORT << shift);
+    }
+};
+
+template<gpio_port_t PORT, int POS>
+struct exticr_traits<PORT, POS, is_in_range<(4 <= POS && POS < 8)> >
+{
+    static void select()
+    {
+        constexpr uint8_t shift = (POS & 0x3) << 2;
+        syscfg_t::V.EXTICR2 &= ~(0xf << shift);
+        syscfg_t::V.EXTICR2 |= (PORT << shift);
+    }
+};
+
+template<gpio_port_t PORT, int POS>
+struct exticr_traits<PORT, POS, is_in_range<(8 <= POS && POS < 12)> >
+{
+    static void select()
+    {
+        constexpr uint8_t shift = (POS & 0x3) << 2;
+        syscfg_t::V.EXTICR3 &= ~(0xf << shift);
+        syscfg_t::V.EXTICR3 |= (PORT << shift);
+    }
+};
+
+template<gpio_port_t PORT, int POS>
+struct exticr_traits<PORT, POS, is_in_range<(12 <= POS && POS < 16)> >
+{
+    static void select()
+    {
+        constexpr uint8_t shift = (POS & 0x3) << 2;
+        syscfg_t::V.EXTICR4 &= ~(0xf << shift);
+        syscfg_t::V.EXTICR4 |= (PORT << shift);
+    }
 };
 
 template<gpio_pin_t PIN>
@@ -120,34 +173,33 @@ public:
 
     static inline bool read() { return gpio_t<PORT>::V.IDR & MASK; }
 
-    /*
-    // FIXME: refactor and feature for other series
     template<trigger_edge_t EDGE = rising_edge>
     static void enable_interrupt()
     {
-        using namespace device;
+        typename exti_t::T& EXTI = exti_t::V;
 
-        peripheral_traits<syscfg_t>::enable();
-        constexpr gpio_port_t port = pin_port(PIN);
-        constexpr uint8_t shift = (pin_bit(PIN) & 0x3) << 2;
-        volatile uint32_t& EXTICR = syscfg_traits<pin_bit(PIN)>::EXTICR();
-
-        EXTICR &= ~(0xf << shift);
-        EXTICR |= (port << shift);
-        EXTI.IMR1 |= pin::bit_mask;
+        // FIXME: refactor and feature for other series
+        clock_control_t<rcc_t, syscfg_t>::enable();
+        exticr_traits<PORT, POS>::select();
+        EXTI.IMR1 |= MASK;
         if (EDGE == rising_edge || EDGE == both_edges)
-            EXTI.RTSR1 |= pin::bit_mask;
+            EXTI.RTSR1 |= MASK;
         if (EDGE == falling_edge || EDGE == both_edges)
-            EXTI.FTSR1 |= pin::bit_mask;
-
+            EXTI.FTSR1 |= MASK;
     }
 
-    static inline bool interrupt_pending() { return (device::EXTI.PR1 & pin::bit_mask) != 0; }
-    static inline void clear_interrupt() { device::EXTI.PR1 = pin::bit_mask; }
-    */
+    static inline bool interrupt_pending()
+    {
+        return exti_t::V.PR1 & MASK;
+    }
+
+    static inline void clear_interrupt()
+    {
+        exti_t::V.PR1 = MASK;
+    }
 
 private:
-    static constexpr gpio_port_t PORT = port_pin<PIN>();
+    static constexpr gpio_port_t PORT = pin_port<PIN>();
     static constexpr uint8_t POS = pin_bit<PIN>();
     static constexpr uint32_t MASK = 1 << POS;
 };
@@ -214,7 +266,7 @@ public:
     }
 
 private:
-    static constexpr gpio_port_t PORT = port_pin<PIN>();
+    static constexpr gpio_port_t PORT = pin_port<PIN>();
     static constexpr uint8_t POS = pin_bit<PIN>();
     static constexpr uint32_t MASK = 1 << POS;
 };

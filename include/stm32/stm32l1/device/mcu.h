@@ -132,6 +132,7 @@ enum mcu_t
     , STM32L162VCTx
     , STM32L162VCTxA
     , STM32L162VDTx
+    , STM32L162VDYxX
     , STM32L162VETx
     , STM32L162VEYx
     , STM32L162ZDTx
@@ -1028,6 +1029,13 @@ template<> struct mcu_traits<STM32L162VDTx>
     static constexpr mcu_family_t mcu_family = STM32L1;
     static constexpr mcu_svd_t mcu_svd = STM32L162;
     static constexpr gpio_conf_t gpio_conf = STM32L162xD;
+};
+
+template<> struct mcu_traits<STM32L162VDYxX>
+{
+    static constexpr mcu_family_t mcu_family = STM32L1;
+    static constexpr mcu_svd_t mcu_svd = STM32L162;
+    static constexpr gpio_conf_t gpio_conf = STM32L162xE;
 };
 
 template<> struct mcu_traits<STM32L162VETx>

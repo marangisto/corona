@@ -79,6 +79,7 @@ enum mcu_t
     , STM32L451CEUx
     , STM32L451RCIx
     , STM32L451RCTx
+    , STM32L451RCYx
     , STM32L451REIx
     , STM32L451RETx
     , STM32L451REYx
@@ -90,6 +91,7 @@ enum mcu_t
     , STM32L452CEUx
     , STM32L452RCIx
     , STM32L452RCTx
+    , STM32L452RCYx
     , STM32L452REIx
     , STM32L452RETx
     , STM32L452RETxP
@@ -137,6 +139,8 @@ enum mcu_t
     , STM32L476ZGJx
     , STM32L476ZGTx
     , STM32L476ZGTxP
+    , STM32L485JCYx
+    , STM32L485JEYx
     , STM32L486JGYx
     , STM32L486QGIx
     , STM32L486RGTx
@@ -341,6 +345,13 @@ template<> struct mcu_traits<STM32L451RCTx>
 };
 
 template<> struct mcu_traits<STM32L451RETx>
+{
+    static constexpr mcu_family_t mcu_family = STM32L4;
+    static constexpr mcu_svd_t mcu_svd = STM32L4x1;
+    static constexpr gpio_conf_t gpio_conf = STM32L45x;
+};
+
+template<> struct mcu_traits<STM32L451RCYx>
 {
     static constexpr mcu_family_t mcu_family = STM32L4;
     static constexpr mcu_svd_t mcu_svd = STM32L4x1;
@@ -697,6 +708,13 @@ template<> struct mcu_traits<STM32L452RETx>
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
 };
 
+template<> struct mcu_traits<STM32L452RCYx>
+{
+    static constexpr mcu_family_t mcu_family = STM32L4;
+    static constexpr mcu_svd_t mcu_svd = STM32L4x2;
+    static constexpr gpio_conf_t gpio_conf = STM32L45x;
+};
+
 template<> struct mcu_traits<STM32L452REYx>
 {
     static constexpr mcu_family_t mcu_family = STM32L4;
@@ -978,6 +996,20 @@ template<> struct mcu_traits<STM32L475VETx>
 };
 
 template<> struct mcu_traits<STM32L475VGTx>
+{
+    static constexpr mcu_family_t mcu_family = STM32L4;
+    static constexpr mcu_svd_t mcu_svd = STM32L4x5;
+    static constexpr gpio_conf_t gpio_conf = STM32L47x;
+};
+
+template<> struct mcu_traits<STM32L485JCYx>
+{
+    static constexpr mcu_family_t mcu_family = STM32L4;
+    static constexpr mcu_svd_t mcu_svd = STM32L4x5;
+    static constexpr gpio_conf_t gpio_conf = STM32L47x;
+};
+
+template<> struct mcu_traits<STM32L485JEYx>
 {
     static constexpr mcu_family_t mcu_family = STM32L4;
     static constexpr mcu_svd_t mcu_svd = STM32L4x5;

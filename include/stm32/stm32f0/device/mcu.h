@@ -87,6 +87,7 @@ enum mcu_t
     , STM32F072CBYx
     , STM32F072R8Tx
     , STM32F072RBHx
+    , STM32F072RBIx
     , STM32F072RBTx
     , STM32F072V8Hx
     , STM32F072V8Tx
@@ -690,6 +691,13 @@ template<> struct mcu_traits<STM32F072RBTx>
 };
 
 template<> struct mcu_traits<STM32F072RBHx>
+{
+    static constexpr mcu_family_t mcu_family = STM32F0;
+    static constexpr mcu_svd_t mcu_svd = STM32F0x2;
+    static constexpr gpio_conf_t gpio_conf = STM32F052;
+};
+
+template<> struct mcu_traits<STM32F072RBIx>
 {
     static constexpr mcu_family_t mcu_family = STM32F0;
     static constexpr mcu_svd_t mcu_svd = STM32F0x2;

@@ -8,6 +8,7 @@
 
 enum mcu_t
     { STM32F401CBUx
+    , STM32F401CBYx
     , STM32F401CCFx
     , STM32F401CCUx
     , STM32F401CCYx
@@ -40,9 +41,11 @@ enum mcu_t
     , STM32F407VGTx
     , STM32F407ZETx
     , STM32F407ZGTx
+    , STM32F410C8Tx
     , STM32F410C8Ux
     , STM32F410CBTx
     , STM32F410CBUx
+    , STM32F410R8Ix
     , STM32F410R8Tx
     , STM32F410RBIx
     , STM32F410RBTx
@@ -54,6 +57,7 @@ enum mcu_t
     , STM32F411CEYx
     , STM32F411RCTx
     , STM32F411RETx
+    , STM32F411VCHx
     , STM32F411VCTx
     , STM32F411VEHx
     , STM32F411VETx
@@ -61,6 +65,7 @@ enum mcu_t
     , STM32F412CGUx
     , STM32F412RETx
     , STM32F412REYx
+    , STM32F412REYxP
     , STM32F412RGTx
     , STM32F412RGYx
     , STM32F412RGYxP
@@ -174,6 +179,7 @@ enum mcu_t
     , STM32F446ZEJx
     , STM32F446ZETx
     , STM32F469AEHx
+    , STM32F469AEYx
     , STM32F469AGHx
     , STM32F469AGYx
     , STM32F469AIHx
@@ -182,6 +188,7 @@ enum mcu_t
     , STM32F469BGTx
     , STM32F469BITx
     , STM32F469IEHx
+    , STM32F469IETx
     , STM32F469IGHx
     , STM32F469IGTx
     , STM32F469IIHx
@@ -196,11 +203,14 @@ enum mcu_t
     , STM32F469ZGTx
     , STM32F469ZITx
     , STM32F479AGHx
+    , STM32F479AGYx
     , STM32F479AIHx
     , STM32F479AIYx
     , STM32F479BGTx
     , STM32F479BITx
     , STM32F479IGHx
+    , STM32F479IGTx
+    , STM32F479IIHx
     , STM32F479IITx
     , STM32F479NGHx
     , STM32F479NIHx
@@ -246,6 +256,13 @@ template<> struct mcu_traits<STM32F401CBUx>
 };
 
 template<> struct mcu_traits<STM32F401CCUx>
+{
+    static constexpr mcu_family_t mcu_family = STM32F4;
+    static constexpr mcu_svd_t mcu_svd = STM32F401;
+    static constexpr gpio_conf_t gpio_conf = STM32F401_;
+};
+
+template<> struct mcu_traits<STM32F401CBYx>
 {
     static constexpr mcu_family_t mcu_family = STM32F4;
     static constexpr mcu_svd_t mcu_svd = STM32F401;
@@ -553,6 +570,13 @@ template<> struct mcu_traits<STM32F417ZGTx>
     static constexpr gpio_conf_t gpio_conf = STM32F417;
 };
 
+template<> struct mcu_traits<STM32F410C8Tx>
+{
+    static constexpr mcu_family_t mcu_family = STM32F4;
+    static constexpr mcu_svd_t mcu_svd = STM32F410;
+    static constexpr gpio_conf_t gpio_conf = STM32F410_;
+};
+
 template<> struct mcu_traits<STM32F410CBTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F4;
@@ -568,6 +592,13 @@ template<> struct mcu_traits<STM32F410C8Ux>
 };
 
 template<> struct mcu_traits<STM32F410CBUx>
+{
+    static constexpr mcu_family_t mcu_family = STM32F4;
+    static constexpr mcu_svd_t mcu_svd = STM32F410;
+    static constexpr gpio_conf_t gpio_conf = STM32F410_;
+};
+
+template<> struct mcu_traits<STM32F410R8Ix>
 {
     static constexpr mcu_family_t mcu_family = STM32F4;
     static constexpr mcu_svd_t mcu_svd = STM32F410;
@@ -651,6 +682,13 @@ template<> struct mcu_traits<STM32F411RETx>
     static constexpr gpio_conf_t gpio_conf = STM32F411_;
 };
 
+template<> struct mcu_traits<STM32F411VCHx>
+{
+    static constexpr mcu_family_t mcu_family = STM32F4;
+    static constexpr mcu_svd_t mcu_svd = STM32F411;
+    static constexpr gpio_conf_t gpio_conf = STM32F411_;
+};
+
 template<> struct mcu_traits<STM32F411VEHx>
 {
     static constexpr mcu_family_t mcu_family = STM32F4;
@@ -708,6 +746,13 @@ template<> struct mcu_traits<STM32F412REYx>
 };
 
 template<> struct mcu_traits<STM32F412RGYx>
+{
+    static constexpr mcu_family_t mcu_family = STM32F4;
+    static constexpr mcu_svd_t mcu_svd = STM32F412;
+    static constexpr gpio_conf_t gpio_conf = STM32F412_;
+};
+
+template<> struct mcu_traits<STM32F412REYxP>
 {
     static constexpr mcu_family_t mcu_family = STM32F4;
     static constexpr mcu_svd_t mcu_svd = STM32F412;
@@ -1421,6 +1466,13 @@ template<> struct mcu_traits<STM32F469AIHx>
     static constexpr gpio_conf_t gpio_conf = STM32F469_;
 };
 
+template<> struct mcu_traits<STM32F469AEYx>
+{
+    static constexpr mcu_family_t mcu_family = STM32F4;
+    static constexpr mcu_svd_t mcu_svd = STM32F469;
+    static constexpr gpio_conf_t gpio_conf = STM32F469_;
+};
+
 template<> struct mcu_traits<STM32F469AGYx>
 {
     static constexpr mcu_family_t mcu_family = STM32F4;
@@ -1450,6 +1502,13 @@ template<> struct mcu_traits<STM32F469BGTx>
 };
 
 template<> struct mcu_traits<STM32F469BITx>
+{
+    static constexpr mcu_family_t mcu_family = STM32F4;
+    static constexpr mcu_svd_t mcu_svd = STM32F469;
+    static constexpr gpio_conf_t gpio_conf = STM32F469_;
+};
+
+template<> struct mcu_traits<STM32F469IETx>
 {
     static constexpr mcu_family_t mcu_family = STM32F4;
     static constexpr mcu_svd_t mcu_svd = STM32F469;
@@ -1568,6 +1627,13 @@ template<> struct mcu_traits<STM32F479AIHx>
     static constexpr gpio_conf_t gpio_conf = STM32F469_;
 };
 
+template<> struct mcu_traits<STM32F479AGYx>
+{
+    static constexpr mcu_family_t mcu_family = STM32F4;
+    static constexpr mcu_svd_t mcu_svd = STM32F469;
+    static constexpr gpio_conf_t gpio_conf = STM32F469_;
+};
+
 template<> struct mcu_traits<STM32F479AIYx>
 {
     static constexpr mcu_family_t mcu_family = STM32F4;
@@ -1590,6 +1656,20 @@ template<> struct mcu_traits<STM32F479BITx>
 };
 
 template<> struct mcu_traits<STM32F479IGHx>
+{
+    static constexpr mcu_family_t mcu_family = STM32F4;
+    static constexpr mcu_svd_t mcu_svd = STM32F469;
+    static constexpr gpio_conf_t gpio_conf = STM32F469_;
+};
+
+template<> struct mcu_traits<STM32F479IIHx>
+{
+    static constexpr mcu_family_t mcu_family = STM32F4;
+    static constexpr mcu_svd_t mcu_svd = STM32F469;
+    static constexpr gpio_conf_t gpio_conf = STM32F469_;
+};
+
+template<> struct mcu_traits<STM32F479IGTx>
 {
     static constexpr mcu_family_t mcu_family = STM32F4;
     static constexpr mcu_svd_t mcu_svd = STM32F469;

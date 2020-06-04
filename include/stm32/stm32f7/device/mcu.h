@@ -21,6 +21,7 @@ enum mcu_t
     , STM32F723ICTx
     , STM32F723IEKx
     , STM32F723IETx
+    , STM32F723VCYx
     , STM32F723VEYx
     , STM32F723ZCIx
     , STM32F723ZCTx
@@ -105,6 +106,8 @@ enum mcu_t
     , STM32F767VITx
     , STM32F767ZGTx
     , STM32F767ZITx
+    , STM32F768AIYx
+    , STM32F769AGYx
     , STM32F769AIYx
     , STM32F769BGTx
     , STM32F769BITx
@@ -329,6 +332,13 @@ template<> struct mcu_traits<STM32F723ICTx>
 };
 
 template<> struct mcu_traits<STM32F723IETx>
+{
+    static constexpr mcu_family_t mcu_family = STM32F7;
+    static constexpr mcu_svd_t mcu_svd = STM32F723;
+    static constexpr gpio_conf_t gpio_conf = STM32F72x;
+};
+
+template<> struct mcu_traits<STM32F723VCYx>
 {
     static constexpr mcu_family_t mcu_family = STM32F7;
     static constexpr mcu_svd_t mcu_svd = STM32F723;
@@ -885,6 +895,20 @@ template<> struct mcu_traits<STM32F777ZITx>
 {
     static constexpr mcu_family_t mcu_family = STM32F7;
     static constexpr mcu_svd_t mcu_svd = STM32F777;
+    static constexpr gpio_conf_t gpio_conf = STM32F76x;
+};
+
+template<> struct mcu_traits<STM32F768AIYx>
+{
+    static constexpr mcu_family_t mcu_family = STM32F7;
+    static constexpr mcu_svd_t mcu_svd = STM32F768;
+    static constexpr gpio_conf_t gpio_conf = STM32F76x;
+};
+
+template<> struct mcu_traits<STM32F769AGYx>
+{
+    static constexpr mcu_family_t mcu_family = STM32F7;
+    static constexpr mcu_svd_t mcu_svd = STM32F769;
     static constexpr gpio_conf_t gpio_conf = STM32F76x;
 };
 

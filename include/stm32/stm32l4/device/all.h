@@ -4,7 +4,7 @@
 //
 //      STM32L4 peripherals
 //
-////
+///
 
 #include "adc.h"
 #include "aes.h"
@@ -19,16 +19,17 @@
 #include "dma.h"
 #include "dma2d.h"
 #include "exti.h"
-#include "fmc.h"
-#include "fpu.h"
 #include "firewall.h"
 #include "flash.h"
+#include "fmc.h"
+#include "fpu.h"
 #include "gpio.h"
 #include "hash.h"
 #include "i2c.h"
 #include "iwdg.h"
 #include "lcd.h"
 #include "lptim.h"
+#include "lpuart.h"
 #include "mpu.h"
 #include "nvic.h"
 #include "opamp.h"
@@ -46,6 +47,7 @@
 #include "syscfg.h"
 #include "tim.h"
 #include "tsc.h"
+#include "uart.h"
 #include "usart.h"
 #include "usb.h"
 #include "usb_otg_fs.h"

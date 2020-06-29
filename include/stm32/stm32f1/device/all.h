@@ -4,7 +4,7 @@
 //
 //      STM32F1 peripherals
 //
-////
+///
 
 #include "adc.h"
 #include "afio.h"
@@ -32,6 +32,7 @@
 #include "spi.h"
 #include "stk.h"
 #include "tim.h"
+#include "uart.h"
 #include "usart.h"
 #include "usb.h"
 #include "usb_otg.h"

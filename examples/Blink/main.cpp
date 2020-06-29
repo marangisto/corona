@@ -9,7 +9,7 @@ int main()
     for (;;)
     {
         led::toggle();
-        sys_tick::delay_ms(1001);
+        sys_tick::delay_ms(1000);
     }
 }
 

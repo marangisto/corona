@@ -4,7 +4,7 @@
 //
 //      STM32F7 peripherals
 //
-////
+///
 
 #include "ac.h"
 #include "adc.h"
@@ -21,8 +21,8 @@
 #include "dma.h"
 #include "dma2d.h"
 #include "dsi.h"
-#include "exti.h"
 #include "ethernet.h"
+#include "exti.h"
 #include "flash.h"
 #include "fpu.h"
 #include "fsmc.h"

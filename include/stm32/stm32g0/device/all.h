@@ -4,7 +4,7 @@
 //
 //      STM32G0 peripherals
 //
-////
+///
 
 #include "adc.h"
 #include "aes.h"
@@ -16,12 +16,13 @@
 #include "dma.h"
 #include "dmamux.h"
 #include "exti.h"
-#include "fpu.h"
 #include "flash.h"
+#include "fpu.h"
 #include "gpio.h"
 #include "i2c.h"
 #include "iwdg.h"
 #include "lptim.h"
+#include "lpuart.h"
 #include "mpu.h"
 #include "nvic.h"
 #include "pwr.h"

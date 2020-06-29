@@ -4,7 +4,7 @@
 //
 //      STM32G4 peripherals
 //
-////
+///
 
 #include "adc.h"
 #include "aes.h"
@@ -18,15 +18,16 @@
 #include "dmamux.h"
 #include "exti.h"
 #include "fdcan.h"
+#include "flash.h"
 #include "fmac.h"
 #include "fmc.h"
 #include "fpu.h"
-#include "flash.h"
 #include "gpio.h"
 #include "hrtim.h"
 #include "i2c.h"
 #include "iwdg.h"
 #include "lptim.h"
+#include "lpuart.h"
 #include "mpu.h"
 #include "nvic.h"
 #include "opamp.h"
@@ -42,6 +43,7 @@
 #include "syscfg.h"
 #include "tamp.h"
 #include "tim.h"
+#include "uart.h"
 #include "ucpd.h"
 #include "usart.h"
 #include "usb.h"

@@ -4,7 +4,7 @@
 //
 //      STM32L1 interrupts
 //
-////
+///
 
 struct interrupt
 {
@@ -12,73 +12,73 @@ struct interrupt
     static inline void disable() { __asm volatile ("cpsid i"); }
 
     enum interrupt_t
-    { RESET = -15
-    , NMI = -14
-    , HARDFAULT = -13
-    , MEMMANAGE = -12
-    , BUSFAULT = -11
-    , USAGEFAULT = -10
-    , SVCALL = -5
-    , DEBUG = -4
-    , PENDSV = -2
-    , SYSTICK = -1
-    , WWDG = 0
-    , PVD = 1
-    , TAMPER_STAMP = 2
-    , RTC_WKUP = 3
-    , FLASH = 4
-    , RCC = 5
-    , EXTI0 = 6
-    , EXTI1 = 7
-    , EXTI2 = 8
-    , EXTI3 = 9
-    , EXTI4 = 10
-    , DMA1_CHANNEL1 = 11
-    , DMA1_CHANNEL2 = 12
-    , DMA1_CHANNEL3 = 13
-    , DMA1_CHANNEL4 = 14
-    , DMA1_CHANNEL5 = 15
-    , DMA1_CHANNEL6 = 16
-    , DMA1_CHANNEL7 = 17
-    , ADC1 = 18
-    , USB_HP = 19
-    , USB_LP = 20
-    , DAC = 21
-    , COMP_CA = 22
-    , EXTI9_5 = 23
-    , LCD = 24
-    , TIM9 = 25
-    , TIM10 = 26
-    , TIM11 = 27
-    , TIM2 = 28
-    , TIM3 = 29
-    , TIM4 = 30
-    , I2C1_EV = 31
-    , I2C1_ER = 32
-    , I2C2_EV = 33
-    , I2C2_ER = 34
-    , SPI1 = 35
-    , SPI2 = 36
-    , USART1 = 37
-    , USART2 = 38
-    , USART3 = 39
-    , EXTI15_10 = 40
-    , RTC_ALARM = 41
-    , USB_FS_WKUP = 42
-    , TIM6 = 43
-    , TIM7 = 44
-    , SDIO = 45
-    , TIM5 = 46
-    , SPI3 = 47
-    , USART4 = 48
-    , USART5 = 49
-    , DMA2_CH1 = 50
-    , DMA2_CH2 = 51
-    , DMA2_CH3 = 52
-    , DMA2_CH4 = 53
-    , DMA2_CH5 = 54
-    , AES = 55
-    , COMP_ACQ = 56
+        { RESET = -15 // Reset [fixed]
+        , NMI = -14 // Non maskable interrupt [fixed]
+        , HARDFAULT = -13 // All class of fault [fixed]
+        , MEMMANAGE = -12 // Memory management [settable]
+        , BUSFAULT = -11 // Pre-fetch fault, memory access fault [settable]
+        , USAGEFAULT = -10 // Undefined instruction or illegal state [settable]
+        , SVCALL = -5 // System service call via SWI instruction [settable]
+        , DEBUG = -4 // Monitor Debug Monitor [settable]
+        , PENDSV = -2 // Pendable request for system service [settable]
+        , SYSTICK = -1 // System tick timer [settable]
+        , WWDG = 0 // Window Watchdog interrupt
+        , PVD = 1 // PVD through EXTI Line detection interrupt
+        , TAMPER_STAMP = 2 // Tamper and TimeStamp through EXTI line interrupts
+        , RTC_WKUP = 3 // RTC Wakeup through EXTI line interrupt
+        , FLASH = 4 // Flash global interrupt
+        , RCC = 5 // RCC global interrupt
+        , EXTI0 = 6 // EXTI Line0 interrupt
+        , EXTI1 = 7 // EXTI Line1 interrupt
+        , EXTI2 = 8 // EXTI Line2 interrupt
+        , EXTI3 = 9 // EXTI Line3 interrupt
+        , EXTI4 = 10 // EXTI Line4 interrupt
+        , DMA1_CHANNEL1 = 11 // DMA1 Channel1 global interrupt
+        , DMA1_CHANNEL2 = 12 // DMA1 Channel2 global interrupt
+        , DMA1_CHANNEL3 = 13 // DMA1 Channel3 global interrupt
+        , DMA1_CHANNEL4 = 14 // DMA1 Channel4 global interrupt
+        , DMA1_CHANNEL5 = 15 // DMA1 Channel5 global interrupt
+        , DMA1_CHANNEL6 = 16 // DMA1 Channel6 global interrupt
+        , DMA1_CHANNEL7 = 17 // DMA1 Channel7 global interrupt
+        , ADC1 = 18 // ADC1 global interrupt
+        , USB_HP = 19 // USB High priority interrupt
+        , USB_LP = 20 // USB Low priority interrupt
+        , DAC = 21 // DAC interrupt
+        , COMP_CA = 22 // Comparator wakeup through EXTI line (21 and 22) interrupt/Channel acquisition interrupt
+        , EXTI9_5 = 23 // EXTI Line[9:5] interrupts
+        , LCD = 24 // LCD global interrupt
+        , TIM9 = 25 // TIM9 global interrupt
+        , TIM10 = 26 // TIM10 global interrupt
+        , TIM11 = 27 // TIM11 global interrupt
+        , TIM2 = 28 // TIM2 global interrupt
+        , TIM3 = 29 // TIM3 global interrupt
+        , TIM4 = 30 // TIM4 global interrupt
+        , I2C1_EV = 31 // I2C1 event interrupt
+        , I2C1_ER = 32 // I2C1 error interrupt
+        , I2C2_EV = 33 // I2C2 event interrupt
+        , I2C2_ER = 34 // I2C2 error interrupt
+        , SPI1 = 35 // SPI1 global interrupt
+        , SPI2 = 36 // SPI2 global interrupt
+        , USART1 = 37 // USART1 global interrupt
+        , USART2 = 38 // USART2 global interrupt
+        , USART3 = 39 // USART3 global interrupt
+        , EXTI15_10 = 40 // EXTI Line[15:10] interrupts
+        , RTC_ALARM = 41 // RTC Alarms (A and B) through EXTI line interrupt
+        , USB_FS_WKUP = 42 // USB Device FS Wakeup through EXTI line interrupt
+        , TIM6 = 43 // TIM6 global interrupt
+        , TIM7 = 44 // TIM7 global interrupt
+        , SDIO = 45 // SDIO Global interrupt
+        , TIM5 = 46 // TIM5 Global interrupt
+        , SPI3 = 47 // SPI3 global interrupt
+        , USART4 = 48 // USART4 global interrupt
+        , USART5 = 49 // USART5 global interrupt
+        , DMA2_CH1 = 50 // DMA2 Channel 1 interrupt
+        , DMA2_CH2 = 51 // DMA2 Channel 2 interrupt
+        , DMA2_CH3 = 52 // DMA2 Channel 3 interrupt
+        , DMA2_CH4 = 53 // DMA2 Channel 4 interrupt
+        , DMA2_CH5 = 54 // DMA2 Channel 5 interrupt
+        , AES = 55 // AES global interrupt
+        , COMP_ACQ = 56 // Comparator Channel Acquisition interrupt
     };
 
     template<interrupt_t INTERRUPT>

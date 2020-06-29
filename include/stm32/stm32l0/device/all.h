@@ -4,7 +4,7 @@
 //
 //      STM32L0 peripherals
 //
-////
+///
 
 #include "adc.h"
 #include "aes.h"
@@ -21,6 +21,7 @@
 #include "iwdg.h"
 #include "lcd.h"
 #include "lptim.h"
+#include "lpuart.h"
 #include "mpu.h"
 #include "nvic.h"
 #include "pwr.h"

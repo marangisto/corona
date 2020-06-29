@@ -35,22 +35,22 @@ enum moder
     , analog_mode
     };
 
-template<gpio_pin_t PIN>
+template<pin_t PIN>
 static constexpr int pin_bit()
 {
     return static_cast<int>(PIN) & 0xf;
 }
 
-template<gpio_pin_t PIN>
-static constexpr gpio_port_t pin_port()
+template<pin_t PIN>
+static constexpr port_t pin_port()
 {
-    return static_cast<gpio_port_t>(static_cast<int>(PIN) >> 4);
+    return static_cast<port_t>(static_cast<int>(PIN) >> 4);
 }
 
-template<gpio_port_t PORT>
-using gpio_t = peripheral_t<mcu_svd, gpio_traits_t<PORT>::peripheral>;
+template<port_t PORT>
+using gpio_t = typename gpio_traits<PORT>::gpio;
 
-template<gpio_pin_t PIN>
+template<pin_t PIN>
 class output_t
 {
 public:
@@ -62,8 +62,7 @@ public:
     {
         typename gpio_t<PORT>::T& GPIO = gpio_t<PORT>::V;
 
-        clock_control_t<rcc_t, gpio_t<PORT>>::enable();
-
+        gpio_traits<PORT>::template enable<rcc_t>();
         // FIXME: feature for STM32F1 family!
         GPIO.MODER &= ~(0x3 << (POS*2));
         GPIO.MODER |= output_mode << (POS*2);
@@ -99,19 +98,19 @@ public:
     }
 
 private:
-    static constexpr gpio_port_t PORT = pin_port<PIN>();
+    static constexpr port_t PORT = pin_port<PIN>();
     static constexpr uint8_t POS = pin_bit<PIN>();
     static constexpr uint32_t MASK = 1 << POS;
 };
 
-template<gpio_port_t PORT, int POS, typename = is_in_range<true> >
+template<port_t PORT, int POS, typename = is_in_range<true> >
 struct exticr_traits
 {
     static_assert(always_false_i<POS>::value, "pin out of range");
 };
 
 // FIXME: refactor and feature for other series
-template<gpio_port_t PORT, int POS>
+template<port_t PORT, int POS>
 struct exticr_traits<PORT, POS, is_in_range<(0 <= POS && POS < 4)> >
 {
     static void select()
@@ -122,7 +121,7 @@ struct exticr_traits<PORT, POS, is_in_range<(0 <= POS && POS < 4)> >
     }
 };
 
-template<gpio_port_t PORT, int POS>
+template<port_t PORT, int POS>
 struct exticr_traits<PORT, POS, is_in_range<(4 <= POS && POS < 8)> >
 {
     static void select()
@@ -133,7 +132,7 @@ struct exticr_traits<PORT, POS, is_in_range<(4 <= POS && POS < 8)> >
     }
 };
 
-template<gpio_port_t PORT, int POS>
+template<port_t PORT, int POS>
 struct exticr_traits<PORT, POS, is_in_range<(8 <= POS && POS < 12)> >
 {
     static void select()
@@ -144,7 +143,7 @@ struct exticr_traits<PORT, POS, is_in_range<(8 <= POS && POS < 12)> >
     }
 };
 
-template<gpio_port_t PORT, int POS>
+template<port_t PORT, int POS>
 struct exticr_traits<PORT, POS, is_in_range<(12 <= POS && POS < 16)> >
 {
     static void select()
@@ -155,7 +154,7 @@ struct exticr_traits<PORT, POS, is_in_range<(12 <= POS && POS < 16)> >
     }
 };
 
-template<gpio_pin_t PIN>
+template<pin_t PIN>
 class input_t
 {
 public:
@@ -164,7 +163,8 @@ public:
     {
         typename gpio_t<PORT>::T& GPIO = gpio_t<PORT>::V;
 
-        clock_control_t<rcc_t, gpio_t<PORT>>::enable();
+        gpio_traits<PORT>::template enable<rcc_t>();
+
         // FIXME: refactor and feature for F1 series
         GPIO.MODER &= ~(0x3 << (POS*2));    // N.B. input_mode is 0
         if (input_type != floating)
@@ -179,7 +179,7 @@ public:
         typename exti_t::T& EXTI = exti_t::V;
 
         // FIXME: refactor and feature for other series
-        clock_control_t<rcc_t, syscfg_t>::enable();
+        syscfg_traits<0>::template enable<rcc_t>();
         exticr_traits<PORT, POS>::select();
         EXTI.IMR1 |= MASK;
         if (EDGE == rising_edge || EDGE == both_edges)
@@ -199,13 +199,13 @@ public:
     }
 
 private:
-    static constexpr gpio_port_t PORT = pin_port<PIN>();
+    static constexpr port_t PORT = pin_port<PIN>();
     static constexpr uint8_t POS = pin_bit<PIN>();
     static constexpr uint32_t MASK = 1 << POS;
 };
 
 /*
-template<gpio_pin_t PIN>
+template<pin_t PIN>
 class analog_t
 {
 public:
@@ -224,7 +224,7 @@ private:
 };
  */
 
-template<gpio_pin_t PIN, alternate_function_t ALT>
+template<pin_t PIN, signal_t ALT>
 class alternate_t
 {
 public:
@@ -236,7 +236,7 @@ public:
     {
         typename gpio_t<PORT>::T& GPIO = gpio_t<PORT>::V;
 
-        clock_control_t<rcc_t, gpio_t<PORT>>::enable();
+        gpio_traits<PORT>::template enable<rcc_t>();
         GPIO.MODER &= ~(0x3 << (POS*2));
         GPIO.MODER |= alternate_mode << (POS*2);
         if (speed != low_speed)
@@ -244,9 +244,9 @@ public:
         if (output_type == open_drain)
             GPIO.OTYPER |= MASK;
         if (POS < 8)
-            GPIO.AFRL |= alt_fun_traits<gpio_conf, PIN, ALT>::AF << (POS*4);
+            GPIO.AFRL |= signal_traits<gpio_conf, PIN, ALT>::AF << (POS*4);
         else
-            GPIO.AFRH |= alt_fun_traits<gpio_conf, PIN, ALT>::AF << ((POS-8)*4);
+            GPIO.AFRH |= signal_traits<gpio_conf, PIN, ALT>::AF << ((POS-8)*4);
     }
 
     template<input_type_t input_type = floating>
@@ -254,19 +254,19 @@ public:
     {
         typename gpio_t<PORT>::T& GPIO = gpio_t<PORT>::V;
 
-        clock_control_t<rcc_t, gpio_t<PORT>>::enable();
+        gpio_traits<PORT>::template enable<rcc_t>();
         GPIO.MODER &= ~(0x3 << (POS*2));
         GPIO.MODER |= alternate_mode << (POS*2);
         if (input_type != floating)
             GPIO.PUPDR |= input_type << (POS*2);
         if (POS < 8)
-            GPIO.AFRL |= alt_fun_traits<gpio_conf, PIN, ALT>::AF << (POS*4);
+            GPIO.AFRL |= signal_traits<gpio_conf, PIN, ALT>::AF << (POS*4);
         else
-            GPIO.AFRH |= alt_fun_traits<gpio_conf, PIN, ALT>::AF << ((POS-8)*4);
+            GPIO.AFRH |= signal_traits<gpio_conf, PIN, ALT>::AF << ((POS-8)*4);
     }
 
 private:
-    static constexpr gpio_port_t PORT = pin_port<PIN>();
+    static constexpr port_t PORT = pin_port<PIN>();
     static constexpr uint8_t POS = pin_bit<PIN>();
     static constexpr uint32_t MASK = 1 << POS;
 };

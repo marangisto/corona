@@ -4,7 +4,7 @@
 //
 //      STM32F3 peripherals
 //
-////
+///
 
 #include "adc.h"
 #include "adc_common.h"
@@ -16,9 +16,9 @@
 #include "dbgmcu.h"
 #include "dma.h"
 #include "exti.h"
+#include "flash.h"
 #include "fmc.h"
 #include "fpu.h"
-#include "flash.h"
 #include "gpio.h"
 #include "hrtim.h"
 #include "i2c.h"

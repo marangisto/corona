@@ -4,7 +4,7 @@
 //
 //      STM32F4 peripherals
 //
-////
+///
 
 #include "adc.h"
 #include "aes.h"
@@ -18,8 +18,8 @@
 #include "dma.h"
 #include "dma2d.h"
 #include "dsihost.h"
-#include "exti.h"
 #include "ethernet.h"
+#include "exti.h"
 #include "flash.h"
 #include "fpu.h"
 #include "fsmc.h"
@@ -46,6 +46,7 @@
 #include "stk.h"
 #include "syscfg.h"
 #include "tim.h"
+#include "uart.h"
 #include "usart.h"
 #include "usb_otg_fs.h"
 #include "usb_otg_hs.h"

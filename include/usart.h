@@ -4,7 +4,7 @@
 #include "fifo.h"
 #include <device/usart.h>
 
-template<int INST, gpio_pin_t TX, gpio_pin_t RX> struct usart_t
+template<int INST, pin_t TX, pin_t RX> struct usart_t
 {
 public:
     template
@@ -21,8 +21,8 @@ public:
         alternate_t<TX, traits::TX>::template setup<speed>();
         alternate_t<RX, traits::RX>::template setup<pull_up>();
 
-        clock_control_t<rcc_t, usart>::enable();    // enable clock
-        USART.BRR = sys_clock::freq() / baud;       // set baud-rate FIXME: need clock reference!
+        usart_traits<INST>::enable();           // enable clock
+        USART.BRR = sys_clock::freq() / baud;   // set baud-rate FIXME: need clock reference!
         USART.CR1 |= _::CR1_RESET_VALUE     // reset control register 1
                   | _::CR1_TE               // enable transmitter
                   | _::CR1_RE               // enable receiver

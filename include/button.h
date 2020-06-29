@@ -2,7 +2,7 @@
 
 #include "gpio.h"
 
-template<gpio_pin_t PIN>
+template<pin_t PIN>
 class button_t
 {
 public:
@@ -55,9 +55,9 @@ private:
     static bool     m_pressed;
 };
 
-template<gpio_pin_t PIN> bool button_t<PIN>::m_stable_state;
-template<gpio_pin_t PIN> bool button_t<PIN>::m_last_state;
-template<gpio_pin_t PIN> uint8_t button_t<PIN>::m_stable_count;
-template<gpio_pin_t PIN> uint8_t button_t<PIN>::m_count;
-template<gpio_pin_t PIN> bool button_t<PIN>::m_pressed;
+template<pin_t PIN> bool button_t<PIN>::m_stable_state;
+template<pin_t PIN> bool button_t<PIN>::m_last_state;
+template<pin_t PIN> uint8_t button_t<PIN>::m_stable_count;
+template<pin_t PIN> uint8_t button_t<PIN>::m_count;
+template<pin_t PIN> bool button_t<PIN>::m_pressed;
 

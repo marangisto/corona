@@ -21,11 +21,9 @@ static inline uint32_t clock_tree_init()
     constexpr uint8_t wait_states = 0x8;
 
     FLASH.ACR = __::ACR_RESET_VALUE;
-    FLASH.ACR |= __::ACR_PRFTEN | __::ACR_LATENCY<wait_states>;
+    FLASH.ACR |= __::ACR_PRFTEN | __::ACR_LATENCY::W(wait_states);
 
-    while ( (FLASH.ACR & __::ACR_LATENCY<0xf>)
-          != __::ACR_LATENCY<wait_states>
-          ); // wait to take effect
+    while ( __::ACR_LATENCY::R(FLASH.ACR) != wait_states);
 
 #if defined(HSE)
     RCC.CR |= _::CR_HSEON;              // enable external clock
@@ -51,24 +49,23 @@ static inline uint32_t clock_tree_init()
     constexpr uint8_t pllR = 0;     // 2 bits, 0=2, 1=4, 2=6, 3=8
     constexpr uint8_t pllQ = 0;     // 2 bits, 0=2, 1=4, 2=6, 3=8
 
-    RCC.PLLSYSCFGR = _::PLLSYSCFGR_PLLSRC<pllSRC>
-                   | _::PLLSYSCFGR_PLLSYSN<pllN>
-                   | _::PLLSYSCFGR_PLLSYSM<pllM>
-                   | _::PLLSYSCFGR_PLLSYSPDIV<pllPDIV>
-                   | _::PLLSYSCFGR_PLLSYSQ<pllQ>
-                   | _::PLLSYSCFGR_PLLSYSR<pllR>
+    RCC.PLLSYSCFGR = _::PLLSYSCFGR_PLLSRC::W(pllSRC)
+                   | _::PLLSYSCFGR_PLLSYSN::W(pllN)
+                   | _::PLLSYSCFGR_PLLSYSM::W(pllM)
+                   | _::PLLSYSCFGR_PLLSYSPDIV::W(pllPDIV)
+                   | _::PLLSYSCFGR_PLLSYSQ::W(pllQ)
+                   | _::PLLSYSCFGR_PLLSYSR::W(pllR)
                    | _::PLLSYSCFGR_PLLPEN
                    | _::PLLSYSCFGR_PLLSYSQEN
                    | _::PLLSYSCFGR_PLLSYSREN
                    ;
 
-    RCC.CR |= _::CR_PLLSYSON;               // enable PLL
-    while (!(RCC.CR & _::CR_PLLSYSRDY));    // wait for PLL to be ready
-    RCC.CFGR |= _::CFGR_SW<0x3>;            // set PLL as system clock
-    // wait for PLL as system clock
-    while ((RCC.CFGR & _::CFGR_SWS<0x3>) != _::CFGR_SWS<0x3>);
+    RCC.CR |= _::CR_PLLSYSON;                   // enable PLL
+    while (!(RCC.CR & _::CR_PLLSYSRDY));        // wait for PLL ready
+    RCC.CFGR |= _::CFGR_SW::W(0x3);             // set PLL as sys clock
+    while (_::CFGR_SWS::R(RCC.CFGR) != 0x3);    // wait for PLL sys clock
 
-    fpu_cpacr_t::V.CPACR |= fpu_cpacr_t::T::CPACR_CP<0xf>; // enable fpu
+    fpu_cpacr_t::V.CPACR |= fpu_cpacr_t::T::CPACR_CP::W(0xf); // enable fpu
     __asm volatile ("dsb");         // data pipe-line reset
     __asm volatile ("isb");         // instruction pipe-line reset
     return 170000000;

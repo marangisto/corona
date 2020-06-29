@@ -4,7 +4,7 @@
 //
 //      STM32F2 peripherals
 //
-////
+///
 
 #include "adc.h"
 #include "can.h"
@@ -14,8 +14,8 @@
 #include "dbg.h"
 #include "dcmi.h"
 #include "dma.h"
-#include "exti.h"
 #include "ethernet.h"
+#include "exti.h"
 #include "flash.h"
 #include "fsmc.h"
 #include "gpio.h"
@@ -34,6 +34,7 @@
 #include "stk.h"
 #include "syscfg.h"
 #include "tim.h"
+#include "uart.h"
 #include "usart.h"
 #include "usb_otg_fs.h"
 #include "usb_otg_hs.h"

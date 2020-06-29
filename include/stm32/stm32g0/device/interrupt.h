@@ -4,7 +4,7 @@
 //
 //      STM32G0 interrupts
 //
-////
+///
 
 struct interrupt
 {
@@ -12,48 +12,48 @@ struct interrupt
     static inline void disable() { __asm volatile ("cpsid i"); }
 
     enum interrupt_t
-    { RESET = -15
-    , NMI = -14
-    , HARDFAULT = -13
-    , MEMMANAGE = -12
-    , BUSFAULT = -11
-    , USAGEFAULT = -10
-    , SVCALL = -5
-    , DEBUG = -4
-    , PENDSV = -2
-    , SYSTICK = -1
-    , WWDG = 0
-    , PVD = 1
-    , RTC_TAMP = 2
-    , FLASH = 3
-    , RCC = 4
-    , EXTI0_1 = 5
-    , EXTI2_3 = 6
-    , EXTI4_15 = 7
-    , UCPD1_UCPD2 = 8
-    , DMA_CHANNEL1 = 9
-    , DMA_CHANNEL2_3 = 10
-    , DMA_CHANNEL4_5_6_7 = 11
-    , ADC_COMP = 12
-    , TIM1_BRK_UP_TRG_COM = 13
-    , TIM1_CC = 14
-    , TIM2 = 15
-    , TIM3 = 16
-    , TIM6_DAC_LPTIM1 = 17
-    , TIM7_LPTIM2 = 18
-    , TIM14 = 19
-    , TIM15 = 20
-    , TIM16 = 21
-    , TIM17 = 22
-    , I2C1 = 23
-    , I2C2 = 24
-    , SPI1 = 25
-    , SPI2 = 26
-    , USART1 = 27
-    , USART2 = 28
-    , USART3_USART4_LPUART1 = 29
-    , CEC = 30
-    , AES_RNG = 31
+        { RESET = -15 // Reset [fixed]
+        , NMI = -14 // Non maskable interrupt [fixed]
+        , HARDFAULT = -13 // All class of fault [fixed]
+        , MEMMANAGE = -12 // Memory management [settable]
+        , BUSFAULT = -11 // Pre-fetch fault, memory access fault [settable]
+        , USAGEFAULT = -10 // Undefined instruction or illegal state [settable]
+        , SVCALL = -5 // System service call via SWI instruction [settable]
+        , DEBUG = -4 // Monitor Debug Monitor [settable]
+        , PENDSV = -2 // Pendable request for system service [settable]
+        , SYSTICK = -1 // System tick timer [settable]
+        , WWDG = 0 // Window watchdog interrupt
+        , PVD = 1 // Power voltage detector interrupt
+        , RTC_STAMP = 2 // RTC and TAMP interrupts
+        , FLASH = 3 // Flash global interrupt
+        , RCC = 4 // RCC global interrupt
+        , EXTI0_1 = 5 // EXTI line 0 &amp; 1 interrupt
+        , EXTI2_3 = 6 // EXTI line 2 &amp; 3 interrupt
+        , EXTI4_15 = 7 // EXTI line 4 to 15 interrupt
+        , UCPD1_UCPD2 = 8 // UCPD global interrupt
+        , DMA_CHANNEL1 = 9 // DMA channel 1 interrupt
+        , DMA_CHANNEL2_3 = 10 // DMA channel 2 &amp; 3 interrupts
+        , DMA_CHANNEL4_5_6_7 = 11 // DMA channel 4, 5, 6 &amp; 7 and DMAMUX
+        , ADC_COMP = 12 // ADC and COMP interrupts
+        , TIM1_BRK_UP_TRG_COMP = 13 // TIM1 break, update, trigger
+        , TIM1_CC = 14 // TIM1 Capture Compare interrupt
+        , TIM2 = 15 // TIM2 global interrupt
+        , TIM3 = 16 // TIM3 global interrupt
+        , TIM6_DAC_LPTIM1 = 17 // TIM6 + LPTIM1 and DAC global interrupt
+        , TIM7_LPTIM2 = 18 // TIM7 + LPTIM2 global interrupt
+        , TIM14 = 19 // TIM14 global interrupt
+        , TIM15 = 20 // TIM15 global interrupt
+        , TIM16 = 21 // TIM16 global interrupt
+        , TIM17 = 22 // TIM17 global interrupt
+        , I2C1 = 23 // I2C1 global interrupt
+        , I2C2 = 24 // I2C2 global interrupt
+        , SPI1 = 25 // SPI1 global interrupt
+        , SPI2 = 26 // SPI2 global interrupt
+        , USART1 = 27 // USART1 global interrupt
+        , USART2 = 28 // USART2 global interrupt
+        , USART3_USART4_LPUART1 = 29 // USART3 + USART4 + LPUART1
+        , CEC = 30 // CEC global interrupt
+        , AES_RNG = 31 // AES and RNG global interrupts
     };
 
     template<interrupt_t INTERRUPT>

@@ -4,7 +4,7 @@
 //
 //      STM32L1 peripherals
 //
-////
+///
 
 #include "adc.h"
 #include "aes.h"
@@ -14,8 +14,8 @@
 #include "dbgmcu.h"
 #include "dma.h"
 #include "exti.h"
-#include "fsmc.h"
 #include "flash.h"
+#include "fsmc.h"
 #include "gpio.h"
 #include "i2c.h"
 #include "iwdg.h"

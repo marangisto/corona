@@ -4,7 +4,7 @@
 //
 //      STM32F0 peripherals
 //
-////
+///
 
 #include "adc.h"
 #include "can.h"

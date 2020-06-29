@@ -39,3 +39,4 @@
 
 # Corona project files
 _build
+*.swp

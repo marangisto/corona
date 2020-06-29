@@ -4,7 +4,7 @@
 //
 //      STM32L0 interrupts
 //
-////
+///
 
 struct interrupt
 {
@@ -12,47 +12,47 @@ struct interrupt
     static inline void disable() { __asm volatile ("cpsid i"); }
 
     enum interrupt_t
-    { RESET = -15
-    , NMI = -14
-    , HARDFAULT = -13
-    , MEMMANAGE = -12
-    , BUSFAULT = -11
-    , USAGEFAULT = -10
-    , SVCALL = -5
-    , DEBUG = -4
-    , PENDSV = -2
-    , SYSTICK = -1
-    , WWDG = 0
-    , PVD = 1
-    , RTC = 2
-    , FLASH = 3
-    , RCC = 4
-    , EXTI0_1 = 5
-    , EXTI2_3 = 6
-    , EXTI4_15 = 7
-    , TSC = 8
-    , DMA1_CHANNEL1 = 9
-    , DMA1_CHANNEL2_3 = 10
-    , DMA1_CHANNEL4_7 = 11
-    , ADC = 12
-    , LPTIM1 = 13
-    , USART4_USART5 = 14
-    , TIM2 = 15
-    , TIM3 = 16
-    , TIM6 = 17
-    , TIM7 = 18
-    , TIM21 = 20
-    , I2C3 = 21
-    , TIM22 = 22
-    , I2C1 = 23
-    , I2C2 = 24
-    , SPI1 = 25
-    , SPI2 = 26
-    , USART1 = 27
-    , USART2 = 28
-    , LPUART1 = 29
-    , LCD = 30
-    , USB = 31
+        { RESET = -15 // Reset [fixed]
+        , NMI = -14 // Non maskable interrupt [fixed]
+        , HARDFAULT = -13 // All class of fault [fixed]
+        , MEMMANAGE = -12 // Memory management [settable]
+        , BUSFAULT = -11 // Pre-fetch fault, memory access fault [settable]
+        , USAGEFAULT = -10 // Undefined instruction or illegal state [settable]
+        , SVCALL = -5 // System service call via SWI instruction [settable]
+        , DEBUG = -4 // Monitor Debug Monitor [settable]
+        , PENDSV = -2 // Pendable request for system service [settable]
+        , SYSTICK = -1 // System tick timer [settable]
+        , WWDG = 0 // Window Watchdog interrupt
+        , PVD = 1 // PVD through EXTI line detection
+        , RTC = 2 // RTC global interrupt
+        , FLASH = 3 // Flash global interrupt
+        , RCC = 4 // RCC global interrupt
+        , EXTI0_1 = 5 // EXTI Line[1:0] interrupts
+        , EXTI2_3 = 6 // EXTI Line[3:2] interrupts
+        , EXTI4_15 = 7 // EXTI Line15 and EXTI4 interrupts
+        , TSC = 8 // Touch sensing interrupt
+        , DMA1_CHANNEL1 = 9 // DMA1 Channel1 global interrupt
+        , DMA1_CHANNEL2_3 = 10 // DMA1 Channel2 and 3 interrupts
+        , DMA1_CHANNEL4_7 = 11 // DMA1 Channel4 to 7 interrupts
+        , ADC_COMP = 12 // ADC and comparator 1 and 2
+        , LPTIM1 = 13 // LPTIMER1 interrupt through EXTI29
+        , USART4_USART5 = 14 // USART4/USART5 global interrupt
+        , TIM2 = 15 // TIM2 global interrupt
+        , TIM3 = 16 // TIM3 global interrupt
+        , TIM6_DAC = 17 // TIM6 global interrupt and DAC
+        , TIM7 = 18 // TIM7 global interrupt and DAC
+        , TIM21 = 20 // TIMER21 global interrupt
+        , I2C3 = 21 // I2C3 global interrupt
+        , TIM22 = 22 // TIMER22 global interrupt
+        , I2C1 = 23 // I2C1 global interrupt
+        , I2C2 = 24 // I2C2 global interrupt
+        , SPI1 = 25 // SPI1_global_interrupt
+        , SPI2 = 26 // SPI2 global interrupt
+        , USART1 = 27 // USART1 global interrupt
+        , USART2 = 28 // USART2 global interrupt
+        , AES_RNG_LPUART1 = 29 // AES global interrupt RNG global interrupt and LPUART1 global interrupt through
+        , LCD = 30 // LCD global interrupt
+        , USB = 31 // USB event interrupt through EXTI18
     };
 
     template<interrupt_t INTERRUPT>

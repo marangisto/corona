@@ -4,7 +4,7 @@
 //
 //      STM32WB peripherals
 //
-////
+///
 
 #include "adc.h"
 #include "aes1.h"
@@ -15,8 +15,8 @@
 #include "dma.h"
 #include "dmamux.h"
 #include "exti.h"
-#include "fpu.h"
 #include "flash.h"
+#include "fpu.h"
 #include "gpio.h"
 #include "hardware_semaphore.h"
 #include "i2c.h"

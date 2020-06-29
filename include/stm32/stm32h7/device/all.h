@@ -4,7 +4,7 @@
 //
 //      STM32H7 peripherals
 //
-////
+///
 
 #include "ac.h"
 #include "adc.h"
@@ -25,12 +25,12 @@
 #include "dma2d.h"
 #include "dmamux.h"
 #include "dsihost.h"
-#include "exti.h"
 #include "ethernet.h"
+#include "exti.h"
 #include "fdcan.h"
+#include "flash.h"
 #include "fmc.h"
 #include "fpu.h"
-#include "flash.h"
 #include "gpio.h"
 #include "hash.h"
 #include "hrtim.h"
@@ -45,10 +45,10 @@
 #include "mdma.h"
 #include "mpu.h"
 #include "nvic.h"
-#include "opamp.h"
-#include "otfdec.h"
 #include "octospi.h"
 #include "octospii_o_manager.h"
+#include "opamp.h"
+#include "otfdec.h"
 #include "pf.h"
 #include "pwr.h"
 #include "quadspi.h"

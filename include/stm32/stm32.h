@@ -1,11 +1,12 @@
+#pragma once
 
 ////
 //
-//      STM32 MCU families
+//      STM32 MCU Families
 //
-////
+///
 
-enum mcu_family_t
+enum family_t
     { STM32F0
     , STM32F1
     , STM32F2

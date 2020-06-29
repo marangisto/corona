@@ -13,6 +13,7 @@ import System.FilePath (takeBaseName)
 import System.Directory as D (getCurrentDirectory, doesFileExist)
 import Data.Maybe (fromMaybe)
 import Data.List (isPrefixOf, isInfixOf)
+import Data.Char (toLower)
 
 main :: IO ()
 main = do
@@ -88,7 +89,7 @@ main = do
                     | lib <- libs
                     ] ++
                     [ baseDir </> lib </> "include"
-                      </> "stm32" </> family mcu
+                      </> "stm32" </> (map toLower $ family mcu)
                     | lib <- libs
                     , lib == "corona"
                     ]

@@ -13,7 +13,7 @@ template<typename TIMER> struct timch_traits<TIMER, CH1>
     using tim = typename TIMER::tim;
     using _ = typename tim::T;
 
-    static constexpr alternate_function_t CH = TIMER::traits::CH1;
+    static constexpr signal_t CH = TIMER::traits::CH1;
 
     static void setup_pwm(typename TIMER::count_t initial_duty)
     {
@@ -32,7 +32,7 @@ template<typename TIMER> struct timch_traits<TIMER, CH2>
     using tim = typename TIMER::tim;
     using _ = typename tim::T;
 
-    static constexpr alternate_function_t CH = TIMER::traits::CH2;
+    static constexpr signal_t CH = TIMER::traits::CH2;
 
     static void setup_pwm(typename TIMER::count_t initial_duty)
     {
@@ -51,7 +51,7 @@ template<typename TIMER> struct timch_traits<TIMER, CH3>
     using tim = typename TIMER::tim;
     using _ = typename tim::T;
 
-    static constexpr alternate_function_t CH = TIMER::traits::CH3;
+    static constexpr signal_t CH = TIMER::traits::CH3;
 
     static void setup_pwm(typename TIMER::count_t initial_duty)
     {
@@ -70,7 +70,7 @@ template<typename TIMER> struct timch_traits<TIMER, CH4>
     using tim = typename TIMER::tim;
     using _ = typename tim::T;
 
-    static constexpr alternate_function_t CH = TIMER::traits::CH4;
+    static constexpr signal_t CH = TIMER::traits::CH4;
 
     static void setup_pwm(typename TIMER::count_t initial_duty)
     {
@@ -98,7 +98,7 @@ public:
     {
         typename tim::T& TIM = tim::V;
 
-        clock_control_t<rcc_t, tim>::enable();  // enable clock
+        tim_traits<INST>::template enable<rcc_t>();
         TIM.CR1 = _::CR1_RESET_VALUE;
         TIM.PSC = psc;
         TIM.ARR = arr;
@@ -157,7 +157,7 @@ public:
         tim::V.ARR = arr;
     }
 
-    template<channel_t CH, gpio_pin_t PIN>
+    template<channel_t CH, pin_t PIN>
     struct pwm
     {
         using traits = timch_traits<tim_t<INST>, CH>;

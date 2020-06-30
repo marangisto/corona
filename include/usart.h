@@ -22,9 +22,9 @@ public:
         alternate_t<TX, traits::TX>::template setup<speed>();
         alternate_t<RX, traits::RX>::template setup<pull_up>();
 
-        usart_traits<INST>::template enable<rcc_t>(); // enable clock
-        USART.BRR = sys_clock::freq() / baud;   // set baud-rate FIXME: need clock reference!
-        USART.CR1 |= _::CR1_RESET_VALUE     // reset control register 1
+        usart_traits<INST>::template enable<rcc_t>();   // enable clock
+        USART.BRR = sys_clock::freq() / baud;           // set baud-rate 
+        USART.CR1 = _::CR1_RESET_VALUE      // reset control register 1
                   | _::CR1_TE               // enable transmitter
                   | _::CR1_RE               // enable receiver
                   | _::CR1_RXNEIE           // interrupt on rx not empty

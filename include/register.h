@@ -7,17 +7,6 @@ template<int N> class reserved_t { private: uint32_t m_pad[N]; };
 template<uint8_t POS, uint32_t MASK>
 struct bit_field_t
 {
-    // legacy formulation FIXME: remove!
-
-    template <uint32_t X>
-    static constexpr uint32_t value()
-    {
-        static_assert((X & ~MASK) == 0, "field value too large");
-        return X << POS;
-    }
-
-    // new formulation
-
     static constexpr uint32_t W(uint32_t x)
     {
         return (x & MASK) << POS;

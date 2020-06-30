@@ -17,8 +17,8 @@ template<typename TIMER> struct timch_traits<TIMER, CH1>
 
     static void setup_pwm(typename TIMER::count_t initial_duty)
     {
-        tim::V.CCMR1 |= _::template CCMR1_Output_OC1M<0x6>
-                     |  _::CCMR1_Output_OC1PE
+        tim::V.CCMR1 |= _::CCMR1_OC1M::W(0x6)
+                     |  _::CCMR1_OC1PE
                      ;
         tim::V.CCR1  = initial_duty;
         tim::V.CCER  |= _::CCER_CC1E;
@@ -36,8 +36,8 @@ template<typename TIMER> struct timch_traits<TIMER, CH2>
 
     static void setup_pwm(typename TIMER::count_t initial_duty)
     {
-        tim::V.CCMR1 |= _::template CCMR1_Output_OC2M<0x6>
-                     |  _::CCMR1_Output_OC2PE
+        tim::V.CCMR1 |= _::CCMR1_OC2M::W(0x6)
+                     |  _::CCMR1_OC2PE
                      ;
         tim::V.CCR2  = initial_duty;
         tim::V.CCER  |= _::CCER_CC2E;
@@ -55,8 +55,8 @@ template<typename TIMER> struct timch_traits<TIMER, CH3>
 
     static void setup_pwm(typename TIMER::count_t initial_duty)
     {
-        tim::V.CCMR2 |= _::template CCMR2_Output_OC3M<0x6>
-                     |  _::CCMR2_Output_OC3PE
+        tim::V.CCMR2 |= _::CCMR2_OC3M::W(0x6)
+                     |  _::CCMR2_OC3PE
                      ;
         tim::V.CCR3  = initial_duty;
         tim::V.CCER  |= _::CCER_CC3E;
@@ -74,8 +74,8 @@ template<typename TIMER> struct timch_traits<TIMER, CH4>
 
     static void setup_pwm(typename TIMER::count_t initial_duty)
     {
-        tim::V.CCMR2 |= _::template CCMR2_Output_OC4M<0x6>
-                     |  _::CCMR2_Output_OC4PE
+        tim::V.CCMR2 |= _::CCMR2_OC4M::W(0x6)
+                     |  _::CCMR2_OC4PE
                      ;
         tim::V.CCR4  = initial_duty;
         tim::V.CCER  |= _::CCER_CC4E;

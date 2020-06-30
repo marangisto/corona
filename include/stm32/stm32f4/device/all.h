@@ -21,6 +21,7 @@
 #include "ethernet.h"
 #include "exti.h"
 #include "flash.h"
+#include "fmc.h"
 #include "fpu.h"
 #include "fsmc.h"
 #include "gpio.h"

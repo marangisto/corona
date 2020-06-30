@@ -147,12 +147,12 @@ enum gpio_conf_t
 
 enum periph_t
     { ADC1
-    , ADC12_COMMON
     , ADC2
     , ADC3
-    , ADC345_COMMON
     , ADC4
     , ADC5
+    , ADC12_COMMON
+    , ADC345_COMMON
     , AES
     , COMP
     , CORDIC
@@ -218,17 +218,17 @@ enum periph_t
     , SYSCFG
     , TAMP
     , TIM1
-    , TIM15
-    , TIM16
-    , TIM17
     , TIM2
-    , TIM20
     , TIM3
     , TIM4
     , TIM5
     , TIM6
     , TIM7
     , TIM8
+    , TIM15
+    , TIM16
+    , TIM17
+    , TIM20
     , UART4
     , UART5
     , UCPD1

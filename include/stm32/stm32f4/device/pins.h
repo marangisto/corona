@@ -772,7 +772,7 @@ template<gpio_conf_t CFG>
 struct signal_traits<CFG, PA0, ETH_CRS>
 {
     static constexpr altfun
-        < CFG & STM32F417
+        < CFG & (STM32F417|STM32F427_|STM32F469_)
         > AF = AF11;
 };
 
@@ -796,7 +796,7 @@ template<gpio_conf_t CFG>
 struct signal_traits<CFG, PA0, TIM2_CH1>
 {
     static constexpr altfun
-        < CFG & (STM32F401_|STM32F411_|STM32F412_|STM32F413_|STM32F417|STM32F446_)
+        < CFG & (STM32F401_|STM32F411_|STM32F412_|STM32F413_|STM32F417|STM32F427_|STM32F446_|STM32F469_)
         > AF = AF1;
 };
 
@@ -804,23 +804,21 @@ template<gpio_conf_t CFG>
 struct signal_traits<CFG, PA0, TIM2_ETR>
 {
     static constexpr altfun
-        < CFG & (STM32F401_|STM32F411_|STM32F412_|STM32F413_|STM32F417|STM32F446_)
+        < CFG & (STM32F401_|STM32F411_|STM32F412_|STM32F413_|STM32F417|STM32F427_|STM32F446_|STM32F469_)
         > AF = AF1;
 };
 
 template<gpio_conf_t CFG>
 struct signal_traits<CFG, PA0, TIM5_CH1>
 {
-    static constexpr altfun
-        < CFG & (STM32F401_|STM32F410_|STM32F411_|STM32F412_|STM32F413_|STM32F417|STM32F446_)
-        > AF = AF2;
+    static constexpr altfun_t AF = AF2;
 };
 
 template<gpio_conf_t CFG>
 struct signal_traits<CFG, PA0, TIM8_ETR>
 {
     static constexpr altfun
-        < CFG & (STM32F412_|STM32F413_|STM32F417|STM32F446_)
+        < CFG & (STM32F412_|STM32F413_|STM32F417|STM32F427_|STM32F446_|STM32F469_)
         > AF = AF3;
 };
 
@@ -828,72 +826,14 @@ template<gpio_conf_t CFG>
 struct signal_traits<CFG, PA0, UART4_TX>
 {
     static constexpr altfun
-        < CFG & (STM32F413_|STM32F417|STM32F446_)
+        < CFG & (STM32F413_|STM32F417|STM32F427_|STM32F446_|STM32F469_)
         > AF = AF8;
 };
 
 template<gpio_conf_t CFG>
 struct signal_traits<CFG, PA0, USART2_CTS>
 {
-    static constexpr altfun
-        < CFG & (STM32F401_|STM32F410_|STM32F411_|STM32F412_|STM32F413_|STM32F417|STM32F446_)
-        > AF = AF7;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA0/WKUP, ETH_CRS>
-{
-    static constexpr altfun
-        < CFG & (STM32F427_|STM32F469_)
-        > AF = AF11;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA0/WKUP, TIM2_CH1>
-{
-    static constexpr altfun
-        < CFG & (STM32F427_|STM32F469_)
-        > AF = AF1;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA0/WKUP, TIM2_ETR>
-{
-    static constexpr altfun
-        < CFG & (STM32F427_|STM32F469_)
-        > AF = AF1;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA0/WKUP, TIM5_CH1>
-{
-    static constexpr altfun
-        < CFG & (STM32F427_|STM32F469_)
-        > AF = AF2;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA0/WKUP, TIM8_ETR>
-{
-    static constexpr altfun
-        < CFG & (STM32F427_|STM32F469_)
-        > AF = AF3;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA0/WKUP, UART4_TX>
-{
-    static constexpr altfun
-        < CFG & (STM32F427_|STM32F469_)
-        > AF = AF8;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA0/WKUP, USART2_CTS>
-{
-    static constexpr altfun
-        < CFG & (STM32F427_|STM32F469_)
-        > AF = AF7;
+    static constexpr altfun_t AF = AF7;
 };
 
 template<gpio_conf_t CFG>

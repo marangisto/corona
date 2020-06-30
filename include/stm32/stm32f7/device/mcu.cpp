@@ -1606,6 +1606,86 @@ typename peripheral_t<STM32F779, FLASH>::T&
         <typename peripheral_t<STM32F779, FLASH>::T*
         >(0x40023c00);
 
+typename peripheral_t<STM32F722, FMC>::T&
+    peripheral_t<STM32F722, FMC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F722, FMC>::T*
+        >(0xa0000000);
+
+typename peripheral_t<STM32F723, FMC>::T&
+    peripheral_t<STM32F723, FMC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F723, FMC>::T*
+        >(0xa0000000);
+
+typename peripheral_t<STM32F730, FMC>::T&
+    peripheral_t<STM32F730, FMC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F730, FMC>::T*
+        >(0xa0000000);
+
+typename peripheral_t<STM32F732, FMC>::T&
+    peripheral_t<STM32F732, FMC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F732, FMC>::T*
+        >(0xa0000000);
+
+typename peripheral_t<STM32F733, FMC>::T&
+    peripheral_t<STM32F733, FMC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F733, FMC>::T*
+        >(0xa0000000);
+
+typename peripheral_t<STM32F745, FMC>::T&
+    peripheral_t<STM32F745, FMC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F745, FMC>::T*
+        >(0xa0000000);
+
+typename peripheral_t<STM32F746, FMC>::T&
+    peripheral_t<STM32F746, FMC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F746, FMC>::T*
+        >(0xa0000000);
+
+typename peripheral_t<STM32F750x, FMC>::T&
+    peripheral_t<STM32F750x, FMC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F750x, FMC>::T*
+        >(0xa0000000);
+
+typename peripheral_t<STM32F756, FMC>::T&
+    peripheral_t<STM32F756, FMC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F756, FMC>::T*
+        >(0xa0000000);
+
+typename peripheral_t<STM32F765, FMC>::T&
+    peripheral_t<STM32F765, FMC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F765, FMC>::T*
+        >(0xa0000000);
+
+typename peripheral_t<STM32F767, FMC>::T&
+    peripheral_t<STM32F767, FMC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F767, FMC>::T*
+        >(0xa0000000);
+
+typename peripheral_t<STM32F768, FMC>::T&
+    peripheral_t<STM32F768, FMC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F768, FMC>::T*
+        >(0xa0000000);
+
+typename peripheral_t<STM32F769, FMC>::T&
+    peripheral_t<STM32F769, FMC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F769, FMC>::T*
+        >(0xa0000000);
+
+typename peripheral_t<STM32F777, FMC>::T&
+    peripheral_t<STM32F777, FMC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F777, FMC>::T*
+        >(0xa0000000);
+
+typename peripheral_t<STM32F778, FMC>::T&
+    peripheral_t<STM32F778, FMC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F778, FMC>::T*
+        >(0xa0000000);
+
+typename peripheral_t<STM32F779, FMC>::T&
+    peripheral_t<STM32F779, FMC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F779, FMC>::T*
+        >(0xa0000000);
+
 typename peripheral_t<STM32F722, FPU>::T&
     peripheral_t<STM32F722, FPU>::V = *reinterpret_cast
         <typename peripheral_t<STM32F722, FPU>::T*
@@ -1765,86 +1845,6 @@ typename peripheral_t<STM32F779, FPU_CPACR>::T&
     peripheral_t<STM32F779, FPU_CPACR>::V = *reinterpret_cast
         <typename peripheral_t<STM32F779, FPU_CPACR>::T*
         >(0xe000ed88);
-
-typename peripheral_t<STM32F722, FMC>::T&
-    peripheral_t<STM32F722, FMC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F722, FMC>::T*
-        >(0xa0000000);
-
-typename peripheral_t<STM32F723, FMC>::T&
-    peripheral_t<STM32F723, FMC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F723, FMC>::T*
-        >(0xa0000000);
-
-typename peripheral_t<STM32F730, FMC>::T&
-    peripheral_t<STM32F730, FMC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F730, FMC>::T*
-        >(0xa0000000);
-
-typename peripheral_t<STM32F732, FMC>::T&
-    peripheral_t<STM32F732, FMC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F732, FMC>::T*
-        >(0xa0000000);
-
-typename peripheral_t<STM32F733, FMC>::T&
-    peripheral_t<STM32F733, FMC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F733, FMC>::T*
-        >(0xa0000000);
-
-typename peripheral_t<STM32F745, FMC>::T&
-    peripheral_t<STM32F745, FMC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F745, FMC>::T*
-        >(0xa0000000);
-
-typename peripheral_t<STM32F746, FMC>::T&
-    peripheral_t<STM32F746, FMC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F746, FMC>::T*
-        >(0xa0000000);
-
-typename peripheral_t<STM32F750x, FMC>::T&
-    peripheral_t<STM32F750x, FMC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F750x, FMC>::T*
-        >(0xa0000000);
-
-typename peripheral_t<STM32F756, FMC>::T&
-    peripheral_t<STM32F756, FMC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F756, FMC>::T*
-        >(0xa0000000);
-
-typename peripheral_t<STM32F765, FMC>::T&
-    peripheral_t<STM32F765, FMC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F765, FMC>::T*
-        >(0xa0000000);
-
-typename peripheral_t<STM32F767, FMC>::T&
-    peripheral_t<STM32F767, FMC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F767, FMC>::T*
-        >(0xa0000000);
-
-typename peripheral_t<STM32F768, FMC>::T&
-    peripheral_t<STM32F768, FMC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F768, FMC>::T*
-        >(0xa0000000);
-
-typename peripheral_t<STM32F769, FMC>::T&
-    peripheral_t<STM32F769, FMC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F769, FMC>::T*
-        >(0xa0000000);
-
-typename peripheral_t<STM32F777, FMC>::T&
-    peripheral_t<STM32F777, FMC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F777, FMC>::T*
-        >(0xa0000000);
-
-typename peripheral_t<STM32F778, FMC>::T&
-    peripheral_t<STM32F778, FMC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F778, FMC>::T*
-        >(0xa0000000);
-
-typename peripheral_t<STM32F779, FMC>::T&
-    peripheral_t<STM32F779, FMC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F779, FMC>::T*
-        >(0xa0000000);
 
 typename peripheral_t<STM32F722, GPIOA>::T&
     peripheral_t<STM32F722, GPIOA>::V = *reinterpret_cast

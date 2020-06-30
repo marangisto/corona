@@ -59,36 +59,21 @@ enum gpio_conf_t
 enum periph_t
     { ADC
     , ADC_COMMON
-    , SEC_ADC
-    , SEC_ADC_COMMON
     , AES
-    , SEC_AES
     , COMP
-    , SEC_COMP
     , CRC
-    , SEC_CRC
     , CRS
-    , SEC_CRS
     , DAC1
-    , SEC_DAC
     , DBGMCU
     , DCB
     , DFSDM1
-    , SEC_DFSDM1
     , DMA1
     , DMA2
-    , SEC_DMA1
-    , SEC_DMA2
     , DMAMUX1
-    , SEC_DMAMUX1
     , EXTI
-    , SEC_EXTI
     , FDCAN1
-    , SEC_FDCAN1
     , FLASH
-    , SEC_FLASH
     , FMC
-    , SEC_FMC
     , GPIOA
     , GPIOB
     , GPIOC
@@ -97,6 +82,48 @@ enum periph_t
     , GPIOF
     , GPIOG
     , GPIOH
+    , GTZC_MPCBB1
+    , GTZC_MPCBB2
+    , GTZC_TZIC
+    , GTZC_TZSC
+    , I2C1
+    , I2C2
+    , I2C3
+    , I2C4
+    , ICACHE
+    , IWDG
+    , LPTIM1
+    , LPTIM2
+    , LPTIM3
+    , LPUART1
+    , NVIC
+    , NVIC_STIR
+    , OCTOSPI1
+    , OPAMP
+    , OTFDEC1
+    , PKA
+    , PWR
+    , RCC
+    , RNG
+    , RTC
+    , SAI1
+    , SAI2
+    , SDMMC1
+    , SEC_ADC
+    , SEC_ADC_COMMON
+    , SEC_AES
+    , SEC_COMP
+    , SEC_CRC
+    , SEC_CRS
+    , SEC_DAC
+    , SEC_DFSDM1
+    , SEC_DMA1
+    , SEC_DMA2
+    , SEC_DMAMUX1
+    , SEC_EXTI
+    , SEC_FDCAN1
+    , SEC_FLASH
+    , SEC_FMC
     , SEC_GPIOA
     , SEC_GPIOB
     , SEC_GPIOC
@@ -105,72 +132,37 @@ enum periph_t
     , SEC_GPIOF
     , SEC_GPIOG
     , SEC_GPIOH
-    , GTZC_MPCBB1
-    , GTZC_MPCBB2
-    , GTZC_TZIC
-    , GTZC_TZSC
+    , SEC_GTZC_MPCBB1
+    , SEC_GTZC_MPCBB2
     , SEC_GTZC_TZIC
     , SEC_GTZC_TZSC
-    , I2C1
-    , I2C2
-    , I2C3
-    , I2C4
     , SEC_I2C1
     , SEC_I2C2
     , SEC_I2C3
     , SEC_I2C4
-    , ICACHE
     , SEC_ICACHE
-    , IWDG
     , SEC_IWDG
-    , LPTIM1
-    , LPTIM2
-    , LPTIM3
     , SEC_LPTIM1
     , SEC_LPTIM2
     , SEC_LPTIM3
-    , LPUART1
     , SEC_LPUART1
-    , NVIC
-    , NVIC_STIR
-    , OCTOSPI1
     , SEC_OCTOSPI1
-    , OPAMP
     , SEC_OPAMP
-    , OTFDEC1
     , SEC_OTFDEC1
-    , PKA
     , SEC_PKA
-    , PWR
     , SEC_PWR
-    , RCC
     , SEC_RCC
-    , RNG
     , SEC_RNG
-    , RTC
     , SEC_RTC
-    , SAI1
-    , SAI2
     , SEC_SAI1
     , SEC_SAI2
-    , SDMMC1
     , SEC_SDMMC1
-    , SEC_GTZC_MPCBB1
-    , SEC_GTZC_MPCBB2
     , SEC_SPI1
     , SEC_SPI2
     , SEC_SPI3
-    , SPI1
-    , SPI2
-    , SPI3
     , SEC_SYSCFG
-    , SYSCFG
     , SEC_TAMP
-    , TAMP
     , SEC_TIM1
-    , SEC_TIM15
-    , SEC_TIM16
-    , SEC_TIM17
     , SEC_TIM2
     , SEC_TIM3
     , SEC_TIM4
@@ -178,10 +170,25 @@ enum periph_t
     , SEC_TIM6
     , SEC_TIM7
     , SEC_TIM8
+    , SEC_TIM15
+    , SEC_TIM16
+    , SEC_TIM17
+    , SEC_TSC
+    , SEC_UART4
+    , SEC_UART5
+    , SEC_UCPD1
+    , SEC_USART1
+    , SEC_USART2
+    , SEC_USART3
+    , SEC_USB
+    , SEC_VREFBUF
+    , SEC_WWDG
+    , SPI1
+    , SPI2
+    , SPI3
+    , SYSCFG
+    , TAMP
     , TIM1
-    , TIM15
-    , TIM16
-    , TIM17
     , TIM2
     , TIM3
     , TIM4
@@ -189,25 +196,18 @@ enum periph_t
     , TIM6
     , TIM7
     , TIM8
-    , SEC_TSC
+    , TIM15
+    , TIM16
+    , TIM17
     , TSC
-    , SEC_UCPD1
-    , UCPD1
-    , SEC_UART4
-    , SEC_UART5
-    , SEC_USART1
-    , SEC_USART2
-    , SEC_USART3
     , UART4
     , UART5
+    , UCPD1
     , USART1
     , USART2
     , USART3
-    , SEC_USB
     , USB
-    , SEC_VREFBUF
     , VREFBUF
-    , SEC_WWDG
     , WWDG
     };
 

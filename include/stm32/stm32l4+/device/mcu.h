@@ -134,10 +134,10 @@ enum periph_t
     , I2C3
     , I2C4
     , IWDG
-    , LTCD
     , LPTIM1
     , LPTIM2
     , LPUART1
+    , LTCD
     , MPU
     , NVIC
     , NVIC_STIR
@@ -145,6 +145,10 @@ enum periph_t
     , OCTOSPI2
     , OCTOSPIM
     , OPAMP
+    , OTG_FS_DEVICE
+    , OTG_FS_GLOBAL
+    , OTG_FS_HOST
+    , OTG_FS_PWRCLK
     , PWR
     , RCC
     , RNG
@@ -162,9 +166,6 @@ enum periph_t
     , SWPMI1
     , SYSCFG
     , TIM1
-    , TIM15
-    , TIM16
-    , TIM17
     , TIM2
     , TIM3
     , TIM4
@@ -172,16 +173,15 @@ enum periph_t
     , TIM6
     , TIM7
     , TIM8
+    , TIM15
+    , TIM16
+    , TIM17
     , TSC
     , UART4
     , UART5
     , USART1
     , USART2
     , USART3
-    , OTG_FS_DEVICE
-    , OTG_FS_GLOBAL
-    , OTG_FS_HOST
-    , OTG_FS_PWRCLK
     , VREFBUF
     , WWDG
     };

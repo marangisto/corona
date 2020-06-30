@@ -194,8 +194,6 @@ enum periph_t
     , SPI3
     , STK
     , SYSCFG
-    , TIM10
-    , TIM11
     , TIM2
     , TIM3
     , TIM4
@@ -203,6 +201,8 @@ enum periph_t
     , TIM6
     , TIM7
     , TIM9
+    , TIM10
+    , TIM11
     , UART4
     , UART5
     , USART1

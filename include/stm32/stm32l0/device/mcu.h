@@ -221,11 +221,11 @@ enum periph_t
     , STK
     , SYSCFG
     , TIM2
-    , TIM21
-    , TIM22
     , TIM3
     , TIM6
     , TIM7
+    , TIM21
+    , TIM22
     , TSC
     , USART1
     , USART2

@@ -33,7 +33,6 @@
 #include "spi.h"
 #include "stk.h"
 #include "syscfg.h"
-#include "syscfg_comp_opamp.h"
 #include "tim.h"
 #include "tims.h"
 #include "tsc.h"

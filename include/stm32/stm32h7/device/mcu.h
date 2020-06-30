@@ -188,16 +188,16 @@ enum gpio_conf_t
 enum periph_t
     { AC
     , ADC1
-    , ADC12_COMMON
     , ADC2
     , ADC3
+    , ADC12_COMMON
     , ADC3_COMMON
     , ART
     , AXI
     , BDMA
     , BDMA1
     , BDMA2
-    , HDMI_CEC
+    , CAN_CCU
     , COMP1
     , CRC
     , CRS
@@ -205,12 +205,12 @@ enum periph_t
     , DAC1
     , DBGMCU
     , DCMI
-    , DFSDM
     , DELAY_BLOCK_OCTOSPI1
     , DELAY_BLOCK_OCTOSPI2
     , DELAY_BLOCK_QUADSPI
     , DELAY_BLOCK_SDMMC1
     , DELAY_BLOCK_SDMMC2
+    , DFSDM
     , DMA1
     , DMA2
     , DMA2D
@@ -221,11 +221,9 @@ enum periph_t
     , ETHERNET_MAC
     , ETHERNET_MTL
     , EXTI
-    , CAN_CCU
     , FDCAN
     , FDCAN1
     , FDCAN2
-    , TT_FDCAN
     , FLASH
     , FMC
     , FPU
@@ -242,6 +240,7 @@ enum periph_t
     , GPIOJ
     , GPIOK
     , HASH
+    , HDMI_CEC
     , HRTIM_COMMON
     , HRTIM_MASTER
     , HRTIM_TIMA
@@ -270,12 +269,20 @@ enum periph_t
     , MPU
     , NVIC
     , NVIC_STIR
-    , OCTOSPI1_CONTROL_REGISTER
     , OCTOSPI2
+    , OCTOSPI1_CONTROL_REGISTER
     , OCTOSPII_O_MANAGER
     , OPAMP
     , OTFDEC1
     , OTFDEC2
+    , OTG1_HS_DEVICE
+    , OTG1_HS_GLOBAL
+    , OTG1_HS_HOST
+    , OTG1_HS_PWRCLK
+    , OTG2_HS_DEVICE
+    , OTG2_HS_GLOBAL
+    , OTG2_HS_HOST
+    , OTG2_HS_PWRCLK
     , PF
     , PWR
     , QUADSPI1
@@ -305,9 +312,6 @@ enum periph_t
     , SWPMI
     , SYSCFG
     , TIM1
-    , TIM12
-    , TIM13
-    , TIM14
     , TIM2
     , TIM3
     , TIM4
@@ -315,27 +319,23 @@ enum periph_t
     , TIM6
     , TIM7
     , TIM8
+    , TIM12
+    , TIM13
+    , TIM14
     , TIM15
     , TIM16
     , TIM17
+    , TT_FDCAN
     , UART4
     , UART5
     , UART7
     , UART8
     , USART1
-    , USART10
     , USART2
     , USART3
     , USART6
     , USART9
-    , OTG1_HS_DEVICE
-    , OTG1_HS_GLOBAL
-    , OTG1_HS_HOST
-    , OTG1_HS_PWRCLK
-    , OTG2_HS_DEVICE
-    , OTG2_HS_GLOBAL
-    , OTG2_HS_HOST
-    , OTG2_HS_PWRCLK
+    , USART10
     , VREFBUF
     , WWDG
     , WWDG1

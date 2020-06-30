@@ -138,7 +138,6 @@ enum gpio_conf_t
 enum periph_t
     { ADC
     , CAN
-    , HDMI_CEC
     , CRC
     , CRS
     , DAC1
@@ -153,6 +152,7 @@ enum periph_t
     , GPIOD
     , GPIOE
     , GPIOF
+    , HDMI_CEC
     , I2C1
     , I2C2
     , IWDG
@@ -166,14 +166,14 @@ enum periph_t
     , STK
     , SYSCFG
     , TIM1
-    , TIM14
-    , TIM15
-    , TIM16
-    , TIM17
     , TIM2
     , TIM3
     , TIM6
     , TIM7
+    , TIM14
+    , TIM15
+    , TIM16
+    , TIM17
     , TSC
     , USART1
     , USART2

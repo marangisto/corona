@@ -71,6 +71,7 @@ enum periph_t
     , LCD
     , LPTIM1
     , LPTIM2
+    , LPUART1
     , MPU
     , NVIC
     , NVIC_STIR
@@ -88,11 +89,10 @@ enum periph_t
     , STK
     , SYSCFG
     , TIM1
+    , TIM2
     , TIM16
     , TIM17
-    , TIM2
     , TSC
-    , LPUART1
     , USART1
     , USB
     , WWDG

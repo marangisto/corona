@@ -1241,34 +1241,34 @@ typename peripheral_t<STM32F3x8, STK>::T&
         <typename peripheral_t<STM32F3x8, STK>::T*
         >(0xe000e010);
 
-typename peripheral_t<STM32F301, SYSCFG_COMP_OPAMP>::T&
-    peripheral_t<STM32F301, SYSCFG_COMP_OPAMP>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F301, SYSCFG_COMP_OPAMP>::T*
+typename peripheral_t<STM32F301, SYSCFG>::T&
+    peripheral_t<STM32F301, SYSCFG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F301, SYSCFG>::T*
         >(0x40010000);
 
-typename peripheral_t<STM32F302, SYSCFG_COMP_OPAMP>::T&
-    peripheral_t<STM32F302, SYSCFG_COMP_OPAMP>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F302, SYSCFG_COMP_OPAMP>::T*
+typename peripheral_t<STM32F302, SYSCFG>::T&
+    peripheral_t<STM32F302, SYSCFG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F302, SYSCFG>::T*
         >(0x40010000);
 
-typename peripheral_t<STM32F373, SYSCFG_COMP_OPAMP>::T&
-    peripheral_t<STM32F373, SYSCFG_COMP_OPAMP>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F373, SYSCFG_COMP_OPAMP>::T*
+typename peripheral_t<STM32F373, SYSCFG>::T&
+    peripheral_t<STM32F373, SYSCFG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F373, SYSCFG>::T*
         >(0x40010000);
 
-typename peripheral_t<STM32F3x8, SYSCFG_COMP_OPAMP>::T&
-    peripheral_t<STM32F3x8, SYSCFG_COMP_OPAMP>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F3x8, SYSCFG_COMP_OPAMP>::T*
+typename peripheral_t<STM32F3x8, SYSCFG>::T&
+    peripheral_t<STM32F3x8, SYSCFG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F3x8, SYSCFG>::T*
         >(0x40010000);
 
-typename peripheral_t<STM32F3x4, SYSCFG_COMP_OPAMP>::T&
-    peripheral_t<STM32F3x4, SYSCFG_COMP_OPAMP>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F3x4, SYSCFG_COMP_OPAMP>::T*
+typename peripheral_t<STM32F303, SYSCFG>::T&
+    peripheral_t<STM32F303, SYSCFG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F303, SYSCFG>::T*
         >(0x40010000);
 
-typename peripheral_t<STM32F303, SYSCFG_COMP_OPAMP>::T&
-    peripheral_t<STM32F303, SYSCFG_COMP_OPAMP>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F303, SYSCFG_COMP_OPAMP>::T*
+typename peripheral_t<STM32F3x4, SYSCFG>::T&
+    peripheral_t<STM32F3x4, SYSCFG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F3x4, SYSCFG>::T*
         >(0x40010000);
 
 typename peripheral_t<STM32F301, TIM1>::T&

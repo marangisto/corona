@@ -29,7 +29,10 @@ getMCU = do
     return $ fromMaybe (error "MCU required") mcu
 
 getBoard :: Action (Maybe Board)
-getBoard = fmap Board <$> getConfig "BOARD"
+getBoard = do
+    boardEnv <- getEnv "BOARD"
+    boardCfg <- getConfig "BOARD"
+    return $ fmap Board $ (boardEnv <|> boardCfg)
 
 getLibs :: MCU -> Action [String]
 getLibs mcu = fromMaybe defLibs . fmap words <$> getConfig "LIBS"

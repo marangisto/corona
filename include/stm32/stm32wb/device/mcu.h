@@ -87,7 +87,6 @@ enum periph_t
     , SPI2
     , STK
     , SYSCFG
-    , SYSCFG_VREFBUF
     , TIM1
     , TIM16
     , TIM17

@@ -786,9 +786,9 @@ typename peripheral_t<STM32WB50_CM4, SYSCFG>::T&
         <typename peripheral_t<STM32WB50_CM4, SYSCFG>::T*
         >(0x40010000);
 
-typename peripheral_t<STM32WB55_CM4, SYSCFG_VREFBUF>::T&
-    peripheral_t<STM32WB55_CM4, SYSCFG_VREFBUF>::V = *reinterpret_cast
-        <typename peripheral_t<STM32WB55_CM4, SYSCFG_VREFBUF>::T*
+typename peripheral_t<STM32WB55_CM4, SYSCFG>::T&
+    peripheral_t<STM32WB55_CM4, SYSCFG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32WB55_CM4, SYSCFG>::T*
         >(0x40010000);
 
 typename peripheral_t<STM32WB30_CM4, TIM1>::T&

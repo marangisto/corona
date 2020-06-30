@@ -143,7 +143,6 @@ enum periph_t
     , STK
     , SYSCFG
     , SYSCFG_ITLINE
-    , SYSCFG_VREFBUF
     , TAMP
     , TIM1
     , TIM14

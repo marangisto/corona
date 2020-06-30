@@ -951,6 +951,21 @@ typename peripheral_t<STM32G041, SYSCFG>::T&
         <typename peripheral_t<STM32G041, SYSCFG>::T*
         >(0x40010000);
 
+typename peripheral_t<STM32G070, SYSCFG>::T&
+    peripheral_t<STM32G070, SYSCFG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G070, SYSCFG>::T*
+        >(0x40010000);
+
+typename peripheral_t<STM32G071, SYSCFG>::T&
+    peripheral_t<STM32G071, SYSCFG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G071, SYSCFG>::T*
+        >(0x40010000);
+
+typename peripheral_t<STM32G081, SYSCFG>::T&
+    peripheral_t<STM32G081, SYSCFG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G081, SYSCFG>::T*
+        >(0x40010000);
+
 typename peripheral_t<STM32G030, SYSCFG_ITLINE>::T&
     peripheral_t<STM32G030, SYSCFG_ITLINE>::V = *reinterpret_cast
         <typename peripheral_t<STM32G030, SYSCFG_ITLINE>::T*
@@ -965,21 +980,6 @@ typename peripheral_t<STM32G041, SYSCFG_ITLINE>::T&
     peripheral_t<STM32G041, SYSCFG_ITLINE>::V = *reinterpret_cast
         <typename peripheral_t<STM32G041, SYSCFG_ITLINE>::T*
         >(0x40010080);
-
-typename peripheral_t<STM32G070, SYSCFG_VREFBUF>::T&
-    peripheral_t<STM32G070, SYSCFG_VREFBUF>::V = *reinterpret_cast
-        <typename peripheral_t<STM32G070, SYSCFG_VREFBUF>::T*
-        >(0x40010000);
-
-typename peripheral_t<STM32G071, SYSCFG_VREFBUF>::T&
-    peripheral_t<STM32G071, SYSCFG_VREFBUF>::V = *reinterpret_cast
-        <typename peripheral_t<STM32G071, SYSCFG_VREFBUF>::T*
-        >(0x40010000);
-
-typename peripheral_t<STM32G081, SYSCFG_VREFBUF>::T&
-    peripheral_t<STM32G081, SYSCFG_VREFBUF>::V = *reinterpret_cast
-        <typename peripheral_t<STM32G081, SYSCFG_VREFBUF>::T*
-        >(0x40010000);
 
 typename peripheral_t<STM32G030, TAMP>::T&
     peripheral_t<STM32G030, TAMP>::V = *reinterpret_cast

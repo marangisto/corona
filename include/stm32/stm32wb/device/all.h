@@ -37,7 +37,6 @@
 #include "spi.h"
 #include "stk.h"
 #include "syscfg.h"
-#include "syscfg_vrefbuf.h"
 #include "tim.h"
 #include "tsc.h"
 #include "usart.h"

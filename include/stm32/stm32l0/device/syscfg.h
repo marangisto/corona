@@ -73,9 +73,9 @@ struct stm32l0x0_syscfg_t
     static constexpr uint32_t CFGR3_EN_BGAP = 0x1; // Vref Enable bit
 };
 
-// SYSCFG_COMP: System configuration controller and COMP register
+// SYSCFG: System configuration controller and COMP register
 
-struct stm32l0x1_syscfg_comp_t
+struct stm32l0x1_syscfg_t
 {
     volatile uint32_t CFGR1; // SYSCFG configuration register 1
     volatile uint32_t CFGR2; // SYSCFG configuration register 2
@@ -160,9 +160,9 @@ struct stm32l0x1_syscfg_comp_t
     static constexpr uint32_t CFGR3_EN_BGAP = 0x1; // Vref Enable bit
 };
 
-// SYSCFG_COMP: System configuration controller and Comparator
+// SYSCFG: System configuration controller and Comparator
 
-struct stm32l0x2_syscfg_comp_t
+struct stm32l0x2_syscfg_t
 {
     volatile uint32_t CFGR1; // SYSCFG configuration register 1
     volatile uint32_t CFGR2; // SYSCFG configuration register 2
@@ -246,9 +246,9 @@ struct stm32l0x2_syscfg_comp_t
     static constexpr uint32_t CFGR3_EN_BGAP = 0x1; // Vref Enable bit
 };
 
-// SYSCFG_COMP: System configuration controller and Comparator
+// SYSCFG: System configuration controller and Comparator
 
-struct stm32l0x3_syscfg_comp_t
+struct stm32l0x3_syscfg_t
 {
     volatile uint32_t CFGR1; // SYSCFG configuration register 1
     volatile uint32_t CFGR2; // SYSCFG configuration register 2
@@ -340,28 +340,27 @@ struct peripheral_t<STM32L0x0, SYSCFG>
 };
 
 template<>
-struct peripheral_t<STM32L0x1, SYSCFG_COMP>
+struct peripheral_t<STM32L0x1, SYSCFG>
 {
-    using T = stm32l0x1_syscfg_comp_t;
+    using T = stm32l0x1_syscfg_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L0x2, SYSCFG_COMP>
+struct peripheral_t<STM32L0x2, SYSCFG>
 {
-    using T = stm32l0x2_syscfg_comp_t;
+    using T = stm32l0x2_syscfg_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L0x3, SYSCFG_COMP>
+struct peripheral_t<STM32L0x3, SYSCFG>
 {
-    using T = stm32l0x3_syscfg_comp_t;
+    using T = stm32l0x3_syscfg_t;
     static T& V;
 };
 
 using syscfg_t = peripheral_t<svd, SYSCFG>;
-using syscfg_comp_t = peripheral_t<svd, SYSCFG_COMP>;
 
 template<int INST> struct syscfg_traits {};
 

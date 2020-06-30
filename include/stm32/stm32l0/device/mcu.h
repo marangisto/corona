@@ -220,7 +220,6 @@ enum periph_t
     , SPI2
     , STK
     , SYSCFG
-    , SYSCFG_COMP
     , TIM2
     , TIM21
     , TIM22

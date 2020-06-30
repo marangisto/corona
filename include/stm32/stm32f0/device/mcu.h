@@ -165,7 +165,6 @@ enum periph_t
     , SPI2
     , STK
     , SYSCFG
-    , SYSCFG_COMP
     , TIM1
     , TIM14
     , TIM15

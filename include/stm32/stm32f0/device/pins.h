@@ -177,9 +177,6 @@ enum signal_t
     , SYS_TOUCH
     , SYS_USART
     , SYS_WKUP1
-    , SYS__ functionality on new pin (forecasted in Stingray 64K pinout file)
-    , SYS__ new functionality (not forecasted in Stingray 64K pinout file)
-    , SYS__ new pin (not existing on Stingray 64K)
     , TIM14_CH1
     , TIM15_BKIN
     , TIM15_CH1
@@ -2470,14 +2467,6 @@ struct signal_traits<CFG, PD3, SPI2_MISO>
 };
 
 template<gpio_conf_t CFG>
-struct signal_traits<CFG, PD3, SYS__ new pin (not existing on Stingray 64K)>
-{
-    static constexpr altfun
-        < CFG & STM32F052
-        > AF = AF4;
-};
-
-template<gpio_conf_t CFG>
 struct signal_traits<CFG, PD3, USART2_CTS>
 {
     static constexpr altfun
@@ -2499,14 +2488,6 @@ struct signal_traits<CFG, PD4, SPI2_MOSI>
     static constexpr altfun
         < CFG & (STM32F052|STM32F091)
         > AF = AF1;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PD4, SYS__ new functionality (not forecasted in Stingray 64K pinout file)>
-{
-    static constexpr altfun
-        < CFG & STM32F052
-        > AF = AF4;
 };
 
 template<gpio_conf_t CFG>
@@ -2547,14 +2528,6 @@ struct signal_traits<CFG, PD7, USART2_CK>
     static constexpr altfun
         < CFG & (STM32F052|STM32F091)
         > AF = AF0;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PD8, SYS__ functionality on new pin (forecasted in Stingray 64K pinout file)>
-{
-    static constexpr altfun
-        < CFG & STM32F052
-        > AF = AF4;
 };
 
 template<gpio_conf_t CFG>

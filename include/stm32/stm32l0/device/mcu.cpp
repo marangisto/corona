@@ -606,19 +606,19 @@ typename peripheral_t<STM32L0x0, SYSCFG>::T&
         <typename peripheral_t<STM32L0x0, SYSCFG>::T*
         >(0x40010000);
 
-typename peripheral_t<STM32L0x1, SYSCFG_COMP>::T&
-    peripheral_t<STM32L0x1, SYSCFG_COMP>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L0x1, SYSCFG_COMP>::T*
+typename peripheral_t<STM32L0x1, SYSCFG>::T&
+    peripheral_t<STM32L0x1, SYSCFG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L0x1, SYSCFG>::T*
         >(0x40010000);
 
-typename peripheral_t<STM32L0x2, SYSCFG_COMP>::T&
-    peripheral_t<STM32L0x2, SYSCFG_COMP>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L0x2, SYSCFG_COMP>::T*
+typename peripheral_t<STM32L0x2, SYSCFG>::T&
+    peripheral_t<STM32L0x2, SYSCFG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L0x2, SYSCFG>::T*
         >(0x40010000);
 
-typename peripheral_t<STM32L0x3, SYSCFG_COMP>::T&
-    peripheral_t<STM32L0x3, SYSCFG_COMP>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L0x3, SYSCFG_COMP>::T*
+typename peripheral_t<STM32L0x3, SYSCFG>::T&
+    peripheral_t<STM32L0x3, SYSCFG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L0x3, SYSCFG>::T*
         >(0x40010000);
 
 typename peripheral_t<STM32L0x0, TIM2>::T&

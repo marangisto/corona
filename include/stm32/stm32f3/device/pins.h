@@ -65,9 +65,7 @@ enum pin_t
     , PC12 = 0x2c
     , PC13 = 0x2d
     , PC14 = 0x2e
-    , PC14  = 0x2e
     , PC15 = 0x2f
-    , PC15  = 0x2f
     , PD0 = 0x30
     , PD1 = 0x31
     , PD2 = 0x32
@@ -5048,15 +5046,7 @@ template<gpio_conf_t CFG>
 struct signal_traits<CFG, PF0, TIM1_CH3N>
 {
     static constexpr altfun
-        < CFG & (STM32F302_|STM32F303E|STM32F303_)
-        > AF = AF6;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PF0 / OSC_IN, TIM1_CH3N>
-{
-    static constexpr altfun
-        < CFG & STM32F333
+        < CFG & (STM32F302_|STM32F303E|STM32F303_|STM32F333)
         > AF = AF6;
 };
 

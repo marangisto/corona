@@ -26,6 +26,8 @@ enum pin_t
     , PA8 = 0x8
     , PA9 = 0x9
     , PA10 = 0xa
+    , PA11 = 0xb
+    , PA12 = 0xc
     , PA13 = 0xd
     , PA14 = 0xe
     , PA15 = 0xf
@@ -72,7 +74,7 @@ enum pin_t
     , PD9 = 0x39
     , PF0 = 0x50
     , PF1 = 0x51
-    , PF2  = 0x52
+    , PF2 = 0x52
     };
 
 enum altfun_t
@@ -390,9 +392,7 @@ struct signal_traits<CFG, PA10, TIM1_CH3>
 template<gpio_conf_t CFG>
 struct signal_traits<CFG, PA10, UCPD2_TXGND>
 {
-    static constexpr altfun
-        < CFG & STM32G07x
-        > AF = AF3;
+    static constexpr altfun_t AF = AF3;
 };
 
 template<gpio_conf_t CFG>
@@ -402,51 +402,7 @@ struct signal_traits<CFG, PA10, USART1_RX>
 };
 
 template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA10 [PA12], EVENTOUT>
-{
-    static constexpr altfun_t AF = AF7;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA10 [PA12], I2C1_SDA>
-{
-    static constexpr altfun_t AF = AF6;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA10 [PA12], SPI2_MOSI>
-{
-    static constexpr altfun_t AF = AF0;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA10 [PA12], TIM17_BK>
-{
-    static constexpr altfun_t AF = AF5;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA10 [PA12], TIM1_CH3>
-{
-    static constexpr altfun_t AF = AF2;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA10 [PA12], UCPD2_TXGND>
-{
-    static constexpr altfun
-        < CFG & STM32G07x
-        > AF = AF3;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA10 [PA12], USART1_RX>
-{
-    static constexpr altfun_t AF = AF1;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA11 [PA9], COMP1_OUT>
+struct signal_traits<CFG, PA11, COMP1_OUT>
 {
     static constexpr altfun
         < CFG & STM32G07x
@@ -454,49 +410,49 @@ struct signal_traits<CFG, PA11 [PA9], COMP1_OUT>
 };
 
 template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA11 [PA9], I2C2_SCL>
+struct signal_traits<CFG, PA11, I2C2_SCL>
 {
     static constexpr altfun_t AF = AF6;
 };
 
 template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA11 [PA9], I2S1_MCK>
+struct signal_traits<CFG, PA11, I2S1_MCK>
 {
     static constexpr altfun_t AF = AF0;
 };
 
 template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA11 [PA9], SPI1_MISO>
+struct signal_traits<CFG, PA11, SPI1_MISO>
 {
     static constexpr altfun_t AF = AF0;
 };
 
 template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA11 [PA9], TIM1_BK2>
+struct signal_traits<CFG, PA11, TIM1_BK2>
 {
     static constexpr altfun_t AF = AF5;
 };
 
 template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA11 [PA9], TIM1_CH4>
+struct signal_traits<CFG, PA11, TIM1_CH4>
 {
     static constexpr altfun_t AF = AF2;
 };
 
 template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA11 [PA9], USART1_CTS>
+struct signal_traits<CFG, PA11, USART1_CTS>
 {
     static constexpr altfun_t AF = AF1;
 };
 
 template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA11 [PA9], USART1_NSS>
+struct signal_traits<CFG, PA11, USART1_NSS>
 {
     static constexpr altfun_t AF = AF1;
 };
 
 template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA12 [PA10], COMP2_OUT>
+struct signal_traits<CFG, PA12, COMP2_OUT>
 {
     static constexpr altfun
         < CFG & STM32G07x
@@ -504,49 +460,49 @@ struct signal_traits<CFG, PA12 [PA10], COMP2_OUT>
 };
 
 template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA12 [PA10], I2C2_SDA>
+struct signal_traits<CFG, PA12, I2C2_SDA>
 {
     static constexpr altfun_t AF = AF6;
 };
 
 template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA12 [PA10], I2S1_SD>
+struct signal_traits<CFG, PA12, I2S1_SD>
 {
     static constexpr altfun_t AF = AF0;
 };
 
 template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA12 [PA10], I2S_CKIN>
+struct signal_traits<CFG, PA12, I2S_CKIN>
 {
     static constexpr altfun_t AF = AF5;
 };
 
 template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA12 [PA10], SPI1_MOSI>
+struct signal_traits<CFG, PA12, SPI1_MOSI>
 {
     static constexpr altfun_t AF = AF0;
 };
 
 template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA12 [PA10], TIM1_ETR>
+struct signal_traits<CFG, PA12, TIM1_ETR>
 {
     static constexpr altfun_t AF = AF2;
 };
 
 template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA12 [PA10], USART1_CK>
+struct signal_traits<CFG, PA12, USART1_CK>
 {
     static constexpr altfun_t AF = AF1;
 };
 
 template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA12 [PA10], USART1_DE>
+struct signal_traits<CFG, PA12, USART1_DE>
 {
     static constexpr altfun_t AF = AF1;
 };
 
 template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA12 [PA10], USART1_RTS>
+struct signal_traits<CFG, PA12, USART1_RTS>
 {
     static constexpr altfun_t AF = AF1;
 };
@@ -1096,65 +1052,11 @@ struct signal_traits<CFG, PA9, TIM1_CH2>
 template<gpio_conf_t CFG>
 struct signal_traits<CFG, PA9, UCPD1_TXGND>
 {
-    static constexpr altfun
-        < CFG & STM32G07x
-        > AF = AF3;
+    static constexpr altfun_t AF = AF3;
 };
 
 template<gpio_conf_t CFG>
 struct signal_traits<CFG, PA9, USART1_TX>
-{
-    static constexpr altfun_t AF = AF1;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA9 [PA11], EVENTOUT>
-{
-    static constexpr altfun_t AF = AF7;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA9 [PA11], I2C1_SCL>
-{
-    static constexpr altfun_t AF = AF6;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA9 [PA11], RCC_MCO>
-{
-    static constexpr altfun_t AF = AF0;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA9 [PA11], SPI2_MISO>
-{
-    static constexpr altfun_t AF = AF4;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA9 [PA11], TIM15_BK>
-{
-    static constexpr altfun
-        < CFG & STM32G07x
-        > AF = AF5;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA9 [PA11], TIM1_CH2>
-{
-    static constexpr altfun_t AF = AF2;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA9 [PA11], UCPD1_TXGND>
-{
-    static constexpr altfun
-        < CFG & STM32G07x
-        > AF = AF3;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PA9 [PA11], USART1_TX>
 {
     static constexpr altfun_t AF = AF1;
 };
@@ -2750,7 +2652,7 @@ struct signal_traits<CFG, PF1, TIM15_CH1N>
 };
 
 template<gpio_conf_t CFG>
-struct signal_traits<CFG, PF2 , RCC_MCO>
+struct signal_traits<CFG, PF2, RCC_MCO>
 {
     static constexpr altfun
         < CFG & STM32G07x

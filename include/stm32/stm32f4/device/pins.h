@@ -134,9 +134,7 @@ enum pin_t
     , PG14 = 0x6e
     , PG15 = 0x6f
     , PH0 = 0x70
-    , PH0  = 0x70
     , PH1 = 0x71
-    , PH1  = 0x71
     , PH2 = 0x72
     , PH3 = 0x73
     , PH4 = 0x74
@@ -9065,6 +9063,14 @@ struct signal_traits<CFG, PG9, USART6_RX>
 };
 
 template<gpio_conf_t CFG>
+struct signal_traits<CFG, PH0, EVENTOUT>
+{
+    static constexpr altfun
+        < CFG & (STM32F410_|STM32F412_|STM32F413_)
+        > AF = AF15;
+};
+
+template<gpio_conf_t CFG>
 struct signal_traits<CFG, PH0, RCC_OSC_IN>
 {
     static constexpr altfun
@@ -9073,7 +9079,7 @@ struct signal_traits<CFG, PH0, RCC_OSC_IN>
 };
 
 template<gpio_conf_t CFG>
-struct signal_traits<CFG, PH0 , EVENTOUT>
+struct signal_traits<CFG, PH1, EVENTOUT>
 {
     static constexpr altfun
         < CFG & (STM32F410_|STM32F412_|STM32F413_)
@@ -9086,14 +9092,6 @@ struct signal_traits<CFG, PH1, RCC_OSC_OUT>
     static constexpr altfun
         < CFG & STM32F417
         > AF = AF0;
-};
-
-template<gpio_conf_t CFG>
-struct signal_traits<CFG, PH1 , EVENTOUT>
-{
-    static constexpr altfun
-        < CFG & (STM32F410_|STM32F412_|STM32F413_)
-        > AF = AF15;
 };
 
 template<gpio_conf_t CFG>

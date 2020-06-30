@@ -1,5 +1,7 @@
 #pragma once
 
+#include <device/fpu.h>
+
 template<uint32_t x, uint32_t b, uint8_t nbits>
 static constexpr uint32_t encode()
 {
@@ -67,6 +69,10 @@ static inline uint32_t clock_tree_init()
     // wait for PLL as system clock
 
     while ((RCC.CFGR & encode<0x3, _::CFGR_SWS0, 2>()) != encode<0x2, _::CFGR_SWS0, 2>());
+
+    fpu_cpacr_t::V.CPACR |= fpu_cpacr_t::T::CPACR_CP::W(0xf); // enable fpu
+    __asm volatile ("dsb");         // data pipe-line reset
+    __asm volatile ("isb");         // instruction pipe-line reset
     return 100000000;
 }
 

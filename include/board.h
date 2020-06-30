@@ -107,14 +107,16 @@ struct board_traits_t<STM32F0_DISCO>
     using btn1 = button_t<PA0>;
     static constexpr input_type_t btn_type = pull_down;
     using probe = output_t<PA8>;
+    using serial = usart_t<1, PB6, PB7>;
+    static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART1;
 };
 
 template<>
 struct board_traits_t<STM32F411E_DISCO>
 {
-    using led1 = output_t<PD13>;
+    using led1 = output_t<PD14>;
     using btn1 = button_t<PA0>;
-    static constexpr input_type_t btn_type = pull_up;
+    static constexpr input_type_t btn_type = pull_down;
     using probe = output_t<PA8>;
     using serial = usart_t<1, PB6, PB7>;
     static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART1;

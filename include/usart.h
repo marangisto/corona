@@ -3,6 +3,7 @@
 #include "gpio.h"
 #include "fifo.h"
 #include <device/usart.h>
+#include <driver/usart.h>
 
 template<int INST, pin_t TX, pin_t RX> struct usart_t
 {
@@ -37,7 +38,7 @@ public:
     static inline void write(uint8_t x)
     {
         while (!tx_empty());
-        usart::V.TDR = x;
+        usart_driver<usart>::write(x);
     }
 
     static inline void write(const char *s)
@@ -57,7 +58,7 @@ public:
     __attribute__((always_inline))
     static inline void isr()
     {
-        fifo::put(usart::V.RDR);
+        fifo::put(usart_driver<usart>::read());
     }
 
     __attribute__((always_inline))
@@ -69,13 +70,13 @@ public:
     __attribute__((always_inline))
     static inline bool tx_empty()
     {
-        return usart::V.ISR & _::ISR_TXE;
+        return usart_driver<usart>::txe();
     }
 
     __attribute__((always_inline))
     static inline bool rx_not_empty()
     {
-        return usart::V.ISR & _::ISR_RXNE;
+        return usart_driver<usart>::rxne();
     }
 
 private:

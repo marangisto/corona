@@ -18,7 +18,7 @@ int main()
     interrupt::set<board::serial_interrupt>();
     interrupt::enable();
 
-    printf<serial>("Hello STM32G070!\n");
+    printf<serial>("Hello World!\n");
 
     for (;;)
     {

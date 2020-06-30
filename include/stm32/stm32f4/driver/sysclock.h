@@ -2,22 +2,6 @@
 
 #include <device/fpu.h>
 
-template<uint32_t x, uint32_t b, uint8_t nbits>
-static constexpr uint32_t encode()
-{
-    static_assert(x < (1 << nbits), "bit field overflow");
-    return ((x & (1 << 0)) ? (b << 0) : 0)
-         | ((x & (1 << 1)) ? (b << 1) : 0)
-         | ((x & (1 << 2)) ? (b << 2) : 0)
-         | ((x & (1 << 3)) ? (b << 3) : 0)
-         | ((x & (1 << 4)) ? (b << 4) : 0)
-         | ((x & (1 << 5)) ? (b << 5) : 0)
-         | ((x & (1 << 6)) ? (b << 6) : 0)
-         | ((x & (1 << 7)) ? (b << 7) : 0)
-         | ((x & (1 << 8)) ? (b << 8) : 0)
-         ;
-}
-
 static inline uint32_t clock_tree_init()
 {
     typedef rcc_t::T _;
@@ -55,21 +39,18 @@ static inline uint32_t clock_tree_init()
     constexpr uint8_t pllQ = 9;         // 4 bits, valid range [2..15]
     constexpr uint8_t pllSRC = 0;       // 1 bit, 0 = HSI, 1 = HSE
 
-    RCC.PLLCFGR = encode<pllSRC, _::PLLCFGR_PLLSRC, 1>()
-                | encode<pllN, _::PLLCFGR_PLLN0, 9>()
-                | encode<pllM, _::PLLCFGR_PLLM0, 6>()
-                | encode<pllP, _::PLLCFGR_PLLP0, 2>()
-                | encode<pllQ, _::PLLCFGR_PLLQ0, 4>()
+    RCC.PLLCFGR = (pllSRC ? _::PLLCFGR_PLLSRC : 0)
+                | _::PLLCFGR_PLLN::W(pllN)
+                | _::PLLCFGR_PLLM::W(pllM)
+                | _::PLLCFGR_PLLP::W(pllP)
+                | _::PLLCFGR_PLLQ::W(pllQ)
                 ;
 
-    RCC.CR |= _::CR_PLLON;              // enable PLL
-    while (!(RCC.CR & _::CR_PLLRDY));   // wait for PLL to be ready
-    RCC.CFGR |= encode<0x2, _::CFGR_SW0, 2>(); // select PLL as sys clock
-
-    // wait for PLL as system clock
-
-    while ((RCC.CFGR & encode<0x3, _::CFGR_SWS0, 2>()) != encode<0x2, _::CFGR_SWS0, 2>());
-
+    RCC.CR |= _::CR_PLLON;                      // enable PLL
+    while (!(RCC.CR & _::CR_PLLRDY));           // wait for PLL to be ready
+    RCC.CFGR |= _::CFGR_SW::W(0x2);             // select PLL as sys clock
+    while (_::CFGR_SWS::R(RCC.CFGR) != 0x2);    // wait for PLL sys clock
+ 
     fpu_cpacr_t::V.CPACR |= fpu_cpacr_t::T::CPACR_CP::W(0xf); // enable fpu
     __asm volatile ("dsb");         // data pipe-line reset
     __asm volatile ("isb");         // instruction pipe-line reset

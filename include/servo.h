@@ -19,7 +19,7 @@ struct servo_timer_t: tim_t<TIMER_INST>
         timer::setup(psc, arr);
     }
 
-    template<channel_t CH, gpio_pin_t PIN>
+    template<channel_t CH, pin_t PIN>
     struct servo
     {
         using pwm = typename timer::template pwm<CH, PIN>;
@@ -45,10 +45,10 @@ struct servo_timer_t: tim_t<TIMER_INST>
 };
 
 template<int TIMER_INST>
-template<channel_t CH, gpio_pin_t PIN>
+template<channel_t CH, pin_t PIN>
 float servo_timer_t<TIMER_INST>::servo<CH, PIN>::m_k;
 
 template<int TIMER_INST>
-template<channel_t CH, gpio_pin_t PIN>
+template<channel_t CH, pin_t PIN>
 float servo_timer_t<TIMER_INST>::servo<CH, PIN>::m_a;
 

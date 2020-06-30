@@ -271,7 +271,7 @@ struct stm32g070_adc_t
     static constexpr uint32_t CCR_VBATEN = 0x1000000; // VBAT enable
 
 
-    static constexpr uint32_t HWCFGR6_RESET_VALUE = 0x1f1f1f11f; // Reset value
+    static constexpr uint32_t HWCFGR6_RESET_VALUE = 0x1f1f1f1f; // Reset value
     typedef bit_field_t<0, 0x1f> HWCFGR6_CHMAP20; // Input channel mapping
     typedef bit_field_t<8, 0x1f> HWCFGR6_CHMAP21; // Input channel mapping
     typedef bit_field_t<16, 0x1f> HWCFGR6_CHMAP22; // Input channel mapping

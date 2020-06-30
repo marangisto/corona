@@ -4,6 +4,7 @@
 #include <device/gpio.h>
 #include <device/exti.h>
 #include <device/syscfg.h>
+#include <driver/gpio.h>
 
 enum output_type_t
     { push_pull
@@ -103,57 +104,6 @@ private:
     static constexpr uint32_t MASK = 1 << POS;
 };
 
-template<port_t PORT, int POS, typename = is_in_range<true> >
-struct exticr_traits
-{
-    static_assert(always_false_i<POS>::value, "pin out of range");
-};
-
-// FIXME: refactor and feature for other series
-template<port_t PORT, int POS>
-struct exticr_traits<PORT, POS, is_in_range<(0 <= POS && POS < 4)> >
-{
-    static void select()
-    {
-        constexpr uint8_t shift = (POS & 0x3) << 2;
-        syscfg_t::V.EXTICR1 &= ~(0xf << shift);
-        syscfg_t::V.EXTICR1 |= (PORT << shift);
-    }
-};
-
-template<port_t PORT, int POS>
-struct exticr_traits<PORT, POS, is_in_range<(4 <= POS && POS < 8)> >
-{
-    static void select()
-    {
-        constexpr uint8_t shift = (POS & 0x3) << 2;
-        syscfg_t::V.EXTICR2 &= ~(0xf << shift);
-        syscfg_t::V.EXTICR2 |= (PORT << shift);
-    }
-};
-
-template<port_t PORT, int POS>
-struct exticr_traits<PORT, POS, is_in_range<(8 <= POS && POS < 12)> >
-{
-    static void select()
-    {
-        constexpr uint8_t shift = (POS & 0x3) << 2;
-        syscfg_t::V.EXTICR3 &= ~(0xf << shift);
-        syscfg_t::V.EXTICR3 |= (PORT << shift);
-    }
-};
-
-template<port_t PORT, int POS>
-struct exticr_traits<PORT, POS, is_in_range<(12 <= POS && POS < 16)> >
-{
-    static void select()
-    {
-        constexpr uint8_t shift = (POS & 0x3) << 2;
-        syscfg_t::V.EXTICR4 &= ~(0xf << shift);
-        syscfg_t::V.EXTICR4 |= (PORT << shift);
-    }
-};
-
 template<pin_t PIN>
 class input_t
 {
@@ -176,26 +126,22 @@ public:
     template<trigger_edge_t EDGE = rising_edge>
     static void enable_interrupt()
     {
-        typename exti_t::T& EXTI = exti_t::V;
-
-        // FIXME: refactor and feature for other series
         syscfg_traits<0>::template enable<rcc_t>();
-        exticr_traits<PORT, POS>::select();
-        EXTI.IMR1 |= MASK;
-        if (EDGE == rising_edge || EDGE == both_edges)
-            EXTI.RTSR1 |= MASK;
-        if (EDGE == falling_edge || EDGE == both_edges)
-            EXTI.FTSR1 |= MASK;
+
+        exti_interrupt<PORT, POS>::template enable
+            < EDGE == rising_edge || EDGE == both_edges
+            , EDGE == falling_edge || EDGE == both_edges
+            >();
     }
 
     static inline bool interrupt_pending()
     {
-        return exti_t::V.PR1 & MASK;
+        return exti_interrupt<PORT, POS>::pending();
     }
 
     static inline void clear_interrupt()
     {
-        exti_t::V.PR1 = MASK;
+        exti_interrupt<PORT, POS>::clear();
     }
 
 private:

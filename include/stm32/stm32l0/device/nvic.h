@@ -10,13 +10,13 @@
 
 struct stm32l0x0_nvic_t
 {
-    volatile uint32_t ISER; // Interrupt Set Enable Register
+    volatile uint32_t ISER0; // Interrupt Set Enable Register
     reserved_t<0x1f> _0x4;
-    volatile uint32_t ICER; // Interrupt Clear Enable Register
+    volatile uint32_t ICER0; // Interrupt Clear Enable Register
     reserved_t<0x1f> _0x84;
-    volatile uint32_t ISPR; // Interrupt Set-Pending Register
+    volatile uint32_t ISPR0; // Interrupt Set-Pending Register
     reserved_t<0x1f> _0x104;
-    volatile uint32_t ICPR; // Interrupt Clear-Pending Register
+    volatile uint32_t ICPR0; // Interrupt Clear-Pending Register
     reserved_t<0x5f> _0x184;
     volatile uint32_t IPR0; // Interrupt Priority Register 0
     volatile uint32_t IPR1; // Interrupt Priority Register 1
@@ -27,20 +27,20 @@ struct stm32l0x0_nvic_t
     volatile uint32_t IPR6; // Interrupt Priority Register 6
     volatile uint32_t IPR7; // Interrupt Priority Register 7
 
-    static constexpr uint32_t ISER_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0xffffffff> ISER_SETENA; // SETENA
+    static constexpr uint32_t ISER0_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> ISER0_SETENA; // SETENA
 
 
-    static constexpr uint32_t ICER_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0xffffffff> ICER_CLRENA; // CLRENA
+    static constexpr uint32_t ICER0_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> ICER0_CLRENA; // CLRENA
 
 
-    static constexpr uint32_t ISPR_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0xffffffff> ISPR_SETPEND; // SETPEND
+    static constexpr uint32_t ISPR0_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> ISPR0_SETPEND; // SETPEND
 
 
-    static constexpr uint32_t ICPR_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0xffffffff> ICPR_CLRPEND; // CLRPEND
+    static constexpr uint32_t ICPR0_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> ICPR0_CLRPEND; // CLRPEND
 
 
     static constexpr uint32_t IPR0_RESET_VALUE = 0x0; // Reset value

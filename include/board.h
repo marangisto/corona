@@ -100,6 +100,16 @@ enum board_t
 template<board_t> struct board_traits_t {};
 
 template<>
+struct board_traits_t<STM32F0_DISCO>
+{
+    using led1 = output_t<PC9>;
+    using led2 = output_t<PC8>;
+    using btn1 = button_t<PA0>;
+    static constexpr input_type_t btn_type = pull_up;
+    using probe = output_t<PA8>;
+};
+
+template<>
 struct board_traits_t<NUCLEO_G070RB>
 {
     using led1 = output_t<PA5>;

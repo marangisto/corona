@@ -209,7 +209,7 @@ struct stm32f745_gpioa_t
 {
     volatile uint32_t MODER; // GPIO port mode register
     volatile uint32_t OTYPER; // GPIO port output type register
-    volatile uint32_t GPIOB_OSPEEDR; // GPIO port output speed register
+    volatile uint32_t OSPEEDR; // GPIO port output speed register
     volatile uint32_t PUPDR; // GPIO port pull-up/pull-down register
     volatile uint32_t IDR; // GPIO port input data register
     volatile uint32_t ODR; // GPIO port output data register
@@ -255,23 +255,23 @@ struct stm32f745_gpioa_t
     static constexpr uint32_t OTYPER_OT1 = 0x2; // Port x configuration bits (y = 0..15)
     static constexpr uint32_t OTYPER_OT0 = 0x1; // Port x configuration bits (y = 0..15)
 
-    static constexpr uint32_t GPIOB_OSPEEDR_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<30, 0x3> GPIOB_OSPEEDR_OSPEEDR15; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<28, 0x3> GPIOB_OSPEEDR_OSPEEDR14; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<26, 0x3> GPIOB_OSPEEDR_OSPEEDR13; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<24, 0x3> GPIOB_OSPEEDR_OSPEEDR12; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<22, 0x3> GPIOB_OSPEEDR_OSPEEDR11; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<20, 0x3> GPIOB_OSPEEDR_OSPEEDR10; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<18, 0x3> GPIOB_OSPEEDR_OSPEEDR9; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<16, 0x3> GPIOB_OSPEEDR_OSPEEDR8; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<14, 0x3> GPIOB_OSPEEDR_OSPEEDR7; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<12, 0x3> GPIOB_OSPEEDR_OSPEEDR6; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<10, 0x3> GPIOB_OSPEEDR_OSPEEDR5; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<8, 0x3> GPIOB_OSPEEDR_OSPEEDR4; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<6, 0x3> GPIOB_OSPEEDR_OSPEEDR3; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<4, 0x3> GPIOB_OSPEEDR_OSPEEDR2; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<2, 0x3> GPIOB_OSPEEDR_OSPEEDR1; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<0, 0x3> GPIOB_OSPEEDR_OSPEEDR0; // Port x configuration bits (y = 0..15)
+    static constexpr uint32_t OSPEEDR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<30, 0x3> OSPEEDR_OSPEEDR15; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<28, 0x3> OSPEEDR_OSPEEDR14; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<26, 0x3> OSPEEDR_OSPEEDR13; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<24, 0x3> OSPEEDR_OSPEEDR12; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<22, 0x3> OSPEEDR_OSPEEDR11; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<20, 0x3> OSPEEDR_OSPEEDR10; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<18, 0x3> OSPEEDR_OSPEEDR9; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<16, 0x3> OSPEEDR_OSPEEDR8; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<14, 0x3> OSPEEDR_OSPEEDR7; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<12, 0x3> OSPEEDR_OSPEEDR6; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<10, 0x3> OSPEEDR_OSPEEDR5; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<8, 0x3> OSPEEDR_OSPEEDR4; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<6, 0x3> OSPEEDR_OSPEEDR3; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<4, 0x3> OSPEEDR_OSPEEDR2; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<2, 0x3> OSPEEDR_OSPEEDR1; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<0, 0x3> OSPEEDR_OSPEEDR0; // Port x configuration bits (y = 0..15)
 
     static constexpr uint32_t PUPDR_RESET_VALUE = 0x64000000; // Reset value
     typedef bit_field_t<30, 0x3> PUPDR_PUPDR15; // Port x configuration bits (y = 0..15)
@@ -622,7 +622,7 @@ struct stm32f745_gpiob_t
 {
     volatile uint32_t MODER; // GPIO port mode register
     volatile uint32_t OTYPER; // GPIO port output type register
-    volatile uint32_t GPIOB_OSPEEDR; // GPIO port output speed register
+    volatile uint32_t OSPEEDR; // GPIO port output speed register
     volatile uint32_t PUPDR; // GPIO port pull-up/pull-down register
     volatile uint32_t IDR; // GPIO port input data register
     volatile uint32_t ODR; // GPIO port output data register
@@ -668,23 +668,23 @@ struct stm32f745_gpiob_t
     static constexpr uint32_t OTYPER_OT1 = 0x2; // Port x configuration bits (y = 0..15)
     static constexpr uint32_t OTYPER_OT0 = 0x1; // Port x configuration bits (y = 0..15)
 
-    static constexpr uint32_t GPIOB_OSPEEDR_RESET_VALUE = 0xc0; // Reset value
-    typedef bit_field_t<30, 0x3> GPIOB_OSPEEDR_OSPEEDR15; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<28, 0x3> GPIOB_OSPEEDR_OSPEEDR14; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<26, 0x3> GPIOB_OSPEEDR_OSPEEDR13; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<24, 0x3> GPIOB_OSPEEDR_OSPEEDR12; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<22, 0x3> GPIOB_OSPEEDR_OSPEEDR11; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<20, 0x3> GPIOB_OSPEEDR_OSPEEDR10; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<18, 0x3> GPIOB_OSPEEDR_OSPEEDR9; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<16, 0x3> GPIOB_OSPEEDR_OSPEEDR8; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<14, 0x3> GPIOB_OSPEEDR_OSPEEDR7; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<12, 0x3> GPIOB_OSPEEDR_OSPEEDR6; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<10, 0x3> GPIOB_OSPEEDR_OSPEEDR5; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<8, 0x3> GPIOB_OSPEEDR_OSPEEDR4; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<6, 0x3> GPIOB_OSPEEDR_OSPEEDR3; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<4, 0x3> GPIOB_OSPEEDR_OSPEEDR2; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<2, 0x3> GPIOB_OSPEEDR_OSPEEDR1; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<0, 0x3> GPIOB_OSPEEDR_OSPEEDR0; // Port x configuration bits (y = 0..15)
+    static constexpr uint32_t OSPEEDR_RESET_VALUE = 0xc0; // Reset value
+    typedef bit_field_t<30, 0x3> OSPEEDR_OSPEEDR15; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<28, 0x3> OSPEEDR_OSPEEDR14; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<26, 0x3> OSPEEDR_OSPEEDR13; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<24, 0x3> OSPEEDR_OSPEEDR12; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<22, 0x3> OSPEEDR_OSPEEDR11; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<20, 0x3> OSPEEDR_OSPEEDR10; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<18, 0x3> OSPEEDR_OSPEEDR9; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<16, 0x3> OSPEEDR_OSPEEDR8; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<14, 0x3> OSPEEDR_OSPEEDR7; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<12, 0x3> OSPEEDR_OSPEEDR6; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<10, 0x3> OSPEEDR_OSPEEDR5; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<8, 0x3> OSPEEDR_OSPEEDR4; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<6, 0x3> OSPEEDR_OSPEEDR3; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<4, 0x3> OSPEEDR_OSPEEDR2; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<2, 0x3> OSPEEDR_OSPEEDR1; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<0, 0x3> OSPEEDR_OSPEEDR0; // Port x configuration bits (y = 0..15)
 
     static constexpr uint32_t PUPDR_RESET_VALUE = 0x100; // Reset value
     typedef bit_field_t<30, 0x3> PUPDR_PUPDR15; // Port x configuration bits (y = 0..15)
@@ -838,7 +838,7 @@ struct stm32f745_gpiod_t
 {
     volatile uint32_t MODER; // GPIO port mode register
     volatile uint32_t OTYPER; // GPIO port output type register
-    volatile uint32_t GPIOB_OSPEEDR; // GPIO port output speed register
+    volatile uint32_t OSPEEDR; // GPIO port output speed register
     volatile uint32_t PUPDR; // GPIO port pull-up/pull-down register
     volatile uint32_t IDR; // GPIO port input data register
     volatile uint32_t ODR; // GPIO port output data register
@@ -884,23 +884,23 @@ struct stm32f745_gpiod_t
     static constexpr uint32_t OTYPER_OT1 = 0x2; // Port x configuration bits (y = 0..15)
     static constexpr uint32_t OTYPER_OT0 = 0x1; // Port x configuration bits (y = 0..15)
 
-    static constexpr uint32_t GPIOB_OSPEEDR_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<30, 0x3> GPIOB_OSPEEDR_OSPEEDR15; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<28, 0x3> GPIOB_OSPEEDR_OSPEEDR14; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<26, 0x3> GPIOB_OSPEEDR_OSPEEDR13; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<24, 0x3> GPIOB_OSPEEDR_OSPEEDR12; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<22, 0x3> GPIOB_OSPEEDR_OSPEEDR11; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<20, 0x3> GPIOB_OSPEEDR_OSPEEDR10; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<18, 0x3> GPIOB_OSPEEDR_OSPEEDR9; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<16, 0x3> GPIOB_OSPEEDR_OSPEEDR8; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<14, 0x3> GPIOB_OSPEEDR_OSPEEDR7; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<12, 0x3> GPIOB_OSPEEDR_OSPEEDR6; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<10, 0x3> GPIOB_OSPEEDR_OSPEEDR5; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<8, 0x3> GPIOB_OSPEEDR_OSPEEDR4; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<6, 0x3> GPIOB_OSPEEDR_OSPEEDR3; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<4, 0x3> GPIOB_OSPEEDR_OSPEEDR2; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<2, 0x3> GPIOB_OSPEEDR_OSPEEDR1; // Port x configuration bits (y = 0..15)
-    typedef bit_field_t<0, 0x3> GPIOB_OSPEEDR_OSPEEDR0; // Port x configuration bits (y = 0..15)
+    static constexpr uint32_t OSPEEDR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<30, 0x3> OSPEEDR_OSPEEDR15; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<28, 0x3> OSPEEDR_OSPEEDR14; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<26, 0x3> OSPEEDR_OSPEEDR13; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<24, 0x3> OSPEEDR_OSPEEDR12; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<22, 0x3> OSPEEDR_OSPEEDR11; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<20, 0x3> OSPEEDR_OSPEEDR10; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<18, 0x3> OSPEEDR_OSPEEDR9; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<16, 0x3> OSPEEDR_OSPEEDR8; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<14, 0x3> OSPEEDR_OSPEEDR7; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<12, 0x3> OSPEEDR_OSPEEDR6; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<10, 0x3> OSPEEDR_OSPEEDR5; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<8, 0x3> OSPEEDR_OSPEEDR4; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<6, 0x3> OSPEEDR_OSPEEDR3; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<4, 0x3> OSPEEDR_OSPEEDR2; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<2, 0x3> OSPEEDR_OSPEEDR1; // Port x configuration bits (y = 0..15)
+    typedef bit_field_t<0, 0x3> OSPEEDR_OSPEEDR0; // Port x configuration bits (y = 0..15)
 
     static constexpr uint32_t PUPDR_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<30, 0x3> PUPDR_PUPDR15; // Port x configuration bits (y = 0..15)

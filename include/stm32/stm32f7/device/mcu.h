@@ -218,7 +218,7 @@ enum periph_t
     , OTG_HS_GLOBAL
     , OTG_HS_HOST
     , OTG_HS_PWRCLK
-    , PF
+    , PF_
     , PWR
     , QUADSPI1
     , RCC

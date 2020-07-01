@@ -283,7 +283,7 @@ enum periph_t
     , OTG2_HS_GLOBAL
     , OTG2_HS_HOST
     , OTG2_HS_PWRCLK
-    , PF
+    , PF_
     , PWR
     , QUADSPI1
     , RAMECC

@@ -44,110 +44,110 @@ struct stm32h742x_pf_t
 };
 
 template<>
-struct peripheral_t<STM32H742x, PF>
+struct peripheral_t<STM32H742x, PF_>
 {
     using T = stm32h742x_pf_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H743, PF>
+struct peripheral_t<STM32H743, PF_>
 {
     using T = stm32h742x_pf_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H745_CM4, PF>
+struct peripheral_t<STM32H745_CM4, PF_>
 {
     using T = stm32h742x_pf_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H745_CM7, PF>
+struct peripheral_t<STM32H745_CM7, PF_>
 {
     using T = stm32h742x_pf_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H747_CM4, PF>
+struct peripheral_t<STM32H747_CM4, PF_>
 {
     using T = stm32h742x_pf_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H747_CM7, PF>
+struct peripheral_t<STM32H747_CM7, PF_>
 {
     using T = stm32h742x_pf_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H750x, PF>
+struct peripheral_t<STM32H750x, PF_>
 {
     using T = stm32h742x_pf_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H753, PF>
+struct peripheral_t<STM32H753, PF_>
 {
     using T = stm32h742x_pf_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H755_CM4, PF>
+struct peripheral_t<STM32H755_CM4, PF_>
 {
     using T = stm32h742x_pf_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H755_CM7, PF>
+struct peripheral_t<STM32H755_CM7, PF_>
 {
     using T = stm32h742x_pf_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H757_CM4, PF>
+struct peripheral_t<STM32H757_CM4, PF_>
 {
     using T = stm32h742x_pf_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H757_CM7, PF>
+struct peripheral_t<STM32H757_CM7, PF_>
 {
     using T = stm32h742x_pf_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7A3x, PF>
+struct peripheral_t<STM32H7A3x, PF_>
 {
     using T = stm32h742x_pf_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7B0x, PF>
+struct peripheral_t<STM32H7B0x, PF_>
 {
     using T = stm32h742x_pf_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32H7B3x, PF>
+struct peripheral_t<STM32H7B3x, PF_>
 {
     using T = stm32h742x_pf_t;
     static T& V;
 };
 
-using pf_t = peripheral_t<svd, PF>;
+using pf__t = peripheral_t<svd, PF_>;
 
 template<int INST> struct pf_traits {};

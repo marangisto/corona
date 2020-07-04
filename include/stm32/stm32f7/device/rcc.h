@@ -61,43 +61,24 @@ struct stm32f722_rcc_t
     static constexpr uint32_t CR_PLLSAION = 0x10000000; // PLLSAI enable
 
     static constexpr uint32_t PLLCFGR_RESET_VALUE = 0x24003010; // Reset value
-    static constexpr uint32_t PLLCFGR_PLLQ3 = 0x8000000; // Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks
-    static constexpr uint32_t PLLCFGR_PLLQ2 = 0x4000000; // Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks
-    static constexpr uint32_t PLLCFGR_PLLQ1 = 0x2000000; // Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks
-    static constexpr uint32_t PLLCFGR_PLLQ0 = 0x1000000; // Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks
+    typedef bit_field_t<0, 0x3f> PLLCFGR_PLLM; // Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock
+    typedef bit_field_t<6, 0x1ff> PLLCFGR_PLLN; // Main PLL (PLL) multiplication factor for VCO
+    typedef bit_field_t<16, 0x3> PLLCFGR_PLLP; // Main PLL (PLL) division factor for main system clock
     static constexpr uint32_t PLLCFGR_PLLSRC = 0x400000; // Main PLL(PLL) and audio PLL (PLLI2S) entry clock source
-    static constexpr uint32_t PLLCFGR_PLLP1 = 0x20000; // Main PLL (PLL) division factor for main system clock
-    static constexpr uint32_t PLLCFGR_PLLP0 = 0x10000; // Main PLL (PLL) division factor for main system clock
-    static constexpr uint32_t PLLCFGR_PLLN8 = 0x4000; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLN7 = 0x2000; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLN6 = 0x1000; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLN5 = 0x800; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLN4 = 0x400; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLN3 = 0x200; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLN2 = 0x100; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLN1 = 0x80; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLN0 = 0x40; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLM5 = 0x20; // Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock
-    static constexpr uint32_t PLLCFGR_PLLM4 = 0x10; // Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock
-    static constexpr uint32_t PLLCFGR_PLLM3 = 0x8; // Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock
-    static constexpr uint32_t PLLCFGR_PLLM2 = 0x4; // Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock
-    static constexpr uint32_t PLLCFGR_PLLM1 = 0x2; // Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock
-    static constexpr uint32_t PLLCFGR_PLLM0 = 0x1; // Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock
+    typedef bit_field_t<24, 0xf> PLLCFGR_PLLQ; // Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks
 
     static constexpr uint32_t CFGR_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<30, 0x3> CFGR_MCO2; // Microcontroller clock output 2
-    typedef bit_field_t<27, 0x7> CFGR_MCO2PRE; // MCO2 prescaler
-    typedef bit_field_t<24, 0x7> CFGR_MCO1PRE; // MCO1 prescaler
-    static constexpr uint32_t CFGR_I2SSRC = 0x800000; // I2S clock selection
-    typedef bit_field_t<21, 0x3> CFGR_MCO1; // Microcontroller clock output 1
-    typedef bit_field_t<16, 0x1f> CFGR_RTCPRE; // HSE division factor for RTC clock
-    typedef bit_field_t<13, 0x7> CFGR_PPRE2; // APB high-speed prescaler (APB2)
-    typedef bit_field_t<10, 0x7> CFGR_PPRE1; // APB Low speed prescaler (APB1)
+    typedef bit_field_t<0, 0x3> CFGR_SW; // System clock switch
+    typedef bit_field_t<2, 0x3> CFGR_SWS; // System clock switch status
     typedef bit_field_t<4, 0xf> CFGR_HPRE; // AHB prescaler
-    static constexpr uint32_t CFGR_SWS1 = 0x8; // System clock switch status
-    static constexpr uint32_t CFGR_SWS0 = 0x4; // System clock switch status
-    static constexpr uint32_t CFGR_SW1 = 0x2; // System clock switch
-    static constexpr uint32_t CFGR_SW0 = 0x1; // System clock switch
+    typedef bit_field_t<10, 0x7> CFGR_PPRE1; // APB Low speed prescaler (APB1)
+    typedef bit_field_t<13, 0x7> CFGR_PPRE2; // APB high-speed prescaler (APB2)
+    typedef bit_field_t<16, 0x1f> CFGR_RTCPRE; // HSE division factor for RTC clock
+    typedef bit_field_t<21, 0x3> CFGR_MCO1; // Microcontroller clock output 1
+    static constexpr uint32_t CFGR_I2SSRC = 0x800000; // I2S clock selection
+    typedef bit_field_t<24, 0x7> CFGR_MCO1PRE; // MCO1 prescaler
+    typedef bit_field_t<27, 0x7> CFGR_MCO2PRE; // MCO2 prescaler
+    typedef bit_field_t<30, 0x3> CFGR_MCO2; // Microcontroller clock output 2
 
     static constexpr uint32_t CIR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CIR_CSSC = 0x800000; // Clock security system interrupt clear
@@ -480,43 +461,24 @@ struct stm32f745_rcc_t
     static constexpr uint32_t CR_HSION = 0x1; // Internal high-speed clock enable
 
     static constexpr uint32_t PLLCFGR_RESET_VALUE = 0x24003010; // Reset value
-    static constexpr uint32_t PLLCFGR_PLLQ3 = 0x8000000; // Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks
-    static constexpr uint32_t PLLCFGR_PLLQ2 = 0x4000000; // Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks
-    static constexpr uint32_t PLLCFGR_PLLQ1 = 0x2000000; // Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks
-    static constexpr uint32_t PLLCFGR_PLLQ0 = 0x1000000; // Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks
+    typedef bit_field_t<0, 0x3f> PLLCFGR_PLLM; // Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock
+    typedef bit_field_t<6, 0x1ff> PLLCFGR_PLLN; // Main PLL (PLL) multiplication factor for VCO
+    typedef bit_field_t<16, 0x3> PLLCFGR_PLLP; // Main PLL (PLL) division factor for main system clock
     static constexpr uint32_t PLLCFGR_PLLSRC = 0x400000; // Main PLL(PLL) and audio PLL (PLLI2S) entry clock source
-    static constexpr uint32_t PLLCFGR_PLLP1 = 0x20000; // Main PLL (PLL) division factor for main system clock
-    static constexpr uint32_t PLLCFGR_PLLP0 = 0x10000; // Main PLL (PLL) division factor for main system clock
-    static constexpr uint32_t PLLCFGR_PLLN8 = 0x4000; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLN7 = 0x2000; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLN6 = 0x1000; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLN5 = 0x800; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLN4 = 0x400; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLN3 = 0x200; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLN2 = 0x100; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLN1 = 0x80; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLN0 = 0x40; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLM5 = 0x20; // Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock
-    static constexpr uint32_t PLLCFGR_PLLM4 = 0x10; // Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock
-    static constexpr uint32_t PLLCFGR_PLLM3 = 0x8; // Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock
-    static constexpr uint32_t PLLCFGR_PLLM2 = 0x4; // Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock
-    static constexpr uint32_t PLLCFGR_PLLM1 = 0x2; // Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock
-    static constexpr uint32_t PLLCFGR_PLLM0 = 0x1; // Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock
+    typedef bit_field_t<24, 0xf> PLLCFGR_PLLQ; // Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks
 
     static constexpr uint32_t CFGR_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<30, 0x3> CFGR_MCO2; // Microcontroller clock output 2
-    typedef bit_field_t<27, 0x7> CFGR_MCO2PRE; // MCO2 prescaler
-    typedef bit_field_t<24, 0x7> CFGR_MCO1PRE; // MCO1 prescaler
-    static constexpr uint32_t CFGR_I2SSRC = 0x800000; // I2S clock selection
-    typedef bit_field_t<21, 0x3> CFGR_MCO1; // Microcontroller clock output 1
-    typedef bit_field_t<16, 0x1f> CFGR_RTCPRE; // HSE division factor for RTC clock
-    typedef bit_field_t<13, 0x7> CFGR_PPRE2; // APB high-speed prescaler (APB2)
-    typedef bit_field_t<10, 0x7> CFGR_PPRE1; // APB Low speed prescaler (APB1)
+    typedef bit_field_t<0, 0x3> CFGR_SW; // System clock switch
+    typedef bit_field_t<2, 0x3> CFGR_SWS; // System clock switch status
     typedef bit_field_t<4, 0xf> CFGR_HPRE; // AHB prescaler
-    static constexpr uint32_t CFGR_SWS1 = 0x8; // System clock switch status
-    static constexpr uint32_t CFGR_SWS0 = 0x4; // System clock switch status
-    static constexpr uint32_t CFGR_SW1 = 0x2; // System clock switch
-    static constexpr uint32_t CFGR_SW0 = 0x1; // System clock switch
+    typedef bit_field_t<10, 0x7> CFGR_PPRE1; // APB Low speed prescaler (APB1)
+    typedef bit_field_t<13, 0x7> CFGR_PPRE2; // APB high-speed prescaler (APB2)
+    typedef bit_field_t<16, 0x1f> CFGR_RTCPRE; // HSE division factor for RTC clock
+    typedef bit_field_t<21, 0x3> CFGR_MCO1; // Microcontroller clock output 1
+    static constexpr uint32_t CFGR_I2SSRC = 0x800000; // I2S clock selection
+    typedef bit_field_t<24, 0x7> CFGR_MCO1PRE; // MCO1 prescaler
+    typedef bit_field_t<27, 0x7> CFGR_MCO2PRE; // MCO2 prescaler
+    typedef bit_field_t<30, 0x3> CFGR_MCO2; // Microcontroller clock output 2
 
     static constexpr uint32_t CIR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CIR_CSSC = 0x800000; // Clock security system interrupt clear
@@ -927,43 +889,24 @@ struct stm32f767_rcc_t
     static constexpr uint32_t CR_HSION = 0x1; // Internal high-speed clock enable
 
     static constexpr uint32_t PLLCFGR_RESET_VALUE = 0x24003010; // Reset value
-    static constexpr uint32_t PLLCFGR_PLLQ3 = 0x8000000; // Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks
-    static constexpr uint32_t PLLCFGR_PLLQ2 = 0x4000000; // Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks
-    static constexpr uint32_t PLLCFGR_PLLQ1 = 0x2000000; // Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks
-    static constexpr uint32_t PLLCFGR_PLLQ0 = 0x1000000; // Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks
+    typedef bit_field_t<0, 0x3f> PLLCFGR_PLLM; // Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock
+    typedef bit_field_t<6, 0x1ff> PLLCFGR_PLLN; // Main PLL (PLL) multiplication factor for VCO
+    typedef bit_field_t<16, 0x3> PLLCFGR_PLLP; // Main PLL (PLL) division factor for main system clock
     static constexpr uint32_t PLLCFGR_PLLSRC = 0x400000; // Main PLL(PLL) and audio PLL (PLLI2S) entry clock source
-    static constexpr uint32_t PLLCFGR_PLLP1 = 0x20000; // Main PLL (PLL) division factor for main system clock
-    static constexpr uint32_t PLLCFGR_PLLP0 = 0x10000; // Main PLL (PLL) division factor for main system clock
-    static constexpr uint32_t PLLCFGR_PLLN8 = 0x4000; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLN7 = 0x2000; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLN6 = 0x1000; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLN5 = 0x800; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLN4 = 0x400; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLN3 = 0x200; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLN2 = 0x100; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLN1 = 0x80; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLN0 = 0x40; // Main PLL (PLL) multiplication factor for VCO
-    static constexpr uint32_t PLLCFGR_PLLM5 = 0x20; // Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock
-    static constexpr uint32_t PLLCFGR_PLLM4 = 0x10; // Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock
-    static constexpr uint32_t PLLCFGR_PLLM3 = 0x8; // Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock
-    static constexpr uint32_t PLLCFGR_PLLM2 = 0x4; // Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock
-    static constexpr uint32_t PLLCFGR_PLLM1 = 0x2; // Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock
-    static constexpr uint32_t PLLCFGR_PLLM0 = 0x1; // Division factor for the main PLL (PLL) and audio PLL (PLLI2S) input clock
+    typedef bit_field_t<24, 0xf> PLLCFGR_PLLQ; // Main PLL (PLL) division factor for USB OTG FS, SDIO and random number generator clocks
 
     static constexpr uint32_t CFGR_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<30, 0x3> CFGR_MCO2; // Microcontroller clock output 2
-    typedef bit_field_t<27, 0x7> CFGR_MCO2PRE; // MCO2 prescaler
-    typedef bit_field_t<24, 0x7> CFGR_MCO1PRE; // MCO1 prescaler
-    static constexpr uint32_t CFGR_I2SSRC = 0x800000; // I2S clock selection
-    typedef bit_field_t<21, 0x3> CFGR_MCO1; // Microcontroller clock output 1
-    typedef bit_field_t<16, 0x1f> CFGR_RTCPRE; // HSE division factor for RTC clock
-    typedef bit_field_t<13, 0x7> CFGR_PPRE2; // APB high-speed prescaler (APB2)
-    typedef bit_field_t<10, 0x7> CFGR_PPRE1; // APB Low speed prescaler (APB1)
+    typedef bit_field_t<0, 0x3> CFGR_SW; // System clock switch
+    typedef bit_field_t<2, 0x3> CFGR_SWS; // System clock switch status
     typedef bit_field_t<4, 0xf> CFGR_HPRE; // AHB prescaler
-    static constexpr uint32_t CFGR_SWS1 = 0x8; // System clock switch status
-    static constexpr uint32_t CFGR_SWS0 = 0x4; // System clock switch status
-    static constexpr uint32_t CFGR_SW1 = 0x2; // System clock switch
-    static constexpr uint32_t CFGR_SW0 = 0x1; // System clock switch
+    typedef bit_field_t<10, 0x7> CFGR_PPRE1; // APB Low speed prescaler (APB1)
+    typedef bit_field_t<13, 0x7> CFGR_PPRE2; // APB high-speed prescaler (APB2)
+    typedef bit_field_t<16, 0x1f> CFGR_RTCPRE; // HSE division factor for RTC clock
+    typedef bit_field_t<21, 0x3> CFGR_MCO1; // Microcontroller clock output 1
+    static constexpr uint32_t CFGR_I2SSRC = 0x800000; // I2S clock selection
+    typedef bit_field_t<24, 0x7> CFGR_MCO1PRE; // MCO1 prescaler
+    typedef bit_field_t<27, 0x7> CFGR_MCO2PRE; // MCO2 prescaler
+    typedef bit_field_t<30, 0x3> CFGR_MCO2; // Microcontroller clock output 2
 
     static constexpr uint32_t CIR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CIR_CSSC = 0x800000; // Clock security system interrupt clear

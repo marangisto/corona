@@ -88,10 +88,12 @@ memory MCU{..} = unlines
     [ "MEMORY"
     , "{"
     , "    FLASH(rx) : ORIGIN = 0x08000000, LENGTH = " <> show flash <> "k"
-    , "    RAM(rwx) : ORIGIN = 0x20000000, LENGTH = " <> show ram <> "k"
+    , "    RAM(rwx) : ORIGIN = 0x20000000, LENGTH = " <> show ram' <> "k"
     , "}"
     , ""
     ]
+    where ram' | family == "STM32H7" = 128
+               | otherwise = ram
 
 cleanCore :: String -> String
 cleanCore "cortex-m0+" = "cortex-m0plus"

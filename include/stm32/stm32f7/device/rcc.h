@@ -443,7 +443,7 @@ struct stm32f745_rcc_t
     volatile uint32_t SSCGR; // spread spectrum clock generation register
     volatile uint32_t PLLI2SCFGR; // PLLI2S configuration register
     volatile uint32_t PLLSAICFGR; // PLL configuration register
-    volatile uint32_t DKCFGR1; // dedicated clocks configuration register
+    volatile uint32_t DCKCFGR1; // dedicated clocks configuration register
     volatile uint32_t DKCFGR2; // dedicated clocks configuration register
 
     static constexpr uint32_t CR_RESET_VALUE = 0x83; // Reset value
@@ -809,13 +809,13 @@ struct stm32f745_rcc_t
     typedef bit_field_t<24, 0xf> PLLSAICFGR_PLLSAIQ; // PLLSAI division factor for SAI clock
     typedef bit_field_t<28, 0x7> PLLSAICFGR_PLLSAIR; // PLLSAI division factor for LCD clock
 
-    static constexpr uint32_t DKCFGR1_RESET_VALUE = 0x20003000; // Reset value
-    typedef bit_field_t<0, 0x1f> DKCFGR1_PLLI2SDIV; // PLLI2S division factor for SAI1 clock
-    typedef bit_field_t<8, 0x1f> DKCFGR1_PLLSAIDIVQ; // PLLSAI division factor for SAI1 clock
-    typedef bit_field_t<16, 0x3> DKCFGR1_PLLSAIDIVR; // division factor for LCD_CLK
-    typedef bit_field_t<20, 0x3> DKCFGR1_SAI1SEL; // SAI1 clock source selection
-    typedef bit_field_t<22, 0x3> DKCFGR1_SAI2SEL; // SAI2 clock source selection
-    static constexpr uint32_t DKCFGR1_TIMPRE = 0x1000000; // Timers clocks prescalers selection
+    static constexpr uint32_t DCKCFGR1_RESET_VALUE = 0x20003000; // Reset value
+    typedef bit_field_t<0, 0x1f> DCKCFGR1_PLLI2SDIV; // PLLI2S division factor for SAI1 clock
+    typedef bit_field_t<8, 0x1f> DCKCFGR1_PLLSAIDIVQ; // PLLSAI division factor for SAI1 clock
+    typedef bit_field_t<16, 0x3> DCKCFGR1_PLLSAIDIVR; // division factor for LCD_CLK
+    typedef bit_field_t<20, 0x3> DCKCFGR1_SAI1SEL; // SAI1 clock source selection
+    typedef bit_field_t<22, 0x3> DCKCFGR1_SAI2SEL; // SAI2 clock source selection
+    static constexpr uint32_t DCKCFGR1_TIMPRE = 0x1000000; // Timers clocks prescalers selection
 
     static constexpr uint32_t DKCFGR2_RESET_VALUE = 0x20003000; // Reset value
     typedef bit_field_t<0, 0x3> DKCFGR2_USART1SEL; // USART 1 clock source selection
@@ -871,7 +871,7 @@ struct stm32f767_rcc_t
     volatile uint32_t SSCGR; // spread spectrum clock generation register
     volatile uint32_t PLLI2SCFGR; // PLLI2S configuration register
     volatile uint32_t PLLSAICFGR; // PLL configuration register
-    volatile uint32_t DKCFGR1; // dedicated clocks configuration register
+    volatile uint32_t DCKCFGR1; // dedicated clocks configuration register
     volatile uint32_t DKCFGR2; // dedicated clocks configuration register
 
     static constexpr uint32_t CR_RESET_VALUE = 0x83; // Reset value
@@ -1237,13 +1237,13 @@ struct stm32f767_rcc_t
     typedef bit_field_t<24, 0xf> PLLSAICFGR_PLLSAIQ; // PLLSAI division factor for SAI clock
     typedef bit_field_t<28, 0x7> PLLSAICFGR_PLLSAIR; // PLLSAI division factor for LCD clock
 
-    static constexpr uint32_t DKCFGR1_RESET_VALUE = 0x20003000; // Reset value
-    typedef bit_field_t<0, 0x1f> DKCFGR1_PLLI2SDIV; // PLLI2S division factor for SAI1 clock
-    typedef bit_field_t<8, 0x1f> DKCFGR1_PLLSAIDIVQ; // PLLSAI division factor for SAI1 clock
-    typedef bit_field_t<16, 0x3> DKCFGR1_PLLSAIDIVR; // division factor for LCD_CLK
-    typedef bit_field_t<20, 0x3> DKCFGR1_SAI1SEL; // SAI1 clock source selection
-    typedef bit_field_t<22, 0x3> DKCFGR1_SAI2SEL; // SAI2 clock source selection
-    static constexpr uint32_t DKCFGR1_TIMPRE = 0x1000000; // Timers clocks prescalers selection
+    static constexpr uint32_t DCKCFGR1_RESET_VALUE = 0x20003000; // Reset value
+    typedef bit_field_t<0, 0x1f> DCKCFGR1_PLLI2SDIV; // PLLI2S division factor for SAI1 clock
+    typedef bit_field_t<8, 0x1f> DCKCFGR1_PLLSAIDIVQ; // PLLSAI division factor for SAI1 clock
+    typedef bit_field_t<16, 0x3> DCKCFGR1_PLLSAIDIVR; // division factor for LCD_CLK
+    typedef bit_field_t<20, 0x3> DCKCFGR1_SAI1SEL; // SAI1 clock source selection
+    typedef bit_field_t<22, 0x3> DCKCFGR1_SAI2SEL; // SAI2 clock source selection
+    static constexpr uint32_t DCKCFGR1_TIMPRE = 0x1000000; // Timers clocks prescalers selection
 
     static constexpr uint32_t DKCFGR2_RESET_VALUE = 0x20003000; // Reset value
     typedef bit_field_t<0, 0x3> DKCFGR2_USART1SEL; // USART 1 clock source selection

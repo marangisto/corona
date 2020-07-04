@@ -5,6 +5,18 @@
 #include <device/usart.h>
 #include <driver/usart.h>
 
+template<family_t>
+struct usart_clock
+{
+    static uint32_t freq() { return sys_clock::freq(); }
+};
+
+template<>
+struct usart_clock<STM32F7>
+{
+    static uint32_t freq() { return sys_clock::freq() >> 2; }
+};
+
 template<int INST, pin_t TX, pin_t RX> struct usart_t
 {
 public:
@@ -23,7 +35,7 @@ public:
         alternate_t<RX, traits::RX>::template setup<pull_up>();
 
         usart_traits<INST>::template enable<rcc_t>();   // enable clock
-        USART.BRR = sys_clock::freq() / baud;           // set baud-rate 
+        USART.BRR = usart_clock<family>::freq() / baud; // set baud-rate 
         USART.CR1 = _::CR1_RESET_VALUE      // reset control register 1
                   | _::CR1_TE               // enable transmitter
                   | _::CR1_RE               // enable receiver

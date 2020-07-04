@@ -3,13 +3,15 @@
 
 using led = board::led1;
 using probe = board::probe;
-using mco = mco_t<PA8>;
+using mco1 = mco_t<PA8>;
+using mco2 = mco_t<PC9>;
 
 int main()
 {
     led::setup();
     probe::setup<push_pull, high_speed>();
-    mco::setup<mco_pll, 5>();
+    mco1::setup<mco_hsi, 5>();
+    mco2::setup<mco_sys, 5>();
 
     for (;;)
     {

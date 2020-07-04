@@ -81,11 +81,11 @@ static inline uint32_t clock_tree_init()
 
     RCC.DCKCFGR1 |= _::DCKCFGR1_TIMPRE;         // use HCLK for timers
 
+    */
     fpu_cpacr_t::V.CPACR |= fpu_cpacr_t::T::CPACR_CP::W(0xf); // enable fpu
     __asm volatile ("dsb");         // data pipe-line reset
     __asm volatile ("isb");         // instruction pipe-line reset
-    return 216000000;
-    */
-    return 8000000;
+    //return 216000000;
+    return 64000000;
 }
 

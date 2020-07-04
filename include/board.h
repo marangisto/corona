@@ -166,6 +166,19 @@ struct board_traits_t<NUCLEO_G431RB>
     static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART2;
 };
 
+template<>
+struct board_traits_t<NUCLEO_H743ZI>
+{
+    using led1 = output_t<PB0>;
+    using led2 = output_t<PE1>;
+    using led3 = output_t<PB14>;
+    using btn1 = button_t<PC13>;
+    static constexpr input_type_t btn_type = pull_down;
+    using probe = output_t<PE13>;
+    using serial = usart_t<3, PD8, PD9>;
+    static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART3;
+};
+
 static constexpr board_t target_board = BOARD;
 
 using board = board_traits_t<target_board>;

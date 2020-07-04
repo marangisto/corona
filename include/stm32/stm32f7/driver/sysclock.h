@@ -21,7 +21,11 @@ static inline uint32_t clock_tree_init()
         _& FLASH = flash_t::V;
         constexpr uint8_t wait_states = 0x7;    // 216MHz at 2.7-3.6V
 
-        FLASH.ACR = _::ACR_PRFTEN | _::ACR_LATENCY::W(wait_states);
+        FLASH.ACR = _::ACR_LATENCY::W(wait_states)
+                  | _::ACR_ARTEN
+                  | _::ACR_PRFTEN
+                  ;
+
         while (_::ACR_LATENCY::R(FLASH.ACR) != wait_states); // take effect
     }
 

@@ -133,6 +133,7 @@ struct board_traits_t<STM32F412G_DISCO>
     static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART2;
 };
 
+/*
 template<>
 struct board_traits_t<NUCLEO_F767ZI>
 {
@@ -143,6 +144,7 @@ struct board_traits_t<NUCLEO_F767ZI>
     using serial = usart_t<3, PD8, PD9>;
     static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART3;
 };
+*/
 
 template<>
 struct board_traits_t<NUCLEO_G070RB>
@@ -165,7 +167,7 @@ struct board_traits_t<NUCLEO_G431RB>
     using serial = usart_t<2, PA2, PA3>;
     static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART2;
 };
-
+/*
 template<>
 struct board_traits_t<NUCLEO_H743ZI>
 {
@@ -177,6 +179,18 @@ struct board_traits_t<NUCLEO_H743ZI>
     using probe = output_t<PE13>;
     using serial = usart_t<3, PD8, PD9>;
     static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART3;
+};
+*/
+
+template<>
+struct board_traits_t<NUCLEO_L073RZ>
+{
+    using led1 = output_t<PA5>;
+    using btn1 = button_t<PC13>;
+    static constexpr input_type_t btn_type = pull_up;
+    using probe = output_t<PA8>;
+    using serial = usart_t<2, PA2, PA3>;
+    static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART2;
 };
 
 static constexpr board_t target_board = BOARD;

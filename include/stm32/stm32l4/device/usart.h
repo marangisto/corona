@@ -167,7 +167,7 @@ struct stm32l412_usart1_t
 
 struct stm32l476_usart1_t
 {
-    volatile uint32_t 0X00000000; // Control register 1
+    volatile uint32_t CR1; // Control register 1
     volatile uint32_t CR2; // Control register 2
     volatile uint32_t CR3; // Control register 3
     volatile uint32_t BRR; // Baud rate register
@@ -179,36 +179,36 @@ struct stm32l476_usart1_t
     volatile uint32_t RDR; // Receive data register
     volatile uint32_t TDR; // Transmit data register
 
-    static constexpr uint32_t 0X00000000_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t 0X00000000_M1 = 0x10000000; // Word length
-    static constexpr uint32_t 0X00000000_EOBIE = 0x8000000; // End of Block interrupt enable
-    static constexpr uint32_t 0X00000000_RTOIE = 0x4000000; // Receiver timeout interrupt enable
-    static constexpr uint32_t 0X00000000_DEAT4 = 0x2000000; // Driver Enable assertion time
-    static constexpr uint32_t 0X00000000_DEAT3 = 0x1000000; // DEAT3
-    static constexpr uint32_t 0X00000000_DEAT2 = 0x800000; // DEAT2
-    static constexpr uint32_t 0X00000000_DEAT1 = 0x400000; // DEAT1
-    static constexpr uint32_t 0X00000000_DEAT0 = 0x200000; // DEAT0
-    static constexpr uint32_t 0X00000000_DEDT4 = 0x100000; // Driver Enable de-assertion time
-    static constexpr uint32_t 0X00000000_DEDT3 = 0x80000; // DEDT3
-    static constexpr uint32_t 0X00000000_DEDT2 = 0x40000; // DEDT2
-    static constexpr uint32_t 0X00000000_DEDT1 = 0x20000; // DEDT1
-    static constexpr uint32_t 0X00000000_DEDT0 = 0x10000; // DEDT0
-    static constexpr uint32_t 0X00000000_OVER8 = 0x8000; // Oversampling mode
-    static constexpr uint32_t 0X00000000_CMIE = 0x4000; // Character match interrupt enable
-    static constexpr uint32_t 0X00000000_MME = 0x2000; // Mute mode enable
-    static constexpr uint32_t 0X00000000_M0 = 0x1000; // Word length
-    static constexpr uint32_t 0X00000000_WAKE = 0x800; // Receiver wakeup method
-    static constexpr uint32_t 0X00000000_PCE = 0x400; // Parity control enable
-    static constexpr uint32_t 0X00000000_PS = 0x200; // Parity selection
-    static constexpr uint32_t 0X00000000_PEIE = 0x100; // PE interrupt enable
-    static constexpr uint32_t 0X00000000_TXEIE = 0x80; // interrupt enable
-    static constexpr uint32_t 0X00000000_TCIE = 0x40; // Transmission complete interrupt enable
-    static constexpr uint32_t 0X00000000_RXNEIE = 0x20; // RXNE interrupt enable
-    static constexpr uint32_t 0X00000000_IDLEIE = 0x10; // IDLE interrupt enable
-    static constexpr uint32_t 0X00000000_TE = 0x8; // Transmitter enable
-    static constexpr uint32_t 0X00000000_RE = 0x4; // Receiver enable
-    static constexpr uint32_t 0X00000000_UESM = 0x2; // USART enable in Stop mode
-    static constexpr uint32_t 0X00000000_UE = 0x1; // USART enable
+    static constexpr uint32_t CR1_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t CR1_M1 = 0x10000000; // Word length
+    static constexpr uint32_t CR1_EOBIE = 0x8000000; // End of Block interrupt enable
+    static constexpr uint32_t CR1_RTOIE = 0x4000000; // Receiver timeout interrupt enable
+    static constexpr uint32_t CR1_DEAT4 = 0x2000000; // Driver Enable assertion time
+    static constexpr uint32_t CR1_DEAT3 = 0x1000000; // DEAT3
+    static constexpr uint32_t CR1_DEAT2 = 0x800000; // DEAT2
+    static constexpr uint32_t CR1_DEAT1 = 0x400000; // DEAT1
+    static constexpr uint32_t CR1_DEAT0 = 0x200000; // DEAT0
+    static constexpr uint32_t CR1_DEDT4 = 0x100000; // Driver Enable de-assertion time
+    static constexpr uint32_t CR1_DEDT3 = 0x80000; // DEDT3
+    static constexpr uint32_t CR1_DEDT2 = 0x40000; // DEDT2
+    static constexpr uint32_t CR1_DEDT1 = 0x20000; // DEDT1
+    static constexpr uint32_t CR1_DEDT0 = 0x10000; // DEDT0
+    static constexpr uint32_t CR1_OVER8 = 0x8000; // Oversampling mode
+    static constexpr uint32_t CR1_CMIE = 0x4000; // Character match interrupt enable
+    static constexpr uint32_t CR1_MME = 0x2000; // Mute mode enable
+    static constexpr uint32_t CR1_M0 = 0x1000; // Word length
+    static constexpr uint32_t CR1_WAKE = 0x800; // Receiver wakeup method
+    static constexpr uint32_t CR1_PCE = 0x400; // Parity control enable
+    static constexpr uint32_t CR1_PS = 0x200; // Parity selection
+    static constexpr uint32_t CR1_PEIE = 0x100; // PE interrupt enable
+    static constexpr uint32_t CR1_TXEIE = 0x80; // interrupt enable
+    static constexpr uint32_t CR1_TCIE = 0x40; // Transmission complete interrupt enable
+    static constexpr uint32_t CR1_RXNEIE = 0x20; // RXNE interrupt enable
+    static constexpr uint32_t CR1_IDLEIE = 0x10; // IDLE interrupt enable
+    static constexpr uint32_t CR1_TE = 0x8; // Transmitter enable
+    static constexpr uint32_t CR1_RE = 0x4; // Receiver enable
+    static constexpr uint32_t CR1_UESM = 0x2; // USART enable in Stop mode
+    static constexpr uint32_t CR1_UE = 0x1; // USART enable
 
     static constexpr uint32_t CR2_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<28, 0xf> CR2_ADD4_7; // Address of the USART node

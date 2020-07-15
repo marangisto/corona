@@ -112,6 +112,18 @@ struct board_traits_t<STM32F0_DISCO>
 };
 
 template<>
+struct board_traits_t<NUCLEO_F072RB>
+{
+    using led1 = output_t<PA5>;
+    using btn1 = button_t<PC13>;
+    static constexpr input_type_t btn_type = pull_up;
+    using probe = output_t<PA8>;
+    using serial = usart_t<2, PA2, PA3>;
+    static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART2;
+};
+
+/*
+template<>
 struct board_traits_t<NUCLEO_F207ZG>
 {
     using led1 = output_t<PB0>;
@@ -123,6 +135,7 @@ struct board_traits_t<NUCLEO_F207ZG>
     using serial = usart_t<3, PD8, PD9>;
     static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART3;
 };
+*/
 
 template<>
 struct board_traits_t<STM32F411E_DISCO>

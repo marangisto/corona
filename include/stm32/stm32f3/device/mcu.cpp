@@ -446,6 +446,11 @@ typename peripheral_t<STM32F373, GPIOA>::T&
         <typename peripheral_t<STM32F373, GPIOA>::T*
         >(0x48000000);
 
+typename peripheral_t<STM32F3x4, GPIOA>::T&
+    peripheral_t<STM32F3x4, GPIOA>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F3x4, GPIOA>::T*
+        >(0x48000000);
+
 typename peripheral_t<STM32F3x8, GPIOA>::T&
     peripheral_t<STM32F3x8, GPIOA>::V = *reinterpret_cast
         <typename peripheral_t<STM32F3x8, GPIOA>::T*
@@ -455,11 +460,6 @@ typename peripheral_t<STM32F3x8, GPIOH>::T&
     peripheral_t<STM32F3x8, GPIOH>::V = *reinterpret_cast
         <typename peripheral_t<STM32F3x8, GPIOH>::T*
         >(0x48001c00);
-
-typename peripheral_t<STM32F3x4, GPIOA>::T&
-    peripheral_t<STM32F3x4, GPIOA>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F3x4, GPIOA>::T*
-        >(0x48000000);
 
 typename peripheral_t<STM32F301, GPIOB>::T&
     peripheral_t<STM32F301, GPIOB>::V = *reinterpret_cast

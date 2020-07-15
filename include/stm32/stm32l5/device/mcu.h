@@ -35,12 +35,10 @@ enum mcu_t
     , STM32L562CEUxP
     , STM32L562MEYxP
     , STM32L562MEYxQ
-    , STM32L562QEIx
     , STM32L562QEIxP
     , STM32L562QEIxQ
     , STM32L562RETx
     , STM32L562RETxP
-    , STM32L562RETxQ
     , STM32L562VETx
     , STM32L562VETxQ
     , STM32L562ZETx
@@ -418,13 +416,6 @@ template<> struct mcu_traits<STM32L562MEYxQ>
     static constexpr gpio_conf_t gpio_conf = STM32L55x;
 };
 
-template<> struct mcu_traits<STM32L562QEIx>
-{
-    static constexpr family_t family = STM32L5;
-    static constexpr svd_t svd = STM32L562;
-    static constexpr gpio_conf_t gpio_conf = STM32L55x;
-};
-
 template<> struct mcu_traits<STM32L562QEIxP>
 {
     static constexpr family_t family = STM32L5;
@@ -447,13 +438,6 @@ template<> struct mcu_traits<STM32L562RETx>
 };
 
 template<> struct mcu_traits<STM32L562RETxP>
-{
-    static constexpr family_t family = STM32L5;
-    static constexpr svd_t svd = STM32L562;
-    static constexpr gpio_conf_t gpio_conf = STM32L55x;
-};
-
-template<> struct mcu_traits<STM32L562RETxQ>
 {
     static constexpr family_t family = STM32L5;
     static constexpr svd_t svd = STM32L562;

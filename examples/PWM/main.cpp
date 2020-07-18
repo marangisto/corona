@@ -4,7 +4,7 @@
 using tim = tim_t<3>;
 using aux = tim_t<2>;
 using pwma = tim::pwm<CH1, PB4>;
-using pwmb = tim::pwm<CH2, PB5>;
+using pwmb = tim::pwm<CH2, PB5>;    // FIXME: broken on L073?
 using pwmc = tim::pwm<CH3, PB0>;
 using pwmd = tim::pwm<CH4, PB1>;
 using led = board::led1;

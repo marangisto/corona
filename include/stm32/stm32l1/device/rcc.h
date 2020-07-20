@@ -133,14 +133,14 @@ struct stm32l100_rcc_t
     static constexpr uint32_t AHBENR_DMA1EN = 0x1000000; // DMA1 clock enable
     static constexpr uint32_t AHBENR_FLASHEN = 0x8000; // FLITF clock enable
     static constexpr uint32_t AHBENR_CRCEN = 0x1000; // CRC clock enable
-    static constexpr uint32_t AHBENR_GPIOPGEN = 0x80; // IO port G clock enable
-    static constexpr uint32_t AHBENR_GPIOPFEN = 0x40; // IO port F clock enable
-    static constexpr uint32_t AHBENR_GPIOPHEN = 0x20; // IO port H clock enable
-    static constexpr uint32_t AHBENR_GPIOPEEN = 0x10; // IO port E clock enable
-    static constexpr uint32_t AHBENR_GPIOPDEN = 0x8; // IO port D clock enable
-    static constexpr uint32_t AHBENR_GPIOPCEN = 0x4; // IO port C clock enable
-    static constexpr uint32_t AHBENR_GPIOPBEN = 0x2; // IO port B clock enable
-    static constexpr uint32_t AHBENR_GPIOPAEN = 0x1; // IO port A clock enable
+    static constexpr uint32_t AHBENR_GPIOGEN = 0x80; // IO port G clock enable
+    static constexpr uint32_t AHBENR_GPIOFEN = 0x40; // IO port F clock enable
+    static constexpr uint32_t AHBENR_GPIOHEN = 0x20; // IO port H clock enable
+    static constexpr uint32_t AHBENR_GPIOEEN = 0x10; // IO port E clock enable
+    static constexpr uint32_t AHBENR_GPIODEN = 0x8; // IO port D clock enable
+    static constexpr uint32_t AHBENR_GPIOCEN = 0x4; // IO port C clock enable
+    static constexpr uint32_t AHBENR_GPIOBEN = 0x2; // IO port B clock enable
+    static constexpr uint32_t AHBENR_GPIOAEN = 0x1; // IO port A clock enable
 
     static constexpr uint32_t APB2ENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t APB2ENR_USART1EN = 0x4000; // USART1 clock enable
@@ -364,14 +364,14 @@ struct stm32l152_rcc_t
     static constexpr uint32_t AHBENR_DMA1EN = 0x1000000; // DMA1 clock enable
     static constexpr uint32_t AHBENR_FLASHEN = 0x8000; // FLITF clock enable
     static constexpr uint32_t AHBENR_CRCEN = 0x1000; // CRC clock enable
-    static constexpr uint32_t AHBENR_GPIOPGEN = 0x80; // IO port G clock enable
-    static constexpr uint32_t AHBENR_GPIOPFEN = 0x40; // IO port F clock enable
-    static constexpr uint32_t AHBENR_GPIOPHEN = 0x20; // IO port H clock enable
-    static constexpr uint32_t AHBENR_GPIOPEEN = 0x10; // IO port E clock enable
-    static constexpr uint32_t AHBENR_GPIOPDEN = 0x8; // IO port D clock enable
-    static constexpr uint32_t AHBENR_GPIOPCEN = 0x4; // IO port C clock enable
-    static constexpr uint32_t AHBENR_GPIOPBEN = 0x2; // IO port B clock enable
-    static constexpr uint32_t AHBENR_GPIOPAEN = 0x1; // IO port A clock enable
+    static constexpr uint32_t AHBENR_GPIOGEN = 0x80; // IO port G clock enable
+    static constexpr uint32_t AHBENR_GPIOFEN = 0x40; // IO port F clock enable
+    static constexpr uint32_t AHBENR_GPIOHEN = 0x20; // IO port H clock enable
+    static constexpr uint32_t AHBENR_GPIOEEN = 0x10; // IO port E clock enable
+    static constexpr uint32_t AHBENR_GPIODEN = 0x8; // IO port D clock enable
+    static constexpr uint32_t AHBENR_GPIOCEN = 0x4; // IO port C clock enable
+    static constexpr uint32_t AHBENR_GPIOBEN = 0x2; // IO port B clock enable
+    static constexpr uint32_t AHBENR_GPIOAEN = 0x1; // IO port A clock enable
 
     static constexpr uint32_t APB2ENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t APB2ENR_USART1EN = 0x4000; // USART1 clock enable

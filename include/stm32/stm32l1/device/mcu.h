@@ -203,8 +203,6 @@ enum periph_t
     , TIM9
     , TIM10
     , TIM11
-    , UART4
-    , UART5
     , USART1
     , USART2
     , USART3

@@ -12,7 +12,7 @@ struct stm32l100_gpioa_t
 {
     volatile uint32_t MODER; // GPIO port mode register
     volatile uint32_t OTYPER; // GPIO port output type register
-    volatile uint32_t OSPEEDER; // GPIO port output speed register
+    volatile uint32_t OSPEEDR; // GPIO port output speed register
     volatile uint32_t PUPDR; // GPIO port pull-up/pull-down register
     volatile uint32_t IDR; // GPIO port input data register
     volatile uint32_t ODR; // GPIO port output data register
@@ -57,23 +57,23 @@ struct stm32l100_gpioa_t
     static constexpr uint32_t OTYPER_OT1 = 0x2; // Port x configuration bits (y = 0..15)
     static constexpr uint32_t OTYPER_OT0 = 0x1; // Port x configuration bits (y = 0..15)
 
-    static constexpr uint32_t OSPEEDER_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<30, 0x3> OSPEEDER_OSPEEDR15; // OSPEEDR15
-    typedef bit_field_t<28, 0x3> OSPEEDER_OSPEEDR14; // OSPEEDR14
-    typedef bit_field_t<26, 0x3> OSPEEDER_OSPEEDR13; // OSPEEDR13
-    typedef bit_field_t<24, 0x3> OSPEEDER_OSPEEDR12; // OSPEEDR12
-    typedef bit_field_t<22, 0x3> OSPEEDER_OSPEEDR11; // OSPEEDR11
-    typedef bit_field_t<20, 0x3> OSPEEDER_OSPEEDR10; // OSPEEDR10
-    typedef bit_field_t<18, 0x3> OSPEEDER_OSPEEDR9; // OSPEEDR9
-    typedef bit_field_t<16, 0x3> OSPEEDER_OSPEEDR8; // OSPEEDR8
-    typedef bit_field_t<14, 0x3> OSPEEDER_OSPEEDR7; // OSPEEDR7
-    typedef bit_field_t<12, 0x3> OSPEEDER_OSPEEDR6; // OSPEEDR6
-    typedef bit_field_t<10, 0x3> OSPEEDER_OSPEEDR5; // OSPEEDR5
-    typedef bit_field_t<8, 0x3> OSPEEDER_OSPEEDR4; // OSPEEDR4
-    typedef bit_field_t<6, 0x3> OSPEEDER_OSPEEDR3; // OSPEEDR3
-    typedef bit_field_t<4, 0x3> OSPEEDER_OSPEEDR2; // OSPEEDR2
-    typedef bit_field_t<2, 0x3> OSPEEDER_OSPEEDR1; // OSPEEDR1
-    typedef bit_field_t<0, 0x3> OSPEEDER_OSPEEDR0; // OSPEEDR0
+    static constexpr uint32_t OSPEEDR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<30, 0x3> OSPEEDR_OSPEEDR15; // OSPEEDR15
+    typedef bit_field_t<28, 0x3> OSPEEDR_OSPEEDR14; // OSPEEDR14
+    typedef bit_field_t<26, 0x3> OSPEEDR_OSPEEDR13; // OSPEEDR13
+    typedef bit_field_t<24, 0x3> OSPEEDR_OSPEEDR12; // OSPEEDR12
+    typedef bit_field_t<22, 0x3> OSPEEDR_OSPEEDR11; // OSPEEDR11
+    typedef bit_field_t<20, 0x3> OSPEEDR_OSPEEDR10; // OSPEEDR10
+    typedef bit_field_t<18, 0x3> OSPEEDR_OSPEEDR9; // OSPEEDR9
+    typedef bit_field_t<16, 0x3> OSPEEDR_OSPEEDR8; // OSPEEDR8
+    typedef bit_field_t<14, 0x3> OSPEEDR_OSPEEDR7; // OSPEEDR7
+    typedef bit_field_t<12, 0x3> OSPEEDR_OSPEEDR6; // OSPEEDR6
+    typedef bit_field_t<10, 0x3> OSPEEDR_OSPEEDR5; // OSPEEDR5
+    typedef bit_field_t<8, 0x3> OSPEEDR_OSPEEDR4; // OSPEEDR4
+    typedef bit_field_t<6, 0x3> OSPEEDR_OSPEEDR3; // OSPEEDR3
+    typedef bit_field_t<4, 0x3> OSPEEDR_OSPEEDR2; // OSPEEDR2
+    typedef bit_field_t<2, 0x3> OSPEEDR_OSPEEDR1; // OSPEEDR1
+    typedef bit_field_t<0, 0x3> OSPEEDR_OSPEEDR0; // OSPEEDR0
 
     static constexpr uint32_t PUPDR_RESET_VALUE = 0x64000000; // Reset value
     typedef bit_field_t<30, 0x3> PUPDR_PUPDR15; // Port x configuration bits (y = 0..15)
@@ -209,7 +209,7 @@ struct stm32l100_gpiob_t
 {
     volatile uint32_t MODER; // GPIO port mode register
     volatile uint32_t OTYPER; // GPIO port output type register
-    volatile uint32_t OSPEEDER; // GPIO port output speed register
+    volatile uint32_t OSPEEDR; // GPIO port output speed register
     volatile uint32_t PUPDR; // GPIO port pull-up/pull-down register
     volatile uint32_t IDR; // GPIO port input data register
     volatile uint32_t ODR; // GPIO port output data register
@@ -254,23 +254,23 @@ struct stm32l100_gpiob_t
     static constexpr uint32_t OTYPER_OT1 = 0x2; // Port x configuration bits (y = 0..15)
     static constexpr uint32_t OTYPER_OT0 = 0x1; // Port x configuration bits (y = 0..15)
 
-    static constexpr uint32_t OSPEEDER_RESET_VALUE = 0xc0; // Reset value
-    typedef bit_field_t<30, 0x3> OSPEEDER_OSPEEDR15; // OSPEEDR15
-    typedef bit_field_t<28, 0x3> OSPEEDER_OSPEEDR14; // OSPEEDR14
-    typedef bit_field_t<26, 0x3> OSPEEDER_OSPEEDR13; // OSPEEDR13
-    typedef bit_field_t<24, 0x3> OSPEEDER_OSPEEDR12; // OSPEEDR12
-    typedef bit_field_t<22, 0x3> OSPEEDER_OSPEEDR11; // OSPEEDR11
-    typedef bit_field_t<20, 0x3> OSPEEDER_OSPEEDR10; // OSPEEDR10
-    typedef bit_field_t<18, 0x3> OSPEEDER_OSPEEDR9; // OSPEEDR9
-    typedef bit_field_t<16, 0x3> OSPEEDER_OSPEEDR8; // OSPEEDR8
-    typedef bit_field_t<14, 0x3> OSPEEDER_OSPEEDR7; // OSPEEDR7
-    typedef bit_field_t<12, 0x3> OSPEEDER_OSPEEDR6; // OSPEEDR6
-    typedef bit_field_t<10, 0x3> OSPEEDER_OSPEEDR5; // OSPEEDR5
-    typedef bit_field_t<8, 0x3> OSPEEDER_OSPEEDR4; // OSPEEDR4
-    typedef bit_field_t<6, 0x3> OSPEEDER_OSPEEDR3; // OSPEEDR3
-    typedef bit_field_t<4, 0x3> OSPEEDER_OSPEEDR2; // OSPEEDR2
-    typedef bit_field_t<2, 0x3> OSPEEDER_OSPEEDR1; // OSPEEDR1
-    typedef bit_field_t<0, 0x3> OSPEEDER_OSPEEDR0; // OSPEEDR0
+    static constexpr uint32_t OSPEEDR_RESET_VALUE = 0xc0; // Reset value
+    typedef bit_field_t<30, 0x3> OSPEEDR_OSPEEDR15; // OSPEEDR15
+    typedef bit_field_t<28, 0x3> OSPEEDR_OSPEEDR14; // OSPEEDR14
+    typedef bit_field_t<26, 0x3> OSPEEDR_OSPEEDR13; // OSPEEDR13
+    typedef bit_field_t<24, 0x3> OSPEEDR_OSPEEDR12; // OSPEEDR12
+    typedef bit_field_t<22, 0x3> OSPEEDR_OSPEEDR11; // OSPEEDR11
+    typedef bit_field_t<20, 0x3> OSPEEDR_OSPEEDR10; // OSPEEDR10
+    typedef bit_field_t<18, 0x3> OSPEEDR_OSPEEDR9; // OSPEEDR9
+    typedef bit_field_t<16, 0x3> OSPEEDR_OSPEEDR8; // OSPEEDR8
+    typedef bit_field_t<14, 0x3> OSPEEDR_OSPEEDR7; // OSPEEDR7
+    typedef bit_field_t<12, 0x3> OSPEEDR_OSPEEDR6; // OSPEEDR6
+    typedef bit_field_t<10, 0x3> OSPEEDR_OSPEEDR5; // OSPEEDR5
+    typedef bit_field_t<8, 0x3> OSPEEDR_OSPEEDR4; // OSPEEDR4
+    typedef bit_field_t<6, 0x3> OSPEEDR_OSPEEDR3; // OSPEEDR3
+    typedef bit_field_t<4, 0x3> OSPEEDR_OSPEEDR2; // OSPEEDR2
+    typedef bit_field_t<2, 0x3> OSPEEDR_OSPEEDR1; // OSPEEDR1
+    typedef bit_field_t<0, 0x3> OSPEEDR_OSPEEDR0; // OSPEEDR0
 
     static constexpr uint32_t PUPDR_RESET_VALUE = 0x100; // Reset value
     typedef bit_field_t<30, 0x3> PUPDR_PUPDR15; // Port x configuration bits (y = 0..15)
@@ -406,7 +406,7 @@ struct stm32l100_gpioc_t
 {
     volatile uint32_t MODER; // GPIO port mode register
     volatile uint32_t OTYPER; // GPIO port output type register
-    volatile uint32_t OSPEEDER; // GPIO port output speed register
+    volatile uint32_t OSPEEDR; // GPIO port output speed register
     volatile uint32_t PUPDR; // GPIO port pull-up/pull-down register
     volatile uint32_t IDR; // GPIO port input data register
     volatile uint32_t ODR; // GPIO port output data register
@@ -451,23 +451,23 @@ struct stm32l100_gpioc_t
     static constexpr uint32_t OTYPER_OT1 = 0x2; // Port x configuration bits (y = 0..15)
     static constexpr uint32_t OTYPER_OT0 = 0x1; // Port x configuration bits (y = 0..15)
 
-    static constexpr uint32_t OSPEEDER_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<30, 0x3> OSPEEDER_OSPEEDR15; // OSPEEDR15
-    typedef bit_field_t<28, 0x3> OSPEEDER_OSPEEDR14; // OSPEEDR14
-    typedef bit_field_t<26, 0x3> OSPEEDER_OSPEEDR13; // OSPEEDR13
-    typedef bit_field_t<24, 0x3> OSPEEDER_OSPEEDR12; // OSPEEDR12
-    typedef bit_field_t<22, 0x3> OSPEEDER_OSPEEDR11; // OSPEEDR11
-    typedef bit_field_t<20, 0x3> OSPEEDER_OSPEEDR10; // OSPEEDR10
-    typedef bit_field_t<18, 0x3> OSPEEDER_OSPEEDR9; // OSPEEDR9
-    typedef bit_field_t<16, 0x3> OSPEEDER_OSPEEDR8; // OSPEEDR8
-    typedef bit_field_t<14, 0x3> OSPEEDER_OSPEEDR7; // OSPEEDR7
-    typedef bit_field_t<12, 0x3> OSPEEDER_OSPEEDR6; // OSPEEDR6
-    typedef bit_field_t<10, 0x3> OSPEEDER_OSPEEDR5; // OSPEEDR5
-    typedef bit_field_t<8, 0x3> OSPEEDER_OSPEEDR4; // OSPEEDR4
-    typedef bit_field_t<6, 0x3> OSPEEDER_OSPEEDR3; // OSPEEDR3
-    typedef bit_field_t<4, 0x3> OSPEEDER_OSPEEDR2; // OSPEEDR2
-    typedef bit_field_t<2, 0x3> OSPEEDER_OSPEEDR1; // OSPEEDR1
-    typedef bit_field_t<0, 0x3> OSPEEDER_OSPEEDR0; // OSPEEDR0
+    static constexpr uint32_t OSPEEDR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<30, 0x3> OSPEEDR_OSPEEDR15; // OSPEEDR15
+    typedef bit_field_t<28, 0x3> OSPEEDR_OSPEEDR14; // OSPEEDR14
+    typedef bit_field_t<26, 0x3> OSPEEDR_OSPEEDR13; // OSPEEDR13
+    typedef bit_field_t<24, 0x3> OSPEEDR_OSPEEDR12; // OSPEEDR12
+    typedef bit_field_t<22, 0x3> OSPEEDR_OSPEEDR11; // OSPEEDR11
+    typedef bit_field_t<20, 0x3> OSPEEDR_OSPEEDR10; // OSPEEDR10
+    typedef bit_field_t<18, 0x3> OSPEEDR_OSPEEDR9; // OSPEEDR9
+    typedef bit_field_t<16, 0x3> OSPEEDR_OSPEEDR8; // OSPEEDR8
+    typedef bit_field_t<14, 0x3> OSPEEDR_OSPEEDR7; // OSPEEDR7
+    typedef bit_field_t<12, 0x3> OSPEEDR_OSPEEDR6; // OSPEEDR6
+    typedef bit_field_t<10, 0x3> OSPEEDR_OSPEEDR5; // OSPEEDR5
+    typedef bit_field_t<8, 0x3> OSPEEDR_OSPEEDR4; // OSPEEDR4
+    typedef bit_field_t<6, 0x3> OSPEEDR_OSPEEDR3; // OSPEEDR3
+    typedef bit_field_t<4, 0x3> OSPEEDR_OSPEEDR2; // OSPEEDR2
+    typedef bit_field_t<2, 0x3> OSPEEDR_OSPEEDR1; // OSPEEDR1
+    typedef bit_field_t<0, 0x3> OSPEEDR_OSPEEDR0; // OSPEEDR0
 
     static constexpr uint32_t PUPDR_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<30, 0x3> PUPDR_PUPDR15; // Port x configuration bits (y = 0..15)
@@ -816,6 +816,18 @@ template<> struct gpio_traits<0>
     using gpio = gpioa_t;
 
     template<typename RCC>
+    static void enable()
+    {
+        RCC::V.AHBENR |= RCC::T::AHBENR_GPIOAEN;
+    }
+
+    template<typename RCC>
+    static void disable()
+    {
+        RCC::V.AHBENR &= ~RCC::T::AHBENR_GPIOAEN;
+    }
+
+    template<typename RCC>
     static void reset()
     {
         RCC::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOARST;
@@ -825,6 +837,18 @@ template<> struct gpio_traits<0>
 template<> struct gpio_traits<1>
 {
     using gpio = gpiob_t;
+
+    template<typename RCC>
+    static void enable()
+    {
+        RCC::V.AHBENR |= RCC::T::AHBENR_GPIOBEN;
+    }
+
+    template<typename RCC>
+    static void disable()
+    {
+        RCC::V.AHBENR &= ~RCC::T::AHBENR_GPIOBEN;
+    }
 
     template<typename RCC>
     static void reset()
@@ -838,6 +862,18 @@ template<> struct gpio_traits<2>
     using gpio = gpioc_t;
 
     template<typename RCC>
+    static void enable()
+    {
+        RCC::V.AHBENR |= RCC::T::AHBENR_GPIOCEN;
+    }
+
+    template<typename RCC>
+    static void disable()
+    {
+        RCC::V.AHBENR &= ~RCC::T::AHBENR_GPIOCEN;
+    }
+
+    template<typename RCC>
     static void reset()
     {
         RCC::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOCRST;
@@ -847,6 +883,18 @@ template<> struct gpio_traits<2>
 template<> struct gpio_traits<3>
 {
     using gpio = gpiod_t;
+
+    template<typename RCC>
+    static void enable()
+    {
+        RCC::V.AHBENR |= RCC::T::AHBENR_GPIODEN;
+    }
+
+    template<typename RCC>
+    static void disable()
+    {
+        RCC::V.AHBENR &= ~RCC::T::AHBENR_GPIODEN;
+    }
 
     template<typename RCC>
     static void reset()
@@ -860,6 +908,18 @@ template<> struct gpio_traits<4>
     using gpio = gpioe_t;
 
     template<typename RCC>
+    static void enable()
+    {
+        RCC::V.AHBENR |= RCC::T::AHBENR_GPIOEEN;
+    }
+
+    template<typename RCC>
+    static void disable()
+    {
+        RCC::V.AHBENR &= ~RCC::T::AHBENR_GPIOEEN;
+    }
+
+    template<typename RCC>
     static void reset()
     {
         RCC::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOERST;
@@ -869,6 +929,18 @@ template<> struct gpio_traits<4>
 template<> struct gpio_traits<5>
 {
     using gpio = gpiof_t;
+
+    template<typename RCC>
+    static void enable()
+    {
+        RCC::V.AHBENR |= RCC::T::AHBENR_GPIOFEN;
+    }
+
+    template<typename RCC>
+    static void disable()
+    {
+        RCC::V.AHBENR &= ~RCC::T::AHBENR_GPIOFEN;
+    }
 
     template<typename RCC>
     static void reset()
@@ -882,6 +954,18 @@ template<> struct gpio_traits<6>
     using gpio = gpiog_t;
 
     template<typename RCC>
+    static void enable()
+    {
+        RCC::V.AHBENR |= RCC::T::AHBENR_GPIOGEN;
+    }
+
+    template<typename RCC>
+    static void disable()
+    {
+        RCC::V.AHBENR &= ~RCC::T::AHBENR_GPIOGEN;
+    }
+
+    template<typename RCC>
     static void reset()
     {
         RCC::V.AHBRSTR |= RCC::T::AHBRSTR_GPIOGRST;
@@ -891,6 +975,18 @@ template<> struct gpio_traits<6>
 template<> struct gpio_traits<7>
 {
     using gpio = gpioh_t;
+
+    template<typename RCC>
+    static void enable()
+    {
+        RCC::V.AHBENR |= RCC::T::AHBENR_GPIOHEN;
+    }
+
+    template<typename RCC>
+    static void disable()
+    {
+        RCC::V.AHBENR &= ~RCC::T::AHBENR_GPIOHEN;
+    }
 
     template<typename RCC>
     static void reset()

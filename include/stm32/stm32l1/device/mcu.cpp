@@ -976,14 +976,14 @@ typename peripheral_t<STM32L100, USART5>::T&
         <typename peripheral_t<STM32L100, USART5>::T*
         >(0x40005000);
 
-typename peripheral_t<STM32L151, UART4>::T&
-    peripheral_t<STM32L151, UART4>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L151, UART4>::T*
+typename peripheral_t<STM32L151, USART4>::T&
+    peripheral_t<STM32L151, USART4>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L151, USART4>::T*
         >(0x40004c00);
 
-typename peripheral_t<STM32L151, UART5>::T&
-    peripheral_t<STM32L151, UART5>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L151, UART5>::T*
+typename peripheral_t<STM32L151, USART5>::T&
+    peripheral_t<STM32L151, USART5>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L151, USART5>::T*
         >(0x40005000);
 
 typename peripheral_t<STM32L151, USART1>::T&
@@ -1001,14 +1001,14 @@ typename peripheral_t<STM32L151, USART3>::T&
         <typename peripheral_t<STM32L151, USART3>::T*
         >(0x40004800);
 
-typename peripheral_t<STM32L152, UART4>::T&
-    peripheral_t<STM32L152, UART4>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L152, UART4>::T*
+typename peripheral_t<STM32L152, USART4>::T&
+    peripheral_t<STM32L152, USART4>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L152, USART4>::T*
         >(0x40004c00);
 
-typename peripheral_t<STM32L152, UART5>::T&
-    peripheral_t<STM32L152, UART5>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L152, UART5>::T*
+typename peripheral_t<STM32L152, USART5>::T&
+    peripheral_t<STM32L152, USART5>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L152, USART5>::T*
         >(0x40005000);
 
 typename peripheral_t<STM32L152, USART1>::T&
@@ -1026,14 +1026,14 @@ typename peripheral_t<STM32L152, USART3>::T&
         <typename peripheral_t<STM32L152, USART3>::T*
         >(0x40004800);
 
-typename peripheral_t<STM32L162, UART4>::T&
-    peripheral_t<STM32L162, UART4>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L162, UART4>::T*
+typename peripheral_t<STM32L162, USART4>::T&
+    peripheral_t<STM32L162, USART4>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L162, USART4>::T*
         >(0x40004c00);
 
-typename peripheral_t<STM32L162, UART5>::T&
-    peripheral_t<STM32L162, UART5>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L162, UART5>::T*
+typename peripheral_t<STM32L162, USART5>::T&
+    peripheral_t<STM32L162, USART5>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L162, USART5>::T*
         >(0x40005000);
 
 typename peripheral_t<STM32L162, USART1>::T&

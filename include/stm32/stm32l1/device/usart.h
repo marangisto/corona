@@ -120,14 +120,14 @@ struct peripheral_t<STM32L100, USART5>
 };
 
 template<>
-struct peripheral_t<STM32L151, UART4>
+struct peripheral_t<STM32L151, USART4>
 {
     using T = stm32l100_usart1_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L151, UART5>
+struct peripheral_t<STM32L151, USART5>
 {
     using T = stm32l100_usart1_t;
     static T& V;
@@ -155,14 +155,14 @@ struct peripheral_t<STM32L151, USART3>
 };
 
 template<>
-struct peripheral_t<STM32L152, UART4>
+struct peripheral_t<STM32L152, USART4>
 {
     using T = stm32l100_usart1_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L152, UART5>
+struct peripheral_t<STM32L152, USART5>
 {
     using T = stm32l100_usart1_t;
     static T& V;
@@ -190,14 +190,14 @@ struct peripheral_t<STM32L152, USART3>
 };
 
 template<>
-struct peripheral_t<STM32L162, UART4>
+struct peripheral_t<STM32L162, USART4>
 {
     using T = stm32l100_usart1_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L162, UART5>
+struct peripheral_t<STM32L162, USART5>
 {
     using T = stm32l100_usart1_t;
     static T& V;
@@ -224,8 +224,6 @@ struct peripheral_t<STM32L162, USART3>
     static T& V;
 };
 
-using uart4_t = peripheral_t<svd, UART4>;
-using uart5_t = peripheral_t<svd, UART5>;
 using usart1_t = peripheral_t<svd, USART1>;
 using usart2_t = peripheral_t<svd, USART2>;
 using usart3_t = peripheral_t<svd, USART3>;
@@ -233,32 +231,6 @@ using usart4_t = peripheral_t<svd, USART4>;
 using usart5_t = peripheral_t<svd, USART5>;
 
 template<int INST> struct usart_traits {};
-
-template<> struct usart_traits<4>
-{
-    using usart = uart4_t;
-    static constexpr signal_t RX = UART4_RX;
-    static constexpr signal_t TX = UART4_TX;
-
-    template<typename RCC>
-    static void reset()
-    {
-        RCC::V.APB1RSTR |= RCC::T::APB1RSTR_UART4RST;
-    }
-};
-
-template<> struct usart_traits<5>
-{
-    using usart = uart5_t;
-    static constexpr signal_t RX = UART5_RX;
-    static constexpr signal_t TX = UART5_TX;
-
-    template<typename RCC>
-    static void reset()
-    {
-        RCC::V.APB1RSTR |= RCC::T::APB1RSTR_UART5RST;
-    }
-};
 
 template<> struct usart_traits<1>
 {

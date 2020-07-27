@@ -56,7 +56,7 @@ struct l3gd20_t
     static void setup()
     {
         CS::setup();
-        SPI::template setup<mode_3, msb_first, fpclk_256, low_speed>();
+        SPI::template setup<mode_3, msb_first, fpclk_8, low_speed>();
         while (read(who_am_i) == 0);    // wait for startup
         write(ctrl_reg1, 0x0f);         // normal mode | xen | yen | zen
         write(ctrl_reg4, 0x30);         // 2000 dps full-scale

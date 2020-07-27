@@ -122,6 +122,12 @@ public:
         while ((spi::V.SR & (_::SR_BSY | _::SR_TXE)) != _::SR_TXE);
     }
 
+    __attribute__((always_inline))
+    static inline uint32_t read()
+    {
+        while (!(spi::V.SR & _::SR_RXNE));  // wait until rx buffer is not empty
+        return spi::V.DR;
+    }
     /*
     enum interrupt_t
         { err_interrupt = _::CR2_ERRIE

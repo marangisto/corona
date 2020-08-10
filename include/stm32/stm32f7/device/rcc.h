@@ -74,11 +74,11 @@ struct stm32f722_rcc_t
     typedef bit_field_t<10, 0x7> CFGR_PPRE1; // APB Low speed prescaler (APB1)
     typedef bit_field_t<13, 0x7> CFGR_PPRE2; // APB high-speed prescaler (APB2)
     typedef bit_field_t<16, 0x1f> CFGR_RTCPRE; // HSE division factor for RTC clock
-    typedef bit_field_t<21, 0x3> CFGR_MCO1; // Microcontroller clock output 1
+    typedef bit_field_t<21, 0x3> CFGR_MCO1SEL; // Microcontroller clock output 1
     static constexpr uint32_t CFGR_I2SSRC = 0x800000; // I2S clock selection
     typedef bit_field_t<24, 0x7> CFGR_MCO1PRE; // MCO1 prescaler
     typedef bit_field_t<27, 0x7> CFGR_MCO2PRE; // MCO2 prescaler
-    typedef bit_field_t<30, 0x3> CFGR_MCO2; // Microcontroller clock output 2
+    typedef bit_field_t<30, 0x3> CFGR_MCO2SEL; // Microcontroller clock output 2
 
     static constexpr uint32_t CIR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CIR_CSSC = 0x800000; // Clock security system interrupt clear
@@ -474,11 +474,11 @@ struct stm32f745_rcc_t
     typedef bit_field_t<10, 0x7> CFGR_PPRE1; // APB Low speed prescaler (APB1)
     typedef bit_field_t<13, 0x7> CFGR_PPRE2; // APB high-speed prescaler (APB2)
     typedef bit_field_t<16, 0x1f> CFGR_RTCPRE; // HSE division factor for RTC clock
-    typedef bit_field_t<21, 0x3> CFGR_MCO1; // Microcontroller clock output 1
+    typedef bit_field_t<21, 0x3> CFGR_MCO1SEL; // Microcontroller clock output 1
     static constexpr uint32_t CFGR_I2SSRC = 0x800000; // I2S clock selection
     typedef bit_field_t<24, 0x7> CFGR_MCO1PRE; // MCO1 prescaler
     typedef bit_field_t<27, 0x7> CFGR_MCO2PRE; // MCO2 prescaler
-    typedef bit_field_t<30, 0x3> CFGR_MCO2; // Microcontroller clock output 2
+    typedef bit_field_t<30, 0x3> CFGR_MCO2SEL; // Microcontroller clock output 2
 
     static constexpr uint32_t CIR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CIR_CSSC = 0x800000; // Clock security system interrupt clear
@@ -902,11 +902,11 @@ struct stm32f767_rcc_t
     typedef bit_field_t<10, 0x7> CFGR_PPRE1; // APB Low speed prescaler (APB1)
     typedef bit_field_t<13, 0x7> CFGR_PPRE2; // APB high-speed prescaler (APB2)
     typedef bit_field_t<16, 0x1f> CFGR_RTCPRE; // HSE division factor for RTC clock
-    typedef bit_field_t<21, 0x3> CFGR_MCO1; // Microcontroller clock output 1
+    typedef bit_field_t<21, 0x3> CFGR_MCO1SEL; // Microcontroller clock output 1
     static constexpr uint32_t CFGR_I2SSRC = 0x800000; // I2S clock selection
     typedef bit_field_t<24, 0x7> CFGR_MCO1PRE; // MCO1 prescaler
     typedef bit_field_t<27, 0x7> CFGR_MCO2PRE; // MCO2 prescaler
-    typedef bit_field_t<30, 0x3> CFGR_MCO2; // Microcontroller clock output 2
+    typedef bit_field_t<30, 0x3> CFGR_MCO2SEL; // Microcontroller clock output 2
 
     static constexpr uint32_t CIR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CIR_CSSC = 0x800000; // Clock security system interrupt clear

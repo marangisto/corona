@@ -34,7 +34,6 @@
 #include "stk.h"
 #include "syscfg.h"
 #include "tim.h"
-#include "tims.h"
 #include "tsc.h"
 #include "usart.h"
 #include "usb_fs.h"

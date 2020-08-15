@@ -92,8 +92,10 @@ memory MCU{..} = unlines
     , "}"
     , ""
     ]
-    where ram' | family == "STM32H7" = 128
-               | otherwise = ram
+    where ram' = case family of
+            "STM32F3"   -> if ram == 80 then 64 else 32
+            "STM32H7"   -> 128
+            _           -> ram
 
 cleanCore :: String -> String
 cleanCore "cortex-m0+" = "cortex-m0plus"

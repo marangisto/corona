@@ -40,7 +40,7 @@ getLibs mcu = fromMaybe defLibs . fmap words <$> getConfig "LIBS"
 
 getDefs :: Action [String]
 getDefs = do
-    x <- fmap (("BOARD="<>) . unBoard) <$> getBoard
+    x <- fmap unBoard <$> getBoard
     xs <- maybe [] (map Just . words) <$> getConfig "DEFS"
     return $ catMaybes $ x : xs
 

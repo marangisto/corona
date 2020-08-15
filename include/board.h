@@ -4,103 +4,8 @@
 #include <button.h>
 #include <usart.h>
 
-enum board_t
-    { BLUE_PILL
-    , STM32F072B_DISCO
-    , STM32F3348_DISCO
-    , STM32F411E_DISCO
-    , STM32F412G_DISCO
-    , STM32F413H_DISCO
-    , STM32F429I_DISCO
-    , STM32F469I_DISCO
-    , STM32F723E_DISCO
-    , STM32F746G_DISCO
-    , STM32F769I_DISCO
-    , STM32L0538_DISCO
-    , STM32L152C_DISCO
-    , STM32L476G_DISCO
-    , STM32L496G_DISCO
-    , STM32L4R9I_DISCO
-    , STM32F0_DISCO
-    , STM32F3_DISCO
-    , STM32F4_DISCO
-    , STM32F7508_DISCO
-    , STM32G0316_DISCO
-    , STM32G071B_DISCO
-    , STM32H745I_DISCO
-    , STM32H747I_DISCO
-    , STM32H750B_DISCO
-    , STM32H7B3I_DISCO
-    , STM32L4P5G_DISCO
-    , STM32L562E_DISCO
-    , STM32MP157A_DISCO
-    , STM32MP157C_DISCO
-    , STM32VL_DISCO
-    , STM32F0308_DISCO
-    , STM32L100C_DISCO
-    , NUCLEO_F030R8
-    , NUCLEO_F031K6
-    , NUCLEO_F042K6
-    , NUCLEO_F070RB
-    , NUCLEO_F072RB
-    , NUCLEO_F091RC
-    , NUCLEO_F103RB
-    , NUCLEO_F207ZG
-    , NUCLEO_F302R8
-    , NUCLEO_F303K8
-    , NUCLEO_F303RE
-    , NUCLEO_F303ZE
-    , NUCLEO_F334R8
-    , NUCLEO_F401RE
-    , NUCLEO_F410RB
-    , NUCLEO_F411RE
-    , NUCLEO_F412ZG
-    , NUCLEO_F413ZH
-    , NUCLEO_F429ZI
-    , NUCLEO_F439ZI
-    , NUCLEO_F446RE
-    , NUCLEO_F446ZE
-    , NUCLEO_F722ZE
-    , NUCLEO_F746ZG
-    , NUCLEO_F756ZG
-    , NUCLEO_F767ZI
-    , NUCLEO_G031K8
-    , NUCLEO_G070RB
-    , NUCLEO_G071RB
-    , NUCLEO_G431KB
-    , NUCLEO_G431RB
-    , NUCLEO_G474RE
-    , NUCLEO_H743ZI
-    , NUCLEO_H745ZIQ
-    , NUCLEO_H753ZI
-    , NUCLEO_H755ZIQ
-    , NUCLEO_H7A3ZIQ
-    , NUCLEO_L010RB
-    , NUCLEO_L011K4
-    , NUCLEO_L031K6
-    , NUCLEO_L053R8
-    , NUCLEO_L073RZ
-    , NUCLEO_L152RE
-    , NUCLEO_L412KB
-    , NUCLEO_L412RBP
-    , NUCLEO_L432KC
-    , NUCLEO_L433RCP
-    , NUCLEO_L452RE
-    , NUCLEO_L452REP
-    , NUCLEO_L476RG
-    , NUCLEO_L496ZG
-    , NUCLEO_L496ZGP
-    , NUCLEO_L4A6ZG
-    , NUCLEO_L4P5ZG
-    , NUCLEO_L4R5ZI
-    , NUCLEO_L4R5ZIP
-    , NUCLEO_L552ZEQ
-    };
-
-template<board_t> struct board_traits_t {};
-
-template<>
-struct board_traits_t<STM32F0_DISCO>
+#if defined(STM32F0_DISCO)
+struct board
 {
     using led1 = output_t<PC9>;
     using led2 = output_t<PC8>;
@@ -110,9 +15,10 @@ struct board_traits_t<STM32F0_DISCO>
     using serial = usart_t<1, PB6, PB7>;
     static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART1;
 };
+#endif
 
-template<>
-struct board_traits_t<NUCLEO_F072RB>
+#if defined(NUCLEO_F072RB)
+struct board
 {
     using led1 = output_t<PA5>;
     using btn1 = button_t<PC13>;
@@ -121,9 +27,10 @@ struct board_traits_t<NUCLEO_F072RB>
     using serial = usart_t<2, PA2, PA3>;
     static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART2;
 };
+#endif
 
-template<>
-struct board_traits_t<NUCLEO_F207ZG>
+#if defined(NUCLEO_F207ZG)
+struct board
 {
     using led1 = output_t<PB0>;
     using led2 = output_t<PB7>;
@@ -134,9 +41,22 @@ struct board_traits_t<NUCLEO_F207ZG>
     using serial = usart_t<3, PD8, PD9>;
     static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART3;
 };
+#endif
 
-template<>
-struct board_traits_t<STM32F411E_DISCO>
+#if defined(NUCLEO_F303RE)
+struct board
+{
+    using led1 = output_t<PA5>;
+    using btn1 = button_t<PC13>;
+    static constexpr input_type_t btn_type = pull_up;
+    using probe = output_t<PA8>;
+    using serial = usart_t<2, PA2, PA3>;
+    static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART2_EXTI26;
+};
+#endif
+
+#if defined(STM32F411E_DISCO)
+struct board
 {
     using led1 = output_t<PD13>;
     using led2 = output_t<PD12>;
@@ -148,9 +68,10 @@ struct board_traits_t<STM32F411E_DISCO>
     using serial = usart_t<1, PB6, PB7>;
     static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART1;
 };
+#endif
 
-template<>
-struct board_traits_t<STM32F412G_DISCO>
+#if defined(STM32F412G_DISCO)
+struct board
 {
     using led1 = output_t<PE0>;
     using btn1 = button_t<PA0>;
@@ -159,9 +80,10 @@ struct board_traits_t<STM32F412G_DISCO>
     using serial = usart_t<2, PA2, PA3>;
     static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART2;
 };
+#endif
 
-template<>
-struct board_traits_t<NUCLEO_F446RE>
+#if defined(NUCLEO_F446RE)
+struct board
 {
     using led1 = output_t<PA5>;
     using btn1 = button_t<PC13>;
@@ -170,10 +92,10 @@ struct board_traits_t<NUCLEO_F446RE>
     using serial = usart_t<2, PA2, PA3>;
     static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART2;
 };
+#endif
 
-/*
-template<>
-struct board_traits_t<NUCLEO_F767ZI>
+#if defined(NUCLEO_F767ZI)
+struct board
 {
     using led1 = output_t<PB0>;
     using btn1 = button_t<PC13>;
@@ -182,10 +104,10 @@ struct board_traits_t<NUCLEO_F767ZI>
     using serial = usart_t<3, PD8, PD9>;
     static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART3;
 };
-*/
+#endif
 
-template<>
-struct board_traits_t<NUCLEO_G070RB>
+#if defined(NUCLEO_G070RB)
+struct board
 {
     using led1 = output_t<PA5>;
     using btn1 = button_t<PC13>;
@@ -194,18 +116,20 @@ struct board_traits_t<NUCLEO_G070RB>
     using serial = usart_t<2, PA2, PA3>;
     static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART2;
 };
+#endif
 
-template<>
-struct board_traits_t<NUCLEO_G431KB>
+#if defined(NUCLEO_G431KB)
+struct board
 {
     using led1 = output_t<PB8>;
     using probe = output_t<PA8>;
     using serial = usart_t<2, PA2, PA3>;
     static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART2;
 };
+#endif
 
-template<>
-struct board_traits_t<NUCLEO_G431RB>
+#if defined(NUCLEO_G431RB)
+struct board
 {
     using led1 = output_t<PA5>;
     using btn1 = button_t<PC13>;
@@ -214,9 +138,10 @@ struct board_traits_t<NUCLEO_G431RB>
     using serial = usart_t<2, PA2, PA3>;
     static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART2;
 };
-/*
-template<>
-struct board_traits_t<NUCLEO_H743ZI>
+#endif
+
+#if defined(NUCLEO_H743ZI)
+struct board
 {
     using led1 = output_t<PB0>;
     using led2 = output_t<PE1>;
@@ -227,10 +152,10 @@ struct board_traits_t<NUCLEO_H743ZI>
     using serial = usart_t<3, PD8, PD9>;
     static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART3;
 };
-*/
+#endif
 
-template<>
-struct board_traits_t<NUCLEO_L073RZ>
+#if defined(NUCLEO_L073RZ)
+struct board
 {
     using led1 = output_t<PA5>;
     using btn1 = button_t<PC13>;
@@ -239,9 +164,10 @@ struct board_traits_t<NUCLEO_L073RZ>
     using serial = usart_t<2, PA2, PA3>;
     static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART2;
 };
+#endif
 
-template<>
-struct board_traits_t<NUCLEO_L152RE>
+#if defined(NUCLEO_L152RE)
+struct board
 {
     using led1 = output_t<PA5>;
     using btn1 = button_t<PC13>;
@@ -250,9 +176,10 @@ struct board_traits_t<NUCLEO_L152RE>
     using serial = usart_t<2, PA2, PA3>;
     static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART2;
 };
+#endif
 
-template<>
-struct board_traits_t<NUCLEO_L476RG>
+#if defined(NUCLEO_L476RG)
+struct board
 {
     using led1 = output_t<PA5>;
     using btn1 = button_t<PC13>;
@@ -261,8 +188,5 @@ struct board_traits_t<NUCLEO_L476RG>
     using serial = usart_t<2, PA2, PA3>;
     static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART2;
 };
-
-static constexpr board_t target_board = BOARD;
-
-using board = board_traits_t<target_board>;
+#endif
 

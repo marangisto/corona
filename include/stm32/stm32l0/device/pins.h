@@ -100,6 +100,7 @@ enum pin_t
     , PH1 = 0x71
     , PH9 = 0x79
     , PH10 = 0x7a
+    , NO_PIN
     };
 
 enum altfun_t

@@ -189,6 +189,7 @@ enum pin_t
     , PK5 = 0xa5
     , PK6 = 0xa6
     , PK7 = 0xa7
+    , NO_PIN
     };
 
 enum altfun_t

@@ -159,6 +159,7 @@ enum pin_t
     , PI9 = 0x89
     , PI10 = 0x8a
     , PI11 = 0x8b
+    , NO_PIN
     };
 
 enum altfun_t

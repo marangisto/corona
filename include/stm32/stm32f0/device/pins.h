@@ -107,6 +107,7 @@ enum pin_t
     , PF9 = 0x59
     , PF10 = 0x5a
     , PF11 = 0x5b
+    , NO_PIN
     };
 
 enum altfun_t

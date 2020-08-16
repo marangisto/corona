@@ -129,6 +129,7 @@ enum pin_t
     , PG13 = 0x6d
     , PG14 = 0x6e
     , PG15 = 0x6f
+    , NO_PIN
     };
 
 enum altfun_t

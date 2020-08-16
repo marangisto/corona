@@ -124,6 +124,7 @@ enum pin_t
     , PG8 = 0x68
     , PG9 = 0x69
     , PG10 = 0x6a
+    , NO_PIN
     };
 
 enum altfun_t

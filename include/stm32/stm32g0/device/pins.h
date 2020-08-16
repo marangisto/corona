@@ -75,6 +75,7 @@ enum pin_t
     , PF0 = 0x50
     , PF1 = 0x51
     , PF2 = 0x52
+    , NO_PIN
     };
 
 enum altfun_t

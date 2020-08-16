@@ -1,5 +1,6 @@
 #pragma once
 
+#include <stddef.h>
 #include <cstdarg>
 
 extern "C" int sprintf(char *buf, const char *fmt, ...);

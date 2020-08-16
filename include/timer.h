@@ -124,7 +124,7 @@ public:
     template<master_mode_t MM>
     static inline void master_mode()
     {
-        tim::V.CR2 |= _::template CR2_MMS<MM>;
+        tim::V.CR2 |= _::CR2_MMS::W(MM);
     }
 
     static inline volatile bool update_interrupt_flag()

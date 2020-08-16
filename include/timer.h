@@ -180,3 +180,44 @@ public:
     };
 };
 
+template<int INST, pin_t PIN1, pin_t PIN2>
+class encoder_t
+{
+public:
+    using traits = tim_traits<INST>;
+    using tim = typename traits::tim;
+    using _ = typename tim::T;
+    using count_t = typename counter_traits<INST>::type;
+
+    template<input_type_t input_type>
+    static inline void setup(count_t arr)
+    {
+        typename tim::T& TIM = tim::V;
+
+        alternate_t<PIN1, traits::CH1>::template setup<input_type>();
+        alternate_t<PIN2, traits::CH2>::template setup<input_type>();
+
+        tim_traits<INST>::template enable<rcc_t>();
+
+        TIM.CCMR1 = _::CCMR1_RESET_VALUE
+                  | _::CCMR1_CC1S::W(0x1)
+                  | _::CCMR1_CC2S::W(0x1)
+                  ; // TI1 & TI2 as inputs
+        TIM.CCER = _::CCER_RESET_VALUE;   // CCER_CC1P CCER_CC2P polarity choices
+        TIM.SMCR = _::SMCR_RESET_VALUE | _::SMCR_SMS::W(0x1);
+        TIM.ARR = arr;
+        TIM.CNT = _::CNT_RESET_VALUE;;
+        TIM.CR1 = _::CR1_RESET_VALUE | _::CR1_CEN;
+    }
+
+    static inline volatile count_t count()
+    {
+        return tim::V.CNT;
+    }
+
+    static inline void set_count(count_t x)
+    {
+        tim::V.CNT = x;
+    }
+};
+

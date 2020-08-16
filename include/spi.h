@@ -64,7 +64,7 @@ struct spi_order_traits<_, lsb_first>
     static constexpr uint32_t value = _::CR1_LSBFIRST;
 };
 
-template<int INST, pin_t SCK, pin_t MOSI, pin_t MISO>
+template<int INST, pin_t SCK, pin_t MOSI, pin_t MISO = NO_PIN>
 struct spi_t
 {
 public:

@@ -111,13 +111,13 @@ struct stm32l0x0_rcc_t
     static constexpr uint32_t AHBRSTR_CRYPRST = 0x1000000; // Crypto module reset
     static constexpr uint32_t AHBRSTR_CRCRST = 0x1000; // Test integration module reset
     static constexpr uint32_t AHBRSTR_MIFRST = 0x100; // Memory interface reset
-    static constexpr uint32_t AHBRSTR_DMARST = 0x1; // DMA reset
+    static constexpr uint32_t AHBRSTR_DMA1RST = 0x1; // DMA reset
 
     static constexpr uint32_t APB2RSTR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t APB2RSTR_DBGRST = 0x400000; // DBG reset
     static constexpr uint32_t APB2RSTR_USART1RST = 0x4000; // USART1 reset
     static constexpr uint32_t APB2RSTR_SPI1RST = 0x1000; // SPI 1 reset
-    static constexpr uint32_t APB2RSTR_ADCRST = 0x200; // ADC interface reset
+    static constexpr uint32_t APB2RSTR_ADC1RST = 0x200; // ADC interface reset
     static constexpr uint32_t APB2RSTR_TIM22RST = 0x20; // TIM22 timer reset
     static constexpr uint32_t APB2RSTR_TIM21RST = 0x4; // TIM21 timer reset
     static constexpr uint32_t APB2RSTR_SYSCFGRST = 0x1; // System configuration controller reset
@@ -152,13 +152,13 @@ struct stm32l0x0_rcc_t
     static constexpr uint32_t AHBENR_CRYPEN = 0x1000000; // Crypto clock enable bit
     static constexpr uint32_t AHBENR_CRCEN = 0x1000; // CRC clock enable bit
     static constexpr uint32_t AHBENR_MIFEN = 0x100; // NVM interface clock enable bit
-    static constexpr uint32_t AHBENR_DMAEN = 0x1; // DMA clock enable bit
+    static constexpr uint32_t AHBENR_DMA1EN = 0x1; // DMA clock enable bit
 
     static constexpr uint32_t APB2ENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t APB2ENR_DBGEN = 0x400000; // DBG clock enable bit
     static constexpr uint32_t APB2ENR_USART1EN = 0x4000; // USART1 clock enable bit
     static constexpr uint32_t APB2ENR_SPI1EN = 0x1000; // SPI1 clock enable bit
-    static constexpr uint32_t APB2ENR_ADCEN = 0x200; // ADC clock enable bit
+    static constexpr uint32_t APB2ENR_ADC1EN = 0x200; // ADC clock enable bit
     static constexpr uint32_t APB2ENR_FWEN = 0x80; // Firewall clock enable bit
     static constexpr uint32_t APB2ENR_TIM22EN = 0x20; // TIM22 timer clock enable bit
     static constexpr uint32_t APB2ENR_TIM21EN = 0x4; // TIM21 timer clock enable bit
@@ -194,13 +194,13 @@ struct stm32l0x0_rcc_t
     static constexpr uint32_t AHBSMENR_CRCSMEN = 0x1000; // CRC clock enable during sleep mode bit
     static constexpr uint32_t AHBSMENR_SRAMSMEN = 0x200; // SRAM interface clock enable during sleep mode bit
     static constexpr uint32_t AHBSMENR_MIFSMEN = 0x100; // NVM interface clock enable during sleep mode bit
-    static constexpr uint32_t AHBSMENR_DMASMEN = 0x1; // DMA clock enable during sleep mode bit
+    static constexpr uint32_t AHBSMENR_DMA1SMEN = 0x1; // DMA clock enable during sleep mode bit
 
     static constexpr uint32_t APB2SMENR_RESET_VALUE = 0x405225; // Reset value
     static constexpr uint32_t APB2SMENR_DBGSMEN = 0x400000; // DBG clock enable during sleep mode bit
     static constexpr uint32_t APB2SMENR_USART1SMEN = 0x4000; // USART1 clock enable during sleep mode bit
     static constexpr uint32_t APB2SMENR_SPI1SMEN = 0x1000; // SPI1 clock enable during sleep mode bit
-    static constexpr uint32_t APB2SMENR_ADCSMEN = 0x200; // ADC clock enable during sleep mode bit
+    static constexpr uint32_t APB2SMENR_ADC1SMEN = 0x200; // ADC clock enable during sleep mode bit
     static constexpr uint32_t APB2SMENR_TIM22SMEN = 0x20; // TIM22 timer clock enable during sleep mode bit
     static constexpr uint32_t APB2SMENR_TIM21SMEN = 0x4; // TIM21 timer clock enable during sleep mode bit
     static constexpr uint32_t APB2SMENR_SYSCFGSMEN = 0x1; // System configuration controller clock enable during sleep mode bit
@@ -376,13 +376,13 @@ struct stm32l0x2_rcc_t
     static constexpr uint32_t AHBRSTR_TOUCHRST = 0x10000; // Touch Sensing reset
     static constexpr uint32_t AHBRSTR_CRCRST = 0x1000; // Test integration module reset
     static constexpr uint32_t AHBRSTR_MIFRST = 0x100; // Memory interface reset
-    static constexpr uint32_t AHBRSTR_DMARST = 0x1; // DMA reset
+    static constexpr uint32_t AHBRSTR_DMA1RST = 0x1; // DMA reset
 
     static constexpr uint32_t APB2RSTR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t APB2RSTR_DBGRST = 0x400000; // DBG reset
     static constexpr uint32_t APB2RSTR_USART1RST = 0x4000; // USART1 reset
     static constexpr uint32_t APB2RSTR_SPI1RST = 0x1000; // SPI 1 reset
-    static constexpr uint32_t APB2RSTR_ADCRST = 0x200; // ADC interface reset
+    static constexpr uint32_t APB2RSTR_ADC1RST = 0x200; // ADC interface reset
     static constexpr uint32_t APB2RSTR_TM12RST = 0x20; // TIM22 timer reset
     static constexpr uint32_t APB2RSTR_TIM21RST = 0x4; // TIM21 timer reset
     static constexpr uint32_t APB2RSTR_SYSCFGRST = 0x1; // System configuration controller reset
@@ -421,13 +421,13 @@ struct stm32l0x2_rcc_t
     static constexpr uint32_t AHBENR_TOUCHEN = 0x10000; // Touch Sensing clock enable bit
     static constexpr uint32_t AHBENR_CRCEN = 0x1000; // CRC clock enable bit
     static constexpr uint32_t AHBENR_MIFEN = 0x100; // NVM interface clock enable bit
-    static constexpr uint32_t AHBENR_DMAEN = 0x1; // DMA clock enable bit
+    static constexpr uint32_t AHBENR_DMA1EN = 0x1; // DMA clock enable bit
 
     static constexpr uint32_t APB2ENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t APB2ENR_DBGEN = 0x400000; // DBG clock enable bit
     static constexpr uint32_t APB2ENR_USART1EN = 0x4000; // USART1 clock enable bit
     static constexpr uint32_t APB2ENR_SPI1EN = 0x1000; // SPI1 clock enable bit
-    static constexpr uint32_t APB2ENR_ADCEN = 0x200; // ADC clock enable bit
+    static constexpr uint32_t APB2ENR_ADC1EN = 0x200; // ADC clock enable bit
     static constexpr uint32_t APB2ENR_MIFIEN = 0x80; // MiFaRe Firewall clock enable bit
     static constexpr uint32_t APB2ENR_TIM22EN = 0x20; // TIM22 timer clock enable bit
     static constexpr uint32_t APB2ENR_TIM21EN = 0x4; // TIM21 timer clock enable bit
@@ -468,13 +468,13 @@ struct stm32l0x2_rcc_t
     static constexpr uint32_t AHBSMENR_CRCSMEN = 0x1000; // CRC clock enable during sleep mode bit
     static constexpr uint32_t AHBSMENR_SRAMSMEN = 0x200; // SRAM interface clock enable during sleep mode bit
     static constexpr uint32_t AHBSMENR_MIFSMEN = 0x100; // NVM interface clock enable during sleep mode bit
-    static constexpr uint32_t AHBSMENR_DMASMEN = 0x1; // DMA clock enable during sleep mode bit
+    static constexpr uint32_t AHBSMENR_DMA1SMEN = 0x1; // DMA clock enable during sleep mode bit
 
     static constexpr uint32_t APB2SMENR_RESET_VALUE = 0x405225; // Reset value
     static constexpr uint32_t APB2SMENR_DBGSMEN = 0x400000; // DBG clock enable during sleep mode bit
     static constexpr uint32_t APB2SMENR_USART1SMEN = 0x4000; // USART1 clock enable during sleep mode bit
     static constexpr uint32_t APB2SMENR_SPI1SMEN = 0x1000; // SPI1 clock enable during sleep mode bit
-    static constexpr uint32_t APB2SMENR_ADCSMEN = 0x200; // ADC clock enable during sleep mode bit
+    static constexpr uint32_t APB2SMENR_ADC1SMEN = 0x200; // ADC clock enable during sleep mode bit
     static constexpr uint32_t APB2SMENR_TIM22SMEN = 0x20; // TIM22 timer clock enable during sleep mode bit
     static constexpr uint32_t APB2SMENR_TIM21SMEN = 0x4; // TIM21 timer clock enable during sleep mode bit
     static constexpr uint32_t APB2SMENR_SYSCFGSMEN = 0x1; // System configuration controller clock enable during sleep mode bit
@@ -651,13 +651,13 @@ struct stm32l0x3_rcc_t
     static constexpr uint32_t AHBRSTR_TOUCHRST = 0x10000; // Touch Sensing reset
     static constexpr uint32_t AHBRSTR_CRCRST = 0x1000; // Test integration module reset
     static constexpr uint32_t AHBRSTR_MIFRST = 0x100; // Memory interface reset
-    static constexpr uint32_t AHBRSTR_DMARST = 0x1; // DMA reset
+    static constexpr uint32_t AHBRSTR_DMA1RST = 0x1; // DMA reset
 
     static constexpr uint32_t APB2RSTR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t APB2RSTR_DBGRST = 0x400000; // DBG reset
     static constexpr uint32_t APB2RSTR_USART1RST = 0x4000; // USART1 reset
     static constexpr uint32_t APB2RSTR_SPI1RST = 0x1000; // SPI 1 reset
-    static constexpr uint32_t APB2RSTR_ADCRST = 0x200; // ADC interface reset
+    static constexpr uint32_t APB2RSTR_ADC1RST = 0x200; // ADC interface reset
     static constexpr uint32_t APB2RSTR_TM12RST = 0x20; // TIM22 timer reset
     static constexpr uint32_t APB2RSTR_TIM21RST = 0x4; // TIM21 timer reset
     static constexpr uint32_t APB2RSTR_SYSCFGRST = 0x1; // System configuration controller reset
@@ -696,13 +696,13 @@ struct stm32l0x3_rcc_t
     static constexpr uint32_t AHBENR_TOUCHEN = 0x10000; // Touch Sensing clock enable bit
     static constexpr uint32_t AHBENR_CRCEN = 0x1000; // CRC clock enable bit
     static constexpr uint32_t AHBENR_MIFEN = 0x100; // NVM interface clock enable bit
-    static constexpr uint32_t AHBENR_DMAEN = 0x1; // DMA clock enable bit
+    static constexpr uint32_t AHBENR_DMA1EN = 0x1; // DMA clock enable bit
 
     static constexpr uint32_t APB2ENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t APB2ENR_DBGEN = 0x400000; // DBG clock enable bit
     static constexpr uint32_t APB2ENR_USART1EN = 0x4000; // USART1 clock enable bit
     static constexpr uint32_t APB2ENR_SPI1EN = 0x1000; // SPI1 clock enable bit
-    static constexpr uint32_t APB2ENR_ADCEN = 0x200; // ADC clock enable bit
+    static constexpr uint32_t APB2ENR_ADC1EN = 0x200; // ADC clock enable bit
     static constexpr uint32_t APB2ENR_MIFIEN = 0x80; // MiFaRe Firewall clock enable bit
     static constexpr uint32_t APB2ENR_TIM22EN = 0x20; // TIM22 timer clock enable bit
     static constexpr uint32_t APB2ENR_TIM21EN = 0x4; // TIM21 timer clock enable bit
@@ -743,13 +743,13 @@ struct stm32l0x3_rcc_t
     static constexpr uint32_t AHBSMENR_CRCSMEN = 0x1000; // CRC clock enable during sleep mode bit
     static constexpr uint32_t AHBSMENR_SRAMSMEN = 0x200; // SRAM interface clock enable during sleep mode bit
     static constexpr uint32_t AHBSMENR_MIFSMEN = 0x100; // NVM interface clock enable during sleep mode bit
-    static constexpr uint32_t AHBSMENR_DMASMEN = 0x1; // DMA clock enable during sleep mode bit
+    static constexpr uint32_t AHBSMENR_DMA1SMEN = 0x1; // DMA clock enable during sleep mode bit
 
     static constexpr uint32_t APB2SMENR_RESET_VALUE = 0x405225; // Reset value
     static constexpr uint32_t APB2SMENR_DBGSMEN = 0x400000; // DBG clock enable during sleep mode bit
     static constexpr uint32_t APB2SMENR_USART1SMEN = 0x4000; // USART1 clock enable during sleep mode bit
     static constexpr uint32_t APB2SMENR_SPI1SMEN = 0x1000; // SPI1 clock enable during sleep mode bit
-    static constexpr uint32_t APB2SMENR_ADCSMEN = 0x200; // ADC clock enable during sleep mode bit
+    static constexpr uint32_t APB2SMENR_ADC1SMEN = 0x200; // ADC clock enable during sleep mode bit
     static constexpr uint32_t APB2SMENR_TIM22SMEN = 0x20; // TIM22 timer clock enable during sleep mode bit
     static constexpr uint32_t APB2SMENR_TIM21SMEN = 0x4; // TIM21 timer clock enable during sleep mode bit
     static constexpr uint32_t APB2SMENR_SYSCFGSMEN = 0x1; // System configuration controller clock enable during sleep mode bit

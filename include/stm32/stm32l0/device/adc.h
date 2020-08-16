@@ -242,68 +242,68 @@ struct stm32l0x2_adc_t
 };
 
 template<>
-struct peripheral_t<STM32L0x0, ADC>
+struct peripheral_t<STM32L0x0, ADC1>
 {
     using T = stm32l0x0_adc_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L0x1, ADC>
+struct peripheral_t<STM32L0x1, ADC1>
 {
     using T = stm32l0x0_adc_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L0x2, ADC>
+struct peripheral_t<STM32L0x2, ADC1>
 {
     using T = stm32l0x2_adc_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L0x3, ADC>
+struct peripheral_t<STM32L0x3, ADC1>
 {
     using T = stm32l0x2_adc_t;
     static T& V;
 };
 
-using adc_t = peripheral_t<svd, ADC>;
+using adc1_t = peripheral_t<svd, ADC1>;
 
 template<int INST> struct adc_traits {};
 
-template<> struct adc_traits<0>
+template<> struct adc_traits<1>
 {
-    using adc = adc_t;
+    using adc = adc1_t;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APB2ENR |= RCC::T::APB2ENR_ADCEN;
+        RCC::V.APB2ENR |= RCC::T::APB2ENR_ADC1EN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APB2ENR &= ~RCC::T::APB2ENR_ADCEN;
+        RCC::V.APB2ENR &= ~RCC::T::APB2ENR_ADC1EN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APB2SMENR |= RCC::T::APB2SMENR_ADCSMEN;
+        RCC::V.APB2SMENR |= RCC::T::APB2SMENR_ADC1SMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APB2SMENR &= ~RCC::T::APB2SMENR_ADCSMEN;
+        RCC::V.APB2SMENR &= ~RCC::T::APB2SMENR_ADC1SMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.APB2RSTR |= RCC::T::APB2RSTR_ADCRST;
+        RCC::V.APB2RSTR |= RCC::T::APB2RSTR_ADC1RST;
     }
 };

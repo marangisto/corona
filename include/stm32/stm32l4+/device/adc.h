@@ -529,56 +529,56 @@ struct stm32l4p5_adc_common_t
 };
 
 template<>
-struct peripheral_t<STM32L4P5, ADC>
+struct peripheral_t<STM32L4P5, ADC1>
 {
     using T = stm32l4p5_adc_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L4Q5, ADC>
+struct peripheral_t<STM32L4Q5, ADC1>
 {
     using T = stm32l4p5_adc_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L4R5, ADC>
+struct peripheral_t<STM32L4R5, ADC1>
 {
     using T = stm32l4r5_adc_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L4R7, ADC>
+struct peripheral_t<STM32L4R7, ADC1>
 {
     using T = stm32l4r5_adc_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L4R9, ADC>
+struct peripheral_t<STM32L4R9, ADC1>
 {
     using T = stm32l4r5_adc_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L4S5, ADC>
+struct peripheral_t<STM32L4S5, ADC1>
 {
     using T = stm32l4r5_adc_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L4S7, ADC>
+struct peripheral_t<STM32L4S7, ADC1>
 {
     using T = stm32l4r5_adc_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L4S9, ADC>
+struct peripheral_t<STM32L4S9, ADC1>
 {
     using T = stm32l4r5_adc_t;
     static T& V;
@@ -640,30 +640,30 @@ struct peripheral_t<STM32L4S9, ADC_COMMON>
     static T& V;
 };
 
-using adc_t = peripheral_t<svd, ADC>;
+using adc1_t = peripheral_t<svd, ADC1>;
 using adc_common_t = peripheral_t<svd, ADC_COMMON>;
 
 template<int INST> struct adc_traits {};
 
-template<> struct adc_traits<0>
+template<> struct adc_traits<1>
 {
-    using adc = adc_t;
+    using adc = adc1_t;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.AHB2ENR |= RCC::T::AHB2ENR_ADCEN;
+        RCC::V.AHB2ENR |= RCC::T::AHB2ENR_ADC1EN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADCEN;
+        RCC::V.AHB2ENR &= ~RCC::T::AHB2ENR_ADC1EN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADCRST;
+        RCC::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADC1RST;
     }
 };

@@ -6,9 +6,9 @@
 //
 ///
 
-typename peripheral_t<STM32L412, ADC>::T&
-    peripheral_t<STM32L412, ADC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L412, ADC>::T*
+typename peripheral_t<STM32L412, ADC1>::T&
+    peripheral_t<STM32L412, ADC1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L412, ADC1>::T*
         >(0x50040000);
 
 typename peripheral_t<STM32L476, ADC1>::T&

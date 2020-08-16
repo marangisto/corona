@@ -138,7 +138,7 @@ struct stm32l412_rcc_t
 
     static constexpr uint32_t AHB2RSTR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t AHB2RSTR_RNGRST = 0x40000; // Random number generator reset
-    static constexpr uint32_t AHB2RSTR_ADCRST = 0x2000; // ADC reset
+    static constexpr uint32_t AHB2RSTR_ADC1RST = 0x2000; // ADC reset
     static constexpr uint32_t AHB2RSTR_GPIOHRST = 0x80; // IO port H reset
     static constexpr uint32_t AHB2RSTR_GPIOCRST = 0x4; // IO port C reset
     static constexpr uint32_t AHB2RSTR_GPIOBRST = 0x2; // IO port B reset
@@ -185,7 +185,7 @@ struct stm32l412_rcc_t
 
     static constexpr uint32_t AHB2ENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t AHB2ENR_RNGEN = 0x40000; // Random Number Generator clock enable
-    static constexpr uint32_t AHB2ENR_ADCEN = 0x2000; // ADC clock enable
+    static constexpr uint32_t AHB2ENR_ADC1EN = 0x2000; // ADC clock enable
     static constexpr uint32_t AHB2ENR_GPIOHEN = 0x80; // IO port H clock enable
     static constexpr uint32_t AHB2ENR_GPIOCEN = 0x4; // IO port C clock enable
     static constexpr uint32_t AHB2ENR_GPIOBEN = 0x2; // IO port B clock enable
@@ -489,7 +489,7 @@ struct stm32l476_rcc_t
     static constexpr uint32_t AHB2RSTR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t AHB2RSTR_RNGRST = 0x40000; // Random number generator reset
     static constexpr uint32_t AHB2RSTR_AESRST = 0x10000; // AES hardware accelerator reset
-    static constexpr uint32_t AHB2RSTR_ADCRST = 0x2000; // ADC reset
+    static constexpr uint32_t AHB2RSTR_ADC1RST = 0x2000; // ADC reset
     static constexpr uint32_t AHB2RSTR_OTGFSRST = 0x1000; // USB OTG FS reset
     static constexpr uint32_t AHB2RSTR_GPIOHRST = 0x80; // IO port H reset
     static constexpr uint32_t AHB2RSTR_GPIOGRST = 0x40; // IO port G reset
@@ -565,7 +565,7 @@ struct stm32l476_rcc_t
     static constexpr uint32_t AHB2ENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t AHB2ENR_RNGEN = 0x40000; // Random Number Generator clock enable
     static constexpr uint32_t AHB2ENR_AESEN = 0x10000; // AES accelerator clock enable
-    static constexpr uint32_t AHB2ENR_ADCEN = 0x2000; // ADC clock enable
+    static constexpr uint32_t AHB2ENR_ADC1EN = 0x2000; // ADC clock enable
     static constexpr uint32_t AHB2ENR_OTGFSEN = 0x1000; // OTG full speed clock enable
     static constexpr uint32_t AHB2ENR_GPIOHEN = 0x80; // IO port H clock enable
     static constexpr uint32_t AHB2ENR_GPIOGEN = 0x40; // IO port G clock enable
@@ -908,7 +908,7 @@ struct stm32l4x1_rcc_t
     static constexpr uint32_t AHB2RSTR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t AHB2RSTR_RNGRST = 0x40000; // Random number generator reset
     static constexpr uint32_t AHB2RSTR_AESRST = 0x10000; // AES hardware accelerator reset
-    static constexpr uint32_t AHB2RSTR_ADCRST = 0x2000; // ADC reset
+    static constexpr uint32_t AHB2RSTR_ADC1RST = 0x2000; // ADC reset
     static constexpr uint32_t AHB2RSTR_GPIOHRST = 0x80; // IO port H reset
     static constexpr uint32_t AHB2RSTR_GPIOERST = 0x10; // IO port E reset
     static constexpr uint32_t AHB2RSTR_GPIODRST = 0x8; // IO port D reset
@@ -969,7 +969,7 @@ struct stm32l4x1_rcc_t
     static constexpr uint32_t AHB2ENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t AHB2ENR_RNGEN = 0x40000; // Random Number Generator clock enable
     static constexpr uint32_t AHB2ENR_AESEN = 0x10000; // AES accelerator clock enable
-    static constexpr uint32_t AHB2ENR_ADCEN = 0x2000; // ADC clock enable
+    static constexpr uint32_t AHB2ENR_ADC1EN = 0x2000; // ADC clock enable
     static constexpr uint32_t AHB2ENR_GPIOHEN = 0x80; // IO port H clock enable
     static constexpr uint32_t AHB2ENR_GPIOEEN = 0x10; // IO port E clock enable
     static constexpr uint32_t AHB2ENR_GPIODEN = 0x8; // IO port D clock enable
@@ -1281,7 +1281,7 @@ struct stm32l4x3_rcc_t
     static constexpr uint32_t AHB2RSTR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t AHB2RSTR_RNGRST = 0x40000; // Random number generator reset
     static constexpr uint32_t AHB2RSTR_AESRST = 0x10000; // AES hardware accelerator reset
-    static constexpr uint32_t AHB2RSTR_ADCRST = 0x2000; // ADC reset
+    static constexpr uint32_t AHB2RSTR_ADC1RST = 0x2000; // ADC reset
     static constexpr uint32_t AHB2RSTR_GPIOHRST = 0x80; // IO port H reset
     static constexpr uint32_t AHB2RSTR_GPIOERST = 0x10; // IO port E reset
     static constexpr uint32_t AHB2RSTR_GPIODRST = 0x8; // IO port D reset
@@ -1339,7 +1339,7 @@ struct stm32l4x3_rcc_t
     static constexpr uint32_t AHB2ENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t AHB2ENR_RNGEN = 0x40000; // Random Number Generator clock enable
     static constexpr uint32_t AHB2ENR_AESEN = 0x10000; // AES accelerator clock enable
-    static constexpr uint32_t AHB2ENR_ADCEN = 0x2000; // ADC clock enable
+    static constexpr uint32_t AHB2ENR_ADC1EN = 0x2000; // ADC clock enable
     static constexpr uint32_t AHB2ENR_GPIOHEN = 0x80; // IO port H clock enable
     static constexpr uint32_t AHB2ENR_GPIOEEN = 0x10; // IO port E clock enable
     static constexpr uint32_t AHB2ENR_GPIODEN = 0x8; // IO port D clock enable
@@ -1648,7 +1648,7 @@ struct stm32l4x5_rcc_t
     static constexpr uint32_t AHB2RSTR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t AHB2RSTR_RNGRST = 0x40000; // Random number generator reset
     static constexpr uint32_t AHB2RSTR_AESRST = 0x10000; // AES hardware accelerator reset
-    static constexpr uint32_t AHB2RSTR_ADCRST = 0x2000; // ADC reset
+    static constexpr uint32_t AHB2RSTR_ADC1RST = 0x2000; // ADC reset
     static constexpr uint32_t AHB2RSTR_OTGFSRST = 0x1000; // USB OTG FS reset
     static constexpr uint32_t AHB2RSTR_GPIOHRST = 0x80; // IO port H reset
     static constexpr uint32_t AHB2RSTR_GPIOGRST = 0x40; // IO port G reset
@@ -1717,7 +1717,7 @@ struct stm32l4x5_rcc_t
     static constexpr uint32_t AHB2ENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t AHB2ENR_RNGEN = 0x40000; // Random Number Generator clock enable
     static constexpr uint32_t AHB2ENR_AESEN = 0x10000; // AES accelerator clock enable
-    static constexpr uint32_t AHB2ENR_ADCEN = 0x2000; // ADC clock enable
+    static constexpr uint32_t AHB2ENR_ADC1EN = 0x2000; // ADC clock enable
     static constexpr uint32_t AHB2ENR_OTGFSEN = 0x1000; // OTG full speed clock enable
     static constexpr uint32_t AHB2ENR_GPIOHEN = 0x80; // IO port H clock enable
     static constexpr uint32_t AHB2ENR_GPIOGEN = 0x40; // IO port G clock enable

@@ -118,8 +118,7 @@ enum gpio_conf_t
     };
 
 enum periph_t
-    { ADC
-    , ADC1
+    { ADC1
     , ADC2
     , ADC3
     , ADC4

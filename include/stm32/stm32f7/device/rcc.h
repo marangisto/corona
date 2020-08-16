@@ -163,7 +163,7 @@ struct stm32f722_rcc_t
     static constexpr uint32_t APB2RSTR_TIM8RST = 0x2; // TIM8 reset
     static constexpr uint32_t APB2RSTR_USART1RST = 0x10; // USART1 reset
     static constexpr uint32_t APB2RSTR_USART6RST = 0x20; // USART6 reset
-    static constexpr uint32_t APB2RSTR_ADCRST = 0x100; // ADC interface reset (common to all ADCs)
+    static constexpr uint32_t APB2RSTR_ADC1RST = 0x100; // ADC interface reset (common to all ADCs)
     static constexpr uint32_t APB2RSTR_SPI1RST = 0x1000; // SPI 1 reset
     static constexpr uint32_t APB2RSTR_SPI4RST = 0x2000; // SPI4 reset
     static constexpr uint32_t APB2RSTR_SYSCFGRST = 0x4000; // System configuration controller reset
@@ -572,7 +572,7 @@ struct stm32f745_rcc_t
     static constexpr uint32_t APB2RSTR_TIM8RST = 0x2; // TIM8 reset
     static constexpr uint32_t APB2RSTR_USART1RST = 0x10; // USART1 reset
     static constexpr uint32_t APB2RSTR_USART6RST = 0x20; // USART6 reset
-    static constexpr uint32_t APB2RSTR_ADCRST = 0x100; // ADC interface reset (common to all ADCs)
+    static constexpr uint32_t APB2RSTR_ADC1RST = 0x100; // ADC interface reset (common to all ADCs)
     static constexpr uint32_t APB2RSTR_SPI1RST = 0x1000; // SPI 1 reset
     static constexpr uint32_t APB2RSTR_SPI4RST = 0x2000; // SPI4 reset
     static constexpr uint32_t APB2RSTR_SYSCFGRST = 0x4000; // System configuration controller reset
@@ -1000,7 +1000,7 @@ struct stm32f767_rcc_t
     static constexpr uint32_t APB2RSTR_TIM8RST = 0x2; // TIM8 reset
     static constexpr uint32_t APB2RSTR_USART1RST = 0x10; // USART1 reset
     static constexpr uint32_t APB2RSTR_USART6RST = 0x20; // USART6 reset
-    static constexpr uint32_t APB2RSTR_ADCRST = 0x100; // ADC interface reset (common to all ADCs)
+    static constexpr uint32_t APB2RSTR_ADC1RST = 0x100; // ADC interface reset (common to all ADCs)
     static constexpr uint32_t APB2RSTR_SPI1RST = 0x1000; // SPI 1 reset
     static constexpr uint32_t APB2RSTR_SPI4RST = 0x2000; // SPI4 reset
     static constexpr uint32_t APB2RSTR_SYSCFGRST = 0x4000; // System configuration controller reset

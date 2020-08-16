@@ -6,24 +6,24 @@
 //
 ///
 
-typename peripheral_t<STM32L0x0, ADC>::T&
-    peripheral_t<STM32L0x0, ADC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L0x0, ADC>::T*
+typename peripheral_t<STM32L0x0, ADC1>::T&
+    peripheral_t<STM32L0x0, ADC1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L0x0, ADC1>::T*
         >(0x40012400);
 
-typename peripheral_t<STM32L0x1, ADC>::T&
-    peripheral_t<STM32L0x1, ADC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L0x1, ADC>::T*
+typename peripheral_t<STM32L0x1, ADC1>::T&
+    peripheral_t<STM32L0x1, ADC1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L0x1, ADC1>::T*
         >(0x40012400);
 
-typename peripheral_t<STM32L0x2, ADC>::T&
-    peripheral_t<STM32L0x2, ADC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L0x2, ADC>::T*
+typename peripheral_t<STM32L0x2, ADC1>::T&
+    peripheral_t<STM32L0x2, ADC1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L0x2, ADC1>::T*
         >(0x40012400);
 
-typename peripheral_t<STM32L0x3, ADC>::T&
-    peripheral_t<STM32L0x3, ADC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L0x3, ADC>::T*
+typename peripheral_t<STM32L0x3, ADC1>::T&
+    peripheral_t<STM32L0x3, ADC1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L0x3, ADC1>::T*
         >(0x40012400);
 
 typename peripheral_t<STM32L0x1, AES>::T&

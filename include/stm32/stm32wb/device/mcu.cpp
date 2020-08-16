@@ -6,24 +6,24 @@
 //
 ///
 
-typename peripheral_t<STM32WB30_CM4, ADC>::T&
-    peripheral_t<STM32WB30_CM4, ADC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32WB30_CM4, ADC>::T*
+typename peripheral_t<STM32WB30_CM4, ADC1>::T&
+    peripheral_t<STM32WB30_CM4, ADC1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32WB30_CM4, ADC1>::T*
         >(0x50040000);
 
-typename peripheral_t<STM32WB35_CM4, ADC>::T&
-    peripheral_t<STM32WB35_CM4, ADC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32WB35_CM4, ADC>::T*
+typename peripheral_t<STM32WB35_CM4, ADC1>::T&
+    peripheral_t<STM32WB35_CM4, ADC1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32WB35_CM4, ADC1>::T*
         >(0x50040000);
 
-typename peripheral_t<STM32WB50_CM4, ADC>::T&
-    peripheral_t<STM32WB50_CM4, ADC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32WB50_CM4, ADC>::T*
+typename peripheral_t<STM32WB50_CM4, ADC1>::T&
+    peripheral_t<STM32WB50_CM4, ADC1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32WB50_CM4, ADC1>::T*
         >(0x50040000);
 
-typename peripheral_t<STM32WB55_CM4, ADC>::T&
-    peripheral_t<STM32WB55_CM4, ADC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32WB55_CM4, ADC>::T*
+typename peripheral_t<STM32WB55_CM4, ADC1>::T&
+    peripheral_t<STM32WB55_CM4, ADC1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32WB55_CM4, ADC1>::T*
         >(0x50040000);
 
 typename peripheral_t<STM32WB30_CM4, AES1>::T&

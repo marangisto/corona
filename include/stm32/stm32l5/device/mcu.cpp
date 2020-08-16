@@ -6,9 +6,9 @@
 //
 ///
 
-typename peripheral_t<STM32L552, ADC>::T&
-    peripheral_t<STM32L552, ADC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L552, ADC>::T*
+typename peripheral_t<STM32L552, ADC1>::T&
+    peripheral_t<STM32L552, ADC1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L552, ADC1>::T*
         >(0x42028000);
 
 typename peripheral_t<STM32L552, SEC_ADC>::T&
@@ -16,9 +16,9 @@ typename peripheral_t<STM32L552, SEC_ADC>::T&
         <typename peripheral_t<STM32L552, SEC_ADC>::T*
         >(0x52028000);
 
-typename peripheral_t<STM32L562, ADC>::T&
-    peripheral_t<STM32L562, ADC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L562, ADC>::T*
+typename peripheral_t<STM32L562, ADC1>::T&
+    peripheral_t<STM32L562, ADC1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L562, ADC1>::T*
         >(0x42028000);
 
 typename peripheral_t<STM32L562, SEC_ADC>::T&

@@ -92,7 +92,7 @@ struct stm32f301_rcc_t
     static constexpr uint32_t APB1RSTR_CECRST = 0x40000000; // HDMI CEC reset
 
     static constexpr uint32_t AHBENR_RESET_VALUE = 0x14; // Reset value
-    static constexpr uint32_t AHBENR_DMAEN = 0x1; // DMA1 clock enable
+    static constexpr uint32_t AHBENR_DMA1EN = 0x1; // DMA1 clock enable
     static constexpr uint32_t AHBENR_SRAMEN = 0x4; // SRAM interface clock enable
     static constexpr uint32_t AHBENR_FLASHEN = 0x10; // FLITF clock enable
     static constexpr uint32_t AHBENR_CRCEN = 0x40; // CRC clock enable
@@ -265,7 +265,7 @@ struct stm32f302_rcc_t
     static constexpr uint32_t APB1RSTR_DACRST = 0x20000000; // DAC interface reset
 
     static constexpr uint32_t AHBENR_RESET_VALUE = 0x14; // Reset value
-    static constexpr uint32_t AHBENR_DMAEN = 0x1; // DMA1 clock enable
+    static constexpr uint32_t AHBENR_DMA1EN = 0x1; // DMA1 clock enable
     static constexpr uint32_t AHBENR_DMA2EN = 0x2; // DMA2 clock enable
     static constexpr uint32_t AHBENR_SRAMEN = 0x4; // SRAM interface clock enable
     static constexpr uint32_t AHBENR_FLASHEN = 0x10; // FLITF clock enable
@@ -451,7 +451,7 @@ struct stm32f303_rcc_t
     static constexpr uint32_t APB1RSTR_I2C3RST = 0x40000000; // I2C3 reset
 
     static constexpr uint32_t AHBENR_RESET_VALUE = 0x14; // Reset value
-    static constexpr uint32_t AHBENR_DMAEN = 0x1; // DMA1 clock enable
+    static constexpr uint32_t AHBENR_DMA1EN = 0x1; // DMA1 clock enable
     static constexpr uint32_t AHBENR_DMA2EN = 0x2; // DMA2 clock enable
     static constexpr uint32_t AHBENR_SRAMEN = 0x4; // SRAM interface clock enable
     static constexpr uint32_t AHBENR_FLASHEN = 0x10; // FLITF clock enable
@@ -619,7 +619,7 @@ struct stm32f373_rcc_t
 
     static constexpr uint32_t APB2RSTR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t APB2RSTR_SYSCFGRST = 0x1; // SYSCFG and COMP reset
-    static constexpr uint32_t APB2RSTR_ADCRST = 0x200; // ADC interface reset
+    static constexpr uint32_t APB2RSTR_ADC1RST = 0x200; // ADC interface reset
     static constexpr uint32_t APB2RSTR_SPI1RST = 0x1000; // SPI 1 reset
     static constexpr uint32_t APB2RSTR_USART1RST = 0x4000; // USART1 reset
     static constexpr uint32_t APB2RSTR_TIM15RST = 0x10000; // TIM15 timer reset
@@ -656,7 +656,7 @@ struct stm32f373_rcc_t
     static constexpr uint32_t APB1RSTR_CECRST = 0x40000000; // HDMI CEC reset
 
     static constexpr uint32_t AHBENR_RESET_VALUE = 0x14; // Reset value
-    static constexpr uint32_t AHBENR_DMAEN = 0x1; // DMA1 clock enable
+    static constexpr uint32_t AHBENR_DMA1EN = 0x1; // DMA1 clock enable
     static constexpr uint32_t AHBENR_DMA2EN = 0x2; // DMA2 clock enable
     static constexpr uint32_t AHBENR_SRAMEN = 0x4; // SRAM interface clock enable
     static constexpr uint32_t AHBENR_FLASHEN = 0x10; // FLITF clock enable
@@ -671,7 +671,7 @@ struct stm32f373_rcc_t
 
     static constexpr uint32_t APB2ENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t APB2ENR_SYSCFGEN = 0x1; // SYSCFG clock enable
-    static constexpr uint32_t APB2ENR_ADCEN = 0x200; // ADC 1 interface clock enable
+    static constexpr uint32_t APB2ENR_ADC1EN = 0x200; // ADC 1 interface clock enable
     static constexpr uint32_t APB2ENR_TIM1EN = 0x800; // TIM1 Timer clock enable
     static constexpr uint32_t APB2ENR_SPI1EN = 0x1000; // SPI 1 clock enable
     static constexpr uint32_t APB2ENR_USART1EN = 0x4000; // USART1 clock enable
@@ -845,7 +845,7 @@ struct stm32f3x4_rcc_t
     static constexpr uint32_t APB1RSTR_DACRST = 0x20000000; // DAC interface reset
 
     static constexpr uint32_t AHBENR_RESET_VALUE = 0x14; // Reset value
-    static constexpr uint32_t AHBENR_DMAEN = 0x1; // DMA1 clock enable
+    static constexpr uint32_t AHBENR_DMA1EN = 0x1; // DMA1 clock enable
     static constexpr uint32_t AHBENR_DMA2EN = 0x2; // DMA2 clock enable
     static constexpr uint32_t AHBENR_SRAMEN = 0x4; // SRAM interface clock enable
     static constexpr uint32_t AHBENR_FLASHEN = 0x10; // FLITF clock enable

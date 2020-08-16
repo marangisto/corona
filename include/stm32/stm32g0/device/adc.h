@@ -324,82 +324,82 @@ struct stm32g070_adc_t
 };
 
 template<>
-struct peripheral_t<STM32G030, ADC>
+struct peripheral_t<STM32G030, ADC1>
 {
     using T = stm32g030_adc_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G031, ADC>
+struct peripheral_t<STM32G031, ADC1>
 {
     using T = stm32g030_adc_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G041, ADC>
+struct peripheral_t<STM32G041, ADC1>
 {
     using T = stm32g030_adc_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G070, ADC>
+struct peripheral_t<STM32G070, ADC1>
 {
     using T = stm32g070_adc_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G071, ADC>
+struct peripheral_t<STM32G071, ADC1>
 {
     using T = stm32g070_adc_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G081, ADC>
+struct peripheral_t<STM32G081, ADC1>
 {
     using T = stm32g070_adc_t;
     static T& V;
 };
 
-using adc_t = peripheral_t<svd, ADC>;
+using adc1_t = peripheral_t<svd, ADC1>;
 
 template<int INST> struct adc_traits {};
 
-template<> struct adc_traits<0>
+template<> struct adc_traits<1>
 {
-    using adc = adc_t;
+    using adc = adc1_t;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APBENR2 |= RCC::T::APBENR2_ADCEN;
+        RCC::V.APBENR2 |= RCC::T::APBENR2_ADC1EN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APBENR2 &= ~RCC::T::APBENR2_ADCEN;
+        RCC::V.APBENR2 &= ~RCC::T::APBENR2_ADC1EN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APBSMENR2 |= RCC::T::APBSMENR2_ADCSMEN;
+        RCC::V.APBSMENR2 |= RCC::T::APBSMENR2_ADC1SMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APBSMENR2 &= ~RCC::T::APBSMENR2_ADCSMEN;
+        RCC::V.APBSMENR2 &= ~RCC::T::APBSMENR2_ADC1SMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.APBRSTR2 |= RCC::T::APBRSTR2_ADCRST;
+        RCC::V.APBRSTR2 |= RCC::T::APBRSTR2_ADC1RST;
     }
 };

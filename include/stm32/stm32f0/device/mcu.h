@@ -136,7 +136,7 @@ enum gpio_conf_t
     };
 
 enum periph_t
-    { ADC
+    { ADC1
     , CAN
     , CRC
     , CRS

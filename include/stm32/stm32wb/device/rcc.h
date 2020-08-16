@@ -182,7 +182,7 @@ struct stm32wb30_cm4_rcc_t
 
     static constexpr uint32_t AHB2RSTR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t AHB2RSTR_AES1RST = 0x10000; // AES1 hardware accelerator reset
-    static constexpr uint32_t AHB2RSTR_ADCRST = 0x2000; // ADC reset
+    static constexpr uint32_t AHB2RSTR_ADC1RST = 0x2000; // ADC reset
     static constexpr uint32_t AHB2RSTR_GPIOHRST = 0x80; // IO port H reset
     static constexpr uint32_t AHB2RSTR_GPIOERST = 0x10; // IO port E reset
     static constexpr uint32_t AHB2RSTR_GPIODRST = 0x8; // IO port D reset
@@ -234,7 +234,7 @@ struct stm32wb30_cm4_rcc_t
 
     static constexpr uint32_t AHB2ENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t AHB2ENR_AES1EN = 0x10000; // AES1 accelerator clock enable
-    static constexpr uint32_t AHB2ENR_ADCEN = 0x2000; // ADC clock enable
+    static constexpr uint32_t AHB2ENR_ADC1EN = 0x2000; // ADC clock enable
     static constexpr uint32_t AHB2ENR_GPIOHEN = 0x80; // IO port H clock enable
     static constexpr uint32_t AHB2ENR_GPIOEEN = 0x10; // IO port E clock enable
     static constexpr uint32_t AHB2ENR_GPIODEN = 0x8; // IO port D clock enable
@@ -404,7 +404,7 @@ struct stm32wb30_cm4_rcc_t
 
     static constexpr uint32_t C2AHB2ENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t C2AHB2ENR_AES1EN = 0x10000; // CPU2 AES1 accelerator clock enable
-    static constexpr uint32_t C2AHB2ENR_ADCEN = 0x2000; // CPU2 ADC clock enable
+    static constexpr uint32_t C2AHB2ENR_ADC1EN = 0x2000; // CPU2 ADC clock enable
     static constexpr uint32_t C2AHB2ENR_GPIOHEN = 0x80; // CPU2 IO port H clock enable
     static constexpr uint32_t C2AHB2ENR_GPIOEEN = 0x10; // CPU2 IO port E clock enable
     static constexpr uint32_t C2AHB2ENR_GPIODEN = 0x8; // CPU2 IO port D clock enable

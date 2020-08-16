@@ -487,82 +487,82 @@ struct stm32g070_dma_t
 };
 
 template<>
-struct peripheral_t<STM32G030, DMA>
+struct peripheral_t<STM32G030, DMA1>
 {
     using T = stm32g030_dma_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G031, DMA>
+struct peripheral_t<STM32G031, DMA1>
 {
     using T = stm32g030_dma_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G041, DMA>
+struct peripheral_t<STM32G041, DMA1>
 {
     using T = stm32g030_dma_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G070, DMA>
+struct peripheral_t<STM32G070, DMA1>
 {
     using T = stm32g070_dma_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G071, DMA>
+struct peripheral_t<STM32G071, DMA1>
 {
     using T = stm32g070_dma_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G081, DMA>
+struct peripheral_t<STM32G081, DMA1>
 {
     using T = stm32g070_dma_t;
     static T& V;
 };
 
-using dma_t = peripheral_t<svd, DMA>;
+using dma1_t = peripheral_t<svd, DMA1>;
 
 template<int INST> struct dma_traits {};
 
-template<> struct dma_traits<0>
+template<> struct dma_traits<1>
 {
-    using dma = dma_t;
+    using dma = dma1_t;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.AHBENR |= RCC::T::AHBENR_DMAEN;
+        RCC::V.AHBENR |= RCC::T::AHBENR_DMA1EN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.AHBENR &= ~RCC::T::AHBENR_DMAEN;
+        RCC::V.AHBENR &= ~RCC::T::AHBENR_DMA1EN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.AHBSMENR |= RCC::T::AHBSMENR_DMASMEN;
+        RCC::V.AHBSMENR |= RCC::T::AHBSMENR_DMA1SMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.AHBSMENR &= ~RCC::T::AHBSMENR_DMASMEN;
+        RCC::V.AHBSMENR &= ~RCC::T::AHBSMENR_DMA1SMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.AHBRSTR |= RCC::T::AHBRSTR_DMARST;
+        RCC::V.AHBRSTR |= RCC::T::AHBRSTR_DMA1RST;
     }
 };

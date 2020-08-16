@@ -77,7 +77,7 @@ struct stm32f0x0_rcc_t
 
     static constexpr uint32_t APB2RSTR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t APB2RSTR_SYSCFGRST = 0x1; // SYSCFG and COMP reset
-    static constexpr uint32_t APB2RSTR_ADCRST = 0x200; // ADC interface reset
+    static constexpr uint32_t APB2RSTR_ADC1RST = 0x200; // ADC interface reset
     static constexpr uint32_t APB2RSTR_TIM1RST = 0x800; // TIM1 timer reset
     static constexpr uint32_t APB2RSTR_SPI1RST = 0x1000; // SPI 1 reset
     static constexpr uint32_t APB2RSTR_USART1RST = 0x4000; // USART1 reset
@@ -115,7 +115,7 @@ struct stm32f0x0_rcc_t
 
     static constexpr uint32_t APB2ENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t APB2ENR_SYSCFGEN = 0x1; // SYSCFG clock enable
-    static constexpr uint32_t APB2ENR_ADCEN = 0x200; // ADC 1 interface clock enable
+    static constexpr uint32_t APB2ENR_ADC1EN = 0x200; // ADC 1 interface clock enable
     static constexpr uint32_t APB2ENR_TIM1EN = 0x800; // TIM1 Timer clock enable
     static constexpr uint32_t APB2ENR_SPI1EN = 0x1000; // SPI 1 clock enable
     static constexpr uint32_t APB2ENR_USART1EN = 0x4000; // USART1 clock enable
@@ -262,7 +262,7 @@ struct stm32f0x1_rcc_t
 
     static constexpr uint32_t APB2RSTR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t APB2RSTR_SYSCFGRST = 0x1; // SYSCFG and COMP reset
-    static constexpr uint32_t APB2RSTR_ADCRST = 0x200; // ADC interface reset
+    static constexpr uint32_t APB2RSTR_ADC1RST = 0x200; // ADC interface reset
     static constexpr uint32_t APB2RSTR_TIM1RST = 0x800; // TIM1 timer reset
     static constexpr uint32_t APB2RSTR_SPI1RST = 0x1000; // SPI 1 reset
     static constexpr uint32_t APB2RSTR_USART1RST = 0x4000; // USART1 reset
@@ -308,7 +308,7 @@ struct stm32f0x1_rcc_t
 
     static constexpr uint32_t APB2ENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t APB2ENR_SYSCFGEN = 0x1; // SYSCFG clock enable
-    static constexpr uint32_t APB2ENR_ADCEN = 0x200; // ADC 1 interface clock enable
+    static constexpr uint32_t APB2ENR_ADC1EN = 0x200; // ADC 1 interface clock enable
     static constexpr uint32_t APB2ENR_TIM1EN = 0x800; // TIM1 Timer clock enable
     static constexpr uint32_t APB2ENR_SPI1EN = 0x1000; // SPI 1 clock enable
     static constexpr uint32_t APB2ENR_USART1EN = 0x4000; // USART1 clock enable
@@ -464,7 +464,7 @@ struct stm32f0x2_rcc_t
 
     static constexpr uint32_t APB2RSTR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t APB2RSTR_SYSCFGRST = 0x1; // SYSCFG and COMP reset
-    static constexpr uint32_t APB2RSTR_ADCRST = 0x200; // ADC interface reset
+    static constexpr uint32_t APB2RSTR_ADC1RST = 0x200; // ADC interface reset
     static constexpr uint32_t APB2RSTR_TIM1RST = 0x800; // TIM1 timer reset
     static constexpr uint32_t APB2RSTR_SPI1RST = 0x1000; // SPI 1 reset
     static constexpr uint32_t APB2RSTR_USART1RST = 0x4000; // USART1 reset
@@ -508,7 +508,7 @@ struct stm32f0x2_rcc_t
 
     static constexpr uint32_t APB2ENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t APB2ENR_SYSCFGEN = 0x1; // SYSCFG clock enable
-    static constexpr uint32_t APB2ENR_ADCEN = 0x200; // ADC 1 interface clock enable
+    static constexpr uint32_t APB2ENR_ADC1EN = 0x200; // ADC 1 interface clock enable
     static constexpr uint32_t APB2ENR_TIM1EN = 0x800; // TIM1 Timer clock enable
     static constexpr uint32_t APB2ENR_SPI1EN = 0x1000; // SPI 1 clock enable
     static constexpr uint32_t APB2ENR_USART1EN = 0x4000; // USART1 clock enable
@@ -660,7 +660,7 @@ struct stm32f0x8_rcc_t
 
     static constexpr uint32_t APB2RSTR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t APB2RSTR_SYSCFGRST = 0x1; // SYSCFG and COMP reset
-    static constexpr uint32_t APB2RSTR_ADCRST = 0x200; // ADC interface reset
+    static constexpr uint32_t APB2RSTR_ADC1RST = 0x200; // ADC interface reset
     static constexpr uint32_t APB2RSTR_TIM1RST = 0x800; // TIM1 timer reset
     static constexpr uint32_t APB2RSTR_SPI1RST = 0x1000; // SPI 1 reset
     static constexpr uint32_t APB2RSTR_USART1RST = 0x4000; // USART1 reset
@@ -706,7 +706,7 @@ struct stm32f0x8_rcc_t
 
     static constexpr uint32_t APB2ENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t APB2ENR_SYSCFGEN = 0x1; // SYSCFG clock enable
-    static constexpr uint32_t APB2ENR_ADCEN = 0x200; // ADC 1 interface clock enable
+    static constexpr uint32_t APB2ENR_ADC1EN = 0x200; // ADC 1 interface clock enable
     static constexpr uint32_t APB2ENR_TIM1EN = 0x800; // TIM1 Timer clock enable
     static constexpr uint32_t APB2ENR_SPI1EN = 0x1000; // SPI 1 clock enable
     static constexpr uint32_t APB2ENR_USART1EN = 0x4000; // USART1 clock enable

@@ -104,7 +104,7 @@ struct stm32g030_rcc_t
     static constexpr uint32_t IOPRSTR_IOPFRST = 0x20; // I/O port F reset
 
     static constexpr uint32_t AHBRSTR_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t AHBRSTR_DMARST = 0x1; // DMA1 reset
+    static constexpr uint32_t AHBRSTR_DMA1RST = 0x1; // DMA1 reset
     static constexpr uint32_t AHBRSTR_FLASHRST = 0x100; // FLITF reset
     static constexpr uint32_t AHBRSTR_CRCRST = 0x1000; // CRC reset
 
@@ -126,7 +126,7 @@ struct stm32g030_rcc_t
     static constexpr uint32_t APBRSTR2_TIM14RST = 0x8000; // TIM14 timer reset
     static constexpr uint32_t APBRSTR2_TIM16RST = 0x20000; // TIM16 timer reset
     static constexpr uint32_t APBRSTR2_TIM17RST = 0x40000; // TIM17 timer reset
-    static constexpr uint32_t APBRSTR2_ADCRST = 0x100000; // ADC reset
+    static constexpr uint32_t APBRSTR2_ADC1RST = 0x100000; // ADC reset
 
     static constexpr uint32_t IOPENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t IOPENR_IOPAEN = 0x1; // I/O port A clock enable
@@ -136,7 +136,7 @@ struct stm32g030_rcc_t
     static constexpr uint32_t IOPENR_IOPFEN = 0x20; // I/O port F clock enable
 
     static constexpr uint32_t AHBENR_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t AHBENR_DMAEN = 0x1; // DMA clock enable
+    static constexpr uint32_t AHBENR_DMA1EN = 0x1; // DMA clock enable
     static constexpr uint32_t AHBENR_FLASHEN = 0x100; // Flash memory interface clock enable
     static constexpr uint32_t AHBENR_CRCEN = 0x1000; // CRC clock enable
 
@@ -160,7 +160,7 @@ struct stm32g030_rcc_t
     static constexpr uint32_t APBENR2_TIM14EN = 0x8000; // TIM14 timer clock enable
     static constexpr uint32_t APBENR2_TIM16EN = 0x20000; // TIM16 timer clock enable
     static constexpr uint32_t APBENR2_TIM17EN = 0x40000; // TIM16 timer clock enable
-    static constexpr uint32_t APBENR2_ADCEN = 0x100000; // ADC clock enable
+    static constexpr uint32_t APBENR2_ADC1EN = 0x100000; // ADC clock enable
 
     static constexpr uint32_t IOPSMENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t IOPSMENR_IOPASMEN = 0x1; // I/O port A clock enable during Sleep mode
@@ -170,7 +170,7 @@ struct stm32g030_rcc_t
     static constexpr uint32_t IOPSMENR_IOPFSMEN = 0x20; // I/O port F clock enable during Sleep mode
 
     static constexpr uint32_t AHBSMENR_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t AHBSMENR_DMASMEN = 0x1; // DMA clock enable during Sleep mode
+    static constexpr uint32_t AHBSMENR_DMA1SMEN = 0x1; // DMA clock enable during Sleep mode
     static constexpr uint32_t AHBSMENR_FLASHSMEN = 0x100; // Flash memory interface clock enable during Sleep mode
     static constexpr uint32_t AHBSMENR_SRAMSMEN = 0x200; // SRAM clock enable during Sleep mode
     static constexpr uint32_t AHBSMENR_CRCSMEN = 0x1000; // CRC clock enable during Sleep mode
@@ -195,7 +195,7 @@ struct stm32g030_rcc_t
     static constexpr uint32_t APBSMENR2_TIM14SMEN = 0x8000; // TIM14 timer clock enable during Sleep mode
     static constexpr uint32_t APBSMENR2_TIM16SMEN = 0x20000; // TIM16 timer clock enable during Sleep mode
     static constexpr uint32_t APBSMENR2_TIM17SMEN = 0x40000; // TIM16 timer clock enable during Sleep mode
-    static constexpr uint32_t APBSMENR2_ADCSMEN = 0x100000; // ADC clock enable during Sleep mode
+    static constexpr uint32_t APBSMENR2_ADC1SMEN = 0x100000; // ADC clock enable during Sleep mode
 
     static constexpr uint32_t CCIPR_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<0, 0x3> CCIPR_USART1SEL; // USART1 clock source selection
@@ -331,7 +331,7 @@ struct stm32g031_rcc_t
     static constexpr uint32_t IOPRSTR_IOPFRST = 0x20; // I/O port F reset
 
     static constexpr uint32_t AHBRSTR_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t AHBRSTR_DMARST = 0x1; // DMA1 reset
+    static constexpr uint32_t AHBRSTR_DMA1RST = 0x1; // DMA1 reset
     static constexpr uint32_t AHBRSTR_FLASHRST = 0x100; // FLITF reset
     static constexpr uint32_t AHBRSTR_CRCRST = 0x1000; // CRC reset
 
@@ -356,7 +356,7 @@ struct stm32g031_rcc_t
     static constexpr uint32_t APBRSTR2_TIM14RST = 0x8000; // TIM14 timer reset
     static constexpr uint32_t APBRSTR2_TIM16RST = 0x20000; // TIM16 timer reset
     static constexpr uint32_t APBRSTR2_TIM17RST = 0x40000; // TIM17 timer reset
-    static constexpr uint32_t APBRSTR2_ADCRST = 0x100000; // ADC reset
+    static constexpr uint32_t APBRSTR2_ADC1RST = 0x100000; // ADC reset
 
     static constexpr uint32_t IOPENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t IOPENR_IOPAEN = 0x1; // I/O port A clock enable
@@ -366,7 +366,7 @@ struct stm32g031_rcc_t
     static constexpr uint32_t IOPENR_IOPFEN = 0x20; // I/O port F clock enable
 
     static constexpr uint32_t AHBENR_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t AHBENR_DMAEN = 0x1; // DMA clock enable
+    static constexpr uint32_t AHBENR_DMA1EN = 0x1; // DMA clock enable
     static constexpr uint32_t AHBENR_FLASHEN = 0x100; // Flash memory interface clock enable
     static constexpr uint32_t AHBENR_CRCEN = 0x1000; // CRC clock enable
 
@@ -393,7 +393,7 @@ struct stm32g031_rcc_t
     static constexpr uint32_t APBENR2_TIM14EN = 0x8000; // TIM14 timer clock enable
     static constexpr uint32_t APBENR2_TIM16EN = 0x20000; // TIM16 timer clock enable
     static constexpr uint32_t APBENR2_TIM17EN = 0x40000; // TIM16 timer clock enable
-    static constexpr uint32_t APBENR2_ADCEN = 0x100000; // ADC clock enable
+    static constexpr uint32_t APBENR2_ADC1EN = 0x100000; // ADC clock enable
 
     static constexpr uint32_t IOPSMENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t IOPSMENR_IOPASMEN = 0x1; // I/O port A clock enable during Sleep mode
@@ -403,7 +403,7 @@ struct stm32g031_rcc_t
     static constexpr uint32_t IOPSMENR_IOPFSMEN = 0x20; // I/O port F clock enable during Sleep mode
 
     static constexpr uint32_t AHBSMENR_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t AHBSMENR_DMASMEN = 0x1; // DMA clock enable during Sleep mode
+    static constexpr uint32_t AHBSMENR_DMA1SMEN = 0x1; // DMA clock enable during Sleep mode
     static constexpr uint32_t AHBSMENR_FLASHSMEN = 0x100; // Flash memory interface clock enable during Sleep mode
     static constexpr uint32_t AHBSMENR_SRAMSMEN = 0x200; // SRAM clock enable during Sleep mode
     static constexpr uint32_t AHBSMENR_CRCSMEN = 0x1000; // CRC clock enable during Sleep mode
@@ -431,7 +431,7 @@ struct stm32g031_rcc_t
     static constexpr uint32_t APBSMENR2_TIM14SMEN = 0x8000; // TIM14 timer clock enable during Sleep mode
     static constexpr uint32_t APBSMENR2_TIM16SMEN = 0x20000; // TIM16 timer clock enable during Sleep mode
     static constexpr uint32_t APBSMENR2_TIM17SMEN = 0x40000; // TIM16 timer clock enable during Sleep mode
-    static constexpr uint32_t APBSMENR2_ADCSMEN = 0x100000; // ADC clock enable during Sleep mode
+    static constexpr uint32_t APBSMENR2_ADC1SMEN = 0x100000; // ADC clock enable during Sleep mode
 
     static constexpr uint32_t CCIPR_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<0, 0x3> CCIPR_USART1SEL; // USART1 clock source selection
@@ -570,7 +570,7 @@ struct stm32g041_rcc_t
     static constexpr uint32_t IOPRSTR_IOPFRST = 0x20; // I/O port F reset
 
     static constexpr uint32_t AHBRSTR_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t AHBRSTR_DMARST = 0x1; // DMA1 reset
+    static constexpr uint32_t AHBRSTR_DMA1RST = 0x1; // DMA1 reset
     static constexpr uint32_t AHBRSTR_FLASHRST = 0x100; // FLITF reset
     static constexpr uint32_t AHBRSTR_CRCRST = 0x1000; // CRC reset
     static constexpr uint32_t AHBRSTR_AESRST = 0x10000; // AES hardware accelerator reset
@@ -597,7 +597,7 @@ struct stm32g041_rcc_t
     static constexpr uint32_t APBRSTR2_TIM14RST = 0x8000; // TIM14 timer reset
     static constexpr uint32_t APBRSTR2_TIM16RST = 0x20000; // TIM16 timer reset
     static constexpr uint32_t APBRSTR2_TIM17RST = 0x40000; // TIM17 timer reset
-    static constexpr uint32_t APBRSTR2_ADCRST = 0x100000; // ADC reset
+    static constexpr uint32_t APBRSTR2_ADC1RST = 0x100000; // ADC reset
 
     static constexpr uint32_t IOPENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t IOPENR_IOPAEN = 0x1; // I/O port A clock enable
@@ -607,7 +607,7 @@ struct stm32g041_rcc_t
     static constexpr uint32_t IOPENR_IOPFEN = 0x20; // I/O port F clock enable
 
     static constexpr uint32_t AHBENR_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t AHBENR_DMAEN = 0x1; // DMA clock enable
+    static constexpr uint32_t AHBENR_DMA1EN = 0x1; // DMA clock enable
     static constexpr uint32_t AHBENR_FLASHEN = 0x100; // Flash memory interface clock enable
     static constexpr uint32_t AHBENR_CRCEN = 0x1000; // CRC clock enable
     static constexpr uint32_t AHBENR_AESEN = 0x10000; // AES hardware accelerator
@@ -636,7 +636,7 @@ struct stm32g041_rcc_t
     static constexpr uint32_t APBENR2_TIM14EN = 0x8000; // TIM14 timer clock enable
     static constexpr uint32_t APBENR2_TIM16EN = 0x20000; // TIM16 timer clock enable
     static constexpr uint32_t APBENR2_TIM17EN = 0x40000; // TIM16 timer clock enable
-    static constexpr uint32_t APBENR2_ADCEN = 0x100000; // ADC clock enable
+    static constexpr uint32_t APBENR2_ADC1EN = 0x100000; // ADC clock enable
 
     static constexpr uint32_t IOPSMENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t IOPSMENR_IOPASMEN = 0x1; // I/O port A clock enable during Sleep mode
@@ -646,7 +646,7 @@ struct stm32g041_rcc_t
     static constexpr uint32_t IOPSMENR_IOPFSMEN = 0x20; // I/O port F clock enable during Sleep mode
 
     static constexpr uint32_t AHBSMENR_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t AHBSMENR_DMASMEN = 0x1; // DMA clock enable during Sleep mode
+    static constexpr uint32_t AHBSMENR_DMA1SMEN = 0x1; // DMA clock enable during Sleep mode
     static constexpr uint32_t AHBSMENR_FLASHSMEN = 0x100; // Flash memory interface clock enable during Sleep mode
     static constexpr uint32_t AHBSMENR_SRAMSMEN = 0x200; // SRAM clock enable during Sleep mode
     static constexpr uint32_t AHBSMENR_CRCSMEN = 0x1000; // CRC clock enable during Sleep mode
@@ -676,7 +676,7 @@ struct stm32g041_rcc_t
     static constexpr uint32_t APBSMENR2_TIM14SMEN = 0x8000; // TIM14 timer clock enable during Sleep mode
     static constexpr uint32_t APBSMENR2_TIM16SMEN = 0x20000; // TIM16 timer clock enable during Sleep mode
     static constexpr uint32_t APBSMENR2_TIM17SMEN = 0x40000; // TIM16 timer clock enable during Sleep mode
-    static constexpr uint32_t APBSMENR2_ADCSMEN = 0x100000; // ADC clock enable during Sleep mode
+    static constexpr uint32_t APBSMENR2_ADC1SMEN = 0x100000; // ADC clock enable during Sleep mode
 
     static constexpr uint32_t CCIPR_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<0, 0x3> CCIPR_USART1SEL; // USART1 clock source selection
@@ -815,7 +815,7 @@ struct stm32g070_rcc_t
     static constexpr uint32_t IOPRSTR_IOPFRST = 0x20; // I/O port F reset
 
     static constexpr uint32_t AHBRSTR_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t AHBRSTR_DMARST = 0x1; // DMA1 reset
+    static constexpr uint32_t AHBRSTR_DMA1RST = 0x1; // DMA1 reset
     static constexpr uint32_t AHBRSTR_FLASHRST = 0x100; // FLITF reset
     static constexpr uint32_t AHBRSTR_CRCRST = 0x1000; // CRC reset
     static constexpr uint32_t AHBRSTR_AESRST = 0x10000; // AES hardware accelerator reset
@@ -851,7 +851,7 @@ struct stm32g070_rcc_t
     static constexpr uint32_t APBRSTR2_TIM15RST = 0x10000; // TIM15 timer reset
     static constexpr uint32_t APBRSTR2_TIM16RST = 0x20000; // TIM16 timer reset
     static constexpr uint32_t APBRSTR2_TIM17RST = 0x40000; // TIM17 timer reset
-    static constexpr uint32_t APBRSTR2_ADCRST = 0x100000; // ADC reset
+    static constexpr uint32_t APBRSTR2_ADC1RST = 0x100000; // ADC reset
 
     static constexpr uint32_t IOPENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t IOPENR_IOPAEN = 0x1; // I/O port A clock enable
@@ -861,7 +861,7 @@ struct stm32g070_rcc_t
     static constexpr uint32_t IOPENR_IOPFEN = 0x20; // I/O port F clock enable
 
     static constexpr uint32_t AHBENR_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t AHBENR_DMAEN = 0x1; // DMA clock enable
+    static constexpr uint32_t AHBENR_DMA1EN = 0x1; // DMA clock enable
     static constexpr uint32_t AHBENR_FLASHEN = 0x100; // Flash memory interface clock enable
     static constexpr uint32_t AHBENR_CRCEN = 0x1000; // CRC clock enable
     static constexpr uint32_t AHBENR_AESEN = 0x10000; // AES hardware accelerator
@@ -899,7 +899,7 @@ struct stm32g070_rcc_t
     static constexpr uint32_t APBENR2_TIM15EN = 0x10000; // TIM15 timer clock enable
     static constexpr uint32_t APBENR2_TIM16EN = 0x20000; // TIM16 timer clock enable
     static constexpr uint32_t APBENR2_TIM17EN = 0x40000; // TIM16 timer clock enable
-    static constexpr uint32_t APBENR2_ADCEN = 0x100000; // ADC clock enable
+    static constexpr uint32_t APBENR2_ADC1EN = 0x100000; // ADC clock enable
 
     static constexpr uint32_t IOPSMENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t IOPSMENR_IOPASMEN = 0x1; // I/O port A clock enable during Sleep mode
@@ -909,7 +909,7 @@ struct stm32g070_rcc_t
     static constexpr uint32_t IOPSMENR_IOPFSMEN = 0x20; // I/O port F clock enable during Sleep mode
 
     static constexpr uint32_t AHBSMENR_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t AHBSMENR_DMASMEN = 0x1; // DMA clock enable during Sleep mode
+    static constexpr uint32_t AHBSMENR_DMA1SMEN = 0x1; // DMA clock enable during Sleep mode
     static constexpr uint32_t AHBSMENR_FLASHSMEN = 0x100; // Flash memory interface clock enable during Sleep mode
     static constexpr uint32_t AHBSMENR_SRAMSMEN = 0x200; // SRAM clock enable during Sleep mode
     static constexpr uint32_t AHBSMENR_CRCSMEN = 0x1000; // CRC clock enable during Sleep mode
@@ -948,7 +948,7 @@ struct stm32g070_rcc_t
     static constexpr uint32_t APBSMENR2_TIM15SMEN = 0x10000; // TIM15 timer clock enable during Sleep mode
     static constexpr uint32_t APBSMENR2_TIM16SMEN = 0x20000; // TIM16 timer clock enable during Sleep mode
     static constexpr uint32_t APBSMENR2_TIM17SMEN = 0x40000; // TIM16 timer clock enable during Sleep mode
-    static constexpr uint32_t APBSMENR2_ADCSMEN = 0x100000; // ADC clock enable during Sleep mode
+    static constexpr uint32_t APBSMENR2_ADC1SMEN = 0x100000; // ADC clock enable during Sleep mode
 
     static constexpr uint32_t CCIPR_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<0, 0x3> CCIPR_USART1SEL; // USART1 clock source selection

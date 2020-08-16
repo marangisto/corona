@@ -181,7 +181,7 @@ struct stm32l4p5_rcc_t
     static constexpr uint32_t AHB2RSTR_GPIOHRST = 0x80; // IO port H reset
     static constexpr uint32_t AHB2RSTR_GPIOIRST = 0x100; // IO port I reset
     static constexpr uint32_t AHB2RSTR_OTGFSRST = 0x1000; // USB OTG FS reset
-    static constexpr uint32_t AHB2RSTR_ADCRST = 0x2000; // ADC reset
+    static constexpr uint32_t AHB2RSTR_ADC1RST = 0x2000; // ADC reset
     static constexpr uint32_t AHB2RSTR_DCMIRST = 0x4000; // Digital Camera Interface reset
     static constexpr uint32_t AHB2RSTR_AESRST = 0x10000; // AES hardware accelerator reset
     static constexpr uint32_t AHB2RSTR_HASHRST = 0x20000; // Hash reset
@@ -258,7 +258,7 @@ struct stm32l4p5_rcc_t
     static constexpr uint32_t AHB2ENR_GPIOHEN = 0x80; // IO port H clock enable
     static constexpr uint32_t AHB2ENR_GPIOIEN = 0x100; // IO port I clock enable
     static constexpr uint32_t AHB2ENR_OTGFSEN = 0x1000; // OTG full speed clock enable
-    static constexpr uint32_t AHB2ENR_ADCEN = 0x2000; // ADC clock enable
+    static constexpr uint32_t AHB2ENR_ADC1EN = 0x2000; // ADC clock enable
     static constexpr uint32_t AHB2ENR_DCMIEN = 0x4000; // DCMI clock enable
     static constexpr uint32_t AHB2ENR_AESEN = 0x10000; // AES accelerator clock enable
     static constexpr uint32_t AHB2ENR_HASHEN = 0x20000; // HASH clock enable
@@ -638,7 +638,7 @@ struct stm32l4r5_rcc_t
     static constexpr uint32_t AHB2RSTR_GPIOHRST = 0x80; // IO port H reset
     static constexpr uint32_t AHB2RSTR_GPIOIRST = 0x100; // IO port I reset
     static constexpr uint32_t AHB2RSTR_OTGFSRST = 0x1000; // USB OTG FS reset
-    static constexpr uint32_t AHB2RSTR_ADCRST = 0x2000; // ADC reset
+    static constexpr uint32_t AHB2RSTR_ADC1RST = 0x2000; // ADC reset
     static constexpr uint32_t AHB2RSTR_DCMIRST = 0x4000; // Digital Camera Interface reset
     static constexpr uint32_t AHB2RSTR_AESRST = 0x10000; // AES hardware accelerator reset
     static constexpr uint32_t AHB2RSTR_HASHRST = 0x20000; // Hash reset
@@ -716,7 +716,7 @@ struct stm32l4r5_rcc_t
     static constexpr uint32_t AHB2ENR_GPIOHEN = 0x80; // IO port H clock enable
     static constexpr uint32_t AHB2ENR_GPIOIEN = 0x100; // IO port I clock enable
     static constexpr uint32_t AHB2ENR_OTGFSEN = 0x1000; // OTG full speed clock enable
-    static constexpr uint32_t AHB2ENR_ADCEN = 0x2000; // ADC clock enable
+    static constexpr uint32_t AHB2ENR_ADC1EN = 0x2000; // ADC clock enable
     static constexpr uint32_t AHB2ENR_DCMIEN = 0x4000; // DCMI clock enable
     static constexpr uint32_t AHB2ENR_AESEN = 0x10000; // AES accelerator clock enable
     static constexpr uint32_t AHB2ENR_HASHEN = 0x20000; // HASH clock enable

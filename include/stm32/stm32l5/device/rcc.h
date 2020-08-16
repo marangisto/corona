@@ -189,7 +189,7 @@ struct stm32l552_rcc_t
     static constexpr uint32_t AHB2RSTR_GPIOFRST = 0x20; // IO port F reset
     static constexpr uint32_t AHB2RSTR_GPIOGRST = 0x40; // IO port G reset
     static constexpr uint32_t AHB2RSTR_GPIOHRST = 0x80; // IO port H reset
-    static constexpr uint32_t AHB2RSTR_ADCRST = 0x2000; // ADC reset
+    static constexpr uint32_t AHB2RSTR_ADC1RST = 0x2000; // ADC reset
     static constexpr uint32_t AHB2RSTR_AESRST = 0x10000; // AES hardware accelerator reset
     static constexpr uint32_t AHB2RSTR_HASHRST = 0x20000; // Hash reset
     static constexpr uint32_t AHB2RSTR_RNGRST = 0x40000; // Random number generator reset
@@ -265,7 +265,7 @@ struct stm32l552_rcc_t
     static constexpr uint32_t AHB2ENR_GPIOFEN = 0x20; // IO port F clock enable
     static constexpr uint32_t AHB2ENR_GPIOGEN = 0x40; // IO port G clock enable
     static constexpr uint32_t AHB2ENR_GPIOHEN = 0x80; // IO port H clock enable
-    static constexpr uint32_t AHB2ENR_ADCEN = 0x2000; // ADC clock enable
+    static constexpr uint32_t AHB2ENR_ADC1EN = 0x2000; // ADC clock enable
     static constexpr uint32_t AHB2ENR_AESEN = 0x10000; // AES accelerator clock enable
     static constexpr uint32_t AHB2ENR_HASHEN = 0x20000; // HASH clock enable
     static constexpr uint32_t AHB2ENR_RNGEN = 0x40000; // Random Number Generator clock enable

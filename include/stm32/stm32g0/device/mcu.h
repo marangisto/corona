@@ -105,13 +105,13 @@ enum gpio_conf_t
     };
 
 enum periph_t
-    { ADC
+    { ADC1
     , AES
     , COMP
     , CRC
     , DAC1
     , DBG
-    , DMA
+    , DMA1
     , DMAMUX
     , EXTI
     , FLASH

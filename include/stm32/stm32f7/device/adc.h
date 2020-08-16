@@ -609,6 +609,12 @@ template<> struct adc_traits<1>
     {
         RCC::V.APB2ENR &= ~RCC::T::APB2ENR_ADC1EN;
     }
+
+    template<typename RCC>
+    static void reset()
+    {
+        RCC::V.APB2RSTR |= RCC::T::APB2RSTR_ADC1RST;
+    }
 };
 
 template<> struct adc_traits<2>

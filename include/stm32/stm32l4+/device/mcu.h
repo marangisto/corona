@@ -95,7 +95,7 @@ enum gpio_conf_t
     };
 
 enum periph_t
-    { ADC
+    { ADC1
     , ADC_COMMON
     , AES
     , CAN1

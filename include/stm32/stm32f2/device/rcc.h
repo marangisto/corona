@@ -167,7 +167,7 @@ struct stm32f215_rcc_t
     static constexpr uint32_t APB2RSTR_SYSCFGRST = 0x4000; // System configuration controller reset
     static constexpr uint32_t APB2RSTR_SPI1RST = 0x1000; // SPI 1 reset
     static constexpr uint32_t APB2RSTR_SDIORST = 0x800; // SDIO reset
-    static constexpr uint32_t APB2RSTR_ADCRST = 0x100; // ADC interface reset (common to all ADCs)
+    static constexpr uint32_t APB2RSTR_ADC1RST = 0x100; // ADC interface reset (common to all ADCs)
     static constexpr uint32_t APB2RSTR_USART6RST = 0x20; // USART6 reset
     static constexpr uint32_t APB2RSTR_USART1RST = 0x10; // USART1 reset
     static constexpr uint32_t APB2RSTR_TIM8RST = 0x2; // TIM8 reset

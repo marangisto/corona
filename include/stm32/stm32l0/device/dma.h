@@ -318,3 +318,38 @@ struct peripheral_t<STM32L0x3, DMA1>
 using dma1_t = peripheral_t<svd, DMA1>;
 
 template<int INST> struct dma_traits {};
+
+template<> struct dma_traits<1>
+{
+    using dma = dma1_t;
+
+    template<typename RCC>
+    static void enable()
+    {
+        RCC::V.AHBENR |= RCC::T::AHBENR_DMA1EN;
+    }
+
+    template<typename RCC>
+    static void disable()
+    {
+        RCC::V.AHBENR &= ~RCC::T::AHBENR_DMA1EN;
+    }
+
+    template<typename RCC>
+    static void enable_sleep_mode()
+    {
+        RCC::V.AHBSMENR |= RCC::T::AHBSMENR_DMA1SMEN;
+    }
+
+    template<typename RCC>
+    static void disable_sleep_mode()
+    {
+        RCC::V.AHBSMENR &= ~RCC::T::AHBSMENR_DMA1SMEN;
+    }
+
+    template<typename RCC>
+    static void reset()
+    {
+        RCC::V.AHBRSTR |= RCC::T::AHBRSTR_DMA1RST;
+    }
+};

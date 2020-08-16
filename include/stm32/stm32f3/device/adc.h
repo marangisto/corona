@@ -909,14 +909,14 @@ struct stm32f302_adc1_2_t
 };
 
 template<>
-struct peripheral_t<STM32F301, ADC>
+struct peripheral_t<STM32F301, ADC1>
 {
     using T = stm32f301_adc_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32F373, ADC>
+struct peripheral_t<STM32F373, ADC1>
 {
     using T = stm32f373_adc_t;
     static T& V;
@@ -1034,7 +1034,6 @@ struct peripheral_t<STM32F303, ADC3_4>
     static T& V;
 };
 
-using adc_t = peripheral_t<svd, ADC>;
 using adc1_t = peripheral_t<svd, ADC1>;
 using adc1_2_t = peripheral_t<svd, ADC1_2>;
 using adc2_t = peripheral_t<svd, ADC2>;
@@ -1043,29 +1042,6 @@ using adc3_4_t = peripheral_t<svd, ADC3_4>;
 using adc4_t = peripheral_t<svd, ADC4>;
 
 template<int INST> struct adc_traits {};
-
-template<> struct adc_traits<0>
-{
-    using adc = adc_t;
-
-    template<typename RCC>
-    static void enable()
-    {
-        RCC::V.APB2ENR |= RCC::T::APB2ENR_ADCEN;
-    }
-
-    template<typename RCC>
-    static void disable()
-    {
-        RCC::V.APB2ENR &= ~RCC::T::APB2ENR_ADCEN;
-    }
-
-    template<typename RCC>
-    static void reset()
-    {
-        RCC::V.APB2RSTR |= RCC::T::APB2RSTR_ADCRST;
-    }
-};
 
 template<> struct adc_traits<1>
 {

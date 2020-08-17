@@ -187,5 +187,3 @@ struct peripheral_t<STM32F3x8, SDADC3>
 using sdadc1_t = peripheral_t<svd, SDADC1>;
 using sdadc2_t = peripheral_t<svd, SDADC2>;
 using sdadc3_t = peripheral_t<svd, SDADC3>;
-
-template<int INST> struct sdadc_traits {};

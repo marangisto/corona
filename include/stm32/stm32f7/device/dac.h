@@ -201,5 +201,3 @@ struct peripheral_t<STM32F779, DAC1>
 };
 
 using dac1_t = peripheral_t<svd, DAC1>;
-
-template<int INST> struct dac_traits {};

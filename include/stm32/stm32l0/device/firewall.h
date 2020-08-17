@@ -73,5 +73,3 @@ struct peripheral_t<STM32L0x3, FIREWALL>
 };
 
 using firewall_t = peripheral_t<svd, FIREWALL>;
-
-template<int INST> struct firewall_traits {};

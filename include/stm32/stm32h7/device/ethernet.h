@@ -2065,5 +2065,3 @@ struct peripheral_t<STM32H753, ETHERNET_MTL>
 using ethernet_dma_t = peripheral_t<svd, ETHERNET_DMA>;
 using ethernet_mac_t = peripheral_t<svd, ETHERNET_MAC>;
 using ethernet_mtl_t = peripheral_t<svd, ETHERNET_MTL>;
-
-template<int INST> struct ethernet_traits {};

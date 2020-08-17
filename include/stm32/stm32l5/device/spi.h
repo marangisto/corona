@@ -163,8 +163,6 @@ using spi1_t = peripheral_t<svd, SPI1>;
 using spi2_t = peripheral_t<svd, SPI2>;
 using spi3_t = peripheral_t<svd, SPI3>;
 
-template<int INST> struct spi_traits {};
-
 template<> struct spi_traits<1>
 {
     using spi = spi1_t;

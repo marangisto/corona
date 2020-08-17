@@ -396,5 +396,3 @@ struct peripheral_t<STM32L0x3, USB_SRAM>
 
 using usb_fs_t = peripheral_t<svd, USB_FS>;
 using usb_sram_t = peripheral_t<svd, USB_SRAM>;
-
-template<int INST> struct usb_traits {};

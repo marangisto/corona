@@ -372,5 +372,3 @@ struct peripheral_t<STM32L562, TAMP>
 
 using sec_tamp_t = peripheral_t<svd, SEC_TAMP>;
 using tamp_t = peripheral_t<svd, TAMP>;
-
-template<int INST> struct tamp_traits {};

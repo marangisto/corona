@@ -114,5 +114,3 @@ struct peripheral_t<STM32F217, DBG>
 };
 
 using dbg_t = peripheral_t<svd, DBG>;
-
-template<int INST> struct dbg_traits {};

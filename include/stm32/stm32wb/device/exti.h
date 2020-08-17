@@ -170,5 +170,3 @@ struct peripheral_t<STM32WB55_CM4, EXTI>
 };
 
 using exti_t = peripheral_t<svd, EXTI>;
-
-template<int INST> struct exti_traits {};

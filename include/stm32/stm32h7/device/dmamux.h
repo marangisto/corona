@@ -1066,5 +1066,3 @@ struct peripheral_t<STM32H7B3x, DMAMUX2>
 
 using dmamux1_t = peripheral_t<svd, DMAMUX1>;
 using dmamux2_t = peripheral_t<svd, DMAMUX2>;
-
-template<int INST> struct dmamux_traits {};

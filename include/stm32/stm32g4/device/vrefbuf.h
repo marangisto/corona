@@ -73,5 +73,3 @@ struct peripheral_t<STM32G484xx, VREFBUF>
 };
 
 using vrefbuf_t = peripheral_t<svd, VREFBUF>;
-
-template<int INST> struct vrefbuf_traits {};

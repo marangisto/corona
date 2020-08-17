@@ -121,5 +121,3 @@ struct peripheral_t<STM32L0x3, NVIC>
 };
 
 using nvic_t = peripheral_t<svd, NVIC>;
-
-template<int INST> struct nvic_traits {};

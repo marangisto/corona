@@ -133,5 +133,3 @@ struct peripheral_t<STM32L4S9, SWPMI1>
 };
 
 using swpmi1_t = peripheral_t<svd, SWPMI1>;
-
-template<int INST> struct swpmi_traits {};

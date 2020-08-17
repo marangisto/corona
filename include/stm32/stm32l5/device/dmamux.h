@@ -292,5 +292,3 @@ struct peripheral_t<STM32L562, SEC_DMAMUX1>
 
 using dmamux1_t = peripheral_t<svd, DMAMUX1>;
 using sec_dmamux1_t = peripheral_t<svd, SEC_DMAMUX1>;
-
-template<int INST> struct dmamux_traits {};

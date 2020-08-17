@@ -226,5 +226,3 @@ struct peripheral_t<STM32H7B3x, IWDG>
 using iwdg_t = peripheral_t<svd, IWDG>;
 using iwdg1_t = peripheral_t<svd, IWDG1>;
 using iwdg2_t = peripheral_t<svd, IWDG2>;
-
-template<int INST> struct iwdg_traits {};

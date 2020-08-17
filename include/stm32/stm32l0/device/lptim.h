@@ -105,5 +105,3 @@ struct peripheral_t<STM32L0x3, LPTIM>
 };
 
 using lptim_t = peripheral_t<svd, LPTIM>;
-
-template<int INST> struct lptim_traits {};

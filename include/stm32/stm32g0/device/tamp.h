@@ -280,5 +280,3 @@ struct peripheral_t<STM32G081, TAMP>
 };
 
 using tamp_t = peripheral_t<svd, TAMP>;
-
-template<int INST> struct tamp_traits {};

@@ -74,5 +74,3 @@ struct peripheral_t<STM32H757_CM7, ART>
 };
 
 using art_t = peripheral_t<svd, ART>;
-
-template<int INST> struct art_traits {};

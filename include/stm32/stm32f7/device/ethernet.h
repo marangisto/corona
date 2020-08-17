@@ -735,5 +735,3 @@ using ethernet_dma_t = peripheral_t<svd, ETHERNET_DMA>;
 using ethernet_mac_t = peripheral_t<svd, ETHERNET_MAC>;
 using ethernet_mmc_t = peripheral_t<svd, ETHERNET_MMC>;
 using ethernet_ptp_t = peripheral_t<svd, ETHERNET_PTP>;
-
-template<int INST> struct ethernet_traits {};

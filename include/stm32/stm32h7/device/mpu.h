@@ -152,5 +152,3 @@ struct peripheral_t<STM32H7B3x, MPU>
 };
 
 using mpu_t = peripheral_t<svd, MPU>;
-
-template<int INST> struct mpu_traits {};

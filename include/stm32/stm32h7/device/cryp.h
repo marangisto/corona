@@ -1137,5 +1137,3 @@ struct peripheral_t<STM32H753, CRYP>
 };
 
 using cryp_t = peripheral_t<svd, CRYP>;
-
-template<int INST> struct cryp_traits {};

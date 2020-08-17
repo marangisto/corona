@@ -437,5 +437,3 @@ struct peripheral_t<STM32H7B3x, DBGMCU>
 };
 
 using dbgmcu_t = peripheral_t<svd, DBGMCU>;
-
-template<int INST> struct dbgmcu_traits {};

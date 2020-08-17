@@ -278,5 +278,3 @@ struct peripheral_t<STM32H7B3x, OCTOSPI2>
 
 using octospi1_control_register_t = peripheral_t<svd, OCTOSPI1_CONTROL_REGISTER>;
 using octospi2_t = peripheral_t<svd, OCTOSPI2>;
-
-template<int INST> struct octospi_traits {};

@@ -596,5 +596,3 @@ struct peripheral_t<STM32F779, DSI>
 };
 
 using dsi_t = peripheral_t<svd, DSI>;
-
-template<int INST> struct dsi_traits {};

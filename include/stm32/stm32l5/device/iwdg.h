@@ -64,5 +64,3 @@ struct peripheral_t<STM32L562, SEC_IWDG>
 
 using iwdg_t = peripheral_t<svd, IWDG>;
 using sec_iwdg_t = peripheral_t<svd, SEC_IWDG>;
-
-template<int INST> struct iwdg_traits {};

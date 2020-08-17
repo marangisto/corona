@@ -2916,5 +2916,3 @@ using hrtim_timb_t = peripheral_t<svd, HRTIM_TIMB>;
 using hrtim_timc_t = peripheral_t<svd, HRTIM_TIMC>;
 using hrtim_timd_t = peripheral_t<svd, HRTIM_TIMD>;
 using hrtim_time_t = peripheral_t<svd, HRTIM_TIME>;
-
-template<int INST> struct hrtim_traits {};

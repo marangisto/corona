@@ -281,5 +281,3 @@ struct peripheral_t<STM32F779, FPU_CPACR>
 
 using fpu_t = peripheral_t<svd, FPU>;
 using fpu_cpacr_t = peripheral_t<svd, FPU_CPACR>;
-
-template<int INST> struct fpu_traits {};

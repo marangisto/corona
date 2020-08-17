@@ -458,5 +458,3 @@ struct peripheral_t<STM32WB55_CM4, SYSCFG>
 };
 
 using syscfg_t = peripheral_t<svd, SYSCFG>;
-
-template<int INST> struct syscfg_traits {};

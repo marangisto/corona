@@ -295,5 +295,3 @@ struct peripheral_t<STM32L4S9, LTCD>
 };
 
 using ltcd_t = peripheral_t<svd, LTCD>;
-
-template<int INST> struct lcd_traits {};

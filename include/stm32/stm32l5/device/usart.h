@@ -332,8 +332,6 @@ using usart1_t = peripheral_t<svd, USART1>;
 using usart2_t = peripheral_t<svd, USART2>;
 using usart3_t = peripheral_t<svd, USART3>;
 
-template<int INST> struct usart_traits {};
-
 template<> struct usart_traits<4>
 {
     using usart = uart4_t;

@@ -5150,5 +5150,3 @@ using gtzc_tzic_t = peripheral_t<svd, GTZC_TZIC>;
 using gtzc_tzsc_t = peripheral_t<svd, GTZC_TZSC>;
 using sec_gtzc_tzic_t = peripheral_t<svd, SEC_GTZC_TZIC>;
 using sec_gtzc_tzsc_t = peripheral_t<svd, SEC_GTZC_TZSC>;
-
-template<int INST> struct gtzc_traits {};

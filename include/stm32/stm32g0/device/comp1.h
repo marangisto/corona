@@ -62,5 +62,3 @@ struct peripheral_t<STM32G081, COMP>
 };
 
 using comp_t = peripheral_t<svd, COMP>;
-
-template<int INST> struct comp1_traits {};

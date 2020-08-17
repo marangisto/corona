@@ -814,5 +814,3 @@ struct peripheral_t<STM32H7A3x, FLASH>
 };
 
 using flash_t = peripheral_t<svd, FLASH>;
-
-template<int INST> struct flash_traits {};

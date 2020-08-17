@@ -149,5 +149,3 @@ struct peripheral_t<STM32H7B3x, PF_>
 };
 
 using pf__t = peripheral_t<svd, PF_>;
-
-template<int INST> struct pf_traits {};

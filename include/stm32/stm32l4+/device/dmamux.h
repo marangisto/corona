@@ -295,5 +295,3 @@ struct peripheral_t<STM32L4S9, DMAMUX1>
 };
 
 using dmamux1_t = peripheral_t<svd, DMAMUX1>;
-
-template<int INST> struct dmamux_traits {};

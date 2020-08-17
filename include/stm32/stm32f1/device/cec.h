@@ -64,5 +64,3 @@ struct peripheral_t<STM32F100, HDMI_CEC>
 };
 
 using hdmi_cec_t = peripheral_t<svd, HDMI_CEC>;
-
-template<int INST> struct cec_traits {};

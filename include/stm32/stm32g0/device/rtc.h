@@ -463,5 +463,3 @@ struct peripheral_t<STM32G081, RTC>
 };
 
 using rtc_t = peripheral_t<svd, RTC>;
-
-template<int INST> struct rtc_traits {};

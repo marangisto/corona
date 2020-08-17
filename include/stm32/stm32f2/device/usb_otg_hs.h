@@ -1768,5 +1768,3 @@ using otg_hs_device_t = peripheral_t<svd, OTG_HS_DEVICE>;
 using otg_hs_global_t = peripheral_t<svd, OTG_HS_GLOBAL>;
 using otg_hs_host_t = peripheral_t<svd, OTG_HS_HOST>;
 using otg_hs_pwrclk_t = peripheral_t<svd, OTG_HS_PWRCLK>;
-
-template<int INST> struct usb_otg_hs_traits {};

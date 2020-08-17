@@ -1541,5 +1541,3 @@ struct peripheral_t<STM32H743, DFSDM>
 };
 
 using dfsdm_t = peripheral_t<svd, DFSDM>;
-
-template<int INST> struct dfsdm_traits {};

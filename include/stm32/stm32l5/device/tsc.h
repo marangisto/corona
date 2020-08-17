@@ -272,8 +272,6 @@ struct peripheral_t<STM32L562, TSC>
 using sec_tsc_t = peripheral_t<svd, SEC_TSC>;
 using tsc_t = peripheral_t<svd, TSC>;
 
-template<int INST> struct tsc_traits {};
-
 template<> struct tsc_traits<0>
 {
     using tsc = tsc_t;

@@ -2153,5 +2153,3 @@ struct peripheral_t<STM32F779, JPEG>
 };
 
 using jpeg_t = peripheral_t<svd, JPEG>;
-
-template<int INST> struct jpeg_traits {};

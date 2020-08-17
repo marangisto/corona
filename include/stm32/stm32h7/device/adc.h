@@ -1887,8 +1887,6 @@ using adc2_t = peripheral_t<svd, ADC2>;
 using adc3_t = peripheral_t<svd, ADC3>;
 using adc3_common_t = peripheral_t<svd, ADC3_COMMON>;
 
-template<int INST> struct adc_traits {};
-
 template<> struct adc_traits<12>
 {
     using adc = adc12_common_t;

@@ -236,5 +236,3 @@ struct peripheral_t<STM32H7B3x, OTFDEC2>
 
 using otfdec1_t = peripheral_t<svd, OTFDEC1>;
 using otfdec2_t = peripheral_t<svd, OTFDEC2>;
-
-template<int INST> struct otfdec_traits {};

@@ -376,5 +376,3 @@ struct peripheral_t<STM32H7B3x, AXI>
 };
 
 using axi_t = peripheral_t<svd, AXI>;
-
-template<int INST> struct axi_traits {};

@@ -867,5 +867,3 @@ struct peripheral_t<STM32F107, RCC>
 };
 
 using rcc_t = peripheral_t<svd, RCC>;
-
-template<int INST> struct rcc_traits {};

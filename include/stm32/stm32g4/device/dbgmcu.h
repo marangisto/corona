@@ -115,5 +115,3 @@ struct peripheral_t<STM32GBK1CBT6, DBGMCU>
 };
 
 using dbgmcu_t = peripheral_t<svd, DBGMCU>;
-
-template<int INST> struct dbgmcu_traits {};

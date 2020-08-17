@@ -31,5 +31,3 @@ struct peripheral_t<STM32L562, DCB>
 };
 
 using dcb_t = peripheral_t<svd, DCB>;
-
-template<int INST> struct dcb_traits {};

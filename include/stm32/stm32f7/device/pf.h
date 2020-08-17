@@ -156,5 +156,3 @@ struct peripheral_t<STM32F779, PF_>
 };
 
 using pf__t = peripheral_t<svd, PF_>;
-
-template<int INST> struct pf_traits {};

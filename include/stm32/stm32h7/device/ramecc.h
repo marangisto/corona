@@ -608,5 +608,3 @@ using ramecc_t = peripheral_t<svd, RAMECC>;
 using ramecc1_t = peripheral_t<svd, RAMECC1>;
 using ramecc2_t = peripheral_t<svd, RAMECC2>;
 using ramecc3_t = peripheral_t<svd, RAMECC3>;
-
-template<int INST> struct ramecc_traits {};

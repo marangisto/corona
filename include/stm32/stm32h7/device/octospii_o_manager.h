@@ -65,5 +65,3 @@ struct peripheral_t<STM32H7B3x, OCTOSPII_O_MANAGER>
 };
 
 using octospii_o_manager_t = peripheral_t<svd, OCTOSPII_O_MANAGER>;
-
-template<int INST> struct octospii_o_manager_traits {};

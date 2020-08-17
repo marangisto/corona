@@ -62,5 +62,3 @@ struct peripheral_t<STM32L0x3, STK>
 };
 
 using stk_t = peripheral_t<svd, STK>;
-
-template<int INST> struct stk_traits {};

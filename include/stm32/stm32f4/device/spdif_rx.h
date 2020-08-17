@@ -86,5 +86,3 @@ struct peripheral_t<STM32F446, SPDIF_RX>
 };
 
 using spdif_rx_t = peripheral_t<svd, SPDIF_RX>;
-
-template<int INST> struct spdif_rx_traits {};

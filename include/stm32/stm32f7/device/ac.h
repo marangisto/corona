@@ -167,5 +167,3 @@ struct peripheral_t<STM32F779, AC>
 };
 
 using ac_t = peripheral_t<svd, AC>;
-
-template<int INST> struct ac_traits {};

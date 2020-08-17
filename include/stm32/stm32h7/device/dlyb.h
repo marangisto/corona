@@ -365,5 +365,3 @@ using delay_block_octospi2_t = peripheral_t<svd, DELAY_BLOCK_OCTOSPI2>;
 using delay_block_quadspi_t = peripheral_t<svd, DELAY_BLOCK_QUADSPI>;
 using delay_block_sdmmc1_t = peripheral_t<svd, DELAY_BLOCK_SDMMC1>;
 using delay_block_sdmmc2_t = peripheral_t<svd, DELAY_BLOCK_SDMMC2>;
-
-template<int INST> struct dlyb_traits {};

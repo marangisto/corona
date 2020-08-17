@@ -65,5 +65,3 @@ struct peripheral_t<STM32L162, EXTI>
 };
 
 using exti_t = peripheral_t<svd, EXTI>;
-
-template<int INST> struct exti_traits {};

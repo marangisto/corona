@@ -351,5 +351,3 @@ struct peripheral_t<STM32WB55_CM4, PWR>
 };
 
 using pwr_t = peripheral_t<svd, PWR>;
-
-template<int INST> struct pwr_traits {};

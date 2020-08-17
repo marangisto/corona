@@ -412,5 +412,3 @@ struct peripheral_t<STM32H7B3x, PWR>
 };
 
 using pwr_t = peripheral_t<svd, PWR>;
-
-template<int INST> struct pwr_traits {};

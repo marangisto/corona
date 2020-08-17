@@ -65,5 +65,3 @@ struct peripheral_t<STM32WB55_CM4, COMP>
 };
 
 using comp_t = peripheral_t<svd, COMP>;
-
-template<int INST> struct comp_traits {};

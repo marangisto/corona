@@ -319,5 +319,3 @@ struct peripheral_t<STM32L4x6, HASH>
 };
 
 using hash_t = peripheral_t<svd, HASH>;
-
-template<int INST> struct hash_traits {};

@@ -3295,5 +3295,3 @@ using otg_fs_device_t = peripheral_t<svd, OTG_FS_DEVICE>;
 using otg_fs_global_t = peripheral_t<svd, OTG_FS_GLOBAL>;
 using otg_fs_host_t = peripheral_t<svd, OTG_FS_HOST>;
 using otg_fs_pwrclk_t = peripheral_t<svd, OTG_FS_PWRCLK>;
-
-template<int INST> struct usb_otg_fs_traits {};

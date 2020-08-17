@@ -2234,8 +2234,6 @@ using fdcan1_t = peripheral_t<svd, FDCAN1>;
 using fdcan2_t = peripheral_t<svd, FDCAN2>;
 using tt_fdcan_t = peripheral_t<svd, TT_FDCAN>;
 
-template<int INST> struct fdcan_traits {};
-
 template<> struct fdcan_traits<0>
 {
     using fdcan = fdcan_t;

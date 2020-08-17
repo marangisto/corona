@@ -185,5 +185,3 @@ struct peripheral_t<STM32F107, USB_OTG_GLOBAL>
 };
 
 using usb_otg_global_t = peripheral_t<svd, USB_OTG_GLOBAL>;
-
-template<int INST> struct usb_otg_traits {};

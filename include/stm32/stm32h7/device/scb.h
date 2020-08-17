@@ -358,5 +358,3 @@ struct peripheral_t<STM32H7B3x, SCB_ACTRL>
 
 using scb_t = peripheral_t<svd, SCB>;
 using scb_actrl_t = peripheral_t<svd, SCB_ACTRL>;
-
-template<int INST> struct scb_traits {};

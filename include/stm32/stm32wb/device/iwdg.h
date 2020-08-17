@@ -63,5 +63,3 @@ struct peripheral_t<STM32WB55_CM4, IWDG>
 };
 
 using iwdg_t = peripheral_t<svd, IWDG>;
-
-template<int INST> struct iwdg_traits {};

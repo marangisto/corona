@@ -103,5 +103,3 @@ struct peripheral_t<STM32GBK1CBT6, MPU>
 };
 
 using mpu_t = peripheral_t<svd, MPU>;
-
-template<int INST> struct mpu_traits {};

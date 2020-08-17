@@ -911,8 +911,6 @@ using i2c2_t = peripheral_t<svd, I2C2>;
 using i2c3_t = peripheral_t<svd, I2C3>;
 using i2c4_t = peripheral_t<svd, I2C4>;
 
-template<int INST> struct i2c_traits {};
-
 template<> struct i2c_traits<1>
 {
     using i2c = i2c1_t;

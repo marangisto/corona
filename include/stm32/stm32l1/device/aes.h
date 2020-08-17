@@ -100,5 +100,3 @@ struct peripheral_t<STM32L162, AES>
 };
 
 using aes_t = peripheral_t<svd, AES>;
-
-template<int INST> struct aes_traits {};

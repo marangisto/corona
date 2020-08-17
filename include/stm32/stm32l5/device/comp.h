@@ -71,5 +71,3 @@ struct peripheral_t<STM32L562, SEC_COMP>
 
 using comp_t = peripheral_t<svd, COMP>;
 using sec_comp_t = peripheral_t<svd, SEC_COMP>;
-
-template<int INST> struct comp_traits {};

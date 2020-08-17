@@ -137,5 +137,3 @@ struct peripheral_t<STM32L162, RI>
 };
 
 using ri_t = peripheral_t<svd, RI>;
-
-template<int INST> struct ri_traits {};

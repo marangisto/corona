@@ -249,5 +249,3 @@ struct peripheral_t<STM32F107, NVIC_STIR>
 
 using nvic_t = peripheral_t<svd, NVIC>;
 using nvic_stir_t = peripheral_t<svd, NVIC_STIR>;
-
-template<int INST> struct nvic_traits {};

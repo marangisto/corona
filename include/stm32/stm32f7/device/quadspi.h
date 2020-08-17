@@ -214,5 +214,3 @@ struct peripheral_t<STM32F779, QUADSPI1>
 };
 
 using quadspi1_t = peripheral_t<svd, QUADSPI1>;
-
-template<int INST> struct quadspi_traits {};

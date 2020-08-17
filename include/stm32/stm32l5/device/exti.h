@@ -421,5 +421,3 @@ struct peripheral_t<STM32L562, SEC_EXTI>
 
 using exti_t = peripheral_t<svd, EXTI>;
 using sec_exti_t = peripheral_t<svd, SEC_EXTI>;
-
-template<int INST> struct exti_traits {};

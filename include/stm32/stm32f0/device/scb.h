@@ -91,5 +91,3 @@ struct peripheral_t<STM32F0x8, SCB>
 };
 
 using scb_t = peripheral_t<svd, SCB>;
-
-template<int INST> struct scb_traits {};

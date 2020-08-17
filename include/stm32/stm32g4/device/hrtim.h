@@ -3804,8 +3804,6 @@ using hrtim_timd_t = peripheral_t<svd, HRTIM_TIMD>;
 using hrtim_time_t = peripheral_t<svd, HRTIM_TIME>;
 using hrtim_timf_t = peripheral_t<svd, HRTIM_TIMF>;
 
-template<int INST> struct hrtim_traits {};
-
 template<> struct hrtim_traits<0>
 {
     using hrtim = hrtim_master_t;

@@ -89,5 +89,3 @@ struct peripheral_t<STM32L162, OPAMP>
 };
 
 using opamp_t = peripheral_t<svd, OPAMP>;
-
-template<int INST> struct opamp_traits {};

@@ -63,3 +63,10 @@ struct peripheral_t<STM32F3x4, ADC_COMMON>
 };
 
 using adc_common_t = peripheral_t<svd, ADC_COMMON>;
+
+template<int INST> struct adc_common_traits {};
+
+template<> struct adc_common_traits<123>
+{
+    using adc_common = adc_common_t;
+};

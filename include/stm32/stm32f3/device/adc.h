@@ -1065,3 +1065,28 @@ template<> struct adc_traits<1>
         RCC::V.AHBRSTR |= RCC::T::AHBRSTR_ADC1RST;
     }
 };
+
+template<> struct adc_traits<12>
+{
+    using adc = adc1_2_t;
+};
+
+template<> struct adc_traits<2>
+{
+    using adc = adc2_t;
+};
+
+template<> struct adc_traits<3>
+{
+    using adc = adc3_t;
+};
+
+template<> struct adc_traits<34>
+{
+    using adc = adc3_4_t;
+};
+
+template<> struct adc_traits<4>
+{
+    using adc = adc4_t;
+};

@@ -667,3 +667,8 @@ template<> struct adc_traits<1>
         RCC::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADC1RST;
     }
 };
+
+template<> struct adc_traits<123>
+{
+    using adc = adc_common_t;
+};

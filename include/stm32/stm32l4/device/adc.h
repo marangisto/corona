@@ -1300,3 +1300,23 @@ template<> struct adc_traits<1>
         RCC::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADC1RST;
     }
 };
+
+template<> struct adc_traits<0>
+{
+    using adc = adc123_common_t;
+};
+
+template<> struct adc_traits<2>
+{
+    using adc = adc2_t;
+};
+
+template<> struct adc_traits<3>
+{
+    using adc = adc3_t;
+};
+
+template<> struct adc_traits<123>
+{
+    using adc = adc_common_t;
+};

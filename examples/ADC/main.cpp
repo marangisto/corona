@@ -5,7 +5,6 @@
 
 using serial = board::serial;
 using led = board::led1;
-
 using adc = adc_t<1>;
 
 template<> void handler<board::serial_interrupt>()
@@ -27,7 +26,10 @@ int main()
 
     for (;;)
     {
-        printf<serial>("%4d %4d\n", adc::read<4>(), adc::read<9>());; 
+        uint16_t x0 = adc::read<board::A0>();
+        uint16_t x1 = adc::read<board::A1>();
+
+        printf<serial>("%4d %4d\n", x0, x1);
         sys_tick::delay_ms(100);
         led::toggle();
     }

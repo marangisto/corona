@@ -3501,3 +3501,40 @@ using hrtim_timb_t = peripheral_t<svd, HRTIM_TIMB>;
 using hrtim_timc_t = peripheral_t<svd, HRTIM_TIMC>;
 using hrtim_timd_t = peripheral_t<svd, HRTIM_TIMD>;
 using hrtim_time_t = peripheral_t<svd, HRTIM_TIME>;
+
+template<int INST> struct hrtim_traits {};
+
+template<> struct hrtim_traits<11>
+{
+    using hrtim = hrtim_common_t;
+};
+
+template<> struct hrtim_traits<10>
+{
+    using hrtim = hrtim_master_t;
+};
+
+template<> struct hrtim_traits<0>
+{
+    using hrtim = hrtim_tima_t;
+};
+
+template<> struct hrtim_traits<1>
+{
+    using hrtim = hrtim_timb_t;
+};
+
+template<> struct hrtim_traits<2>
+{
+    using hrtim = hrtim_timc_t;
+};
+
+template<> struct hrtim_traits<3>
+{
+    using hrtim = hrtim_timd_t;
+};
+
+template<> struct hrtim_traits<4>
+{
+    using hrtim = hrtim_time_t;
+};

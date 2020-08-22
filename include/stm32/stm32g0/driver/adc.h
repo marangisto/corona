@@ -90,18 +90,14 @@ struct adc_impl
     template<uint8_t SEL>
     static inline void trigger()
     {
-        typename adc::T& ADC = adc::V;
-
-        ADC.CFGR1 |= _::CFGR1_EXTEN::W(0x1)     // trigger on rising edge
-                  |  _::CFGR1_EXTSEL::W(SEL)    // trigger source
-                  ;
+        adc::V.CFGR1 |= _::CFGR1_EXTEN::W(0x1)     // trigger on rising edge
+                     |  _::CFGR1_EXTSEL::W(SEL)    // trigger source
+                     ;
     }
 
     static inline void start_conversion()
     {
-        typename adc::T& ADC = adc::V;
-
-        ADC.CR |= _::CR_ADSTART;            // start conversion
+        adc::V.CR |= _::CR_ADSTART;         // start conversion
     }
 
     template<uint8_t CH>

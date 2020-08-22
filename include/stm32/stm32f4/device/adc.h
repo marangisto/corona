@@ -519,3 +519,8 @@ template<> struct adc_traits<3>
         RCC::V.APB2ENR &= ~RCC::T::APB2ENR_ADC3EN;
     }
 };
+
+template<> struct adc_traits<123>
+{
+    using adc = adc_common_t;
+};

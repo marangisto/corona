@@ -536,8 +536,6 @@ template<> struct dma_traits<1>
 {
     using dma = dma1_t;
 
-    static constexpr int INST = 1;
-
     template<typename RCC>
     static void enable()
     {

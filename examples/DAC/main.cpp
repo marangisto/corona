@@ -1,6 +1,6 @@
 #include <dac.h>
 
-typedef dac_t<1> dac;
+using dac = dac_t<1>;
 
 int main()
 {

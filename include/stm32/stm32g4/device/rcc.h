@@ -209,10 +209,10 @@ struct stm32g431xx_rcc_t
     static constexpr uint32_t AHB2ENR_GPIOGEN = 0x40; // IO port G clock enable
     static constexpr uint32_t AHB2ENR_ADC12_COMMONEN = 0x2000; // ADC clock enable
     static constexpr uint32_t AHB2ENR_ADC345_COMMONEN = 0x4000; // DCMI clock enable
-    static constexpr uint32_t AHB2ENR_DAC1 = 0x10000; // AES accelerator clock enable
-    static constexpr uint32_t AHB2ENR_DAC2 = 0x20000; // HASH clock enable
-    static constexpr uint32_t AHB2ENR_DAC3 = 0x40000; // Random Number Generator clock enable
-    static constexpr uint32_t AHB2ENR_DAC4 = 0x80000; // DAC4 clock enable
+    static constexpr uint32_t AHB2ENR_DAC1EN = 0x10000; // AES accelerator clock enable
+    static constexpr uint32_t AHB2ENR_DAC2EN = 0x20000; // HASH clock enable
+    static constexpr uint32_t AHB2ENR_DAC3EN = 0x40000; // Random Number Generator clock enable
+    static constexpr uint32_t AHB2ENR_DAC4EN = 0x80000; // DAC4 clock enable
     static constexpr uint32_t AHB2ENR_AESEN = 0x1000000; // Cryptography clock enable
     static constexpr uint32_t AHB2ENR_RNGEN = 0x4000000; // Random Number Generator clock enable
 

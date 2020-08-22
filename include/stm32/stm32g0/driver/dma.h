@@ -11,15 +11,15 @@ template<> struct dma_size_bits<4> { static constexpr uint32_t BITS = 0x2; };
 template<typename T>
 static constexpr uint32_t dma_type_size() { return dma_size_bits<sizeof(T)>::BITS; }
 
-template<uint8_t CH> struct dmamux_traits {};
+template<int INST, int CH> struct dmamux_traits {};
 
-template<> struct dmamux_traits<1> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C0CR; } };
-template<> struct dmamux_traits<2> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C1CR; } };
-template<> struct dmamux_traits<3> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C2CR; } };
-template<> struct dmamux_traits<4> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C3CR; } };
-template<> struct dmamux_traits<5> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C4CR; } };
-template<> struct dmamux_traits<6> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C5CR; } };
-template<> struct dmamux_traits<7> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C6CR; } };
+template<> struct dmamux_traits<1, 1> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C0CR; } };
+template<> struct dmamux_traits<1, 2> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C1CR; } };
+template<> struct dmamux_traits<1, 3> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C2CR; } };
+template<> struct dmamux_traits<1, 4> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C3CR; } };
+template<> struct dmamux_traits<1, 5> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C4CR; } };
+template<> struct dmamux_traits<1, 6> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C5CR; } };
+template<> struct dmamux_traits<1, 7> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C6CR; } };
 
 template<uint8_t INST, uint8_t CH> struct dma_channel_traits {};
 
@@ -164,11 +164,17 @@ struct dma_t
         dma_channel_traits<INST, CH>::CCR() &= ~_::CCR1_EN;
     }
 
+    template<uint8_t CH, uint8_t ID>
+    static inline void set_request_id()
+    {
+        dmamux_traits<INST, CH>::CCR() |= dmamux_t::T::C0CR_DMAREQ_ID::W(ID);
+    }
+
     template<uint8_t CH>
     static inline void abort()
     {
         disable_interrupt<CH>();            // disable dma channel interrupts
-        dmamux_traits<CH>::CCR()
+        dmamux_traits<INST, CH>::CCR()
             &= ~dmamux_t::T::C0CR_SOIE;     // disable synch overrun interrupt
         disable<CH>();                      // disable dma channel
         clear_interrupt_flags<CH>();        // clear all interrupt flags

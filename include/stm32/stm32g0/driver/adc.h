@@ -83,7 +83,7 @@ struct adc_impl
         DMA::template disable<DMACH>();     // disable dma channel
         DMA::template periph_to_mem<DMACH>(&ADC.DR, dest, nelem);
         DMA::template enable<DMACH>();      // enable dma channel
-        dmamux_traits<DMACH>::CCR() = dmamux_t::T::C0CR_DMAREQ_ID::W(5);
+        DMA::template set_request_id<DMACH, 5>();   // FIXME: use constant!
         DMA::template enable_interrupt<DMACH, true>();
     }
 

@@ -22,9 +22,9 @@ struct adc_api_t: private IMPL<NO>
     template<uint8_t X>
     static void sample_time() { impl::template sample_time<X>(); }
 
-    template< uint8_t S1, uint8_t S2 = nulch, uint8_t S3 = nulch, uint8_t S4 = nulch
-            , uint8_t S5 = nulch, uint8_t S6 = nulch, uint8_t S7 = nulch, uint8_t S8 = nulch>
-    static void sequence() { impl:: template sequence<S1, S2, S3, S4, S5, S6, S7, S8>(); }
+    template< uint8_t CH1, uint8_t CH2 = nulch, uint8_t CH3 = nulch, uint8_t CH4 = nulch
+            , uint8_t CH5 = nulch, uint8_t CH6 = nulch, uint8_t CH7 = nulch, uint8_t CH8 = nulch>
+    static void sequence() { impl:: template sequence<CH1, CH2, CH3, CH4, CH5, CH6, CH7, CH8>(); }
 
     template<typename DMA, uint8_t DMACH, typename T>
     static void dma(volatile T *dest, uint16_t nelem) { impl::template dma<DMA, DMACH, T>(dest, nelem); }
@@ -34,7 +34,8 @@ struct adc_api_t: private IMPL<NO>
 
     static void start_conversion() { impl::start_conversion(); }
 
-    static uint16_t read() { return impl::read(); }
+    template<uint8_t CH>
+    static uint16_t read() { return impl::template read<CH>(); }
 };
 
 template<int NO> using adc_t = adc_api_t<NO, internal::adc_impl>;

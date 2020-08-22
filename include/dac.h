@@ -115,7 +115,7 @@ struct dac_t
         DMA::template disable<DMACH>();                             // disable dma channel
         DMA::template mem_to_periph<DMACH>(source, nelem, &reg);    // configure dma from memory
         DMA::template enable<DMACH>();                              // enable dma channel
-        dmamux_traits<DMA::INST, DMACH>::CCR() = dmamux_t::T::C0CR_DMAREQ_ID::W(dac_driver<INST>::DMAREQ_ID);
+        DMA::template set_request_id<DMACH, dac_driver<INST>::DMAREQ_ID>();
         enable<CH>();                                               // enable dac channel
     }
 
@@ -143,7 +143,7 @@ struct dac_t
     static inline void enable_trigger()
     {
         dac::V.CR |= dac_channel_traits<INST, CH>::CR_TEN                   // enable trigger
-                     |  dac_channel_traits<INST, CH>::CR_TSEL::W(SEL)       // select trigger source
+                     |  dac_channel_traits<INST, CH>::template CR_TSEL<SEL>
                      ;
     }
 

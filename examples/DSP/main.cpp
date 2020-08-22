@@ -33,12 +33,12 @@ template<> void handler<interrupt::DMA_CHANNEL1>()
     dma::clear_interrupt_flags<dac_dma_ch>();
 
     if (sts & (dma_half_transfer | dma_transfer_complete))
-        ;//probe::write(sts & dma_transfer_complete);
+        probe::write(sts & dma_transfer_complete);
 }
 
 template<> void handler<interrupt::DMA_CHANNEL2_3>()
 {
-    probe::set();
+    //probe::set();
 
     uint32_t sts = dma::interrupt_status<adc_dma_ch>();
 
@@ -53,7 +53,7 @@ template<> void handler<interrupt::DMA_CHANNEL2_3>()
             *q++ = *p++;
     } 
 
-    probe::clear();
+    //probe::clear();
 }
 
 int main()
@@ -64,13 +64,13 @@ int main()
     interrupt::enable();
 
     dma::setup();
-    dma::enable_interrupt<dac_dma_ch, true>();
     interrupt::set<interrupt::DMA_CHANNEL1>();
     interrupt::set<interrupt::DMA_CHANNEL2_3>();
 
     dac::setup();
     dac::enable_trigger<1, 5>();    // FIXME: use constant for TIM6_TRGO
     dac::enable_dma<1, dma, dac_dma_ch, uint16_t>(output_buffer, buffer_size);
+    dma::enable_interrupt<dac_dma_ch, true>();
 
     adc::setup();
     adc::sequence<0>();

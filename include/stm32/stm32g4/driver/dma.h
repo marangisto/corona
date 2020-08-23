@@ -20,6 +20,15 @@ template<> struct mux_traits<1, 4> { static inline volatile uint32_t& CCR() { re
 template<> struct mux_traits<1, 5> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C4CR; } };
 template<> struct mux_traits<1, 6> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C5CR; } };
 template<> struct mux_traits<1, 7> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C6CR; } };
+template<> struct mux_traits<1, 8> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C7CR; } };
+template<> struct mux_traits<2, 1> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C8CR; } };
+template<> struct mux_traits<2, 2> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C9CR; } };
+template<> struct mux_traits<2, 3> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C10CR; } };
+template<> struct mux_traits<2, 4> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C11CR; } };
+template<> struct mux_traits<2, 5> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C12CR; } };
+template<> struct mux_traits<2, 6> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C13CR; } };
+template<> struct mux_traits<2, 7> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C14CR; } };
+template<> struct mux_traits<2, 8> { static inline volatile uint32_t& CCR() { return dmamux_t::V.C15CR; } };
 
 template<uint8_t INST, uint8_t CH> struct dma_channel_traits {};
 
@@ -223,13 +232,13 @@ template<uint8_t INST> struct dma_channel_traits<INST, 8>
     static inline volatile uint32_t& CMAR() { return dma::V.CMAR8; }
 };
 
-/*
 template<int INST>
 struct dma_t
 {
     static void setup()
     {
         dma_traits<INST>::template enable<rcc_t>();   // enable dma clock
+        dmamux_traits<0>::template enable<rcc_t>();   // enable dmamux clock
     }
 
     template<uint8_t CH, typename T>
@@ -342,4 +351,3 @@ struct dma_t
     using _ = typename dma::T;
 };
 
-*/

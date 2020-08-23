@@ -154,7 +154,7 @@ typename peripheral_t<STM32G484xx, ADC5>::T&
 typename peripheral_t<STM32G431xx, ADC12_COMMON>::T&
     peripheral_t<STM32G431xx, ADC12_COMMON>::V = *reinterpret_cast
         <typename peripheral_t<STM32G431xx, ADC12_COMMON>::T*
-        >(0x50000200);
+        >(0x50000300);
 
 typename peripheral_t<STM32G431xx, ADC345_COMMON>::T&
     peripheral_t<STM32G431xx, ADC345_COMMON>::V = *reinterpret_cast
@@ -164,7 +164,7 @@ typename peripheral_t<STM32G431xx, ADC345_COMMON>::T&
 typename peripheral_t<STM32G441xx, ADC12_COMMON>::T&
     peripheral_t<STM32G441xx, ADC12_COMMON>::V = *reinterpret_cast
         <typename peripheral_t<STM32G441xx, ADC12_COMMON>::T*
-        >(0x50000200);
+        >(0x50000300);
 
 typename peripheral_t<STM32G441xx, ADC345_COMMON>::T&
     peripheral_t<STM32G441xx, ADC345_COMMON>::V = *reinterpret_cast
@@ -184,7 +184,7 @@ typename peripheral_t<STM32G471xx, ADC345_COMMON>::T&
 typename peripheral_t<STM32G473xx, ADC12_COMMON>::T&
     peripheral_t<STM32G473xx, ADC12_COMMON>::V = *reinterpret_cast
         <typename peripheral_t<STM32G473xx, ADC12_COMMON>::T*
-        >(0x50000200);
+        >(0x50000300);
 
 typename peripheral_t<STM32G473xx, ADC345_COMMON>::T&
     peripheral_t<STM32G473xx, ADC345_COMMON>::V = *reinterpret_cast
@@ -194,7 +194,7 @@ typename peripheral_t<STM32G473xx, ADC345_COMMON>::T&
 typename peripheral_t<STM32G474xx, ADC12_COMMON>::T&
     peripheral_t<STM32G474xx, ADC12_COMMON>::V = *reinterpret_cast
         <typename peripheral_t<STM32G474xx, ADC12_COMMON>::T*
-        >(0x50000200);
+        >(0x50000300);
 
 typename peripheral_t<STM32G474xx, ADC345_COMMON>::T&
     peripheral_t<STM32G474xx, ADC345_COMMON>::V = *reinterpret_cast
@@ -204,7 +204,7 @@ typename peripheral_t<STM32G474xx, ADC345_COMMON>::T&
 typename peripheral_t<STM32G483xx, ADC12_COMMON>::T&
     peripheral_t<STM32G483xx, ADC12_COMMON>::V = *reinterpret_cast
         <typename peripheral_t<STM32G483xx, ADC12_COMMON>::T*
-        >(0x50000200);
+        >(0x50000300);
 
 typename peripheral_t<STM32G483xx, ADC345_COMMON>::T&
     peripheral_t<STM32G483xx, ADC345_COMMON>::V = *reinterpret_cast
@@ -214,7 +214,7 @@ typename peripheral_t<STM32G483xx, ADC345_COMMON>::T&
 typename peripheral_t<STM32G484xx, ADC12_COMMON>::T&
     peripheral_t<STM32G484xx, ADC12_COMMON>::V = *reinterpret_cast
         <typename peripheral_t<STM32G484xx, ADC12_COMMON>::T*
-        >(0x50000200);
+        >(0x50000300);
 
 typename peripheral_t<STM32G484xx, ADC345_COMMON>::T&
     peripheral_t<STM32G484xx, ADC345_COMMON>::V = *reinterpret_cast
@@ -224,7 +224,7 @@ typename peripheral_t<STM32G484xx, ADC345_COMMON>::T&
 typename peripheral_t<STM32GBK1CBT6, ADC12_COMMON>::T&
     peripheral_t<STM32GBK1CBT6, ADC12_COMMON>::V = *reinterpret_cast
         <typename peripheral_t<STM32GBK1CBT6, ADC12_COMMON>::T*
-        >(0x50000200);
+        >(0x50000300);
 
 typename peripheral_t<STM32GBK1CBT6, ADC345_COMMON>::T&
     peripheral_t<STM32GBK1CBT6, ADC345_COMMON>::V = *reinterpret_cast

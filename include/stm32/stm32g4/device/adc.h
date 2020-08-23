@@ -102,7 +102,7 @@ struct stm32g431xx_adc1_t
     static constexpr uint32_t CFGR_CONT = 0x2000; // CONT
     static constexpr uint32_t CFGR_OVRMOD = 0x1000; // OVRMOD
     typedef bit_field_t<10, 0x3> CFGR_EXTEN; // EXTEN
-    typedef bit_field_t<6, 0xf> CFGR_EXTSEL; // EXTSEL
+    typedef bit_field_t<5, 0x1f> CFGR_EXTSEL; // EXTSEL
     static constexpr uint32_t CFGR_ALIGN_5 = 0x20; // ALIGN_5
     typedef bit_field_t<3, 0x3> CFGR_RES; // RES
     static constexpr uint32_t CFGR_DMACFG = 0x2; // DMACFG
@@ -356,7 +356,7 @@ struct stm32g471xx_adc3_t
     static constexpr uint32_t CFGR_CONT = 0x2000; // CONT
     static constexpr uint32_t CFGR_OVRMOD = 0x1000; // OVRMOD
     typedef bit_field_t<10, 0x3> CFGR_EXTEN; // EXTEN
-    typedef bit_field_t<6, 0xf> CFGR_EXTSEL; // EXTSEL
+    typedef bit_field_t<5, 0x1f> CFGR_EXTSEL; // EXTSEL
     static constexpr uint32_t CFGR_ALIGN_5 = 0x20; // ALIGN_5
     typedef bit_field_t<3, 0x3> CFGR_RES; // RES
     static constexpr uint32_t CFGR_DMACFG = 0x2; // DMACFG

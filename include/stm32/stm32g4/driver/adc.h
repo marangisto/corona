@@ -207,6 +207,21 @@ struct adc_impl
         return ADC.DR;                      // read data register
     }
 
+    static inline void enable_interrupt(uint32_t flags)
+    {
+        adc::V.IER |= flags;
+    }
+
+    static inline uint32_t interrupt_flags()
+    {
+        return adc::V.ISR;
+    }
+
+    static inline void clear_interrupt_flags(uint32_t flags)
+    {
+        adc::V.ISR = flags;
+    }
+
     using traits = adc_traits<INST>;
     using adc = typename traits::adc;
     using _ = typename adc::T;

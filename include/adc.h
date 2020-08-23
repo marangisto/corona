@@ -3,11 +3,18 @@
 #include "gpio.h"
 #include <device/adc.h>
 #include <driver/adc.h>
-//#include "dma.h"
 
 template<int NO, template<int> typename IMPL>
 struct adc_api_t: private IMPL<NO>
 {
+    enum interrupt_flag
+        { ADRDY = 1 << 0
+        , EOSMP = 1 << 1
+        , EOC   = 1 << 2
+        , EOS   = 1 << 3
+        , OVR   = 1 << 4
+        };
+
     typedef IMPL<NO> impl;
     static constexpr uint8_t nulch = impl::nulch;
 
@@ -22,12 +29,26 @@ struct adc_api_t: private IMPL<NO>
     template<uint8_t X>
     static void sample_time() { impl::template sample_time<X>(); }
 
-    template< uint8_t CH1, uint8_t CH2 = nulch, uint8_t CH3 = nulch, uint8_t CH4 = nulch
-            , uint8_t CH5 = nulch, uint8_t CH6 = nulch, uint8_t CH7 = nulch, uint8_t CH8 = nulch>
-    static void sequence() { impl:: template sequence<CH1, CH2, CH3, CH4, CH5, CH6, CH7, CH8>(); }
+    template
+        < uint8_t CH1
+        , uint8_t CH2 = nulch
+        , uint8_t CH3 = nulch
+        , uint8_t CH4 = nulch
+        , uint8_t CH5 = nulch
+        , uint8_t CH6 = nulch
+        , uint8_t CH7 = nulch
+        , uint8_t CH8 = nulch
+        >
+    static void sequence()
+    {
+        impl:: template sequence<CH1, CH2, CH3, CH4, CH5, CH6, CH7, CH8>();
+    }
 
     template<typename DMA, uint8_t DMACH, typename T>
-    static void dma(volatile T *dest, uint16_t nelem) { impl::template dma<DMA, DMACH, T>(dest, nelem); }
+    static void dma(volatile T *dest, uint16_t nelem)
+    {
+        impl::template dma<DMA, DMACH, T>(dest, nelem);
+    }
 
     template<uint8_t SEL>
     static void trigger() { impl::template trigger<SEL>(); }
@@ -36,31 +57,22 @@ struct adc_api_t: private IMPL<NO>
 
     template<uint8_t CH>
     static uint16_t read() { return impl::template read<CH>(); }
+
+    static inline void enable_interrupt(uint32_t flags)
+    {
+        impl::enable_interrupt(flags);
+    }
+
+    static inline uint32_t interrupt_flags()
+    {
+        return impl::interrupt_flags();
+    }
+
+    static inline void clear_interrupt_flags(uint32_t flags)
+    {
+        impl::clear_interrupt_flags(flags);
+    }
 };
 
 template<int NO> using adc_t = adc_api_t<NO, internal::adc_impl>;
 
-/*
-namespace internal
-{
-
-template<uint8_t NO> struct adc_traits {};
-
-} // namespace internal
-
-#if defined(STM32F0)
-#include "adc/f0.h"
-template<int NO> using adc_t = adc_api_t<NO, internal::adc_impl_f0>;
-#elif defined(STM32F1) || defined(STM32F4) || defined(STM32F7)
-#include "adc/f1.h"
-template<int NO> using adc_t = adc_api_t<NO, internal::adc_impl_f1>;
-#elif defined(STM32G0)
-#include "adc/g0.h"
-template<int NO> using adc_t = adc_api_t<NO, internal::adc_impl_g0>;
-#elif defined(STM32G4)
-#include "adc/g4.h"
-template<int NO> using adc_t = adc_api_t<NO, internal::adc_impl_g4>;
-#else
-        static_assert(false, "ADC driver not implemented for this MCU");
-#endif
-*/

@@ -9,12 +9,13 @@ enum vrs_t
     , vrs_2900 = 0x2
     };
 
-struct vrefbuf_t
+struct vrefbuf
 {
     template<vrs_t vrs>
     static void setup()
     {
-        typename vrefbuf::T& VREFBUF = spi::V;
+        vrefbuf_t::T& VREFBUF = vrefbuf_t::V;
+        using _ = vrefbuf_t::T;
 
         syscfg_traits<0>::template enable<rcc_t>(); // enable vrefbuf clock
 
@@ -26,9 +27,5 @@ struct vrefbuf_t
 
         while (!(VREFBUF.CSR & _::CSR_VRR));    // wait for voltage ref ready
     }
-
-    using traits = vrefbuf_traits<0>;
-    using vrefbuf = typename traits::vrefbuf;
-    using _ = typename vrefbuf::T;
 };
 

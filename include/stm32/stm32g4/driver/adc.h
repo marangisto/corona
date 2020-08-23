@@ -115,8 +115,8 @@ struct adc_impl
     static void oversample()
     {
         adc::V.CFGR2 |= _::CFGR2_ROVSE
-                     |  _::template CFGR2_OVSR<oversampling_traits<K>::ratio>
-                     |  _::template CFGR2_OVSS<oversampling_traits<K>::ratio + 1>
+                     |  _::CFGR2_OVSR::W(oversampling_traits<K>::ratio)
+                     |  _::CFGR2_OVSS::W(oversampling_traits<K>::ratio + 1)
                      ;
     }
 
@@ -124,16 +124,16 @@ struct adc_impl
     static void sample_time()
     {
         adc::V.SMPR1 = _::SMPR1_RESET_VALUE
-                     | _::template SMPR1_SMP0<X>
-                     | _::template SMPR1_SMP1<X>
-                     | _::template SMPR1_SMP2<X>
-                     | _::template SMPR1_SMP3<X>
-                     | _::template SMPR1_SMP4<X>
-                     | _::template SMPR1_SMP5<X>
-                     | _::template SMPR1_SMP6<X>
-                     | _::template SMPR1_SMP7<X>
-                     | _::template SMPR1_SMP8<X>
-                     | _::template SMPR1_SMP9<X>
+                     | _::SMPR1_SMP0::W(X)
+                     | _::SMPR1_SMP1::W(X)
+                     | _::SMPR1_SMP2::W(X)
+                     | _::SMPR1_SMP3::W(X)
+                     | _::SMPR1_SMP4::W(X)
+                     | _::SMPR1_SMP5::W(X)
+                     | _::SMPR1_SMP6::W(X)
+                     | _::SMPR1_SMP7::W(X)
+                     | _::SMPR1_SMP8::W(X)
+                     | _::SMPR1_SMP9::W(X)
                      ;
     }
 

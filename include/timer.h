@@ -1,5 +1,6 @@
 #pragma once
 
+#include "gpio.h"
 #include <device/tim.h>
 
 template<int> struct counter_traits { using type = uint16_t; };

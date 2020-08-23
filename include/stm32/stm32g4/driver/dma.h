@@ -32,8 +32,9 @@ template<> struct mux_traits<2, 8> { static inline volatile uint32_t& CCR() { re
 
 template<uint8_t INST, uint8_t CH> struct dma_channel_traits {};
 
-/*
-enum resource_t
+struct request
+{
+    enum request_t
     { DMAMUX_REQ_G0 = 1, DMAMUX_REQ_G1 = 2, DMAMUX_REQG2 = 3, DMAMUX_REQ_G3 = 4, ADC1 = 5, DAC1_CH1 = 6
     , DAC1_CH2 = 7, TIM6_UP = 8, TIM7_UP = 9, SPI1_RX = 10, SPI1_TX = 11, SPI2_RX = 12, SPI2_TX = 13
     , SPI3_RX = 14, SPI3_TX = 15, I2C1_RX = 16, I2C1_TX = 17, I2C2_RX = 18, I2C2_TX = 19, I2C3_RX = 20
@@ -54,7 +55,7 @@ enum resource_t
     , DAC4_CH2 = 105, SPI4_RX = 106, SPI4_TX = 107, SAI1_A = 108, SAI1_B = 109, FMAC_READ = 110
     , FMAC_WRITE = 111, CORDIC_READ = 112, CORDIC_WRITE = 113, UCPD1_RX = 114, UCPD1_TX = 115
     };
-    */
+}; 
 
 template<uint8_t INST> struct dma_channel_traits<INST, 1>
 {

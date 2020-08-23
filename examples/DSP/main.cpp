@@ -1,3 +1,4 @@
+#include <board.h>
 #include <adc.h>
 #include <dac.h>
 #include <dma.h>
@@ -16,17 +17,17 @@ static uint16_t input_buffer[buffer_size];
 static uint16_t output_buffer[buffer_size];
 static const uint32_t sample_freq = 96000;
 
-using led = output_t<PA5>;
-using probe = output_t<PA10>;
+using led = board::led1;
+using probe = board::probe;
 
-template<> void handler<interrupt::TIM6_DAC_LPTIM1>()
+template<> void handler<interrupt::TIM6_DACUNDER>()
 {
     probe::set();
     tim6::clear_update_interrupt_flag();
     probe::clear();
 }
 
-template<> void handler<interrupt::DMA_CHANNEL1>()
+template<> void handler<interrupt::DMA1_CH1>()
 {
     uint32_t sts = dma::interrupt_status<dac_dma_ch>();
 
@@ -36,7 +37,7 @@ template<> void handler<interrupt::DMA_CHANNEL1>()
         probe::write(sts & dma_transfer_complete);
 }
 
-template<> void handler<interrupt::DMA_CHANNEL2_3>()
+template<> void handler<interrupt::DMA1_CH2>()
 {
     //probe::set();
 
@@ -64,25 +65,27 @@ int main()
     interrupt::enable();
 
     dma::setup();
-    interrupt::set<interrupt::DMA_CHANNEL1>();
-    interrupt::set<interrupt::DMA_CHANNEL2_3>();
+    interrupt::set<interrupt::DMA1_CH1>();
+    interrupt::set<interrupt::DMA1_CH2>();
 
     dac::setup();
-    dac::enable_trigger<1, 5>();    // FIXME: use constant for TIM6_TRGO
+    //dac::enable_trigger<1, 5>();    // FIXME: use constant for TIM6_TRGO
+    dac::enable_trigger<1, 7>();    // FIXME: use constant for TIM6_TRGO
     dac::enable_dma<1, dma, dac_dma_ch, uint16_t>(output_buffer, buffer_size);
     dma::enable_interrupt<dac_dma_ch, true>();
 
     adc::setup();
-    adc::sequence<0>();
+    adc::sequence<board::A0>();
     adc::dma<dma, adc_dma_ch, uint16_t>(input_buffer, buffer_size);
-    adc::trigger<0x5>();            // FIXME: use constant for TIM6_TRGO
+    //adc::trigger<0x5>();            // FIXME: use constant for TIM6_TRGO
+    adc::trigger<0xd>();            // FIXME: use constant for TIM6_TRGO
     adc::enable();
     adc::start_conversion();
 
     tim6::setup(0, sys_clock::freq() / sample_freq - 1);
     tim6::master_mode<tim6::mm_update>();
     //tim6::enable_update_interrupt();    // enable sampling frequency probe
-    //interrupt::set<interrupt::TIM6_DAC_LPTIM1>();
+    //interrupt::set<interrupt::TIM6_DACUNDER>();
 
     for (;;)
     {

@@ -2,7 +2,6 @@
 
 #include <device/gpio.h>
 #include <device/exti.h>
-#include <device/syscfg.h>
 
 template<port_t PORT, int POS, typename = is_in_range<true> >
 struct exticr_traits
@@ -10,6 +9,7 @@ struct exticr_traits
     static_assert(always_false_i<POS>::value, "pin out of range");
 };
 
+/*
 template<port_t PORT, int POS>
 struct exticr_traits<PORT, POS, is_in_range<(0 <= POS && POS < 4)> >
 {
@@ -53,7 +53,7 @@ struct exticr_traits<PORT, POS, is_in_range<(12 <= POS && POS < 16)> >
         syscfg_t::V.EXTICR4 |= (PORT << shift);
     }
 };
-
+*/
 template<port_t PORT, int POS>
 struct exti_interrupt
 {
@@ -62,23 +62,22 @@ struct exti_interrupt
     {
         typename exti_t::T& EXTI = exti_t::V;
 
-        syscfg_traits<0>::template enable<rcc_t>();
         exticr_traits<PORT, POS>::select();
-        EXTI.CPUIMR1 |= MASK;
+        EXTI.IMR |= MASK;
         if (RISE)
-            EXTI.RTSR1 |= MASK;
+            EXTI.RTSR |= MASK;
         if (FALL)
-            EXTI.FTSR1 |= MASK;
+            EXTI.FTSR |= MASK;
     }
 
     static inline bool pending()
     {
-        return exti_t::V.CPUPR1 & MASK;
+        return exti_t::V.PR & MASK;
     }
 
     static inline void clear()
     {
-        exti_t::V.CPUPR1 = MASK;
+        exti_t::V.PR = MASK;
     }
 
     static constexpr uint32_t MASK = 1 << POS;

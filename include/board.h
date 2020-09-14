@@ -29,6 +29,18 @@ struct board
 };
 #endif
 
+#if defined(NUCLEO_F103RB)
+struct board
+{
+    using led1 = output_t<PA5>;
+    using btn1 = button_t<PC13>;
+    static constexpr input_type_t btn_type = pull_up;
+    using probe = output_t<PA8>;
+    using serial = usart_t<2, PA2, PA3>;
+    static constexpr interrupt::interrupt_t serial_interrupt = interrupt::USART2;
+};
+#endif
+
 #if defined(NUCLEO_F207ZG)
 struct board
 {

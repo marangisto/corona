@@ -1,5 +1,9 @@
 #pragma once
 
+#include <device/gpio.h>
+#include <device/exti.h>
+#include <device/syscfg.h>
+
 template<port_t PORT, int POS, typename = is_in_range<true> >
 struct exticr_traits
 {
@@ -58,6 +62,7 @@ struct exti_interrupt
     {
         typename exti_t::T& EXTI = exti_t::V;
 
+        syscfg_traits<0>::template enable<rcc_t>();
         exticr_traits<PORT, POS>::select();
         EXTI.IMR1 |= MASK;
         if (RISE)

@@ -460,7 +460,6 @@ static constexpr gpio_conf_t gpio_conf = mcu_traits<target>::gpio_conf;
 template<gpio_conf_t CFG, pin_t PIN, signal_t SIG>
 struct signal_traits
 {
-    static constexpr altfun_t AF = AF0;
     static_assert
         ( always_false_i<PIN>::value
         , "alternate function not available on this pin!"

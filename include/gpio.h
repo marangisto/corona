@@ -1,9 +1,6 @@
 #pragma once
 
 #include "corona.h"
-#include <device/gpio.h>
-#include <device/exti.h>
-#include <device/syscfg.h>
 #include <driver/gpio.h>
 
 enum output_type_t
@@ -126,8 +123,6 @@ public:
     template<trigger_edge_t EDGE = rising_edge>
     static void enable_interrupt()
     {
-        syscfg_traits<0>::template enable<rcc_t>();
-
         exti_interrupt<PORT, POS>::template enable
             < EDGE == rising_edge || EDGE == both_edges
             , EDGE == falling_edge || EDGE == both_edges

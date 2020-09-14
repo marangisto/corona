@@ -1,5 +1,9 @@
 #pragma once
 
+#include <device/gpio.h>
+#include <device/exti.h>
+#include <device/syscfg.h>
+
 template<port_t PORT, int POS, typename = is_in_range<true> >
 struct exticr_traits
 {

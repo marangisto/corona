@@ -1830,6 +1830,8 @@ using tim6_t = peripheral_t<svd, TIM6>;
 using tim7_t = peripheral_t<svd, TIM7>;
 using tim8_t = peripheral_t<svd, TIM8>;
 
+template<int INST> struct tim_traits {};
+
 template<> struct tim_traits<1>
 {
     using tim = tim1_t;

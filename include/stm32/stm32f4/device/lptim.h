@@ -167,6 +167,8 @@ struct peripheral_t<STM32F410, LPTIM1>
 using lptim_t = peripheral_t<svd, LPTIM>;
 using lptim1_t = peripheral_t<svd, LPTIM1>;
 
+template<int INST> struct lptim_traits {};
+
 template<> struct lptim_traits<1>
 {
     using lptim = lptim1_t;

@@ -243,6 +243,8 @@ struct peripheral_t<STM32L562, USB>
 using sec_usb_t = peripheral_t<svd, SEC_USB>;
 using usb_t = peripheral_t<svd, USB>;
 
+template<int INST> struct usb_traits {};
+
 template<> struct usb_traits<0>
 {
     using usb = usb_t;

@@ -314,6 +314,8 @@ struct peripheral_t<STM32F779, LTDC>
 using ltcd_t = peripheral_t<svd, LTCD>;
 using ltdc_t = peripheral_t<svd, LTDC>;
 
+template<int INST> struct ltdc_traits {};
+
 template<> struct ltdc_traits<0>
 {
     using ltdc = ltdc_t;

@@ -213,6 +213,8 @@ using wwdg_t = peripheral_t<svd, WWDG>;
 using wwdg1_t = peripheral_t<svd, WWDG1>;
 using wwdg2_t = peripheral_t<svd, WWDG2>;
 
+template<int INST> struct wwdg_traits {};
+
 template<> struct wwdg_traits<1>
 {
     using wwdg = wwdg1_t;

@@ -176,6 +176,8 @@ struct peripheral_t<STM32L562, UCPD1>
 using sec_ucpd1_t = peripheral_t<svd, SEC_UCPD1>;
 using ucpd1_t = peripheral_t<svd, UCPD1>;
 
+template<int INST> struct ucpd_traits {};
+
 template<> struct ucpd_traits<1>
 {
     using ucpd = ucpd1_t;

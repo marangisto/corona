@@ -171,6 +171,8 @@ struct peripheral_t<STM32L562, SYSCFG>
 using sec_syscfg_t = peripheral_t<svd, SEC_SYSCFG>;
 using syscfg_t = peripheral_t<svd, SYSCFG>;
 
+template<int INST> struct syscfg_traits {};
+
 template<> struct syscfg_traits<0>
 {
     using syscfg = syscfg_t;

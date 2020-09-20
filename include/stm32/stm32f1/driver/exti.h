@@ -1,6 +1,7 @@
 #pragma once
 
 #include <device/exti.h>
+#include <device/afio.h>
 
 template<port_t PORT, int POS, typename = is_in_range<true> >
 struct exticr_traits
@@ -8,15 +9,14 @@ struct exticr_traits
     static_assert(always_false_i<POS>::value, "pin out of range");
 };
 
-/*
 template<port_t PORT, int POS>
 struct exticr_traits<PORT, POS, is_in_range<(0 <= POS && POS < 4)> >
 {
     static void select()
     {
         constexpr uint8_t shift = (POS & 0x3) << 2;
-        syscfg_t::V.EXTICR1 &= ~(0xf << shift);
-        syscfg_t::V.EXTICR1 |= (PORT << shift);
+        afio_t::V.EXTICR1 &= ~(0xf << shift);
+        afio_t::V.EXTICR1 |= (PORT << shift);
     }
 };
 
@@ -26,8 +26,8 @@ struct exticr_traits<PORT, POS, is_in_range<(4 <= POS && POS < 8)> >
     static void select()
     {
         constexpr uint8_t shift = (POS & 0x3) << 2;
-        syscfg_t::V.EXTICR2 &= ~(0xf << shift);
-        syscfg_t::V.EXTICR2 |= (PORT << shift);
+        afio_t::V.EXTICR2 &= ~(0xf << shift);
+        afio_t::V.EXTICR2 |= (PORT << shift);
     }
 };
 
@@ -37,8 +37,8 @@ struct exticr_traits<PORT, POS, is_in_range<(8 <= POS && POS < 12)> >
     static void select()
     {
         constexpr uint8_t shift = (POS & 0x3) << 2;
-        syscfg_t::V.EXTICR3 &= ~(0xf << shift);
-        syscfg_t::V.EXTICR3 |= (PORT << shift);
+        afio_t::V.EXTICR3 &= ~(0xf << shift);
+        afio_t::V.EXTICR3 |= (PORT << shift);
     }
 };
 
@@ -48,11 +48,11 @@ struct exticr_traits<PORT, POS, is_in_range<(12 <= POS && POS < 16)> >
     static void select()
     {
         constexpr uint8_t shift = (POS & 0x3) << 2;
-        syscfg_t::V.EXTICR4 &= ~(0xf << shift);
-        syscfg_t::V.EXTICR4 |= (PORT << shift);
+        afio_t::V.EXTICR4 &= ~(0xf << shift);
+        afio_t::V.EXTICR4 |= (PORT << shift);
     }
 };
-*/
+
 template<port_t PORT, int POS>
 struct exti_interrupt
 {
@@ -61,6 +61,7 @@ struct exti_interrupt
     {
         typename exti_t::T& EXTI = exti_t::V;
 
+        afio_traits<0>::template enable<rcc_t>();
         exticr_traits<PORT, POS>::select();
         EXTI.IMR |= MASK;
         if (RISE)

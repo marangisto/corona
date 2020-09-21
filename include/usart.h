@@ -12,6 +12,12 @@ struct usart_clock
 };
 
 template<>
+struct usart_clock<STM32F1>
+{
+    static uint32_t freq() { return sys_clock::freq() >> 1; }
+};
+
+template<>
 struct usart_clock<STM32F7>
 {
     static uint32_t freq() { return sys_clock::freq() >> 2; }

@@ -165,7 +165,7 @@ public:
 
         static void setup(count_t initial_duty = 0)
         {
-            alternate_t<PIN, traits::CH>::template setup<high_speed>();
+            alternate_t<PIN, traits::CH>::template setup<push_pull, high_speed>();
             traits::setup_pwm(initial_duty);
         }
 

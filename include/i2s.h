@@ -72,9 +72,9 @@ public:
     {
         typename i2s::T& I2S = i2s::V;
 
-        alternate_t<SD, i2s_traits<INST>::sd>::template setup<speed>();
-        alternate_t<WS, i2s_traits<INST>::ws>::template setup<speed>();
-        alternate_t<CK, i2s_traits<INST>::ck>::template setup<speed>();
+        alternate_t<SD, i2s_traits<INST>::sd>::template setup<push_pull, speed>();
+        alternate_t<WS, i2s_traits<INST>::ws>::template setup<push_pull, speed>();
+        alternate_t<CK, i2s_traits<INST>::ck>::template setup<push_pull, speed>();
 
         traits::template enable<rcc_t>();       // enable clock
 

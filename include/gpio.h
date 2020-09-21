@@ -158,13 +158,13 @@ public:
     using BASE = gpio_driver<PIN>;
 
     template
-        < output_speed_t speed = low_speed
-        , output_type_t output_type = push_pull
+        < output_type_t output_type = push_pull
+        , output_speed_t speed = low_speed
         >  // FIXME: should we not have output_type option here?
     static inline void setup()
     {
         gpio_traits<BASE::PORT>::template enable<rcc_t>();
-        BASE::template setup<ALT, speed, output_type>();
+        BASE::template setup<ALT, output_type, speed>();
     }
 
     template<input_type_t input_type = floating>

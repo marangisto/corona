@@ -28,8 +28,8 @@ struct gpio_driver
 
     template
         < signal_t SIG
-        , output_speed_t speed
         , output_type_t output_type
+        , output_speed_t speed
         >  // FIXME: should we not have output_type option here?
     static inline void setup()
     {

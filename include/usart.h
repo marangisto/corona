@@ -31,7 +31,7 @@ public:
     {
         typename usart::T& USART = usart::V;
 
-        alternate_t<TX, traits::TX>::template setup<speed>();
+        alternate_t<TX, traits::TX>::template setup<push_pull, speed>();
         alternate_t<RX, traits::RX>::template setup<pull_up>();
 
         usart_traits<INST>::template enable<rcc_t>();   // enable clock

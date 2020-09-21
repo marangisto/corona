@@ -78,8 +78,8 @@ public:
     {
         typename spi::T& SPI = spi::V;
 
-        alternate_t<SCK, traits::SCK>::template setup<speed>();
-        alternate_t<MOSI, traits::MOSI>::template setup<speed>();
+        alternate_t<SCK, traits::SCK>::template setup<push_pull, speed>();
+        alternate_t<MOSI, traits::MOSI>::template setup<push_pull, speed>();
         alternate_t<MISO, traits::MISO>::template setup<floating>();
 
         spi_traits<INST>::template enable<rcc_t>(); // enable clock

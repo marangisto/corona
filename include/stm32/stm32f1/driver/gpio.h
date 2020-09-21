@@ -3,7 +3,11 @@
 template<pin_t PIN>
 struct gpio_driver
 {
-    template<output_type_t output_type, output_speed_t speed>
+    template
+        < output_type_t output_type
+        , output_speed_t speed
+        , int altfun_bit = 0
+        >
     static inline void setup()
     {
         typename gpio_t<PORT>::T& GPIO = gpio_t<PORT>::V;
@@ -12,6 +16,7 @@ struct gpio_driver
         constexpr uint8_t shift = (POS < 8 ? POS : (POS - 8)) << 2;
         constexpr uint32_t bits = (speed == low_speed ? 0x2 : 0x3)
                                 | (output_type == open_drain ? 0x4 : 0)
+                                | altfun_bit
                                 ;
 
         CR &= ~(0xf << shift);
@@ -37,42 +42,22 @@ struct gpio_driver
 
     template
         < signal_t SIG
-        , output_speed_t speed
         , output_type_t output_type
+        , output_speed_t speed
         >  // FIXME: should we not have output_type option here?
     static inline void setup()
     {
-        /*
-        typename gpio_t<PORT>::T& GPIO = gpio_t<PORT>::V;
+        static_assert(signal_traits<gpio_conf, PIN, SIG>::AF == REMAP, "FIXME: support more than REMAP");
 
-        GPIO.MODER &= ~(0x3 << (POS*2));
-        GPIO.MODER |= alternate_mode << (POS*2);
-        if (speed != low_speed)
-            GPIO.OSPEEDR |= speed << (POS*2);
-        if (output_type == open_drain)
-            GPIO.OTYPER |= MASK;
-        if (POS < 8)
-            GPIO.AFRL |= signal_traits<gpio_conf, PIN, SIG>::AF << (POS*4);
-        else
-            GPIO.AFRH |= signal_traits<gpio_conf, PIN, SIG>::AF << ((POS-8)*4);
-            */
+        setup<output_type, speed, 0x8>();   // N.B. alt-fun bit!
     }
 
     template<signal_t SIG, input_type_t input_type>
     static inline void setup()
     {
-        /*
-        typename gpio_t<PORT>::T& GPIO = gpio_t<PORT>::V;
+        static_assert(signal_traits<gpio_conf, PIN, SIG>::AF == REMAP, "FIXME: support more than REMAP");
 
-        GPIO.MODER &= ~(0x3 << (POS*2));
-        GPIO.MODER |= alternate_mode << (POS*2);
-        if (input_type != floating)
-            GPIO.PUPDR |= input_type << (POS*2);
-        if (POS < 8)
-            GPIO.AFRL |= signal_traits<gpio_conf, PIN, SIG>::AF << (POS*4);
-        else
-            GPIO.AFRH |= signal_traits<gpio_conf, PIN, SIG>::AF << ((POS-8)*4);
-            */
+        setup<input_type>();    // yes, that's all!
     }
 
     static constexpr port_t PORT = pin_port<PIN>();

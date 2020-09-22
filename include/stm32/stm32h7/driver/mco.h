@@ -44,7 +44,7 @@ struct mco_driver<PA8>
         RCC.CFGR |= _::CFGR_MCO1SEL::W(mco_sel<PA8, SEL>::value)
                  |  _::CFGR_MCO1PRE::W(PRE);
                  ;
-        alternate_t<PA8, RCC_MCO_1>::template setup<high_speed>();
+        alternate_t<PA8, RCC_MCO_1>::template setup<push_pull, high_speed>();
     }
 };
 
@@ -62,7 +62,7 @@ struct mco_driver<PC9>
         RCC.CFGR |= _::CFGR_MCO2SEL::W(mco_sel<PC9, SEL>::value)
                  |  _::CFGR_MCO2PRE::W(PRE);
                  ;
-        alternate_t<PC9, RCC_MCO_2>::template setup<high_speed>();
+        alternate_t<PC9, RCC_MCO_2>::template setup<push_pull, high_speed>();
     }
 };
 

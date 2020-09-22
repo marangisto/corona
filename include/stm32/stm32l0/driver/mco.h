@@ -46,7 +46,7 @@ struct mco_driver<PA8>
         RCC.CFGR |= _::CFGR_MCOSEL::W(mco_sel<PA8, SEL>::value)
                  |  _::CFGR_MCOPRE::W(mco_pre<PRE>::value);
                  ;
-        alternate_t<PA8, RCC_MCO>::template setup<high_speed>();
+        alternate_t<PA8, RCC_MCO>::template setup<push_pull, high_speed>();
     }
 };
 

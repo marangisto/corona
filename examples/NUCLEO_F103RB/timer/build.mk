@@ -1,0 +1,2 @@
+BASE_DIR=../../../..
+BOARD=NUCLEO_F103RB

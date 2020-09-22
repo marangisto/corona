@@ -55,3 +55,5 @@ enum channel_t
     , CH4
     };
 
+using interrupt_t = interrupt::interrupt_t;
+

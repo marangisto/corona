@@ -1,0 +1,2 @@
+BASE_DIR=../../../..
+MCU=STM32F103RBTx

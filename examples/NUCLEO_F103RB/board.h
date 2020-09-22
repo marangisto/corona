@@ -15,4 +15,6 @@ static const interrupt_t    SERIAL_ISR = interrupt::USART2;
 
 static const int            TIMER_NO = 3;
 static const interrupt_t    TIMER_ISR = interrupt::TIM3;
+static const pin_t          TIMER_CH1 = PA6;
+static const pin_t          TIMER_CH2 = PA7;
 

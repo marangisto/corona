@@ -5,6 +5,7 @@
 static const pin_t          LED = PA5;
 static const pin_t          BTN = PC13;
 static const input_type_t   BTN_TYPE = pull_up;
+static const interrupt_t    BTN_ISR = interrupt::EXTI15_10;
 static const pin_t          PROBE = PA8;
 
 static const int            SERIAL_USART = 2;

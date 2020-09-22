@@ -1,11 +1,11 @@
 #include <button.h>
 #include <timer.h>
 
-using aux = tim_t<3>;
+using aux = tim_t<TIMER_NO>;
 using btn = button_t<BTN>;
 using led = output_t<LED>;
 
-template<> void handler<interrupt::TIM3>()
+template<> void handler<TIMER_ISR>()
 {
     aux::clear_update_interrupt_flag();
     btn::update();
@@ -18,7 +18,7 @@ int main()
     aux::enable_update_interrupt();
     led::setup();
 
-    interrupt::set<interrupt::TIM3>();
+    interrupt::set<TIMER_ISR>();
     interrupt::enable();
 
     for (;;)

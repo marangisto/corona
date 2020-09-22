@@ -1,9 +1,9 @@
 #include <timer.h>
 
 using led = output_t<LED>;
-using tim = tim_t<3>;
+using tim = tim_t<TIMER_NO>;
 
-template<> void handler<interrupt::TIM3>()
+template<> void handler<TIMER_ISR>()
 {
     tim::clear_update_interrupt_flag();
     led::toggle();
@@ -17,7 +17,7 @@ int main()
 
     tim::setup(sys_clock::freq() / 10000, 9999);
     tim::enable_update_interrupt();
-    interrupt::set<interrupt::TIM3>();
+    interrupt::set<TIMER_ISR>();
     interrupt::enable();
 
     for (;;);

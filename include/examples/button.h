@@ -13,11 +13,10 @@ template<> void handler<TIMER_ISR>()
 
 int main()
 {
+    led::setup();
     btn::setup<BTN_TYPE>();
     aux::setup(sys_clock::freq() / 1000000 - 1, 1000 - 1);
     aux::enable_update_interrupt();
-    led::setup();
-
     interrupt::set<TIMER_ISR>();
     interrupt::enable();
 

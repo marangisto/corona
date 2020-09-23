@@ -16,6 +16,7 @@ int main()
     btn::setup<BTN_TYPE>();
     btn::enable_interrupt<rising_edge>();
     interrupt::set<BTN_ISR>();
+    interrupt::enable();
     for (;;) ;
 }
 

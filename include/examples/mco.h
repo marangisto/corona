@@ -7,7 +7,7 @@ using mco1 = mco_t<PA8>;
 int main()
 {
     led::setup();
-    mco1::setup<mco_hsi, 1>();
+    mco1::setup<mco_pll, 1>();
     //mco2::setup<mco_sysclk, 4>();
 
     for (;;)

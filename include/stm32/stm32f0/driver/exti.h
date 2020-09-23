@@ -61,6 +61,7 @@ struct exti_interrupt
     {
         typename exti_t::T& EXTI = exti_t::V;
 
+        syscfg_traits<0>::template enable<rcc_t>();
         exticr_traits<PORT, POS>::select();
         EXTI.IMR |= MASK;
         if (RISE)

@@ -2,7 +2,7 @@
 
 using tim = tim_t<TIMER_NO>;
 using pwma = tim::pwm<CH1, TIMER_CH1>;
-using pwmb = tim::pwm<CH2, TIMER_CH2>;  // FIXME: broken on L073?
+using pwmb = tim::pwm<CH2, TIMER_CH2>;
 using led = output_t<LED>;
 
 int main()

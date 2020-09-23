@@ -1,2 +1,1 @@
-BASE_DIR=../../../..
-MCU=STM32F051R8Tx
+include ../build.cfg

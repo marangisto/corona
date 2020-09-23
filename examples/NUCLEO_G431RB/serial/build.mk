@@ -1,2 +1,1 @@
-BASE_DIR=../../../..
-MCU=STM32G431RBTx
+include ../build.cfg

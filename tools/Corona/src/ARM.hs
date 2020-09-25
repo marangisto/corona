@@ -95,6 +95,7 @@ memory MCU{..} = unlines
     where ram' = case family of
             "STM32F3"   -> if ram == 80 then 64 else 32
             "STM32H7"   -> 128
+            "STM32L4"   -> 96
             _           -> ram
 
 cleanCore :: String -> String

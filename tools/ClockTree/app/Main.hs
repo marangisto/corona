@@ -14,6 +14,7 @@ data Family
     | STM32G0
     | STM32G4
     | STM32H7
+    | STM32L4
     deriving (Eq, Ord, Enum, Read, Show, Data, Typeable)
 
 data Options = Options
@@ -35,6 +36,7 @@ options = Main.Options
 maxFreq :: Family -> Double
 maxFreq STM32F2 = 120e6
 maxFreq STM32G4 = 170e6
+maxFreq STM32L4 = 80e6
 maxFreq x = error $ "don't know max frequency for " <> show x
 
 main :: IO ()
@@ -54,7 +56,18 @@ solve STM32F2 freq
   $ gen 16e6
 solve STM32G4 freq
   = mapM_ print
-  . filter (\G4{..} -> fSYS == freq && fPllP == freq && fPllQ == freq)
+  . filter (\G4{..} -> fSYS == freq
+                    && fPllP == freq
+                    && fPllQ == freq
+           )
+  $ gen 16e6
+solve STM32L4 freq
+  = mapM_ print
+  . filter (\L4{..} -> fSYS == freq
+                    -- && fPllP == freq
+                    && fPllQ == freq
+                    && fPllR == freq
+           )
   $ gen 16e6
 
 data F2 = F2
@@ -116,5 +129,42 @@ instance ClockTree G4 where
        in fVCO >= 64e6 && fVCO <= 344e6    -- allowed range!
        && fVCO / pllR <= 170e6
        && fVCO / pllQ <= 170e6
+    ]
+
+data L4 = L4
+    { pllN      :: Double
+    , pllM      :: Double
+    , pllP      :: Double
+    , pllQ      :: Double
+    , pllR      :: Double
+    -- , pllPDIV   :: Double    IGNORING L48x/L4Ax devices for now
+    , fSYS      :: Double
+    , fPllP     :: Double
+    , fPllQ     :: Double
+    , fPllR     :: Double
+    , fVCO      :: Double
+    } deriving (Show)
+
+instance ClockTree L4 where
+  gen fCin =
+    [ let fVCO = fCin * pllN / pllM
+          fSYS = fVCO / pllR
+          fPllP = fVCO / pllP
+          fPllQ = fVCO / pllQ
+          fPllR = fVCO / pllR
+       in L4{..}
+    | pllN <- [8..86]
+    , pllM <- [1..8]
+    , pllP <- [7, 17]
+    , pllQ <- [2, 4, 6, 8]
+    , pllR <- [2, 4, 6, 8]
+    --, pllPDIV <- [0, 2..31]
+    , let pllIn = fCin / pllM
+       in pllIn >= 4e6 && pllIn <= 16e6    -- required range!
+    , let fVCO = fCin * pllN / pllM
+       in fVCO >= 64e6 && fVCO <= 344e6    -- allowed range!
+       && fVCO / pllP <= 80e6
+       && fVCO / pllR <= 80e6
+       && fVCO / pllQ <= 80e6
     ]
 

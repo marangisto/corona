@@ -8,6 +8,7 @@ int main()
 {
     led::setup();
     mco1::setup<mco_pll, 1>();
+    //mco1::setup<mco_sysclk, 1>();
     //mco2::setup<mco_sysclk, 4>();
 
     for (;;)

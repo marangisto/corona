@@ -36,6 +36,7 @@ options = Main.Options
 maxFreq :: Family -> Double
 maxFreq STM32F2 = 120e6
 maxFreq STM32G4 = 170e6
+maxFreq STM32H7 = 480e6
 maxFreq STM32L4 = 80e6
 maxFreq x = error $ "don't know max frequency for " <> show x
 
@@ -61,6 +62,14 @@ solve STM32G4 freq
                     && fPllQ == freq
            )
   $ gen 16e6
+solve STM32H7 freq
+  = mapM_ print
+  . filter (\H7{..} -> fSYS == freq
+                    && fPllP == freq
+                    && fPllQ == freq
+                    && fPllR == freq
+           )
+  $ gen 8e6         -- using HSE on NUCLEO
 solve STM32L4 freq
   = mapM_ print
   . filter (\L4{..} -> fSYS == freq
@@ -129,6 +138,43 @@ instance ClockTree G4 where
        in fVCO >= 64e6 && fVCO <= 344e6    -- allowed range!
        && fVCO / pllR <= 170e6
        && fVCO / pllQ <= 170e6
+    ]
+
+data H7 = H7
+    { pllN      :: Double   -- aka DIVN
+    , pllM      :: Double   -- aka DIVM
+    , pllP      :: Double
+    , pllQ      :: Double
+    , pllR      :: Double
+    -- , pllPDIV   :: Double 
+    , fSYS      :: Double
+    , fPllP     :: Double
+    , fPllQ     :: Double
+    , fPllR     :: Double
+    , fVCO      :: Double
+    } deriving (Show)
+
+instance ClockTree H7 where
+  gen fCin =
+    [ let fVCO = fCin * pllN / pllM
+          fSYS = fVCO / pllR
+          fPllP = fVCO / pllP
+          fPllQ = fVCO / pllQ
+          fPllR = fVCO / pllR
+       in H7{..}
+    | pllN <- [4..512]
+    , pllM <- [1..63]
+    , pllP <- [1..128]
+    , pllQ <- [1..128]
+    , pllR <- [1..128]
+    --, pllPDIV <- [0, 2..31]
+    , let refCk = fCin / pllM
+       in refCk >= 2e6 && refCk <= 16e6     -- required range for VCOH
+    , let fVCO = fCin * pllN / pllM
+       in fVCO >= 192e6 && fVCO <= 836e6    -- allowed range for VCOH
+       && fVCO / pllP <= 480e6
+       && fVCO / pllR <= 480e6
+       && fVCO / pllQ <= 480e6
     ]
 
 data L4 = L4

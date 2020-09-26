@@ -101,7 +101,7 @@ struct stm32h742x_syscfg_t
     typedef bit_field_t<4, 0xf> CCCR_PCC; // PMOS compensation code
 
     static constexpr uint32_t PWRCR_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0xf> PWRCR_ODEN; // Overdrive enable
+    static constexpr uint32_t PWRCR_ODEN = 0x1; // Overdrive enable
 
 
     static constexpr uint32_t PKGR_RESET_VALUE = 0x0; // Reset value

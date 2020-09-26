@@ -7,7 +7,7 @@ enum mco_sel_t
     , mco_hsi48
     , mco_lse
     , mco_lsi
-    , mco_pll1
+    , mco_pll   // 1 but keep common name for portability
     , mco_pll2
     , mco_sys
     };
@@ -17,13 +17,13 @@ template<pin_t, mco_sel_t> struct mco_sel {};
 template<> struct mco_sel<PA8, mco_hsi> { static const int value = 0x0; };
 template<> struct mco_sel<PA8, mco_lse> { static const int value = 0x1; };
 template<> struct mco_sel<PA8, mco_hse> { static const int value = 0x2; };
-template<> struct mco_sel<PA8, mco_pll1> { static const int value = 0x3; };
+template<> struct mco_sel<PA8, mco_pll> { static const int value = 0x3; };
 template<> struct mco_sel<PA8, mco_hsi48> { static const int value = 0x4; };
 
 template<> struct mco_sel<PC9, mco_sys> { static const int value = 0x0; };
 template<> struct mco_sel<PC9, mco_pll2> { static const int value = 0x1; };
 template<> struct mco_sel<PC9, mco_hse> { static const int value = 0x2; };
-template<> struct mco_sel<PC9, mco_pll1> { static const int value = 0x3; };
+template<> struct mco_sel<PC9, mco_pll> { static const int value = 0x3; };
 template<> struct mco_sel<PC9, mco_csi> { static const int value = 0x4; };
 template<> struct mco_sel<PC9, mco_lsi> { static const int value = 0x5; };
 

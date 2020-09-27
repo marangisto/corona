@@ -274,6 +274,7 @@ template<> struct lpuart_traits<1>
     static void enable()
     {
         RCC::V.APB4ENR |= RCC::T::APB4ENR_LPUART1EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -286,5 +287,6 @@ template<> struct lpuart_traits<1>
     static void reset()
     {
         RCC::V.APB4RSTR |= RCC::T::APB4RSTR_LPUART1RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

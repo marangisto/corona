@@ -4917,6 +4917,7 @@ template<> struct can_traits<1>
     static void enable()
     {
         RCC::V.APB1ENR |= RCC::T::APB1ENR_CAN1EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -4929,6 +4930,7 @@ template<> struct can_traits<1>
     static void reset()
     {
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_CAN1RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -4942,6 +4944,7 @@ template<> struct can_traits<2>
     static void enable()
     {
         RCC::V.APB1ENR |= RCC::T::APB1ENR_CAN2EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -4954,6 +4957,7 @@ template<> struct can_traits<2>
     static void reset()
     {
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_CAN2RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 

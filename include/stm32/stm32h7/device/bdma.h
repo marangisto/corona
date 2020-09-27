@@ -1388,6 +1388,7 @@ template<> struct bdma_traits<0>
     static void enable()
     {
         RCC::V.AHB4ENR |= RCC::T::AHB4ENR_BDMAEN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -1400,5 +1401,6 @@ template<> struct bdma_traits<0>
     static void reset()
     {
         RCC::V.AHB4RSTR |= RCC::T::AHB4RSTR_BDMARST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

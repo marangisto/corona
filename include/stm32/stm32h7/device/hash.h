@@ -394,6 +394,7 @@ template<> struct hash_traits<0>
     static void enable()
     {
         RCC::V.AHB2ENR |= RCC::T::AHB2ENR_HASHEN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -406,5 +407,6 @@ template<> struct hash_traits<0>
     static void reset()
     {
         RCC::V.AHB2RSTR |= RCC::T::AHB2RSTR_HASHRST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

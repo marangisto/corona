@@ -124,6 +124,7 @@ template<> struct crc_traits<0>
     static void enable()
     {
         RCC::V.AHB1ENR |= RCC::T::AHB1ENR_CRCEN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -136,5 +137,6 @@ template<> struct crc_traits<0>
     static void reset()
     {
         RCC::V.AHB1RSTR |= RCC::T::AHB1RSTR_CRCRST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

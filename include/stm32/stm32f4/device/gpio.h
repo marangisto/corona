@@ -1379,6 +1379,7 @@ template<> struct gpio_traits<0>
     static void enable()
     {
         RCC::V.AHB1ENR |= RCC::T::AHB1ENR_GPIOAEN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -1391,6 +1392,7 @@ template<> struct gpio_traits<0>
     static void reset()
     {
         RCC::V.AHB1RSTR |= RCC::T::AHB1RSTR_GPIOARST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -1402,6 +1404,7 @@ template<> struct gpio_traits<1>
     static void enable()
     {
         RCC::V.AHB1ENR |= RCC::T::AHB1ENR_GPIOBEN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -1414,6 +1417,7 @@ template<> struct gpio_traits<1>
     static void reset()
     {
         RCC::V.AHB1RSTR |= RCC::T::AHB1RSTR_GPIOBRST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -1425,6 +1429,7 @@ template<> struct gpio_traits<2>
     static void enable()
     {
         RCC::V.AHB1ENR |= RCC::T::AHB1ENR_GPIOCEN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -1437,6 +1442,7 @@ template<> struct gpio_traits<2>
     static void reset()
     {
         RCC::V.AHB1RSTR |= RCC::T::AHB1RSTR_GPIOCRST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -1448,6 +1454,7 @@ template<> struct gpio_traits<3>
     static void enable()
     {
         RCC::V.AHB1ENR |= RCC::T::AHB1ENR_GPIODEN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -1460,6 +1467,7 @@ template<> struct gpio_traits<3>
     static void reset()
     {
         RCC::V.AHB1RSTR |= RCC::T::AHB1RSTR_GPIODRST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -1471,6 +1479,7 @@ template<> struct gpio_traits<4>
     static void enable()
     {
         RCC::V.AHB1ENR |= RCC::T::AHB1ENR_GPIOEEN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -1483,6 +1492,7 @@ template<> struct gpio_traits<4>
     static void reset()
     {
         RCC::V.AHB1RSTR |= RCC::T::AHB1RSTR_GPIOERST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -1494,6 +1504,7 @@ template<> struct gpio_traits<5>
     static void enable()
     {
         RCC::V.AHB1ENR |= RCC::T::AHB1ENR_GPIOFEN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -1506,6 +1517,7 @@ template<> struct gpio_traits<5>
     static void reset()
     {
         RCC::V.AHB1RSTR |= RCC::T::AHB1RSTR_GPIOFRST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -1517,6 +1529,7 @@ template<> struct gpio_traits<6>
     static void enable()
     {
         RCC::V.AHB1ENR |= RCC::T::AHB1ENR_GPIOGEN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -1529,6 +1542,7 @@ template<> struct gpio_traits<6>
     static void reset()
     {
         RCC::V.AHB1RSTR |= RCC::T::AHB1RSTR_GPIOGRST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -1540,6 +1554,7 @@ template<> struct gpio_traits<7>
     static void enable()
     {
         RCC::V.AHB1ENR |= RCC::T::AHB1ENR_GPIOHEN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -1552,6 +1567,7 @@ template<> struct gpio_traits<7>
     static void reset()
     {
         RCC::V.AHB1RSTR |= RCC::T::AHB1RSTR_GPIOHRST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -1563,6 +1579,7 @@ template<> struct gpio_traits<8>
     static void enable()
     {
         RCC::V.AHB1ENR |= RCC::T::AHB1ENR_GPIOIEN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -1575,6 +1592,7 @@ template<> struct gpio_traits<8>
     static void reset()
     {
         RCC::V.AHB1RSTR |= RCC::T::AHB1RSTR_GPIOIRST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -1586,6 +1604,7 @@ template<> struct gpio_traits<9>
     static void enable()
     {
         RCC::V.AHB1ENR |= RCC::T::AHB1ENR_GPIOJEN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -1598,6 +1617,7 @@ template<> struct gpio_traits<9>
     static void reset()
     {
         RCC::V.AHB1RSTR |= RCC::T::AHB1RSTR_GPIOJRST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -1609,6 +1629,7 @@ template<> struct gpio_traits<10>
     static void enable()
     {
         RCC::V.AHB1ENR |= RCC::T::AHB1ENR_GPIOKEN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -1621,5 +1642,6 @@ template<> struct gpio_traits<10>
     static void reset()
     {
         RCC::V.AHB1RSTR |= RCC::T::AHB1RSTR_GPIOKRST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

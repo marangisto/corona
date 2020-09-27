@@ -660,6 +660,7 @@ template<> struct adc_traits<1>
     static void enable()
     {
         RCC::V.APB2ENR |= RCC::T::APB2ENR_ADC1EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -672,6 +673,7 @@ template<> struct adc_traits<1>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_ADC1RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -683,6 +685,7 @@ template<> struct adc_traits<2>
     static void enable()
     {
         RCC::V.APB2ENR |= RCC::T::APB2ENR_ADC2EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -700,6 +703,7 @@ template<> struct adc_traits<3>
     static void enable()
     {
         RCC::V.APB2ENR |= RCC::T::APB2ENR_ADC3EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>

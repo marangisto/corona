@@ -1971,6 +1971,7 @@ template<> struct adc_traits<12>
     static void enable()
     {
         RCC::V.AHB1ENR |= RCC::T::AHB1ENR_ADC12_COMMONEN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -1983,6 +1984,7 @@ template<> struct adc_traits<12>
     static void reset()
     {
         RCC::V.AHB1RSTR |= RCC::T::AHB1RSTR_ADC12_COMMONRST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -1999,6 +2001,7 @@ template<> struct adc_traits<3>
     static void enable()
     {
         RCC::V.AHB4ENR |= RCC::T::AHB4ENR_ADC3EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -2011,6 +2014,7 @@ template<> struct adc_traits<3>
     static void reset()
     {
         RCC::V.AHB4RSTR |= RCC::T::AHB4RSTR_ADC3RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 

@@ -128,6 +128,7 @@ template<> struct wwdg_traits<0>
     static void enable()
     {
         RCC::V.APB1ENR |= RCC::T::APB1ENR_WWDGEN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -140,5 +141,6 @@ template<> struct wwdg_traits<0>
     static void reset()
     {
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_WWDGRST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

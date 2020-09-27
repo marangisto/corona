@@ -282,6 +282,7 @@ template<> struct uart_traits<4>
     static void enable()
     {
         RCC::V.APB1ENR |= RCC::T::APB1ENR_UART4EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -294,6 +295,7 @@ template<> struct uart_traits<4>
     static void reset()
     {
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_UART4RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -309,6 +311,7 @@ template<> struct uart_traits<5>
     static void enable()
     {
         RCC::V.APB1ENR |= RCC::T::APB1ENR_UART5EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -321,6 +324,7 @@ template<> struct uart_traits<5>
     static void reset()
     {
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_UART5RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -334,6 +338,7 @@ template<> struct uart_traits<7>
     static void enable()
     {
         RCC::V.APB1ENR |= RCC::T::APB1ENR_UART7EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -346,6 +351,7 @@ template<> struct uart_traits<7>
     static void reset()
     {
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_UART7RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -359,6 +365,7 @@ template<> struct uart_traits<8>
     static void enable()
     {
         RCC::V.APB1ENR |= RCC::T::APB1ENR_UART8EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -371,5 +378,6 @@ template<> struct uart_traits<8>
     static void reset()
     {
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_UART8RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

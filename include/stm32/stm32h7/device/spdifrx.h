@@ -231,6 +231,7 @@ template<> struct spdifrx_traits<0>
     static void enable()
     {
         RCC::V.APB1LENR |= RCC::T::APB1LENR_SPDIFRXEN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -243,5 +244,6 @@ template<> struct spdifrx_traits<0>
     static void reset()
     {
         RCC::V.APB1LRSTR |= RCC::T::APB1LRSTR_SPDIFRXRST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

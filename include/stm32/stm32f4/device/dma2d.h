@@ -315,6 +315,7 @@ template<> struct dma2d_traits<0>
     static void enable()
     {
         RCC::V.AHB1ENR |= RCC::T::AHB1ENR_DMA2DEN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -327,5 +328,6 @@ template<> struct dma2d_traits<0>
     static void reset()
     {
         RCC::V.AHB1RSTR |= RCC::T::AHB1RSTR_DMA2DRST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

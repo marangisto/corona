@@ -547,6 +547,7 @@ template<> struct syscfg_traits<0>
     static void enable()
     {
         RCC::V.APB4ENR |= RCC::T::APB4ENR_SYSCFGEN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -559,5 +560,6 @@ template<> struct syscfg_traits<0>
     static void reset()
     {
         RCC::V.APB4RSTR |= RCC::T::APB4RSTR_SYSCFGRST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

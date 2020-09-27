@@ -892,6 +892,7 @@ template<> struct lptim_traits<1>
     static void enable()
     {
         RCC::V.APB1LENR |= RCC::T::APB1LENR_LPTIM1EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -904,6 +905,7 @@ template<> struct lptim_traits<1>
     static void reset()
     {
         RCC::V.APB1LRSTR |= RCC::T::APB1LRSTR_LPTIM1RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -919,6 +921,7 @@ template<> struct lptim_traits<2>
     static void enable()
     {
         RCC::V.APB4ENR |= RCC::T::APB4ENR_LPTIM2EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -931,6 +934,7 @@ template<> struct lptim_traits<2>
     static void reset()
     {
         RCC::V.APB4RSTR |= RCC::T::APB4RSTR_LPTIM2RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -943,6 +947,7 @@ template<> struct lptim_traits<3>
     static void enable()
     {
         RCC::V.APB4ENR |= RCC::T::APB4ENR_LPTIM3EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -955,6 +960,7 @@ template<> struct lptim_traits<3>
     static void reset()
     {
         RCC::V.APB4RSTR |= RCC::T::APB4RSTR_LPTIM3RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -967,6 +973,7 @@ template<> struct lptim_traits<4>
     static void enable()
     {
         RCC::V.APB4ENR |= RCC::T::APB4ENR_LPTIM4EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -979,6 +986,7 @@ template<> struct lptim_traits<4>
     static void reset()
     {
         RCC::V.APB4RSTR |= RCC::T::APB4RSTR_LPTIM4RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -991,6 +999,7 @@ template<> struct lptim_traits<5>
     static void enable()
     {
         RCC::V.APB4ENR |= RCC::T::APB4ENR_LPTIM5EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -1003,5 +1012,6 @@ template<> struct lptim_traits<5>
     static void reset()
     {
         RCC::V.APB4RSTR |= RCC::T::APB4RSTR_LPTIM5RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

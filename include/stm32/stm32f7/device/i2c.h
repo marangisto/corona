@@ -725,6 +725,7 @@ template<> struct i2c_traits<1>
     static void enable()
     {
         RCC::V.APB1ENR |= RCC::T::APB1ENR_I2C1EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -737,6 +738,7 @@ template<> struct i2c_traits<1>
     static void reset()
     {
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_I2C1RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -751,6 +753,7 @@ template<> struct i2c_traits<2>
     static void enable()
     {
         RCC::V.APB1ENR |= RCC::T::APB1ENR_I2C2EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -763,6 +766,7 @@ template<> struct i2c_traits<2>
     static void reset()
     {
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_I2C2RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -777,6 +781,7 @@ template<> struct i2c_traits<3>
     static void enable()
     {
         RCC::V.APB1ENR |= RCC::T::APB1ENR_I2C3EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -789,6 +794,7 @@ template<> struct i2c_traits<3>
     static void reset()
     {
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_I2C3RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -803,6 +809,7 @@ template<> struct i2c_traits<4>
     static void enable()
     {
         RCC::V.APB1ENR |= RCC::T::APB1ENR_I2C4EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -815,5 +822,6 @@ template<> struct i2c_traits<4>
     static void reset()
     {
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_I2C4RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

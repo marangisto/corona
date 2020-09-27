@@ -927,6 +927,7 @@ template<> struct spi_traits<1>
     static void enable()
     {
         RCC::V.APB2ENR |= RCC::T::APB2ENR_SPI1EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -939,6 +940,7 @@ template<> struct spi_traits<1>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_SPI1RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -954,6 +956,7 @@ template<> struct spi_traits<2>
     static void enable()
     {
         RCC::V.APB1ENR |= RCC::T::APB1ENR_SPI2EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -966,6 +969,7 @@ template<> struct spi_traits<2>
     static void reset()
     {
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_SPI2RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -981,6 +985,7 @@ template<> struct spi_traits<3>
     static void enable()
     {
         RCC::V.APB1ENR |= RCC::T::APB1ENR_SPI3EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -993,6 +998,7 @@ template<> struct spi_traits<3>
     static void reset()
     {
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_SPI3RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -1008,6 +1014,7 @@ template<> struct spi_traits<4>
     static void enable()
     {
         RCC::V.APB2ENR |= RCC::T::APB2ENR_SPI4EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -1020,6 +1027,7 @@ template<> struct spi_traits<4>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_SPI4RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -1035,6 +1043,7 @@ template<> struct spi_traits<5>
     static void enable()
     {
         RCC::V.APB2ENR |= RCC::T::APB2ENR_SPI5EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -1047,6 +1056,7 @@ template<> struct spi_traits<5>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_SPI5RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -1062,5 +1072,6 @@ template<> struct spi_traits<6>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_SPI6RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

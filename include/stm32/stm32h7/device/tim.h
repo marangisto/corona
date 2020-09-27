@@ -2815,6 +2815,7 @@ template<> struct tim_traits<1>
     static void enable()
     {
         RCC::V.APB2ENR |= RCC::T::APB2ENR_TIM1EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -2827,6 +2828,7 @@ template<> struct tim_traits<1>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_TIM1RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -2840,6 +2842,7 @@ template<> struct tim_traits<12>
     static void enable()
     {
         RCC::V.APB1LENR |= RCC::T::APB1LENR_TIM12EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -2852,6 +2855,7 @@ template<> struct tim_traits<12>
     static void reset()
     {
         RCC::V.APB1LRSTR |= RCC::T::APB1LRSTR_TIM12RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -2864,6 +2868,7 @@ template<> struct tim_traits<13>
     static void enable()
     {
         RCC::V.APB1LENR |= RCC::T::APB1LENR_TIM13EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -2876,6 +2881,7 @@ template<> struct tim_traits<13>
     static void reset()
     {
         RCC::V.APB1LRSTR |= RCC::T::APB1LRSTR_TIM13RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -2888,6 +2894,7 @@ template<> struct tim_traits<14>
     static void enable()
     {
         RCC::V.APB1LENR |= RCC::T::APB1LENR_TIM14EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -2900,6 +2907,7 @@ template<> struct tim_traits<14>
     static void reset()
     {
         RCC::V.APB1LRSTR |= RCC::T::APB1LRSTR_TIM14RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -2915,6 +2923,7 @@ template<> struct tim_traits<15>
     static void enable()
     {
         RCC::V.APB2ENR |= RCC::T::APB2ENR_TIM15EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -2927,6 +2936,7 @@ template<> struct tim_traits<15>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_TIM15RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -2941,6 +2951,7 @@ template<> struct tim_traits<16>
     static void enable()
     {
         RCC::V.APB2ENR |= RCC::T::APB2ENR_TIM16EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -2953,6 +2964,7 @@ template<> struct tim_traits<16>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_TIM16RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -2967,6 +2979,7 @@ template<> struct tim_traits<17>
     static void enable()
     {
         RCC::V.APB2ENR |= RCC::T::APB2ENR_TIM17EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -2979,6 +2992,7 @@ template<> struct tim_traits<17>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_TIM17RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -2995,6 +3009,7 @@ template<> struct tim_traits<2>
     static void enable()
     {
         RCC::V.APB1LENR |= RCC::T::APB1LENR_TIM2EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -3007,6 +3022,7 @@ template<> struct tim_traits<2>
     static void reset()
     {
         RCC::V.APB1LRSTR |= RCC::T::APB1LRSTR_TIM2RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -3023,6 +3039,7 @@ template<> struct tim_traits<3>
     static void enable()
     {
         RCC::V.APB1LENR |= RCC::T::APB1LENR_TIM3EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -3035,6 +3052,7 @@ template<> struct tim_traits<3>
     static void reset()
     {
         RCC::V.APB1LRSTR |= RCC::T::APB1LRSTR_TIM3RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -3051,6 +3069,7 @@ template<> struct tim_traits<4>
     static void enable()
     {
         RCC::V.APB1LENR |= RCC::T::APB1LENR_TIM4EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -3063,6 +3082,7 @@ template<> struct tim_traits<4>
     static void reset()
     {
         RCC::V.APB1LRSTR |= RCC::T::APB1LRSTR_TIM4RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -3079,6 +3099,7 @@ template<> struct tim_traits<5>
     static void enable()
     {
         RCC::V.APB1LENR |= RCC::T::APB1LENR_TIM5EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -3091,6 +3112,7 @@ template<> struct tim_traits<5>
     static void reset()
     {
         RCC::V.APB1LRSTR |= RCC::T::APB1LRSTR_TIM5RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -3102,6 +3124,7 @@ template<> struct tim_traits<6>
     static void enable()
     {
         RCC::V.APB1LENR |= RCC::T::APB1LENR_TIM6EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -3114,6 +3137,7 @@ template<> struct tim_traits<6>
     static void reset()
     {
         RCC::V.APB1LRSTR |= RCC::T::APB1LRSTR_TIM6RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -3125,6 +3149,7 @@ template<> struct tim_traits<7>
     static void enable()
     {
         RCC::V.APB1LENR |= RCC::T::APB1LENR_TIM7EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -3137,6 +3162,7 @@ template<> struct tim_traits<7>
     static void reset()
     {
         RCC::V.APB1LRSTR |= RCC::T::APB1LRSTR_TIM7RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -3162,6 +3188,7 @@ template<> struct tim_traits<8>
     static void enable()
     {
         RCC::V.APB2ENR |= RCC::T::APB2ENR_TIM8EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -3174,5 +3201,6 @@ template<> struct tim_traits<8>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_TIM8RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

@@ -1442,6 +1442,7 @@ template<> struct dfsdm_traits<0>
     static void enable()
     {
         RCC::V.APB2ENR |= RCC::T::APB2ENR_DFSDMEN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -1454,6 +1455,7 @@ template<> struct dfsdm_traits<0>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_DFSDMRST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -1496,6 +1498,7 @@ template<> struct dfsdm_traits<2>
     static void enable()
     {
         RCC::V.APB2ENR |= RCC::T::APB2ENR_DFSDM2EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -1508,5 +1511,6 @@ template<> struct dfsdm_traits<2>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_DFSDM2RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

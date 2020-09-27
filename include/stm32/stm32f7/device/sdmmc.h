@@ -560,6 +560,7 @@ template<> struct sdmmc_traits<1>
     static void enable()
     {
         RCC::V.APB2ENR |= RCC::T::APB2ENR_SDMMC1EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -572,6 +573,7 @@ template<> struct sdmmc_traits<1>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_SDMMC1RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -593,6 +595,7 @@ template<> struct sdmmc_traits<2>
     static void enable()
     {
         RCC::V.APB2ENR |= RCC::T::APB2ENR_SDMMC2EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -605,5 +608,6 @@ template<> struct sdmmc_traits<2>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_SDMMC2RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

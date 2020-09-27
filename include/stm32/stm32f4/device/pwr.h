@@ -306,6 +306,7 @@ template<> struct pwr_traits<0>
     static void enable()
     {
         RCC::V.APB1ENR |= RCC::T::APB1ENR_PWREN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -318,5 +319,6 @@ template<> struct pwr_traits<0>
     static void reset()
     {
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_PWRRST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

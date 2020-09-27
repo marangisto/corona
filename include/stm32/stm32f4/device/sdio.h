@@ -270,6 +270,7 @@ template<> struct sdio_traits<0>
     static void enable()
     {
         RCC::V.APB2ENR |= RCC::T::APB2ENR_SDIOEN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -282,5 +283,6 @@ template<> struct sdio_traits<0>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_SDIORST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

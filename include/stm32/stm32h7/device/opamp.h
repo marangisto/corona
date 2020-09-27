@@ -193,6 +193,7 @@ template<> struct opamp_traits<0>
     static void enable()
     {
         RCC::V.APB1HENR |= RCC::T::APB1HENR_OPAMPEN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -205,5 +206,6 @@ template<> struct opamp_traits<0>
     static void reset()
     {
         RCC::V.APB1HRSTR |= RCC::T::APB1HRSTR_OPAMPRST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

@@ -246,6 +246,7 @@ template<> struct wwdg_traits<1>
     static void enable()
     {
         RCC::V.APB3ENR |= RCC::T::APB3ENR_WWDG1EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>

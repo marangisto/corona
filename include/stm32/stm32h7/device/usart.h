@@ -1394,6 +1394,7 @@ template<> struct usart_traits<4>
     static void enable()
     {
         RCC::V.APB1LENR |= RCC::T::APB1LENR_UART4EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -1406,6 +1407,7 @@ template<> struct usart_traits<4>
     static void reset()
     {
         RCC::V.APB1LRSTR |= RCC::T::APB1LRSTR_UART4RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -1422,6 +1424,7 @@ template<> struct usart_traits<5>
     static void enable()
     {
         RCC::V.APB1LENR |= RCC::T::APB1LENR_UART5EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -1434,6 +1437,7 @@ template<> struct usart_traits<5>
     static void reset()
     {
         RCC::V.APB1LRSTR |= RCC::T::APB1LRSTR_UART5RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -1472,6 +1476,7 @@ template<> struct usart_traits<1>
     static void enable()
     {
         RCC::V.APB2ENR |= RCC::T::APB2ENR_USART1EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -1484,6 +1489,7 @@ template<> struct usart_traits<1>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_USART1RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -1514,6 +1520,7 @@ template<> struct usart_traits<2>
     static void enable()
     {
         RCC::V.APB1LENR |= RCC::T::APB1LENR_USART2EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -1526,6 +1533,7 @@ template<> struct usart_traits<2>
     static void reset()
     {
         RCC::V.APB1LRSTR |= RCC::T::APB1LRSTR_USART2RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -1544,6 +1552,7 @@ template<> struct usart_traits<3>
     static void enable()
     {
         RCC::V.APB1LENR |= RCC::T::APB1LENR_USART3EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -1556,6 +1565,7 @@ template<> struct usart_traits<3>
     static void reset()
     {
         RCC::V.APB1LRSTR |= RCC::T::APB1LRSTR_USART3RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -1574,6 +1584,7 @@ template<> struct usart_traits<6>
     static void enable()
     {
         RCC::V.APB2ENR |= RCC::T::APB2ENR_USART6EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -1586,5 +1597,6 @@ template<> struct usart_traits<6>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_USART6RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

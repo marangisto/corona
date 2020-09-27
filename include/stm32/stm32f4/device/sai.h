@@ -554,6 +554,7 @@ template<> struct sai_traits<1>
     static void enable()
     {
         RCC::V.APB2ENR |= RCC::T::APB2ENR_SAI1EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -566,6 +567,7 @@ template<> struct sai_traits<1>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_SAI1RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -585,6 +587,7 @@ template<> struct sai_traits<2>
     static void enable()
     {
         RCC::V.APB2ENR |= RCC::T::APB2ENR_SAI2EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -597,5 +600,6 @@ template<> struct sai_traits<2>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_SAI2RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

@@ -738,6 +738,7 @@ template<> struct mdios_traits<0>
     static void enable()
     {
         RCC::V.APB1HENR |= RCC::T::APB1HENR_MDIOSEN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -750,5 +751,6 @@ template<> struct mdios_traits<0>
     static void reset()
     {
         RCC::V.APB1HRSTR |= RCC::T::APB1HRSTR_MDIOSRST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

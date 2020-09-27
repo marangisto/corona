@@ -183,6 +183,7 @@ template<> struct lptim_traits<1>
     static void enable()
     {
         RCC::V.APB1ENR |= RCC::T::APB1ENR_LPTIM1EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 
     template<typename RCC>
@@ -195,5 +196,6 @@ template<> struct lptim_traits<1>
     static void reset()
     {
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_LPTIM1RST;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

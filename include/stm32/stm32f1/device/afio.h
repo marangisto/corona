@@ -224,6 +224,7 @@ struct stm32f107_afio_t
 template<>
 struct peripheral_t<STM32F100, AFIO>
 {
+    static constexpr periph_t P = AFIO;
     using T = stm32f100_afio_t;
     static T& V;
 };
@@ -231,6 +232,7 @@ struct peripheral_t<STM32F100, AFIO>
 template<>
 struct peripheral_t<STM32F101, AFIO>
 {
+    static constexpr periph_t P = AFIO;
     using T = stm32f101_afio_t;
     static T& V;
 };
@@ -238,6 +240,7 @@ struct peripheral_t<STM32F101, AFIO>
 template<>
 struct peripheral_t<STM32F102, AFIO>
 {
+    static constexpr periph_t P = AFIO;
     using T = stm32f101_afio_t;
     static T& V;
 };
@@ -245,6 +248,7 @@ struct peripheral_t<STM32F102, AFIO>
 template<>
 struct peripheral_t<STM32F103, AFIO>
 {
+    static constexpr periph_t P = AFIO;
     using T = stm32f101_afio_t;
     static T& V;
 };
@@ -252,6 +256,7 @@ struct peripheral_t<STM32F103, AFIO>
 template<>
 struct peripheral_t<STM32F107, AFIO>
 {
+    static constexpr periph_t P = AFIO;
     using T = stm32f107_afio_t;
     static T& V;
 };

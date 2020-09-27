@@ -486,6 +486,7 @@ struct stm32l4x2_sai1_t
 template<>
 struct peripheral_t<STM32L476, SAI1>
 {
+    static constexpr periph_t P = SAI1;
     using T = stm32l476_sai1_t;
     static T& V;
 };
@@ -493,6 +494,7 @@ struct peripheral_t<STM32L476, SAI1>
 template<>
 struct peripheral_t<STM32L476, SAI2>
 {
+    static constexpr periph_t P = SAI2;
     using T = stm32l476_sai1_t;
     static T& V;
 };
@@ -500,6 +502,7 @@ struct peripheral_t<STM32L476, SAI2>
 template<>
 struct peripheral_t<STM32L496, SAI1>
 {
+    static constexpr periph_t P = SAI1;
     using T = stm32l476_sai1_t;
     static T& V;
 };
@@ -507,6 +510,7 @@ struct peripheral_t<STM32L496, SAI1>
 template<>
 struct peripheral_t<STM32L496, SAI2>
 {
+    static constexpr periph_t P = SAI2;
     using T = stm32l476_sai1_t;
     static T& V;
 };
@@ -514,6 +518,7 @@ struct peripheral_t<STM32L496, SAI2>
 template<>
 struct peripheral_t<STM32L4x1, SAI1>
 {
+    static constexpr periph_t P = SAI1;
     using T = stm32l4x1_sai1_t;
     static T& V;
 };
@@ -521,6 +526,7 @@ struct peripheral_t<STM32L4x1, SAI1>
 template<>
 struct peripheral_t<STM32L4x3, SAI1>
 {
+    static constexpr periph_t P = SAI1;
     using T = stm32l4x1_sai1_t;
     static T& V;
 };
@@ -528,6 +534,7 @@ struct peripheral_t<STM32L4x3, SAI1>
 template<>
 struct peripheral_t<STM32L4x5, SAI1>
 {
+    static constexpr periph_t P = SAI1;
     using T = stm32l4x1_sai1_t;
     static T& V;
 };
@@ -535,6 +542,7 @@ struct peripheral_t<STM32L4x5, SAI1>
 template<>
 struct peripheral_t<STM32L4x5, SAI2>
 {
+    static constexpr periph_t P = SAI2;
     using T = stm32l4x1_sai1_t;
     static T& V;
 };
@@ -542,6 +550,7 @@ struct peripheral_t<STM32L4x5, SAI2>
 template<>
 struct peripheral_t<STM32L4x6, SAI1>
 {
+    static constexpr periph_t P = SAI1;
     using T = stm32l4x1_sai1_t;
     static T& V;
 };
@@ -549,6 +558,7 @@ struct peripheral_t<STM32L4x6, SAI1>
 template<>
 struct peripheral_t<STM32L4x6, SAI2>
 {
+    static constexpr periph_t P = SAI2;
     using T = stm32l4x1_sai1_t;
     static T& V;
 };
@@ -556,6 +566,7 @@ struct peripheral_t<STM32L4x6, SAI2>
 template<>
 struct peripheral_t<STM32L4x2, SAI1>
 {
+    static constexpr periph_t P = SAI1;
     using T = stm32l4x2_sai1_t;
     static T& V;
 };

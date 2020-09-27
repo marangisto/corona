@@ -175,6 +175,7 @@ struct stm32g473xx_comp_t
 template<>
 struct peripheral_t<STM32G431xx, COMP>
 {
+    static constexpr periph_t P = COMP;
     using T = stm32g431xx_comp_t;
     static T& V;
 };
@@ -182,6 +183,7 @@ struct peripheral_t<STM32G431xx, COMP>
 template<>
 struct peripheral_t<STM32G441xx, COMP>
 {
+    static constexpr periph_t P = COMP;
     using T = stm32g431xx_comp_t;
     static T& V;
 };
@@ -189,6 +191,7 @@ struct peripheral_t<STM32G441xx, COMP>
 template<>
 struct peripheral_t<STM32G471xx, COMP>
 {
+    static constexpr periph_t P = COMP;
     using T = stm32g431xx_comp_t;
     static T& V;
 };
@@ -196,6 +199,7 @@ struct peripheral_t<STM32G471xx, COMP>
 template<>
 struct peripheral_t<STM32GBK1CBT6, COMP>
 {
+    static constexpr periph_t P = COMP;
     using T = stm32g431xx_comp_t;
     static T& V;
 };
@@ -203,6 +207,7 @@ struct peripheral_t<STM32GBK1CBT6, COMP>
 template<>
 struct peripheral_t<STM32G473xx, COMP>
 {
+    static constexpr periph_t P = COMP;
     using T = stm32g473xx_comp_t;
     static T& V;
 };
@@ -210,6 +215,7 @@ struct peripheral_t<STM32G473xx, COMP>
 template<>
 struct peripheral_t<STM32G474xx, COMP>
 {
+    static constexpr periph_t P = COMP;
     using T = stm32g473xx_comp_t;
     static T& V;
 };
@@ -217,6 +223,7 @@ struct peripheral_t<STM32G474xx, COMP>
 template<>
 struct peripheral_t<STM32G483xx, COMP>
 {
+    static constexpr periph_t P = COMP;
     using T = stm32g473xx_comp_t;
     static T& V;
 };
@@ -224,6 +231,7 @@ struct peripheral_t<STM32G483xx, COMP>
 template<>
 struct peripheral_t<STM32G484xx, COMP>
 {
+    static constexpr periph_t P = COMP;
     using T = stm32g473xx_comp_t;
     static T& V;
 };

@@ -88,6 +88,7 @@ struct stm32g031_lptim1_t
 template<>
 struct peripheral_t<STM32G031, LPTIM1>
 {
+    static constexpr periph_t P = LPTIM1;
     using T = stm32g031_lptim1_t;
     static T& V;
 };
@@ -95,6 +96,7 @@ struct peripheral_t<STM32G031, LPTIM1>
 template<>
 struct peripheral_t<STM32G031, LPTIM2>
 {
+    static constexpr periph_t P = LPTIM2;
     using T = stm32g031_lptim1_t;
     static T& V;
 };
@@ -102,6 +104,7 @@ struct peripheral_t<STM32G031, LPTIM2>
 template<>
 struct peripheral_t<STM32G041, LPTIM1>
 {
+    static constexpr periph_t P = LPTIM1;
     using T = stm32g031_lptim1_t;
     static T& V;
 };
@@ -109,6 +112,7 @@ struct peripheral_t<STM32G041, LPTIM1>
 template<>
 struct peripheral_t<STM32G041, LPTIM2>
 {
+    static constexpr periph_t P = LPTIM2;
     using T = stm32g031_lptim1_t;
     static T& V;
 };
@@ -116,6 +120,7 @@ struct peripheral_t<STM32G041, LPTIM2>
 template<>
 struct peripheral_t<STM32G070, LPTIM1>
 {
+    static constexpr periph_t P = LPTIM1;
     using T = stm32g031_lptim1_t;
     static T& V;
 };
@@ -123,6 +128,7 @@ struct peripheral_t<STM32G070, LPTIM1>
 template<>
 struct peripheral_t<STM32G070, LPTIM2>
 {
+    static constexpr periph_t P = LPTIM2;
     using T = stm32g031_lptim1_t;
     static T& V;
 };
@@ -130,6 +136,7 @@ struct peripheral_t<STM32G070, LPTIM2>
 template<>
 struct peripheral_t<STM32G071, LPTIM1>
 {
+    static constexpr periph_t P = LPTIM1;
     using T = stm32g031_lptim1_t;
     static T& V;
 };
@@ -137,6 +144,7 @@ struct peripheral_t<STM32G071, LPTIM1>
 template<>
 struct peripheral_t<STM32G071, LPTIM2>
 {
+    static constexpr periph_t P = LPTIM2;
     using T = stm32g031_lptim1_t;
     static T& V;
 };
@@ -144,6 +152,7 @@ struct peripheral_t<STM32G071, LPTIM2>
 template<>
 struct peripheral_t<STM32G081, LPTIM1>
 {
+    static constexpr periph_t P = LPTIM1;
     using T = stm32g031_lptim1_t;
     static T& V;
 };
@@ -151,6 +160,7 @@ struct peripheral_t<STM32G081, LPTIM1>
 template<>
 struct peripheral_t<STM32G081, LPTIM2>
 {
+    static constexpr periph_t P = LPTIM2;
     using T = stm32g031_lptim1_t;
     static T& V;
 };

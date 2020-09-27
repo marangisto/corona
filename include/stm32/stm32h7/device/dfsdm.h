@@ -1438,6 +1438,7 @@ struct stm32h743_dfsdm_t
 template<>
 struct peripheral_t<STM32H742x, DFSDM>
 {
+    static constexpr periph_t P = DFSDM;
     using T = stm32h742x_dfsdm_t;
     static T& V;
 };
@@ -1445,6 +1446,7 @@ struct peripheral_t<STM32H742x, DFSDM>
 template<>
 struct peripheral_t<STM32H745_CM4, DFSDM>
 {
+    static constexpr periph_t P = DFSDM;
     using T = stm32h742x_dfsdm_t;
     static T& V;
 };
@@ -1452,6 +1454,7 @@ struct peripheral_t<STM32H745_CM4, DFSDM>
 template<>
 struct peripheral_t<STM32H745_CM7, DFSDM>
 {
+    static constexpr periph_t P = DFSDM;
     using T = stm32h742x_dfsdm_t;
     static T& V;
 };
@@ -1459,6 +1462,7 @@ struct peripheral_t<STM32H745_CM7, DFSDM>
 template<>
 struct peripheral_t<STM32H747_CM4, DFSDM>
 {
+    static constexpr periph_t P = DFSDM;
     using T = stm32h742x_dfsdm_t;
     static T& V;
 };
@@ -1466,6 +1470,7 @@ struct peripheral_t<STM32H747_CM4, DFSDM>
 template<>
 struct peripheral_t<STM32H747_CM7, DFSDM>
 {
+    static constexpr periph_t P = DFSDM;
     using T = stm32h742x_dfsdm_t;
     static T& V;
 };
@@ -1473,6 +1478,7 @@ struct peripheral_t<STM32H747_CM7, DFSDM>
 template<>
 struct peripheral_t<STM32H750x, DFSDM>
 {
+    static constexpr periph_t P = DFSDM;
     using T = stm32h742x_dfsdm_t;
     static T& V;
 };
@@ -1480,6 +1486,7 @@ struct peripheral_t<STM32H750x, DFSDM>
 template<>
 struct peripheral_t<STM32H753, DFSDM>
 {
+    static constexpr periph_t P = DFSDM;
     using T = stm32h742x_dfsdm_t;
     static T& V;
 };
@@ -1487,6 +1494,7 @@ struct peripheral_t<STM32H753, DFSDM>
 template<>
 struct peripheral_t<STM32H755_CM4, DFSDM>
 {
+    static constexpr periph_t P = DFSDM;
     using T = stm32h742x_dfsdm_t;
     static T& V;
 };
@@ -1494,6 +1502,7 @@ struct peripheral_t<STM32H755_CM4, DFSDM>
 template<>
 struct peripheral_t<STM32H755_CM7, DFSDM>
 {
+    static constexpr periph_t P = DFSDM;
     using T = stm32h742x_dfsdm_t;
     static T& V;
 };
@@ -1501,6 +1510,7 @@ struct peripheral_t<STM32H755_CM7, DFSDM>
 template<>
 struct peripheral_t<STM32H757_CM4, DFSDM>
 {
+    static constexpr periph_t P = DFSDM;
     using T = stm32h742x_dfsdm_t;
     static T& V;
 };
@@ -1508,6 +1518,7 @@ struct peripheral_t<STM32H757_CM4, DFSDM>
 template<>
 struct peripheral_t<STM32H757_CM7, DFSDM>
 {
+    static constexpr periph_t P = DFSDM;
     using T = stm32h742x_dfsdm_t;
     static T& V;
 };
@@ -1515,6 +1526,7 @@ struct peripheral_t<STM32H757_CM7, DFSDM>
 template<>
 struct peripheral_t<STM32H7A3x, DFSDM>
 {
+    static constexpr periph_t P = DFSDM;
     using T = stm32h742x_dfsdm_t;
     static T& V;
 };
@@ -1522,6 +1534,7 @@ struct peripheral_t<STM32H7A3x, DFSDM>
 template<>
 struct peripheral_t<STM32H7B0x, DFSDM>
 {
+    static constexpr periph_t P = DFSDM;
     using T = stm32h742x_dfsdm_t;
     static T& V;
 };
@@ -1529,6 +1542,7 @@ struct peripheral_t<STM32H7B0x, DFSDM>
 template<>
 struct peripheral_t<STM32H7B3x, DFSDM>
 {
+    static constexpr periph_t P = DFSDM;
     using T = stm32h742x_dfsdm_t;
     static T& V;
 };
@@ -1536,6 +1550,7 @@ struct peripheral_t<STM32H7B3x, DFSDM>
 template<>
 struct peripheral_t<STM32H743, DFSDM>
 {
+    static constexpr periph_t P = DFSDM;
     using T = stm32h743_dfsdm_t;
     static T& V;
 };

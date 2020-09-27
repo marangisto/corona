@@ -51,6 +51,7 @@ struct stm32f730_usbphyc_t
 template<>
 struct peripheral_t<STM32F730, USBPHYC>
 {
+    static constexpr periph_t P = USBPHYC;
     using T = stm32f730_usbphyc_t;
     static T& V;
 };

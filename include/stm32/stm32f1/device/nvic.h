@@ -180,6 +180,7 @@ struct stm32f100_nvic_stir_t
 template<>
 struct peripheral_t<STM32F100, NVIC>
 {
+    static constexpr periph_t P = NVIC;
     using T = stm32f100_nvic_t;
     static T& V;
 };
@@ -187,6 +188,7 @@ struct peripheral_t<STM32F100, NVIC>
 template<>
 struct peripheral_t<STM32F101, NVIC>
 {
+    static constexpr periph_t P = NVIC;
     using T = stm32f100_nvic_t;
     static T& V;
 };
@@ -194,6 +196,7 @@ struct peripheral_t<STM32F101, NVIC>
 template<>
 struct peripheral_t<STM32F102, NVIC>
 {
+    static constexpr periph_t P = NVIC;
     using T = stm32f100_nvic_t;
     static T& V;
 };
@@ -201,6 +204,7 @@ struct peripheral_t<STM32F102, NVIC>
 template<>
 struct peripheral_t<STM32F103, NVIC>
 {
+    static constexpr periph_t P = NVIC;
     using T = stm32f100_nvic_t;
     static T& V;
 };
@@ -208,6 +212,7 @@ struct peripheral_t<STM32F103, NVIC>
 template<>
 struct peripheral_t<STM32F107, NVIC>
 {
+    static constexpr periph_t P = NVIC;
     using T = stm32f100_nvic_t;
     static T& V;
 };
@@ -215,6 +220,7 @@ struct peripheral_t<STM32F107, NVIC>
 template<>
 struct peripheral_t<STM32F100, NVIC_STIR>
 {
+    static constexpr periph_t P = NVIC_STIR;
     using T = stm32f100_nvic_stir_t;
     static T& V;
 };
@@ -222,6 +228,7 @@ struct peripheral_t<STM32F100, NVIC_STIR>
 template<>
 struct peripheral_t<STM32F101, NVIC_STIR>
 {
+    static constexpr periph_t P = NVIC_STIR;
     using T = stm32f100_nvic_stir_t;
     static T& V;
 };
@@ -229,6 +236,7 @@ struct peripheral_t<STM32F101, NVIC_STIR>
 template<>
 struct peripheral_t<STM32F102, NVIC_STIR>
 {
+    static constexpr periph_t P = NVIC_STIR;
     using T = stm32f100_nvic_stir_t;
     static T& V;
 };
@@ -236,6 +244,7 @@ struct peripheral_t<STM32F102, NVIC_STIR>
 template<>
 struct peripheral_t<STM32F103, NVIC_STIR>
 {
+    static constexpr periph_t P = NVIC_STIR;
     using T = stm32f100_nvic_stir_t;
     static T& V;
 };
@@ -243,6 +252,7 @@ struct peripheral_t<STM32F103, NVIC_STIR>
 template<>
 struct peripheral_t<STM32F107, NVIC_STIR>
 {
+    static constexpr periph_t P = NVIC_STIR;
     using T = stm32f100_nvic_stir_t;
     static T& V;
 };

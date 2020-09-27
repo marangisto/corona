@@ -686,6 +686,7 @@ struct stm32g041_syscfg_itline_t
 template<>
 struct peripheral_t<STM32G030, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32g030_syscfg_t;
     static T& V;
 };
@@ -693,6 +694,7 @@ struct peripheral_t<STM32G030, SYSCFG>
 template<>
 struct peripheral_t<STM32G031, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32g030_syscfg_t;
     static T& V;
 };
@@ -700,6 +702,7 @@ struct peripheral_t<STM32G031, SYSCFG>
 template<>
 struct peripheral_t<STM32G041, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32g030_syscfg_t;
     static T& V;
 };
@@ -707,6 +710,7 @@ struct peripheral_t<STM32G041, SYSCFG>
 template<>
 struct peripheral_t<STM32G070, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32g070_syscfg_t;
     static T& V;
 };
@@ -714,6 +718,7 @@ struct peripheral_t<STM32G070, SYSCFG>
 template<>
 struct peripheral_t<STM32G071, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32g070_syscfg_t;
     static T& V;
 };
@@ -721,6 +726,7 @@ struct peripheral_t<STM32G071, SYSCFG>
 template<>
 struct peripheral_t<STM32G081, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32g070_syscfg_t;
     static T& V;
 };
@@ -728,6 +734,7 @@ struct peripheral_t<STM32G081, SYSCFG>
 template<>
 struct peripheral_t<STM32G030, SYSCFG_ITLINE>
 {
+    static constexpr periph_t P = SYSCFG_ITLINE;
     using T = stm32g030_syscfg_itline_t;
     static T& V;
 };
@@ -735,6 +742,7 @@ struct peripheral_t<STM32G030, SYSCFG_ITLINE>
 template<>
 struct peripheral_t<STM32G031, SYSCFG_ITLINE>
 {
+    static constexpr periph_t P = SYSCFG_ITLINE;
     using T = stm32g031_syscfg_itline_t;
     static T& V;
 };
@@ -742,6 +750,7 @@ struct peripheral_t<STM32G031, SYSCFG_ITLINE>
 template<>
 struct peripheral_t<STM32G041, SYSCFG_ITLINE>
 {
+    static constexpr periph_t P = SYSCFG_ITLINE;
     using T = stm32g041_syscfg_itline_t;
     static T& V;
 };

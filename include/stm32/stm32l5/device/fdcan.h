@@ -299,6 +299,7 @@ struct stm32l552_fdcan1_t
 template<>
 struct peripheral_t<STM32L552, FDCAN1>
 {
+    static constexpr periph_t P = FDCAN1;
     using T = stm32l552_fdcan1_t;
     static T& V;
 };
@@ -306,6 +307,7 @@ struct peripheral_t<STM32L552, FDCAN1>
 template<>
 struct peripheral_t<STM32L552, SEC_FDCAN1>
 {
+    static constexpr periph_t P = SEC_FDCAN1;
     using T = stm32l552_fdcan1_t;
     static T& V;
 };
@@ -313,6 +315,7 @@ struct peripheral_t<STM32L552, SEC_FDCAN1>
 template<>
 struct peripheral_t<STM32L562, FDCAN1>
 {
+    static constexpr periph_t P = FDCAN1;
     using T = stm32l552_fdcan1_t;
     static T& V;
 };
@@ -320,6 +323,7 @@ struct peripheral_t<STM32L562, FDCAN1>
 template<>
 struct peripheral_t<STM32L562, SEC_FDCAN1>
 {
+    static constexpr periph_t P = SEC_FDCAN1;
     using T = stm32l552_fdcan1_t;
     static T& V;
 };

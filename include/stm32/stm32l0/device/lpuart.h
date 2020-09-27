@@ -125,6 +125,7 @@ struct stm32l0x0_lpuart1_t
 template<>
 struct peripheral_t<STM32L0x0, LPUART1>
 {
+    static constexpr periph_t P = LPUART1;
     using T = stm32l0x0_lpuart1_t;
     static T& V;
 };
@@ -132,6 +133,7 @@ struct peripheral_t<STM32L0x0, LPUART1>
 template<>
 struct peripheral_t<STM32L0x1, LPUART1>
 {
+    static constexpr periph_t P = LPUART1;
     using T = stm32l0x0_lpuart1_t;
     static T& V;
 };
@@ -139,6 +141,7 @@ struct peripheral_t<STM32L0x1, LPUART1>
 template<>
 struct peripheral_t<STM32L0x2, LPUSART1>
 {
+    static constexpr periph_t P = LPUSART1;
     using T = stm32l0x0_lpuart1_t;
     static T& V;
 };
@@ -146,6 +149,7 @@ struct peripheral_t<STM32L0x2, LPUSART1>
 template<>
 struct peripheral_t<STM32L0x3, LPUSART1>
 {
+    static constexpr periph_t P = LPUSART1;
     using T = stm32l0x0_lpuart1_t;
     static T& V;
 };

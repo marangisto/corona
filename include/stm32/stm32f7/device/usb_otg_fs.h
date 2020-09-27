@@ -2846,6 +2846,7 @@ struct stm32f722_otg_fs_pwrclk_t
 template<>
 struct peripheral_t<STM32F722, OTG_FS_DEVICE>
 {
+    static constexpr periph_t P = OTG_FS_DEVICE;
     using T = stm32f722_otg_fs_device_t;
     static T& V;
 };
@@ -2853,6 +2854,7 @@ struct peripheral_t<STM32F722, OTG_FS_DEVICE>
 template<>
 struct peripheral_t<STM32F723, OTG_FS_DEVICE>
 {
+    static constexpr periph_t P = OTG_FS_DEVICE;
     using T = stm32f722_otg_fs_device_t;
     static T& V;
 };
@@ -2860,6 +2862,7 @@ struct peripheral_t<STM32F723, OTG_FS_DEVICE>
 template<>
 struct peripheral_t<STM32F730, OTG_FS_DEVICE>
 {
+    static constexpr periph_t P = OTG_FS_DEVICE;
     using T = stm32f722_otg_fs_device_t;
     static T& V;
 };
@@ -2867,6 +2870,7 @@ struct peripheral_t<STM32F730, OTG_FS_DEVICE>
 template<>
 struct peripheral_t<STM32F732, OTG_FS_DEVICE>
 {
+    static constexpr periph_t P = OTG_FS_DEVICE;
     using T = stm32f722_otg_fs_device_t;
     static T& V;
 };
@@ -2874,6 +2878,7 @@ struct peripheral_t<STM32F732, OTG_FS_DEVICE>
 template<>
 struct peripheral_t<STM32F733, OTG_FS_DEVICE>
 {
+    static constexpr periph_t P = OTG_FS_DEVICE;
     using T = stm32f722_otg_fs_device_t;
     static T& V;
 };
@@ -2881,6 +2886,7 @@ struct peripheral_t<STM32F733, OTG_FS_DEVICE>
 template<>
 struct peripheral_t<STM32F745, OTG_FS_DEVICE>
 {
+    static constexpr periph_t P = OTG_FS_DEVICE;
     using T = stm32f745_otg_fs_device_t;
     static T& V;
 };
@@ -2888,6 +2894,7 @@ struct peripheral_t<STM32F745, OTG_FS_DEVICE>
 template<>
 struct peripheral_t<STM32F746, OTG_FS_DEVICE>
 {
+    static constexpr periph_t P = OTG_FS_DEVICE;
     using T = stm32f745_otg_fs_device_t;
     static T& V;
 };
@@ -2895,6 +2902,7 @@ struct peripheral_t<STM32F746, OTG_FS_DEVICE>
 template<>
 struct peripheral_t<STM32F750x, OTG_FS_DEVICE>
 {
+    static constexpr periph_t P = OTG_FS_DEVICE;
     using T = stm32f745_otg_fs_device_t;
     static T& V;
 };
@@ -2902,6 +2910,7 @@ struct peripheral_t<STM32F750x, OTG_FS_DEVICE>
 template<>
 struct peripheral_t<STM32F756, OTG_FS_DEVICE>
 {
+    static constexpr periph_t P = OTG_FS_DEVICE;
     using T = stm32f745_otg_fs_device_t;
     static T& V;
 };
@@ -2909,6 +2918,7 @@ struct peripheral_t<STM32F756, OTG_FS_DEVICE>
 template<>
 struct peripheral_t<STM32F765, OTG_FS_DEVICE>
 {
+    static constexpr periph_t P = OTG_FS_DEVICE;
     using T = stm32f745_otg_fs_device_t;
     static T& V;
 };
@@ -2916,6 +2926,7 @@ struct peripheral_t<STM32F765, OTG_FS_DEVICE>
 template<>
 struct peripheral_t<STM32F767, OTG_FS_DEVICE>
 {
+    static constexpr periph_t P = OTG_FS_DEVICE;
     using T = stm32f745_otg_fs_device_t;
     static T& V;
 };
@@ -2923,6 +2934,7 @@ struct peripheral_t<STM32F767, OTG_FS_DEVICE>
 template<>
 struct peripheral_t<STM32F768, OTG_FS_DEVICE>
 {
+    static constexpr periph_t P = OTG_FS_DEVICE;
     using T = stm32f745_otg_fs_device_t;
     static T& V;
 };
@@ -2930,6 +2942,7 @@ struct peripheral_t<STM32F768, OTG_FS_DEVICE>
 template<>
 struct peripheral_t<STM32F769, OTG_FS_DEVICE>
 {
+    static constexpr periph_t P = OTG_FS_DEVICE;
     using T = stm32f745_otg_fs_device_t;
     static T& V;
 };
@@ -2937,6 +2950,7 @@ struct peripheral_t<STM32F769, OTG_FS_DEVICE>
 template<>
 struct peripheral_t<STM32F777, OTG_FS_DEVICE>
 {
+    static constexpr periph_t P = OTG_FS_DEVICE;
     using T = stm32f745_otg_fs_device_t;
     static T& V;
 };
@@ -2944,6 +2958,7 @@ struct peripheral_t<STM32F777, OTG_FS_DEVICE>
 template<>
 struct peripheral_t<STM32F778, OTG_FS_DEVICE>
 {
+    static constexpr periph_t P = OTG_FS_DEVICE;
     using T = stm32f745_otg_fs_device_t;
     static T& V;
 };
@@ -2951,6 +2966,7 @@ struct peripheral_t<STM32F778, OTG_FS_DEVICE>
 template<>
 struct peripheral_t<STM32F779, OTG_FS_DEVICE>
 {
+    static constexpr periph_t P = OTG_FS_DEVICE;
     using T = stm32f745_otg_fs_device_t;
     static T& V;
 };
@@ -2958,6 +2974,7 @@ struct peripheral_t<STM32F779, OTG_FS_DEVICE>
 template<>
 struct peripheral_t<STM32F722, OTG_FS_GLOBAL>
 {
+    static constexpr periph_t P = OTG_FS_GLOBAL;
     using T = stm32f722_otg_fs_global_t;
     static T& V;
 };
@@ -2965,6 +2982,7 @@ struct peripheral_t<STM32F722, OTG_FS_GLOBAL>
 template<>
 struct peripheral_t<STM32F723, OTG_FS_GLOBAL>
 {
+    static constexpr periph_t P = OTG_FS_GLOBAL;
     using T = stm32f722_otg_fs_global_t;
     static T& V;
 };
@@ -2972,6 +2990,7 @@ struct peripheral_t<STM32F723, OTG_FS_GLOBAL>
 template<>
 struct peripheral_t<STM32F730, OTG_FS_GLOBAL>
 {
+    static constexpr periph_t P = OTG_FS_GLOBAL;
     using T = stm32f722_otg_fs_global_t;
     static T& V;
 };
@@ -2979,6 +2998,7 @@ struct peripheral_t<STM32F730, OTG_FS_GLOBAL>
 template<>
 struct peripheral_t<STM32F732, OTG_FS_GLOBAL>
 {
+    static constexpr periph_t P = OTG_FS_GLOBAL;
     using T = stm32f722_otg_fs_global_t;
     static T& V;
 };
@@ -2986,6 +3006,7 @@ struct peripheral_t<STM32F732, OTG_FS_GLOBAL>
 template<>
 struct peripheral_t<STM32F733, OTG_FS_GLOBAL>
 {
+    static constexpr periph_t P = OTG_FS_GLOBAL;
     using T = stm32f722_otg_fs_global_t;
     static T& V;
 };
@@ -2993,6 +3014,7 @@ struct peripheral_t<STM32F733, OTG_FS_GLOBAL>
 template<>
 struct peripheral_t<STM32F745, OTG_FS_GLOBAL>
 {
+    static constexpr periph_t P = OTG_FS_GLOBAL;
     using T = stm32f745_otg_fs_global_t;
     static T& V;
 };
@@ -3000,6 +3022,7 @@ struct peripheral_t<STM32F745, OTG_FS_GLOBAL>
 template<>
 struct peripheral_t<STM32F746, OTG_FS_GLOBAL>
 {
+    static constexpr periph_t P = OTG_FS_GLOBAL;
     using T = stm32f745_otg_fs_global_t;
     static T& V;
 };
@@ -3007,6 +3030,7 @@ struct peripheral_t<STM32F746, OTG_FS_GLOBAL>
 template<>
 struct peripheral_t<STM32F750x, OTG_FS_GLOBAL>
 {
+    static constexpr periph_t P = OTG_FS_GLOBAL;
     using T = stm32f745_otg_fs_global_t;
     static T& V;
 };
@@ -3014,6 +3038,7 @@ struct peripheral_t<STM32F750x, OTG_FS_GLOBAL>
 template<>
 struct peripheral_t<STM32F756, OTG_FS_GLOBAL>
 {
+    static constexpr periph_t P = OTG_FS_GLOBAL;
     using T = stm32f745_otg_fs_global_t;
     static T& V;
 };
@@ -3021,6 +3046,7 @@ struct peripheral_t<STM32F756, OTG_FS_GLOBAL>
 template<>
 struct peripheral_t<STM32F765, OTG_FS_GLOBAL>
 {
+    static constexpr periph_t P = OTG_FS_GLOBAL;
     using T = stm32f745_otg_fs_global_t;
     static T& V;
 };
@@ -3028,6 +3054,7 @@ struct peripheral_t<STM32F765, OTG_FS_GLOBAL>
 template<>
 struct peripheral_t<STM32F767, OTG_FS_GLOBAL>
 {
+    static constexpr periph_t P = OTG_FS_GLOBAL;
     using T = stm32f745_otg_fs_global_t;
     static T& V;
 };
@@ -3035,6 +3062,7 @@ struct peripheral_t<STM32F767, OTG_FS_GLOBAL>
 template<>
 struct peripheral_t<STM32F768, OTG_FS_GLOBAL>
 {
+    static constexpr periph_t P = OTG_FS_GLOBAL;
     using T = stm32f745_otg_fs_global_t;
     static T& V;
 };
@@ -3042,6 +3070,7 @@ struct peripheral_t<STM32F768, OTG_FS_GLOBAL>
 template<>
 struct peripheral_t<STM32F769, OTG_FS_GLOBAL>
 {
+    static constexpr periph_t P = OTG_FS_GLOBAL;
     using T = stm32f745_otg_fs_global_t;
     static T& V;
 };
@@ -3049,6 +3078,7 @@ struct peripheral_t<STM32F769, OTG_FS_GLOBAL>
 template<>
 struct peripheral_t<STM32F777, OTG_FS_GLOBAL>
 {
+    static constexpr periph_t P = OTG_FS_GLOBAL;
     using T = stm32f745_otg_fs_global_t;
     static T& V;
 };
@@ -3056,6 +3086,7 @@ struct peripheral_t<STM32F777, OTG_FS_GLOBAL>
 template<>
 struct peripheral_t<STM32F778, OTG_FS_GLOBAL>
 {
+    static constexpr periph_t P = OTG_FS_GLOBAL;
     using T = stm32f745_otg_fs_global_t;
     static T& V;
 };
@@ -3063,6 +3094,7 @@ struct peripheral_t<STM32F778, OTG_FS_GLOBAL>
 template<>
 struct peripheral_t<STM32F779, OTG_FS_GLOBAL>
 {
+    static constexpr periph_t P = OTG_FS_GLOBAL;
     using T = stm32f745_otg_fs_global_t;
     static T& V;
 };
@@ -3070,6 +3102,7 @@ struct peripheral_t<STM32F779, OTG_FS_GLOBAL>
 template<>
 struct peripheral_t<STM32F722, OTG_FS_HOST>
 {
+    static constexpr periph_t P = OTG_FS_HOST;
     using T = stm32f722_otg_fs_host_t;
     static T& V;
 };
@@ -3077,6 +3110,7 @@ struct peripheral_t<STM32F722, OTG_FS_HOST>
 template<>
 struct peripheral_t<STM32F723, OTG_FS_HOST>
 {
+    static constexpr periph_t P = OTG_FS_HOST;
     using T = stm32f722_otg_fs_host_t;
     static T& V;
 };
@@ -3084,6 +3118,7 @@ struct peripheral_t<STM32F723, OTG_FS_HOST>
 template<>
 struct peripheral_t<STM32F730, OTG_FS_HOST>
 {
+    static constexpr periph_t P = OTG_FS_HOST;
     using T = stm32f722_otg_fs_host_t;
     static T& V;
 };
@@ -3091,6 +3126,7 @@ struct peripheral_t<STM32F730, OTG_FS_HOST>
 template<>
 struct peripheral_t<STM32F732, OTG_FS_HOST>
 {
+    static constexpr periph_t P = OTG_FS_HOST;
     using T = stm32f722_otg_fs_host_t;
     static T& V;
 };
@@ -3098,6 +3134,7 @@ struct peripheral_t<STM32F732, OTG_FS_HOST>
 template<>
 struct peripheral_t<STM32F733, OTG_FS_HOST>
 {
+    static constexpr periph_t P = OTG_FS_HOST;
     using T = stm32f722_otg_fs_host_t;
     static T& V;
 };
@@ -3105,6 +3142,7 @@ struct peripheral_t<STM32F733, OTG_FS_HOST>
 template<>
 struct peripheral_t<STM32F745, OTG_FS_HOST>
 {
+    static constexpr periph_t P = OTG_FS_HOST;
     using T = stm32f745_otg_fs_host_t;
     static T& V;
 };
@@ -3112,6 +3150,7 @@ struct peripheral_t<STM32F745, OTG_FS_HOST>
 template<>
 struct peripheral_t<STM32F746, OTG_FS_HOST>
 {
+    static constexpr periph_t P = OTG_FS_HOST;
     using T = stm32f745_otg_fs_host_t;
     static T& V;
 };
@@ -3119,6 +3158,7 @@ struct peripheral_t<STM32F746, OTG_FS_HOST>
 template<>
 struct peripheral_t<STM32F750x, OTG_FS_HOST>
 {
+    static constexpr periph_t P = OTG_FS_HOST;
     using T = stm32f745_otg_fs_host_t;
     static T& V;
 };
@@ -3126,6 +3166,7 @@ struct peripheral_t<STM32F750x, OTG_FS_HOST>
 template<>
 struct peripheral_t<STM32F756, OTG_FS_HOST>
 {
+    static constexpr periph_t P = OTG_FS_HOST;
     using T = stm32f745_otg_fs_host_t;
     static T& V;
 };
@@ -3133,6 +3174,7 @@ struct peripheral_t<STM32F756, OTG_FS_HOST>
 template<>
 struct peripheral_t<STM32F765, OTG_FS_HOST>
 {
+    static constexpr periph_t P = OTG_FS_HOST;
     using T = stm32f745_otg_fs_host_t;
     static T& V;
 };
@@ -3140,6 +3182,7 @@ struct peripheral_t<STM32F765, OTG_FS_HOST>
 template<>
 struct peripheral_t<STM32F767, OTG_FS_HOST>
 {
+    static constexpr periph_t P = OTG_FS_HOST;
     using T = stm32f745_otg_fs_host_t;
     static T& V;
 };
@@ -3147,6 +3190,7 @@ struct peripheral_t<STM32F767, OTG_FS_HOST>
 template<>
 struct peripheral_t<STM32F768, OTG_FS_HOST>
 {
+    static constexpr periph_t P = OTG_FS_HOST;
     using T = stm32f745_otg_fs_host_t;
     static T& V;
 };
@@ -3154,6 +3198,7 @@ struct peripheral_t<STM32F768, OTG_FS_HOST>
 template<>
 struct peripheral_t<STM32F769, OTG_FS_HOST>
 {
+    static constexpr periph_t P = OTG_FS_HOST;
     using T = stm32f745_otg_fs_host_t;
     static T& V;
 };
@@ -3161,6 +3206,7 @@ struct peripheral_t<STM32F769, OTG_FS_HOST>
 template<>
 struct peripheral_t<STM32F777, OTG_FS_HOST>
 {
+    static constexpr periph_t P = OTG_FS_HOST;
     using T = stm32f745_otg_fs_host_t;
     static T& V;
 };
@@ -3168,6 +3214,7 @@ struct peripheral_t<STM32F777, OTG_FS_HOST>
 template<>
 struct peripheral_t<STM32F778, OTG_FS_HOST>
 {
+    static constexpr periph_t P = OTG_FS_HOST;
     using T = stm32f745_otg_fs_host_t;
     static T& V;
 };
@@ -3175,6 +3222,7 @@ struct peripheral_t<STM32F778, OTG_FS_HOST>
 template<>
 struct peripheral_t<STM32F779, OTG_FS_HOST>
 {
+    static constexpr periph_t P = OTG_FS_HOST;
     using T = stm32f745_otg_fs_host_t;
     static T& V;
 };
@@ -3182,6 +3230,7 @@ struct peripheral_t<STM32F779, OTG_FS_HOST>
 template<>
 struct peripheral_t<STM32F722, OTG_FS_PWRCLK>
 {
+    static constexpr periph_t P = OTG_FS_PWRCLK;
     using T = stm32f722_otg_fs_pwrclk_t;
     static T& V;
 };
@@ -3189,6 +3238,7 @@ struct peripheral_t<STM32F722, OTG_FS_PWRCLK>
 template<>
 struct peripheral_t<STM32F723, OTG_FS_PWRCLK>
 {
+    static constexpr periph_t P = OTG_FS_PWRCLK;
     using T = stm32f722_otg_fs_pwrclk_t;
     static T& V;
 };
@@ -3196,6 +3246,7 @@ struct peripheral_t<STM32F723, OTG_FS_PWRCLK>
 template<>
 struct peripheral_t<STM32F730, OTG_FS_PWRCLK>
 {
+    static constexpr periph_t P = OTG_FS_PWRCLK;
     using T = stm32f722_otg_fs_pwrclk_t;
     static T& V;
 };
@@ -3203,6 +3254,7 @@ struct peripheral_t<STM32F730, OTG_FS_PWRCLK>
 template<>
 struct peripheral_t<STM32F732, OTG_FS_PWRCLK>
 {
+    static constexpr periph_t P = OTG_FS_PWRCLK;
     using T = stm32f722_otg_fs_pwrclk_t;
     static T& V;
 };
@@ -3210,6 +3262,7 @@ struct peripheral_t<STM32F732, OTG_FS_PWRCLK>
 template<>
 struct peripheral_t<STM32F733, OTG_FS_PWRCLK>
 {
+    static constexpr periph_t P = OTG_FS_PWRCLK;
     using T = stm32f722_otg_fs_pwrclk_t;
     static T& V;
 };
@@ -3217,6 +3270,7 @@ struct peripheral_t<STM32F733, OTG_FS_PWRCLK>
 template<>
 struct peripheral_t<STM32F745, OTG_FS_PWRCLK>
 {
+    static constexpr periph_t P = OTG_FS_PWRCLK;
     using T = stm32f722_otg_fs_pwrclk_t;
     static T& V;
 };
@@ -3224,6 +3278,7 @@ struct peripheral_t<STM32F745, OTG_FS_PWRCLK>
 template<>
 struct peripheral_t<STM32F746, OTG_FS_PWRCLK>
 {
+    static constexpr periph_t P = OTG_FS_PWRCLK;
     using T = stm32f722_otg_fs_pwrclk_t;
     static T& V;
 };
@@ -3231,6 +3286,7 @@ struct peripheral_t<STM32F746, OTG_FS_PWRCLK>
 template<>
 struct peripheral_t<STM32F750x, OTG_FS_PWRCLK>
 {
+    static constexpr periph_t P = OTG_FS_PWRCLK;
     using T = stm32f722_otg_fs_pwrclk_t;
     static T& V;
 };
@@ -3238,6 +3294,7 @@ struct peripheral_t<STM32F750x, OTG_FS_PWRCLK>
 template<>
 struct peripheral_t<STM32F756, OTG_FS_PWRCLK>
 {
+    static constexpr periph_t P = OTG_FS_PWRCLK;
     using T = stm32f722_otg_fs_pwrclk_t;
     static T& V;
 };
@@ -3245,6 +3302,7 @@ struct peripheral_t<STM32F756, OTG_FS_PWRCLK>
 template<>
 struct peripheral_t<STM32F765, OTG_FS_PWRCLK>
 {
+    static constexpr periph_t P = OTG_FS_PWRCLK;
     using T = stm32f722_otg_fs_pwrclk_t;
     static T& V;
 };
@@ -3252,6 +3310,7 @@ struct peripheral_t<STM32F765, OTG_FS_PWRCLK>
 template<>
 struct peripheral_t<STM32F767, OTG_FS_PWRCLK>
 {
+    static constexpr periph_t P = OTG_FS_PWRCLK;
     using T = stm32f722_otg_fs_pwrclk_t;
     static T& V;
 };
@@ -3259,6 +3318,7 @@ struct peripheral_t<STM32F767, OTG_FS_PWRCLK>
 template<>
 struct peripheral_t<STM32F768, OTG_FS_PWRCLK>
 {
+    static constexpr periph_t P = OTG_FS_PWRCLK;
     using T = stm32f722_otg_fs_pwrclk_t;
     static T& V;
 };
@@ -3266,6 +3326,7 @@ struct peripheral_t<STM32F768, OTG_FS_PWRCLK>
 template<>
 struct peripheral_t<STM32F769, OTG_FS_PWRCLK>
 {
+    static constexpr periph_t P = OTG_FS_PWRCLK;
     using T = stm32f722_otg_fs_pwrclk_t;
     static T& V;
 };
@@ -3273,6 +3334,7 @@ struct peripheral_t<STM32F769, OTG_FS_PWRCLK>
 template<>
 struct peripheral_t<STM32F777, OTG_FS_PWRCLK>
 {
+    static constexpr periph_t P = OTG_FS_PWRCLK;
     using T = stm32f722_otg_fs_pwrclk_t;
     static T& V;
 };
@@ -3280,6 +3342,7 @@ struct peripheral_t<STM32F777, OTG_FS_PWRCLK>
 template<>
 struct peripheral_t<STM32F778, OTG_FS_PWRCLK>
 {
+    static constexpr periph_t P = OTG_FS_PWRCLK;
     using T = stm32f722_otg_fs_pwrclk_t;
     static T& V;
 };
@@ -3287,6 +3350,7 @@ struct peripheral_t<STM32F778, OTG_FS_PWRCLK>
 template<>
 struct peripheral_t<STM32F779, OTG_FS_PWRCLK>
 {
+    static constexpr periph_t P = OTG_FS_PWRCLK;
     using T = stm32f722_otg_fs_pwrclk_t;
     static T& V;
 };

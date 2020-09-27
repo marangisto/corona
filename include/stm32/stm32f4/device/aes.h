@@ -74,6 +74,7 @@ struct stm32f413_aes_t
 template<>
 struct peripheral_t<STM32F413, AES>
 {
+    static constexpr periph_t P = AES;
     using T = stm32f413_aes_t;
     static T& V;
 };

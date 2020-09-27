@@ -153,6 +153,7 @@ struct stm32f410_lptim1_t
 template<>
 struct peripheral_t<STM32F413, LPTIM>
 {
+    static constexpr periph_t P = LPTIM;
     using T = stm32f413_lptim_t;
     static T& V;
 };
@@ -160,6 +161,7 @@ struct peripheral_t<STM32F413, LPTIM>
 template<>
 struct peripheral_t<STM32F410, LPTIM1>
 {
+    static constexpr periph_t P = LPTIM1;
     using T = stm32f410_lptim1_t;
     static T& V;
 };

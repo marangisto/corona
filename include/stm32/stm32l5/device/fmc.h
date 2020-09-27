@@ -230,6 +230,7 @@ struct stm32l552_fmc_t
 template<>
 struct peripheral_t<STM32L552, FMC>
 {
+    static constexpr periph_t P = FMC;
     using T = stm32l552_fmc_t;
     static T& V;
 };
@@ -237,6 +238,7 @@ struct peripheral_t<STM32L552, FMC>
 template<>
 struct peripheral_t<STM32L552, SEC_FMC>
 {
+    static constexpr periph_t P = SEC_FMC;
     using T = stm32l552_fmc_t;
     static T& V;
 };
@@ -244,6 +246,7 @@ struct peripheral_t<STM32L552, SEC_FMC>
 template<>
 struct peripheral_t<STM32L562, FMC>
 {
+    static constexpr periph_t P = FMC;
     using T = stm32l552_fmc_t;
     static T& V;
 };
@@ -251,6 +254,7 @@ struct peripheral_t<STM32L562, FMC>
 template<>
 struct peripheral_t<STM32L562, SEC_FMC>
 {
+    static constexpr periph_t P = SEC_FMC;
     using T = stm32l552_fmc_t;
     static T& V;
 };

@@ -37,6 +37,7 @@ struct stm32l562_pka_t
 template<>
 struct peripheral_t<STM32L562, PKA>
 {
+    static constexpr periph_t P = PKA;
     using T = stm32l562_pka_t;
     static T& V;
 };
@@ -44,6 +45,7 @@ struct peripheral_t<STM32L562, PKA>
 template<>
 struct peripheral_t<STM32L562, SEC_PKA>
 {
+    static constexpr periph_t P = SEC_PKA;
     using T = stm32l562_pka_t;
     static T& V;
 };

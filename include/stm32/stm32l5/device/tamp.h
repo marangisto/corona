@@ -345,6 +345,7 @@ struct stm32l552_tamp_t
 template<>
 struct peripheral_t<STM32L552, SEC_TAMP>
 {
+    static constexpr periph_t P = SEC_TAMP;
     using T = stm32l552_tamp_t;
     static T& V;
 };
@@ -352,6 +353,7 @@ struct peripheral_t<STM32L552, SEC_TAMP>
 template<>
 struct peripheral_t<STM32L552, TAMP>
 {
+    static constexpr periph_t P = TAMP;
     using T = stm32l552_tamp_t;
     static T& V;
 };
@@ -359,6 +361,7 @@ struct peripheral_t<STM32L552, TAMP>
 template<>
 struct peripheral_t<STM32L562, SEC_TAMP>
 {
+    static constexpr periph_t P = SEC_TAMP;
     using T = stm32l552_tamp_t;
     static T& V;
 };
@@ -366,6 +369,7 @@ struct peripheral_t<STM32L562, SEC_TAMP>
 template<>
 struct peripheral_t<STM32L562, TAMP>
 {
+    static constexpr periph_t P = TAMP;
     using T = stm32l552_tamp_t;
     static T& V;
 };

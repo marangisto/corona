@@ -43,6 +43,7 @@ struct stm32l4p5_octospim_t
 template<>
 struct peripheral_t<STM32L4P5, OCTOSPIM>
 {
+    static constexpr periph_t P = OCTOSPIM;
     using T = stm32l4p5_octospim_t;
     static T& V;
 };
@@ -50,6 +51,7 @@ struct peripheral_t<STM32L4P5, OCTOSPIM>
 template<>
 struct peripheral_t<STM32L4Q5, OCTOSPIM>
 {
+    static constexpr periph_t P = OCTOSPIM;
     using T = stm32l4p5_octospim_t;
     static T& V;
 };
@@ -57,6 +59,7 @@ struct peripheral_t<STM32L4Q5, OCTOSPIM>
 template<>
 struct peripheral_t<STM32L4R5, OCTOSPIM>
 {
+    static constexpr periph_t P = OCTOSPIM;
     using T = stm32l4p5_octospim_t;
     static T& V;
 };
@@ -64,6 +67,7 @@ struct peripheral_t<STM32L4R5, OCTOSPIM>
 template<>
 struct peripheral_t<STM32L4R7, OCTOSPIM>
 {
+    static constexpr periph_t P = OCTOSPIM;
     using T = stm32l4p5_octospim_t;
     static T& V;
 };
@@ -71,6 +75,7 @@ struct peripheral_t<STM32L4R7, OCTOSPIM>
 template<>
 struct peripheral_t<STM32L4R9, OCTOSPIM>
 {
+    static constexpr periph_t P = OCTOSPIM;
     using T = stm32l4p5_octospim_t;
     static T& V;
 };
@@ -78,6 +83,7 @@ struct peripheral_t<STM32L4R9, OCTOSPIM>
 template<>
 struct peripheral_t<STM32L4S5, OCTOSPIM>
 {
+    static constexpr periph_t P = OCTOSPIM;
     using T = stm32l4p5_octospim_t;
     static T& V;
 };
@@ -85,6 +91,7 @@ struct peripheral_t<STM32L4S5, OCTOSPIM>
 template<>
 struct peripheral_t<STM32L4S7, OCTOSPIM>
 {
+    static constexpr periph_t P = OCTOSPIM;
     using T = stm32l4p5_octospim_t;
     static T& V;
 };
@@ -92,6 +99,7 @@ struct peripheral_t<STM32L4S7, OCTOSPIM>
 template<>
 struct peripheral_t<STM32L4S9, OCTOSPIM>
 {
+    static constexpr periph_t P = OCTOSPIM;
     using T = stm32l4p5_octospim_t;
     static T& V;
 };

@@ -2113,6 +2113,7 @@ struct stm32f767_jpeg_t
 template<>
 struct peripheral_t<STM32F767, JPEG>
 {
+    static constexpr periph_t P = JPEG;
     using T = stm32f767_jpeg_t;
     static T& V;
 };
@@ -2120,6 +2121,7 @@ struct peripheral_t<STM32F767, JPEG>
 template<>
 struct peripheral_t<STM32F768, JPEG>
 {
+    static constexpr periph_t P = JPEG;
     using T = stm32f767_jpeg_t;
     static T& V;
 };
@@ -2127,6 +2129,7 @@ struct peripheral_t<STM32F768, JPEG>
 template<>
 struct peripheral_t<STM32F769, JPEG>
 {
+    static constexpr periph_t P = JPEG;
     using T = stm32f767_jpeg_t;
     static T& V;
 };
@@ -2134,6 +2137,7 @@ struct peripheral_t<STM32F769, JPEG>
 template<>
 struct peripheral_t<STM32F777, JPEG>
 {
+    static constexpr periph_t P = JPEG;
     using T = stm32f767_jpeg_t;
     static T& V;
 };
@@ -2141,6 +2145,7 @@ struct peripheral_t<STM32F777, JPEG>
 template<>
 struct peripheral_t<STM32F778, JPEG>
 {
+    static constexpr periph_t P = JPEG;
     using T = stm32f767_jpeg_t;
     static T& V;
 };
@@ -2148,6 +2153,7 @@ struct peripheral_t<STM32F778, JPEG>
 template<>
 struct peripheral_t<STM32F779, JPEG>
 {
+    static constexpr periph_t P = JPEG;
     using T = stm32f767_jpeg_t;
     static T& V;
 };

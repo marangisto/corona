@@ -211,6 +211,7 @@ struct stm32l562_otfdec1_t
 template<>
 struct peripheral_t<STM32L562, OTFDEC1>
 {
+    static constexpr periph_t P = OTFDEC1;
     using T = stm32l562_otfdec1_t;
     static T& V;
 };
@@ -218,6 +219,7 @@ struct peripheral_t<STM32L562, OTFDEC1>
 template<>
 struct peripheral_t<STM32L562, SEC_OTFDEC1>
 {
+    static constexpr periph_t P = SEC_OTFDEC1;
     using T = stm32l562_otfdec1_t;
     static T& V;
 };

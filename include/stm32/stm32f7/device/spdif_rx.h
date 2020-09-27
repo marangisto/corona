@@ -81,6 +81,7 @@ struct stm32f745_spdif_rx_t
 template<>
 struct peripheral_t<STM32F745, SPDIF_RX>
 {
+    static constexpr periph_t P = SPDIF_RX;
     using T = stm32f745_spdif_rx_t;
     static T& V;
 };
@@ -88,6 +89,7 @@ struct peripheral_t<STM32F745, SPDIF_RX>
 template<>
 struct peripheral_t<STM32F746, SPDIF_RX>
 {
+    static constexpr periph_t P = SPDIF_RX;
     using T = stm32f745_spdif_rx_t;
     static T& V;
 };
@@ -95,6 +97,7 @@ struct peripheral_t<STM32F746, SPDIF_RX>
 template<>
 struct peripheral_t<STM32F750x, SPDIF_RX>
 {
+    static constexpr periph_t P = SPDIF_RX;
     using T = stm32f745_spdif_rx_t;
     static T& V;
 };
@@ -102,6 +105,7 @@ struct peripheral_t<STM32F750x, SPDIF_RX>
 template<>
 struct peripheral_t<STM32F756, SPDIF_RX>
 {
+    static constexpr periph_t P = SPDIF_RX;
     using T = stm32f745_spdif_rx_t;
     static T& V;
 };
@@ -109,6 +113,7 @@ struct peripheral_t<STM32F756, SPDIF_RX>
 template<>
 struct peripheral_t<STM32F765, SPDIF_RX>
 {
+    static constexpr periph_t P = SPDIF_RX;
     using T = stm32f745_spdif_rx_t;
     static T& V;
 };
@@ -116,6 +121,7 @@ struct peripheral_t<STM32F765, SPDIF_RX>
 template<>
 struct peripheral_t<STM32F767, SPDIFRX>
 {
+    static constexpr periph_t P = SPDIFRX;
     using T = stm32f745_spdif_rx_t;
     static T& V;
 };
@@ -123,6 +129,7 @@ struct peripheral_t<STM32F767, SPDIFRX>
 template<>
 struct peripheral_t<STM32F768, SPDIFRX>
 {
+    static constexpr periph_t P = SPDIFRX;
     using T = stm32f745_spdif_rx_t;
     static T& V;
 };
@@ -130,6 +137,7 @@ struct peripheral_t<STM32F768, SPDIFRX>
 template<>
 struct peripheral_t<STM32F769, SPDIFRX>
 {
+    static constexpr periph_t P = SPDIFRX;
     using T = stm32f745_spdif_rx_t;
     static T& V;
 };
@@ -137,6 +145,7 @@ struct peripheral_t<STM32F769, SPDIFRX>
 template<>
 struct peripheral_t<STM32F777, SPDIFRX>
 {
+    static constexpr periph_t P = SPDIFRX;
     using T = stm32f745_spdif_rx_t;
     static T& V;
 };
@@ -144,6 +153,7 @@ struct peripheral_t<STM32F777, SPDIFRX>
 template<>
 struct peripheral_t<STM32F778, SPDIFRX>
 {
+    static constexpr periph_t P = SPDIFRX;
     using T = stm32f745_spdif_rx_t;
     static T& V;
 };
@@ -151,6 +161,7 @@ struct peripheral_t<STM32F778, SPDIFRX>
 template<>
 struct peripheral_t<STM32F779, SPDIFRX>
 {
+    static constexpr periph_t P = SPDIFRX;
     using T = stm32f745_spdif_rx_t;
     static T& V;
 };

@@ -346,6 +346,7 @@ struct stm32l100_lcd_t
 template<>
 struct peripheral_t<STM32L100, LCD>
 {
+    static constexpr periph_t P = LCD;
     using T = stm32l100_lcd_t;
     static T& V;
 };
@@ -353,6 +354,7 @@ struct peripheral_t<STM32L100, LCD>
 template<>
 struct peripheral_t<STM32L151, LCD>
 {
+    static constexpr periph_t P = LCD;
     using T = stm32l100_lcd_t;
     static T& V;
 };
@@ -360,6 +362,7 @@ struct peripheral_t<STM32L151, LCD>
 template<>
 struct peripheral_t<STM32L152, LCD>
 {
+    static constexpr periph_t P = LCD;
     using T = stm32l100_lcd_t;
     static T& V;
 };
@@ -367,6 +370,7 @@ struct peripheral_t<STM32L152, LCD>
 template<>
 struct peripheral_t<STM32L162, LCD>
 {
+    static constexpr periph_t P = LCD;
     using T = stm32l100_lcd_t;
     static T& V;
 };

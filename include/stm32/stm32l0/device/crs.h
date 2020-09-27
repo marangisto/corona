@@ -53,6 +53,7 @@ struct stm32l0x2_crs_t
 template<>
 struct peripheral_t<STM32L0x2, CRS>
 {
+    static constexpr periph_t P = CRS;
     using T = stm32l0x2_crs_t;
     static T& V;
 };
@@ -60,6 +61,7 @@ struct peripheral_t<STM32L0x2, CRS>
 template<>
 struct peripheral_t<STM32L0x3, CRS>
 {
+    static constexpr periph_t P = CRS;
     using T = stm32l0x2_crs_t;
     static T& V;
 };

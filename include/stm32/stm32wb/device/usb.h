@@ -215,6 +215,7 @@ struct stm32wb30_cm4_usb_t
 template<>
 struct peripheral_t<STM32WB30_CM4, USB>
 {
+    static constexpr periph_t P = USB;
     using T = stm32wb30_cm4_usb_t;
     static T& V;
 };
@@ -222,6 +223,7 @@ struct peripheral_t<STM32WB30_CM4, USB>
 template<>
 struct peripheral_t<STM32WB35_CM4, USB>
 {
+    static constexpr periph_t P = USB;
     using T = stm32wb30_cm4_usb_t;
     static T& V;
 };
@@ -229,6 +231,7 @@ struct peripheral_t<STM32WB35_CM4, USB>
 template<>
 struct peripheral_t<STM32WB55_CM4, USB>
 {
+    static constexpr periph_t P = USB;
     using T = stm32wb30_cm4_usb_t;
     static T& V;
 };

@@ -282,6 +282,7 @@ struct stm32f429_dma2d_t
 template<>
 struct peripheral_t<STM32F427, DMA2D>
 {
+    static constexpr periph_t P = DMA2D;
     using T = stm32f427_dma2d_t;
     static T& V;
 };
@@ -289,6 +290,7 @@ struct peripheral_t<STM32F427, DMA2D>
 template<>
 struct peripheral_t<STM32F429, DMA2D>
 {
+    static constexpr periph_t P = DMA2D;
     using T = stm32f429_dma2d_t;
     static T& V;
 };
@@ -296,6 +298,7 @@ struct peripheral_t<STM32F429, DMA2D>
 template<>
 struct peripheral_t<STM32F469, DMA2D>
 {
+    static constexpr periph_t P = DMA2D;
     using T = stm32f429_dma2d_t;
     static T& V;
 };

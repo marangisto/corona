@@ -144,6 +144,7 @@ struct stm32wb30_cm4_exti_t
 template<>
 struct peripheral_t<STM32WB30_CM4, EXTI>
 {
+    static constexpr periph_t P = EXTI;
     using T = stm32wb30_cm4_exti_t;
     static T& V;
 };
@@ -151,6 +152,7 @@ struct peripheral_t<STM32WB30_CM4, EXTI>
 template<>
 struct peripheral_t<STM32WB35_CM4, EXTI>
 {
+    static constexpr periph_t P = EXTI;
     using T = stm32wb30_cm4_exti_t;
     static T& V;
 };
@@ -158,6 +160,7 @@ struct peripheral_t<STM32WB35_CM4, EXTI>
 template<>
 struct peripheral_t<STM32WB50_CM4, EXTI>
 {
+    static constexpr periph_t P = EXTI;
     using T = stm32wb30_cm4_exti_t;
     static T& V;
 };
@@ -165,6 +168,7 @@ struct peripheral_t<STM32WB50_CM4, EXTI>
 template<>
 struct peripheral_t<STM32WB55_CM4, EXTI>
 {
+    static constexpr periph_t P = EXTI;
     using T = stm32wb30_cm4_exti_t;
     static T& V;
 };

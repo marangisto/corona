@@ -2353,6 +2353,7 @@ struct stm32f302_can_t
 template<>
 struct peripheral_t<STM32F302, CAN>
 {
+    static constexpr periph_t P = CAN;
     using T = stm32f302_can_t;
     static T& V;
 };
@@ -2360,6 +2361,7 @@ struct peripheral_t<STM32F302, CAN>
 template<>
 struct peripheral_t<STM32F303, CAN>
 {
+    static constexpr periph_t P = CAN;
     using T = stm32f302_can_t;
     static T& V;
 };
@@ -2367,6 +2369,7 @@ struct peripheral_t<STM32F303, CAN>
 template<>
 struct peripheral_t<STM32F373, CAN>
 {
+    static constexpr periph_t P = CAN;
     using T = stm32f302_can_t;
     static T& V;
 };
@@ -2374,6 +2377,7 @@ struct peripheral_t<STM32F373, CAN>
 template<>
 struct peripheral_t<STM32F3x4, CAN>
 {
+    static constexpr periph_t P = CAN;
     using T = stm32f302_can_t;
     static T& V;
 };
@@ -2381,6 +2385,7 @@ struct peripheral_t<STM32F3x4, CAN>
 template<>
 struct peripheral_t<STM32F3x8, CAN>
 {
+    static constexpr periph_t P = CAN;
     using T = stm32f302_can_t;
     static T& V;
 };

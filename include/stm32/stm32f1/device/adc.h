@@ -585,6 +585,7 @@ struct stm32f101_adc2_t
 template<>
 struct peripheral_t<STM32F100, ADC1>
 {
+    static constexpr periph_t P = ADC1;
     using T = stm32f100_adc1_t;
     static T& V;
 };
@@ -592,6 +593,7 @@ struct peripheral_t<STM32F100, ADC1>
 template<>
 struct peripheral_t<STM32F102, ADC2>
 {
+    static constexpr periph_t P = ADC2;
     using T = stm32f100_adc1_t;
     static T& V;
 };
@@ -599,6 +601,7 @@ struct peripheral_t<STM32F102, ADC2>
 template<>
 struct peripheral_t<STM32F103, ADC2>
 {
+    static constexpr periph_t P = ADC2;
     using T = stm32f100_adc1_t;
     static T& V;
 };
@@ -606,6 +609,7 @@ struct peripheral_t<STM32F103, ADC2>
 template<>
 struct peripheral_t<STM32F103, ADC3>
 {
+    static constexpr periph_t P = ADC3;
     using T = stm32f100_adc1_t;
     static T& V;
 };
@@ -613,6 +617,7 @@ struct peripheral_t<STM32F103, ADC3>
 template<>
 struct peripheral_t<STM32F107, ADC2>
 {
+    static constexpr periph_t P = ADC2;
     using T = stm32f100_adc1_t;
     static T& V;
 };
@@ -620,6 +625,7 @@ struct peripheral_t<STM32F107, ADC2>
 template<>
 struct peripheral_t<STM32F101, ADC1>
 {
+    static constexpr periph_t P = ADC1;
     using T = stm32f101_adc1_t;
     static T& V;
 };
@@ -627,6 +633,7 @@ struct peripheral_t<STM32F101, ADC1>
 template<>
 struct peripheral_t<STM32F103, ADC1>
 {
+    static constexpr periph_t P = ADC1;
     using T = stm32f103_adc1_t;
     static T& V;
 };
@@ -634,6 +641,7 @@ struct peripheral_t<STM32F103, ADC1>
 template<>
 struct peripheral_t<STM32F107, ADC1>
 {
+    static constexpr periph_t P = ADC1;
     using T = stm32f103_adc1_t;
     static T& V;
 };
@@ -641,6 +649,7 @@ struct peripheral_t<STM32F107, ADC1>
 template<>
 struct peripheral_t<STM32F101, ADC2>
 {
+    static constexpr periph_t P = ADC2;
     using T = stm32f101_adc2_t;
     static T& V;
 };
@@ -648,6 +657,7 @@ struct peripheral_t<STM32F101, ADC2>
 template<>
 struct peripheral_t<STM32F101, ADC3>
 {
+    static constexpr periph_t P = ADC3;
     using T = stm32f101_adc2_t;
     static T& V;
 };
@@ -655,6 +665,7 @@ struct peripheral_t<STM32F101, ADC3>
 template<>
 struct peripheral_t<STM32F102, ADC1>
 {
+    static constexpr periph_t P = ADC1;
     using T = stm32f101_adc2_t;
     static T& V;
 };
@@ -662,6 +673,7 @@ struct peripheral_t<STM32F102, ADC1>
 template<>
 struct peripheral_t<STM32F102, ADC3>
 {
+    static constexpr periph_t P = ADC3;
     using T = stm32f101_adc2_t;
     static T& V;
 };
@@ -669,6 +681,7 @@ struct peripheral_t<STM32F102, ADC3>
 template<>
 struct peripheral_t<STM32F107, ADC3>
 {
+    static constexpr periph_t P = ADC3;
     using T = stm32f101_adc2_t;
     static T& V;
 };

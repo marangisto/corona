@@ -64,6 +64,7 @@ struct stm32l552_opamp_t
 template<>
 struct peripheral_t<STM32L552, OPAMP>
 {
+    static constexpr periph_t P = OPAMP;
     using T = stm32l552_opamp_t;
     static T& V;
 };
@@ -71,6 +72,7 @@ struct peripheral_t<STM32L552, OPAMP>
 template<>
 struct peripheral_t<STM32L552, SEC_OPAMP>
 {
+    static constexpr periph_t P = SEC_OPAMP;
     using T = stm32l552_opamp_t;
     static T& V;
 };
@@ -78,6 +80,7 @@ struct peripheral_t<STM32L552, SEC_OPAMP>
 template<>
 struct peripheral_t<STM32L562, OPAMP>
 {
+    static constexpr periph_t P = OPAMP;
     using T = stm32l552_opamp_t;
     static T& V;
 };
@@ -85,6 +88,7 @@ struct peripheral_t<STM32L562, OPAMP>
 template<>
 struct peripheral_t<STM32L562, SEC_OPAMP>
 {
+    static constexpr periph_t P = SEC_OPAMP;
     using T = stm32l552_opamp_t;
     static T& V;
 };

@@ -58,6 +58,7 @@ struct stm32f215_syscfg_t
 template<>
 struct peripheral_t<STM32F215, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32f215_syscfg_t;
     static T& V;
 };
@@ -65,6 +66,7 @@ struct peripheral_t<STM32F215, SYSCFG>
 template<>
 struct peripheral_t<STM32F217, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32f215_syscfg_t;
     static T& V;
 };

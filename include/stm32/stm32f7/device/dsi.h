@@ -556,6 +556,7 @@ struct stm32f767_dsi_t
 template<>
 struct peripheral_t<STM32F767, DSI>
 {
+    static constexpr periph_t P = DSI;
     using T = stm32f767_dsi_t;
     static T& V;
 };
@@ -563,6 +564,7 @@ struct peripheral_t<STM32F767, DSI>
 template<>
 struct peripheral_t<STM32F768, DSI>
 {
+    static constexpr periph_t P = DSI;
     using T = stm32f767_dsi_t;
     static T& V;
 };
@@ -570,6 +572,7 @@ struct peripheral_t<STM32F768, DSI>
 template<>
 struct peripheral_t<STM32F769, DSI>
 {
+    static constexpr periph_t P = DSI;
     using T = stm32f767_dsi_t;
     static T& V;
 };
@@ -577,6 +580,7 @@ struct peripheral_t<STM32F769, DSI>
 template<>
 struct peripheral_t<STM32F777, DSI>
 {
+    static constexpr periph_t P = DSI;
     using T = stm32f767_dsi_t;
     static T& V;
 };
@@ -584,6 +588,7 @@ struct peripheral_t<STM32F777, DSI>
 template<>
 struct peripheral_t<STM32F778, DSI>
 {
+    static constexpr periph_t P = DSI;
     using T = stm32f767_dsi_t;
     static T& V;
 };
@@ -591,6 +596,7 @@ struct peripheral_t<STM32F778, DSI>
 template<>
 struct peripheral_t<STM32F779, DSI>
 {
+    static constexpr periph_t P = DSI;
     using T = stm32f767_dsi_t;
     static T& V;
 };

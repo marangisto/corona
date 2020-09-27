@@ -19,6 +19,7 @@ struct stm32l552_dcb_t
 template<>
 struct peripheral_t<STM32L552, DCB>
 {
+    static constexpr periph_t P = DCB;
     using T = stm32l552_dcb_t;
     static T& V;
 };
@@ -26,6 +27,7 @@ struct peripheral_t<STM32L552, DCB>
 template<>
 struct peripheral_t<STM32L562, DCB>
 {
+    static constexpr periph_t P = DCB;
     using T = stm32l552_dcb_t;
     static T& V;
 };

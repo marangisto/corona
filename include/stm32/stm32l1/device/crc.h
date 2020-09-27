@@ -27,6 +27,7 @@ struct stm32l100_crc_t
 template<>
 struct peripheral_t<STM32L100, CRC>
 {
+    static constexpr periph_t P = CRC;
     using T = stm32l100_crc_t;
     static T& V;
 };
@@ -34,6 +35,7 @@ struct peripheral_t<STM32L100, CRC>
 template<>
 struct peripheral_t<STM32L151, CRC>
 {
+    static constexpr periph_t P = CRC;
     using T = stm32l100_crc_t;
     static T& V;
 };
@@ -41,6 +43,7 @@ struct peripheral_t<STM32L151, CRC>
 template<>
 struct peripheral_t<STM32L152, CRC>
 {
+    static constexpr periph_t P = CRC;
     using T = stm32l100_crc_t;
     static T& V;
 };
@@ -48,6 +51,7 @@ struct peripheral_t<STM32L152, CRC>
 template<>
 struct peripheral_t<STM32L162, CRC>
 {
+    static constexpr periph_t P = CRC;
     using T = stm32l100_crc_t;
     static T& V;
 };

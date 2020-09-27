@@ -170,6 +170,7 @@ struct stm32g431xx_usb_fs_device_t
 template<>
 struct peripheral_t<STM32G431xx, USB>
 {
+    static constexpr periph_t P = USB;
     using T = stm32g431xx_usb_fs_device_t;
     static T& V;
 };
@@ -177,6 +178,7 @@ struct peripheral_t<STM32G431xx, USB>
 template<>
 struct peripheral_t<STM32G441xx, USB>
 {
+    static constexpr periph_t P = USB;
     using T = stm32g431xx_usb_fs_device_t;
     static T& V;
 };
@@ -184,6 +186,7 @@ struct peripheral_t<STM32G441xx, USB>
 template<>
 struct peripheral_t<STM32G471xx, USB>
 {
+    static constexpr periph_t P = USB;
     using T = stm32g431xx_usb_fs_device_t;
     static T& V;
 };
@@ -191,6 +194,7 @@ struct peripheral_t<STM32G471xx, USB>
 template<>
 struct peripheral_t<STM32G473xx, USB>
 {
+    static constexpr periph_t P = USB;
     using T = stm32g431xx_usb_fs_device_t;
     static T& V;
 };
@@ -198,6 +202,7 @@ struct peripheral_t<STM32G473xx, USB>
 template<>
 struct peripheral_t<STM32G474xx, USB>
 {
+    static constexpr periph_t P = USB;
     using T = stm32g431xx_usb_fs_device_t;
     static T& V;
 };
@@ -205,6 +210,7 @@ struct peripheral_t<STM32G474xx, USB>
 template<>
 struct peripheral_t<STM32G483xx, USB>
 {
+    static constexpr periph_t P = USB;
     using T = stm32g431xx_usb_fs_device_t;
     static T& V;
 };
@@ -212,6 +218,7 @@ struct peripheral_t<STM32G483xx, USB>
 template<>
 struct peripheral_t<STM32G484xx, USB>
 {
+    static constexpr periph_t P = USB;
     using T = stm32g431xx_usb_fs_device_t;
     static T& V;
 };
@@ -219,6 +226,7 @@ struct peripheral_t<STM32G484xx, USB>
 template<>
 struct peripheral_t<STM32GBK1CBT6, USB>
 {
+    static constexpr periph_t P = USB;
     using T = stm32g431xx_usb_fs_device_t;
     static T& V;
 };

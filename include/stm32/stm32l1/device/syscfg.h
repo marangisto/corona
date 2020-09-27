@@ -96,6 +96,7 @@ struct stm32l151_syscfg_t
 template<>
 struct peripheral_t<STM32L100, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32l100_syscfg_t;
     static T& V;
 };
@@ -103,6 +104,7 @@ struct peripheral_t<STM32L100, SYSCFG>
 template<>
 struct peripheral_t<STM32L151, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32l151_syscfg_t;
     static T& V;
 };
@@ -110,6 +112,7 @@ struct peripheral_t<STM32L151, SYSCFG>
 template<>
 struct peripheral_t<STM32L152, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32l151_syscfg_t;
     static T& V;
 };
@@ -117,6 +120,7 @@ struct peripheral_t<STM32L152, SYSCFG>
 template<>
 struct peripheral_t<STM32L162, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32l151_syscfg_t;
     static T& V;
 };

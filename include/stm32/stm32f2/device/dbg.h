@@ -102,6 +102,7 @@ struct stm32f217_dbg_t
 template<>
 struct peripheral_t<STM32F215, DBG>
 {
+    static constexpr periph_t P = DBG;
     using T = stm32f215_dbg_t;
     static T& V;
 };
@@ -109,6 +110,7 @@ struct peripheral_t<STM32F215, DBG>
 template<>
 struct peripheral_t<STM32F217, DBG>
 {
+    static constexpr periph_t P = DBG;
     using T = stm32f217_dbg_t;
     static T& V;
 };

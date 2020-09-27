@@ -324,6 +324,7 @@ struct stm32f745_sdmmc1_t
 template<>
 struct peripheral_t<STM32F722, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32f722_sdmmc1_t;
     static T& V;
 };
@@ -331,6 +332,7 @@ struct peripheral_t<STM32F722, SDMMC1>
 template<>
 struct peripheral_t<STM32F722, SDMMC2>
 {
+    static constexpr periph_t P = SDMMC2;
     using T = stm32f722_sdmmc1_t;
     static T& V;
 };
@@ -338,6 +340,7 @@ struct peripheral_t<STM32F722, SDMMC2>
 template<>
 struct peripheral_t<STM32F723, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32f722_sdmmc1_t;
     static T& V;
 };
@@ -345,6 +348,7 @@ struct peripheral_t<STM32F723, SDMMC1>
 template<>
 struct peripheral_t<STM32F723, SDMMC2>
 {
+    static constexpr periph_t P = SDMMC2;
     using T = stm32f722_sdmmc1_t;
     static T& V;
 };
@@ -352,6 +356,7 @@ struct peripheral_t<STM32F723, SDMMC2>
 template<>
 struct peripheral_t<STM32F730, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32f722_sdmmc1_t;
     static T& V;
 };
@@ -359,6 +364,7 @@ struct peripheral_t<STM32F730, SDMMC1>
 template<>
 struct peripheral_t<STM32F730, SDMMC2>
 {
+    static constexpr periph_t P = SDMMC2;
     using T = stm32f722_sdmmc1_t;
     static T& V;
 };
@@ -366,6 +372,7 @@ struct peripheral_t<STM32F730, SDMMC2>
 template<>
 struct peripheral_t<STM32F732, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32f722_sdmmc1_t;
     static T& V;
 };
@@ -373,6 +380,7 @@ struct peripheral_t<STM32F732, SDMMC1>
 template<>
 struct peripheral_t<STM32F732, SDMMC2>
 {
+    static constexpr periph_t P = SDMMC2;
     using T = stm32f722_sdmmc1_t;
     static T& V;
 };
@@ -380,6 +388,7 @@ struct peripheral_t<STM32F732, SDMMC2>
 template<>
 struct peripheral_t<STM32F733, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32f722_sdmmc1_t;
     static T& V;
 };
@@ -387,6 +396,7 @@ struct peripheral_t<STM32F733, SDMMC1>
 template<>
 struct peripheral_t<STM32F733, SDMMC2>
 {
+    static constexpr periph_t P = SDMMC2;
     using T = stm32f722_sdmmc1_t;
     static T& V;
 };
@@ -394,6 +404,7 @@ struct peripheral_t<STM32F733, SDMMC2>
 template<>
 struct peripheral_t<STM32F745, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32f745_sdmmc1_t;
     static T& V;
 };
@@ -401,6 +412,7 @@ struct peripheral_t<STM32F745, SDMMC1>
 template<>
 struct peripheral_t<STM32F746, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32f745_sdmmc1_t;
     static T& V;
 };
@@ -408,6 +420,7 @@ struct peripheral_t<STM32F746, SDMMC1>
 template<>
 struct peripheral_t<STM32F750x, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32f745_sdmmc1_t;
     static T& V;
 };
@@ -415,6 +428,7 @@ struct peripheral_t<STM32F750x, SDMMC1>
 template<>
 struct peripheral_t<STM32F756, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32f745_sdmmc1_t;
     static T& V;
 };
@@ -422,6 +436,7 @@ struct peripheral_t<STM32F756, SDMMC1>
 template<>
 struct peripheral_t<STM32F765, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32f745_sdmmc1_t;
     static T& V;
 };
@@ -429,6 +444,7 @@ struct peripheral_t<STM32F765, SDMMC1>
 template<>
 struct peripheral_t<STM32F767, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32f745_sdmmc1_t;
     static T& V;
 };
@@ -436,6 +452,7 @@ struct peripheral_t<STM32F767, SDMMC1>
 template<>
 struct peripheral_t<STM32F767, SDMMC2>
 {
+    static constexpr periph_t P = SDMMC2;
     using T = stm32f745_sdmmc1_t;
     static T& V;
 };
@@ -443,6 +460,7 @@ struct peripheral_t<STM32F767, SDMMC2>
 template<>
 struct peripheral_t<STM32F768, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32f745_sdmmc1_t;
     static T& V;
 };
@@ -450,6 +468,7 @@ struct peripheral_t<STM32F768, SDMMC1>
 template<>
 struct peripheral_t<STM32F768, SDMMC2>
 {
+    static constexpr periph_t P = SDMMC2;
     using T = stm32f745_sdmmc1_t;
     static T& V;
 };
@@ -457,6 +476,7 @@ struct peripheral_t<STM32F768, SDMMC2>
 template<>
 struct peripheral_t<STM32F769, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32f745_sdmmc1_t;
     static T& V;
 };
@@ -464,6 +484,7 @@ struct peripheral_t<STM32F769, SDMMC1>
 template<>
 struct peripheral_t<STM32F769, SDMMC2>
 {
+    static constexpr periph_t P = SDMMC2;
     using T = stm32f745_sdmmc1_t;
     static T& V;
 };
@@ -471,6 +492,7 @@ struct peripheral_t<STM32F769, SDMMC2>
 template<>
 struct peripheral_t<STM32F777, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32f745_sdmmc1_t;
     static T& V;
 };
@@ -478,6 +500,7 @@ struct peripheral_t<STM32F777, SDMMC1>
 template<>
 struct peripheral_t<STM32F777, SDMMC2>
 {
+    static constexpr periph_t P = SDMMC2;
     using T = stm32f745_sdmmc1_t;
     static T& V;
 };
@@ -485,6 +508,7 @@ struct peripheral_t<STM32F777, SDMMC2>
 template<>
 struct peripheral_t<STM32F778, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32f745_sdmmc1_t;
     static T& V;
 };
@@ -492,6 +516,7 @@ struct peripheral_t<STM32F778, SDMMC1>
 template<>
 struct peripheral_t<STM32F778, SDMMC2>
 {
+    static constexpr periph_t P = SDMMC2;
     using T = stm32f745_sdmmc1_t;
     static T& V;
 };
@@ -499,6 +524,7 @@ struct peripheral_t<STM32F778, SDMMC2>
 template<>
 struct peripheral_t<STM32F779, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32f745_sdmmc1_t;
     static T& V;
 };
@@ -506,6 +532,7 @@ struct peripheral_t<STM32F779, SDMMC1>
 template<>
 struct peripheral_t<STM32F779, SDMMC2>
 {
+    static constexpr periph_t P = SDMMC2;
     using T = stm32f745_sdmmc1_t;
     static T& V;
 };

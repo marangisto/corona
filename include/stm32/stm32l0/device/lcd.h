@@ -500,6 +500,7 @@ struct stm32l0x3_lcd_t
 template<>
 struct peripheral_t<STM32L0x3, LCD>
 {
+    static constexpr periph_t P = LCD;
     using T = stm32l0x3_lcd_t;
     static T& V;
 };

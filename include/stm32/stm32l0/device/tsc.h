@@ -244,6 +244,7 @@ struct stm32l0x2_tsc_t
 template<>
 struct peripheral_t<STM32L0x2, TSC>
 {
+    static constexpr periph_t P = TSC;
     using T = stm32l0x2_tsc_t;
     static T& V;
 };
@@ -251,6 +252,7 @@ struct peripheral_t<STM32L0x2, TSC>
 template<>
 struct peripheral_t<STM32L0x3, TSC>
 {
+    static constexpr periph_t P = TSC;
     using T = stm32l0x2_tsc_t;
     static T& V;
 };

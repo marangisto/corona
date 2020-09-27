@@ -458,6 +458,7 @@ struct stm32f413_fsmc_t
 template<>
 struct peripheral_t<STM32F405, FSMC>
 {
+    static constexpr periph_t P = FSMC;
     using T = stm32f405_fsmc_t;
     static T& V;
 };
@@ -465,6 +466,7 @@ struct peripheral_t<STM32F405, FSMC>
 template<>
 struct peripheral_t<STM32F407, FSMC>
 {
+    static constexpr periph_t P = FSMC;
     using T = stm32f405_fsmc_t;
     static T& V;
 };
@@ -472,6 +474,7 @@ struct peripheral_t<STM32F407, FSMC>
 template<>
 struct peripheral_t<STM32F412, FSMC>
 {
+    static constexpr periph_t P = FSMC;
     using T = stm32f405_fsmc_t;
     static T& V;
 };
@@ -479,6 +482,7 @@ struct peripheral_t<STM32F412, FSMC>
 template<>
 struct peripheral_t<STM32F413, FSMC>
 {
+    static constexpr periph_t P = FSMC;
     using T = stm32f413_fsmc_t;
     static T& V;
 };

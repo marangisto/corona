@@ -32,6 +32,7 @@ struct stm32f100_pwr_t
 template<>
 struct peripheral_t<STM32F100, PWR>
 {
+    static constexpr periph_t P = PWR;
     using T = stm32f100_pwr_t;
     static T& V;
 };
@@ -39,6 +40,7 @@ struct peripheral_t<STM32F100, PWR>
 template<>
 struct peripheral_t<STM32F101, PWR>
 {
+    static constexpr periph_t P = PWR;
     using T = stm32f100_pwr_t;
     static T& V;
 };
@@ -46,6 +48,7 @@ struct peripheral_t<STM32F101, PWR>
 template<>
 struct peripheral_t<STM32F102, PWR>
 {
+    static constexpr periph_t P = PWR;
     using T = stm32f100_pwr_t;
     static T& V;
 };
@@ -53,6 +56,7 @@ struct peripheral_t<STM32F102, PWR>
 template<>
 struct peripheral_t<STM32F103, PWR>
 {
+    static constexpr periph_t P = PWR;
     using T = stm32f100_pwr_t;
     static T& V;
 };
@@ -60,6 +64,7 @@ struct peripheral_t<STM32F103, PWR>
 template<>
 struct peripheral_t<STM32F107, PWR>
 {
+    static constexpr periph_t P = PWR;
     using T = stm32f100_pwr_t;
     static T& V;
 };

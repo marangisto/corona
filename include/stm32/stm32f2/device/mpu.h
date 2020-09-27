@@ -49,6 +49,7 @@ struct stm32f215_mpu_t
 template<>
 struct peripheral_t<STM32F215, MPU>
 {
+    static constexpr periph_t P = MPU;
     using T = stm32f215_mpu_t;
     static T& V;
 };
@@ -56,6 +57,7 @@ struct peripheral_t<STM32F215, MPU>
 template<>
 struct peripheral_t<STM32F217, MPU>
 {
+    static constexpr periph_t P = MPU;
     using T = stm32f215_mpu_t;
     static T& V;
 };

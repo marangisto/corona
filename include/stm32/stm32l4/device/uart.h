@@ -163,6 +163,7 @@ struct stm32l476_uart4_t
 template<>
 struct peripheral_t<STM32L476, UART4>
 {
+    static constexpr periph_t P = UART4;
     using T = stm32l476_uart4_t;
     static T& V;
 };
@@ -170,6 +171,7 @@ struct peripheral_t<STM32L476, UART4>
 template<>
 struct peripheral_t<STM32L476, UART5>
 {
+    static constexpr periph_t P = UART5;
     using T = stm32l476_uart4_t;
     static T& V;
 };
@@ -177,6 +179,7 @@ struct peripheral_t<STM32L476, UART5>
 template<>
 struct peripheral_t<STM32L496, UART4>
 {
+    static constexpr periph_t P = UART4;
     using T = stm32l476_uart4_t;
     static T& V;
 };
@@ -184,6 +187,7 @@ struct peripheral_t<STM32L496, UART4>
 template<>
 struct peripheral_t<STM32L496, UART5>
 {
+    static constexpr periph_t P = UART5;
     using T = stm32l476_uart4_t;
     static T& V;
 };

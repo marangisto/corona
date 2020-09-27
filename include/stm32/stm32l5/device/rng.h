@@ -46,6 +46,7 @@ struct stm32l552_rng_t
 template<>
 struct peripheral_t<STM32L552, RNG>
 {
+    static constexpr periph_t P = RNG;
     using T = stm32l552_rng_t;
     static T& V;
 };
@@ -53,6 +54,7 @@ struct peripheral_t<STM32L552, RNG>
 template<>
 struct peripheral_t<STM32L552, SEC_RNG>
 {
+    static constexpr periph_t P = SEC_RNG;
     using T = stm32l552_rng_t;
     static T& V;
 };
@@ -60,6 +62,7 @@ struct peripheral_t<STM32L552, SEC_RNG>
 template<>
 struct peripheral_t<STM32L562, RNG>
 {
+    static constexpr periph_t P = RNG;
     using T = stm32l552_rng_t;
     static T& V;
 };
@@ -67,6 +70,7 @@ struct peripheral_t<STM32L562, RNG>
 template<>
 struct peripheral_t<STM32L562, SEC_RNG>
 {
+    static constexpr periph_t P = SEC_RNG;
     using T = stm32l552_rng_t;
     static T& V;
 };

@@ -171,6 +171,7 @@ struct stm32f401_sdio_t
 template<>
 struct peripheral_t<STM32F401, SDIO>
 {
+    static constexpr periph_t P = SDIO;
     using T = stm32f401_sdio_t;
     static T& V;
 };
@@ -178,6 +179,7 @@ struct peripheral_t<STM32F401, SDIO>
 template<>
 struct peripheral_t<STM32F405, SDIO>
 {
+    static constexpr periph_t P = SDIO;
     using T = stm32f401_sdio_t;
     static T& V;
 };
@@ -185,6 +187,7 @@ struct peripheral_t<STM32F405, SDIO>
 template<>
 struct peripheral_t<STM32F407, SDIO>
 {
+    static constexpr periph_t P = SDIO;
     using T = stm32f401_sdio_t;
     static T& V;
 };
@@ -192,6 +195,7 @@ struct peripheral_t<STM32F407, SDIO>
 template<>
 struct peripheral_t<STM32F411, SDIO>
 {
+    static constexpr periph_t P = SDIO;
     using T = stm32f401_sdio_t;
     static T& V;
 };
@@ -199,6 +203,7 @@ struct peripheral_t<STM32F411, SDIO>
 template<>
 struct peripheral_t<STM32F412, SDIO>
 {
+    static constexpr periph_t P = SDIO;
     using T = stm32f401_sdio_t;
     static T& V;
 };
@@ -206,6 +211,7 @@ struct peripheral_t<STM32F412, SDIO>
 template<>
 struct peripheral_t<STM32F413, SDIO>
 {
+    static constexpr periph_t P = SDIO;
     using T = stm32f401_sdio_t;
     static T& V;
 };
@@ -213,6 +219,7 @@ struct peripheral_t<STM32F413, SDIO>
 template<>
 struct peripheral_t<STM32F427, SDIO>
 {
+    static constexpr periph_t P = SDIO;
     using T = stm32f401_sdio_t;
     static T& V;
 };
@@ -220,6 +227,7 @@ struct peripheral_t<STM32F427, SDIO>
 template<>
 struct peripheral_t<STM32F429, SDIO>
 {
+    static constexpr periph_t P = SDIO;
     using T = stm32f401_sdio_t;
     static T& V;
 };
@@ -227,6 +235,7 @@ struct peripheral_t<STM32F429, SDIO>
 template<>
 struct peripheral_t<STM32F446, SDIO>
 {
+    static constexpr periph_t P = SDIO;
     using T = stm32f401_sdio_t;
     static T& V;
 };
@@ -234,6 +243,7 @@ struct peripheral_t<STM32F446, SDIO>
 template<>
 struct peripheral_t<STM32F469, SDIO>
 {
+    static constexpr periph_t P = SDIO;
     using T = stm32f401_sdio_t;
     static T& V;
 };

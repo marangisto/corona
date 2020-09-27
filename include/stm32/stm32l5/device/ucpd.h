@@ -148,6 +148,7 @@ struct stm32l552_ucpd1_t
 template<>
 struct peripheral_t<STM32L552, SEC_UCPD1>
 {
+    static constexpr periph_t P = SEC_UCPD1;
     using T = stm32l552_ucpd1_t;
     static T& V;
 };
@@ -155,6 +156,7 @@ struct peripheral_t<STM32L552, SEC_UCPD1>
 template<>
 struct peripheral_t<STM32L552, UCPD1>
 {
+    static constexpr periph_t P = UCPD1;
     using T = stm32l552_ucpd1_t;
     static T& V;
 };
@@ -162,6 +164,7 @@ struct peripheral_t<STM32L552, UCPD1>
 template<>
 struct peripheral_t<STM32L562, SEC_UCPD1>
 {
+    static constexpr periph_t P = SEC_UCPD1;
     using T = stm32l552_ucpd1_t;
     static T& V;
 };
@@ -169,6 +172,7 @@ struct peripheral_t<STM32L562, SEC_UCPD1>
 template<>
 struct peripheral_t<STM32L562, UCPD1>
 {
+    static constexpr periph_t P = UCPD1;
     using T = stm32l552_ucpd1_t;
     static T& V;
 };

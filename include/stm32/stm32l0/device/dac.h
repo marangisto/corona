@@ -161,6 +161,7 @@ struct stm32l0x3_dac_t
 template<>
 struct peripheral_t<STM32L0x2, DAC1>
 {
+    static constexpr periph_t P = DAC1;
     using T = stm32l0x2_dac_t;
     static T& V;
 };
@@ -168,6 +169,7 @@ struct peripheral_t<STM32L0x2, DAC1>
 template<>
 struct peripheral_t<STM32L0x3, DAC1>
 {
+    static constexpr periph_t P = DAC1;
     using T = stm32l0x3_dac_t;
     static T& V;
 };

@@ -1711,6 +1711,7 @@ struct stm32f215_otg_hs_pwrclk_t
 template<>
 struct peripheral_t<STM32F215, OTG_HS_DEVICE>
 {
+    static constexpr periph_t P = OTG_HS_DEVICE;
     using T = stm32f215_otg_hs_device_t;
     static T& V;
 };
@@ -1718,6 +1719,7 @@ struct peripheral_t<STM32F215, OTG_HS_DEVICE>
 template<>
 struct peripheral_t<STM32F217, OTG_HS_DEVICE>
 {
+    static constexpr periph_t P = OTG_HS_DEVICE;
     using T = stm32f215_otg_hs_device_t;
     static T& V;
 };
@@ -1725,6 +1727,7 @@ struct peripheral_t<STM32F217, OTG_HS_DEVICE>
 template<>
 struct peripheral_t<STM32F215, OTG_HS_GLOBAL>
 {
+    static constexpr periph_t P = OTG_HS_GLOBAL;
     using T = stm32f215_otg_hs_global_t;
     static T& V;
 };
@@ -1732,6 +1735,7 @@ struct peripheral_t<STM32F215, OTG_HS_GLOBAL>
 template<>
 struct peripheral_t<STM32F217, OTG_HS_GLOBAL>
 {
+    static constexpr periph_t P = OTG_HS_GLOBAL;
     using T = stm32f215_otg_hs_global_t;
     static T& V;
 };
@@ -1739,6 +1743,7 @@ struct peripheral_t<STM32F217, OTG_HS_GLOBAL>
 template<>
 struct peripheral_t<STM32F215, OTG_HS_HOST>
 {
+    static constexpr periph_t P = OTG_HS_HOST;
     using T = stm32f215_otg_hs_host_t;
     static T& V;
 };
@@ -1746,6 +1751,7 @@ struct peripheral_t<STM32F215, OTG_HS_HOST>
 template<>
 struct peripheral_t<STM32F217, OTG_HS_HOST>
 {
+    static constexpr periph_t P = OTG_HS_HOST;
     using T = stm32f215_otg_hs_host_t;
     static T& V;
 };
@@ -1753,6 +1759,7 @@ struct peripheral_t<STM32F217, OTG_HS_HOST>
 template<>
 struct peripheral_t<STM32F215, OTG_HS_PWRCLK>
 {
+    static constexpr periph_t P = OTG_HS_PWRCLK;
     using T = stm32f215_otg_hs_pwrclk_t;
     static T& V;
 };
@@ -1760,6 +1767,7 @@ struct peripheral_t<STM32F215, OTG_HS_PWRCLK>
 template<>
 struct peripheral_t<STM32F217, OTG_HS_PWRCLK>
 {
+    static constexpr periph_t P = OTG_HS_PWRCLK;
     using T = stm32f215_otg_hs_pwrclk_t;
     static T& V;
 };

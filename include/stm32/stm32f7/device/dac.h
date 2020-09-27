@@ -91,6 +91,7 @@ struct stm32f722_dac_t
 template<>
 struct peripheral_t<STM32F722, DAC1>
 {
+    static constexpr periph_t P = DAC1;
     using T = stm32f722_dac_t;
     static T& V;
 };
@@ -98,6 +99,7 @@ struct peripheral_t<STM32F722, DAC1>
 template<>
 struct peripheral_t<STM32F723, DAC1>
 {
+    static constexpr periph_t P = DAC1;
     using T = stm32f722_dac_t;
     static T& V;
 };
@@ -105,6 +107,7 @@ struct peripheral_t<STM32F723, DAC1>
 template<>
 struct peripheral_t<STM32F730, DAC1>
 {
+    static constexpr periph_t P = DAC1;
     using T = stm32f722_dac_t;
     static T& V;
 };
@@ -112,6 +115,7 @@ struct peripheral_t<STM32F730, DAC1>
 template<>
 struct peripheral_t<STM32F732, DAC1>
 {
+    static constexpr periph_t P = DAC1;
     using T = stm32f722_dac_t;
     static T& V;
 };
@@ -119,6 +123,7 @@ struct peripheral_t<STM32F732, DAC1>
 template<>
 struct peripheral_t<STM32F733, DAC1>
 {
+    static constexpr periph_t P = DAC1;
     using T = stm32f722_dac_t;
     static T& V;
 };
@@ -126,6 +131,7 @@ struct peripheral_t<STM32F733, DAC1>
 template<>
 struct peripheral_t<STM32F745, DAC1>
 {
+    static constexpr periph_t P = DAC1;
     using T = stm32f722_dac_t;
     static T& V;
 };
@@ -133,6 +139,7 @@ struct peripheral_t<STM32F745, DAC1>
 template<>
 struct peripheral_t<STM32F746, DAC1>
 {
+    static constexpr periph_t P = DAC1;
     using T = stm32f722_dac_t;
     static T& V;
 };
@@ -140,6 +147,7 @@ struct peripheral_t<STM32F746, DAC1>
 template<>
 struct peripheral_t<STM32F750x, DAC1>
 {
+    static constexpr periph_t P = DAC1;
     using T = stm32f722_dac_t;
     static T& V;
 };
@@ -147,6 +155,7 @@ struct peripheral_t<STM32F750x, DAC1>
 template<>
 struct peripheral_t<STM32F756, DAC1>
 {
+    static constexpr periph_t P = DAC1;
     using T = stm32f722_dac_t;
     static T& V;
 };
@@ -154,6 +163,7 @@ struct peripheral_t<STM32F756, DAC1>
 template<>
 struct peripheral_t<STM32F765, DAC1>
 {
+    static constexpr periph_t P = DAC1;
     using T = stm32f722_dac_t;
     static T& V;
 };
@@ -161,6 +171,7 @@ struct peripheral_t<STM32F765, DAC1>
 template<>
 struct peripheral_t<STM32F767, DAC1>
 {
+    static constexpr periph_t P = DAC1;
     using T = stm32f722_dac_t;
     static T& V;
 };
@@ -168,6 +179,7 @@ struct peripheral_t<STM32F767, DAC1>
 template<>
 struct peripheral_t<STM32F768, DAC1>
 {
+    static constexpr periph_t P = DAC1;
     using T = stm32f722_dac_t;
     static T& V;
 };
@@ -175,6 +187,7 @@ struct peripheral_t<STM32F768, DAC1>
 template<>
 struct peripheral_t<STM32F769, DAC1>
 {
+    static constexpr periph_t P = DAC1;
     using T = stm32f722_dac_t;
     static T& V;
 };
@@ -182,6 +195,7 @@ struct peripheral_t<STM32F769, DAC1>
 template<>
 struct peripheral_t<STM32F777, DAC1>
 {
+    static constexpr periph_t P = DAC1;
     using T = stm32f722_dac_t;
     static T& V;
 };
@@ -189,6 +203,7 @@ struct peripheral_t<STM32F777, DAC1>
 template<>
 struct peripheral_t<STM32F778, DAC1>
 {
+    static constexpr periph_t P = DAC1;
     using T = stm32f722_dac_t;
     static T& V;
 };
@@ -196,6 +211,7 @@ struct peripheral_t<STM32F778, DAC1>
 template<>
 struct peripheral_t<STM32F779, DAC1>
 {
+    static constexpr periph_t P = DAC1;
     using T = stm32f722_dac_t;
     static T& V;
 };

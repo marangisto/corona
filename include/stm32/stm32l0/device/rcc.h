@@ -813,6 +813,7 @@ struct stm32l0x3_rcc_t
 template<>
 struct peripheral_t<STM32L0x0, RCC>
 {
+    static constexpr periph_t P = RCC;
     using T = stm32l0x0_rcc_t;
     static T& V;
 };
@@ -820,6 +821,7 @@ struct peripheral_t<STM32L0x0, RCC>
 template<>
 struct peripheral_t<STM32L0x1, RCC>
 {
+    static constexpr periph_t P = RCC;
     using T = stm32l0x0_rcc_t;
     static T& V;
 };
@@ -827,6 +829,7 @@ struct peripheral_t<STM32L0x1, RCC>
 template<>
 struct peripheral_t<STM32L0x2, RCC>
 {
+    static constexpr periph_t P = RCC;
     using T = stm32l0x2_rcc_t;
     static T& V;
 };
@@ -834,6 +837,7 @@ struct peripheral_t<STM32L0x2, RCC>
 template<>
 struct peripheral_t<STM32L0x3, RCC>
 {
+    static constexpr periph_t P = RCC;
     using T = stm32l0x3_rcc_t;
     static T& V;
 };

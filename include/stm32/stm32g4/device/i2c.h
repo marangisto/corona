@@ -124,6 +124,7 @@ struct stm32g431xx_i2c1_t
 template<>
 struct peripheral_t<STM32G431xx, I2C1>
 {
+    static constexpr periph_t P = I2C1;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -131,6 +132,7 @@ struct peripheral_t<STM32G431xx, I2C1>
 template<>
 struct peripheral_t<STM32G431xx, I2C2>
 {
+    static constexpr periph_t P = I2C2;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -138,6 +140,7 @@ struct peripheral_t<STM32G431xx, I2C2>
 template<>
 struct peripheral_t<STM32G431xx, I2C3>
 {
+    static constexpr periph_t P = I2C3;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -145,6 +148,7 @@ struct peripheral_t<STM32G431xx, I2C3>
 template<>
 struct peripheral_t<STM32G441xx, I2C1>
 {
+    static constexpr periph_t P = I2C1;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -152,6 +156,7 @@ struct peripheral_t<STM32G441xx, I2C1>
 template<>
 struct peripheral_t<STM32G441xx, I2C2>
 {
+    static constexpr periph_t P = I2C2;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -159,6 +164,7 @@ struct peripheral_t<STM32G441xx, I2C2>
 template<>
 struct peripheral_t<STM32G441xx, I2C3>
 {
+    static constexpr periph_t P = I2C3;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -166,6 +172,7 @@ struct peripheral_t<STM32G441xx, I2C3>
 template<>
 struct peripheral_t<STM32G471xx, I2C1>
 {
+    static constexpr periph_t P = I2C1;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -173,6 +180,7 @@ struct peripheral_t<STM32G471xx, I2C1>
 template<>
 struct peripheral_t<STM32G471xx, I2C2>
 {
+    static constexpr periph_t P = I2C2;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -180,6 +188,7 @@ struct peripheral_t<STM32G471xx, I2C2>
 template<>
 struct peripheral_t<STM32G471xx, I2C3>
 {
+    static constexpr periph_t P = I2C3;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -187,6 +196,7 @@ struct peripheral_t<STM32G471xx, I2C3>
 template<>
 struct peripheral_t<STM32G471xx, I2C4>
 {
+    static constexpr periph_t P = I2C4;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -194,6 +204,7 @@ struct peripheral_t<STM32G471xx, I2C4>
 template<>
 struct peripheral_t<STM32G473xx, I2C1>
 {
+    static constexpr periph_t P = I2C1;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -201,6 +212,7 @@ struct peripheral_t<STM32G473xx, I2C1>
 template<>
 struct peripheral_t<STM32G473xx, I2C2>
 {
+    static constexpr periph_t P = I2C2;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -208,6 +220,7 @@ struct peripheral_t<STM32G473xx, I2C2>
 template<>
 struct peripheral_t<STM32G473xx, I2C3>
 {
+    static constexpr periph_t P = I2C3;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -215,6 +228,7 @@ struct peripheral_t<STM32G473xx, I2C3>
 template<>
 struct peripheral_t<STM32G473xx, I2C4>
 {
+    static constexpr periph_t P = I2C4;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -222,6 +236,7 @@ struct peripheral_t<STM32G473xx, I2C4>
 template<>
 struct peripheral_t<STM32G474xx, I2C1>
 {
+    static constexpr periph_t P = I2C1;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -229,6 +244,7 @@ struct peripheral_t<STM32G474xx, I2C1>
 template<>
 struct peripheral_t<STM32G474xx, I2C2>
 {
+    static constexpr periph_t P = I2C2;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -236,6 +252,7 @@ struct peripheral_t<STM32G474xx, I2C2>
 template<>
 struct peripheral_t<STM32G474xx, I2C3>
 {
+    static constexpr periph_t P = I2C3;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -243,6 +260,7 @@ struct peripheral_t<STM32G474xx, I2C3>
 template<>
 struct peripheral_t<STM32G474xx, I2C4>
 {
+    static constexpr periph_t P = I2C4;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -250,6 +268,7 @@ struct peripheral_t<STM32G474xx, I2C4>
 template<>
 struct peripheral_t<STM32G483xx, I2C1>
 {
+    static constexpr periph_t P = I2C1;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -257,6 +276,7 @@ struct peripheral_t<STM32G483xx, I2C1>
 template<>
 struct peripheral_t<STM32G483xx, I2C2>
 {
+    static constexpr periph_t P = I2C2;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -264,6 +284,7 @@ struct peripheral_t<STM32G483xx, I2C2>
 template<>
 struct peripheral_t<STM32G483xx, I2C3>
 {
+    static constexpr periph_t P = I2C3;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -271,6 +292,7 @@ struct peripheral_t<STM32G483xx, I2C3>
 template<>
 struct peripheral_t<STM32G483xx, I2C4>
 {
+    static constexpr periph_t P = I2C4;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -278,6 +300,7 @@ struct peripheral_t<STM32G483xx, I2C4>
 template<>
 struct peripheral_t<STM32G484xx, I2C1>
 {
+    static constexpr periph_t P = I2C1;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -285,6 +308,7 @@ struct peripheral_t<STM32G484xx, I2C1>
 template<>
 struct peripheral_t<STM32G484xx, I2C2>
 {
+    static constexpr periph_t P = I2C2;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -292,6 +316,7 @@ struct peripheral_t<STM32G484xx, I2C2>
 template<>
 struct peripheral_t<STM32G484xx, I2C3>
 {
+    static constexpr periph_t P = I2C3;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -299,6 +324,7 @@ struct peripheral_t<STM32G484xx, I2C3>
 template<>
 struct peripheral_t<STM32G484xx, I2C4>
 {
+    static constexpr periph_t P = I2C4;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -306,6 +332,7 @@ struct peripheral_t<STM32G484xx, I2C4>
 template<>
 struct peripheral_t<STM32GBK1CBT6, I2C1>
 {
+    static constexpr periph_t P = I2C1;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -313,6 +340,7 @@ struct peripheral_t<STM32GBK1CBT6, I2C1>
 template<>
 struct peripheral_t<STM32GBK1CBT6, I2C2>
 {
+    static constexpr periph_t P = I2C2;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };
@@ -320,6 +348,7 @@ struct peripheral_t<STM32GBK1CBT6, I2C2>
 template<>
 struct peripheral_t<STM32GBK1CBT6, I2C3>
 {
+    static constexpr periph_t P = I2C3;
     using T = stm32g431xx_i2c1_t;
     static T& V;
 };

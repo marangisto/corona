@@ -53,6 +53,7 @@ struct stm32l552_crs_t
 template<>
 struct peripheral_t<STM32L552, CRS>
 {
+    static constexpr periph_t P = CRS;
     using T = stm32l552_crs_t;
     static T& V;
 };
@@ -60,6 +61,7 @@ struct peripheral_t<STM32L552, CRS>
 template<>
 struct peripheral_t<STM32L552, SEC_CRS>
 {
+    static constexpr periph_t P = SEC_CRS;
     using T = stm32l552_crs_t;
     static T& V;
 };
@@ -67,6 +69,7 @@ struct peripheral_t<STM32L552, SEC_CRS>
 template<>
 struct peripheral_t<STM32L562, CRS>
 {
+    static constexpr periph_t P = CRS;
     using T = stm32l552_crs_t;
     static T& V;
 };
@@ -74,6 +77,7 @@ struct peripheral_t<STM32L562, CRS>
 template<>
 struct peripheral_t<STM32L562, SEC_CRS>
 {
+    static constexpr periph_t P = SEC_CRS;
     using T = stm32l552_crs_t;
     static T& V;
 };

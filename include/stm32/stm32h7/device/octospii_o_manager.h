@@ -46,6 +46,7 @@ struct stm32h7a3x_octospii_o_manager_t
 template<>
 struct peripheral_t<STM32H7A3x, OCTOSPII_O_MANAGER>
 {
+    static constexpr periph_t P = OCTOSPII_O_MANAGER;
     using T = stm32h7a3x_octospii_o_manager_t;
     static T& V;
 };
@@ -53,6 +54,7 @@ struct peripheral_t<STM32H7A3x, OCTOSPII_O_MANAGER>
 template<>
 struct peripheral_t<STM32H7B0x, OCTOSPII_O_MANAGER>
 {
+    static constexpr periph_t P = OCTOSPII_O_MANAGER;
     using T = stm32h7a3x_octospii_o_manager_t;
     static T& V;
 };
@@ -60,6 +62,7 @@ struct peripheral_t<STM32H7B0x, OCTOSPII_O_MANAGER>
 template<>
 struct peripheral_t<STM32H7B3x, OCTOSPII_O_MANAGER>
 {
+    static constexpr periph_t P = OCTOSPII_O_MANAGER;
     using T = stm32h7a3x_octospii_o_manager_t;
     static T& V;
 };

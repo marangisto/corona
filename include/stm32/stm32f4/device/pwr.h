@@ -209,6 +209,7 @@ struct stm32f446_pwr_t
 template<>
 struct peripheral_t<STM32F401, PWR>
 {
+    static constexpr periph_t P = PWR;
     using T = stm32f401_pwr_t;
     static T& V;
 };
@@ -216,6 +217,7 @@ struct peripheral_t<STM32F401, PWR>
 template<>
 struct peripheral_t<STM32F411, PWR>
 {
+    static constexpr periph_t P = PWR;
     using T = stm32f401_pwr_t;
     static T& V;
 };
@@ -223,6 +225,7 @@ struct peripheral_t<STM32F411, PWR>
 template<>
 struct peripheral_t<STM32F412, PWR>
 {
+    static constexpr periph_t P = PWR;
     using T = stm32f401_pwr_t;
     static T& V;
 };
@@ -230,6 +233,7 @@ struct peripheral_t<STM32F412, PWR>
 template<>
 struct peripheral_t<STM32F413, PWR>
 {
+    static constexpr periph_t P = PWR;
     using T = stm32f401_pwr_t;
     static T& V;
 };
@@ -237,6 +241,7 @@ struct peripheral_t<STM32F413, PWR>
 template<>
 struct peripheral_t<STM32F405, PWR>
 {
+    static constexpr periph_t P = PWR;
     using T = stm32f405_pwr_t;
     static T& V;
 };
@@ -244,6 +249,7 @@ struct peripheral_t<STM32F405, PWR>
 template<>
 struct peripheral_t<STM32F407, PWR>
 {
+    static constexpr periph_t P = PWR;
     using T = stm32f405_pwr_t;
     static T& V;
 };
@@ -251,6 +257,7 @@ struct peripheral_t<STM32F407, PWR>
 template<>
 struct peripheral_t<STM32F410, PWR>
 {
+    static constexpr periph_t P = PWR;
     using T = stm32f410_pwr_t;
     static T& V;
 };
@@ -258,6 +265,7 @@ struct peripheral_t<STM32F410, PWR>
 template<>
 struct peripheral_t<STM32F427, PWR>
 {
+    static constexpr periph_t P = PWR;
     using T = stm32f427_pwr_t;
     static T& V;
 };
@@ -265,6 +273,7 @@ struct peripheral_t<STM32F427, PWR>
 template<>
 struct peripheral_t<STM32F429, PWR>
 {
+    static constexpr periph_t P = PWR;
     using T = stm32f429_pwr_t;
     static T& V;
 };
@@ -272,6 +281,7 @@ struct peripheral_t<STM32F429, PWR>
 template<>
 struct peripheral_t<STM32F469, PWR>
 {
+    static constexpr periph_t P = PWR;
     using T = stm32f429_pwr_t;
     static T& V;
 };
@@ -279,6 +289,7 @@ struct peripheral_t<STM32F469, PWR>
 template<>
 struct peripheral_t<STM32F446, PWR>
 {
+    static constexpr periph_t P = PWR;
     using T = stm32f446_pwr_t;
     static T& V;
 };

@@ -32,6 +32,7 @@ struct stm32l0x2_rng_t
 template<>
 struct peripheral_t<STM32L0x2, RNG>
 {
+    static constexpr periph_t P = RNG;
     using T = stm32l0x2_rng_t;
     static T& V;
 };
@@ -39,6 +40,7 @@ struct peripheral_t<STM32L0x2, RNG>
 template<>
 struct peripheral_t<STM32L0x3, RNG>
 {
+    static constexpr periph_t P = RNG;
     using T = stm32l0x2_rng_t;
     static T& V;
 };

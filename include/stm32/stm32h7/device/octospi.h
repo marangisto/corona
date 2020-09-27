@@ -237,6 +237,7 @@ struct stm32h7a3x_octospi2_t
 template<>
 struct peripheral_t<STM32H7A3x, OCTOSPI1_CONTROL_REGISTER>
 {
+    static constexpr periph_t P = OCTOSPI1_CONTROL_REGISTER;
     using T = stm32h7a3x_octospi2_t;
     static T& V;
 };
@@ -244,6 +245,7 @@ struct peripheral_t<STM32H7A3x, OCTOSPI1_CONTROL_REGISTER>
 template<>
 struct peripheral_t<STM32H7A3x, OCTOSPI2>
 {
+    static constexpr periph_t P = OCTOSPI2;
     using T = stm32h7a3x_octospi2_t;
     static T& V;
 };
@@ -251,6 +253,7 @@ struct peripheral_t<STM32H7A3x, OCTOSPI2>
 template<>
 struct peripheral_t<STM32H7B0x, OCTOSPI1_CONTROL_REGISTER>
 {
+    static constexpr periph_t P = OCTOSPI1_CONTROL_REGISTER;
     using T = stm32h7a3x_octospi2_t;
     static T& V;
 };
@@ -258,6 +261,7 @@ struct peripheral_t<STM32H7B0x, OCTOSPI1_CONTROL_REGISTER>
 template<>
 struct peripheral_t<STM32H7B0x, OCTOSPI2>
 {
+    static constexpr periph_t P = OCTOSPI2;
     using T = stm32h7a3x_octospi2_t;
     static T& V;
 };
@@ -265,6 +269,7 @@ struct peripheral_t<STM32H7B0x, OCTOSPI2>
 template<>
 struct peripheral_t<STM32H7B3x, OCTOSPI1_CONTROL_REGISTER>
 {
+    static constexpr periph_t P = OCTOSPI1_CONTROL_REGISTER;
     using T = stm32h7a3x_octospi2_t;
     static T& V;
 };
@@ -272,6 +277,7 @@ struct peripheral_t<STM32H7B3x, OCTOSPI1_CONTROL_REGISTER>
 template<>
 struct peripheral_t<STM32H7B3x, OCTOSPI2>
 {
+    static constexpr periph_t P = OCTOSPI2;
     using T = stm32h7a3x_octospi2_t;
     static T& V;
 };

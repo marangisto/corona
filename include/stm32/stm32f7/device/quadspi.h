@@ -104,6 +104,7 @@ struct stm32f722_quadspi_t
 template<>
 struct peripheral_t<STM32F722, QUADSPI1>
 {
+    static constexpr periph_t P = QUADSPI1;
     using T = stm32f722_quadspi_t;
     static T& V;
 };
@@ -111,6 +112,7 @@ struct peripheral_t<STM32F722, QUADSPI1>
 template<>
 struct peripheral_t<STM32F723, QUADSPI1>
 {
+    static constexpr periph_t P = QUADSPI1;
     using T = stm32f722_quadspi_t;
     static T& V;
 };
@@ -118,6 +120,7 @@ struct peripheral_t<STM32F723, QUADSPI1>
 template<>
 struct peripheral_t<STM32F730, QUADSPI1>
 {
+    static constexpr periph_t P = QUADSPI1;
     using T = stm32f722_quadspi_t;
     static T& V;
 };
@@ -125,6 +128,7 @@ struct peripheral_t<STM32F730, QUADSPI1>
 template<>
 struct peripheral_t<STM32F732, QUADSPI1>
 {
+    static constexpr periph_t P = QUADSPI1;
     using T = stm32f722_quadspi_t;
     static T& V;
 };
@@ -132,6 +136,7 @@ struct peripheral_t<STM32F732, QUADSPI1>
 template<>
 struct peripheral_t<STM32F733, QUADSPI1>
 {
+    static constexpr periph_t P = QUADSPI1;
     using T = stm32f722_quadspi_t;
     static T& V;
 };
@@ -139,6 +144,7 @@ struct peripheral_t<STM32F733, QUADSPI1>
 template<>
 struct peripheral_t<STM32F745, QUADSPI1>
 {
+    static constexpr periph_t P = QUADSPI1;
     using T = stm32f722_quadspi_t;
     static T& V;
 };
@@ -146,6 +152,7 @@ struct peripheral_t<STM32F745, QUADSPI1>
 template<>
 struct peripheral_t<STM32F746, QUADSPI1>
 {
+    static constexpr periph_t P = QUADSPI1;
     using T = stm32f722_quadspi_t;
     static T& V;
 };
@@ -153,6 +160,7 @@ struct peripheral_t<STM32F746, QUADSPI1>
 template<>
 struct peripheral_t<STM32F750x, QUADSPI1>
 {
+    static constexpr periph_t P = QUADSPI1;
     using T = stm32f722_quadspi_t;
     static T& V;
 };
@@ -160,6 +168,7 @@ struct peripheral_t<STM32F750x, QUADSPI1>
 template<>
 struct peripheral_t<STM32F756, QUADSPI1>
 {
+    static constexpr periph_t P = QUADSPI1;
     using T = stm32f722_quadspi_t;
     static T& V;
 };
@@ -167,6 +176,7 @@ struct peripheral_t<STM32F756, QUADSPI1>
 template<>
 struct peripheral_t<STM32F765, QUADSPI1>
 {
+    static constexpr periph_t P = QUADSPI1;
     using T = stm32f722_quadspi_t;
     static T& V;
 };
@@ -174,6 +184,7 @@ struct peripheral_t<STM32F765, QUADSPI1>
 template<>
 struct peripheral_t<STM32F767, QUADSPI1>
 {
+    static constexpr periph_t P = QUADSPI1;
     using T = stm32f722_quadspi_t;
     static T& V;
 };
@@ -181,6 +192,7 @@ struct peripheral_t<STM32F767, QUADSPI1>
 template<>
 struct peripheral_t<STM32F768, QUADSPI1>
 {
+    static constexpr periph_t P = QUADSPI1;
     using T = stm32f722_quadspi_t;
     static T& V;
 };
@@ -188,6 +200,7 @@ struct peripheral_t<STM32F768, QUADSPI1>
 template<>
 struct peripheral_t<STM32F769, QUADSPI1>
 {
+    static constexpr periph_t P = QUADSPI1;
     using T = stm32f722_quadspi_t;
     static T& V;
 };
@@ -195,6 +208,7 @@ struct peripheral_t<STM32F769, QUADSPI1>
 template<>
 struct peripheral_t<STM32F777, QUADSPI1>
 {
+    static constexpr periph_t P = QUADSPI1;
     using T = stm32f722_quadspi_t;
     static T& V;
 };
@@ -202,6 +216,7 @@ struct peripheral_t<STM32F777, QUADSPI1>
 template<>
 struct peripheral_t<STM32F778, QUADSPI1>
 {
+    static constexpr periph_t P = QUADSPI1;
     using T = stm32f722_quadspi_t;
     static T& V;
 };
@@ -209,6 +224,7 @@ struct peripheral_t<STM32F778, QUADSPI1>
 template<>
 struct peripheral_t<STM32F779, QUADSPI1>
 {
+    static constexpr periph_t P = QUADSPI1;
     using T = stm32f722_quadspi_t;
     static T& V;
 };

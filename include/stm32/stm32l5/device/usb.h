@@ -215,6 +215,7 @@ struct stm32l552_usb_t
 template<>
 struct peripheral_t<STM32L552, SEC_USB>
 {
+    static constexpr periph_t P = SEC_USB;
     using T = stm32l552_usb_t;
     static T& V;
 };
@@ -222,6 +223,7 @@ struct peripheral_t<STM32L552, SEC_USB>
 template<>
 struct peripheral_t<STM32L552, USB>
 {
+    static constexpr periph_t P = USB;
     using T = stm32l552_usb_t;
     static T& V;
 };
@@ -229,6 +231,7 @@ struct peripheral_t<STM32L552, USB>
 template<>
 struct peripheral_t<STM32L562, SEC_USB>
 {
+    static constexpr periph_t P = SEC_USB;
     using T = stm32l552_usb_t;
     static T& V;
 };
@@ -236,6 +239,7 @@ struct peripheral_t<STM32L562, SEC_USB>
 template<>
 struct peripheral_t<STM32L562, USB>
 {
+    static constexpr periph_t P = USB;
     using T = stm32l552_usb_t;
     static T& V;
 };

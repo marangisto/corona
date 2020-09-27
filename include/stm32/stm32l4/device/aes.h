@@ -74,6 +74,7 @@ struct stm32l476_aes_t
 template<>
 struct peripheral_t<STM32L476, AES>
 {
+    static constexpr periph_t P = AES;
     using T = stm32l476_aes_t;
     static T& V;
 };
@@ -81,6 +82,7 @@ struct peripheral_t<STM32L476, AES>
 template<>
 struct peripheral_t<STM32L496, AES>
 {
+    static constexpr periph_t P = AES;
     using T = stm32l476_aes_t;
     static T& V;
 };
@@ -88,6 +90,7 @@ struct peripheral_t<STM32L496, AES>
 template<>
 struct peripheral_t<STM32L4x1, AES>
 {
+    static constexpr periph_t P = AES;
     using T = stm32l476_aes_t;
     static T& V;
 };
@@ -95,6 +98,7 @@ struct peripheral_t<STM32L4x1, AES>
 template<>
 struct peripheral_t<STM32L4x2, AES>
 {
+    static constexpr periph_t P = AES;
     using T = stm32l476_aes_t;
     static T& V;
 };
@@ -102,6 +106,7 @@ struct peripheral_t<STM32L4x2, AES>
 template<>
 struct peripheral_t<STM32L4x3, AES>
 {
+    static constexpr periph_t P = AES;
     using T = stm32l476_aes_t;
     static T& V;
 };
@@ -109,6 +114,7 @@ struct peripheral_t<STM32L4x3, AES>
 template<>
 struct peripheral_t<STM32L4x5, AES>
 {
+    static constexpr periph_t P = AES;
     using T = stm32l476_aes_t;
     static T& V;
 };
@@ -116,6 +122,7 @@ struct peripheral_t<STM32L4x5, AES>
 template<>
 struct peripheral_t<STM32L4x6, AES>
 {
+    static constexpr periph_t P = AES;
     using T = stm32l476_aes_t;
     static T& V;
 };

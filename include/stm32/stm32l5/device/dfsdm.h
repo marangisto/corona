@@ -758,6 +758,7 @@ struct stm32l552_dfsdm1_t
 template<>
 struct peripheral_t<STM32L552, DFSDM1>
 {
+    static constexpr periph_t P = DFSDM1;
     using T = stm32l552_dfsdm1_t;
     static T& V;
 };
@@ -765,6 +766,7 @@ struct peripheral_t<STM32L552, DFSDM1>
 template<>
 struct peripheral_t<STM32L552, SEC_DFSDM1>
 {
+    static constexpr periph_t P = SEC_DFSDM1;
     using T = stm32l552_dfsdm1_t;
     static T& V;
 };
@@ -772,6 +774,7 @@ struct peripheral_t<STM32L552, SEC_DFSDM1>
 template<>
 struct peripheral_t<STM32L562, DFSDM1>
 {
+    static constexpr periph_t P = DFSDM1;
     using T = stm32l552_dfsdm1_t;
     static T& V;
 };
@@ -779,6 +782,7 @@ struct peripheral_t<STM32L562, DFSDM1>
 template<>
 struct peripheral_t<STM32L562, SEC_DFSDM1>
 {
+    static constexpr periph_t P = SEC_DFSDM1;
     using T = stm32l552_dfsdm1_t;
     static T& V;
 };

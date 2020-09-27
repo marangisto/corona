@@ -1916,6 +1916,7 @@ struct stm32h7a3x_tt_fdcan_t
 template<>
 struct peripheral_t<STM32H742x, CAN_CCU>
 {
+    static constexpr periph_t P = CAN_CCU;
     using T = stm32h742x_can_ccu_t;
     static T& V;
 };
@@ -1923,6 +1924,7 @@ struct peripheral_t<STM32H742x, CAN_CCU>
 template<>
 struct peripheral_t<STM32H743, CAN_CCU>
 {
+    static constexpr periph_t P = CAN_CCU;
     using T = stm32h742x_can_ccu_t;
     static T& V;
 };
@@ -1930,6 +1932,7 @@ struct peripheral_t<STM32H743, CAN_CCU>
 template<>
 struct peripheral_t<STM32H745_CM4, CAN_CCU>
 {
+    static constexpr periph_t P = CAN_CCU;
     using T = stm32h742x_can_ccu_t;
     static T& V;
 };
@@ -1937,6 +1940,7 @@ struct peripheral_t<STM32H745_CM4, CAN_CCU>
 template<>
 struct peripheral_t<STM32H745_CM7, CAN_CCU>
 {
+    static constexpr periph_t P = CAN_CCU;
     using T = stm32h742x_can_ccu_t;
     static T& V;
 };
@@ -1944,6 +1948,7 @@ struct peripheral_t<STM32H745_CM7, CAN_CCU>
 template<>
 struct peripheral_t<STM32H747_CM4, CAN_CCU>
 {
+    static constexpr periph_t P = CAN_CCU;
     using T = stm32h742x_can_ccu_t;
     static T& V;
 };
@@ -1951,6 +1956,7 @@ struct peripheral_t<STM32H747_CM4, CAN_CCU>
 template<>
 struct peripheral_t<STM32H747_CM7, CAN_CCU>
 {
+    static constexpr periph_t P = CAN_CCU;
     using T = stm32h742x_can_ccu_t;
     static T& V;
 };
@@ -1958,6 +1964,7 @@ struct peripheral_t<STM32H747_CM7, CAN_CCU>
 template<>
 struct peripheral_t<STM32H750x, CAN_CCU>
 {
+    static constexpr periph_t P = CAN_CCU;
     using T = stm32h742x_can_ccu_t;
     static T& V;
 };
@@ -1965,6 +1972,7 @@ struct peripheral_t<STM32H750x, CAN_CCU>
 template<>
 struct peripheral_t<STM32H753, CAN_CCU>
 {
+    static constexpr periph_t P = CAN_CCU;
     using T = stm32h742x_can_ccu_t;
     static T& V;
 };
@@ -1972,6 +1980,7 @@ struct peripheral_t<STM32H753, CAN_CCU>
 template<>
 struct peripheral_t<STM32H755_CM4, CAN_CCU>
 {
+    static constexpr periph_t P = CAN_CCU;
     using T = stm32h742x_can_ccu_t;
     static T& V;
 };
@@ -1979,6 +1988,7 @@ struct peripheral_t<STM32H755_CM4, CAN_CCU>
 template<>
 struct peripheral_t<STM32H755_CM7, CAN_CCU>
 {
+    static constexpr periph_t P = CAN_CCU;
     using T = stm32h742x_can_ccu_t;
     static T& V;
 };
@@ -1986,6 +1996,7 @@ struct peripheral_t<STM32H755_CM7, CAN_CCU>
 template<>
 struct peripheral_t<STM32H757_CM4, CAN_CCU>
 {
+    static constexpr periph_t P = CAN_CCU;
     using T = stm32h742x_can_ccu_t;
     static T& V;
 };
@@ -1993,6 +2004,7 @@ struct peripheral_t<STM32H757_CM4, CAN_CCU>
 template<>
 struct peripheral_t<STM32H757_CM7, CAN_CCU>
 {
+    static constexpr periph_t P = CAN_CCU;
     using T = stm32h742x_can_ccu_t;
     static T& V;
 };
@@ -2000,6 +2012,7 @@ struct peripheral_t<STM32H757_CM7, CAN_CCU>
 template<>
 struct peripheral_t<STM32H7A3x, CAN_CCU>
 {
+    static constexpr periph_t P = CAN_CCU;
     using T = stm32h7a3x_can_ccu_t;
     static T& V;
 };
@@ -2007,6 +2020,7 @@ struct peripheral_t<STM32H7A3x, CAN_CCU>
 template<>
 struct peripheral_t<STM32H7B0x, CAN_CCU>
 {
+    static constexpr periph_t P = CAN_CCU;
     using T = stm32h7a3x_can_ccu_t;
     static T& V;
 };
@@ -2014,6 +2028,7 @@ struct peripheral_t<STM32H7B0x, CAN_CCU>
 template<>
 struct peripheral_t<STM32H7B3x, CAN_CCU>
 {
+    static constexpr periph_t P = CAN_CCU;
     using T = stm32h7a3x_can_ccu_t;
     static T& V;
 };
@@ -2021,6 +2036,7 @@ struct peripheral_t<STM32H7B3x, CAN_CCU>
 template<>
 struct peripheral_t<STM32H7A3x, FDCAN>
 {
+    static constexpr periph_t P = FDCAN;
     using T = stm32h7a3x_fdcan_t;
     static T& V;
 };
@@ -2028,6 +2044,7 @@ struct peripheral_t<STM32H7A3x, FDCAN>
 template<>
 struct peripheral_t<STM32H7B0x, FDCAN>
 {
+    static constexpr periph_t P = FDCAN;
     using T = stm32h7a3x_fdcan_t;
     static T& V;
 };
@@ -2035,6 +2052,7 @@ struct peripheral_t<STM32H7B0x, FDCAN>
 template<>
 struct peripheral_t<STM32H7B3x, FDCAN>
 {
+    static constexpr periph_t P = FDCAN;
     using T = stm32h7a3x_fdcan_t;
     static T& V;
 };
@@ -2042,6 +2060,7 @@ struct peripheral_t<STM32H7B3x, FDCAN>
 template<>
 struct peripheral_t<STM32H742x, FDCAN1>
 {
+    static constexpr periph_t P = FDCAN1;
     using T = stm32h742x_fdcan1_t;
     static T& V;
 };
@@ -2049,6 +2068,7 @@ struct peripheral_t<STM32H742x, FDCAN1>
 template<>
 struct peripheral_t<STM32H742x, FDCAN2>
 {
+    static constexpr periph_t P = FDCAN2;
     using T = stm32h742x_fdcan1_t;
     static T& V;
 };
@@ -2056,6 +2076,7 @@ struct peripheral_t<STM32H742x, FDCAN2>
 template<>
 struct peripheral_t<STM32H743, FDCAN1>
 {
+    static constexpr periph_t P = FDCAN1;
     using T = stm32h742x_fdcan1_t;
     static T& V;
 };
@@ -2063,6 +2084,7 @@ struct peripheral_t<STM32H743, FDCAN1>
 template<>
 struct peripheral_t<STM32H743, FDCAN2>
 {
+    static constexpr periph_t P = FDCAN2;
     using T = stm32h742x_fdcan1_t;
     static T& V;
 };
@@ -2070,6 +2092,7 @@ struct peripheral_t<STM32H743, FDCAN2>
 template<>
 struct peripheral_t<STM32H745_CM4, FDCAN1>
 {
+    static constexpr periph_t P = FDCAN1;
     using T = stm32h742x_fdcan1_t;
     static T& V;
 };
@@ -2077,6 +2100,7 @@ struct peripheral_t<STM32H745_CM4, FDCAN1>
 template<>
 struct peripheral_t<STM32H745_CM4, FDCAN2>
 {
+    static constexpr periph_t P = FDCAN2;
     using T = stm32h742x_fdcan1_t;
     static T& V;
 };
@@ -2084,6 +2108,7 @@ struct peripheral_t<STM32H745_CM4, FDCAN2>
 template<>
 struct peripheral_t<STM32H745_CM7, FDCAN1>
 {
+    static constexpr periph_t P = FDCAN1;
     using T = stm32h742x_fdcan1_t;
     static T& V;
 };
@@ -2091,6 +2116,7 @@ struct peripheral_t<STM32H745_CM7, FDCAN1>
 template<>
 struct peripheral_t<STM32H745_CM7, FDCAN2>
 {
+    static constexpr periph_t P = FDCAN2;
     using T = stm32h742x_fdcan1_t;
     static T& V;
 };
@@ -2098,6 +2124,7 @@ struct peripheral_t<STM32H745_CM7, FDCAN2>
 template<>
 struct peripheral_t<STM32H747_CM4, FDCAN1>
 {
+    static constexpr periph_t P = FDCAN1;
     using T = stm32h742x_fdcan1_t;
     static T& V;
 };
@@ -2105,6 +2132,7 @@ struct peripheral_t<STM32H747_CM4, FDCAN1>
 template<>
 struct peripheral_t<STM32H747_CM4, FDCAN2>
 {
+    static constexpr periph_t P = FDCAN2;
     using T = stm32h742x_fdcan1_t;
     static T& V;
 };
@@ -2112,6 +2140,7 @@ struct peripheral_t<STM32H747_CM4, FDCAN2>
 template<>
 struct peripheral_t<STM32H747_CM7, FDCAN1>
 {
+    static constexpr periph_t P = FDCAN1;
     using T = stm32h742x_fdcan1_t;
     static T& V;
 };
@@ -2119,6 +2148,7 @@ struct peripheral_t<STM32H747_CM7, FDCAN1>
 template<>
 struct peripheral_t<STM32H747_CM7, FDCAN2>
 {
+    static constexpr periph_t P = FDCAN2;
     using T = stm32h742x_fdcan1_t;
     static T& V;
 };
@@ -2126,6 +2156,7 @@ struct peripheral_t<STM32H747_CM7, FDCAN2>
 template<>
 struct peripheral_t<STM32H750x, FDCAN1>
 {
+    static constexpr periph_t P = FDCAN1;
     using T = stm32h742x_fdcan1_t;
     static T& V;
 };
@@ -2133,6 +2164,7 @@ struct peripheral_t<STM32H750x, FDCAN1>
 template<>
 struct peripheral_t<STM32H750x, FDCAN2>
 {
+    static constexpr periph_t P = FDCAN2;
     using T = stm32h742x_fdcan1_t;
     static T& V;
 };
@@ -2140,6 +2172,7 @@ struct peripheral_t<STM32H750x, FDCAN2>
 template<>
 struct peripheral_t<STM32H753, FDCAN1>
 {
+    static constexpr periph_t P = FDCAN1;
     using T = stm32h742x_fdcan1_t;
     static T& V;
 };
@@ -2147,6 +2180,7 @@ struct peripheral_t<STM32H753, FDCAN1>
 template<>
 struct peripheral_t<STM32H753, FDCAN2>
 {
+    static constexpr periph_t P = FDCAN2;
     using T = stm32h742x_fdcan1_t;
     static T& V;
 };
@@ -2154,6 +2188,7 @@ struct peripheral_t<STM32H753, FDCAN2>
 template<>
 struct peripheral_t<STM32H755_CM4, FDCAN1>
 {
+    static constexpr periph_t P = FDCAN1;
     using T = stm32h742x_fdcan1_t;
     static T& V;
 };
@@ -2161,6 +2196,7 @@ struct peripheral_t<STM32H755_CM4, FDCAN1>
 template<>
 struct peripheral_t<STM32H755_CM4, FDCAN2>
 {
+    static constexpr periph_t P = FDCAN2;
     using T = stm32h742x_fdcan1_t;
     static T& V;
 };
@@ -2168,6 +2204,7 @@ struct peripheral_t<STM32H755_CM4, FDCAN2>
 template<>
 struct peripheral_t<STM32H755_CM7, FDCAN1>
 {
+    static constexpr periph_t P = FDCAN1;
     using T = stm32h742x_fdcan1_t;
     static T& V;
 };
@@ -2175,6 +2212,7 @@ struct peripheral_t<STM32H755_CM7, FDCAN1>
 template<>
 struct peripheral_t<STM32H755_CM7, FDCAN2>
 {
+    static constexpr periph_t P = FDCAN2;
     using T = stm32h742x_fdcan1_t;
     static T& V;
 };
@@ -2182,6 +2220,7 @@ struct peripheral_t<STM32H755_CM7, FDCAN2>
 template<>
 struct peripheral_t<STM32H757_CM4, FDCAN1>
 {
+    static constexpr periph_t P = FDCAN1;
     using T = stm32h742x_fdcan1_t;
     static T& V;
 };
@@ -2189,6 +2228,7 @@ struct peripheral_t<STM32H757_CM4, FDCAN1>
 template<>
 struct peripheral_t<STM32H757_CM4, FDCAN2>
 {
+    static constexpr periph_t P = FDCAN2;
     using T = stm32h742x_fdcan1_t;
     static T& V;
 };
@@ -2196,6 +2236,7 @@ struct peripheral_t<STM32H757_CM4, FDCAN2>
 template<>
 struct peripheral_t<STM32H757_CM7, FDCAN1>
 {
+    static constexpr periph_t P = FDCAN1;
     using T = stm32h742x_fdcan1_t;
     static T& V;
 };
@@ -2203,6 +2244,7 @@ struct peripheral_t<STM32H757_CM7, FDCAN1>
 template<>
 struct peripheral_t<STM32H757_CM7, FDCAN2>
 {
+    static constexpr periph_t P = FDCAN2;
     using T = stm32h742x_fdcan1_t;
     static T& V;
 };
@@ -2210,6 +2252,7 @@ struct peripheral_t<STM32H757_CM7, FDCAN2>
 template<>
 struct peripheral_t<STM32H7A3x, TT_FDCAN>
 {
+    static constexpr periph_t P = TT_FDCAN;
     using T = stm32h7a3x_tt_fdcan_t;
     static T& V;
 };
@@ -2217,6 +2260,7 @@ struct peripheral_t<STM32H7A3x, TT_FDCAN>
 template<>
 struct peripheral_t<STM32H7B0x, TT_FDCAN>
 {
+    static constexpr periph_t P = TT_FDCAN;
     using T = stm32h7a3x_tt_fdcan_t;
     static T& V;
 };
@@ -2224,6 +2268,7 @@ struct peripheral_t<STM32H7B0x, TT_FDCAN>
 template<>
 struct peripheral_t<STM32H7B3x, TT_FDCAN>
 {
+    static constexpr periph_t P = TT_FDCAN;
     using T = stm32h7a3x_tt_fdcan_t;
     static T& V;
 };

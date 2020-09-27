@@ -120,6 +120,7 @@ struct stm32f745_syscfg_t
 template<>
 struct peripheral_t<STM32F722, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32f722_syscfg_t;
     static T& V;
 };
@@ -127,6 +128,7 @@ struct peripheral_t<STM32F722, SYSCFG>
 template<>
 struct peripheral_t<STM32F723, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32f722_syscfg_t;
     static T& V;
 };
@@ -134,6 +136,7 @@ struct peripheral_t<STM32F723, SYSCFG>
 template<>
 struct peripheral_t<STM32F730, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32f722_syscfg_t;
     static T& V;
 };
@@ -141,6 +144,7 @@ struct peripheral_t<STM32F730, SYSCFG>
 template<>
 struct peripheral_t<STM32F732, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32f722_syscfg_t;
     static T& V;
 };
@@ -148,6 +152,7 @@ struct peripheral_t<STM32F732, SYSCFG>
 template<>
 struct peripheral_t<STM32F733, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32f722_syscfg_t;
     static T& V;
 };
@@ -155,6 +160,7 @@ struct peripheral_t<STM32F733, SYSCFG>
 template<>
 struct peripheral_t<STM32F745, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32f745_syscfg_t;
     static T& V;
 };
@@ -162,6 +168,7 @@ struct peripheral_t<STM32F745, SYSCFG>
 template<>
 struct peripheral_t<STM32F746, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32f745_syscfg_t;
     static T& V;
 };
@@ -169,6 +176,7 @@ struct peripheral_t<STM32F746, SYSCFG>
 template<>
 struct peripheral_t<STM32F750x, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32f745_syscfg_t;
     static T& V;
 };
@@ -176,6 +184,7 @@ struct peripheral_t<STM32F750x, SYSCFG>
 template<>
 struct peripheral_t<STM32F756, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32f745_syscfg_t;
     static T& V;
 };
@@ -183,6 +192,7 @@ struct peripheral_t<STM32F756, SYSCFG>
 template<>
 struct peripheral_t<STM32F765, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32f745_syscfg_t;
     static T& V;
 };
@@ -190,6 +200,7 @@ struct peripheral_t<STM32F765, SYSCFG>
 template<>
 struct peripheral_t<STM32F767, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32f745_syscfg_t;
     static T& V;
 };
@@ -197,6 +208,7 @@ struct peripheral_t<STM32F767, SYSCFG>
 template<>
 struct peripheral_t<STM32F768, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32f745_syscfg_t;
     static T& V;
 };
@@ -204,6 +216,7 @@ struct peripheral_t<STM32F768, SYSCFG>
 template<>
 struct peripheral_t<STM32F769, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32f745_syscfg_t;
     static T& V;
 };
@@ -211,6 +224,7 @@ struct peripheral_t<STM32F769, SYSCFG>
 template<>
 struct peripheral_t<STM32F777, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32f745_syscfg_t;
     static T& V;
 };
@@ -218,6 +232,7 @@ struct peripheral_t<STM32F777, SYSCFG>
 template<>
 struct peripheral_t<STM32F778, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32f745_syscfg_t;
     static T& V;
 };
@@ -225,6 +240,7 @@ struct peripheral_t<STM32F778, SYSCFG>
 template<>
 struct peripheral_t<STM32F779, SYSCFG>
 {
+    static constexpr periph_t P = SYSCFG;
     using T = stm32f745_syscfg_t;
     static T& V;
 };

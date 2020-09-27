@@ -241,6 +241,7 @@ struct stm32l4p5_dmamux1_t
 template<>
 struct peripheral_t<STM32L4P5, DMAMUX1>
 {
+    static constexpr periph_t P = DMAMUX1;
     using T = stm32l4p5_dmamux1_t;
     static T& V;
 };
@@ -248,6 +249,7 @@ struct peripheral_t<STM32L4P5, DMAMUX1>
 template<>
 struct peripheral_t<STM32L4Q5, DMAMUX1>
 {
+    static constexpr periph_t P = DMAMUX1;
     using T = stm32l4p5_dmamux1_t;
     static T& V;
 };
@@ -255,6 +257,7 @@ struct peripheral_t<STM32L4Q5, DMAMUX1>
 template<>
 struct peripheral_t<STM32L4R5, DMAMUX1>
 {
+    static constexpr periph_t P = DMAMUX1;
     using T = stm32l4p5_dmamux1_t;
     static T& V;
 };
@@ -262,6 +265,7 @@ struct peripheral_t<STM32L4R5, DMAMUX1>
 template<>
 struct peripheral_t<STM32L4R7, DMAMUX1>
 {
+    static constexpr periph_t P = DMAMUX1;
     using T = stm32l4p5_dmamux1_t;
     static T& V;
 };
@@ -269,6 +273,7 @@ struct peripheral_t<STM32L4R7, DMAMUX1>
 template<>
 struct peripheral_t<STM32L4R9, DMAMUX1>
 {
+    static constexpr periph_t P = DMAMUX1;
     using T = stm32l4p5_dmamux1_t;
     static T& V;
 };
@@ -276,6 +281,7 @@ struct peripheral_t<STM32L4R9, DMAMUX1>
 template<>
 struct peripheral_t<STM32L4S5, DMAMUX1>
 {
+    static constexpr periph_t P = DMAMUX1;
     using T = stm32l4p5_dmamux1_t;
     static T& V;
 };
@@ -283,6 +289,7 @@ struct peripheral_t<STM32L4S5, DMAMUX1>
 template<>
 struct peripheral_t<STM32L4S7, DMAMUX1>
 {
+    static constexpr periph_t P = DMAMUX1;
     using T = stm32l4p5_dmamux1_t;
     static T& V;
 };
@@ -290,6 +297,7 @@ struct peripheral_t<STM32L4S7, DMAMUX1>
 template<>
 struct peripheral_t<STM32L4S9, DMAMUX1>
 {
+    static constexpr periph_t P = DMAMUX1;
     using T = stm32l4p5_dmamux1_t;
     static T& V;
 };

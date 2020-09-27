@@ -102,6 +102,7 @@ struct stm32l476_dcmi_t
 template<>
 struct peripheral_t<STM32L476, DCMI>
 {
+    static constexpr periph_t P = DCMI;
     using T = stm32l476_dcmi_t;
     static T& V;
 };
@@ -109,6 +110,7 @@ struct peripheral_t<STM32L476, DCMI>
 template<>
 struct peripheral_t<STM32L496, DCMI>
 {
+    static constexpr periph_t P = DCMI;
     using T = stm32l476_dcmi_t;
     static T& V;
 };
@@ -116,6 +118,7 @@ struct peripheral_t<STM32L496, DCMI>
 template<>
 struct peripheral_t<STM32L4x6, DCMI>
 {
+    static constexpr periph_t P = DCMI;
     using T = stm32l476_dcmi_t;
     static T& V;
 };

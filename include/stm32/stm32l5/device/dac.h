@@ -130,6 +130,7 @@ struct stm32l552_dac_t
 template<>
 struct peripheral_t<STM32L552, DAC1>
 {
+    static constexpr periph_t P = DAC1;
     using T = stm32l552_dac_t;
     static T& V;
 };
@@ -137,6 +138,7 @@ struct peripheral_t<STM32L552, DAC1>
 template<>
 struct peripheral_t<STM32L552, SEC_DAC>
 {
+    static constexpr periph_t P = SEC_DAC;
     using T = stm32l552_dac_t;
     static T& V;
 };
@@ -144,6 +146,7 @@ struct peripheral_t<STM32L552, SEC_DAC>
 template<>
 struct peripheral_t<STM32L562, DAC1>
 {
+    static constexpr periph_t P = DAC1;
     using T = stm32l552_dac_t;
     static T& V;
 };
@@ -151,6 +154,7 @@ struct peripheral_t<STM32L562, DAC1>
 template<>
 struct peripheral_t<STM32L562, SEC_DAC>
 {
+    static constexpr periph_t P = SEC_DAC;
     using T = stm32l552_dac_t;
     static T& V;
 };

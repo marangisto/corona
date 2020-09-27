@@ -171,6 +171,7 @@ struct stm32f215_sdio_t
 template<>
 struct peripheral_t<STM32F215, SDIO>
 {
+    static constexpr periph_t P = SDIO;
     using T = stm32f215_sdio_t;
     static T& V;
 };
@@ -178,6 +179,7 @@ struct peripheral_t<STM32F215, SDIO>
 template<>
 struct peripheral_t<STM32F217, SDIO>
 {
+    static constexpr periph_t P = SDIO;
     using T = stm32f215_sdio_t;
     static T& V;
 };

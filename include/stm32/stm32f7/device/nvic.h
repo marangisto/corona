@@ -806,6 +806,7 @@ struct stm32f722_nvic_stir_t
 template<>
 struct peripheral_t<STM32F722, NVIC>
 {
+    static constexpr periph_t P = NVIC;
     using T = stm32f722_nvic_t;
     static T& V;
 };
@@ -813,6 +814,7 @@ struct peripheral_t<STM32F722, NVIC>
 template<>
 struct peripheral_t<STM32F723, NVIC>
 {
+    static constexpr periph_t P = NVIC;
     using T = stm32f722_nvic_t;
     static T& V;
 };
@@ -820,6 +822,7 @@ struct peripheral_t<STM32F723, NVIC>
 template<>
 struct peripheral_t<STM32F730, NVIC>
 {
+    static constexpr periph_t P = NVIC;
     using T = stm32f722_nvic_t;
     static T& V;
 };
@@ -827,6 +830,7 @@ struct peripheral_t<STM32F730, NVIC>
 template<>
 struct peripheral_t<STM32F732, NVIC>
 {
+    static constexpr periph_t P = NVIC;
     using T = stm32f722_nvic_t;
     static T& V;
 };
@@ -834,6 +838,7 @@ struct peripheral_t<STM32F732, NVIC>
 template<>
 struct peripheral_t<STM32F733, NVIC>
 {
+    static constexpr periph_t P = NVIC;
     using T = stm32f722_nvic_t;
     static T& V;
 };
@@ -841,6 +846,7 @@ struct peripheral_t<STM32F733, NVIC>
 template<>
 struct peripheral_t<STM32F750x, NVIC>
 {
+    static constexpr periph_t P = NVIC;
     using T = stm32f722_nvic_t;
     static T& V;
 };
@@ -848,6 +854,7 @@ struct peripheral_t<STM32F750x, NVIC>
 template<>
 struct peripheral_t<STM32F768, NVIC>
 {
+    static constexpr periph_t P = NVIC;
     using T = stm32f722_nvic_t;
     static T& V;
 };
@@ -855,6 +862,7 @@ struct peripheral_t<STM32F768, NVIC>
 template<>
 struct peripheral_t<STM32F769, NVIC>
 {
+    static constexpr periph_t P = NVIC;
     using T = stm32f722_nvic_t;
     static T& V;
 };
@@ -862,6 +870,7 @@ struct peripheral_t<STM32F769, NVIC>
 template<>
 struct peripheral_t<STM32F778, NVIC>
 {
+    static constexpr periph_t P = NVIC;
     using T = stm32f722_nvic_t;
     static T& V;
 };
@@ -869,6 +878,7 @@ struct peripheral_t<STM32F778, NVIC>
 template<>
 struct peripheral_t<STM32F779, NVIC>
 {
+    static constexpr periph_t P = NVIC;
     using T = stm32f722_nvic_t;
     static T& V;
 };
@@ -876,6 +886,7 @@ struct peripheral_t<STM32F779, NVIC>
 template<>
 struct peripheral_t<STM32F745, NVIC>
 {
+    static constexpr periph_t P = NVIC;
     using T = stm32f745_nvic_t;
     static T& V;
 };
@@ -883,6 +894,7 @@ struct peripheral_t<STM32F745, NVIC>
 template<>
 struct peripheral_t<STM32F746, NVIC>
 {
+    static constexpr periph_t P = NVIC;
     using T = stm32f745_nvic_t;
     static T& V;
 };
@@ -890,6 +902,7 @@ struct peripheral_t<STM32F746, NVIC>
 template<>
 struct peripheral_t<STM32F756, NVIC>
 {
+    static constexpr periph_t P = NVIC;
     using T = stm32f745_nvic_t;
     static T& V;
 };
@@ -897,6 +910,7 @@ struct peripheral_t<STM32F756, NVIC>
 template<>
 struct peripheral_t<STM32F765, NVIC>
 {
+    static constexpr periph_t P = NVIC;
     using T = stm32f745_nvic_t;
     static T& V;
 };
@@ -904,6 +918,7 @@ struct peripheral_t<STM32F765, NVIC>
 template<>
 struct peripheral_t<STM32F767, NVIC>
 {
+    static constexpr periph_t P = NVIC;
     using T = stm32f767_nvic_t;
     static T& V;
 };
@@ -911,6 +926,7 @@ struct peripheral_t<STM32F767, NVIC>
 template<>
 struct peripheral_t<STM32F777, NVIC>
 {
+    static constexpr periph_t P = NVIC;
     using T = stm32f767_nvic_t;
     static T& V;
 };
@@ -918,6 +934,7 @@ struct peripheral_t<STM32F777, NVIC>
 template<>
 struct peripheral_t<STM32F722, NVIC_STIR>
 {
+    static constexpr periph_t P = NVIC_STIR;
     using T = stm32f722_nvic_stir_t;
     static T& V;
 };
@@ -925,6 +942,7 @@ struct peripheral_t<STM32F722, NVIC_STIR>
 template<>
 struct peripheral_t<STM32F723, NVIC_STIR>
 {
+    static constexpr periph_t P = NVIC_STIR;
     using T = stm32f722_nvic_stir_t;
     static T& V;
 };
@@ -932,6 +950,7 @@ struct peripheral_t<STM32F723, NVIC_STIR>
 template<>
 struct peripheral_t<STM32F730, NVIC_STIR>
 {
+    static constexpr periph_t P = NVIC_STIR;
     using T = stm32f722_nvic_stir_t;
     static T& V;
 };
@@ -939,6 +958,7 @@ struct peripheral_t<STM32F730, NVIC_STIR>
 template<>
 struct peripheral_t<STM32F732, NVIC_STIR>
 {
+    static constexpr periph_t P = NVIC_STIR;
     using T = stm32f722_nvic_stir_t;
     static T& V;
 };
@@ -946,6 +966,7 @@ struct peripheral_t<STM32F732, NVIC_STIR>
 template<>
 struct peripheral_t<STM32F733, NVIC_STIR>
 {
+    static constexpr periph_t P = NVIC_STIR;
     using T = stm32f722_nvic_stir_t;
     static T& V;
 };
@@ -953,6 +974,7 @@ struct peripheral_t<STM32F733, NVIC_STIR>
 template<>
 struct peripheral_t<STM32F745, NVIC_STIR>
 {
+    static constexpr periph_t P = NVIC_STIR;
     using T = stm32f722_nvic_stir_t;
     static T& V;
 };
@@ -960,6 +982,7 @@ struct peripheral_t<STM32F745, NVIC_STIR>
 template<>
 struct peripheral_t<STM32F746, NVIC_STIR>
 {
+    static constexpr periph_t P = NVIC_STIR;
     using T = stm32f722_nvic_stir_t;
     static T& V;
 };
@@ -967,6 +990,7 @@ struct peripheral_t<STM32F746, NVIC_STIR>
 template<>
 struct peripheral_t<STM32F750x, NVIC_STIR>
 {
+    static constexpr periph_t P = NVIC_STIR;
     using T = stm32f722_nvic_stir_t;
     static T& V;
 };
@@ -974,6 +998,7 @@ struct peripheral_t<STM32F750x, NVIC_STIR>
 template<>
 struct peripheral_t<STM32F756, NVIC_STIR>
 {
+    static constexpr periph_t P = NVIC_STIR;
     using T = stm32f722_nvic_stir_t;
     static T& V;
 };
@@ -981,6 +1006,7 @@ struct peripheral_t<STM32F756, NVIC_STIR>
 template<>
 struct peripheral_t<STM32F765, NVIC_STIR>
 {
+    static constexpr periph_t P = NVIC_STIR;
     using T = stm32f722_nvic_stir_t;
     static T& V;
 };
@@ -988,6 +1014,7 @@ struct peripheral_t<STM32F765, NVIC_STIR>
 template<>
 struct peripheral_t<STM32F767, NVIC_STIR>
 {
+    static constexpr periph_t P = NVIC_STIR;
     using T = stm32f722_nvic_stir_t;
     static T& V;
 };
@@ -995,6 +1022,7 @@ struct peripheral_t<STM32F767, NVIC_STIR>
 template<>
 struct peripheral_t<STM32F768, NVIC_STIR>
 {
+    static constexpr periph_t P = NVIC_STIR;
     using T = stm32f722_nvic_stir_t;
     static T& V;
 };
@@ -1002,6 +1030,7 @@ struct peripheral_t<STM32F768, NVIC_STIR>
 template<>
 struct peripheral_t<STM32F769, NVIC_STIR>
 {
+    static constexpr periph_t P = NVIC_STIR;
     using T = stm32f722_nvic_stir_t;
     static T& V;
 };
@@ -1009,6 +1038,7 @@ struct peripheral_t<STM32F769, NVIC_STIR>
 template<>
 struct peripheral_t<STM32F777, NVIC_STIR>
 {
+    static constexpr periph_t P = NVIC_STIR;
     using T = stm32f722_nvic_stir_t;
     static T& V;
 };
@@ -1016,6 +1046,7 @@ struct peripheral_t<STM32F777, NVIC_STIR>
 template<>
 struct peripheral_t<STM32F778, NVIC_STIR>
 {
+    static constexpr periph_t P = NVIC_STIR;
     using T = stm32f722_nvic_stir_t;
     static T& V;
 };
@@ -1023,6 +1054,7 @@ struct peripheral_t<STM32F778, NVIC_STIR>
 template<>
 struct peripheral_t<STM32F779, NVIC_STIR>
 {
+    static constexpr periph_t P = NVIC_STIR;
     using T = stm32f722_nvic_stir_t;
     static T& V;
 };

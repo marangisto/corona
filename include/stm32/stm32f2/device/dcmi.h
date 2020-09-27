@@ -98,6 +98,7 @@ struct stm32f215_dcmi_t
 template<>
 struct peripheral_t<STM32F215, DCMI>
 {
+    static constexpr periph_t P = DCMI;
     using T = stm32f215_dcmi_t;
     static T& V;
 };
@@ -105,6 +106,7 @@ struct peripheral_t<STM32F215, DCMI>
 template<>
 struct peripheral_t<STM32F217, DCMI>
 {
+    static constexpr periph_t P = DCMI;
     using T = stm32f215_dcmi_t;
     static T& V;
 };

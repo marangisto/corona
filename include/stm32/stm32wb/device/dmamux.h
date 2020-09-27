@@ -241,6 +241,7 @@ struct stm32wb30_cm4_dmamux_t
 template<>
 struct peripheral_t<STM32WB30_CM4, DMAMUX>
 {
+    static constexpr periph_t P = DMAMUX;
     using T = stm32wb30_cm4_dmamux_t;
     static T& V;
 };
@@ -248,6 +249,7 @@ struct peripheral_t<STM32WB30_CM4, DMAMUX>
 template<>
 struct peripheral_t<STM32WB35_CM4, DMAMUX>
 {
+    static constexpr periph_t P = DMAMUX;
     using T = stm32wb30_cm4_dmamux_t;
     static T& V;
 };
@@ -255,6 +257,7 @@ struct peripheral_t<STM32WB35_CM4, DMAMUX>
 template<>
 struct peripheral_t<STM32WB50_CM4, DMAMUX>
 {
+    static constexpr periph_t P = DMAMUX;
     using T = stm32wb30_cm4_dmamux_t;
     static T& V;
 };
@@ -262,6 +265,7 @@ struct peripheral_t<STM32WB50_CM4, DMAMUX>
 template<>
 struct peripheral_t<STM32WB55_CM4, DMAMUX1>
 {
+    static constexpr periph_t P = DMAMUX1;
     using T = stm32wb30_cm4_dmamux_t;
     static T& V;
 };

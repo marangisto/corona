@@ -73,6 +73,7 @@ struct stm32f446_hdmi_cec_t
 template<>
 struct peripheral_t<STM32F446, HDMI_CEC>
 {
+    static constexpr periph_t P = HDMI_CEC;
     using T = stm32f446_hdmi_cec_t;
     static T& V;
 };

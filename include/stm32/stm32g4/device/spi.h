@@ -175,6 +175,7 @@ struct stm32g471xx_spi4_t
 template<>
 struct peripheral_t<STM32G431xx, SPI1>
 {
+    static constexpr periph_t P = SPI1;
     using T = stm32g431xx_spi1_t;
     static T& V;
 };
@@ -182,6 +183,7 @@ struct peripheral_t<STM32G431xx, SPI1>
 template<>
 struct peripheral_t<STM32G431xx, SPI2>
 {
+    static constexpr periph_t P = SPI2;
     using T = stm32g431xx_spi1_t;
     static T& V;
 };
@@ -189,6 +191,7 @@ struct peripheral_t<STM32G431xx, SPI2>
 template<>
 struct peripheral_t<STM32G431xx, SPI3>
 {
+    static constexpr periph_t P = SPI3;
     using T = stm32g431xx_spi1_t;
     static T& V;
 };
@@ -196,6 +199,7 @@ struct peripheral_t<STM32G431xx, SPI3>
 template<>
 struct peripheral_t<STM32G441xx, SPI1>
 {
+    static constexpr periph_t P = SPI1;
     using T = stm32g431xx_spi1_t;
     static T& V;
 };
@@ -203,6 +207,7 @@ struct peripheral_t<STM32G441xx, SPI1>
 template<>
 struct peripheral_t<STM32G441xx, SPI2>
 {
+    static constexpr periph_t P = SPI2;
     using T = stm32g431xx_spi1_t;
     static T& V;
 };
@@ -210,6 +215,7 @@ struct peripheral_t<STM32G441xx, SPI2>
 template<>
 struct peripheral_t<STM32G441xx, SPI3>
 {
+    static constexpr periph_t P = SPI3;
     using T = stm32g431xx_spi1_t;
     static T& V;
 };
@@ -217,6 +223,7 @@ struct peripheral_t<STM32G441xx, SPI3>
 template<>
 struct peripheral_t<STM32G471xx, SPI1>
 {
+    static constexpr periph_t P = SPI1;
     using T = stm32g431xx_spi1_t;
     static T& V;
 };
@@ -224,6 +231,7 @@ struct peripheral_t<STM32G471xx, SPI1>
 template<>
 struct peripheral_t<STM32G473xx, SPI1>
 {
+    static constexpr periph_t P = SPI1;
     using T = stm32g431xx_spi1_t;
     static T& V;
 };
@@ -231,6 +239,7 @@ struct peripheral_t<STM32G473xx, SPI1>
 template<>
 struct peripheral_t<STM32G474xx, SPI1>
 {
+    static constexpr periph_t P = SPI1;
     using T = stm32g431xx_spi1_t;
     static T& V;
 };
@@ -238,6 +247,7 @@ struct peripheral_t<STM32G474xx, SPI1>
 template<>
 struct peripheral_t<STM32G483xx, SPI1>
 {
+    static constexpr periph_t P = SPI1;
     using T = stm32g431xx_spi1_t;
     static T& V;
 };
@@ -245,6 +255,7 @@ struct peripheral_t<STM32G483xx, SPI1>
 template<>
 struct peripheral_t<STM32G484xx, SPI1>
 {
+    static constexpr periph_t P = SPI1;
     using T = stm32g431xx_spi1_t;
     static T& V;
 };
@@ -252,6 +263,7 @@ struct peripheral_t<STM32G484xx, SPI1>
 template<>
 struct peripheral_t<STM32GBK1CBT6, SPI1>
 {
+    static constexpr periph_t P = SPI1;
     using T = stm32g431xx_spi1_t;
     static T& V;
 };
@@ -259,6 +271,7 @@ struct peripheral_t<STM32GBK1CBT6, SPI1>
 template<>
 struct peripheral_t<STM32GBK1CBT6, SPI2>
 {
+    static constexpr periph_t P = SPI2;
     using T = stm32g431xx_spi1_t;
     static T& V;
 };
@@ -266,6 +279,7 @@ struct peripheral_t<STM32GBK1CBT6, SPI2>
 template<>
 struct peripheral_t<STM32GBK1CBT6, SPI3>
 {
+    static constexpr periph_t P = SPI3;
     using T = stm32g431xx_spi1_t;
     static T& V;
 };
@@ -273,6 +287,7 @@ struct peripheral_t<STM32GBK1CBT6, SPI3>
 template<>
 struct peripheral_t<STM32G471xx, SPI2>
 {
+    static constexpr periph_t P = SPI2;
     using T = stm32g471xx_spi4_t;
     static T& V;
 };
@@ -280,6 +295,7 @@ struct peripheral_t<STM32G471xx, SPI2>
 template<>
 struct peripheral_t<STM32G471xx, SPI3>
 {
+    static constexpr periph_t P = SPI3;
     using T = stm32g471xx_spi4_t;
     static T& V;
 };
@@ -287,6 +303,7 @@ struct peripheral_t<STM32G471xx, SPI3>
 template<>
 struct peripheral_t<STM32G471xx, SPI4>
 {
+    static constexpr periph_t P = SPI4;
     using T = stm32g471xx_spi4_t;
     static T& V;
 };
@@ -294,6 +311,7 @@ struct peripheral_t<STM32G471xx, SPI4>
 template<>
 struct peripheral_t<STM32G473xx, SPI2>
 {
+    static constexpr periph_t P = SPI2;
     using T = stm32g471xx_spi4_t;
     static T& V;
 };
@@ -301,6 +319,7 @@ struct peripheral_t<STM32G473xx, SPI2>
 template<>
 struct peripheral_t<STM32G473xx, SPI3>
 {
+    static constexpr periph_t P = SPI3;
     using T = stm32g471xx_spi4_t;
     static T& V;
 };
@@ -308,6 +327,7 @@ struct peripheral_t<STM32G473xx, SPI3>
 template<>
 struct peripheral_t<STM32G473xx, SPI4>
 {
+    static constexpr periph_t P = SPI4;
     using T = stm32g471xx_spi4_t;
     static T& V;
 };
@@ -315,6 +335,7 @@ struct peripheral_t<STM32G473xx, SPI4>
 template<>
 struct peripheral_t<STM32G474xx, SPI2>
 {
+    static constexpr periph_t P = SPI2;
     using T = stm32g471xx_spi4_t;
     static T& V;
 };
@@ -322,6 +343,7 @@ struct peripheral_t<STM32G474xx, SPI2>
 template<>
 struct peripheral_t<STM32G474xx, SPI3>
 {
+    static constexpr periph_t P = SPI3;
     using T = stm32g471xx_spi4_t;
     static T& V;
 };
@@ -329,6 +351,7 @@ struct peripheral_t<STM32G474xx, SPI3>
 template<>
 struct peripheral_t<STM32G474xx, SPI4>
 {
+    static constexpr periph_t P = SPI4;
     using T = stm32g471xx_spi4_t;
     static T& V;
 };
@@ -336,6 +359,7 @@ struct peripheral_t<STM32G474xx, SPI4>
 template<>
 struct peripheral_t<STM32G483xx, SPI2>
 {
+    static constexpr periph_t P = SPI2;
     using T = stm32g471xx_spi4_t;
     static T& V;
 };
@@ -343,6 +367,7 @@ struct peripheral_t<STM32G483xx, SPI2>
 template<>
 struct peripheral_t<STM32G483xx, SPI3>
 {
+    static constexpr periph_t P = SPI3;
     using T = stm32g471xx_spi4_t;
     static T& V;
 };
@@ -350,6 +375,7 @@ struct peripheral_t<STM32G483xx, SPI3>
 template<>
 struct peripheral_t<STM32G483xx, SPI4>
 {
+    static constexpr periph_t P = SPI4;
     using T = stm32g471xx_spi4_t;
     static T& V;
 };
@@ -357,6 +383,7 @@ struct peripheral_t<STM32G483xx, SPI4>
 template<>
 struct peripheral_t<STM32G484xx, SPI2>
 {
+    static constexpr periph_t P = SPI2;
     using T = stm32g471xx_spi4_t;
     static T& V;
 };
@@ -364,6 +391,7 @@ struct peripheral_t<STM32G484xx, SPI2>
 template<>
 struct peripheral_t<STM32G484xx, SPI3>
 {
+    static constexpr periph_t P = SPI3;
     using T = stm32g471xx_spi4_t;
     static T& V;
 };
@@ -371,6 +399,7 @@ struct peripheral_t<STM32G484xx, SPI3>
 template<>
 struct peripheral_t<STM32G484xx, SPI4>
 {
+    static constexpr periph_t P = SPI4;
     using T = stm32g471xx_spi4_t;
     static T& V;
 };

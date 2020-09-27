@@ -20,6 +20,7 @@ struct stm32f767_dbgmcu_t
 template<>
 struct peripheral_t<STM32F767, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32f767_dbgmcu_t;
     static T& V;
 };
@@ -27,6 +28,7 @@ struct peripheral_t<STM32F767, DBGMCU>
 template<>
 struct peripheral_t<STM32F777, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32f767_dbgmcu_t;
     static T& V;
 };

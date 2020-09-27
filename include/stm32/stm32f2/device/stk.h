@@ -34,6 +34,7 @@ struct stm32f215_stk_t
 template<>
 struct peripheral_t<STM32F215, STK>
 {
+    static constexpr periph_t P = STK;
     using T = stm32f215_stk_t;
     static T& V;
 };
@@ -41,6 +42,7 @@ struct peripheral_t<STM32F215, STK>
 template<>
 struct peripheral_t<STM32F217, STK>
 {
+    static constexpr periph_t P = STK;
     using T = stm32f215_stk_t;
     static T& V;
 };

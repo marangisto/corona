@@ -203,6 +203,7 @@ struct stm32f373_flash_t
 template<>
 struct peripheral_t<STM32F301, FLASH>
 {
+    static constexpr periph_t P = FLASH;
     using T = stm32f301_flash_t;
     static T& V;
 };
@@ -210,6 +211,7 @@ struct peripheral_t<STM32F301, FLASH>
 template<>
 struct peripheral_t<STM32F302, FLASH>
 {
+    static constexpr periph_t P = FLASH;
     using T = stm32f302_flash_t;
     static T& V;
 };
@@ -217,6 +219,7 @@ struct peripheral_t<STM32F302, FLASH>
 template<>
 struct peripheral_t<STM32F303, FLASH>
 {
+    static constexpr periph_t P = FLASH;
     using T = stm32f302_flash_t;
     static T& V;
 };
@@ -224,6 +227,7 @@ struct peripheral_t<STM32F303, FLASH>
 template<>
 struct peripheral_t<STM32F3x4, FLASH>
 {
+    static constexpr periph_t P = FLASH;
     using T = stm32f302_flash_t;
     static T& V;
 };
@@ -231,6 +235,7 @@ struct peripheral_t<STM32F3x4, FLASH>
 template<>
 struct peripheral_t<STM32F373, FLASH>
 {
+    static constexpr periph_t P = FLASH;
     using T = stm32f373_flash_t;
     static T& V;
 };
@@ -238,6 +243,7 @@ struct peripheral_t<STM32F373, FLASH>
 template<>
 struct peripheral_t<STM32F3x8, FLASH>
 {
+    static constexpr periph_t P = FLASH;
     using T = stm32f373_flash_t;
     static T& V;
 };

@@ -58,6 +58,7 @@ struct stm32f3x4_adc_common_t
 template<>
 struct peripheral_t<STM32F3x4, ADC_COMMON>
 {
+    static constexpr periph_t P = ADC_COMMON;
     using T = stm32f3x4_adc_common_t;
     static T& V;
 };

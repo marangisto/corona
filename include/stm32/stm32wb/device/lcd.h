@@ -347,6 +347,7 @@ struct stm32wb55_cm4_lcd_t
 template<>
 struct peripheral_t<STM32WB55_CM4, LCD>
 {
+    static constexpr periph_t P = LCD;
     using T = stm32wb55_cm4_lcd_t;
     static T& V;
 };

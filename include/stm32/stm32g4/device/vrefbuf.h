@@ -26,6 +26,7 @@ struct stm32g431xx_vrefbuf_t
 template<>
 struct peripheral_t<STM32G431xx, VREFBUF>
 {
+    static constexpr periph_t P = VREFBUF;
     using T = stm32g431xx_vrefbuf_t;
     static T& V;
 };
@@ -33,6 +34,7 @@ struct peripheral_t<STM32G431xx, VREFBUF>
 template<>
 struct peripheral_t<STM32G441xx, VREFBUF>
 {
+    static constexpr periph_t P = VREFBUF;
     using T = stm32g431xx_vrefbuf_t;
     static T& V;
 };
@@ -40,6 +42,7 @@ struct peripheral_t<STM32G441xx, VREFBUF>
 template<>
 struct peripheral_t<STM32G471xx, VREFBUF>
 {
+    static constexpr periph_t P = VREFBUF;
     using T = stm32g431xx_vrefbuf_t;
     static T& V;
 };
@@ -47,6 +50,7 @@ struct peripheral_t<STM32G471xx, VREFBUF>
 template<>
 struct peripheral_t<STM32G473xx, VREFBUF>
 {
+    static constexpr periph_t P = VREFBUF;
     using T = stm32g431xx_vrefbuf_t;
     static T& V;
 };
@@ -54,6 +58,7 @@ struct peripheral_t<STM32G473xx, VREFBUF>
 template<>
 struct peripheral_t<STM32G474xx, VREFBUF>
 {
+    static constexpr periph_t P = VREFBUF;
     using T = stm32g431xx_vrefbuf_t;
     static T& V;
 };
@@ -61,6 +66,7 @@ struct peripheral_t<STM32G474xx, VREFBUF>
 template<>
 struct peripheral_t<STM32G483xx, VREFBUF>
 {
+    static constexpr periph_t P = VREFBUF;
     using T = stm32g431xx_vrefbuf_t;
     static T& V;
 };
@@ -68,6 +74,7 @@ struct peripheral_t<STM32G483xx, VREFBUF>
 template<>
 struct peripheral_t<STM32G484xx, VREFBUF>
 {
+    static constexpr periph_t P = VREFBUF;
     using T = stm32g431xx_vrefbuf_t;
     static T& V;
 };

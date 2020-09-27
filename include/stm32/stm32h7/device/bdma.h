@@ -1233,6 +1233,7 @@ struct stm32h7b0x_bdma2_t
 template<>
 struct peripheral_t<STM32H742x, BDMA>
 {
+    static constexpr periph_t P = BDMA;
     using T = stm32h742x_bdma_t;
     static T& V;
 };
@@ -1240,6 +1241,7 @@ struct peripheral_t<STM32H742x, BDMA>
 template<>
 struct peripheral_t<STM32H743, BDMA>
 {
+    static constexpr periph_t P = BDMA;
     using T = stm32h742x_bdma_t;
     static T& V;
 };
@@ -1247,6 +1249,7 @@ struct peripheral_t<STM32H743, BDMA>
 template<>
 struct peripheral_t<STM32H745_CM4, BDMA>
 {
+    static constexpr periph_t P = BDMA;
     using T = stm32h742x_bdma_t;
     static T& V;
 };
@@ -1254,6 +1257,7 @@ struct peripheral_t<STM32H745_CM4, BDMA>
 template<>
 struct peripheral_t<STM32H745_CM7, BDMA>
 {
+    static constexpr periph_t P = BDMA;
     using T = stm32h742x_bdma_t;
     static T& V;
 };
@@ -1261,6 +1265,7 @@ struct peripheral_t<STM32H745_CM7, BDMA>
 template<>
 struct peripheral_t<STM32H747_CM4, BDMA>
 {
+    static constexpr periph_t P = BDMA;
     using T = stm32h742x_bdma_t;
     static T& V;
 };
@@ -1268,6 +1273,7 @@ struct peripheral_t<STM32H747_CM4, BDMA>
 template<>
 struct peripheral_t<STM32H747_CM7, BDMA>
 {
+    static constexpr periph_t P = BDMA;
     using T = stm32h742x_bdma_t;
     static T& V;
 };
@@ -1275,6 +1281,7 @@ struct peripheral_t<STM32H747_CM7, BDMA>
 template<>
 struct peripheral_t<STM32H753, BDMA>
 {
+    static constexpr periph_t P = BDMA;
     using T = stm32h742x_bdma_t;
     static T& V;
 };
@@ -1282,6 +1289,7 @@ struct peripheral_t<STM32H753, BDMA>
 template<>
 struct peripheral_t<STM32H755_CM4, BDMA>
 {
+    static constexpr periph_t P = BDMA;
     using T = stm32h742x_bdma_t;
     static T& V;
 };
@@ -1289,6 +1297,7 @@ struct peripheral_t<STM32H755_CM4, BDMA>
 template<>
 struct peripheral_t<STM32H755_CM7, BDMA>
 {
+    static constexpr periph_t P = BDMA;
     using T = stm32h742x_bdma_t;
     static T& V;
 };
@@ -1296,6 +1305,7 @@ struct peripheral_t<STM32H755_CM7, BDMA>
 template<>
 struct peripheral_t<STM32H757_CM4, BDMA>
 {
+    static constexpr periph_t P = BDMA;
     using T = stm32h742x_bdma_t;
     static T& V;
 };
@@ -1303,6 +1313,7 @@ struct peripheral_t<STM32H757_CM4, BDMA>
 template<>
 struct peripheral_t<STM32H757_CM7, BDMA>
 {
+    static constexpr periph_t P = BDMA;
     using T = stm32h742x_bdma_t;
     static T& V;
 };
@@ -1310,6 +1321,7 @@ struct peripheral_t<STM32H757_CM7, BDMA>
 template<>
 struct peripheral_t<STM32H750x, BDMA>
 {
+    static constexpr periph_t P = BDMA;
     using T = stm32h750x_bdma_t;
     static T& V;
 };
@@ -1317,6 +1329,7 @@ struct peripheral_t<STM32H750x, BDMA>
 template<>
 struct peripheral_t<STM32H7A3x, BDMA1>
 {
+    static constexpr periph_t P = BDMA1;
     using T = stm32h7a3x_bdma1_t;
     static T& V;
 };
@@ -1324,6 +1337,7 @@ struct peripheral_t<STM32H7A3x, BDMA1>
 template<>
 struct peripheral_t<STM32H7A3x, BDMA2>
 {
+    static constexpr periph_t P = BDMA2;
     using T = stm32h7a3x_bdma1_t;
     static T& V;
 };
@@ -1331,6 +1345,7 @@ struct peripheral_t<STM32H7A3x, BDMA2>
 template<>
 struct peripheral_t<STM32H7B0x, BDMA1>
 {
+    static constexpr periph_t P = BDMA1;
     using T = stm32h7b0x_bdma2_t;
     static T& V;
 };
@@ -1338,6 +1353,7 @@ struct peripheral_t<STM32H7B0x, BDMA1>
 template<>
 struct peripheral_t<STM32H7B0x, BDMA2>
 {
+    static constexpr periph_t P = BDMA2;
     using T = stm32h7b0x_bdma2_t;
     static T& V;
 };
@@ -1345,6 +1361,7 @@ struct peripheral_t<STM32H7B0x, BDMA2>
 template<>
 struct peripheral_t<STM32H7B3x, BDMA1>
 {
+    static constexpr periph_t P = BDMA1;
     using T = stm32h7b0x_bdma2_t;
     static T& V;
 };
@@ -1352,6 +1369,7 @@ struct peripheral_t<STM32H7B3x, BDMA1>
 template<>
 struct peripheral_t<STM32H7B3x, BDMA2>
 {
+    static constexpr periph_t P = BDMA2;
     using T = stm32h7b0x_bdma2_t;
     static T& V;
 };

@@ -171,6 +171,7 @@ struct stm32f215_exti_t
 template<>
 struct peripheral_t<STM32F215, EXTI>
 {
+    static constexpr periph_t P = EXTI;
     using T = stm32f215_exti_t;
     static T& V;
 };
@@ -178,6 +179,7 @@ struct peripheral_t<STM32F215, EXTI>
 template<>
 struct peripheral_t<STM32F217, EXTI>
 {
+    static constexpr periph_t P = EXTI;
     using T = stm32f215_exti_t;
     static T& V;
 };

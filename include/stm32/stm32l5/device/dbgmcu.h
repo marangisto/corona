@@ -58,6 +58,7 @@ struct stm32l552_dbgmcu_t
 template<>
 struct peripheral_t<STM32L552, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32l552_dbgmcu_t;
     static T& V;
 };
@@ -65,6 +66,7 @@ struct peripheral_t<STM32L552, DBGMCU>
 template<>
 struct peripheral_t<STM32L562, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32l552_dbgmcu_t;
     static T& V;
 };

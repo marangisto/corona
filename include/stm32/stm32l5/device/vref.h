@@ -26,6 +26,7 @@ struct stm32l552_vrefbuf_t
 template<>
 struct peripheral_t<STM32L552, SEC_VREFBUF>
 {
+    static constexpr periph_t P = SEC_VREFBUF;
     using T = stm32l552_vrefbuf_t;
     static T& V;
 };
@@ -33,6 +34,7 @@ struct peripheral_t<STM32L552, SEC_VREFBUF>
 template<>
 struct peripheral_t<STM32L552, VREFBUF>
 {
+    static constexpr periph_t P = VREFBUF;
     using T = stm32l552_vrefbuf_t;
     static T& V;
 };
@@ -40,6 +42,7 @@ struct peripheral_t<STM32L552, VREFBUF>
 template<>
 struct peripheral_t<STM32L562, SEC_VREFBUF>
 {
+    static constexpr periph_t P = SEC_VREFBUF;
     using T = stm32l552_vrefbuf_t;
     static T& V;
 };
@@ -47,6 +50,7 @@ struct peripheral_t<STM32L562, SEC_VREFBUF>
 template<>
 struct peripheral_t<STM32L562, VREFBUF>
 {
+    static constexpr periph_t P = VREFBUF;
     using T = stm32l552_vrefbuf_t;
     static T& V;
 };

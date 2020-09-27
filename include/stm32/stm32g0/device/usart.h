@@ -177,6 +177,7 @@ struct stm32g030_usart1_t
 template<>
 struct peripheral_t<STM32G030, USART1>
 {
+    static constexpr periph_t P = USART1;
     using T = stm32g030_usart1_t;
     static T& V;
 };
@@ -184,6 +185,7 @@ struct peripheral_t<STM32G030, USART1>
 template<>
 struct peripheral_t<STM32G030, USART2>
 {
+    static constexpr periph_t P = USART2;
     using T = stm32g030_usart1_t;
     static T& V;
 };
@@ -191,6 +193,7 @@ struct peripheral_t<STM32G030, USART2>
 template<>
 struct peripheral_t<STM32G031, USART1>
 {
+    static constexpr periph_t P = USART1;
     using T = stm32g030_usart1_t;
     static T& V;
 };
@@ -198,6 +201,7 @@ struct peripheral_t<STM32G031, USART1>
 template<>
 struct peripheral_t<STM32G031, USART2>
 {
+    static constexpr periph_t P = USART2;
     using T = stm32g030_usart1_t;
     static T& V;
 };
@@ -205,6 +209,7 @@ struct peripheral_t<STM32G031, USART2>
 template<>
 struct peripheral_t<STM32G041, USART1>
 {
+    static constexpr periph_t P = USART1;
     using T = stm32g030_usart1_t;
     static T& V;
 };
@@ -212,6 +217,7 @@ struct peripheral_t<STM32G041, USART1>
 template<>
 struct peripheral_t<STM32G041, USART2>
 {
+    static constexpr periph_t P = USART2;
     using T = stm32g030_usart1_t;
     static T& V;
 };
@@ -219,6 +225,7 @@ struct peripheral_t<STM32G041, USART2>
 template<>
 struct peripheral_t<STM32G070, USART1>
 {
+    static constexpr periph_t P = USART1;
     using T = stm32g030_usart1_t;
     static T& V;
 };
@@ -226,6 +233,7 @@ struct peripheral_t<STM32G070, USART1>
 template<>
 struct peripheral_t<STM32G070, USART2>
 {
+    static constexpr periph_t P = USART2;
     using T = stm32g030_usart1_t;
     static T& V;
 };
@@ -233,6 +241,7 @@ struct peripheral_t<STM32G070, USART2>
 template<>
 struct peripheral_t<STM32G070, USART3>
 {
+    static constexpr periph_t P = USART3;
     using T = stm32g030_usart1_t;
     static T& V;
 };
@@ -240,6 +249,7 @@ struct peripheral_t<STM32G070, USART3>
 template<>
 struct peripheral_t<STM32G070, USART4>
 {
+    static constexpr periph_t P = USART4;
     using T = stm32g030_usart1_t;
     static T& V;
 };
@@ -247,6 +257,7 @@ struct peripheral_t<STM32G070, USART4>
 template<>
 struct peripheral_t<STM32G071, USART1>
 {
+    static constexpr periph_t P = USART1;
     using T = stm32g030_usart1_t;
     static T& V;
 };
@@ -254,6 +265,7 @@ struct peripheral_t<STM32G071, USART1>
 template<>
 struct peripheral_t<STM32G071, USART2>
 {
+    static constexpr periph_t P = USART2;
     using T = stm32g030_usart1_t;
     static T& V;
 };
@@ -261,6 +273,7 @@ struct peripheral_t<STM32G071, USART2>
 template<>
 struct peripheral_t<STM32G071, USART3>
 {
+    static constexpr periph_t P = USART3;
     using T = stm32g030_usart1_t;
     static T& V;
 };
@@ -268,6 +281,7 @@ struct peripheral_t<STM32G071, USART3>
 template<>
 struct peripheral_t<STM32G071, USART4>
 {
+    static constexpr periph_t P = USART4;
     using T = stm32g030_usart1_t;
     static T& V;
 };
@@ -275,6 +289,7 @@ struct peripheral_t<STM32G071, USART4>
 template<>
 struct peripheral_t<STM32G081, USART1>
 {
+    static constexpr periph_t P = USART1;
     using T = stm32g030_usart1_t;
     static T& V;
 };
@@ -282,6 +297,7 @@ struct peripheral_t<STM32G081, USART1>
 template<>
 struct peripheral_t<STM32G081, USART2>
 {
+    static constexpr periph_t P = USART2;
     using T = stm32g030_usart1_t;
     static T& V;
 };
@@ -289,6 +305,7 @@ struct peripheral_t<STM32G081, USART2>
 template<>
 struct peripheral_t<STM32G081, USART3>
 {
+    static constexpr periph_t P = USART3;
     using T = stm32g030_usart1_t;
     static T& V;
 };
@@ -296,6 +313,7 @@ struct peripheral_t<STM32G081, USART3>
 template<>
 struct peripheral_t<STM32G081, USART4>
 {
+    static constexpr periph_t P = USART4;
     using T = stm32g030_usart1_t;
     static T& V;
 };

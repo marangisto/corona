@@ -61,6 +61,7 @@ struct stm32f302_pwr_t
 template<>
 struct peripheral_t<STM32F301, PWR>
 {
+    static constexpr periph_t P = PWR;
     using T = stm32f301_pwr_t;
     static T& V;
 };
@@ -68,6 +69,7 @@ struct peripheral_t<STM32F301, PWR>
 template<>
 struct peripheral_t<STM32F373, PWR>
 {
+    static constexpr periph_t P = PWR;
     using T = stm32f301_pwr_t;
     static T& V;
 };
@@ -75,6 +77,7 @@ struct peripheral_t<STM32F373, PWR>
 template<>
 struct peripheral_t<STM32F3x8, PWR>
 {
+    static constexpr periph_t P = PWR;
     using T = stm32f301_pwr_t;
     static T& V;
 };
@@ -82,6 +85,7 @@ struct peripheral_t<STM32F3x8, PWR>
 template<>
 struct peripheral_t<STM32F302, PWR>
 {
+    static constexpr periph_t P = PWR;
     using T = stm32f302_pwr_t;
     static T& V;
 };
@@ -89,6 +93,7 @@ struct peripheral_t<STM32F302, PWR>
 template<>
 struct peripheral_t<STM32F303, PWR>
 {
+    static constexpr periph_t P = PWR;
     using T = stm32f302_pwr_t;
     static T& V;
 };
@@ -96,6 +101,7 @@ struct peripheral_t<STM32F303, PWR>
 template<>
 struct peripheral_t<STM32F3x4, PWR>
 {
+    static constexpr periph_t P = PWR;
     using T = stm32f302_pwr_t;
     static T& V;
 };

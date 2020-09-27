@@ -47,6 +47,7 @@ struct stm32l412_firewall_t
 template<>
 struct peripheral_t<STM32L412, FIREWALL>
 {
+    static constexpr periph_t P = FIREWALL;
     using T = stm32l412_firewall_t;
     static T& V;
 };
@@ -54,6 +55,7 @@ struct peripheral_t<STM32L412, FIREWALL>
 template<>
 struct peripheral_t<STM32L476, FIREWALL>
 {
+    static constexpr periph_t P = FIREWALL;
     using T = stm32l412_firewall_t;
     static T& V;
 };
@@ -61,6 +63,7 @@ struct peripheral_t<STM32L476, FIREWALL>
 template<>
 struct peripheral_t<STM32L496, FIREWALL>
 {
+    static constexpr periph_t P = FIREWALL;
     using T = stm32l412_firewall_t;
     static T& V;
 };
@@ -68,6 +71,7 @@ struct peripheral_t<STM32L496, FIREWALL>
 template<>
 struct peripheral_t<STM32L4x1, FIREWALL>
 {
+    static constexpr periph_t P = FIREWALL;
     using T = stm32l412_firewall_t;
     static T& V;
 };
@@ -75,6 +79,7 @@ struct peripheral_t<STM32L4x1, FIREWALL>
 template<>
 struct peripheral_t<STM32L4x2, FIREWALL>
 {
+    static constexpr periph_t P = FIREWALL;
     using T = stm32l412_firewall_t;
     static T& V;
 };
@@ -82,6 +87,7 @@ struct peripheral_t<STM32L4x2, FIREWALL>
 template<>
 struct peripheral_t<STM32L4x3, FIREWALL>
 {
+    static constexpr periph_t P = FIREWALL;
     using T = stm32l412_firewall_t;
     static T& V;
 };
@@ -89,6 +95,7 @@ struct peripheral_t<STM32L4x3, FIREWALL>
 template<>
 struct peripheral_t<STM32L4x5, FIREWALL>
 {
+    static constexpr periph_t P = FIREWALL;
     using T = stm32l412_firewall_t;
     static T& V;
 };
@@ -96,6 +103,7 @@ struct peripheral_t<STM32L4x5, FIREWALL>
 template<>
 struct peripheral_t<STM32L4x6, FIREWALL>
 {
+    static constexpr periph_t P = FIREWALL;
     using T = stm32l412_firewall_t;
     static T& V;
 };

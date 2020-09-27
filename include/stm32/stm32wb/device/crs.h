@@ -53,6 +53,7 @@ struct stm32wb30_cm4_crs_t
 template<>
 struct peripheral_t<STM32WB30_CM4, CRS>
 {
+    static constexpr periph_t P = CRS;
     using T = stm32wb30_cm4_crs_t;
     static T& V;
 };
@@ -60,6 +61,7 @@ struct peripheral_t<STM32WB30_CM4, CRS>
 template<>
 struct peripheral_t<STM32WB35_CM4, CRS>
 {
+    static constexpr periph_t P = CRS;
     using T = stm32wb30_cm4_crs_t;
     static T& V;
 };
@@ -67,6 +69,7 @@ struct peripheral_t<STM32WB35_CM4, CRS>
 template<>
 struct peripheral_t<STM32WB55_CM4, CRS>
 {
+    static constexpr periph_t P = CRS;
     using T = stm32wb30_cm4_crs_t;
     static T& V;
 };

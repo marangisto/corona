@@ -3227,6 +3227,7 @@ struct stm32h7a3x_mdma_t
 template<>
 struct peripheral_t<STM32H742x, MDMA>
 {
+    static constexpr periph_t P = MDMA;
     using T = stm32h742x_mdma_t;
     static T& V;
 };
@@ -3234,6 +3235,7 @@ struct peripheral_t<STM32H742x, MDMA>
 template<>
 struct peripheral_t<STM32H743, MDMA>
 {
+    static constexpr periph_t P = MDMA;
     using T = stm32h742x_mdma_t;
     static T& V;
 };
@@ -3241,6 +3243,7 @@ struct peripheral_t<STM32H743, MDMA>
 template<>
 struct peripheral_t<STM32H745_CM4, MDMA>
 {
+    static constexpr periph_t P = MDMA;
     using T = stm32h742x_mdma_t;
     static T& V;
 };
@@ -3248,6 +3251,7 @@ struct peripheral_t<STM32H745_CM4, MDMA>
 template<>
 struct peripheral_t<STM32H745_CM7, MDMA>
 {
+    static constexpr periph_t P = MDMA;
     using T = stm32h742x_mdma_t;
     static T& V;
 };
@@ -3255,6 +3259,7 @@ struct peripheral_t<STM32H745_CM7, MDMA>
 template<>
 struct peripheral_t<STM32H747_CM4, MDMA>
 {
+    static constexpr periph_t P = MDMA;
     using T = stm32h742x_mdma_t;
     static T& V;
 };
@@ -3262,6 +3267,7 @@ struct peripheral_t<STM32H747_CM4, MDMA>
 template<>
 struct peripheral_t<STM32H747_CM7, MDMA>
 {
+    static constexpr periph_t P = MDMA;
     using T = stm32h742x_mdma_t;
     static T& V;
 };
@@ -3269,6 +3275,7 @@ struct peripheral_t<STM32H747_CM7, MDMA>
 template<>
 struct peripheral_t<STM32H750x, MDMA>
 {
+    static constexpr periph_t P = MDMA;
     using T = stm32h742x_mdma_t;
     static T& V;
 };
@@ -3276,6 +3283,7 @@ struct peripheral_t<STM32H750x, MDMA>
 template<>
 struct peripheral_t<STM32H753, MDMA>
 {
+    static constexpr periph_t P = MDMA;
     using T = stm32h742x_mdma_t;
     static T& V;
 };
@@ -3283,6 +3291,7 @@ struct peripheral_t<STM32H753, MDMA>
 template<>
 struct peripheral_t<STM32H755_CM4, MDMA>
 {
+    static constexpr periph_t P = MDMA;
     using T = stm32h742x_mdma_t;
     static T& V;
 };
@@ -3290,6 +3299,7 @@ struct peripheral_t<STM32H755_CM4, MDMA>
 template<>
 struct peripheral_t<STM32H755_CM7, MDMA>
 {
+    static constexpr periph_t P = MDMA;
     using T = stm32h742x_mdma_t;
     static T& V;
 };
@@ -3297,6 +3307,7 @@ struct peripheral_t<STM32H755_CM7, MDMA>
 template<>
 struct peripheral_t<STM32H757_CM4, MDMA>
 {
+    static constexpr periph_t P = MDMA;
     using T = stm32h742x_mdma_t;
     static T& V;
 };
@@ -3304,6 +3315,7 @@ struct peripheral_t<STM32H757_CM4, MDMA>
 template<>
 struct peripheral_t<STM32H757_CM7, MDMA>
 {
+    static constexpr periph_t P = MDMA;
     using T = stm32h742x_mdma_t;
     static T& V;
 };
@@ -3311,6 +3323,7 @@ struct peripheral_t<STM32H757_CM7, MDMA>
 template<>
 struct peripheral_t<STM32H7B0x, MDMA>
 {
+    static constexpr periph_t P = MDMA;
     using T = stm32h742x_mdma_t;
     static T& V;
 };
@@ -3318,6 +3331,7 @@ struct peripheral_t<STM32H7B0x, MDMA>
 template<>
 struct peripheral_t<STM32H7B3x, MDMA>
 {
+    static constexpr periph_t P = MDMA;
     using T = stm32h742x_mdma_t;
     static T& V;
 };
@@ -3325,6 +3339,7 @@ struct peripheral_t<STM32H7B3x, MDMA>
 template<>
 struct peripheral_t<STM32H7A3x, MDMA>
 {
+    static constexpr periph_t P = MDMA;
     using T = stm32h7a3x_mdma_t;
     static T& V;
 };

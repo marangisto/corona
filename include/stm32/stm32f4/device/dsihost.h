@@ -556,6 +556,7 @@ struct stm32f469_dsihost_t
 template<>
 struct peripheral_t<STM32F469, DSIHOST>
 {
+    static constexpr periph_t P = DSIHOST;
     using T = stm32f469_dsihost_t;
     static T& V;
 };

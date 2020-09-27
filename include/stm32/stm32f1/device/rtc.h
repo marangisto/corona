@@ -62,6 +62,7 @@ struct stm32f100_rtc_t
 template<>
 struct peripheral_t<STM32F100, RTC>
 {
+    static constexpr periph_t P = RTC;
     using T = stm32f100_rtc_t;
     static T& V;
 };
@@ -69,6 +70,7 @@ struct peripheral_t<STM32F100, RTC>
 template<>
 struct peripheral_t<STM32F101, RTC>
 {
+    static constexpr periph_t P = RTC;
     using T = stm32f100_rtc_t;
     static T& V;
 };
@@ -76,6 +78,7 @@ struct peripheral_t<STM32F101, RTC>
 template<>
 struct peripheral_t<STM32F102, RTC>
 {
+    static constexpr periph_t P = RTC;
     using T = stm32f100_rtc_t;
     static T& V;
 };
@@ -83,6 +86,7 @@ struct peripheral_t<STM32F102, RTC>
 template<>
 struct peripheral_t<STM32F103, RTC>
 {
+    static constexpr periph_t P = RTC;
     using T = stm32f100_rtc_t;
     static T& V;
 };
@@ -90,6 +94,7 @@ struct peripheral_t<STM32F103, RTC>
 template<>
 struct peripheral_t<STM32F107, RTC>
 {
+    static constexpr periph_t P = RTC;
     using T = stm32f100_rtc_t;
     static T& V;
 };

@@ -273,6 +273,7 @@ struct stm32f215_hash_t
 template<>
 struct peripheral_t<STM32F215, HASH>
 {
+    static constexpr periph_t P = HASH;
     using T = stm32f215_hash_t;
     static T& V;
 };
@@ -280,6 +281,7 @@ struct peripheral_t<STM32F215, HASH>
 template<>
 struct peripheral_t<STM32F217, HASH>
 {
+    static constexpr periph_t P = HASH;
     using T = stm32f215_hash_t;
     static T& V;
 };

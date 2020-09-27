@@ -36,6 +36,7 @@ struct stm32wb50_cm4_stk_t
 template<>
 struct peripheral_t<STM32WB50_CM4, STK>
 {
+    static constexpr periph_t P = STK;
     using T = stm32wb50_cm4_stk_t;
     static T& V;
 };
@@ -43,6 +44,7 @@ struct peripheral_t<STM32WB50_CM4, STK>
 template<>
 struct peripheral_t<STM32WB55_CM4, STK>
 {
+    static constexpr periph_t P = STK;
     using T = stm32wb50_cm4_stk_t;
     static T& V;
 };

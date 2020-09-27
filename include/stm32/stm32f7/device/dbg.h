@@ -55,6 +55,7 @@ struct stm32f722_dbg_t
 template<>
 struct peripheral_t<STM32F722, DBG>
 {
+    static constexpr periph_t P = DBG;
     using T = stm32f722_dbg_t;
     static T& V;
 };
@@ -62,6 +63,7 @@ struct peripheral_t<STM32F722, DBG>
 template<>
 struct peripheral_t<STM32F723, DBG>
 {
+    static constexpr periph_t P = DBG;
     using T = stm32f722_dbg_t;
     static T& V;
 };
@@ -69,6 +71,7 @@ struct peripheral_t<STM32F723, DBG>
 template<>
 struct peripheral_t<STM32F730, DBG>
 {
+    static constexpr periph_t P = DBG;
     using T = stm32f722_dbg_t;
     static T& V;
 };
@@ -76,6 +79,7 @@ struct peripheral_t<STM32F730, DBG>
 template<>
 struct peripheral_t<STM32F732, DBG>
 {
+    static constexpr periph_t P = DBG;
     using T = stm32f722_dbg_t;
     static T& V;
 };
@@ -83,6 +87,7 @@ struct peripheral_t<STM32F732, DBG>
 template<>
 struct peripheral_t<STM32F733, DBG>
 {
+    static constexpr periph_t P = DBG;
     using T = stm32f722_dbg_t;
     static T& V;
 };
@@ -90,6 +95,7 @@ struct peripheral_t<STM32F733, DBG>
 template<>
 struct peripheral_t<STM32F745, DBG>
 {
+    static constexpr periph_t P = DBG;
     using T = stm32f722_dbg_t;
     static T& V;
 };
@@ -97,6 +103,7 @@ struct peripheral_t<STM32F745, DBG>
 template<>
 struct peripheral_t<STM32F746, DBG>
 {
+    static constexpr periph_t P = DBG;
     using T = stm32f722_dbg_t;
     static T& V;
 };
@@ -104,6 +111,7 @@ struct peripheral_t<STM32F746, DBG>
 template<>
 struct peripheral_t<STM32F750x, DBG>
 {
+    static constexpr periph_t P = DBG;
     using T = stm32f722_dbg_t;
     static T& V;
 };
@@ -111,6 +119,7 @@ struct peripheral_t<STM32F750x, DBG>
 template<>
 struct peripheral_t<STM32F756, DBG>
 {
+    static constexpr periph_t P = DBG;
     using T = stm32f722_dbg_t;
     static T& V;
 };
@@ -118,6 +127,7 @@ struct peripheral_t<STM32F756, DBG>
 template<>
 struct peripheral_t<STM32F765, DBG>
 {
+    static constexpr periph_t P = DBG;
     using T = stm32f722_dbg_t;
     static T& V;
 };

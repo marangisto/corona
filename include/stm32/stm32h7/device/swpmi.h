@@ -88,6 +88,7 @@ struct stm32h742x_swpmi_t
 template<>
 struct peripheral_t<STM32H742x, SWPMI>
 {
+    static constexpr periph_t P = SWPMI;
     using T = stm32h742x_swpmi_t;
     static T& V;
 };
@@ -95,6 +96,7 @@ struct peripheral_t<STM32H742x, SWPMI>
 template<>
 struct peripheral_t<STM32H743, SWPMI>
 {
+    static constexpr periph_t P = SWPMI;
     using T = stm32h742x_swpmi_t;
     static T& V;
 };
@@ -102,6 +104,7 @@ struct peripheral_t<STM32H743, SWPMI>
 template<>
 struct peripheral_t<STM32H745_CM4, SWPMI>
 {
+    static constexpr periph_t P = SWPMI;
     using T = stm32h742x_swpmi_t;
     static T& V;
 };
@@ -109,6 +112,7 @@ struct peripheral_t<STM32H745_CM4, SWPMI>
 template<>
 struct peripheral_t<STM32H745_CM7, SWPMI>
 {
+    static constexpr periph_t P = SWPMI;
     using T = stm32h742x_swpmi_t;
     static T& V;
 };
@@ -116,6 +120,7 @@ struct peripheral_t<STM32H745_CM7, SWPMI>
 template<>
 struct peripheral_t<STM32H747_CM4, SWPMI>
 {
+    static constexpr periph_t P = SWPMI;
     using T = stm32h742x_swpmi_t;
     static T& V;
 };
@@ -123,6 +128,7 @@ struct peripheral_t<STM32H747_CM4, SWPMI>
 template<>
 struct peripheral_t<STM32H747_CM7, SWPMI>
 {
+    static constexpr periph_t P = SWPMI;
     using T = stm32h742x_swpmi_t;
     static T& V;
 };
@@ -130,6 +136,7 @@ struct peripheral_t<STM32H747_CM7, SWPMI>
 template<>
 struct peripheral_t<STM32H750x, SWPMI>
 {
+    static constexpr periph_t P = SWPMI;
     using T = stm32h742x_swpmi_t;
     static T& V;
 };
@@ -137,6 +144,7 @@ struct peripheral_t<STM32H750x, SWPMI>
 template<>
 struct peripheral_t<STM32H753, SWPMI>
 {
+    static constexpr periph_t P = SWPMI;
     using T = stm32h742x_swpmi_t;
     static T& V;
 };
@@ -144,6 +152,7 @@ struct peripheral_t<STM32H753, SWPMI>
 template<>
 struct peripheral_t<STM32H755_CM4, SWPMI>
 {
+    static constexpr periph_t P = SWPMI;
     using T = stm32h742x_swpmi_t;
     static T& V;
 };
@@ -151,6 +160,7 @@ struct peripheral_t<STM32H755_CM4, SWPMI>
 template<>
 struct peripheral_t<STM32H755_CM7, SWPMI>
 {
+    static constexpr periph_t P = SWPMI;
     using T = stm32h742x_swpmi_t;
     static T& V;
 };
@@ -158,6 +168,7 @@ struct peripheral_t<STM32H755_CM7, SWPMI>
 template<>
 struct peripheral_t<STM32H757_CM4, SWPMI>
 {
+    static constexpr periph_t P = SWPMI;
     using T = stm32h742x_swpmi_t;
     static T& V;
 };
@@ -165,6 +176,7 @@ struct peripheral_t<STM32H757_CM4, SWPMI>
 template<>
 struct peripheral_t<STM32H757_CM7, SWPMI>
 {
+    static constexpr periph_t P = SWPMI;
     using T = stm32h742x_swpmi_t;
     static T& V;
 };
@@ -172,6 +184,7 @@ struct peripheral_t<STM32H757_CM7, SWPMI>
 template<>
 struct peripheral_t<STM32H7A3x, SWPMI>
 {
+    static constexpr periph_t P = SWPMI;
     using T = stm32h742x_swpmi_t;
     static T& V;
 };
@@ -179,6 +192,7 @@ struct peripheral_t<STM32H7A3x, SWPMI>
 template<>
 struct peripheral_t<STM32H7B0x, SWPMI>
 {
+    static constexpr periph_t P = SWPMI;
     using T = stm32h742x_swpmi_t;
     static T& V;
 };
@@ -186,6 +200,7 @@ struct peripheral_t<STM32H7B0x, SWPMI>
 template<>
 struct peripheral_t<STM32H7B3x, SWPMI>
 {
+    static constexpr periph_t P = SWPMI;
     using T = stm32h742x_swpmi_t;
     static T& V;
 };

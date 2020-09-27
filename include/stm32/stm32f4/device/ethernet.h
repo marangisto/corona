@@ -426,6 +426,7 @@ struct stm32f405_ethernet_ptp_t
 template<>
 struct peripheral_t<STM32F405, ETHERNET_DMA>
 {
+    static constexpr periph_t P = ETHERNET_DMA;
     using T = stm32f405_ethernet_dma_t;
     static T& V;
 };
@@ -433,6 +434,7 @@ struct peripheral_t<STM32F405, ETHERNET_DMA>
 template<>
 struct peripheral_t<STM32F407, ETHERNET_DMA>
 {
+    static constexpr periph_t P = ETHERNET_DMA;
     using T = stm32f405_ethernet_dma_t;
     static T& V;
 };
@@ -440,6 +442,7 @@ struct peripheral_t<STM32F407, ETHERNET_DMA>
 template<>
 struct peripheral_t<STM32F427, ETHERNET_DMA>
 {
+    static constexpr periph_t P = ETHERNET_DMA;
     using T = stm32f405_ethernet_dma_t;
     static T& V;
 };
@@ -447,6 +450,7 @@ struct peripheral_t<STM32F427, ETHERNET_DMA>
 template<>
 struct peripheral_t<STM32F429, ETHERNET_DMA>
 {
+    static constexpr periph_t P = ETHERNET_DMA;
     using T = stm32f405_ethernet_dma_t;
     static T& V;
 };
@@ -454,6 +458,7 @@ struct peripheral_t<STM32F429, ETHERNET_DMA>
 template<>
 struct peripheral_t<STM32F469, ETHERNET_DMA>
 {
+    static constexpr periph_t P = ETHERNET_DMA;
     using T = stm32f405_ethernet_dma_t;
     static T& V;
 };
@@ -461,6 +466,7 @@ struct peripheral_t<STM32F469, ETHERNET_DMA>
 template<>
 struct peripheral_t<STM32F405, ETHERNET_MAC>
 {
+    static constexpr periph_t P = ETHERNET_MAC;
     using T = stm32f405_ethernet_mac_t;
     static T& V;
 };
@@ -468,6 +474,7 @@ struct peripheral_t<STM32F405, ETHERNET_MAC>
 template<>
 struct peripheral_t<STM32F407, ETHERNET_MAC>
 {
+    static constexpr periph_t P = ETHERNET_MAC;
     using T = stm32f405_ethernet_mac_t;
     static T& V;
 };
@@ -475,6 +482,7 @@ struct peripheral_t<STM32F407, ETHERNET_MAC>
 template<>
 struct peripheral_t<STM32F427, ETHERNET_MAC>
 {
+    static constexpr periph_t P = ETHERNET_MAC;
     using T = stm32f405_ethernet_mac_t;
     static T& V;
 };
@@ -482,6 +490,7 @@ struct peripheral_t<STM32F427, ETHERNET_MAC>
 template<>
 struct peripheral_t<STM32F429, ETHERNET_MAC>
 {
+    static constexpr periph_t P = ETHERNET_MAC;
     using T = stm32f405_ethernet_mac_t;
     static T& V;
 };
@@ -489,6 +498,7 @@ struct peripheral_t<STM32F429, ETHERNET_MAC>
 template<>
 struct peripheral_t<STM32F469, ETHERNET_MAC>
 {
+    static constexpr periph_t P = ETHERNET_MAC;
     using T = stm32f405_ethernet_mac_t;
     static T& V;
 };
@@ -496,6 +506,7 @@ struct peripheral_t<STM32F469, ETHERNET_MAC>
 template<>
 struct peripheral_t<STM32F405, ETHERNET_MMC>
 {
+    static constexpr periph_t P = ETHERNET_MMC;
     using T = stm32f405_ethernet_mmc_t;
     static T& V;
 };
@@ -503,6 +514,7 @@ struct peripheral_t<STM32F405, ETHERNET_MMC>
 template<>
 struct peripheral_t<STM32F407, ETHERNET_MMC>
 {
+    static constexpr periph_t P = ETHERNET_MMC;
     using T = stm32f405_ethernet_mmc_t;
     static T& V;
 };
@@ -510,6 +522,7 @@ struct peripheral_t<STM32F407, ETHERNET_MMC>
 template<>
 struct peripheral_t<STM32F427, ETHERNET_MMC>
 {
+    static constexpr periph_t P = ETHERNET_MMC;
     using T = stm32f405_ethernet_mmc_t;
     static T& V;
 };
@@ -517,6 +530,7 @@ struct peripheral_t<STM32F427, ETHERNET_MMC>
 template<>
 struct peripheral_t<STM32F429, ETHERNET_MMC>
 {
+    static constexpr periph_t P = ETHERNET_MMC;
     using T = stm32f405_ethernet_mmc_t;
     static T& V;
 };
@@ -524,6 +538,7 @@ struct peripheral_t<STM32F429, ETHERNET_MMC>
 template<>
 struct peripheral_t<STM32F469, ETHERNET_MMC>
 {
+    static constexpr periph_t P = ETHERNET_MMC;
     using T = stm32f405_ethernet_mmc_t;
     static T& V;
 };
@@ -531,6 +546,7 @@ struct peripheral_t<STM32F469, ETHERNET_MMC>
 template<>
 struct peripheral_t<STM32F405, ETHERNET_PTP>
 {
+    static constexpr periph_t P = ETHERNET_PTP;
     using T = stm32f405_ethernet_ptp_t;
     static T& V;
 };
@@ -538,6 +554,7 @@ struct peripheral_t<STM32F405, ETHERNET_PTP>
 template<>
 struct peripheral_t<STM32F407, ETHERNET_PTP>
 {
+    static constexpr periph_t P = ETHERNET_PTP;
     using T = stm32f405_ethernet_ptp_t;
     static T& V;
 };
@@ -545,6 +562,7 @@ struct peripheral_t<STM32F407, ETHERNET_PTP>
 template<>
 struct peripheral_t<STM32F427, ETHERNET_PTP>
 {
+    static constexpr periph_t P = ETHERNET_PTP;
     using T = stm32f405_ethernet_ptp_t;
     static T& V;
 };
@@ -552,6 +570,7 @@ struct peripheral_t<STM32F427, ETHERNET_PTP>
 template<>
 struct peripheral_t<STM32F429, ETHERNET_PTP>
 {
+    static constexpr periph_t P = ETHERNET_PTP;
     using T = stm32f405_ethernet_ptp_t;
     static T& V;
 };
@@ -559,6 +578,7 @@ struct peripheral_t<STM32F429, ETHERNET_PTP>
 template<>
 struct peripheral_t<STM32F469, ETHERNET_PTP>
 {
+    static constexpr periph_t P = ETHERNET_PTP;
     using T = stm32f405_ethernet_ptp_t;
     static T& V;
 };

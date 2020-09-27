@@ -127,6 +127,7 @@ struct stm32g431xx_aes_t
 template<>
 struct peripheral_t<STM32G431xx, AES>
 {
+    static constexpr periph_t P = AES;
     using T = stm32g431xx_aes_t;
     static T& V;
 };
@@ -134,6 +135,7 @@ struct peripheral_t<STM32G431xx, AES>
 template<>
 struct peripheral_t<STM32G441xx, AES>
 {
+    static constexpr periph_t P = AES;
     using T = stm32g431xx_aes_t;
     static T& V;
 };
@@ -141,6 +143,7 @@ struct peripheral_t<STM32G441xx, AES>
 template<>
 struct peripheral_t<STM32G471xx, AES>
 {
+    static constexpr periph_t P = AES;
     using T = stm32g431xx_aes_t;
     static T& V;
 };
@@ -148,6 +151,7 @@ struct peripheral_t<STM32G471xx, AES>
 template<>
 struct peripheral_t<STM32G473xx, AES>
 {
+    static constexpr periph_t P = AES;
     using T = stm32g431xx_aes_t;
     static T& V;
 };
@@ -155,6 +159,7 @@ struct peripheral_t<STM32G473xx, AES>
 template<>
 struct peripheral_t<STM32G483xx, AES>
 {
+    static constexpr periph_t P = AES;
     using T = stm32g431xx_aes_t;
     static T& V;
 };
@@ -162,6 +167,7 @@ struct peripheral_t<STM32G483xx, AES>
 template<>
 struct peripheral_t<STM32G484xx, AES>
 {
+    static constexpr periph_t P = AES;
     using T = stm32g431xx_aes_t;
     static T& V;
 };
@@ -169,6 +175,7 @@ struct peripheral_t<STM32G484xx, AES>
 template<>
 struct peripheral_t<STM32GBK1CBT6, AES>
 {
+    static constexpr periph_t P = AES;
     using T = stm32g431xx_aes_t;
     static T& V;
 };

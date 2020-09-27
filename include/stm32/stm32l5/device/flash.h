@@ -238,6 +238,7 @@ struct stm32l552_flash_t
 template<>
 struct peripheral_t<STM32L552, FLASH>
 {
+    static constexpr periph_t P = FLASH;
     using T = stm32l552_flash_t;
     static T& V;
 };
@@ -245,6 +246,7 @@ struct peripheral_t<STM32L552, FLASH>
 template<>
 struct peripheral_t<STM32L552, SEC_FLASH>
 {
+    static constexpr periph_t P = SEC_FLASH;
     using T = stm32l552_flash_t;
     static T& V;
 };
@@ -252,6 +254,7 @@ struct peripheral_t<STM32L552, SEC_FLASH>
 template<>
 struct peripheral_t<STM32L562, FLASH>
 {
+    static constexpr periph_t P = FLASH;
     using T = stm32l552_flash_t;
     static T& V;
 };
@@ -259,6 +262,7 @@ struct peripheral_t<STM32L562, FLASH>
 template<>
 struct peripheral_t<STM32L562, SEC_FLASH>
 {
+    static constexpr periph_t P = SEC_FLASH;
     using T = stm32l552_flash_t;
     static T& V;
 };

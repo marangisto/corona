@@ -237,6 +237,7 @@ struct stm32f745_ltdc_t
 template<>
 struct peripheral_t<STM32F745, LTDC>
 {
+    static constexpr periph_t P = LTDC;
     using T = stm32f745_ltdc_t;
     static T& V;
 };
@@ -244,6 +245,7 @@ struct peripheral_t<STM32F745, LTDC>
 template<>
 struct peripheral_t<STM32F746, LTDC>
 {
+    static constexpr periph_t P = LTDC;
     using T = stm32f745_ltdc_t;
     static T& V;
 };
@@ -251,6 +253,7 @@ struct peripheral_t<STM32F746, LTDC>
 template<>
 struct peripheral_t<STM32F750x, LTDC>
 {
+    static constexpr periph_t P = LTDC;
     using T = stm32f745_ltdc_t;
     static T& V;
 };
@@ -258,6 +261,7 @@ struct peripheral_t<STM32F750x, LTDC>
 template<>
 struct peripheral_t<STM32F756, LTDC>
 {
+    static constexpr periph_t P = LTDC;
     using T = stm32f745_ltdc_t;
     static T& V;
 };
@@ -265,6 +269,7 @@ struct peripheral_t<STM32F756, LTDC>
 template<>
 struct peripheral_t<STM32F765, LTDC>
 {
+    static constexpr periph_t P = LTDC;
     using T = stm32f745_ltdc_t;
     static T& V;
 };
@@ -272,6 +277,7 @@ struct peripheral_t<STM32F765, LTDC>
 template<>
 struct peripheral_t<STM32F767, LTCD>
 {
+    static constexpr periph_t P = LTCD;
     using T = stm32f745_ltdc_t;
     static T& V;
 };
@@ -279,6 +285,7 @@ struct peripheral_t<STM32F767, LTCD>
 template<>
 struct peripheral_t<STM32F768, LTDC>
 {
+    static constexpr periph_t P = LTDC;
     using T = stm32f745_ltdc_t;
     static T& V;
 };
@@ -286,6 +293,7 @@ struct peripheral_t<STM32F768, LTDC>
 template<>
 struct peripheral_t<STM32F769, LTDC>
 {
+    static constexpr periph_t P = LTDC;
     using T = stm32f745_ltdc_t;
     static T& V;
 };
@@ -293,6 +301,7 @@ struct peripheral_t<STM32F769, LTDC>
 template<>
 struct peripheral_t<STM32F777, LTCD>
 {
+    static constexpr periph_t P = LTCD;
     using T = stm32f745_ltdc_t;
     static T& V;
 };
@@ -300,6 +309,7 @@ struct peripheral_t<STM32F777, LTCD>
 template<>
 struct peripheral_t<STM32F778, LTDC>
 {
+    static constexpr periph_t P = LTDC;
     using T = stm32f745_ltdc_t;
     static T& V;
 };
@@ -307,6 +317,7 @@ struct peripheral_t<STM32F778, LTDC>
 template<>
 struct peripheral_t<STM32F779, LTDC>
 {
+    static constexpr periph_t P = LTDC;
     using T = stm32f745_ltdc_t;
     static T& V;
 };

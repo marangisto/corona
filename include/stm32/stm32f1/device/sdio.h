@@ -333,6 +333,7 @@ struct stm32f102_sdio_t
 template<>
 struct peripheral_t<STM32F101, SDIO>
 {
+    static constexpr periph_t P = SDIO;
     using T = stm32f101_sdio_t;
     static T& V;
 };
@@ -340,6 +341,7 @@ struct peripheral_t<STM32F101, SDIO>
 template<>
 struct peripheral_t<STM32F103, SDIO>
 {
+    static constexpr periph_t P = SDIO;
     using T = stm32f101_sdio_t;
     static T& V;
 };
@@ -347,6 +349,7 @@ struct peripheral_t<STM32F103, SDIO>
 template<>
 struct peripheral_t<STM32F102, SDIO>
 {
+    static constexpr periph_t P = SDIO;
     using T = stm32f102_sdio_t;
     static T& V;
 };
@@ -354,6 +357,7 @@ struct peripheral_t<STM32F102, SDIO>
 template<>
 struct peripheral_t<STM32F107, SDIO>
 {
+    static constexpr periph_t P = SDIO;
     using T = stm32f102_sdio_t;
     static T& V;
 };

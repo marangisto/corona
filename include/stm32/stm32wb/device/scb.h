@@ -150,6 +150,7 @@ struct stm32wb30_cm4_scb_actrl_t
 template<>
 struct peripheral_t<STM32WB50_CM4, SCB>
 {
+    static constexpr periph_t P = SCB;
     using T = stm32wb50_cm4_scb_t;
     static T& V;
 };
@@ -157,6 +158,7 @@ struct peripheral_t<STM32WB50_CM4, SCB>
 template<>
 struct peripheral_t<STM32WB55_CM4, SCB>
 {
+    static constexpr periph_t P = SCB;
     using T = stm32wb50_cm4_scb_t;
     static T& V;
 };
@@ -164,6 +166,7 @@ struct peripheral_t<STM32WB55_CM4, SCB>
 template<>
 struct peripheral_t<STM32WB30_CM4, SCB_ACTRL>
 {
+    static constexpr periph_t P = SCB_ACTRL;
     using T = stm32wb30_cm4_scb_actrl_t;
     static T& V;
 };
@@ -171,6 +174,7 @@ struct peripheral_t<STM32WB30_CM4, SCB_ACTRL>
 template<>
 struct peripheral_t<STM32WB35_CM4, SCB_ACTRL>
 {
+    static constexpr periph_t P = SCB_ACTRL;
     using T = stm32wb30_cm4_scb_actrl_t;
     static T& V;
 };
@@ -178,6 +182,7 @@ struct peripheral_t<STM32WB35_CM4, SCB_ACTRL>
 template<>
 struct peripheral_t<STM32WB50_CM4, SCB_ACTRL>
 {
+    static constexpr periph_t P = SCB_ACTRL;
     using T = stm32wb30_cm4_scb_actrl_t;
     static T& V;
 };
@@ -185,6 +190,7 @@ struct peripheral_t<STM32WB50_CM4, SCB_ACTRL>
 template<>
 struct peripheral_t<STM32WB55_CM4, SCB_ACTRL>
 {
+    static constexpr periph_t P = SCB_ACTRL;
     using T = stm32wb30_cm4_scb_actrl_t;
     static T& V;
 };

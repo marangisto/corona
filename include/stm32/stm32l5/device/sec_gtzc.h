@@ -4661,6 +4661,7 @@ struct stm32l552_sec_gtzc_mpcbb2_t
 template<>
 struct peripheral_t<STM32L552, SEC_GTZC_MPCBB1>
 {
+    static constexpr periph_t P = SEC_GTZC_MPCBB1;
     using T = stm32l552_sec_gtzc_mpcbb1_t;
     static T& V;
 };
@@ -4668,6 +4669,7 @@ struct peripheral_t<STM32L552, SEC_GTZC_MPCBB1>
 template<>
 struct peripheral_t<STM32L562, SEC_GTZC_MPCBB1>
 {
+    static constexpr periph_t P = SEC_GTZC_MPCBB1;
     using T = stm32l552_sec_gtzc_mpcbb1_t;
     static T& V;
 };
@@ -4675,6 +4677,7 @@ struct peripheral_t<STM32L562, SEC_GTZC_MPCBB1>
 template<>
 struct peripheral_t<STM32L552, SEC_GTZC_MPCBB2>
 {
+    static constexpr periph_t P = SEC_GTZC_MPCBB2;
     using T = stm32l552_sec_gtzc_mpcbb2_t;
     static T& V;
 };
@@ -4682,6 +4685,7 @@ struct peripheral_t<STM32L552, SEC_GTZC_MPCBB2>
 template<>
 struct peripheral_t<STM32L562, SEC_GTZC_MPCBB2>
 {
+    static constexpr periph_t P = SEC_GTZC_MPCBB2;
     using T = stm32l552_sec_gtzc_mpcbb2_t;
     static T& V;
 };

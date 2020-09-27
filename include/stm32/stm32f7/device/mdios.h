@@ -308,6 +308,7 @@ struct stm32f767_mdios_t
 template<>
 struct peripheral_t<STM32F767, MDIOS>
 {
+    static constexpr periph_t P = MDIOS;
     using T = stm32f767_mdios_t;
     static T& V;
 };
@@ -315,6 +316,7 @@ struct peripheral_t<STM32F767, MDIOS>
 template<>
 struct peripheral_t<STM32F768, MDIOS>
 {
+    static constexpr periph_t P = MDIOS;
     using T = stm32f767_mdios_t;
     static T& V;
 };
@@ -322,6 +324,7 @@ struct peripheral_t<STM32F768, MDIOS>
 template<>
 struct peripheral_t<STM32F769, MDIOS>
 {
+    static constexpr periph_t P = MDIOS;
     using T = stm32f767_mdios_t;
     static T& V;
 };
@@ -329,6 +332,7 @@ struct peripheral_t<STM32F769, MDIOS>
 template<>
 struct peripheral_t<STM32F777, MDIOS>
 {
+    static constexpr periph_t P = MDIOS;
     using T = stm32f767_mdios_t;
     static T& V;
 };
@@ -336,6 +340,7 @@ struct peripheral_t<STM32F777, MDIOS>
 template<>
 struct peripheral_t<STM32F778, MDIOS>
 {
+    static constexpr periph_t P = MDIOS;
     using T = stm32f767_mdios_t;
     static T& V;
 };
@@ -343,6 +348,7 @@ struct peripheral_t<STM32F778, MDIOS>
 template<>
 struct peripheral_t<STM32F779, MDIOS>
 {
+    static constexpr periph_t P = MDIOS;
     using T = stm32f767_mdios_t;
     static T& V;
 };

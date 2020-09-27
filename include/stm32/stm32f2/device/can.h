@@ -2353,6 +2353,7 @@ struct stm32f215_can2_t
 template<>
 struct peripheral_t<STM32F215, CAN1>
 {
+    static constexpr periph_t P = CAN1;
     using T = stm32f215_can2_t;
     static T& V;
 };
@@ -2360,6 +2361,7 @@ struct peripheral_t<STM32F215, CAN1>
 template<>
 struct peripheral_t<STM32F215, CAN2>
 {
+    static constexpr periph_t P = CAN2;
     using T = stm32f215_can2_t;
     static T& V;
 };
@@ -2367,6 +2369,7 @@ struct peripheral_t<STM32F215, CAN2>
 template<>
 struct peripheral_t<STM32F217, CAN1>
 {
+    static constexpr periph_t P = CAN1;
     using T = stm32f215_can2_t;
     static T& V;
 };
@@ -2374,6 +2377,7 @@ struct peripheral_t<STM32F217, CAN1>
 template<>
 struct peripheral_t<STM32F217, CAN2>
 {
+    static constexpr periph_t P = CAN2;
     using T = stm32f215_can2_t;
     static T& V;
 };

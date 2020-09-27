@@ -218,6 +218,7 @@ struct stm32l552_sdmmc1_t
 template<>
 struct peripheral_t<STM32L552, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32l552_sdmmc1_t;
     static T& V;
 };
@@ -225,6 +226,7 @@ struct peripheral_t<STM32L552, SDMMC1>
 template<>
 struct peripheral_t<STM32L552, SEC_SDMMC1>
 {
+    static constexpr periph_t P = SEC_SDMMC1;
     using T = stm32l552_sdmmc1_t;
     static T& V;
 };
@@ -232,6 +234,7 @@ struct peripheral_t<STM32L552, SEC_SDMMC1>
 template<>
 struct peripheral_t<STM32L562, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32l552_sdmmc1_t;
     static T& V;
 };
@@ -239,6 +242,7 @@ struct peripheral_t<STM32L562, SDMMC1>
 template<>
 struct peripheral_t<STM32L562, SEC_SDMMC1>
 {
+    static constexpr periph_t P = SEC_SDMMC1;
     using T = stm32l552_sdmmc1_t;
     static T& V;
 };

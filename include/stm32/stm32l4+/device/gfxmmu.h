@@ -10323,6 +10323,7 @@ struct stm32l4r5_gfxmmu_t
 template<>
 struct peripheral_t<STM32L4R5, GFXMMU>
 {
+    static constexpr periph_t P = GFXMMU;
     using T = stm32l4r5_gfxmmu_t;
     static T& V;
 };
@@ -10330,6 +10331,7 @@ struct peripheral_t<STM32L4R5, GFXMMU>
 template<>
 struct peripheral_t<STM32L4R7, GFXMMU>
 {
+    static constexpr periph_t P = GFXMMU;
     using T = stm32l4r5_gfxmmu_t;
     static T& V;
 };
@@ -10337,6 +10339,7 @@ struct peripheral_t<STM32L4R7, GFXMMU>
 template<>
 struct peripheral_t<STM32L4R9, GFXMMU>
 {
+    static constexpr periph_t P = GFXMMU;
     using T = stm32l4r5_gfxmmu_t;
     static T& V;
 };
@@ -10344,6 +10347,7 @@ struct peripheral_t<STM32L4R9, GFXMMU>
 template<>
 struct peripheral_t<STM32L4S5, GFXMMU>
 {
+    static constexpr periph_t P = GFXMMU;
     using T = stm32l4r5_gfxmmu_t;
     static T& V;
 };
@@ -10351,6 +10355,7 @@ struct peripheral_t<STM32L4S5, GFXMMU>
 template<>
 struct peripheral_t<STM32L4S7, GFXMMU>
 {
+    static constexpr periph_t P = GFXMMU;
     using T = stm32l4r5_gfxmmu_t;
     static T& V;
 };
@@ -10358,6 +10363,7 @@ struct peripheral_t<STM32L4S7, GFXMMU>
 template<>
 struct peripheral_t<STM32L4S9, GFXMMU>
 {
+    static constexpr periph_t P = GFXMMU;
     using T = stm32l4r5_gfxmmu_t;
     static T& V;
 };

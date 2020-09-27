@@ -540,6 +540,7 @@ struct stm32f405_rtc_t
 template<>
 struct peripheral_t<STM32F401, RTC>
 {
+    static constexpr periph_t P = RTC;
     using T = stm32f401_rtc_t;
     static T& V;
 };
@@ -547,6 +548,7 @@ struct peripheral_t<STM32F401, RTC>
 template<>
 struct peripheral_t<STM32F410, RTC>
 {
+    static constexpr periph_t P = RTC;
     using T = stm32f401_rtc_t;
     static T& V;
 };
@@ -554,6 +556,7 @@ struct peripheral_t<STM32F410, RTC>
 template<>
 struct peripheral_t<STM32F411, RTC>
 {
+    static constexpr periph_t P = RTC;
     using T = stm32f401_rtc_t;
     static T& V;
 };
@@ -561,6 +564,7 @@ struct peripheral_t<STM32F411, RTC>
 template<>
 struct peripheral_t<STM32F412, RTC>
 {
+    static constexpr periph_t P = RTC;
     using T = stm32f401_rtc_t;
     static T& V;
 };
@@ -568,6 +572,7 @@ struct peripheral_t<STM32F412, RTC>
 template<>
 struct peripheral_t<STM32F413, RTC>
 {
+    static constexpr periph_t P = RTC;
     using T = stm32f401_rtc_t;
     static T& V;
 };
@@ -575,6 +580,7 @@ struct peripheral_t<STM32F413, RTC>
 template<>
 struct peripheral_t<STM32F405, RTC>
 {
+    static constexpr periph_t P = RTC;
     using T = stm32f405_rtc_t;
     static T& V;
 };
@@ -582,6 +588,7 @@ struct peripheral_t<STM32F405, RTC>
 template<>
 struct peripheral_t<STM32F407, RTC>
 {
+    static constexpr periph_t P = RTC;
     using T = stm32f405_rtc_t;
     static T& V;
 };
@@ -589,6 +596,7 @@ struct peripheral_t<STM32F407, RTC>
 template<>
 struct peripheral_t<STM32F427, RTC>
 {
+    static constexpr periph_t P = RTC;
     using T = stm32f405_rtc_t;
     static T& V;
 };
@@ -596,6 +604,7 @@ struct peripheral_t<STM32F427, RTC>
 template<>
 struct peripheral_t<STM32F429, RTC>
 {
+    static constexpr periph_t P = RTC;
     using T = stm32f405_rtc_t;
     static T& V;
 };
@@ -603,6 +612,7 @@ struct peripheral_t<STM32F429, RTC>
 template<>
 struct peripheral_t<STM32F446, RTC>
 {
+    static constexpr periph_t P = RTC;
     using T = stm32f405_rtc_t;
     static T& V;
 };
@@ -610,6 +620,7 @@ struct peripheral_t<STM32F446, RTC>
 template<>
 struct peripheral_t<STM32F469, RTC>
 {
+    static constexpr periph_t P = RTC;
     using T = stm32f405_rtc_t;
     static T& V;
 };

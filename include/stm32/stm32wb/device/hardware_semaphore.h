@@ -469,6 +469,7 @@ struct stm32wb30_cm4_hsem_t
 template<>
 struct peripheral_t<STM32WB30_CM4, HSEM>
 {
+    static constexpr periph_t P = HSEM;
     using T = stm32wb30_cm4_hsem_t;
     static T& V;
 };
@@ -476,6 +477,7 @@ struct peripheral_t<STM32WB30_CM4, HSEM>
 template<>
 struct peripheral_t<STM32WB35_CM4, HSEM>
 {
+    static constexpr periph_t P = HSEM;
     using T = stm32wb30_cm4_hsem_t;
     static T& V;
 };
@@ -483,6 +485,7 @@ struct peripheral_t<STM32WB35_CM4, HSEM>
 template<>
 struct peripheral_t<STM32WB50_CM4, HSEM>
 {
+    static constexpr periph_t P = HSEM;
     using T = stm32wb30_cm4_hsem_t;
     static T& V;
 };
@@ -490,6 +493,7 @@ struct peripheral_t<STM32WB50_CM4, HSEM>
 template<>
 struct peripheral_t<STM32WB55_CM4, HSEM>
 {
+    static constexpr periph_t P = HSEM;
     using T = stm32wb30_cm4_hsem_t;
     static T& V;
 };

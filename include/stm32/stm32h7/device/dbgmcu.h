@@ -334,6 +334,7 @@ struct stm32h7a3x_dbgmcu_t
 template<>
 struct peripheral_t<STM32H742x, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32h742x_dbgmcu_t;
     static T& V;
 };
@@ -341,6 +342,7 @@ struct peripheral_t<STM32H742x, DBGMCU>
 template<>
 struct peripheral_t<STM32H750x, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32h742x_dbgmcu_t;
     static T& V;
 };
@@ -348,6 +350,7 @@ struct peripheral_t<STM32H750x, DBGMCU>
 template<>
 struct peripheral_t<STM32H753, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32h742x_dbgmcu_t;
     static T& V;
 };
@@ -355,6 +358,7 @@ struct peripheral_t<STM32H753, DBGMCU>
 template<>
 struct peripheral_t<STM32H743, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32h743_dbgmcu_t;
     static T& V;
 };
@@ -362,6 +366,7 @@ struct peripheral_t<STM32H743, DBGMCU>
 template<>
 struct peripheral_t<STM32H745_CM4, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32h745_cm4_dbgmcu_t;
     static T& V;
 };
@@ -369,6 +374,7 @@ struct peripheral_t<STM32H745_CM4, DBGMCU>
 template<>
 struct peripheral_t<STM32H745_CM7, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32h745_cm4_dbgmcu_t;
     static T& V;
 };
@@ -376,6 +382,7 @@ struct peripheral_t<STM32H745_CM7, DBGMCU>
 template<>
 struct peripheral_t<STM32H747_CM4, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32h745_cm4_dbgmcu_t;
     static T& V;
 };
@@ -383,6 +390,7 @@ struct peripheral_t<STM32H747_CM4, DBGMCU>
 template<>
 struct peripheral_t<STM32H747_CM7, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32h745_cm4_dbgmcu_t;
     static T& V;
 };
@@ -390,6 +398,7 @@ struct peripheral_t<STM32H747_CM7, DBGMCU>
 template<>
 struct peripheral_t<STM32H755_CM4, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32h745_cm4_dbgmcu_t;
     static T& V;
 };
@@ -397,6 +406,7 @@ struct peripheral_t<STM32H755_CM4, DBGMCU>
 template<>
 struct peripheral_t<STM32H755_CM7, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32h745_cm4_dbgmcu_t;
     static T& V;
 };
@@ -404,6 +414,7 @@ struct peripheral_t<STM32H755_CM7, DBGMCU>
 template<>
 struct peripheral_t<STM32H757_CM4, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32h745_cm4_dbgmcu_t;
     static T& V;
 };
@@ -411,6 +422,7 @@ struct peripheral_t<STM32H757_CM4, DBGMCU>
 template<>
 struct peripheral_t<STM32H757_CM7, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32h745_cm4_dbgmcu_t;
     static T& V;
 };
@@ -418,6 +430,7 @@ struct peripheral_t<STM32H757_CM7, DBGMCU>
 template<>
 struct peripheral_t<STM32H7A3x, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32h7a3x_dbgmcu_t;
     static T& V;
 };
@@ -425,6 +438,7 @@ struct peripheral_t<STM32H7A3x, DBGMCU>
 template<>
 struct peripheral_t<STM32H7B0x, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32h7a3x_dbgmcu_t;
     static T& V;
 };
@@ -432,6 +446,7 @@ struct peripheral_t<STM32H7B0x, DBGMCU>
 template<>
 struct peripheral_t<STM32H7B3x, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32h7a3x_dbgmcu_t;
     static T& V;
 };

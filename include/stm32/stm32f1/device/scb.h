@@ -146,6 +146,7 @@ struct stm32f100_scb_actrl_t
 template<>
 struct peripheral_t<STM32F100, SCB>
 {
+    static constexpr periph_t P = SCB;
     using T = stm32f100_scb_t;
     static T& V;
 };
@@ -153,6 +154,7 @@ struct peripheral_t<STM32F100, SCB>
 template<>
 struct peripheral_t<STM32F101, SCB>
 {
+    static constexpr periph_t P = SCB;
     using T = stm32f100_scb_t;
     static T& V;
 };
@@ -160,6 +162,7 @@ struct peripheral_t<STM32F101, SCB>
 template<>
 struct peripheral_t<STM32F102, SCB>
 {
+    static constexpr periph_t P = SCB;
     using T = stm32f100_scb_t;
     static T& V;
 };
@@ -167,6 +170,7 @@ struct peripheral_t<STM32F102, SCB>
 template<>
 struct peripheral_t<STM32F103, SCB>
 {
+    static constexpr periph_t P = SCB;
     using T = stm32f100_scb_t;
     static T& V;
 };
@@ -174,6 +178,7 @@ struct peripheral_t<STM32F103, SCB>
 template<>
 struct peripheral_t<STM32F107, SCB>
 {
+    static constexpr periph_t P = SCB;
     using T = stm32f100_scb_t;
     static T& V;
 };
@@ -181,6 +186,7 @@ struct peripheral_t<STM32F107, SCB>
 template<>
 struct peripheral_t<STM32F100, SCB_ACTRL>
 {
+    static constexpr periph_t P = SCB_ACTRL;
     using T = stm32f100_scb_actrl_t;
     static T& V;
 };
@@ -188,6 +194,7 @@ struct peripheral_t<STM32F100, SCB_ACTRL>
 template<>
 struct peripheral_t<STM32F101, SCB_ACTRL>
 {
+    static constexpr periph_t P = SCB_ACTRL;
     using T = stm32f100_scb_actrl_t;
     static T& V;
 };
@@ -195,6 +202,7 @@ struct peripheral_t<STM32F101, SCB_ACTRL>
 template<>
 struct peripheral_t<STM32F102, SCB_ACTRL>
 {
+    static constexpr periph_t P = SCB_ACTRL;
     using T = stm32f100_scb_actrl_t;
     static T& V;
 };
@@ -202,6 +210,7 @@ struct peripheral_t<STM32F102, SCB_ACTRL>
 template<>
 struct peripheral_t<STM32F103, SCB_ACTRL>
 {
+    static constexpr periph_t P = SCB_ACTRL;
     using T = stm32f100_scb_actrl_t;
     static T& V;
 };
@@ -209,6 +218,7 @@ struct peripheral_t<STM32F103, SCB_ACTRL>
 template<>
 struct peripheral_t<STM32F107, SCB_ACTRL>
 {
+    static constexpr periph_t P = SCB_ACTRL;
     using T = stm32f100_scb_actrl_t;
     static T& V;
 };

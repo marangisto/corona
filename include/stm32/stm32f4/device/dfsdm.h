@@ -1407,6 +1407,7 @@ struct stm32f413_dfsdm2_t
 template<>
 struct peripheral_t<STM32F412, DFSDM>
 {
+    static constexpr periph_t P = DFSDM;
     using T = stm32f412_dfsdm_t;
     static T& V;
 };
@@ -1414,6 +1415,7 @@ struct peripheral_t<STM32F412, DFSDM>
 template<>
 struct peripheral_t<STM32F413, DFSDM1>
 {
+    static constexpr periph_t P = DFSDM1;
     using T = stm32f413_dfsdm2_t;
     static T& V;
 };
@@ -1421,6 +1423,7 @@ struct peripheral_t<STM32F413, DFSDM1>
 template<>
 struct peripheral_t<STM32F413, DFSDM2>
 {
+    static constexpr periph_t P = DFSDM2;
     using T = stm32f413_dfsdm2_t;
     static T& V;
 };

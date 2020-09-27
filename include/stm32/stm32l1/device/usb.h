@@ -167,6 +167,7 @@ struct stm32l100_usb_t
 template<>
 struct peripheral_t<STM32L100, USB>
 {
+    static constexpr periph_t P = USB;
     using T = stm32l100_usb_t;
     static T& V;
 };
@@ -174,6 +175,7 @@ struct peripheral_t<STM32L100, USB>
 template<>
 struct peripheral_t<STM32L100, USB_SRAM>
 {
+    static constexpr periph_t P = USB_SRAM;
     using T = stm32l100_usb_t;
     static T& V;
 };
@@ -181,6 +183,7 @@ struct peripheral_t<STM32L100, USB_SRAM>
 template<>
 struct peripheral_t<STM32L151, USB>
 {
+    static constexpr periph_t P = USB;
     using T = stm32l100_usb_t;
     static T& V;
 };
@@ -188,6 +191,7 @@ struct peripheral_t<STM32L151, USB>
 template<>
 struct peripheral_t<STM32L151, USB_SRAM>
 {
+    static constexpr periph_t P = USB_SRAM;
     using T = stm32l100_usb_t;
     static T& V;
 };
@@ -195,6 +199,7 @@ struct peripheral_t<STM32L151, USB_SRAM>
 template<>
 struct peripheral_t<STM32L152, USB>
 {
+    static constexpr periph_t P = USB;
     using T = stm32l100_usb_t;
     static T& V;
 };
@@ -202,6 +207,7 @@ struct peripheral_t<STM32L152, USB>
 template<>
 struct peripheral_t<STM32L152, USB_SRAM>
 {
+    static constexpr periph_t P = USB_SRAM;
     using T = stm32l100_usb_t;
     static T& V;
 };
@@ -209,6 +215,7 @@ struct peripheral_t<STM32L152, USB_SRAM>
 template<>
 struct peripheral_t<STM32L162, USB>
 {
+    static constexpr periph_t P = USB;
     using T = stm32l100_usb_t;
     static T& V;
 };
@@ -216,6 +223,7 @@ struct peripheral_t<STM32L162, USB>
 template<>
 struct peripheral_t<STM32L162, USB_SRAM>
 {
+    static constexpr periph_t P = USB_SRAM;
     using T = stm32l100_usb_t;
     static T& V;
 };

@@ -87,6 +87,7 @@ struct stm32l552_icache_t
 template<>
 struct peripheral_t<STM32L552, ICACHE>
 {
+    static constexpr periph_t P = ICACHE;
     using T = stm32l552_icache_t;
     static T& V;
 };
@@ -94,6 +95,7 @@ struct peripheral_t<STM32L552, ICACHE>
 template<>
 struct peripheral_t<STM32L552, SEC_ICACHE>
 {
+    static constexpr periph_t P = SEC_ICACHE;
     using T = stm32l552_icache_t;
     static T& V;
 };
@@ -101,6 +103,7 @@ struct peripheral_t<STM32L552, SEC_ICACHE>
 template<>
 struct peripheral_t<STM32L562, ICACHE>
 {
+    static constexpr periph_t P = ICACHE;
     using T = stm32l552_icache_t;
     static T& V;
 };
@@ -108,6 +111,7 @@ struct peripheral_t<STM32L562, ICACHE>
 template<>
 struct peripheral_t<STM32L562, SEC_ICACHE>
 {
+    static constexpr periph_t P = SEC_ICACHE;
     using T = stm32l552_icache_t;
     static T& V;
 };

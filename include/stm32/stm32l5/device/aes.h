@@ -127,6 +127,7 @@ struct stm32l562_aes_t
 template<>
 struct peripheral_t<STM32L562, AES>
 {
+    static constexpr periph_t P = AES;
     using T = stm32l562_aes_t;
     static T& V;
 };
@@ -134,6 +135,7 @@ struct peripheral_t<STM32L562, AES>
 template<>
 struct peripheral_t<STM32L562, SEC_AES>
 {
+    static constexpr periph_t P = SEC_AES;
     using T = stm32l562_aes_t;
     static T& V;
 };

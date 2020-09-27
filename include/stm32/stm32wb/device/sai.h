@@ -194,6 +194,7 @@ struct stm32wb55_cm4_sai1_t
 template<>
 struct peripheral_t<STM32WB55_CM4, SAI1>
 {
+    static constexpr periph_t P = SAI1;
     using T = stm32wb55_cm4_sai1_t;
     static T& V;
 };

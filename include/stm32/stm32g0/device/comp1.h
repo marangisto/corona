@@ -43,6 +43,7 @@ struct stm32g070_comp_t
 template<>
 struct peripheral_t<STM32G070, COMP>
 {
+    static constexpr periph_t P = COMP;
     using T = stm32g070_comp_t;
     static T& V;
 };
@@ -50,6 +51,7 @@ struct peripheral_t<STM32G070, COMP>
 template<>
 struct peripheral_t<STM32G071, COMP>
 {
+    static constexpr periph_t P = COMP;
     using T = stm32g070_comp_t;
     static T& V;
 };
@@ -57,6 +59,7 @@ struct peripheral_t<STM32G071, COMP>
 template<>
 struct peripheral_t<STM32G081, COMP>
 {
+    static constexpr periph_t P = COMP;
     using T = stm32g070_comp_t;
     static T& V;
 };

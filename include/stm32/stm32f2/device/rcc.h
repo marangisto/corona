@@ -369,6 +369,7 @@ struct stm32f215_rcc_t
 template<>
 struct peripheral_t<STM32F215, RCC>
 {
+    static constexpr periph_t P = RCC;
     using T = stm32f215_rcc_t;
     static T& V;
 };
@@ -376,6 +377,7 @@ struct peripheral_t<STM32F215, RCC>
 template<>
 struct peripheral_t<STM32F217, RCC>
 {
+    static constexpr periph_t P = RCC;
     using T = stm32f215_rcc_t;
     static T& V;
 };

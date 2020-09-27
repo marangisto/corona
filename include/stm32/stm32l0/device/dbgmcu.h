@@ -42,6 +42,7 @@ struct stm32l0x0_dbg_t
 template<>
 struct peripheral_t<STM32L0x0, DBG>
 {
+    static constexpr periph_t P = DBG;
     using T = stm32l0x0_dbg_t;
     static T& V;
 };
@@ -49,6 +50,7 @@ struct peripheral_t<STM32L0x0, DBG>
 template<>
 struct peripheral_t<STM32L0x1, DBG>
 {
+    static constexpr periph_t P = DBG;
     using T = stm32l0x0_dbg_t;
     static T& V;
 };
@@ -56,6 +58,7 @@ struct peripheral_t<STM32L0x1, DBG>
 template<>
 struct peripheral_t<STM32L0x2, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32l0x0_dbg_t;
     static T& V;
 };
@@ -63,6 +66,7 @@ struct peripheral_t<STM32L0x2, DBGMCU>
 template<>
 struct peripheral_t<STM32L0x3, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32l0x0_dbg_t;
     static T& V;
 };

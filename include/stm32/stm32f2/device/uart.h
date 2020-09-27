@@ -133,6 +133,7 @@ struct stm32f215_uart5_t
 template<>
 struct peripheral_t<STM32F215, UART4>
 {
+    static constexpr periph_t P = UART4;
     using T = stm32f215_uart4_t;
     static T& V;
 };
@@ -140,6 +141,7 @@ struct peripheral_t<STM32F215, UART4>
 template<>
 struct peripheral_t<STM32F217, UART4>
 {
+    static constexpr periph_t P = UART4;
     using T = stm32f215_uart4_t;
     static T& V;
 };
@@ -147,6 +149,7 @@ struct peripheral_t<STM32F217, UART4>
 template<>
 struct peripheral_t<STM32F215, UART5>
 {
+    static constexpr periph_t P = UART5;
     using T = stm32f215_uart5_t;
     static T& V;
 };
@@ -154,6 +157,7 @@ struct peripheral_t<STM32F215, UART5>
 template<>
 struct peripheral_t<STM32F217, UART5>
 {
+    static constexpr periph_t P = UART5;
     using T = stm32f215_uart5_t;
     static T& V;
 };

@@ -44,6 +44,7 @@ struct stm32l552_comp_t
 template<>
 struct peripheral_t<STM32L552, COMP>
 {
+    static constexpr periph_t P = COMP;
     using T = stm32l552_comp_t;
     static T& V;
 };
@@ -51,6 +52,7 @@ struct peripheral_t<STM32L552, COMP>
 template<>
 struct peripheral_t<STM32L552, SEC_COMP>
 {
+    static constexpr periph_t P = SEC_COMP;
     using T = stm32l552_comp_t;
     static T& V;
 };
@@ -58,6 +60,7 @@ struct peripheral_t<STM32L552, SEC_COMP>
 template<>
 struct peripheral_t<STM32L562, COMP>
 {
+    static constexpr periph_t P = COMP;
     using T = stm32l552_comp_t;
     static T& V;
 };
@@ -65,6 +68,7 @@ struct peripheral_t<STM32L562, COMP>
 template<>
 struct peripheral_t<STM32L562, SEC_COMP>
 {
+    static constexpr periph_t P = SEC_COMP;
     using T = stm32l552_comp_t;
     static T& V;
 };

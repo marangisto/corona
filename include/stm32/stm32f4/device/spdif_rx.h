@@ -81,6 +81,7 @@ struct stm32f446_spdif_rx_t
 template<>
 struct peripheral_t<STM32F446, SPDIF_RX>
 {
+    static constexpr periph_t P = SPDIF_RX;
     using T = stm32f446_spdif_rx_t;
     static T& V;
 };

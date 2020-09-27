@@ -600,6 +600,7 @@ struct stm32f215_gpioi_t
 template<>
 struct peripheral_t<STM32F215, GPIOA>
 {
+    static constexpr periph_t P = GPIOA;
     using T = stm32f215_gpioa_t;
     static T& V;
 };
@@ -607,6 +608,7 @@ struct peripheral_t<STM32F215, GPIOA>
 template<>
 struct peripheral_t<STM32F217, GPIOA>
 {
+    static constexpr periph_t P = GPIOA;
     using T = stm32f215_gpioa_t;
     static T& V;
 };
@@ -614,6 +616,7 @@ struct peripheral_t<STM32F217, GPIOA>
 template<>
 struct peripheral_t<STM32F215, GPIOB>
 {
+    static constexpr periph_t P = GPIOB;
     using T = stm32f215_gpiob_t;
     static T& V;
 };
@@ -621,6 +624,7 @@ struct peripheral_t<STM32F215, GPIOB>
 template<>
 struct peripheral_t<STM32F217, GPIOB>
 {
+    static constexpr periph_t P = GPIOB;
     using T = stm32f215_gpiob_t;
     static T& V;
 };
@@ -628,6 +632,7 @@ struct peripheral_t<STM32F217, GPIOB>
 template<>
 struct peripheral_t<STM32F215, GPIOC>
 {
+    static constexpr periph_t P = GPIOC;
     using T = stm32f215_gpioi_t;
     static T& V;
 };
@@ -635,6 +640,7 @@ struct peripheral_t<STM32F215, GPIOC>
 template<>
 struct peripheral_t<STM32F215, GPIOD>
 {
+    static constexpr periph_t P = GPIOD;
     using T = stm32f215_gpioi_t;
     static T& V;
 };
@@ -642,6 +648,7 @@ struct peripheral_t<STM32F215, GPIOD>
 template<>
 struct peripheral_t<STM32F215, GPIOE>
 {
+    static constexpr periph_t P = GPIOE;
     using T = stm32f215_gpioi_t;
     static T& V;
 };
@@ -649,6 +656,7 @@ struct peripheral_t<STM32F215, GPIOE>
 template<>
 struct peripheral_t<STM32F215, GPIOF>
 {
+    static constexpr periph_t P = GPIOF;
     using T = stm32f215_gpioi_t;
     static T& V;
 };
@@ -656,6 +664,7 @@ struct peripheral_t<STM32F215, GPIOF>
 template<>
 struct peripheral_t<STM32F215, GPIOG>
 {
+    static constexpr periph_t P = GPIOG;
     using T = stm32f215_gpioi_t;
     static T& V;
 };
@@ -663,6 +672,7 @@ struct peripheral_t<STM32F215, GPIOG>
 template<>
 struct peripheral_t<STM32F215, GPIOH>
 {
+    static constexpr periph_t P = GPIOH;
     using T = stm32f215_gpioi_t;
     static T& V;
 };
@@ -670,6 +680,7 @@ struct peripheral_t<STM32F215, GPIOH>
 template<>
 struct peripheral_t<STM32F215, GPIOI>
 {
+    static constexpr periph_t P = GPIOI;
     using T = stm32f215_gpioi_t;
     static T& V;
 };
@@ -677,6 +688,7 @@ struct peripheral_t<STM32F215, GPIOI>
 template<>
 struct peripheral_t<STM32F217, GPIOC>
 {
+    static constexpr periph_t P = GPIOC;
     using T = stm32f215_gpioi_t;
     static T& V;
 };
@@ -684,6 +696,7 @@ struct peripheral_t<STM32F217, GPIOC>
 template<>
 struct peripheral_t<STM32F217, GPIOD>
 {
+    static constexpr periph_t P = GPIOD;
     using T = stm32f215_gpioi_t;
     static T& V;
 };
@@ -691,6 +704,7 @@ struct peripheral_t<STM32F217, GPIOD>
 template<>
 struct peripheral_t<STM32F217, GPIOE>
 {
+    static constexpr periph_t P = GPIOE;
     using T = stm32f215_gpioi_t;
     static T& V;
 };
@@ -698,6 +712,7 @@ struct peripheral_t<STM32F217, GPIOE>
 template<>
 struct peripheral_t<STM32F217, GPIOF>
 {
+    static constexpr periph_t P = GPIOF;
     using T = stm32f215_gpioi_t;
     static T& V;
 };
@@ -705,6 +720,7 @@ struct peripheral_t<STM32F217, GPIOF>
 template<>
 struct peripheral_t<STM32F217, GPIOG>
 {
+    static constexpr periph_t P = GPIOG;
     using T = stm32f215_gpioi_t;
     static T& V;
 };
@@ -712,6 +728,7 @@ struct peripheral_t<STM32F217, GPIOG>
 template<>
 struct peripheral_t<STM32F217, GPIOH>
 {
+    static constexpr periph_t P = GPIOH;
     using T = stm32f215_gpioi_t;
     static T& V;
 };
@@ -719,6 +736,7 @@ struct peripheral_t<STM32F217, GPIOH>
 template<>
 struct peripheral_t<STM32F217, GPIOI>
 {
+    static constexpr periph_t P = GPIOI;
     using T = stm32f215_gpioi_t;
     static T& V;
 };

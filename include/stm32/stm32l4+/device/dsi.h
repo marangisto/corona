@@ -556,6 +556,7 @@ struct stm32l4r9_dsi_t
 template<>
 struct peripheral_t<STM32L4R9, DSI>
 {
+    static constexpr periph_t P = DSI;
     using T = stm32l4r9_dsi_t;
     static T& V;
 };
@@ -563,6 +564,7 @@ struct peripheral_t<STM32L4R9, DSI>
 template<>
 struct peripheral_t<STM32L4S9, DSI>
 {
+    static constexpr periph_t P = DSI;
     using T = stm32l4r9_dsi_t;
     static T& V;
 };

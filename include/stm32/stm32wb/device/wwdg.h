@@ -30,6 +30,7 @@ struct stm32wb30_cm4_wwdg_t
 template<>
 struct peripheral_t<STM32WB30_CM4, WWDG>
 {
+    static constexpr periph_t P = WWDG;
     using T = stm32wb30_cm4_wwdg_t;
     static T& V;
 };
@@ -37,6 +38,7 @@ struct peripheral_t<STM32WB30_CM4, WWDG>
 template<>
 struct peripheral_t<STM32WB35_CM4, WWDG>
 {
+    static constexpr periph_t P = WWDG;
     using T = stm32wb30_cm4_wwdg_t;
     static T& V;
 };
@@ -44,6 +46,7 @@ struct peripheral_t<STM32WB35_CM4, WWDG>
 template<>
 struct peripheral_t<STM32WB50_CM4, WWDG>
 {
+    static constexpr periph_t P = WWDG;
     using T = stm32wb30_cm4_wwdg_t;
     static T& V;
 };
@@ -51,6 +54,7 @@ struct peripheral_t<STM32WB50_CM4, WWDG>
 template<>
 struct peripheral_t<STM32WB55_CM4, WWDG>
 {
+    static constexpr periph_t P = WWDG;
     using T = stm32wb30_cm4_wwdg_t;
     static T& V;
 };

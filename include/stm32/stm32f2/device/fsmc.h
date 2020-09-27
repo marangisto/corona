@@ -296,6 +296,7 @@ struct stm32f215_fsmc_t
 template<>
 struct peripheral_t<STM32F215, FSMC>
 {
+    static constexpr periph_t P = FSMC;
     using T = stm32f215_fsmc_t;
     static T& V;
 };
@@ -303,6 +304,7 @@ struct peripheral_t<STM32F215, FSMC>
 template<>
 struct peripheral_t<STM32F217, FSMC>
 {
+    static constexpr periph_t P = FSMC;
     using T = stm32f215_fsmc_t;
     static T& V;
 };

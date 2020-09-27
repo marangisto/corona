@@ -54,6 +54,7 @@ struct stm32f301_dbgmcu_t
 template<>
 struct peripheral_t<STM32F301, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32f301_dbgmcu_t;
     static T& V;
 };
@@ -61,6 +62,7 @@ struct peripheral_t<STM32F301, DBGMCU>
 template<>
 struct peripheral_t<STM32F302, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32f301_dbgmcu_t;
     static T& V;
 };
@@ -68,6 +70,7 @@ struct peripheral_t<STM32F302, DBGMCU>
 template<>
 struct peripheral_t<STM32F303, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32f301_dbgmcu_t;
     static T& V;
 };
@@ -75,6 +78,7 @@ struct peripheral_t<STM32F303, DBGMCU>
 template<>
 struct peripheral_t<STM32F373, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32f301_dbgmcu_t;
     static T& V;
 };
@@ -82,6 +86,7 @@ struct peripheral_t<STM32F373, DBGMCU>
 template<>
 struct peripheral_t<STM32F3x4, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32f301_dbgmcu_t;
     static T& V;
 };
@@ -89,6 +94,7 @@ struct peripheral_t<STM32F3x4, DBGMCU>
 template<>
 struct peripheral_t<STM32F3x8, DBGMCU>
 {
+    static constexpr periph_t P = DBGMCU;
     using T = stm32f301_dbgmcu_t;
     static T& V;
 };

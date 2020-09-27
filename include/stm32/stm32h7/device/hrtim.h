@@ -2762,6 +2762,7 @@ struct stm32h742x_hrtim_time_t
 template<>
 struct peripheral_t<STM32H742x, HRTIM_COMMON>
 {
+    static constexpr periph_t P = HRTIM_COMMON;
     using T = stm32h742x_hrtim_common_t;
     static T& V;
 };
@@ -2769,6 +2770,7 @@ struct peripheral_t<STM32H742x, HRTIM_COMMON>
 template<>
 struct peripheral_t<STM32H743, HRTIM_COMMON>
 {
+    static constexpr periph_t P = HRTIM_COMMON;
     using T = stm32h742x_hrtim_common_t;
     static T& V;
 };
@@ -2776,6 +2778,7 @@ struct peripheral_t<STM32H743, HRTIM_COMMON>
 template<>
 struct peripheral_t<STM32H745_CM4, HRTIM_COMMON>
 {
+    static constexpr periph_t P = HRTIM_COMMON;
     using T = stm32h742x_hrtim_common_t;
     static T& V;
 };
@@ -2783,6 +2786,7 @@ struct peripheral_t<STM32H745_CM4, HRTIM_COMMON>
 template<>
 struct peripheral_t<STM32H745_CM7, HRTIM_COMMON>
 {
+    static constexpr periph_t P = HRTIM_COMMON;
     using T = stm32h742x_hrtim_common_t;
     static T& V;
 };
@@ -2790,6 +2794,7 @@ struct peripheral_t<STM32H745_CM7, HRTIM_COMMON>
 template<>
 struct peripheral_t<STM32H747_CM4, HRTIM_COMMON>
 {
+    static constexpr periph_t P = HRTIM_COMMON;
     using T = stm32h742x_hrtim_common_t;
     static T& V;
 };
@@ -2797,6 +2802,7 @@ struct peripheral_t<STM32H747_CM4, HRTIM_COMMON>
 template<>
 struct peripheral_t<STM32H747_CM7, HRTIM_COMMON>
 {
+    static constexpr periph_t P = HRTIM_COMMON;
     using T = stm32h742x_hrtim_common_t;
     static T& V;
 };
@@ -2804,6 +2810,7 @@ struct peripheral_t<STM32H747_CM7, HRTIM_COMMON>
 template<>
 struct peripheral_t<STM32H750x, HRTIM_COMMON>
 {
+    static constexpr periph_t P = HRTIM_COMMON;
     using T = stm32h742x_hrtim_common_t;
     static T& V;
 };
@@ -2811,6 +2818,7 @@ struct peripheral_t<STM32H750x, HRTIM_COMMON>
 template<>
 struct peripheral_t<STM32H753, HRTIM_COMMON>
 {
+    static constexpr periph_t P = HRTIM_COMMON;
     using T = stm32h742x_hrtim_common_t;
     static T& V;
 };
@@ -2818,6 +2826,7 @@ struct peripheral_t<STM32H753, HRTIM_COMMON>
 template<>
 struct peripheral_t<STM32H755_CM4, HRTIM_COMMON>
 {
+    static constexpr periph_t P = HRTIM_COMMON;
     using T = stm32h742x_hrtim_common_t;
     static T& V;
 };
@@ -2825,6 +2834,7 @@ struct peripheral_t<STM32H755_CM4, HRTIM_COMMON>
 template<>
 struct peripheral_t<STM32H755_CM7, HRTIM_COMMON>
 {
+    static constexpr periph_t P = HRTIM_COMMON;
     using T = stm32h742x_hrtim_common_t;
     static T& V;
 };
@@ -2832,6 +2842,7 @@ struct peripheral_t<STM32H755_CM7, HRTIM_COMMON>
 template<>
 struct peripheral_t<STM32H757_CM4, HRTIM_COMMON>
 {
+    static constexpr periph_t P = HRTIM_COMMON;
     using T = stm32h742x_hrtim_common_t;
     static T& V;
 };
@@ -2839,6 +2850,7 @@ struct peripheral_t<STM32H757_CM4, HRTIM_COMMON>
 template<>
 struct peripheral_t<STM32H757_CM7, HRTIM_COMMON>
 {
+    static constexpr periph_t P = HRTIM_COMMON;
     using T = stm32h742x_hrtim_common_t;
     static T& V;
 };
@@ -2846,6 +2858,7 @@ struct peripheral_t<STM32H757_CM7, HRTIM_COMMON>
 template<>
 struct peripheral_t<STM32H7A3x, HRTIM_COMMON>
 {
+    static constexpr periph_t P = HRTIM_COMMON;
     using T = stm32h742x_hrtim_common_t;
     static T& V;
 };
@@ -2853,6 +2866,7 @@ struct peripheral_t<STM32H7A3x, HRTIM_COMMON>
 template<>
 struct peripheral_t<STM32H7B0x, HRTIM_COMMON>
 {
+    static constexpr periph_t P = HRTIM_COMMON;
     using T = stm32h742x_hrtim_common_t;
     static T& V;
 };
@@ -2860,6 +2874,7 @@ struct peripheral_t<STM32H7B0x, HRTIM_COMMON>
 template<>
 struct peripheral_t<STM32H7B3x, HRTIM_COMMON>
 {
+    static constexpr periph_t P = HRTIM_COMMON;
     using T = stm32h742x_hrtim_common_t;
     static T& V;
 };
@@ -2867,6 +2882,7 @@ struct peripheral_t<STM32H7B3x, HRTIM_COMMON>
 template<>
 struct peripheral_t<STM32H742x, HRTIM_MASTER>
 {
+    static constexpr periph_t P = HRTIM_MASTER;
     using T = stm32h742x_hrtim_master_t;
     static T& V;
 };
@@ -2874,6 +2890,7 @@ struct peripheral_t<STM32H742x, HRTIM_MASTER>
 template<>
 struct peripheral_t<STM32H743, HRTIM_MASTER>
 {
+    static constexpr periph_t P = HRTIM_MASTER;
     using T = stm32h742x_hrtim_master_t;
     static T& V;
 };
@@ -2881,6 +2898,7 @@ struct peripheral_t<STM32H743, HRTIM_MASTER>
 template<>
 struct peripheral_t<STM32H745_CM4, HRTIM_MASTER>
 {
+    static constexpr periph_t P = HRTIM_MASTER;
     using T = stm32h742x_hrtim_master_t;
     static T& V;
 };
@@ -2888,6 +2906,7 @@ struct peripheral_t<STM32H745_CM4, HRTIM_MASTER>
 template<>
 struct peripheral_t<STM32H745_CM7, HRTIM_MASTER>
 {
+    static constexpr periph_t P = HRTIM_MASTER;
     using T = stm32h742x_hrtim_master_t;
     static T& V;
 };
@@ -2895,6 +2914,7 @@ struct peripheral_t<STM32H745_CM7, HRTIM_MASTER>
 template<>
 struct peripheral_t<STM32H747_CM4, HRTIM_MASTER>
 {
+    static constexpr periph_t P = HRTIM_MASTER;
     using T = stm32h742x_hrtim_master_t;
     static T& V;
 };
@@ -2902,6 +2922,7 @@ struct peripheral_t<STM32H747_CM4, HRTIM_MASTER>
 template<>
 struct peripheral_t<STM32H747_CM7, HRTIM_MASTER>
 {
+    static constexpr periph_t P = HRTIM_MASTER;
     using T = stm32h742x_hrtim_master_t;
     static T& V;
 };
@@ -2909,6 +2930,7 @@ struct peripheral_t<STM32H747_CM7, HRTIM_MASTER>
 template<>
 struct peripheral_t<STM32H750x, HRTIM_MASTER>
 {
+    static constexpr periph_t P = HRTIM_MASTER;
     using T = stm32h742x_hrtim_master_t;
     static T& V;
 };
@@ -2916,6 +2938,7 @@ struct peripheral_t<STM32H750x, HRTIM_MASTER>
 template<>
 struct peripheral_t<STM32H753, HRTIM_MASTER>
 {
+    static constexpr periph_t P = HRTIM_MASTER;
     using T = stm32h742x_hrtim_master_t;
     static T& V;
 };
@@ -2923,6 +2946,7 @@ struct peripheral_t<STM32H753, HRTIM_MASTER>
 template<>
 struct peripheral_t<STM32H755_CM4, HRTIM_MASTER>
 {
+    static constexpr periph_t P = HRTIM_MASTER;
     using T = stm32h742x_hrtim_master_t;
     static T& V;
 };
@@ -2930,6 +2954,7 @@ struct peripheral_t<STM32H755_CM4, HRTIM_MASTER>
 template<>
 struct peripheral_t<STM32H755_CM7, HRTIM_MASTER>
 {
+    static constexpr periph_t P = HRTIM_MASTER;
     using T = stm32h742x_hrtim_master_t;
     static T& V;
 };
@@ -2937,6 +2962,7 @@ struct peripheral_t<STM32H755_CM7, HRTIM_MASTER>
 template<>
 struct peripheral_t<STM32H757_CM4, HRTIM_MASTER>
 {
+    static constexpr periph_t P = HRTIM_MASTER;
     using T = stm32h742x_hrtim_master_t;
     static T& V;
 };
@@ -2944,6 +2970,7 @@ struct peripheral_t<STM32H757_CM4, HRTIM_MASTER>
 template<>
 struct peripheral_t<STM32H757_CM7, HRTIM_MASTER>
 {
+    static constexpr periph_t P = HRTIM_MASTER;
     using T = stm32h742x_hrtim_master_t;
     static T& V;
 };
@@ -2951,6 +2978,7 @@ struct peripheral_t<STM32H757_CM7, HRTIM_MASTER>
 template<>
 struct peripheral_t<STM32H7A3x, HRTIM_MASTER>
 {
+    static constexpr periph_t P = HRTIM_MASTER;
     using T = stm32h742x_hrtim_master_t;
     static T& V;
 };
@@ -2958,6 +2986,7 @@ struct peripheral_t<STM32H7A3x, HRTIM_MASTER>
 template<>
 struct peripheral_t<STM32H7B0x, HRTIM_MASTER>
 {
+    static constexpr periph_t P = HRTIM_MASTER;
     using T = stm32h742x_hrtim_master_t;
     static T& V;
 };
@@ -2965,6 +2994,7 @@ struct peripheral_t<STM32H7B0x, HRTIM_MASTER>
 template<>
 struct peripheral_t<STM32H7B3x, HRTIM_MASTER>
 {
+    static constexpr periph_t P = HRTIM_MASTER;
     using T = stm32h742x_hrtim_master_t;
     static T& V;
 };
@@ -2972,6 +3002,7 @@ struct peripheral_t<STM32H7B3x, HRTIM_MASTER>
 template<>
 struct peripheral_t<STM32H742x, HRTIM_TIMA>
 {
+    static constexpr periph_t P = HRTIM_TIMA;
     using T = stm32h742x_hrtim_tima_t;
     static T& V;
 };
@@ -2979,6 +3010,7 @@ struct peripheral_t<STM32H742x, HRTIM_TIMA>
 template<>
 struct peripheral_t<STM32H743, HRTIM_TIMA>
 {
+    static constexpr periph_t P = HRTIM_TIMA;
     using T = stm32h742x_hrtim_tima_t;
     static T& V;
 };
@@ -2986,6 +3018,7 @@ struct peripheral_t<STM32H743, HRTIM_TIMA>
 template<>
 struct peripheral_t<STM32H745_CM4, HRTIM_TIMA>
 {
+    static constexpr periph_t P = HRTIM_TIMA;
     using T = stm32h742x_hrtim_tima_t;
     static T& V;
 };
@@ -2993,6 +3026,7 @@ struct peripheral_t<STM32H745_CM4, HRTIM_TIMA>
 template<>
 struct peripheral_t<STM32H745_CM7, HRTIM_TIMA>
 {
+    static constexpr periph_t P = HRTIM_TIMA;
     using T = stm32h742x_hrtim_tima_t;
     static T& V;
 };
@@ -3000,6 +3034,7 @@ struct peripheral_t<STM32H745_CM7, HRTIM_TIMA>
 template<>
 struct peripheral_t<STM32H747_CM4, HRTIM_TIMA>
 {
+    static constexpr periph_t P = HRTIM_TIMA;
     using T = stm32h742x_hrtim_tima_t;
     static T& V;
 };
@@ -3007,6 +3042,7 @@ struct peripheral_t<STM32H747_CM4, HRTIM_TIMA>
 template<>
 struct peripheral_t<STM32H747_CM7, HRTIM_TIMA>
 {
+    static constexpr periph_t P = HRTIM_TIMA;
     using T = stm32h742x_hrtim_tima_t;
     static T& V;
 };
@@ -3014,6 +3050,7 @@ struct peripheral_t<STM32H747_CM7, HRTIM_TIMA>
 template<>
 struct peripheral_t<STM32H750x, HRTIM_TIMA>
 {
+    static constexpr periph_t P = HRTIM_TIMA;
     using T = stm32h742x_hrtim_tima_t;
     static T& V;
 };
@@ -3021,6 +3058,7 @@ struct peripheral_t<STM32H750x, HRTIM_TIMA>
 template<>
 struct peripheral_t<STM32H753, HRTIM_TIMA>
 {
+    static constexpr periph_t P = HRTIM_TIMA;
     using T = stm32h742x_hrtim_tima_t;
     static T& V;
 };
@@ -3028,6 +3066,7 @@ struct peripheral_t<STM32H753, HRTIM_TIMA>
 template<>
 struct peripheral_t<STM32H755_CM4, HRTIM_TIMA>
 {
+    static constexpr periph_t P = HRTIM_TIMA;
     using T = stm32h742x_hrtim_tima_t;
     static T& V;
 };
@@ -3035,6 +3074,7 @@ struct peripheral_t<STM32H755_CM4, HRTIM_TIMA>
 template<>
 struct peripheral_t<STM32H755_CM7, HRTIM_TIMA>
 {
+    static constexpr periph_t P = HRTIM_TIMA;
     using T = stm32h742x_hrtim_tima_t;
     static T& V;
 };
@@ -3042,6 +3082,7 @@ struct peripheral_t<STM32H755_CM7, HRTIM_TIMA>
 template<>
 struct peripheral_t<STM32H757_CM4, HRTIM_TIMA>
 {
+    static constexpr periph_t P = HRTIM_TIMA;
     using T = stm32h742x_hrtim_tima_t;
     static T& V;
 };
@@ -3049,6 +3090,7 @@ struct peripheral_t<STM32H757_CM4, HRTIM_TIMA>
 template<>
 struct peripheral_t<STM32H757_CM7, HRTIM_TIMA>
 {
+    static constexpr periph_t P = HRTIM_TIMA;
     using T = stm32h742x_hrtim_tima_t;
     static T& V;
 };
@@ -3056,6 +3098,7 @@ struct peripheral_t<STM32H757_CM7, HRTIM_TIMA>
 template<>
 struct peripheral_t<STM32H7A3x, HRTIM_TIMA>
 {
+    static constexpr periph_t P = HRTIM_TIMA;
     using T = stm32h742x_hrtim_tima_t;
     static T& V;
 };
@@ -3063,6 +3106,7 @@ struct peripheral_t<STM32H7A3x, HRTIM_TIMA>
 template<>
 struct peripheral_t<STM32H7B0x, HRTIM_TIMA>
 {
+    static constexpr periph_t P = HRTIM_TIMA;
     using T = stm32h742x_hrtim_tima_t;
     static T& V;
 };
@@ -3070,6 +3114,7 @@ struct peripheral_t<STM32H7B0x, HRTIM_TIMA>
 template<>
 struct peripheral_t<STM32H7B3x, HRTIM_TIMA>
 {
+    static constexpr periph_t P = HRTIM_TIMA;
     using T = stm32h742x_hrtim_tima_t;
     static T& V;
 };
@@ -3077,6 +3122,7 @@ struct peripheral_t<STM32H7B3x, HRTIM_TIMA>
 template<>
 struct peripheral_t<STM32H742x, HRTIM_TIMB>
 {
+    static constexpr periph_t P = HRTIM_TIMB;
     using T = stm32h742x_hrtim_timb_t;
     static T& V;
 };
@@ -3084,6 +3130,7 @@ struct peripheral_t<STM32H742x, HRTIM_TIMB>
 template<>
 struct peripheral_t<STM32H743, HRTIM_TIMB>
 {
+    static constexpr periph_t P = HRTIM_TIMB;
     using T = stm32h742x_hrtim_timb_t;
     static T& V;
 };
@@ -3091,6 +3138,7 @@ struct peripheral_t<STM32H743, HRTIM_TIMB>
 template<>
 struct peripheral_t<STM32H745_CM4, HRTIM_TIMB>
 {
+    static constexpr periph_t P = HRTIM_TIMB;
     using T = stm32h742x_hrtim_timb_t;
     static T& V;
 };
@@ -3098,6 +3146,7 @@ struct peripheral_t<STM32H745_CM4, HRTIM_TIMB>
 template<>
 struct peripheral_t<STM32H745_CM7, HRTIM_TIMB>
 {
+    static constexpr periph_t P = HRTIM_TIMB;
     using T = stm32h742x_hrtim_timb_t;
     static T& V;
 };
@@ -3105,6 +3154,7 @@ struct peripheral_t<STM32H745_CM7, HRTIM_TIMB>
 template<>
 struct peripheral_t<STM32H747_CM4, HRTIM_TIMB>
 {
+    static constexpr periph_t P = HRTIM_TIMB;
     using T = stm32h742x_hrtim_timb_t;
     static T& V;
 };
@@ -3112,6 +3162,7 @@ struct peripheral_t<STM32H747_CM4, HRTIM_TIMB>
 template<>
 struct peripheral_t<STM32H747_CM7, HRTIM_TIMB>
 {
+    static constexpr periph_t P = HRTIM_TIMB;
     using T = stm32h742x_hrtim_timb_t;
     static T& V;
 };
@@ -3119,6 +3170,7 @@ struct peripheral_t<STM32H747_CM7, HRTIM_TIMB>
 template<>
 struct peripheral_t<STM32H750x, HRTIM_TIMB>
 {
+    static constexpr periph_t P = HRTIM_TIMB;
     using T = stm32h742x_hrtim_timb_t;
     static T& V;
 };
@@ -3126,6 +3178,7 @@ struct peripheral_t<STM32H750x, HRTIM_TIMB>
 template<>
 struct peripheral_t<STM32H753, HRTIM_TIMB>
 {
+    static constexpr periph_t P = HRTIM_TIMB;
     using T = stm32h742x_hrtim_timb_t;
     static T& V;
 };
@@ -3133,6 +3186,7 @@ struct peripheral_t<STM32H753, HRTIM_TIMB>
 template<>
 struct peripheral_t<STM32H755_CM4, HRTIM_TIMB>
 {
+    static constexpr periph_t P = HRTIM_TIMB;
     using T = stm32h742x_hrtim_timb_t;
     static T& V;
 };
@@ -3140,6 +3194,7 @@ struct peripheral_t<STM32H755_CM4, HRTIM_TIMB>
 template<>
 struct peripheral_t<STM32H755_CM7, HRTIM_TIMB>
 {
+    static constexpr periph_t P = HRTIM_TIMB;
     using T = stm32h742x_hrtim_timb_t;
     static T& V;
 };
@@ -3147,6 +3202,7 @@ struct peripheral_t<STM32H755_CM7, HRTIM_TIMB>
 template<>
 struct peripheral_t<STM32H757_CM4, HRTIM_TIMB>
 {
+    static constexpr periph_t P = HRTIM_TIMB;
     using T = stm32h742x_hrtim_timb_t;
     static T& V;
 };
@@ -3154,6 +3210,7 @@ struct peripheral_t<STM32H757_CM4, HRTIM_TIMB>
 template<>
 struct peripheral_t<STM32H757_CM7, HRTIM_TIMB>
 {
+    static constexpr periph_t P = HRTIM_TIMB;
     using T = stm32h742x_hrtim_timb_t;
     static T& V;
 };
@@ -3161,6 +3218,7 @@ struct peripheral_t<STM32H757_CM7, HRTIM_TIMB>
 template<>
 struct peripheral_t<STM32H7A3x, HRTIM_TIMB>
 {
+    static constexpr periph_t P = HRTIM_TIMB;
     using T = stm32h742x_hrtim_timb_t;
     static T& V;
 };
@@ -3168,6 +3226,7 @@ struct peripheral_t<STM32H7A3x, HRTIM_TIMB>
 template<>
 struct peripheral_t<STM32H7B0x, HRTIM_TIMB>
 {
+    static constexpr periph_t P = HRTIM_TIMB;
     using T = stm32h742x_hrtim_timb_t;
     static T& V;
 };
@@ -3175,6 +3234,7 @@ struct peripheral_t<STM32H7B0x, HRTIM_TIMB>
 template<>
 struct peripheral_t<STM32H7B3x, HRTIM_TIMB>
 {
+    static constexpr periph_t P = HRTIM_TIMB;
     using T = stm32h742x_hrtim_timb_t;
     static T& V;
 };
@@ -3182,6 +3242,7 @@ struct peripheral_t<STM32H7B3x, HRTIM_TIMB>
 template<>
 struct peripheral_t<STM32H742x, HRTIM_TIMC>
 {
+    static constexpr periph_t P = HRTIM_TIMC;
     using T = stm32h742x_hrtim_timc_t;
     static T& V;
 };
@@ -3189,6 +3250,7 @@ struct peripheral_t<STM32H742x, HRTIM_TIMC>
 template<>
 struct peripheral_t<STM32H743, HRTIM_TIMC>
 {
+    static constexpr periph_t P = HRTIM_TIMC;
     using T = stm32h742x_hrtim_timc_t;
     static T& V;
 };
@@ -3196,6 +3258,7 @@ struct peripheral_t<STM32H743, HRTIM_TIMC>
 template<>
 struct peripheral_t<STM32H745_CM4, HRTIM_TIMC>
 {
+    static constexpr periph_t P = HRTIM_TIMC;
     using T = stm32h742x_hrtim_timc_t;
     static T& V;
 };
@@ -3203,6 +3266,7 @@ struct peripheral_t<STM32H745_CM4, HRTIM_TIMC>
 template<>
 struct peripheral_t<STM32H745_CM7, HRTIM_TIMC>
 {
+    static constexpr periph_t P = HRTIM_TIMC;
     using T = stm32h742x_hrtim_timc_t;
     static T& V;
 };
@@ -3210,6 +3274,7 @@ struct peripheral_t<STM32H745_CM7, HRTIM_TIMC>
 template<>
 struct peripheral_t<STM32H747_CM4, HRTIM_TIMC>
 {
+    static constexpr periph_t P = HRTIM_TIMC;
     using T = stm32h742x_hrtim_timc_t;
     static T& V;
 };
@@ -3217,6 +3282,7 @@ struct peripheral_t<STM32H747_CM4, HRTIM_TIMC>
 template<>
 struct peripheral_t<STM32H747_CM7, HRTIM_TIMC>
 {
+    static constexpr periph_t P = HRTIM_TIMC;
     using T = stm32h742x_hrtim_timc_t;
     static T& V;
 };
@@ -3224,6 +3290,7 @@ struct peripheral_t<STM32H747_CM7, HRTIM_TIMC>
 template<>
 struct peripheral_t<STM32H750x, HRTIM_TIMC>
 {
+    static constexpr periph_t P = HRTIM_TIMC;
     using T = stm32h742x_hrtim_timc_t;
     static T& V;
 };
@@ -3231,6 +3298,7 @@ struct peripheral_t<STM32H750x, HRTIM_TIMC>
 template<>
 struct peripheral_t<STM32H753, HRTIM_TIMC>
 {
+    static constexpr periph_t P = HRTIM_TIMC;
     using T = stm32h742x_hrtim_timc_t;
     static T& V;
 };
@@ -3238,6 +3306,7 @@ struct peripheral_t<STM32H753, HRTIM_TIMC>
 template<>
 struct peripheral_t<STM32H755_CM4, HRTIM_TIMC>
 {
+    static constexpr periph_t P = HRTIM_TIMC;
     using T = stm32h742x_hrtim_timc_t;
     static T& V;
 };
@@ -3245,6 +3314,7 @@ struct peripheral_t<STM32H755_CM4, HRTIM_TIMC>
 template<>
 struct peripheral_t<STM32H755_CM7, HRTIM_TIMC>
 {
+    static constexpr periph_t P = HRTIM_TIMC;
     using T = stm32h742x_hrtim_timc_t;
     static T& V;
 };
@@ -3252,6 +3322,7 @@ struct peripheral_t<STM32H755_CM7, HRTIM_TIMC>
 template<>
 struct peripheral_t<STM32H757_CM4, HRTIM_TIMC>
 {
+    static constexpr periph_t P = HRTIM_TIMC;
     using T = stm32h742x_hrtim_timc_t;
     static T& V;
 };
@@ -3259,6 +3330,7 @@ struct peripheral_t<STM32H757_CM4, HRTIM_TIMC>
 template<>
 struct peripheral_t<STM32H757_CM7, HRTIM_TIMC>
 {
+    static constexpr periph_t P = HRTIM_TIMC;
     using T = stm32h742x_hrtim_timc_t;
     static T& V;
 };
@@ -3266,6 +3338,7 @@ struct peripheral_t<STM32H757_CM7, HRTIM_TIMC>
 template<>
 struct peripheral_t<STM32H7A3x, HRTIM_TIMC>
 {
+    static constexpr periph_t P = HRTIM_TIMC;
     using T = stm32h742x_hrtim_timc_t;
     static T& V;
 };
@@ -3273,6 +3346,7 @@ struct peripheral_t<STM32H7A3x, HRTIM_TIMC>
 template<>
 struct peripheral_t<STM32H7B0x, HRTIM_TIMC>
 {
+    static constexpr periph_t P = HRTIM_TIMC;
     using T = stm32h742x_hrtim_timc_t;
     static T& V;
 };
@@ -3280,6 +3354,7 @@ struct peripheral_t<STM32H7B0x, HRTIM_TIMC>
 template<>
 struct peripheral_t<STM32H7B3x, HRTIM_TIMC>
 {
+    static constexpr periph_t P = HRTIM_TIMC;
     using T = stm32h742x_hrtim_timc_t;
     static T& V;
 };
@@ -3287,6 +3362,7 @@ struct peripheral_t<STM32H7B3x, HRTIM_TIMC>
 template<>
 struct peripheral_t<STM32H742x, HRTIM_TIMD>
 {
+    static constexpr periph_t P = HRTIM_TIMD;
     using T = stm32h742x_hrtim_timd_t;
     static T& V;
 };
@@ -3294,6 +3370,7 @@ struct peripheral_t<STM32H742x, HRTIM_TIMD>
 template<>
 struct peripheral_t<STM32H743, HRTIM_TIMD>
 {
+    static constexpr periph_t P = HRTIM_TIMD;
     using T = stm32h742x_hrtim_timd_t;
     static T& V;
 };
@@ -3301,6 +3378,7 @@ struct peripheral_t<STM32H743, HRTIM_TIMD>
 template<>
 struct peripheral_t<STM32H745_CM4, HRTIM_TIMD>
 {
+    static constexpr periph_t P = HRTIM_TIMD;
     using T = stm32h742x_hrtim_timd_t;
     static T& V;
 };
@@ -3308,6 +3386,7 @@ struct peripheral_t<STM32H745_CM4, HRTIM_TIMD>
 template<>
 struct peripheral_t<STM32H745_CM7, HRTIM_TIMD>
 {
+    static constexpr periph_t P = HRTIM_TIMD;
     using T = stm32h742x_hrtim_timd_t;
     static T& V;
 };
@@ -3315,6 +3394,7 @@ struct peripheral_t<STM32H745_CM7, HRTIM_TIMD>
 template<>
 struct peripheral_t<STM32H747_CM4, HRTIM_TIMD>
 {
+    static constexpr periph_t P = HRTIM_TIMD;
     using T = stm32h742x_hrtim_timd_t;
     static T& V;
 };
@@ -3322,6 +3402,7 @@ struct peripheral_t<STM32H747_CM4, HRTIM_TIMD>
 template<>
 struct peripheral_t<STM32H747_CM7, HRTIM_TIMD>
 {
+    static constexpr periph_t P = HRTIM_TIMD;
     using T = stm32h742x_hrtim_timd_t;
     static T& V;
 };
@@ -3329,6 +3410,7 @@ struct peripheral_t<STM32H747_CM7, HRTIM_TIMD>
 template<>
 struct peripheral_t<STM32H750x, HRTIM_TIMD>
 {
+    static constexpr periph_t P = HRTIM_TIMD;
     using T = stm32h742x_hrtim_timd_t;
     static T& V;
 };
@@ -3336,6 +3418,7 @@ struct peripheral_t<STM32H750x, HRTIM_TIMD>
 template<>
 struct peripheral_t<STM32H753, HRTIM_TIMD>
 {
+    static constexpr periph_t P = HRTIM_TIMD;
     using T = stm32h742x_hrtim_timd_t;
     static T& V;
 };
@@ -3343,6 +3426,7 @@ struct peripheral_t<STM32H753, HRTIM_TIMD>
 template<>
 struct peripheral_t<STM32H755_CM4, HRTIM_TIMD>
 {
+    static constexpr periph_t P = HRTIM_TIMD;
     using T = stm32h742x_hrtim_timd_t;
     static T& V;
 };
@@ -3350,6 +3434,7 @@ struct peripheral_t<STM32H755_CM4, HRTIM_TIMD>
 template<>
 struct peripheral_t<STM32H755_CM7, HRTIM_TIMD>
 {
+    static constexpr periph_t P = HRTIM_TIMD;
     using T = stm32h742x_hrtim_timd_t;
     static T& V;
 };
@@ -3357,6 +3442,7 @@ struct peripheral_t<STM32H755_CM7, HRTIM_TIMD>
 template<>
 struct peripheral_t<STM32H757_CM4, HRTIM_TIMD>
 {
+    static constexpr periph_t P = HRTIM_TIMD;
     using T = stm32h742x_hrtim_timd_t;
     static T& V;
 };
@@ -3364,6 +3450,7 @@ struct peripheral_t<STM32H757_CM4, HRTIM_TIMD>
 template<>
 struct peripheral_t<STM32H757_CM7, HRTIM_TIMD>
 {
+    static constexpr periph_t P = HRTIM_TIMD;
     using T = stm32h742x_hrtim_timd_t;
     static T& V;
 };
@@ -3371,6 +3458,7 @@ struct peripheral_t<STM32H757_CM7, HRTIM_TIMD>
 template<>
 struct peripheral_t<STM32H7A3x, HRTIM_TIMD>
 {
+    static constexpr periph_t P = HRTIM_TIMD;
     using T = stm32h742x_hrtim_timd_t;
     static T& V;
 };
@@ -3378,6 +3466,7 @@ struct peripheral_t<STM32H7A3x, HRTIM_TIMD>
 template<>
 struct peripheral_t<STM32H7B0x, HRTIM_TIMD>
 {
+    static constexpr periph_t P = HRTIM_TIMD;
     using T = stm32h742x_hrtim_timd_t;
     static T& V;
 };
@@ -3385,6 +3474,7 @@ struct peripheral_t<STM32H7B0x, HRTIM_TIMD>
 template<>
 struct peripheral_t<STM32H7B3x, HRTIM_TIMD>
 {
+    static constexpr periph_t P = HRTIM_TIMD;
     using T = stm32h742x_hrtim_timd_t;
     static T& V;
 };
@@ -3392,6 +3482,7 @@ struct peripheral_t<STM32H7B3x, HRTIM_TIMD>
 template<>
 struct peripheral_t<STM32H742x, HRTIM_TIME>
 {
+    static constexpr periph_t P = HRTIM_TIME;
     using T = stm32h742x_hrtim_time_t;
     static T& V;
 };
@@ -3399,6 +3490,7 @@ struct peripheral_t<STM32H742x, HRTIM_TIME>
 template<>
 struct peripheral_t<STM32H743, HRTIM_TIME>
 {
+    static constexpr periph_t P = HRTIM_TIME;
     using T = stm32h742x_hrtim_time_t;
     static T& V;
 };
@@ -3406,6 +3498,7 @@ struct peripheral_t<STM32H743, HRTIM_TIME>
 template<>
 struct peripheral_t<STM32H745_CM4, HRTIM_TIME>
 {
+    static constexpr periph_t P = HRTIM_TIME;
     using T = stm32h742x_hrtim_time_t;
     static T& V;
 };
@@ -3413,6 +3506,7 @@ struct peripheral_t<STM32H745_CM4, HRTIM_TIME>
 template<>
 struct peripheral_t<STM32H745_CM7, HRTIM_TIME>
 {
+    static constexpr periph_t P = HRTIM_TIME;
     using T = stm32h742x_hrtim_time_t;
     static T& V;
 };
@@ -3420,6 +3514,7 @@ struct peripheral_t<STM32H745_CM7, HRTIM_TIME>
 template<>
 struct peripheral_t<STM32H747_CM4, HRTIM_TIME>
 {
+    static constexpr periph_t P = HRTIM_TIME;
     using T = stm32h742x_hrtim_time_t;
     static T& V;
 };
@@ -3427,6 +3522,7 @@ struct peripheral_t<STM32H747_CM4, HRTIM_TIME>
 template<>
 struct peripheral_t<STM32H747_CM7, HRTIM_TIME>
 {
+    static constexpr periph_t P = HRTIM_TIME;
     using T = stm32h742x_hrtim_time_t;
     static T& V;
 };
@@ -3434,6 +3530,7 @@ struct peripheral_t<STM32H747_CM7, HRTIM_TIME>
 template<>
 struct peripheral_t<STM32H750x, HRTIM_TIME>
 {
+    static constexpr periph_t P = HRTIM_TIME;
     using T = stm32h742x_hrtim_time_t;
     static T& V;
 };
@@ -3441,6 +3538,7 @@ struct peripheral_t<STM32H750x, HRTIM_TIME>
 template<>
 struct peripheral_t<STM32H753, HRTIM_TIME>
 {
+    static constexpr periph_t P = HRTIM_TIME;
     using T = stm32h742x_hrtim_time_t;
     static T& V;
 };
@@ -3448,6 +3546,7 @@ struct peripheral_t<STM32H753, HRTIM_TIME>
 template<>
 struct peripheral_t<STM32H755_CM4, HRTIM_TIME>
 {
+    static constexpr periph_t P = HRTIM_TIME;
     using T = stm32h742x_hrtim_time_t;
     static T& V;
 };
@@ -3455,6 +3554,7 @@ struct peripheral_t<STM32H755_CM4, HRTIM_TIME>
 template<>
 struct peripheral_t<STM32H755_CM7, HRTIM_TIME>
 {
+    static constexpr periph_t P = HRTIM_TIME;
     using T = stm32h742x_hrtim_time_t;
     static T& V;
 };
@@ -3462,6 +3562,7 @@ struct peripheral_t<STM32H755_CM7, HRTIM_TIME>
 template<>
 struct peripheral_t<STM32H757_CM4, HRTIM_TIME>
 {
+    static constexpr periph_t P = HRTIM_TIME;
     using T = stm32h742x_hrtim_time_t;
     static T& V;
 };
@@ -3469,6 +3570,7 @@ struct peripheral_t<STM32H757_CM4, HRTIM_TIME>
 template<>
 struct peripheral_t<STM32H757_CM7, HRTIM_TIME>
 {
+    static constexpr periph_t P = HRTIM_TIME;
     using T = stm32h742x_hrtim_time_t;
     static T& V;
 };
@@ -3476,6 +3578,7 @@ struct peripheral_t<STM32H757_CM7, HRTIM_TIME>
 template<>
 struct peripheral_t<STM32H7A3x, HRTIM_TIME>
 {
+    static constexpr periph_t P = HRTIM_TIME;
     using T = stm32h742x_hrtim_time_t;
     static T& V;
 };
@@ -3483,6 +3586,7 @@ struct peripheral_t<STM32H7A3x, HRTIM_TIME>
 template<>
 struct peripheral_t<STM32H7B0x, HRTIM_TIME>
 {
+    static constexpr periph_t P = HRTIM_TIME;
     using T = stm32h742x_hrtim_time_t;
     static T& V;
 };
@@ -3490,6 +3594,7 @@ struct peripheral_t<STM32H7B0x, HRTIM_TIME>
 template<>
 struct peripheral_t<STM32H7B3x, HRTIM_TIME>
 {
+    static constexpr periph_t P = HRTIM_TIME;
     using T = stm32h742x_hrtim_time_t;
     static T& V;
 };

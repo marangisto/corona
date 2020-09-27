@@ -656,6 +656,7 @@ struct stm32f412_i2c4_t
 template<>
 struct peripheral_t<STM32F413, FMPI2C>
 {
+    static constexpr periph_t P = FMPI2C;
     using T = stm32f413_fmpi2c_t;
     static T& V;
 };
@@ -663,6 +664,7 @@ struct peripheral_t<STM32F413, FMPI2C>
 template<>
 struct peripheral_t<STM32F446, FMPI2C>
 {
+    static constexpr periph_t P = FMPI2C;
     using T = stm32f446_fmpi2c_t;
     static T& V;
 };
@@ -670,6 +672,7 @@ struct peripheral_t<STM32F446, FMPI2C>
 template<>
 struct peripheral_t<STM32F413, I2C1>
 {
+    static constexpr periph_t P = I2C1;
     using T = stm32f413_i2c2_t;
     static T& V;
 };
@@ -677,6 +680,7 @@ struct peripheral_t<STM32F413, I2C1>
 template<>
 struct peripheral_t<STM32F413, I2C2>
 {
+    static constexpr periph_t P = I2C2;
     using T = stm32f413_i2c2_t;
     static T& V;
 };
@@ -684,6 +688,7 @@ struct peripheral_t<STM32F413, I2C2>
 template<>
 struct peripheral_t<STM32F413, I2C3>
 {
+    static constexpr periph_t P = I2C3;
     using T = stm32f413_i2c2_t;
     static T& V;
 };
@@ -691,6 +696,7 @@ struct peripheral_t<STM32F413, I2C3>
 template<>
 struct peripheral_t<STM32F427, I2C1>
 {
+    static constexpr periph_t P = I2C1;
     using T = stm32f413_i2c2_t;
     static T& V;
 };
@@ -698,6 +704,7 @@ struct peripheral_t<STM32F427, I2C1>
 template<>
 struct peripheral_t<STM32F427, I2C2>
 {
+    static constexpr periph_t P = I2C2;
     using T = stm32f413_i2c2_t;
     static T& V;
 };
@@ -705,6 +712,7 @@ struct peripheral_t<STM32F427, I2C2>
 template<>
 struct peripheral_t<STM32F427, I2C3>
 {
+    static constexpr periph_t P = I2C3;
     using T = stm32f413_i2c2_t;
     static T& V;
 };
@@ -712,6 +720,7 @@ struct peripheral_t<STM32F427, I2C3>
 template<>
 struct peripheral_t<STM32F429, I2C1>
 {
+    static constexpr periph_t P = I2C1;
     using T = stm32f413_i2c2_t;
     static T& V;
 };
@@ -719,6 +728,7 @@ struct peripheral_t<STM32F429, I2C1>
 template<>
 struct peripheral_t<STM32F429, I2C2>
 {
+    static constexpr periph_t P = I2C2;
     using T = stm32f413_i2c2_t;
     static T& V;
 };
@@ -726,6 +736,7 @@ struct peripheral_t<STM32F429, I2C2>
 template<>
 struct peripheral_t<STM32F429, I2C3>
 {
+    static constexpr periph_t P = I2C3;
     using T = stm32f413_i2c2_t;
     static T& V;
 };
@@ -733,6 +744,7 @@ struct peripheral_t<STM32F429, I2C3>
 template<>
 struct peripheral_t<STM32F446, I2C1>
 {
+    static constexpr periph_t P = I2C1;
     using T = stm32f413_i2c2_t;
     static T& V;
 };
@@ -740,6 +752,7 @@ struct peripheral_t<STM32F446, I2C1>
 template<>
 struct peripheral_t<STM32F446, I2C2>
 {
+    static constexpr periph_t P = I2C2;
     using T = stm32f413_i2c2_t;
     static T& V;
 };
@@ -747,6 +760,7 @@ struct peripheral_t<STM32F446, I2C2>
 template<>
 struct peripheral_t<STM32F446, I2C3>
 {
+    static constexpr periph_t P = I2C3;
     using T = stm32f413_i2c2_t;
     static T& V;
 };
@@ -754,6 +768,7 @@ struct peripheral_t<STM32F446, I2C3>
 template<>
 struct peripheral_t<STM32F469, I2C1>
 {
+    static constexpr periph_t P = I2C1;
     using T = stm32f413_i2c2_t;
     static T& V;
 };
@@ -761,6 +776,7 @@ struct peripheral_t<STM32F469, I2C1>
 template<>
 struct peripheral_t<STM32F469, I2C2>
 {
+    static constexpr periph_t P = I2C2;
     using T = stm32f413_i2c2_t;
     static T& V;
 };
@@ -768,6 +784,7 @@ struct peripheral_t<STM32F469, I2C2>
 template<>
 struct peripheral_t<STM32F469, I2C3>
 {
+    static constexpr periph_t P = I2C3;
     using T = stm32f413_i2c2_t;
     static T& V;
 };
@@ -775,6 +792,7 @@ struct peripheral_t<STM32F469, I2C3>
 template<>
 struct peripheral_t<STM32F401, I2C1>
 {
+    static constexpr periph_t P = I2C1;
     using T = stm32f401_i2c3_t;
     static T& V;
 };
@@ -782,6 +800,7 @@ struct peripheral_t<STM32F401, I2C1>
 template<>
 struct peripheral_t<STM32F401, I2C2>
 {
+    static constexpr periph_t P = I2C2;
     using T = stm32f401_i2c3_t;
     static T& V;
 };
@@ -789,6 +808,7 @@ struct peripheral_t<STM32F401, I2C2>
 template<>
 struct peripheral_t<STM32F401, I2C3>
 {
+    static constexpr periph_t P = I2C3;
     using T = stm32f401_i2c3_t;
     static T& V;
 };
@@ -796,6 +816,7 @@ struct peripheral_t<STM32F401, I2C3>
 template<>
 struct peripheral_t<STM32F405, I2C1>
 {
+    static constexpr periph_t P = I2C1;
     using T = stm32f401_i2c3_t;
     static T& V;
 };
@@ -803,6 +824,7 @@ struct peripheral_t<STM32F405, I2C1>
 template<>
 struct peripheral_t<STM32F405, I2C2>
 {
+    static constexpr periph_t P = I2C2;
     using T = stm32f401_i2c3_t;
     static T& V;
 };
@@ -810,6 +832,7 @@ struct peripheral_t<STM32F405, I2C2>
 template<>
 struct peripheral_t<STM32F405, I2C3>
 {
+    static constexpr periph_t P = I2C3;
     using T = stm32f401_i2c3_t;
     static T& V;
 };
@@ -817,6 +840,7 @@ struct peripheral_t<STM32F405, I2C3>
 template<>
 struct peripheral_t<STM32F407, I2C1>
 {
+    static constexpr periph_t P = I2C1;
     using T = stm32f401_i2c3_t;
     static T& V;
 };
@@ -824,6 +848,7 @@ struct peripheral_t<STM32F407, I2C1>
 template<>
 struct peripheral_t<STM32F407, I2C2>
 {
+    static constexpr periph_t P = I2C2;
     using T = stm32f401_i2c3_t;
     static T& V;
 };
@@ -831,6 +856,7 @@ struct peripheral_t<STM32F407, I2C2>
 template<>
 struct peripheral_t<STM32F407, I2C3>
 {
+    static constexpr periph_t P = I2C3;
     using T = stm32f401_i2c3_t;
     static T& V;
 };
@@ -838,6 +864,7 @@ struct peripheral_t<STM32F407, I2C3>
 template<>
 struct peripheral_t<STM32F410, I2C1>
 {
+    static constexpr periph_t P = I2C1;
     using T = stm32f401_i2c3_t;
     static T& V;
 };
@@ -845,6 +872,7 @@ struct peripheral_t<STM32F410, I2C1>
 template<>
 struct peripheral_t<STM32F410, I2C2>
 {
+    static constexpr periph_t P = I2C2;
     using T = stm32f401_i2c3_t;
     static T& V;
 };
@@ -852,6 +880,7 @@ struct peripheral_t<STM32F410, I2C2>
 template<>
 struct peripheral_t<STM32F411, I2C1>
 {
+    static constexpr periph_t P = I2C1;
     using T = stm32f401_i2c3_t;
     static T& V;
 };
@@ -859,6 +888,7 @@ struct peripheral_t<STM32F411, I2C1>
 template<>
 struct peripheral_t<STM32F411, I2C2>
 {
+    static constexpr periph_t P = I2C2;
     using T = stm32f401_i2c3_t;
     static T& V;
 };
@@ -866,6 +896,7 @@ struct peripheral_t<STM32F411, I2C2>
 template<>
 struct peripheral_t<STM32F411, I2C3>
 {
+    static constexpr periph_t P = I2C3;
     using T = stm32f401_i2c3_t;
     static T& V;
 };
@@ -873,6 +904,7 @@ struct peripheral_t<STM32F411, I2C3>
 template<>
 struct peripheral_t<STM32F412, I2C1>
 {
+    static constexpr periph_t P = I2C1;
     using T = stm32f401_i2c3_t;
     static T& V;
 };
@@ -880,6 +912,7 @@ struct peripheral_t<STM32F412, I2C1>
 template<>
 struct peripheral_t<STM32F412, I2C2>
 {
+    static constexpr periph_t P = I2C2;
     using T = stm32f401_i2c3_t;
     static T& V;
 };
@@ -887,6 +920,7 @@ struct peripheral_t<STM32F412, I2C2>
 template<>
 struct peripheral_t<STM32F412, I2C3>
 {
+    static constexpr periph_t P = I2C3;
     using T = stm32f401_i2c3_t;
     static T& V;
 };
@@ -894,6 +928,7 @@ struct peripheral_t<STM32F412, I2C3>
 template<>
 struct peripheral_t<STM32F410, I2C4>
 {
+    static constexpr periph_t P = I2C4;
     using T = stm32f410_i2c4_t;
     static T& V;
 };
@@ -901,6 +936,7 @@ struct peripheral_t<STM32F410, I2C4>
 template<>
 struct peripheral_t<STM32F412, I2C4>
 {
+    static constexpr periph_t P = I2C4;
     using T = stm32f412_i2c4_t;
     static T& V;
 };

@@ -307,6 +307,7 @@ struct stm32l496_hash_t
 template<>
 struct peripheral_t<STM32L496, HASH>
 {
+    static constexpr periph_t P = HASH;
     using T = stm32l496_hash_t;
     static T& V;
 };
@@ -314,6 +315,7 @@ struct peripheral_t<STM32L496, HASH>
 template<>
 struct peripheral_t<STM32L4x6, HASH>
 {
+    static constexpr periph_t P = HASH;
     using T = stm32l496_hash_t;
     static T& V;
 };

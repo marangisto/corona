@@ -130,6 +130,7 @@ struct stm32f100_uart5_t
 template<>
 struct peripheral_t<STM32F100, UART4>
 {
+    static constexpr periph_t P = UART4;
     using T = stm32f100_uart4_t;
     static T& V;
 };
@@ -137,6 +138,7 @@ struct peripheral_t<STM32F100, UART4>
 template<>
 struct peripheral_t<STM32F101, UART4>
 {
+    static constexpr periph_t P = UART4;
     using T = stm32f100_uart4_t;
     static T& V;
 };
@@ -144,6 +146,7 @@ struct peripheral_t<STM32F101, UART4>
 template<>
 struct peripheral_t<STM32F102, UART4>
 {
+    static constexpr periph_t P = UART4;
     using T = stm32f100_uart4_t;
     static T& V;
 };
@@ -151,6 +154,7 @@ struct peripheral_t<STM32F102, UART4>
 template<>
 struct peripheral_t<STM32F102, UART5>
 {
+    static constexpr periph_t P = UART5;
     using T = stm32f100_uart4_t;
     static T& V;
 };
@@ -158,6 +162,7 @@ struct peripheral_t<STM32F102, UART5>
 template<>
 struct peripheral_t<STM32F103, UART4>
 {
+    static constexpr periph_t P = UART4;
     using T = stm32f100_uart4_t;
     static T& V;
 };
@@ -165,6 +170,7 @@ struct peripheral_t<STM32F103, UART4>
 template<>
 struct peripheral_t<STM32F107, UART4>
 {
+    static constexpr periph_t P = UART4;
     using T = stm32f100_uart4_t;
     static T& V;
 };
@@ -172,6 +178,7 @@ struct peripheral_t<STM32F107, UART4>
 template<>
 struct peripheral_t<STM32F100, UART5>
 {
+    static constexpr periph_t P = UART5;
     using T = stm32f100_uart5_t;
     static T& V;
 };
@@ -179,6 +186,7 @@ struct peripheral_t<STM32F100, UART5>
 template<>
 struct peripheral_t<STM32F101, UART5>
 {
+    static constexpr periph_t P = UART5;
     using T = stm32f100_uart5_t;
     static T& V;
 };
@@ -186,6 +194,7 @@ struct peripheral_t<STM32F101, UART5>
 template<>
 struct peripheral_t<STM32F103, UART5>
 {
+    static constexpr periph_t P = UART5;
     using T = stm32f100_uart5_t;
     static T& V;
 };
@@ -193,6 +202,7 @@ struct peripheral_t<STM32F103, UART5>
 template<>
 struct peripheral_t<STM32F107, UART5>
 {
+    static constexpr periph_t P = UART5;
     using T = stm32f100_uart5_t;
     static T& V;
 };

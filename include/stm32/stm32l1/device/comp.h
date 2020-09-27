@@ -37,6 +37,7 @@ struct stm32l100_comp_t
 template<>
 struct peripheral_t<STM32L100, COMP>
 {
+    static constexpr periph_t P = COMP;
     using T = stm32l100_comp_t;
     static T& V;
 };
@@ -44,6 +45,7 @@ struct peripheral_t<STM32L100, COMP>
 template<>
 struct peripheral_t<STM32L151, COMP>
 {
+    static constexpr periph_t P = COMP;
     using T = stm32l100_comp_t;
     static T& V;
 };
@@ -51,6 +53,7 @@ struct peripheral_t<STM32L151, COMP>
 template<>
 struct peripheral_t<STM32L152, COMP>
 {
+    static constexpr periph_t P = COMP;
     using T = stm32l100_comp_t;
     static T& V;
 };
@@ -58,6 +61,7 @@ struct peripheral_t<STM32L152, COMP>
 template<>
 struct peripheral_t<STM32L162, COMP>
 {
+    static constexpr periph_t P = COMP;
     using T = stm32l100_comp_t;
     static T& V;
 };

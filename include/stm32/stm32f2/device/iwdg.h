@@ -32,6 +32,7 @@ struct stm32f215_iwdg_t
 template<>
 struct peripheral_t<STM32F215, IWDG>
 {
+    static constexpr periph_t P = IWDG;
     using T = stm32f215_iwdg_t;
     static T& V;
 };
@@ -39,6 +40,7 @@ struct peripheral_t<STM32F215, IWDG>
 template<>
 struct peripheral_t<STM32F217, IWDG>
 {
+    static constexpr periph_t P = IWDG;
     using T = stm32f215_iwdg_t;
     static T& V;
 };

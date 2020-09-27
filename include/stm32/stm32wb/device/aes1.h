@@ -287,6 +287,7 @@ struct stm32wb30_cm4_aes2_t
 template<>
 struct peripheral_t<STM32WB30_CM4, AES1>
 {
+    static constexpr periph_t P = AES1;
     using T = stm32wb30_cm4_aes1_t;
     static T& V;
 };
@@ -294,6 +295,7 @@ struct peripheral_t<STM32WB30_CM4, AES1>
 template<>
 struct peripheral_t<STM32WB35_CM4, AES1>
 {
+    static constexpr periph_t P = AES1;
     using T = stm32wb30_cm4_aes1_t;
     static T& V;
 };
@@ -301,6 +303,7 @@ struct peripheral_t<STM32WB35_CM4, AES1>
 template<>
 struct peripheral_t<STM32WB55_CM4, AES1>
 {
+    static constexpr periph_t P = AES1;
     using T = stm32wb30_cm4_aes1_t;
     static T& V;
 };
@@ -308,6 +311,7 @@ struct peripheral_t<STM32WB55_CM4, AES1>
 template<>
 struct peripheral_t<STM32WB30_CM4, AES2>
 {
+    static constexpr periph_t P = AES2;
     using T = stm32wb30_cm4_aes2_t;
     static T& V;
 };
@@ -315,6 +319,7 @@ struct peripheral_t<STM32WB30_CM4, AES2>
 template<>
 struct peripheral_t<STM32WB35_CM4, AES2>
 {
+    static constexpr periph_t P = AES2;
     using T = stm32wb30_cm4_aes2_t;
     static T& V;
 };
@@ -322,6 +327,7 @@ struct peripheral_t<STM32WB35_CM4, AES2>
 template<>
 struct peripheral_t<STM32WB50_CM4, AES2>
 {
+    static constexpr periph_t P = AES2;
     using T = stm32wb30_cm4_aes2_t;
     static T& V;
 };
@@ -329,6 +335,7 @@ struct peripheral_t<STM32WB50_CM4, AES2>
 template<>
 struct peripheral_t<STM32WB55_CM4, AES2>
 {
+    static constexpr periph_t P = AES2;
     using T = stm32wb30_cm4_aes2_t;
     static T& V;
 };

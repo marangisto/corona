@@ -461,6 +461,7 @@ struct stm32l476_tsc_t
 template<>
 struct peripheral_t<STM32L412, TSC>
 {
+    static constexpr periph_t P = TSC;
     using T = stm32l412_tsc_t;
     static T& V;
 };
@@ -468,6 +469,7 @@ struct peripheral_t<STM32L412, TSC>
 template<>
 struct peripheral_t<STM32L476, TSC>
 {
+    static constexpr periph_t P = TSC;
     using T = stm32l476_tsc_t;
     static T& V;
 };
@@ -475,6 +477,7 @@ struct peripheral_t<STM32L476, TSC>
 template<>
 struct peripheral_t<STM32L496, TSC>
 {
+    static constexpr periph_t P = TSC;
     using T = stm32l476_tsc_t;
     static T& V;
 };
@@ -482,6 +485,7 @@ struct peripheral_t<STM32L496, TSC>
 template<>
 struct peripheral_t<STM32L4x1, TSC>
 {
+    static constexpr periph_t P = TSC;
     using T = stm32l476_tsc_t;
     static T& V;
 };
@@ -489,6 +493,7 @@ struct peripheral_t<STM32L4x1, TSC>
 template<>
 struct peripheral_t<STM32L4x2, TSC>
 {
+    static constexpr periph_t P = TSC;
     using T = stm32l476_tsc_t;
     static T& V;
 };
@@ -496,6 +501,7 @@ struct peripheral_t<STM32L4x2, TSC>
 template<>
 struct peripheral_t<STM32L4x3, TSC>
 {
+    static constexpr periph_t P = TSC;
     using T = stm32l476_tsc_t;
     static T& V;
 };
@@ -503,6 +509,7 @@ struct peripheral_t<STM32L4x3, TSC>
 template<>
 struct peripheral_t<STM32L4x5, TSC>
 {
+    static constexpr periph_t P = TSC;
     using T = stm32l476_tsc_t;
     static T& V;
 };
@@ -510,6 +517,7 @@ struct peripheral_t<STM32L4x5, TSC>
 template<>
 struct peripheral_t<STM32L4x6, TSC>
 {
+    static constexpr periph_t P = TSC;
     using T = stm32l476_tsc_t;
     static T& V;
 };

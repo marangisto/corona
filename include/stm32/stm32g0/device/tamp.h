@@ -240,6 +240,7 @@ struct stm32g070_tamp_t
 template<>
 struct peripheral_t<STM32G030, TAMP>
 {
+    static constexpr periph_t P = TAMP;
     using T = stm32g030_tamp_t;
     static T& V;
 };
@@ -247,6 +248,7 @@ struct peripheral_t<STM32G030, TAMP>
 template<>
 struct peripheral_t<STM32G031, TAMP>
 {
+    static constexpr periph_t P = TAMP;
     using T = stm32g030_tamp_t;
     static T& V;
 };
@@ -254,6 +256,7 @@ struct peripheral_t<STM32G031, TAMP>
 template<>
 struct peripheral_t<STM32G041, TAMP>
 {
+    static constexpr periph_t P = TAMP;
     using T = stm32g030_tamp_t;
     static T& V;
 };
@@ -261,6 +264,7 @@ struct peripheral_t<STM32G041, TAMP>
 template<>
 struct peripheral_t<STM32G070, TAMP>
 {
+    static constexpr periph_t P = TAMP;
     using T = stm32g070_tamp_t;
     static T& V;
 };
@@ -268,6 +272,7 @@ struct peripheral_t<STM32G070, TAMP>
 template<>
 struct peripheral_t<STM32G071, TAMP>
 {
+    static constexpr periph_t P = TAMP;
     using T = stm32g070_tamp_t;
     static T& V;
 };
@@ -275,6 +280,7 @@ struct peripheral_t<STM32G071, TAMP>
 template<>
 struct peripheral_t<STM32G081, TAMP>
 {
+    static constexpr periph_t P = TAMP;
     using T = stm32g070_tamp_t;
     static T& V;
 };

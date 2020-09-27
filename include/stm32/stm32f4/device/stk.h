@@ -36,6 +36,7 @@ struct stm32f401_stk_t
 template<>
 struct peripheral_t<STM32F401, STK>
 {
+    static constexpr periph_t P = STK;
     using T = stm32f401_stk_t;
     static T& V;
 };
@@ -43,6 +44,7 @@ struct peripheral_t<STM32F401, STK>
 template<>
 struct peripheral_t<STM32F405, STK>
 {
+    static constexpr periph_t P = STK;
     using T = stm32f401_stk_t;
     static T& V;
 };
@@ -50,6 +52,7 @@ struct peripheral_t<STM32F405, STK>
 template<>
 struct peripheral_t<STM32F407, STK>
 {
+    static constexpr periph_t P = STK;
     using T = stm32f401_stk_t;
     static T& V;
 };
@@ -57,6 +60,7 @@ struct peripheral_t<STM32F407, STK>
 template<>
 struct peripheral_t<STM32F410, STK>
 {
+    static constexpr periph_t P = STK;
     using T = stm32f401_stk_t;
     static T& V;
 };
@@ -64,6 +68,7 @@ struct peripheral_t<STM32F410, STK>
 template<>
 struct peripheral_t<STM32F411, STK>
 {
+    static constexpr periph_t P = STK;
     using T = stm32f401_stk_t;
     static T& V;
 };
@@ -71,6 +76,7 @@ struct peripheral_t<STM32F411, STK>
 template<>
 struct peripheral_t<STM32F412, STK>
 {
+    static constexpr periph_t P = STK;
     using T = stm32f401_stk_t;
     static T& V;
 };
@@ -78,6 +84,7 @@ struct peripheral_t<STM32F412, STK>
 template<>
 struct peripheral_t<STM32F413, STK>
 {
+    static constexpr periph_t P = STK;
     using T = stm32f401_stk_t;
     static T& V;
 };
@@ -85,6 +92,7 @@ struct peripheral_t<STM32F413, STK>
 template<>
 struct peripheral_t<STM32F427, STK>
 {
+    static constexpr periph_t P = STK;
     using T = stm32f401_stk_t;
     static T& V;
 };
@@ -92,6 +100,7 @@ struct peripheral_t<STM32F427, STK>
 template<>
 struct peripheral_t<STM32F429, STK>
 {
+    static constexpr periph_t P = STK;
     using T = stm32f401_stk_t;
     static T& V;
 };
@@ -99,6 +108,7 @@ struct peripheral_t<STM32F429, STK>
 template<>
 struct peripheral_t<STM32F446, STK>
 {
+    static constexpr periph_t P = STK;
     using T = stm32f401_stk_t;
     static T& V;
 };
@@ -106,6 +116,7 @@ struct peripheral_t<STM32F446, STK>
 template<>
 struct peripheral_t<STM32F469, STK>
 {
+    static constexpr periph_t P = STK;
     using T = stm32f401_stk_t;
     static T& V;
 };

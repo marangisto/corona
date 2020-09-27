@@ -480,6 +480,7 @@ struct stm32f215_cryp_t
 template<>
 struct peripheral_t<STM32F215, CRYP>
 {
+    static constexpr periph_t P = CRYP;
     using T = stm32f215_cryp_t;
     static T& V;
 };
@@ -487,6 +488,7 @@ struct peripheral_t<STM32F215, CRYP>
 template<>
 struct peripheral_t<STM32F217, CRYP>
 {
+    static constexpr periph_t P = CRYP;
     using T = stm32f215_cryp_t;
     static T& V;
 };

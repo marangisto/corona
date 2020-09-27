@@ -429,6 +429,7 @@ struct stm32l4r5_sdmmc1_t
 template<>
 struct peripheral_t<STM32L4P5, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32l4p5_sdmmc1_t;
     static T& V;
 };
@@ -436,6 +437,7 @@ struct peripheral_t<STM32L4P5, SDMMC1>
 template<>
 struct peripheral_t<STM32L4P5, SDMMC2>
 {
+    static constexpr periph_t P = SDMMC2;
     using T = stm32l4p5_sdmmc1_t;
     static T& V;
 };
@@ -443,6 +445,7 @@ struct peripheral_t<STM32L4P5, SDMMC2>
 template<>
 struct peripheral_t<STM32L4Q5, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32l4p5_sdmmc1_t;
     static T& V;
 };
@@ -450,6 +453,7 @@ struct peripheral_t<STM32L4Q5, SDMMC1>
 template<>
 struct peripheral_t<STM32L4Q5, SDMMC2>
 {
+    static constexpr periph_t P = SDMMC2;
     using T = stm32l4p5_sdmmc1_t;
     static T& V;
 };
@@ -457,6 +461,7 @@ struct peripheral_t<STM32L4Q5, SDMMC2>
 template<>
 struct peripheral_t<STM32L4R5, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32l4r5_sdmmc1_t;
     static T& V;
 };
@@ -464,6 +469,7 @@ struct peripheral_t<STM32L4R5, SDMMC1>
 template<>
 struct peripheral_t<STM32L4R7, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32l4r5_sdmmc1_t;
     static T& V;
 };
@@ -471,6 +477,7 @@ struct peripheral_t<STM32L4R7, SDMMC1>
 template<>
 struct peripheral_t<STM32L4R9, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32l4r5_sdmmc1_t;
     static T& V;
 };
@@ -478,6 +485,7 @@ struct peripheral_t<STM32L4R9, SDMMC1>
 template<>
 struct peripheral_t<STM32L4S5, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32l4r5_sdmmc1_t;
     static T& V;
 };
@@ -485,6 +493,7 @@ struct peripheral_t<STM32L4S5, SDMMC1>
 template<>
 struct peripheral_t<STM32L4S7, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32l4r5_sdmmc1_t;
     static T& V;
 };
@@ -492,6 +501,7 @@ struct peripheral_t<STM32L4S7, SDMMC1>
 template<>
 struct peripheral_t<STM32L4S9, SDMMC1>
 {
+    static constexpr periph_t P = SDMMC1;
     using T = stm32l4r5_sdmmc1_t;
     static T& V;
 };

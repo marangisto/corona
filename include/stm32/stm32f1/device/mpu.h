@@ -49,6 +49,7 @@ struct stm32f100_mpu_t
 template<>
 struct peripheral_t<STM32F100, MPU>
 {
+    static constexpr periph_t P = MPU;
     using T = stm32f100_mpu_t;
     static T& V;
 };
@@ -56,6 +57,7 @@ struct peripheral_t<STM32F100, MPU>
 template<>
 struct peripheral_t<STM32F101, MPU>
 {
+    static constexpr periph_t P = MPU;
     using T = stm32f100_mpu_t;
     static T& V;
 };
@@ -63,6 +65,7 @@ struct peripheral_t<STM32F101, MPU>
 template<>
 struct peripheral_t<STM32F102, MPU>
 {
+    static constexpr periph_t P = MPU;
     using T = stm32f100_mpu_t;
     static T& V;
 };
@@ -70,6 +73,7 @@ struct peripheral_t<STM32F102, MPU>
 template<>
 struct peripheral_t<STM32F103, MPU>
 {
+    static constexpr periph_t P = MPU;
     using T = stm32f100_mpu_t;
     static T& V;
 };
@@ -77,6 +81,7 @@ struct peripheral_t<STM32F103, MPU>
 template<>
 struct peripheral_t<STM32F107, MPU>
 {
+    static constexpr periph_t P = MPU;
     using T = stm32f100_mpu_t;
     static T& V;
 };

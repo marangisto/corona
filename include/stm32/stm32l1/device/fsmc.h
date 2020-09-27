@@ -167,6 +167,7 @@ struct stm32l100_fsmc_t
 template<>
 struct peripheral_t<STM32L100, FSMC>
 {
+    static constexpr periph_t P = FSMC;
     using T = stm32l100_fsmc_t;
     static T& V;
 };
@@ -174,6 +175,7 @@ struct peripheral_t<STM32L100, FSMC>
 template<>
 struct peripheral_t<STM32L151, FSMC>
 {
+    static constexpr periph_t P = FSMC;
     using T = stm32l100_fsmc_t;
     static T& V;
 };
@@ -181,6 +183,7 @@ struct peripheral_t<STM32L151, FSMC>
 template<>
 struct peripheral_t<STM32L152, FSMC>
 {
+    static constexpr periph_t P = FSMC;
     using T = stm32l100_fsmc_t;
     static T& V;
 };
@@ -188,6 +191,7 @@ struct peripheral_t<STM32L152, FSMC>
 template<>
 struct peripheral_t<STM32L162, FSMC>
 {
+    static constexpr periph_t P = FSMC;
     using T = stm32l100_fsmc_t;
     static T& V;
 };

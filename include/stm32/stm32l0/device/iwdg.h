@@ -37,6 +37,7 @@ struct stm32l0x0_iwdg_t
 template<>
 struct peripheral_t<STM32L0x0, IWDG>
 {
+    static constexpr periph_t P = IWDG;
     using T = stm32l0x0_iwdg_t;
     static T& V;
 };
@@ -44,6 +45,7 @@ struct peripheral_t<STM32L0x0, IWDG>
 template<>
 struct peripheral_t<STM32L0x1, IWDG>
 {
+    static constexpr periph_t P = IWDG;
     using T = stm32l0x0_iwdg_t;
     static T& V;
 };
@@ -51,6 +53,7 @@ struct peripheral_t<STM32L0x1, IWDG>
 template<>
 struct peripheral_t<STM32L0x2, IWDG>
 {
+    static constexpr periph_t P = IWDG;
     using T = stm32l0x0_iwdg_t;
     static T& V;
 };
@@ -58,6 +61,7 @@ struct peripheral_t<STM32L0x2, IWDG>
 template<>
 struct peripheral_t<STM32L0x3, IWDG>
 {
+    static constexpr periph_t P = IWDG;
     using T = stm32l0x0_iwdg_t;
     static T& V;
 };

@@ -205,6 +205,7 @@ struct stm32f100_bkp_t
 template<>
 struct peripheral_t<STM32F100, BKP>
 {
+    static constexpr periph_t P = BKP;
     using T = stm32f100_bkp_t;
     static T& V;
 };
@@ -212,6 +213,7 @@ struct peripheral_t<STM32F100, BKP>
 template<>
 struct peripheral_t<STM32F101, BKP>
 {
+    static constexpr periph_t P = BKP;
     using T = stm32f100_bkp_t;
     static T& V;
 };
@@ -219,6 +221,7 @@ struct peripheral_t<STM32F101, BKP>
 template<>
 struct peripheral_t<STM32F102, BKP>
 {
+    static constexpr periph_t P = BKP;
     using T = stm32f100_bkp_t;
     static T& V;
 };
@@ -226,6 +229,7 @@ struct peripheral_t<STM32F102, BKP>
 template<>
 struct peripheral_t<STM32F103, BKP>
 {
+    static constexpr periph_t P = BKP;
     using T = stm32f100_bkp_t;
     static T& V;
 };
@@ -233,6 +237,7 @@ struct peripheral_t<STM32F103, BKP>
 template<>
 struct peripheral_t<STM32F107, BKP>
 {
+    static constexpr periph_t P = BKP;
     using T = stm32f100_bkp_t;
     static T& V;
 };

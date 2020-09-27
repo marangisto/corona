@@ -71,6 +71,7 @@ struct stm32f0x1_cec_t
 template<>
 struct peripheral_t<STM32F0x1, HDMI_CEC>
 {
+    static constexpr periph_t P = HDMI_CEC;
     using T = stm32f0x1_cec_t;
     static T& V;
 };
@@ -78,6 +79,7 @@ struct peripheral_t<STM32F0x1, HDMI_CEC>
 template<>
 struct peripheral_t<STM32F0x2, HDMI_CEC>
 {
+    static constexpr periph_t P = HDMI_CEC;
     using T = stm32f0x1_cec_t;
     static T& V;
 };
@@ -85,6 +87,7 @@ struct peripheral_t<STM32F0x2, HDMI_CEC>
 template<>
 struct peripheral_t<STM32F0x8, HDMI_CEC>
 {
+    static constexpr periph_t P = HDMI_CEC;
     using T = stm32f0x1_cec_t;
     static T& V;
 };

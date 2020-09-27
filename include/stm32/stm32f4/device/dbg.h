@@ -193,6 +193,7 @@ struct stm32f446_dbg_t
 template<>
 struct peripheral_t<STM32F401, DBG>
 {
+    static constexpr periph_t P = DBG;
     using T = stm32f401_dbg_t;
     static T& V;
 };
@@ -200,6 +201,7 @@ struct peripheral_t<STM32F401, DBG>
 template<>
 struct peripheral_t<STM32F410, DBG>
 {
+    static constexpr periph_t P = DBG;
     using T = stm32f401_dbg_t;
     static T& V;
 };
@@ -207,6 +209,7 @@ struct peripheral_t<STM32F410, DBG>
 template<>
 struct peripheral_t<STM32F411, DBG>
 {
+    static constexpr periph_t P = DBG;
     using T = stm32f401_dbg_t;
     static T& V;
 };
@@ -214,6 +217,7 @@ struct peripheral_t<STM32F411, DBG>
 template<>
 struct peripheral_t<STM32F412, DBG>
 {
+    static constexpr periph_t P = DBG;
     using T = stm32f401_dbg_t;
     static T& V;
 };
@@ -221,6 +225,7 @@ struct peripheral_t<STM32F412, DBG>
 template<>
 struct peripheral_t<STM32F413, DBG>
 {
+    static constexpr periph_t P = DBG;
     using T = stm32f401_dbg_t;
     static T& V;
 };
@@ -228,6 +233,7 @@ struct peripheral_t<STM32F413, DBG>
 template<>
 struct peripheral_t<STM32F405, DBG>
 {
+    static constexpr periph_t P = DBG;
     using T = stm32f405_dbg_t;
     static T& V;
 };
@@ -235,6 +241,7 @@ struct peripheral_t<STM32F405, DBG>
 template<>
 struct peripheral_t<STM32F407, DBG>
 {
+    static constexpr periph_t P = DBG;
     using T = stm32f405_dbg_t;
     static T& V;
 };
@@ -242,6 +249,7 @@ struct peripheral_t<STM32F407, DBG>
 template<>
 struct peripheral_t<STM32F427, DBG>
 {
+    static constexpr periph_t P = DBG;
     using T = stm32f427_dbg_t;
     static T& V;
 };
@@ -249,6 +257,7 @@ struct peripheral_t<STM32F427, DBG>
 template<>
 struct peripheral_t<STM32F429, DBG>
 {
+    static constexpr periph_t P = DBG;
     using T = stm32f427_dbg_t;
     static T& V;
 };
@@ -256,6 +265,7 @@ struct peripheral_t<STM32F429, DBG>
 template<>
 struct peripheral_t<STM32F469, DBG>
 {
+    static constexpr periph_t P = DBG;
     using T = stm32f427_dbg_t;
     static T& V;
 };
@@ -263,6 +273,7 @@ struct peripheral_t<STM32F469, DBG>
 template<>
 struct peripheral_t<STM32F446, DBG>
 {
+    static constexpr periph_t P = DBG;
     using T = stm32f446_dbg_t;
     static T& V;
 };

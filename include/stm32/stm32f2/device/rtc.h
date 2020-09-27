@@ -238,6 +238,7 @@ struct stm32f215_rtc_t
 template<>
 struct peripheral_t<STM32F215, RTC>
 {
+    static constexpr periph_t P = RTC;
     using T = stm32f215_rtc_t;
     static T& V;
 };
@@ -245,6 +246,7 @@ struct peripheral_t<STM32F215, RTC>
 template<>
 struct peripheral_t<STM32F217, RTC>
 {
+    static constexpr periph_t P = RTC;
     using T = stm32f215_rtc_t;
     static T& V;
 };

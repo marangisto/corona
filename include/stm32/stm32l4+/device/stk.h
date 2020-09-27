@@ -36,6 +36,7 @@ struct stm32l4p5_stk_t
 template<>
 struct peripheral_t<STM32L4P5, STK>
 {
+    static constexpr periph_t P = STK;
     using T = stm32l4p5_stk_t;
     static T& V;
 };
@@ -43,6 +44,7 @@ struct peripheral_t<STM32L4P5, STK>
 template<>
 struct peripheral_t<STM32L4Q5, STK>
 {
+    static constexpr periph_t P = STK;
     using T = stm32l4p5_stk_t;
     static T& V;
 };
@@ -50,6 +52,7 @@ struct peripheral_t<STM32L4Q5, STK>
 template<>
 struct peripheral_t<STM32L4R5, STK>
 {
+    static constexpr periph_t P = STK;
     using T = stm32l4p5_stk_t;
     static T& V;
 };
@@ -57,6 +60,7 @@ struct peripheral_t<STM32L4R5, STK>
 template<>
 struct peripheral_t<STM32L4R7, STK>
 {
+    static constexpr periph_t P = STK;
     using T = stm32l4p5_stk_t;
     static T& V;
 };
@@ -64,6 +68,7 @@ struct peripheral_t<STM32L4R7, STK>
 template<>
 struct peripheral_t<STM32L4R9, STK>
 {
+    static constexpr periph_t P = STK;
     using T = stm32l4p5_stk_t;
     static T& V;
 };
@@ -71,6 +76,7 @@ struct peripheral_t<STM32L4R9, STK>
 template<>
 struct peripheral_t<STM32L4S5, STK>
 {
+    static constexpr periph_t P = STK;
     using T = stm32l4p5_stk_t;
     static T& V;
 };
@@ -78,6 +84,7 @@ struct peripheral_t<STM32L4S5, STK>
 template<>
 struct peripheral_t<STM32L4S7, STK>
 {
+    static constexpr periph_t P = STK;
     using T = stm32l4p5_stk_t;
     static T& V;
 };
@@ -85,6 +92,7 @@ struct peripheral_t<STM32L4S7, STK>
 template<>
 struct peripheral_t<STM32L4S9, STK>
 {
+    static constexpr periph_t P = STK;
     using T = stm32l4p5_stk_t;
     static T& V;
 };

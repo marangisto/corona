@@ -209,6 +209,7 @@ struct stm32h7b0x_otfdec1_t
 template<>
 struct peripheral_t<STM32H7B0x, OTFDEC1>
 {
+    static constexpr periph_t P = OTFDEC1;
     using T = stm32h7b0x_otfdec1_t;
     static T& V;
 };
@@ -216,6 +217,7 @@ struct peripheral_t<STM32H7B0x, OTFDEC1>
 template<>
 struct peripheral_t<STM32H7B0x, OTFDEC2>
 {
+    static constexpr periph_t P = OTFDEC2;
     using T = stm32h7b0x_otfdec1_t;
     static T& V;
 };
@@ -223,6 +225,7 @@ struct peripheral_t<STM32H7B0x, OTFDEC2>
 template<>
 struct peripheral_t<STM32H7B3x, OTFDEC1>
 {
+    static constexpr periph_t P = OTFDEC1;
     using T = stm32h7b0x_otfdec1_t;
     static T& V;
 };
@@ -230,6 +233,7 @@ struct peripheral_t<STM32H7B3x, OTFDEC1>
 template<>
 struct peripheral_t<STM32H7B3x, OTFDEC2>
 {
+    static constexpr periph_t P = OTFDEC2;
     using T = stm32h7b0x_otfdec1_t;
     static T& V;
 };

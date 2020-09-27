@@ -293,6 +293,7 @@ struct stm32l552_adc_common_t
 template<>
 struct peripheral_t<STM32L552, ADC1>
 {
+    static constexpr periph_t P = ADC1;
     using T = stm32l552_adc_t;
     static T& V;
 };
@@ -300,6 +301,7 @@ struct peripheral_t<STM32L552, ADC1>
 template<>
 struct peripheral_t<STM32L552, SEC_ADC>
 {
+    static constexpr periph_t P = SEC_ADC;
     using T = stm32l552_adc_t;
     static T& V;
 };
@@ -307,6 +309,7 @@ struct peripheral_t<STM32L552, SEC_ADC>
 template<>
 struct peripheral_t<STM32L562, ADC1>
 {
+    static constexpr periph_t P = ADC1;
     using T = stm32l552_adc_t;
     static T& V;
 };
@@ -314,6 +317,7 @@ struct peripheral_t<STM32L562, ADC1>
 template<>
 struct peripheral_t<STM32L562, SEC_ADC>
 {
+    static constexpr periph_t P = SEC_ADC;
     using T = stm32l552_adc_t;
     static T& V;
 };
@@ -321,6 +325,7 @@ struct peripheral_t<STM32L562, SEC_ADC>
 template<>
 struct peripheral_t<STM32L552, ADC_COMMON>
 {
+    static constexpr periph_t P = ADC_COMMON;
     using T = stm32l552_adc_common_t;
     static T& V;
 };
@@ -328,6 +333,7 @@ struct peripheral_t<STM32L552, ADC_COMMON>
 template<>
 struct peripheral_t<STM32L552, SEC_ADC_COMMON>
 {
+    static constexpr periph_t P = SEC_ADC_COMMON;
     using T = stm32l552_adc_common_t;
     static T& V;
 };
@@ -335,6 +341,7 @@ struct peripheral_t<STM32L552, SEC_ADC_COMMON>
 template<>
 struct peripheral_t<STM32L562, ADC_COMMON>
 {
+    static constexpr periph_t P = ADC_COMMON;
     using T = stm32l552_adc_common_t;
     static T& V;
 };
@@ -342,6 +349,7 @@ struct peripheral_t<STM32L562, ADC_COMMON>
 template<>
 struct peripheral_t<STM32L562, SEC_ADC_COMMON>
 {
+    static constexpr periph_t P = SEC_ADC_COMMON;
     using T = stm32l552_adc_common_t;
     static T& V;
 };

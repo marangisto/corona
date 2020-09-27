@@ -37,6 +37,7 @@ struct stm32g431xx_cordic_t
 template<>
 struct peripheral_t<STM32G431xx, CORDIC>
 {
+    static constexpr periph_t P = CORDIC;
     using T = stm32g431xx_cordic_t;
     static T& V;
 };
@@ -44,6 +45,7 @@ struct peripheral_t<STM32G431xx, CORDIC>
 template<>
 struct peripheral_t<STM32G441xx, CORDIC>
 {
+    static constexpr periph_t P = CORDIC;
     using T = stm32g431xx_cordic_t;
     static T& V;
 };
@@ -51,6 +53,7 @@ struct peripheral_t<STM32G441xx, CORDIC>
 template<>
 struct peripheral_t<STM32G471xx, CORDIC>
 {
+    static constexpr periph_t P = CORDIC;
     using T = stm32g431xx_cordic_t;
     static T& V;
 };
@@ -58,6 +61,7 @@ struct peripheral_t<STM32G471xx, CORDIC>
 template<>
 struct peripheral_t<STM32G473xx, CORDIC>
 {
+    static constexpr periph_t P = CORDIC;
     using T = stm32g431xx_cordic_t;
     static T& V;
 };
@@ -65,6 +69,7 @@ struct peripheral_t<STM32G473xx, CORDIC>
 template<>
 struct peripheral_t<STM32G474xx, CORDIC>
 {
+    static constexpr periph_t P = CORDIC;
     using T = stm32g431xx_cordic_t;
     static T& V;
 };
@@ -72,6 +77,7 @@ struct peripheral_t<STM32G474xx, CORDIC>
 template<>
 struct peripheral_t<STM32G483xx, CORDIC>
 {
+    static constexpr periph_t P = CORDIC;
     using T = stm32g431xx_cordic_t;
     static T& V;
 };
@@ -79,6 +85,7 @@ struct peripheral_t<STM32G483xx, CORDIC>
 template<>
 struct peripheral_t<STM32G484xx, CORDIC>
 {
+    static constexpr periph_t P = CORDIC;
     using T = stm32g431xx_cordic_t;
     static T& V;
 };
@@ -86,6 +93,7 @@ struct peripheral_t<STM32G484xx, CORDIC>
 template<>
 struct peripheral_t<STM32GBK1CBT6, CORDIC>
 {
+    static constexpr periph_t P = CORDIC;
     using T = stm32g431xx_cordic_t;
     static T& V;
 };

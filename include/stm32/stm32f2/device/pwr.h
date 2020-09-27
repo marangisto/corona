@@ -35,6 +35,7 @@ struct stm32f215_pwr_t
 template<>
 struct peripheral_t<STM32F215, PWR>
 {
+    static constexpr periph_t P = PWR;
     using T = stm32f215_pwr_t;
     static T& V;
 };
@@ -42,6 +43,7 @@ struct peripheral_t<STM32F215, PWR>
 template<>
 struct peripheral_t<STM32F217, PWR>
 {
+    static constexpr periph_t P = PWR;
     using T = stm32f215_pwr_t;
     static T& V;
 };

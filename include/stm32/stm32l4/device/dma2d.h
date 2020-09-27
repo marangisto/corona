@@ -157,6 +157,7 @@ struct stm32l496_dma2d_t
 template<>
 struct peripheral_t<STM32L496, DMA2D>
 {
+    static constexpr periph_t P = DMA2D;
     using T = stm32l496_dma2d_t;
     static T& V;
 };
@@ -164,6 +165,7 @@ struct peripheral_t<STM32L496, DMA2D>
 template<>
 struct peripheral_t<STM32L4x6, DMA2D>
 {
+    static constexpr periph_t P = DMA2D;
     using T = stm32l496_dma2d_t;
     static T& V;
 };

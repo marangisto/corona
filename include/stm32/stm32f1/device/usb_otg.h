@@ -180,6 +180,7 @@ struct stm32f107_usb_otg_global_t
 template<>
 struct peripheral_t<STM32F107, USB_OTG_GLOBAL>
 {
+    static constexpr periph_t P = USB_OTG_GLOBAL;
     using T = stm32f107_usb_otg_global_t;
     static T& V;
 };

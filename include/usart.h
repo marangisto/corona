@@ -47,7 +47,10 @@ public:
         alternate_t<RX, traits::RX>::template setup<pull_up>();
 
         usart_traits<INST>::template enable<rcc_t>();   // enable clock
-        USART.BRR = usart_clock<family>::freq() / baud; // set baud-rate 
+
+        const uint32_t clock = sys_clock::freq(usart::P);
+
+        USART.BRR = clock / baud;           // set the baud-rate
         USART.CR1 = _::CR1_RESET_VALUE      // reset control register 1
                   | _::CR1_TE               // enable transmitter
                   | _::CR1_RE               // enable receiver

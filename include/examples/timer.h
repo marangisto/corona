@@ -15,7 +15,11 @@ int main()
 
     // f_tim = f_sysclock / ((psc + 1) (arr + 1))
 
-    tim::setup(sys_clock::freq() / 10000, 9999);
+    const auto t = 1;       // period in seconds
+    const auto arr = 9999;  // counter limit
+    const auto pre = t * tim::clock() / (arr + 1) - 1;
+
+    tim::setup(pre, arr);
     tim::enable_update_interrupt();
     interrupt::set<TIMER_ISR>();
     interrupt::enable();

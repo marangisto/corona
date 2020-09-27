@@ -36,3 +36,16 @@ static inline uint32_t clock_tree_init()
     return 72000000;
 }
 
+static uint32_t clock_tree_scale(periph_t p, uint32_t f)
+{
+    switch (p)
+    {
+    case USART1:;
+    case USART2:;
+    case USART3:
+        return f >> 1;
+    default:
+        return f;
+    }
+}
+

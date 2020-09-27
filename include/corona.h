@@ -41,7 +41,8 @@ class sys_clock
 {
 public:
     static void init();
-    static uint32_t freq() { return m_freq; }
+    static uint32_t freq() { return m_freq; }   // core clock
+    static uint32_t freq(periph_t p);           // peripheral clock
     static void _set_freq(uint32_t freq) { m_freq = freq; }
 
 private:

@@ -14,7 +14,7 @@ static inline uint32_t clock_tree_init()
     RCC.CR |= _::CR_HSEON;              // enable external clock
     while (!(RCC.CR & _::CR_HSERDY));   // wait for HSE ready
 
-    // We set HPRE to 0b1001 to divide 4 for APB 120MHz
+    // We set HPRE to 0b1001 to divide by 4 for APB 120MHz
 
     RCC.D1CFGR = _::D1CFGR_HPRE::W(0x9);
 
@@ -46,8 +46,6 @@ static inline uint32_t clock_tree_init()
     constexpr uint8_t pllQ = 1 - 1;     // 7 bits, k = x + 1, x = [0..127]
     constexpr uint8_t pllR = 1 - 1;     // 7 bits, k = x + 1, x = [0..127]
 
-    // FIXME: PLL input seems to be scaled by Q, not P?
-
     RCC.PLL1DIVR = _::PLL1DIVR_DIVN1::W(pllN)
                  | _::PLL1DIVR_DIVP1::W(pllP)
                  | _::PLL1DIVR_DIVQ1::W(pllQ)
@@ -69,5 +67,16 @@ static inline uint32_t clock_tree_init()
     __asm volatile ("isb");         // instruction pipe-line reset
 
     return 480000000;
+}
+
+static uint32_t clock_tree_scale(periph_t p, uint32_t f)
+{
+    switch (p)
+    {
+    case STK:
+        return f;
+    default:
+        return f >> 2;
+    }
 }
 

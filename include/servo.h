@@ -13,8 +13,8 @@ struct servo_timer_t: tim_t<TIMER_INST>
 
     static void setup()
     {
-        const auto f_sys = sys_clock::freq();
-        const auto psc = f_sys / (f_pwm * (arr + 1)) - 1;
+        const auto f_clk = timer::clock();
+        const auto psc = f_clk / (f_pwm * (arr + 1)) - 1;
 
         timer::setup(psc, arr);
     }

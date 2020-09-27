@@ -11,8 +11,8 @@ int main()
 
     const auto psc = 0;
     const auto f_pwm = 48000;
-    const auto f_sys = sys_clock::freq();
-    const uint16_t max_duty = f_sys / (f_pwm * (psc + 1)) - 1;
+    const auto f_clk = tim::clock();
+    const uint16_t max_duty = f_clk / (f_pwm * (psc + 1)) - 1;
 
     tim::setup(psc, max_duty);
     pwma::setup();

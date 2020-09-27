@@ -100,6 +100,7 @@ public:
         typename tim::T& TIM = tim::V;
 
         tim_traits<INST>::template enable<rcc_t>();
+
         TIM.CR1 = _::CR1_RESET_VALUE;
         TIM.PSC = psc;
         TIM.ARR = arr;
@@ -156,6 +157,11 @@ public:
     static inline void set_auto_reload_value(count_t arr)
     {
         tim::V.ARR = arr;
+    }
+
+    static inline uint32_t clock()
+    {
+        return sys_clock::freq(tim::P);
     }
 
     template<channel_t CH, pin_t PIN>

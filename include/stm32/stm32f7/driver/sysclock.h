@@ -86,3 +86,21 @@ static inline uint32_t clock_tree_init()
     return 216000000;
 }
 
+static uint32_t clock_tree_scale(periph_t p, uint32_t f)
+{
+    switch (p)
+    {
+    case UART4:;
+    case UART5:;
+    case UART7:;
+    case UART8:;
+    case USART1:;
+    case USART2:;
+    case USART3:;
+    case USART6:
+        return f >> 2;
+    default:
+        return f;
+    }
+}
+

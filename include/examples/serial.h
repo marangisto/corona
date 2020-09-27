@@ -19,6 +19,7 @@ int main()
     interrupt::enable();
 
     printf<serial>("Hello World!\n");
+    printf<serial>("sys-clock = %d\n", sys_clock::freq());
 
     for (;;)
     {

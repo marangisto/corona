@@ -106,6 +106,7 @@ template<> struct mcu_traits<STM32WB50CGUx>
     static constexpr family_t family = STM32WB;
     static constexpr svd_t svd = STM32WB50_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32WB55x;
+    static constexpr unsigned frequency = 64;
 };
 
 template<> struct mcu_traits<STM32WB55CCUx>
@@ -113,6 +114,7 @@ template<> struct mcu_traits<STM32WB55CCUx>
     static constexpr family_t family = STM32WB;
     static constexpr svd_t svd = STM32WB55_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32WB55x;
+    static constexpr unsigned frequency = 64;
 };
 
 template<> struct mcu_traits<STM32WB55CEUx>
@@ -120,6 +122,7 @@ template<> struct mcu_traits<STM32WB55CEUx>
     static constexpr family_t family = STM32WB;
     static constexpr svd_t svd = STM32WB55_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32WB55x;
+    static constexpr unsigned frequency = 64;
 };
 
 template<> struct mcu_traits<STM32WB55CGUx>
@@ -127,6 +130,7 @@ template<> struct mcu_traits<STM32WB55CGUx>
     static constexpr family_t family = STM32WB;
     static constexpr svd_t svd = STM32WB55_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32WB55x;
+    static constexpr unsigned frequency = 64;
 };
 
 template<> struct mcu_traits<STM32WB55RCVx>
@@ -134,6 +138,7 @@ template<> struct mcu_traits<STM32WB55RCVx>
     static constexpr family_t family = STM32WB;
     static constexpr svd_t svd = STM32WB55_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32WB55x;
+    static constexpr unsigned frequency = 64;
 };
 
 template<> struct mcu_traits<STM32WB55REVx>
@@ -141,6 +146,7 @@ template<> struct mcu_traits<STM32WB55REVx>
     static constexpr family_t family = STM32WB;
     static constexpr svd_t svd = STM32WB55_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32WB55x;
+    static constexpr unsigned frequency = 64;
 };
 
 template<> struct mcu_traits<STM32WB55RGVx>
@@ -148,6 +154,7 @@ template<> struct mcu_traits<STM32WB55RGVx>
     static constexpr family_t family = STM32WB;
     static constexpr svd_t svd = STM32WB55_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32WB55x;
+    static constexpr unsigned frequency = 64;
 };
 
 template<> struct mcu_traits<STM32WB55VCQx>
@@ -155,6 +162,7 @@ template<> struct mcu_traits<STM32WB55VCQx>
     static constexpr family_t family = STM32WB;
     static constexpr svd_t svd = STM32WB55_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32WB55x;
+    static constexpr unsigned frequency = 64;
 };
 
 template<> struct mcu_traits<STM32WB55VCYx>
@@ -162,6 +170,7 @@ template<> struct mcu_traits<STM32WB55VCYx>
     static constexpr family_t family = STM32WB;
     static constexpr svd_t svd = STM32WB55_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32WB55x;
+    static constexpr unsigned frequency = 64;
 };
 
 template<> struct mcu_traits<STM32WB55VEQx>
@@ -169,6 +178,7 @@ template<> struct mcu_traits<STM32WB55VEQx>
     static constexpr family_t family = STM32WB;
     static constexpr svd_t svd = STM32WB55_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32WB55x;
+    static constexpr unsigned frequency = 64;
 };
 
 template<> struct mcu_traits<STM32WB55VEYx>
@@ -176,6 +186,7 @@ template<> struct mcu_traits<STM32WB55VEYx>
     static constexpr family_t family = STM32WB;
     static constexpr svd_t svd = STM32WB55_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32WB55x;
+    static constexpr unsigned frequency = 64;
 };
 
 template<> struct mcu_traits<STM32WB55VGQx>
@@ -183,6 +194,7 @@ template<> struct mcu_traits<STM32WB55VGQx>
     static constexpr family_t family = STM32WB;
     static constexpr svd_t svd = STM32WB55_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32WB55x;
+    static constexpr unsigned frequency = 64;
 };
 
 template<> struct mcu_traits<STM32WB55VGYx>
@@ -190,6 +202,7 @@ template<> struct mcu_traits<STM32WB55VGYx>
     static constexpr family_t family = STM32WB;
     static constexpr svd_t svd = STM32WB55_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32WB55x;
+    static constexpr unsigned frequency = 64;
 };
 
 // Set target from command-line -DMCU= option

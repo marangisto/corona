@@ -329,6 +329,7 @@ template<> struct mcu_traits<STM32H742AGIx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H742x;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H742AIIx>
@@ -336,6 +337,7 @@ template<> struct mcu_traits<STM32H742AIIx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H742x;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H742BGTx>
@@ -343,6 +345,7 @@ template<> struct mcu_traits<STM32H742BGTx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H742x;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H742BITx>
@@ -350,6 +353,7 @@ template<> struct mcu_traits<STM32H742BITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H742x;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H742IGKx>
@@ -357,6 +361,7 @@ template<> struct mcu_traits<STM32H742IGKx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H742x;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H742IIKx>
@@ -364,6 +369,7 @@ template<> struct mcu_traits<STM32H742IIKx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H742x;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H742IGTx>
@@ -371,6 +377,7 @@ template<> struct mcu_traits<STM32H742IGTx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H742x;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H742IITx>
@@ -378,6 +385,7 @@ template<> struct mcu_traits<STM32H742IITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H742x;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H742VGHx>
@@ -385,6 +393,7 @@ template<> struct mcu_traits<STM32H742VGHx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H742x;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H742VIHx>
@@ -392,6 +401,7 @@ template<> struct mcu_traits<STM32H742VIHx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H742x;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H742VGTx>
@@ -399,6 +409,7 @@ template<> struct mcu_traits<STM32H742VGTx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H742x;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H742VITx>
@@ -406,6 +417,7 @@ template<> struct mcu_traits<STM32H742VITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H742x;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H742XGHx>
@@ -413,6 +425,7 @@ template<> struct mcu_traits<STM32H742XGHx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H742x;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H742XIHx>
@@ -420,6 +433,7 @@ template<> struct mcu_traits<STM32H742XIHx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H742x;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H742ZGTx>
@@ -427,6 +441,7 @@ template<> struct mcu_traits<STM32H742ZGTx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H742x;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H742ZITx>
@@ -434,6 +449,7 @@ template<> struct mcu_traits<STM32H742ZITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H742x;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H743AGIx>
@@ -441,6 +457,7 @@ template<> struct mcu_traits<STM32H743AGIx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H743;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H743AIIx>
@@ -448,6 +465,7 @@ template<> struct mcu_traits<STM32H743AIIx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H743;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H743BGTx>
@@ -455,6 +473,7 @@ template<> struct mcu_traits<STM32H743BGTx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H743;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H743BITx>
@@ -462,6 +481,7 @@ template<> struct mcu_traits<STM32H743BITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H743;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H743IGKx>
@@ -469,6 +489,7 @@ template<> struct mcu_traits<STM32H743IGKx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H743;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H743IGTx>
@@ -476,6 +497,7 @@ template<> struct mcu_traits<STM32H743IGTx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H743;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H743IIKx>
@@ -483,6 +505,7 @@ template<> struct mcu_traits<STM32H743IIKx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H743;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H743IITx>
@@ -490,6 +513,7 @@ template<> struct mcu_traits<STM32H743IITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H743;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H743VGHx>
@@ -497,6 +521,7 @@ template<> struct mcu_traits<STM32H743VGHx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H743;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H743VIHx>
@@ -504,6 +529,7 @@ template<> struct mcu_traits<STM32H743VIHx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H743;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H743VGTx>
@@ -511,6 +537,7 @@ template<> struct mcu_traits<STM32H743VGTx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H743;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H743VITx>
@@ -518,6 +545,7 @@ template<> struct mcu_traits<STM32H743VITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H743;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H743XGHx>
@@ -525,6 +553,7 @@ template<> struct mcu_traits<STM32H743XGHx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H743;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H743XIHx>
@@ -532,6 +561,7 @@ template<> struct mcu_traits<STM32H743XIHx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H743;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H743ZGTx>
@@ -539,6 +569,7 @@ template<> struct mcu_traits<STM32H743ZGTx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H743;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H743ZITx>
@@ -546,6 +577,7 @@ template<> struct mcu_traits<STM32H743ZITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H743;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H753AIIx>
@@ -553,6 +585,7 @@ template<> struct mcu_traits<STM32H753AIIx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H753;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H753BITx>
@@ -560,6 +593,7 @@ template<> struct mcu_traits<STM32H753BITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H753;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H753IIKx>
@@ -567,6 +601,7 @@ template<> struct mcu_traits<STM32H753IIKx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H753;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H753IITx>
@@ -574,6 +609,7 @@ template<> struct mcu_traits<STM32H753IITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H753;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H753VIHx>
@@ -581,6 +617,7 @@ template<> struct mcu_traits<STM32H753VIHx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H753;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H753VITx>
@@ -588,6 +625,7 @@ template<> struct mcu_traits<STM32H753VITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H753;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H753XIHx>
@@ -595,6 +633,7 @@ template<> struct mcu_traits<STM32H753XIHx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H753;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H753ZITx>
@@ -602,6 +641,7 @@ template<> struct mcu_traits<STM32H753ZITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H753;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H745BGTx>
@@ -609,6 +649,7 @@ template<> struct mcu_traits<STM32H745BGTx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H745_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H745BITx>
@@ -616,6 +657,7 @@ template<> struct mcu_traits<STM32H745BITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H745_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H745IGKx>
@@ -623,6 +665,7 @@ template<> struct mcu_traits<STM32H745IGKx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H745_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H745IGTx>
@@ -630,6 +673,7 @@ template<> struct mcu_traits<STM32H745IGTx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H745_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H745IIKx>
@@ -637,6 +681,7 @@ template<> struct mcu_traits<STM32H745IIKx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H745_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H745IITx>
@@ -644,6 +689,7 @@ template<> struct mcu_traits<STM32H745IITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H745_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H745XGHx>
@@ -651,6 +697,7 @@ template<> struct mcu_traits<STM32H745XGHx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H745_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H745XIHx>
@@ -658,6 +705,7 @@ template<> struct mcu_traits<STM32H745XIHx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H745_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H745ZGTx>
@@ -665,6 +713,7 @@ template<> struct mcu_traits<STM32H745ZGTx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H745_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H745ZITx>
@@ -672,6 +721,7 @@ template<> struct mcu_traits<STM32H745ZITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H745_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H755BITx>
@@ -679,6 +729,7 @@ template<> struct mcu_traits<STM32H755BITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H755_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H755IIKx>
@@ -686,6 +737,7 @@ template<> struct mcu_traits<STM32H755IIKx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H755_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H755IITx>
@@ -693,6 +745,7 @@ template<> struct mcu_traits<STM32H755IITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H755_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H755XIHx>
@@ -700,6 +753,7 @@ template<> struct mcu_traits<STM32H755XIHx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H755_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H755ZITx>
@@ -707,6 +761,7 @@ template<> struct mcu_traits<STM32H755ZITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H755_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H747AGIx>
@@ -714,6 +769,7 @@ template<> struct mcu_traits<STM32H747AGIx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H747_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H747AIIx>
@@ -721,6 +777,7 @@ template<> struct mcu_traits<STM32H747AIIx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H747_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H747BGTx>
@@ -728,6 +785,7 @@ template<> struct mcu_traits<STM32H747BGTx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H747_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H747BITx>
@@ -735,6 +793,7 @@ template<> struct mcu_traits<STM32H747BITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H747_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H747IGTx>
@@ -742,6 +801,7 @@ template<> struct mcu_traits<STM32H747IGTx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H747_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H747IITx>
@@ -749,6 +809,7 @@ template<> struct mcu_traits<STM32H747IITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H747_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H747XGHx>
@@ -756,6 +817,7 @@ template<> struct mcu_traits<STM32H747XGHx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H747_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H747XIHx>
@@ -763,6 +825,7 @@ template<> struct mcu_traits<STM32H747XIHx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H747_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H747ZIYx>
@@ -770,6 +833,7 @@ template<> struct mcu_traits<STM32H747ZIYx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H747_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H757AIIx>
@@ -777,6 +841,7 @@ template<> struct mcu_traits<STM32H757AIIx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H757_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H757BITx>
@@ -784,6 +849,7 @@ template<> struct mcu_traits<STM32H757BITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H757_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H757IITx>
@@ -791,6 +857,7 @@ template<> struct mcu_traits<STM32H757IITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H757_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H757XIHx>
@@ -798,6 +865,7 @@ template<> struct mcu_traits<STM32H757XIHx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H757_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H757ZIYx>
@@ -805,6 +873,7 @@ template<> struct mcu_traits<STM32H757ZIYx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H757_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H750IBKx>
@@ -812,6 +881,7 @@ template<> struct mcu_traits<STM32H750IBKx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H750x;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H750IBTx>
@@ -819,6 +889,7 @@ template<> struct mcu_traits<STM32H750IBTx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H750x;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H750VBTx>
@@ -826,6 +897,7 @@ template<> struct mcu_traits<STM32H750VBTx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H750x;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H750XBHx>
@@ -833,6 +905,7 @@ template<> struct mcu_traits<STM32H750XBHx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H750x;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H750ZBTx>
@@ -840,6 +913,7 @@ template<> struct mcu_traits<STM32H750ZBTx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H750x;
     static constexpr gpio_conf_t gpio_conf = STM32H747;
+    static constexpr unsigned frequency = 480;
 };
 
 template<> struct mcu_traits<STM32H7A3AGIxQ>
@@ -847,6 +921,7 @@ template<> struct mcu_traits<STM32H7A3AGIxQ>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3AIIxQ>
@@ -854,6 +929,7 @@ template<> struct mcu_traits<STM32H7A3AIIxQ>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3IGKx>
@@ -861,6 +937,7 @@ template<> struct mcu_traits<STM32H7A3IGKx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3IIKx>
@@ -868,6 +945,7 @@ template<> struct mcu_traits<STM32H7A3IIKx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3IGKxQ>
@@ -875,6 +953,7 @@ template<> struct mcu_traits<STM32H7A3IGKxQ>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3IIKxQ>
@@ -882,6 +961,7 @@ template<> struct mcu_traits<STM32H7A3IIKxQ>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3IGTx>
@@ -889,6 +969,7 @@ template<> struct mcu_traits<STM32H7A3IGTx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3IITx>
@@ -896,6 +977,7 @@ template<> struct mcu_traits<STM32H7A3IITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3IGTxQ>
@@ -903,6 +985,7 @@ template<> struct mcu_traits<STM32H7A3IGTxQ>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3IITxQ>
@@ -910,6 +993,7 @@ template<> struct mcu_traits<STM32H7A3IITxQ>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3LGHxQ>
@@ -917,6 +1001,7 @@ template<> struct mcu_traits<STM32H7A3LGHxQ>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3LIHxQ>
@@ -924,6 +1009,7 @@ template<> struct mcu_traits<STM32H7A3LIHxQ>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3NGHx>
@@ -931,6 +1017,7 @@ template<> struct mcu_traits<STM32H7A3NGHx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3NIHx>
@@ -938,6 +1025,7 @@ template<> struct mcu_traits<STM32H7A3NIHx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3QIYxQ>
@@ -945,6 +1033,7 @@ template<> struct mcu_traits<STM32H7A3QIYxQ>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3RGTx>
@@ -952,6 +1041,7 @@ template<> struct mcu_traits<STM32H7A3RGTx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3RITx>
@@ -959,6 +1049,7 @@ template<> struct mcu_traits<STM32H7A3RITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3VGHx>
@@ -966,6 +1057,7 @@ template<> struct mcu_traits<STM32H7A3VGHx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3VIHx>
@@ -973,6 +1065,7 @@ template<> struct mcu_traits<STM32H7A3VIHx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3VGHxQ>
@@ -980,6 +1073,7 @@ template<> struct mcu_traits<STM32H7A3VGHxQ>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3VIHxQ>
@@ -987,6 +1081,7 @@ template<> struct mcu_traits<STM32H7A3VIHxQ>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3VGTx>
@@ -994,6 +1089,7 @@ template<> struct mcu_traits<STM32H7A3VGTx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3VITx>
@@ -1001,6 +1097,7 @@ template<> struct mcu_traits<STM32H7A3VITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3VGTxQ>
@@ -1008,6 +1105,7 @@ template<> struct mcu_traits<STM32H7A3VGTxQ>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3VITxQ>
@@ -1015,6 +1113,7 @@ template<> struct mcu_traits<STM32H7A3VITxQ>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3ZGTx>
@@ -1022,6 +1121,7 @@ template<> struct mcu_traits<STM32H7A3ZGTx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3ZITx>
@@ -1029,6 +1129,7 @@ template<> struct mcu_traits<STM32H7A3ZITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3ZGTxQ>
@@ -1036,6 +1137,7 @@ template<> struct mcu_traits<STM32H7A3ZGTxQ>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7A3ZITxQ>
@@ -1043,6 +1145,7 @@ template<> struct mcu_traits<STM32H7A3ZITxQ>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7A3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7B3AIIxQ>
@@ -1050,6 +1153,7 @@ template<> struct mcu_traits<STM32H7B3AIIxQ>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7B3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7B3IIKx>
@@ -1057,6 +1161,7 @@ template<> struct mcu_traits<STM32H7B3IIKx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7B3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7B3IIKxQ>
@@ -1064,6 +1169,7 @@ template<> struct mcu_traits<STM32H7B3IIKxQ>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7B3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7B3IITx>
@@ -1071,6 +1177,7 @@ template<> struct mcu_traits<STM32H7B3IITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7B3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7B3IITxQ>
@@ -1078,6 +1185,7 @@ template<> struct mcu_traits<STM32H7B3IITxQ>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7B3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7B3LIHxQ>
@@ -1085,6 +1193,7 @@ template<> struct mcu_traits<STM32H7B3LIHxQ>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7B3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7B3NIHx>
@@ -1092,6 +1201,7 @@ template<> struct mcu_traits<STM32H7B3NIHx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7B3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7B3QIYxQ>
@@ -1099,6 +1209,7 @@ template<> struct mcu_traits<STM32H7B3QIYxQ>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7B3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7B3RITx>
@@ -1106,6 +1217,7 @@ template<> struct mcu_traits<STM32H7B3RITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7B3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7B3VIHx>
@@ -1113,6 +1225,7 @@ template<> struct mcu_traits<STM32H7B3VIHx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7B3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7B3VIHxQ>
@@ -1120,6 +1233,7 @@ template<> struct mcu_traits<STM32H7B3VIHxQ>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7B3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7B3VITx>
@@ -1127,6 +1241,7 @@ template<> struct mcu_traits<STM32H7B3VITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7B3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7B3VITxQ>
@@ -1134,6 +1249,7 @@ template<> struct mcu_traits<STM32H7B3VITxQ>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7B3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7B3ZITx>
@@ -1141,6 +1257,7 @@ template<> struct mcu_traits<STM32H7B3ZITx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7B3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7B3ZITxQ>
@@ -1148,6 +1265,7 @@ template<> struct mcu_traits<STM32H7B3ZITxQ>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7B3x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7B0ABIxQ>
@@ -1155,6 +1273,7 @@ template<> struct mcu_traits<STM32H7B0ABIxQ>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7B0x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7B0IBKxQ>
@@ -1162,6 +1281,7 @@ template<> struct mcu_traits<STM32H7B0IBKxQ>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7B0x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7B0IBTx>
@@ -1169,6 +1289,7 @@ template<> struct mcu_traits<STM32H7B0IBTx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7B0x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7B0RBTx>
@@ -1176,6 +1297,7 @@ template<> struct mcu_traits<STM32H7B0RBTx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7B0x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7B0VBTx>
@@ -1183,6 +1305,7 @@ template<> struct mcu_traits<STM32H7B0VBTx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7B0x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 template<> struct mcu_traits<STM32H7B0ZBTx>
@@ -1190,6 +1313,7 @@ template<> struct mcu_traits<STM32H7B0ZBTx>
     static constexpr family_t family = STM32H7;
     static constexpr svd_t svd = STM32H7B0x;
     static constexpr gpio_conf_t gpio_conf = STM32H7A2;
+    static constexpr unsigned frequency = 280;
 };
 
 // Set target from command-line -DMCU= option

@@ -304,6 +304,7 @@ template<> struct mcu_traits<STM32L431CBTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L431CCTx>
@@ -311,6 +312,7 @@ template<> struct mcu_traits<STM32L431CCTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L431CBUx>
@@ -318,6 +320,7 @@ template<> struct mcu_traits<STM32L431CBUx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L431CCUx>
@@ -325,6 +328,7 @@ template<> struct mcu_traits<STM32L431CCUx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L431CBYx>
@@ -332,6 +336,7 @@ template<> struct mcu_traits<STM32L431CBYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L431CCYx>
@@ -339,6 +344,7 @@ template<> struct mcu_traits<STM32L431CCYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L431KBUx>
@@ -346,6 +352,7 @@ template<> struct mcu_traits<STM32L431KBUx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L431KCUx>
@@ -353,6 +360,7 @@ template<> struct mcu_traits<STM32L431KCUx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L431RBIx>
@@ -360,6 +368,7 @@ template<> struct mcu_traits<STM32L431RBIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L431RCIx>
@@ -367,6 +376,7 @@ template<> struct mcu_traits<STM32L431RCIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L431RBTx>
@@ -374,6 +384,7 @@ template<> struct mcu_traits<STM32L431RBTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L431RCTx>
@@ -381,6 +392,7 @@ template<> struct mcu_traits<STM32L431RCTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L431RBYx>
@@ -388,6 +400,7 @@ template<> struct mcu_traits<STM32L431RBYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L431RCYx>
@@ -395,6 +408,7 @@ template<> struct mcu_traits<STM32L431RCYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L431VCIx>
@@ -402,6 +416,7 @@ template<> struct mcu_traits<STM32L431VCIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L431VCTx>
@@ -409,6 +424,7 @@ template<> struct mcu_traits<STM32L431VCTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L451CCUx>
@@ -416,6 +432,7 @@ template<> struct mcu_traits<STM32L451CCUx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L451CEUx>
@@ -423,6 +440,7 @@ template<> struct mcu_traits<STM32L451CEUx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L451RCIx>
@@ -430,6 +448,7 @@ template<> struct mcu_traits<STM32L451RCIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L451REIx>
@@ -437,6 +456,7 @@ template<> struct mcu_traits<STM32L451REIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L451RCTx>
@@ -444,6 +464,7 @@ template<> struct mcu_traits<STM32L451RCTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L451RETx>
@@ -451,6 +472,7 @@ template<> struct mcu_traits<STM32L451RETx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L451RCYx>
@@ -458,6 +480,7 @@ template<> struct mcu_traits<STM32L451RCYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L451REYx>
@@ -465,6 +488,7 @@ template<> struct mcu_traits<STM32L451REYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L451VCIx>
@@ -472,6 +496,7 @@ template<> struct mcu_traits<STM32L451VCIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L451VEIx>
@@ -479,6 +504,7 @@ template<> struct mcu_traits<STM32L451VEIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L451VCTx>
@@ -486,6 +512,7 @@ template<> struct mcu_traits<STM32L451VCTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L451VETx>
@@ -493,6 +520,7 @@ template<> struct mcu_traits<STM32L451VETx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L471QEIx>
@@ -500,6 +528,7 @@ template<> struct mcu_traits<STM32L471QEIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L471QGIx>
@@ -507,6 +536,7 @@ template<> struct mcu_traits<STM32L471QGIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L471RETx>
@@ -514,6 +544,7 @@ template<> struct mcu_traits<STM32L471RETx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L471RGTx>
@@ -521,6 +552,7 @@ template<> struct mcu_traits<STM32L471RGTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L471VETx>
@@ -528,6 +560,7 @@ template<> struct mcu_traits<STM32L471VETx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L471VGTx>
@@ -535,6 +568,7 @@ template<> struct mcu_traits<STM32L471VGTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L471ZEJx>
@@ -542,6 +576,7 @@ template<> struct mcu_traits<STM32L471ZEJx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L471ZGJx>
@@ -549,6 +584,7 @@ template<> struct mcu_traits<STM32L471ZGJx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L471ZETx>
@@ -556,6 +592,7 @@ template<> struct mcu_traits<STM32L471ZETx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L471ZGTx>
@@ -563,6 +600,7 @@ template<> struct mcu_traits<STM32L471ZGTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x1;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L412C8Tx>
@@ -570,6 +608,7 @@ template<> struct mcu_traits<STM32L412C8Tx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L412;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L412C8Ux>
@@ -577,6 +616,7 @@ template<> struct mcu_traits<STM32L412C8Ux>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L412;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L412CBTx>
@@ -584,6 +624,7 @@ template<> struct mcu_traits<STM32L412CBTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L412;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L412CBTxP>
@@ -591,6 +632,7 @@ template<> struct mcu_traits<STM32L412CBTxP>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L412;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L412CBUx>
@@ -598,6 +640,7 @@ template<> struct mcu_traits<STM32L412CBUx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L412;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L412CBUxP>
@@ -605,6 +648,7 @@ template<> struct mcu_traits<STM32L412CBUxP>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L412;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L412K8Tx>
@@ -612,6 +656,7 @@ template<> struct mcu_traits<STM32L412K8Tx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L412;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L412K8Ux>
@@ -619,6 +664,7 @@ template<> struct mcu_traits<STM32L412K8Ux>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L412;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L412KBTx>
@@ -626,6 +672,7 @@ template<> struct mcu_traits<STM32L412KBTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L412;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L412KBUx>
@@ -633,6 +680,7 @@ template<> struct mcu_traits<STM32L412KBUx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L412;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L412R8Ix>
@@ -640,6 +688,7 @@ template<> struct mcu_traits<STM32L412R8Ix>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L412;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L412R8Tx>
@@ -647,6 +696,7 @@ template<> struct mcu_traits<STM32L412R8Tx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L412;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L412RBIx>
@@ -654,6 +704,7 @@ template<> struct mcu_traits<STM32L412RBIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L412;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L412RBIxP>
@@ -661,6 +712,7 @@ template<> struct mcu_traits<STM32L412RBIxP>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L412;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L412RBTx>
@@ -668,6 +720,7 @@ template<> struct mcu_traits<STM32L412RBTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L412;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L412RBTxP>
@@ -675,6 +728,7 @@ template<> struct mcu_traits<STM32L412RBTxP>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L412;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L412T8Yx>
@@ -682,6 +736,7 @@ template<> struct mcu_traits<STM32L412T8Yx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L412;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L412TBYx>
@@ -689,6 +744,7 @@ template<> struct mcu_traits<STM32L412TBYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L412;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L412TBYxP>
@@ -696,6 +752,7 @@ template<> struct mcu_traits<STM32L412TBYxP>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L412;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L422CBTx>
@@ -703,6 +760,7 @@ template<> struct mcu_traits<STM32L422CBTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L422CBUx>
@@ -710,6 +768,7 @@ template<> struct mcu_traits<STM32L422CBUx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L422KBTx>
@@ -717,6 +776,7 @@ template<> struct mcu_traits<STM32L422KBTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L422KBUx>
@@ -724,6 +784,7 @@ template<> struct mcu_traits<STM32L422KBUx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L422RBIx>
@@ -731,6 +792,7 @@ template<> struct mcu_traits<STM32L422RBIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L422RBTx>
@@ -738,6 +800,7 @@ template<> struct mcu_traits<STM32L422RBTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L422TBYx>
@@ -745,6 +808,7 @@ template<> struct mcu_traits<STM32L422TBYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L41x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L432KBUx>
@@ -752,6 +816,7 @@ template<> struct mcu_traits<STM32L432KBUx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L432KCUx>
@@ -759,6 +824,7 @@ template<> struct mcu_traits<STM32L432KCUx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L442KCUx>
@@ -766,6 +832,7 @@ template<> struct mcu_traits<STM32L442KCUx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L452CCUx>
@@ -773,6 +840,7 @@ template<> struct mcu_traits<STM32L452CCUx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L452CEUx>
@@ -780,6 +848,7 @@ template<> struct mcu_traits<STM32L452CEUx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L452RCIx>
@@ -787,6 +856,7 @@ template<> struct mcu_traits<STM32L452RCIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L452REIx>
@@ -794,6 +864,7 @@ template<> struct mcu_traits<STM32L452REIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L452RCTx>
@@ -801,6 +872,7 @@ template<> struct mcu_traits<STM32L452RCTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L452RETx>
@@ -808,6 +880,7 @@ template<> struct mcu_traits<STM32L452RETx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L452RCYx>
@@ -815,6 +888,7 @@ template<> struct mcu_traits<STM32L452RCYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L452REYx>
@@ -822,6 +896,7 @@ template<> struct mcu_traits<STM32L452REYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L452RETxP>
@@ -829,6 +904,7 @@ template<> struct mcu_traits<STM32L452RETxP>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L452VCIx>
@@ -836,6 +912,7 @@ template<> struct mcu_traits<STM32L452VCIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L452VEIx>
@@ -843,6 +920,7 @@ template<> struct mcu_traits<STM32L452VEIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L452VCTx>
@@ -850,6 +928,7 @@ template<> struct mcu_traits<STM32L452VCTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L452VETx>
@@ -857,6 +936,7 @@ template<> struct mcu_traits<STM32L452VETx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L462CEUx>
@@ -864,6 +944,7 @@ template<> struct mcu_traits<STM32L462CEUx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L462REIx>
@@ -871,6 +952,7 @@ template<> struct mcu_traits<STM32L462REIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L462RETx>
@@ -878,6 +960,7 @@ template<> struct mcu_traits<STM32L462RETx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L462REYx>
@@ -885,6 +968,7 @@ template<> struct mcu_traits<STM32L462REYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L462VEIx>
@@ -892,6 +976,7 @@ template<> struct mcu_traits<STM32L462VEIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L462VETx>
@@ -899,6 +984,7 @@ template<> struct mcu_traits<STM32L462VETx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x2;
     static constexpr gpio_conf_t gpio_conf = STM32L45x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L433CBTx>
@@ -906,6 +992,7 @@ template<> struct mcu_traits<STM32L433CBTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x3;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L433CCTx>
@@ -913,6 +1000,7 @@ template<> struct mcu_traits<STM32L433CCTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x3;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L433CBUx>
@@ -920,6 +1008,7 @@ template<> struct mcu_traits<STM32L433CBUx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x3;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L433CCUx>
@@ -927,6 +1016,7 @@ template<> struct mcu_traits<STM32L433CCUx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x3;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L433CBYx>
@@ -934,6 +1024,7 @@ template<> struct mcu_traits<STM32L433CBYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x3;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L433CCYx>
@@ -941,6 +1032,7 @@ template<> struct mcu_traits<STM32L433CCYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x3;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L433RBIx>
@@ -948,6 +1040,7 @@ template<> struct mcu_traits<STM32L433RBIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x3;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L433RCIx>
@@ -955,6 +1048,7 @@ template<> struct mcu_traits<STM32L433RCIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x3;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L433RBTx>
@@ -962,6 +1056,7 @@ template<> struct mcu_traits<STM32L433RBTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x3;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L433RCTx>
@@ -969,6 +1064,7 @@ template<> struct mcu_traits<STM32L433RCTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x3;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L433RBYx>
@@ -976,6 +1072,7 @@ template<> struct mcu_traits<STM32L433RBYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x3;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L433RCYx>
@@ -983,6 +1080,7 @@ template<> struct mcu_traits<STM32L433RCYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x3;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L433RCTxP>
@@ -990,6 +1088,7 @@ template<> struct mcu_traits<STM32L433RCTxP>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x3;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L433VCIx>
@@ -997,6 +1096,7 @@ template<> struct mcu_traits<STM32L433VCIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x3;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L433VCTx>
@@ -1004,6 +1104,7 @@ template<> struct mcu_traits<STM32L433VCTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x3;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L443CCTx>
@@ -1011,6 +1112,7 @@ template<> struct mcu_traits<STM32L443CCTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x3;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L443CCUx>
@@ -1018,6 +1120,7 @@ template<> struct mcu_traits<STM32L443CCUx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x3;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L443CCYx>
@@ -1025,6 +1128,7 @@ template<> struct mcu_traits<STM32L443CCYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x3;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L443RCIx>
@@ -1032,6 +1136,7 @@ template<> struct mcu_traits<STM32L443RCIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x3;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L443RCTx>
@@ -1039,6 +1144,7 @@ template<> struct mcu_traits<STM32L443RCTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x3;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L443RCYx>
@@ -1046,6 +1152,7 @@ template<> struct mcu_traits<STM32L443RCYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x3;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L443VCIx>
@@ -1053,6 +1160,7 @@ template<> struct mcu_traits<STM32L443VCIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x3;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L443VCTx>
@@ -1060,6 +1168,7 @@ template<> struct mcu_traits<STM32L443VCTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x3;
     static constexpr gpio_conf_t gpio_conf = STM32L43x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L475RCTx>
@@ -1067,6 +1176,7 @@ template<> struct mcu_traits<STM32L475RCTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x5;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L475RETx>
@@ -1074,6 +1184,7 @@ template<> struct mcu_traits<STM32L475RETx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x5;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L475RGTx>
@@ -1081,6 +1192,7 @@ template<> struct mcu_traits<STM32L475RGTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x5;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L475VCTx>
@@ -1088,6 +1200,7 @@ template<> struct mcu_traits<STM32L475VCTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x5;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L475VETx>
@@ -1095,6 +1208,7 @@ template<> struct mcu_traits<STM32L475VETx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x5;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L475VGTx>
@@ -1102,6 +1216,7 @@ template<> struct mcu_traits<STM32L475VGTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x5;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L485JCYx>
@@ -1109,6 +1224,7 @@ template<> struct mcu_traits<STM32L485JCYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x5;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L485JEYx>
@@ -1116,6 +1232,7 @@ template<> struct mcu_traits<STM32L485JEYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x5;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L476JEYx>
@@ -1123,6 +1240,7 @@ template<> struct mcu_traits<STM32L476JEYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L476;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L476JGYx>
@@ -1130,6 +1248,7 @@ template<> struct mcu_traits<STM32L476JGYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L476;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L476JGYxP>
@@ -1137,6 +1256,7 @@ template<> struct mcu_traits<STM32L476JGYxP>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L476;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L476MEYx>
@@ -1144,6 +1264,7 @@ template<> struct mcu_traits<STM32L476MEYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L476;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L476MGYx>
@@ -1151,6 +1272,7 @@ template<> struct mcu_traits<STM32L476MGYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L476;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L476QEIx>
@@ -1158,6 +1280,7 @@ template<> struct mcu_traits<STM32L476QEIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L476;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L476QGIx>
@@ -1165,6 +1288,7 @@ template<> struct mcu_traits<STM32L476QGIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L476;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L476RCTx>
@@ -1172,6 +1296,7 @@ template<> struct mcu_traits<STM32L476RCTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L476;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L476RETx>
@@ -1179,6 +1304,7 @@ template<> struct mcu_traits<STM32L476RETx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L476;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L476RGTx>
@@ -1186,6 +1312,7 @@ template<> struct mcu_traits<STM32L476RGTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L476;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L476VCTx>
@@ -1193,6 +1320,7 @@ template<> struct mcu_traits<STM32L476VCTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L476;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L476VETx>
@@ -1200,6 +1328,7 @@ template<> struct mcu_traits<STM32L476VETx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L476;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L476VGTx>
@@ -1207,6 +1336,7 @@ template<> struct mcu_traits<STM32L476VGTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L476;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L476ZETx>
@@ -1214,6 +1344,7 @@ template<> struct mcu_traits<STM32L476ZETx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L476;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L476ZGTx>
@@ -1221,6 +1352,7 @@ template<> struct mcu_traits<STM32L476ZGTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L476;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L476ZGJx>
@@ -1228,6 +1360,7 @@ template<> struct mcu_traits<STM32L476ZGJx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L476;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L476ZGTxP>
@@ -1235,6 +1368,7 @@ template<> struct mcu_traits<STM32L476ZGTxP>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L476;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L486JGYx>
@@ -1242,6 +1376,7 @@ template<> struct mcu_traits<STM32L486JGYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x6;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L486QGIx>
@@ -1249,6 +1384,7 @@ template<> struct mcu_traits<STM32L486QGIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x6;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L486RGTx>
@@ -1256,6 +1392,7 @@ template<> struct mcu_traits<STM32L486RGTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x6;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L486VGTx>
@@ -1263,6 +1400,7 @@ template<> struct mcu_traits<STM32L486VGTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x6;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L486ZGTx>
@@ -1270,6 +1408,7 @@ template<> struct mcu_traits<STM32L486ZGTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x6;
     static constexpr gpio_conf_t gpio_conf = STM32L47x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L496AEIx>
@@ -1277,6 +1416,7 @@ template<> struct mcu_traits<STM32L496AEIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L496;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L496AGIx>
@@ -1284,6 +1424,7 @@ template<> struct mcu_traits<STM32L496AGIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L496;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L496AGIxP>
@@ -1291,6 +1432,7 @@ template<> struct mcu_traits<STM32L496AGIxP>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L496;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L496QEIx>
@@ -1298,6 +1440,7 @@ template<> struct mcu_traits<STM32L496QEIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L496;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L496QGIx>
@@ -1305,6 +1448,7 @@ template<> struct mcu_traits<STM32L496QGIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L496;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L496QGIxP>
@@ -1312,6 +1456,7 @@ template<> struct mcu_traits<STM32L496QGIxP>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L496;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L496RETx>
@@ -1319,6 +1464,7 @@ template<> struct mcu_traits<STM32L496RETx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L496;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L496RGTx>
@@ -1326,6 +1472,7 @@ template<> struct mcu_traits<STM32L496RGTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L496;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L496RGTxP>
@@ -1333,6 +1480,7 @@ template<> struct mcu_traits<STM32L496RGTxP>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L496;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L496VETx>
@@ -1340,6 +1488,7 @@ template<> struct mcu_traits<STM32L496VETx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L496;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L496VGTx>
@@ -1347,6 +1496,7 @@ template<> struct mcu_traits<STM32L496VGTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L496;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L496VGYx>
@@ -1354,6 +1504,7 @@ template<> struct mcu_traits<STM32L496VGYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L496;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L496VGYxP>
@@ -1361,6 +1512,7 @@ template<> struct mcu_traits<STM32L496VGYxP>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L496;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L496ZETx>
@@ -1368,6 +1520,7 @@ template<> struct mcu_traits<STM32L496ZETx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L496;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L496ZGTx>
@@ -1375,6 +1528,7 @@ template<> struct mcu_traits<STM32L496ZGTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L496;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L496ZGTxP>
@@ -1382,6 +1536,7 @@ template<> struct mcu_traits<STM32L496ZGTxP>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L496;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L4A6AGIx>
@@ -1389,6 +1544,7 @@ template<> struct mcu_traits<STM32L4A6AGIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x6;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L4A6AGIxP>
@@ -1396,6 +1552,7 @@ template<> struct mcu_traits<STM32L4A6AGIxP>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x6;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L4A6QGIx>
@@ -1403,6 +1560,7 @@ template<> struct mcu_traits<STM32L4A6QGIx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x6;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L4A6QGIxP>
@@ -1410,6 +1568,7 @@ template<> struct mcu_traits<STM32L4A6QGIxP>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x6;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L4A6RGTx>
@@ -1417,6 +1576,7 @@ template<> struct mcu_traits<STM32L4A6RGTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x6;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L4A6RGTxP>
@@ -1424,6 +1584,7 @@ template<> struct mcu_traits<STM32L4A6RGTxP>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x6;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L4A6VGTx>
@@ -1431,6 +1592,7 @@ template<> struct mcu_traits<STM32L4A6VGTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x6;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L4A6VGYx>
@@ -1438,6 +1600,7 @@ template<> struct mcu_traits<STM32L4A6VGYx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x6;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L4A6VGYxP>
@@ -1445,6 +1608,7 @@ template<> struct mcu_traits<STM32L4A6VGYxP>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x6;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L4A6ZGTx>
@@ -1452,6 +1616,7 @@ template<> struct mcu_traits<STM32L4A6ZGTx>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x6;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 template<> struct mcu_traits<STM32L4A6ZGTxP>
@@ -1459,6 +1624,7 @@ template<> struct mcu_traits<STM32L4A6ZGTxP>
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x6;
     static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
 };
 
 // Set target from command-line -DMCU= option

@@ -1,17 +1,20 @@
 #include <timer.h>
 
 using led = output_t<LED>;
+using out = output_t<PROBE>;
 using tim = tim_t<TIMER_NO>;
 
 template<> void handler<TIMER_ISR>()
 {
     tim::clear_update_interrupt_flag();
     led::toggle();
+    out::toggle();
 }
 
 int main()
 {
     led::setup();
+    out::setup();
 
     // f_tim = f_sysclock / ((psc + 1) (arr + 1))
 

@@ -18,6 +18,11 @@ template<> struct clock_traits<100>
 
     static const uint8_t WS = 3;        // 100MHz at 2.7-3.3V
 
+    static constexpr uint32_t
+        CFGR = _::CFGR_PPRE1::W(0x4)    // divide by 2
+             | _::CFGR_PPRE2::W(0x0)    // divide by 1
+             ;
+
     template<typename PWR>
     static void enable_overdrive() {}   // not available on access-line
 
@@ -41,6 +46,11 @@ template<> struct clock_traits<180>
     using _ = rcc_t::T;
 
     static const uint8_t WS = 5;        // 180MHz at 2.7-3.6V
+
+    static constexpr uint32_t
+        CFGR = _::CFGR_PPRE1::W(0x5)    // divide by 4
+             | _::CFGR_PPRE2::W(0x4)    // divide by 2
+             ;
 
     template<typename PWR>
     static void enable_overdrive()
@@ -79,12 +89,16 @@ static inline uint32_t clock_tree_init()
 
     // reset clock control registers
 
+    RCC.CR = _::CR_RESET_VALUE;
+    RCC.CFGR = _::CFGR_RESET_VALUE;
     RCC.CIR = _::CIR_RESET_VALUE;
 
-    // set system clock to HSI-PLL 100MHz
+    // configure flash wait-states for max-speed
 
     FLASH.ACR = __::ACR_PRFTEN | __::ACR_LATENCY::W(traits::WS);
     while (__::ACR_LATENCY::R(FLASH.ACR) != traits::WS); // take effect
+
+    RCC.CFGR |= traits::CFGR;                   // set bus prescalers
 
     RCC.PLLCFGR = traits::PLLCFGR;              // configure PLL
     RCC.CR |= _::CR_PLLON;                      // enable PLL
@@ -94,6 +108,8 @@ static inline uint32_t clock_tree_init()
     RCC.CFGR |= _::CFGR_SW::W(0x2);             // select PLL as sys clock
     while (_::CFGR_SWS::R(RCC.CFGR) != 0x2);    // wait for PLL sys clock
  
+    // RCC.DCKCFGR = _::DCKCFGR_TIMPRE;            // let timers run at HCLK
+
     fpu_cpacr_t::V.CPACR |= fpu_cpacr_t::T::CPACR_CP::W(0xf); // enable fpu
     __asm volatile ("dsb");         // data pipe-line reset
     __asm volatile ("isb");         // instruction pipe-line reset

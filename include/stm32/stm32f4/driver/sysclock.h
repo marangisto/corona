@@ -23,6 +23,11 @@ template<> struct clock_traits<100>
              | _::CFGR_PPRE2::W(0x0)    // divide by 1
              ;
 
+    static constexpr int APB1_PERIPH_SHIFT = 1;
+    static constexpr int APB1_TIMER_SHIFT = 0;
+    static constexpr int APB2_PERIPH_SHIFT = 0;
+    static constexpr int APB2_TIMER_SHIFT = 0;
+
     template<typename PWR>
     static void enable_overdrive() {}   // not available on access-line
 
@@ -52,6 +57,11 @@ template<> struct clock_traits<180>
              | _::CFGR_PPRE2::W(0x4)    // divide by 2
              ;
 
+    static constexpr int APB1_PERIPH_SHIFT = 2;
+    static constexpr int APB1_TIMER_SHIFT = 1;
+    static constexpr int APB2_PERIPH_SHIFT = 1;
+    static constexpr int APB2_TIMER_SHIFT = 0;
+
     template<typename PWR>
     static void enable_overdrive()
     {
@@ -79,11 +89,11 @@ template<> struct clock_traits<180>
 
 static inline uint32_t clock_tree_init()
 {
-    constexpr unsigned freq = mcu_traits<mcu>::frequency;
+    constexpr unsigned fmax = mcu_traits<mcu>::frequency;
 
     using _ = rcc_t::T;
     using __ = flash_t::T;
-    using traits = clock_traits<freq>;
+    using traits = clock_traits<fmax>;
     rcc_t::T& RCC = rcc_t::V;
     flash_t::T& FLASH = flash_t::V;
 
@@ -107,24 +117,27 @@ static inline uint32_t clock_tree_init()
 
     RCC.CFGR |= _::CFGR_SW::W(0x2);             // select PLL as sys clock
     while (_::CFGR_SWS::R(RCC.CFGR) != 0x2);    // wait for PLL sys clock
- 
+
     // RCC.DCKCFGR = _::DCKCFGR_TIMPRE;            // let timers run at HCLK
 
     fpu_cpacr_t::V.CPACR |= fpu_cpacr_t::T::CPACR_CP::W(0xf); // enable fpu
     __asm volatile ("dsb");         // data pipe-line reset
     __asm volatile ("isb");         // instruction pipe-line reset
 
-    return freq * 1000000;
+    return fmax * 1000000;
 }
 
 static uint32_t clock_tree_scale(clock_source_t cs, uint32_t f)
 {
+    constexpr unsigned fmax = mcu_traits<mcu>::frequency;
+    using traits = clock_traits<fmax>;
+
     switch (cs)
     {
-        case APB1_PERIPH:   return f >> 2;
-        case APB1_TIMER:    return f >> 1;
-        case APB2_PERIPH:   return f >> 1;
-        case APB2_TIMER:    return f >> 0;
+        case APB1_PERIPH:   return f >> traits::APB1_PERIPH_SHIFT;
+        case APB1_TIMER:    return f >> traits::APB1_TIMER_SHIFT;
+        case APB2_PERIPH:   return f >> traits::APB2_PERIPH_SHIFT;
+        case APB2_TIMER:    return f >> traits::APB2_TIMER_SHIFT;
         default:            return f;
     }
 }

@@ -272,6 +272,7 @@ template<int INST> struct pwr_traits {};
 template<> struct pwr_traits<0>
 {
     using pwr = pwr_t;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -290,6 +291,5 @@ template<> struct pwr_traits<0>
     static void reset()
     {
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_PWRRST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

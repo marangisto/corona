@@ -187,6 +187,7 @@ template<> struct ucpd_traits<1>
     using ucpd = ucpd1_t;
     static constexpr signal_t FRSTX1 = UCPD1_FRSTX1;
     static constexpr signal_t FRSTX2 = UCPD1_FRSTX2;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()

@@ -191,6 +191,7 @@ template<int INST> struct dac_traits {};
 template<> struct dac_traits<1>
 {
     using dac = dac1_t;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()

@@ -222,6 +222,7 @@ template<> struct crs_traits<0>
 {
     using crs = crs_t;
     static constexpr signal_t SYNC = CRS_SYNC;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -240,6 +241,5 @@ template<> struct crs_traits<0>
     static void reset()
     {
         RCC::V.APB1HRSTR |= RCC::T::APB1HRSTR_CRSRST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

@@ -1401,6 +1401,5 @@ template<> struct bdma_traits<0>
     static void reset()
     {
         RCC::V.AHB4RSTR |= RCC::T::AHB4RSTR_BDMARST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

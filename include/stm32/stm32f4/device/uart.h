@@ -277,6 +277,7 @@ template<> struct uart_traits<4>
     static constexpr signal_t RTS = UART4_RTS;
     static constexpr signal_t RX = UART4_RX;
     static constexpr signal_t TX = UART4_TX;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -295,7 +296,6 @@ template<> struct uart_traits<4>
     static void reset()
     {
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_UART4RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -306,6 +306,7 @@ template<> struct uart_traits<5>
     static constexpr signal_t RTS = UART5_RTS;
     static constexpr signal_t RX = UART5_RX;
     static constexpr signal_t TX = UART5_TX;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -324,7 +325,6 @@ template<> struct uart_traits<5>
     static void reset()
     {
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_UART5RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -333,6 +333,7 @@ template<> struct uart_traits<7>
     using uart = uart7_t;
     static constexpr signal_t RX = UART7_RX;
     static constexpr signal_t TX = UART7_TX;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -351,7 +352,6 @@ template<> struct uart_traits<7>
     static void reset()
     {
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_UART7RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -360,6 +360,7 @@ template<> struct uart_traits<8>
     using uart = uart8_t;
     static constexpr signal_t RX = UART8_RX;
     static constexpr signal_t TX = UART8_TX;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -378,6 +379,5 @@ template<> struct uart_traits<8>
     static void reset()
     {
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_UART8RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

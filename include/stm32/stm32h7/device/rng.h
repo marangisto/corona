@@ -199,6 +199,5 @@ template<> struct rng_traits<0>
     static void reset()
     {
         RCC::V.AHB2RSTR |= RCC::T::AHB2RSTR_RNGRST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

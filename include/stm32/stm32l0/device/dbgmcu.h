@@ -79,6 +79,7 @@ template<int INST> struct dbgmcu_traits {};
 template<> struct dbgmcu_traits<0>
 {
     using dbgmcu = dbg_t;
+    static constexpr clock_source_t CS = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()

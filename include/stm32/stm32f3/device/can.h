@@ -2399,6 +2399,7 @@ template<> struct can_traits<0>
     using can = can_t;
     static constexpr signal_t RX = CAN_RX;
     static constexpr signal_t TX = CAN_TX;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()

@@ -63,6 +63,7 @@ template<int INST> struct usbphyc_traits {};
 template<> struct usbphyc_traits<0>
 {
     using usbphyc = usbphyc_t;
+    static constexpr clock_source_t CS = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -81,6 +82,5 @@ template<> struct usbphyc_traits<0>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_USBPHYCRST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

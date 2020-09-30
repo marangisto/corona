@@ -182,6 +182,7 @@ template<> struct i2c_traits<1>
     using i2c = i2c1_t;
     static constexpr signal_t SCL = I2C1_SCL;
     static constexpr signal_t SDA = I2C1_SDA;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -205,6 +206,7 @@ template<> struct i2c_traits<1>
 template<> struct i2c_traits<2>
 {
     using i2c = i2c2_t;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()

@@ -555,6 +555,7 @@ template<> struct sdmmc_traits<1>
     static constexpr signal_t D5 = SDMMC1_D5;
     static constexpr signal_t D6 = SDMMC1_D6;
     static constexpr signal_t D7 = SDMMC1_D7;
+    static constexpr clock_source_t CS = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -573,7 +574,6 @@ template<> struct sdmmc_traits<1>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_SDMMC1RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -590,6 +590,7 @@ template<> struct sdmmc_traits<2>
     static constexpr signal_t D5 = SDMMC2_D5;
     static constexpr signal_t D6 = SDMMC2_D6;
     static constexpr signal_t D7 = SDMMC2_D7;
+    static constexpr clock_source_t CS = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -608,6 +609,5 @@ template<> struct sdmmc_traits<2>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_SDMMC2RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

@@ -902,7 +902,6 @@ template<> struct sdmmc_traits<1>
     static void reset()
     {
         RCC::V.AHB3RSTR |= RCC::T::AHB3RSTR_SDMMC1RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -937,6 +936,5 @@ template<> struct sdmmc_traits<2>
     static void reset()
     {
         RCC::V.AHB2RSTR |= RCC::T::AHB2RSTR_SDMMC2RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

@@ -74,6 +74,7 @@ template<> struct crs_traits<0>
 {
     using crs = crs_t;
     static constexpr signal_t SYNC = CRS_SYNC;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()

@@ -418,6 +418,7 @@ template<> struct spi_traits<1>
     static constexpr signal_t MOSI = SPI1_MOSI;
     static constexpr signal_t NSS = SPI1_NSS;
     static constexpr signal_t SCK = SPI1_SCK;
+    static constexpr clock_source_t CS = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -457,6 +458,7 @@ template<> struct spi_traits<2>
     static constexpr signal_t MOSI = SPI2_MOSI;
     static constexpr signal_t NSS = SPI2_NSS;
     static constexpr signal_t SCK = SPI2_SCK;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -496,6 +498,7 @@ template<> struct spi_traits<3>
     static constexpr signal_t MOSI = SPI3_MOSI;
     static constexpr signal_t NSS = SPI3_NSS;
     static constexpr signal_t SCK = SPI3_SCK;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -535,6 +538,7 @@ template<> struct spi_traits<4>
     static constexpr signal_t MOSI = SPI4_MOSI;
     static constexpr signal_t NSS = SPI4_NSS;
     static constexpr signal_t SCK = SPI4_SCK;
+    static constexpr clock_source_t CS = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()

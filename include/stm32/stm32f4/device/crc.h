@@ -137,6 +137,5 @@ template<> struct crc_traits<0>
     static void reset()
     {
         RCC::V.AHB1RSTR |= RCC::T::AHB1RSTR_CRCRST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

@@ -886,6 +886,7 @@ template<> struct spi_traits<1>
     static constexpr signal_t MOSI = SPI1_MOSI;
     static constexpr signal_t NSS = SPI1_NSS;
     static constexpr signal_t SCK = SPI1_SCK;
+    static constexpr clock_source_t CS = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -904,7 +905,6 @@ template<> struct spi_traits<1>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_SPI1RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -915,6 +915,7 @@ template<> struct spi_traits<2>
     static constexpr signal_t MOSI = SPI2_MOSI;
     static constexpr signal_t NSS = SPI2_NSS;
     static constexpr signal_t SCK = SPI2_SCK;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -933,7 +934,6 @@ template<> struct spi_traits<2>
     static void reset()
     {
         RCC::V.APB1LRSTR |= RCC::T::APB1LRSTR_SPI2RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -944,6 +944,7 @@ template<> struct spi_traits<3>
     static constexpr signal_t MOSI = SPI3_MOSI;
     static constexpr signal_t NSS = SPI3_NSS;
     static constexpr signal_t SCK = SPI3_SCK;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -962,7 +963,6 @@ template<> struct spi_traits<3>
     static void reset()
     {
         RCC::V.APB1LRSTR |= RCC::T::APB1LRSTR_SPI3RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -973,6 +973,7 @@ template<> struct spi_traits<4>
     static constexpr signal_t MOSI = SPI4_MOSI;
     static constexpr signal_t NSS = SPI4_NSS;
     static constexpr signal_t SCK = SPI4_SCK;
+    static constexpr clock_source_t CS = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -991,7 +992,6 @@ template<> struct spi_traits<4>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_SPI4RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -1002,6 +1002,7 @@ template<> struct spi_traits<5>
     static constexpr signal_t MOSI = SPI5_MOSI;
     static constexpr signal_t NSS = SPI5_NSS;
     static constexpr signal_t SCK = SPI5_SCK;
+    static constexpr clock_source_t CS = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -1020,7 +1021,6 @@ template<> struct spi_traits<5>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_SPI5RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -1049,6 +1049,5 @@ template<> struct spi_traits<6>
     static void reset()
     {
         RCC::V.APB4RSTR |= RCC::T::APB4RSTR_SPI6RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

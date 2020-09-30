@@ -213,6 +213,7 @@ template<> struct lpuart_traits<1>
     static constexpr signal_t RTS = LPUART1_RTS;
     static constexpr signal_t RX = LPUART1_RX;
     static constexpr signal_t TX = LPUART1_TX;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()

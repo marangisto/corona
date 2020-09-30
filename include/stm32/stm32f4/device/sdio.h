@@ -265,6 +265,7 @@ template<> struct sdio_traits<0>
     static constexpr signal_t D5 = SDIO_D5;
     static constexpr signal_t D6 = SDIO_D6;
     static constexpr signal_t D7 = SDIO_D7;
+    static constexpr clock_source_t CS = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -283,6 +284,5 @@ template<> struct sdio_traits<0>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_SDIORST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

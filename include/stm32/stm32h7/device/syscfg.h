@@ -560,6 +560,5 @@ template<> struct syscfg_traits<0>
     static void reset()
     {
         RCC::V.APB4RSTR |= RCC::T::APB4RSTR_SYSCFGRST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

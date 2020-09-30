@@ -761,6 +761,7 @@ template<> struct sai_traits<1>
     static constexpr signal_t SCK_B = SAI1_SCK_B;
     static constexpr signal_t SD_A = SAI1_SD_A;
     static constexpr signal_t SD_B = SAI1_SD_B;
+    static constexpr clock_source_t CS = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -779,7 +780,6 @@ template<> struct sai_traits<1>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_SAI1RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -794,6 +794,7 @@ template<> struct sai_traits<2>
     static constexpr signal_t SCK_B = SAI2_SCK_B;
     static constexpr signal_t SD_A = SAI2_SD_A;
     static constexpr signal_t SD_B = SAI2_SD_B;
+    static constexpr clock_source_t CS = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -812,6 +813,5 @@ template<> struct sai_traits<2>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_SAI2RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

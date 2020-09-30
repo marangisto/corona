@@ -73,6 +73,7 @@ template<int INST> struct comp_traits {};
 template<> struct comp_traits<0>
 {
     using comp = comp_t;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()

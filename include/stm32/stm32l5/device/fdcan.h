@@ -338,6 +338,7 @@ template<> struct fdcan_traits<1>
     using fdcan = fdcan1_t;
     static constexpr signal_t RX = FDCAN1_RX;
     static constexpr signal_t TX = FDCAN1_TX;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()

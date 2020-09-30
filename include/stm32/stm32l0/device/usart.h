@@ -280,6 +280,7 @@ template<> struct usart_traits<1>
     static constexpr signal_t RTS = USART1_RTS;
     static constexpr signal_t RX = USART1_RX;
     static constexpr signal_t TX = USART1_TX;
+    static constexpr clock_source_t CS = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -321,6 +322,7 @@ template<> struct usart_traits<2>
     static constexpr signal_t RTS = USART2_RTS;
     static constexpr signal_t RX = USART2_RX;
     static constexpr signal_t TX = USART2_TX;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -362,6 +364,7 @@ template<> struct usart_traits<4>
     static constexpr signal_t RTS = USART4_RTS;
     static constexpr signal_t RX = USART4_RX;
     static constexpr signal_t TX = USART4_TX;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -402,6 +405,7 @@ template<> struct usart_traits<5>
     static constexpr signal_t RTS = USART5_RTS;
     static constexpr signal_t RX = USART5_RX;
     static constexpr signal_t TX = USART5_TX;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()

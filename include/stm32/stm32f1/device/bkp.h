@@ -249,6 +249,7 @@ template<int INST> struct bkp_traits {};
 template<> struct bkp_traits<0>
 {
     using bkp = bkp_t;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()

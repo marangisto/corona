@@ -955,6 +955,7 @@ template<> struct i2c_traits<1>
     static constexpr signal_t SCL = I2C1_SCL;
     static constexpr signal_t SDA = I2C1_SDA;
     static constexpr signal_t SMBA = I2C1_SMBA;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -973,7 +974,6 @@ template<> struct i2c_traits<1>
     static void reset()
     {
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_I2C1RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -983,6 +983,7 @@ template<> struct i2c_traits<2>
     static constexpr signal_t SCL = I2C2_SCL;
     static constexpr signal_t SDA = I2C2_SDA;
     static constexpr signal_t SMBA = I2C2_SMBA;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -1001,7 +1002,6 @@ template<> struct i2c_traits<2>
     static void reset()
     {
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_I2C2RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -1011,6 +1011,7 @@ template<> struct i2c_traits<3>
     static constexpr signal_t SCL = I2C3_SCL;
     static constexpr signal_t SDA = I2C3_SDA;
     static constexpr signal_t SMBA = I2C3_SMBA;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -1029,13 +1030,13 @@ template<> struct i2c_traits<3>
     static void reset()
     {
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_I2C3RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
 template<> struct i2c_traits<4>
 {
     using i2c = i2c4_t;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -1054,6 +1055,5 @@ template<> struct i2c_traits<4>
     static void reset()
     {
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_I2C4RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

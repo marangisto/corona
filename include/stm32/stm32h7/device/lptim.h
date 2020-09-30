@@ -887,6 +887,7 @@ template<> struct lptim_traits<1>
     static constexpr signal_t IN1 = LPTIM1_IN1;
     static constexpr signal_t IN2 = LPTIM1_IN2;
     static constexpr signal_t OUT = LPTIM1_OUT;
+    static constexpr clock_source_t CS = APB1_TIMER;
 
     template<typename RCC>
     static void enable()
@@ -905,7 +906,6 @@ template<> struct lptim_traits<1>
     static void reset()
     {
         RCC::V.APB1LRSTR |= RCC::T::APB1LRSTR_LPTIM1RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -934,7 +934,6 @@ template<> struct lptim_traits<2>
     static void reset()
     {
         RCC::V.APB4RSTR |= RCC::T::APB4RSTR_LPTIM2RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -960,7 +959,6 @@ template<> struct lptim_traits<3>
     static void reset()
     {
         RCC::V.APB4RSTR |= RCC::T::APB4RSTR_LPTIM3RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -986,7 +984,6 @@ template<> struct lptim_traits<4>
     static void reset()
     {
         RCC::V.APB4RSTR |= RCC::T::APB4RSTR_LPTIM4RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -1012,6 +1009,5 @@ template<> struct lptim_traits<5>
     static void reset()
     {
         RCC::V.APB4RSTR |= RCC::T::APB4RSTR_LPTIM5RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

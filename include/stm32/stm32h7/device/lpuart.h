@@ -287,6 +287,5 @@ template<> struct lpuart_traits<1>
     static void reset()
     {
         RCC::V.APB4RSTR |= RCC::T::APB4RSTR_LPUART1RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

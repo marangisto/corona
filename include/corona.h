@@ -21,6 +21,13 @@ struct critical_section_t
     ~critical_section_t() { interrupt::enable(); }
 };
 
+enum clock_source_t
+    { APB1_PERIPH
+    , APB1_TIMER
+    , APB2_PERIPH
+    , APB2_TIMER
+    };
+
 class sys_tick
 {
 public:

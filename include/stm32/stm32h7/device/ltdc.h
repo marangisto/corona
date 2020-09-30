@@ -409,6 +409,5 @@ template<> struct ltdc_traits<0>
     static void reset()
     {
         RCC::V.APB3RSTR |= RCC::T::APB3RSTR_LTDCRST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

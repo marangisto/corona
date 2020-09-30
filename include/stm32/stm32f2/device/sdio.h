@@ -201,6 +201,7 @@ template<> struct sdio_traits<0>
     static constexpr signal_t D5 = SDIO_D5;
     static constexpr signal_t D6 = SDIO_D6;
     static constexpr signal_t D7 = SDIO_D7;
+    static constexpr clock_source_t CS = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()

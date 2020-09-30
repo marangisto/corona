@@ -576,6 +576,7 @@ template<int INST> struct dsi_traits {};
 template<> struct dsi_traits<0>
 {
     using dsi = dsi_t;
+    static constexpr clock_source_t CS = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()

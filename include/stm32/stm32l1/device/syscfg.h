@@ -132,6 +132,7 @@ template<int INST> struct syscfg_traits {};
 template<> struct syscfg_traits<0>
 {
     using syscfg = syscfg_t;
+    static constexpr clock_source_t CS = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()

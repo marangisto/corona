@@ -3830,6 +3830,7 @@ template<> struct hrtim_traits<11>
 template<> struct hrtim_traits<10>
 {
     using hrtim = hrtim_master_t;
+    static constexpr clock_source_t CS = APB2_TIMER;
 
     template<typename RCC>
     static void enable()

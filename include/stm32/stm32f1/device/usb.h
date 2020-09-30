@@ -203,6 +203,7 @@ template<int INST> struct usb_traits {};
 template<> struct usb_traits<0>
 {
     using usb = usb_t;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()

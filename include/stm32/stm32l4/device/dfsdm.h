@@ -1492,6 +1492,7 @@ template<int INST> struct dfsdm_traits {};
 template<> struct dfsdm_traits<0>
 {
     using dfsdm = dfsdm_t;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()

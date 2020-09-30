@@ -366,6 +366,7 @@ template<> struct i2c_traits<1>
     static constexpr signal_t SCL = I2C1_SCL;
     static constexpr signal_t SDA = I2C1_SDA;
     static constexpr signal_t SMBA = I2C1_SMBA;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -404,6 +405,7 @@ template<> struct i2c_traits<2>
     static constexpr signal_t SCL = I2C2_SCL;
     static constexpr signal_t SDA = I2C2_SDA;
     static constexpr signal_t SMBA = I2C2_SMBA;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -442,6 +444,7 @@ template<> struct i2c_traits<3>
     static constexpr signal_t SCL = I2C3_SCL;
     static constexpr signal_t SDA = I2C3_SDA;
     static constexpr signal_t SMBA = I2C3_SMBA;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable_sleep_mode()
@@ -462,6 +465,7 @@ template<> struct i2c_traits<4>
     static constexpr signal_t SCL = I2C4_SCL;
     static constexpr signal_t SDA = I2C4_SDA;
     static constexpr signal_t SMBA = I2C4_SMBA;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()

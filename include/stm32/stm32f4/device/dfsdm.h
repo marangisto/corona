@@ -1437,6 +1437,7 @@ template<int INST> struct dfsdm_traits {};
 template<> struct dfsdm_traits<0>
 {
     using dfsdm = dfsdm_t;
+    static constexpr clock_source_t CS = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -1455,7 +1456,6 @@ template<> struct dfsdm_traits<0>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_DFSDMRST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };
 
@@ -1493,6 +1493,7 @@ template<> struct dfsdm_traits<2>
     static constexpr signal_t DATIN5 = DFSDM2_DATIN5;
     static constexpr signal_t DATIN6 = DFSDM2_DATIN6;
     static constexpr signal_t DATIN7 = DFSDM2_DATIN7;
+    static constexpr clock_source_t CS = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -1511,6 +1512,5 @@ template<> struct dfsdm_traits<2>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_DFSDM2RST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

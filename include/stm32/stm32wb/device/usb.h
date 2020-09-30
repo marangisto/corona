@@ -246,6 +246,7 @@ template<> struct usb_traits<0>
     static constexpr signal_t DM = USB_DM;
     static constexpr signal_t DP = USB_DP;
     static constexpr signal_t NOE = USB_NOE;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()

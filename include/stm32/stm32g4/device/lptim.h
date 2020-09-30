@@ -160,6 +160,7 @@ template<> struct lptim_traits<1>
     static constexpr signal_t IN1 = LPTIM1_IN1;
     static constexpr signal_t IN2 = LPTIM1_IN2;
     static constexpr signal_t OUT = LPTIM1_OUT;
+    static constexpr clock_source_t CS = APB1_TIMER;
 
     template<typename RCC>
     static void enable()

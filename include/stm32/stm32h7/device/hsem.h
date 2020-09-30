@@ -1233,6 +1233,5 @@ template<> struct hsem_traits<0>
     static void reset()
     {
         RCC::V.AHB4RSTR |= RCC::T::AHB4RSTR_HSEMRST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

@@ -328,6 +328,5 @@ template<> struct dma2d_traits<0>
     static void reset()
     {
         RCC::V.AHB1RSTR |= RCC::T::AHB1RSTR_DMA2DRST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

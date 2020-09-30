@@ -358,6 +358,7 @@ template<> struct ltdc_traits<0>
     static constexpr signal_t R6 = LTDC_R6;
     static constexpr signal_t R7 = LTDC_R7;
     static constexpr signal_t VSYNC = LTDC_VSYNC;
+    static constexpr clock_source_t CS = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -376,6 +377,5 @@ template<> struct ltdc_traits<0>
     static void reset()
     {
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_LTDCRST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

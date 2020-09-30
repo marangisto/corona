@@ -3369,6 +3369,5 @@ template<> struct mdma_traits<0>
     static void reset()
     {
         RCC::V.AHB3RSTR |= RCC::T::AHB3RSTR_MDMARST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

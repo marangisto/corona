@@ -188,6 +188,7 @@ template<int INST> struct opamp_traits {};
 template<> struct opamp_traits<0>
 {
     using opamp = opamp_t;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -206,6 +207,5 @@ template<> struct opamp_traits<0>
     static void reset()
     {
         RCC::V.APB1HRSTR |= RCC::T::APB1HRSTR_OPAMPRST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

@@ -226,6 +226,7 @@ template<> struct spdifrx_traits<0>
     static constexpr signal_t IN2 = SPDIFRX_IN2;
     static constexpr signal_t IN3 = SPDIFRX_IN3;
     static constexpr signal_t IN4 = SPDIFRX_IN4;
+    static constexpr clock_source_t CS = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -244,6 +245,5 @@ template<> struct spdifrx_traits<0>
     static void reset()
     {
         RCC::V.APB1LRSTR |= RCC::T::APB1LRSTR_SPDIFRXRST;
-        __asm volatile ("dsb"); // dm00037591 2.1.13
     }
 };

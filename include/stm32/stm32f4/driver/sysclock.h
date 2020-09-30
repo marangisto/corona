@@ -32,10 +32,10 @@ template<> struct clock_traits<100>
     static void enable_overdrive() {}   // not available on access-line
 
     static const uint16_t pllN = 200;   // 9 bits, valid range [50..432]
-    static const uint8_t pllM = 8;      // 6 bits, valid range [2..63]
+    static const uint8_t pllM = 4;      // 6 bits, valid range [2..63]
     static const pllP_t pllP = pllP_4;  // 2 bits, enum range [2, 4, 6, 8]
     static const uint8_t pllQ = 9;      // 4 bits, valid range [2..15]
-    static const uint8_t pllSRC = 0;    // 1 bit, 0 = HSI, 1 = HSE
+    static const uint8_t pllSRC = 1;    // 1 bit, 0 = HSI, 1 = HSE
 
     static constexpr uint32_t
         PLLCFGR = (pllSRC ? _::PLLCFGR_PLLSRC : 0)
@@ -73,10 +73,10 @@ template<> struct clock_traits<180>
     }
 
     static const uint16_t pllN = 360;   // 9 bits, valid range [50..432]
-    static const uint8_t pllM = 16;     // 6 bits, valid range [2..63]
+    static const uint8_t pllM = 8;      // 6 bits, valid range [2..63]
     static const pllP_t pllP = pllP_2;  // 2 bits, enum range [2, 4, 6, 8]
     static const uint8_t pllQ = 9;      // 4 bits, valid range [2..15]
-    static const uint8_t pllSRC = 0;    // 1 bit, 0 = HSI, 1 = HSE
+    static const uint8_t pllSRC = 1;    // 1 bit, 0 = HSI, 1 = HSE
 
     static constexpr uint32_t
         PLLCFGR = (pllSRC ? _::PLLCFGR_PLLSRC : 0)
@@ -109,6 +109,9 @@ static inline uint32_t clock_tree_init()
     while (__::ACR_LATENCY::R(FLASH.ACR) != traits::WS); // take effect
 
     RCC.CFGR |= traits::CFGR;                   // set bus prescalers
+
+    RCC.CR |= _::CR_HSEON;              // enable external clock
+    while (!(RCC.CR & _::CR_HSERDY));   // wait for HSE ready
 
     RCC.PLLCFGR = traits::PLLCFGR;              // configure PLL
     RCC.CR |= _::CR_PLLON;                      // enable PLL

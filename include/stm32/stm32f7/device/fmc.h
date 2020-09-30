@@ -774,6 +774,7 @@ template<> struct fmc_traits<0>
     static constexpr signal_t SDNE1 = FMC_SDNE1;
     static constexpr signal_t SDNRAS = FMC_SDNRAS;
     static constexpr signal_t SDNWE = FMC_SDNWE;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

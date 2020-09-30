@@ -3351,6 +3351,7 @@ template<int INST> struct mdma_traits {};
 template<> struct mdma_traits<0>
 {
     using mdma = mdma_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

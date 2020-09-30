@@ -150,6 +150,7 @@ template<> struct quadspi_traits<1>
     static constexpr signal_t BK2_IO3 = QUADSPI1_BK2_IO3;
     static constexpr signal_t BK2_NCS = QUADSPI1_BK2_NCS;
     static constexpr signal_t CLK = QUADSPI1_CLK;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

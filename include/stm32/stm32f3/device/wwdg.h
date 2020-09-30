@@ -82,7 +82,7 @@ template<int INST> struct wwdg_traits {};
 template<> struct wwdg_traits<0>
 {
     using wwdg = wwdg_t;
-    static constexpr clock_source_t CS = APB1_PERIPH;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()

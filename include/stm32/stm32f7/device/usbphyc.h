@@ -63,7 +63,7 @@ template<int INST> struct usbphyc_traits {};
 template<> struct usbphyc_traits<0>
 {
     using usbphyc = usbphyc_t;
-    static constexpr clock_source_t CS = APB2_PERIPH;
+    static constexpr clock_source_t CLOCK = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()

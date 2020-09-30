@@ -786,6 +786,7 @@ template<int INST> struct cryp_traits {};
 template<> struct cryp_traits<0>
 {
     using cryp = cryp_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

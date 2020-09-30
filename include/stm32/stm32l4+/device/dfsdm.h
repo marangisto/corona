@@ -825,7 +825,7 @@ template<> struct dfsdm_traits<1>
     static constexpr signal_t DATIN5 = DFSDM1_DATIN5;
     static constexpr signal_t DATIN6 = DFSDM1_DATIN6;
     static constexpr signal_t DATIN7 = DFSDM1_DATIN7;
-    static constexpr clock_source_t CS = APB2_PERIPH;
+    static constexpr clock_source_t CLOCK = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()

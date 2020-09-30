@@ -576,6 +576,7 @@ template<> struct fsmc_traits<0>
     static constexpr signal_t NREG = FSMC_NREG;
     static constexpr signal_t NWAIT = FSMC_NWAIT;
     static constexpr signal_t NWE = FSMC_NWE;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

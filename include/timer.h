@@ -161,7 +161,7 @@ public:
 
     static inline uint32_t clock()
     {
-        return sys_clock::freq(tim::P);
+        return sys_clock::freq(traits::CLOCK);
     }
 
     template<channel_t CH, pin_t PIN>

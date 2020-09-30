@@ -177,6 +177,7 @@ template<int INST> struct dma2d_traits {};
 template<> struct dma2d_traits<0>
 {
     using dma2d = dma2d_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

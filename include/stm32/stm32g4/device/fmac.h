@@ -136,6 +136,7 @@ template<int INST> struct fmac_traits {};
 template<> struct fmac_traits<0>
 {
     using fmac = fmac_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

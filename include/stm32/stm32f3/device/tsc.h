@@ -556,6 +556,7 @@ template<> struct tsc_traits<0>
     static constexpr signal_t G8_IO3 = TSC_G8_IO3;
     static constexpr signal_t G8_IO4 = TSC_G8_IO4;
     static constexpr signal_t SYNC = TSC_SYNC;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

@@ -178,7 +178,7 @@ template<> struct spdif_rx_traits<0>
     static constexpr signal_t IN1 = SPDIFRX_IN1;
     static constexpr signal_t IN2 = SPDIFRX_IN2;
     static constexpr signal_t IN3 = SPDIFRX_IN3;
-    static constexpr clock_source_t CS = APB1_PERIPH;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()

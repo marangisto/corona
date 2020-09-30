@@ -89,6 +89,7 @@ template<int INST> struct pka_traits {};
 template<> struct pka_traits<0>
 {
     using pka = pka_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

@@ -212,7 +212,7 @@ template<> struct usb_fs_traits<0>
     using usb_fs = usb_t;
     static constexpr signal_t DM = USB_DM;
     static constexpr signal_t DP = USB_DP;
-    static constexpr clock_source_t CS = APB1_PERIPH;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()

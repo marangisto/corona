@@ -4912,7 +4912,7 @@ template<> struct can_traits<1>
     using can = can1_t;
     static constexpr signal_t RX = CAN1_RX;
     static constexpr signal_t TX = CAN1_TX;
-    static constexpr clock_source_t CS = APB1_PERIPH;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -4939,7 +4939,7 @@ template<> struct can_traits<2>
     using can = can2_t;
     static constexpr signal_t RX = CAN2_RX;
     static constexpr signal_t TX = CAN2_TX;
-    static constexpr clock_source_t CS = APB1_PERIPH;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()

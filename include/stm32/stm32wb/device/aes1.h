@@ -348,6 +348,7 @@ template<int INST> struct aes1_traits {};
 template<> struct aes1_traits<1>
 {
     using aes1 = aes1_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -383,6 +384,7 @@ template<> struct aes1_traits<1>
 template<> struct aes1_traits<2>
 {
     using aes1 = aes2_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

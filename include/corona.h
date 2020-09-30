@@ -22,7 +22,9 @@ struct critical_section_t
 };
 
 enum clock_source_t
-    { APB1_PERIPH
+    { AHB_PERIPH
+    , AHB_STK
+    , APB1_PERIPH
     , APB1_TIMER
     , APB2_PERIPH
     , APB2_TIMER
@@ -49,7 +51,7 @@ class sys_clock
 public:
     static void init();
     static uint32_t freq() { return m_freq; }   // core clock
-    static uint32_t freq(periph_t p);           // peripheral clock
+    static uint32_t freq(clock_source_t p);     // peripheral clock
     static void _set_freq(uint32_t freq) { m_freq = freq; }
 
 private:

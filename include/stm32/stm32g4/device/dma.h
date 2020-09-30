@@ -448,6 +448,7 @@ template<int INST> struct dma_traits {};
 template<> struct dma_traits<1>
 {
     using dma = dma1_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -483,6 +484,7 @@ template<> struct dma_traits<1>
 template<> struct dma_traits<2>
 {
     using dma = dma2_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

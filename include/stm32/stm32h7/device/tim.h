@@ -2810,7 +2810,7 @@ template<> struct tim_traits<1>
     static constexpr signal_t CH3N = TIM1_CH3N;
     static constexpr signal_t CH4 = TIM1_CH4;
     static constexpr signal_t ETR = TIM1_ETR;
-    static constexpr clock_source_t CS = APB2_TIMER;
+    static constexpr clock_source_t CLOCK = APB2_TIMER;
 
     template<typename RCC>
     static void enable()
@@ -2837,7 +2837,7 @@ template<> struct tim_traits<12>
     using tim = tim12_t;
     static constexpr signal_t CH1 = TIM12_CH1;
     static constexpr signal_t CH2 = TIM12_CH2;
-    static constexpr clock_source_t CS = APB1_TIMER;
+    static constexpr clock_source_t CLOCK = APB1_TIMER;
 
     template<typename RCC>
     static void enable()
@@ -2863,7 +2863,7 @@ template<> struct tim_traits<13>
 {
     using tim = tim13_t;
     static constexpr signal_t CH1 = TIM13_CH1;
-    static constexpr clock_source_t CS = APB1_TIMER;
+    static constexpr clock_source_t CLOCK = APB1_TIMER;
 
     template<typename RCC>
     static void enable()
@@ -2889,7 +2889,7 @@ template<> struct tim_traits<14>
 {
     using tim = tim14_t;
     static constexpr signal_t CH1 = TIM14_CH1;
-    static constexpr clock_source_t CS = APB1_TIMER;
+    static constexpr clock_source_t CLOCK = APB1_TIMER;
 
     template<typename RCC>
     static void enable()
@@ -2918,7 +2918,7 @@ template<> struct tim_traits<15>
     static constexpr signal_t CH1 = TIM15_CH1;
     static constexpr signal_t CH1N = TIM15_CH1N;
     static constexpr signal_t CH2 = TIM15_CH2;
-    static constexpr clock_source_t CS = APB2_TIMER;
+    static constexpr clock_source_t CLOCK = APB2_TIMER;
 
     template<typename RCC>
     static void enable()
@@ -2946,7 +2946,7 @@ template<> struct tim_traits<16>
     static constexpr signal_t BKIN = TIM16_BKIN;
     static constexpr signal_t CH1 = TIM16_CH1;
     static constexpr signal_t CH1N = TIM16_CH1N;
-    static constexpr clock_source_t CS = APB2_TIMER;
+    static constexpr clock_source_t CLOCK = APB2_TIMER;
 
     template<typename RCC>
     static void enable()
@@ -2974,7 +2974,7 @@ template<> struct tim_traits<17>
     static constexpr signal_t BKIN = TIM17_BKIN;
     static constexpr signal_t CH1 = TIM17_CH1;
     static constexpr signal_t CH1N = TIM17_CH1N;
-    static constexpr clock_source_t CS = APB2_TIMER;
+    static constexpr clock_source_t CLOCK = APB2_TIMER;
 
     template<typename RCC>
     static void enable()
@@ -3004,7 +3004,7 @@ template<> struct tim_traits<2>
     static constexpr signal_t CH3 = TIM2_CH3;
     static constexpr signal_t CH4 = TIM2_CH4;
     static constexpr signal_t ETR = TIM2_ETR;
-    static constexpr clock_source_t CS = APB1_TIMER;
+    static constexpr clock_source_t CLOCK = APB1_TIMER;
 
     template<typename RCC>
     static void enable()
@@ -3034,7 +3034,7 @@ template<> struct tim_traits<3>
     static constexpr signal_t CH3 = TIM3_CH3;
     static constexpr signal_t CH4 = TIM3_CH4;
     static constexpr signal_t ETR = TIM3_ETR;
-    static constexpr clock_source_t CS = APB1_TIMER;
+    static constexpr clock_source_t CLOCK = APB1_TIMER;
 
     template<typename RCC>
     static void enable()
@@ -3064,7 +3064,7 @@ template<> struct tim_traits<4>
     static constexpr signal_t CH3 = TIM4_CH3;
     static constexpr signal_t CH4 = TIM4_CH4;
     static constexpr signal_t ETR = TIM4_ETR;
-    static constexpr clock_source_t CS = APB1_TIMER;
+    static constexpr clock_source_t CLOCK = APB1_TIMER;
 
     template<typename RCC>
     static void enable()
@@ -3094,7 +3094,7 @@ template<> struct tim_traits<5>
     static constexpr signal_t CH3 = TIM5_CH3;
     static constexpr signal_t CH4 = TIM5_CH4;
     static constexpr signal_t ETR = TIM5_ETR;
-    static constexpr clock_source_t CS = APB1_TIMER;
+    static constexpr clock_source_t CLOCK = APB1_TIMER;
 
     template<typename RCC>
     static void enable()
@@ -3119,7 +3119,7 @@ template<> struct tim_traits<5>
 template<> struct tim_traits<6>
 {
     using tim = tim6_t;
-    static constexpr clock_source_t CS = APB1_TIMER;
+    static constexpr clock_source_t CLOCK = APB1_TIMER;
 
     template<typename RCC>
     static void enable()
@@ -3144,7 +3144,7 @@ template<> struct tim_traits<6>
 template<> struct tim_traits<7>
 {
     using tim = tim7_t;
-    static constexpr clock_source_t CS = APB1_TIMER;
+    static constexpr clock_source_t CLOCK = APB1_TIMER;
 
     template<typename RCC>
     static void enable()
@@ -3183,7 +3183,7 @@ template<> struct tim_traits<8>
     static constexpr signal_t CH3N = TIM8_CH3N;
     static constexpr signal_t CH4 = TIM8_CH4;
     static constexpr signal_t ETR = TIM8_ETR;
-    static constexpr clock_source_t CS = APB2_TIMER;
+    static constexpr clock_source_t CLOCK = APB2_TIMER;
 
     template<typename RCC>
     static void enable()

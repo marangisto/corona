@@ -287,6 +287,7 @@ template<int INST> struct aes_traits {};
 template<> struct aes_traits<0>
 {
     using aes = aes_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

@@ -207,6 +207,7 @@ template<> struct dcmi_traits<0>
     static constexpr signal_t HSYNC = DCMI_HSYNC;
     static constexpr signal_t PIXCLK = DCMI_PIXCLK;
     static constexpr signal_t VSYNC = DCMI_VSYNC;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

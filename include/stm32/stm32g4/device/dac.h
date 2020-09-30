@@ -426,6 +426,7 @@ template<int INST> struct dac_traits {};
 template<> struct dac_traits<1>
 {
     using dac = dac1_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -461,6 +462,7 @@ template<> struct dac_traits<1>
 template<> struct dac_traits<2>
 {
     using dac = dac2_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -496,6 +498,7 @@ template<> struct dac_traits<2>
 template<> struct dac_traits<3>
 {
     using dac = dac3_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -531,6 +534,7 @@ template<> struct dac_traits<3>
 template<> struct dac_traits<4>
 {
     using dac = dac4_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

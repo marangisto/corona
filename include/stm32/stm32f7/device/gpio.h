@@ -2590,6 +2590,7 @@ template<int INST> struct gpio_traits {};
 template<> struct gpio_traits<0>
 {
     using gpio = gpioa_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -2614,6 +2615,7 @@ template<> struct gpio_traits<0>
 template<> struct gpio_traits<1>
 {
     using gpio = gpiob_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -2638,6 +2640,7 @@ template<> struct gpio_traits<1>
 template<> struct gpio_traits<2>
 {
     using gpio = gpioc_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -2662,6 +2665,7 @@ template<> struct gpio_traits<2>
 template<> struct gpio_traits<3>
 {
     using gpio = gpiod_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -2686,6 +2690,7 @@ template<> struct gpio_traits<3>
 template<> struct gpio_traits<4>
 {
     using gpio = gpioe_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -2710,6 +2715,7 @@ template<> struct gpio_traits<4>
 template<> struct gpio_traits<5>
 {
     using gpio = gpiof_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -2734,6 +2740,7 @@ template<> struct gpio_traits<5>
 template<> struct gpio_traits<6>
 {
     using gpio = gpiog_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -2758,6 +2765,7 @@ template<> struct gpio_traits<6>
 template<> struct gpio_traits<7>
 {
     using gpio = gpioh_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -2782,6 +2790,7 @@ template<> struct gpio_traits<7>
 template<> struct gpio_traits<8>
 {
     using gpio = gpioi_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -2806,6 +2815,7 @@ template<> struct gpio_traits<8>
 template<> struct gpio_traits<9>
 {
     using gpio = gpioj_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -2830,6 +2840,7 @@ template<> struct gpio_traits<9>
 template<> struct gpio_traits<10>
 {
     using gpio = gpiok_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

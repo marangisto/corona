@@ -1215,6 +1215,7 @@ template<int INST> struct hsem_traits {};
 template<> struct hsem_traits<0>
 {
     using hsem = hsem_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

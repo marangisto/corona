@@ -77,6 +77,7 @@ template<int INST> struct crc_traits {};
 template<> struct crc_traits<0>
 {
     using crc = crc_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

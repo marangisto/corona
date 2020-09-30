@@ -341,6 +341,7 @@ template<> struct fmc_traits<0>
     static constexpr signal_t NOE = FMC_NOE;
     static constexpr signal_t NWAIT = FMC_NWAIT;
     static constexpr signal_t NWE = FMC_NWE;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

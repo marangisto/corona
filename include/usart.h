@@ -48,7 +48,7 @@ public:
 
         usart_traits<INST>::template enable<rcc_t>();   // enable clock
 
-        const uint32_t clock = sys_clock::freq(usart::P);
+        const uint32_t clock = sys_clock::freq(usart_traits<INST>::CLOCK);
 
         USART.BRR = clock / baud;           // set the baud-rate
         USART.CR1 = _::CR1_RESET_VALUE      // reset control register 1

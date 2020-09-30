@@ -172,7 +172,7 @@ template<> struct uart_traits<4>
     using uart = uart4_t;
     static constexpr signal_t RX = UART4_RX;
     static constexpr signal_t TX = UART4_TX;
-    static constexpr clock_source_t CS = APB1_PERIPH;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -198,7 +198,7 @@ template<> struct uart_traits<5>
     using uart = uart5_t;
     static constexpr signal_t RX = UART5_RX;
     static constexpr signal_t TX = UART5_TX;
-    static constexpr clock_source_t CS = APB1_PERIPH;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()

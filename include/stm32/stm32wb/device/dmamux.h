@@ -278,6 +278,7 @@ template<int INST> struct dmamux_traits {};
 template<> struct dmamux_traits<0>
 {
     using dmamux = dmamux_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

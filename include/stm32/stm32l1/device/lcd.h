@@ -434,7 +434,7 @@ template<> struct lcd_traits<0>
     static constexpr signal_t SEG7 = LCD_SEG7;
     static constexpr signal_t SEG8 = LCD_SEG8;
     static constexpr signal_t SEG9 = LCD_SEG9;
-    static constexpr clock_source_t CS = APB1_PERIPH;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()

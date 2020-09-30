@@ -375,6 +375,7 @@ template<int INST> struct hash_traits {};
 template<> struct hash_traits<0>
 {
     using hash = hash_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

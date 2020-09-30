@@ -733,7 +733,7 @@ template<> struct mdios_traits<0>
     using mdios = mdios_t;
     static constexpr signal_t MDC = MDIOS_MDC;
     static constexpr signal_t MDIO = MDIOS_MDIO;
-    static constexpr clock_source_t CS = APB1_PERIPH;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()

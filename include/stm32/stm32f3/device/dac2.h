@@ -86,7 +86,7 @@ template<int INST> struct dac2_traits {};
 template<> struct dac2_traits<2>
 {
     using dac2 = dac2_t;
-    static constexpr clock_source_t CS = APB1_PERIPH;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()

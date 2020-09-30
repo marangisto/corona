@@ -1966,6 +1966,7 @@ template<> struct adc_traits<1>
 template<> struct adc_traits<12>
 {
     using adc = adc12_common_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -1995,6 +1996,7 @@ template<> struct adc_traits<2>
 template<> struct adc_traits<3>
 {
     using adc = adc3_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

@@ -535,7 +535,7 @@ template<> struct usart_traits<4>
     static constexpr signal_t RTS = UART4_RTS;
     static constexpr signal_t RX = UART4_RX;
     static constexpr signal_t TX = UART4_TX;
-    static constexpr clock_source_t CS = APB1_PERIPH;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -564,7 +564,7 @@ template<> struct usart_traits<5>
     static constexpr signal_t RTS = UART5_RTS;
     static constexpr signal_t RX = UART5_RX;
     static constexpr signal_t TX = UART5_TX;
-    static constexpr clock_source_t CS = APB1_PERIPH;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -591,7 +591,7 @@ template<> struct usart_traits<7>
     using usart = uart7_t;
     static constexpr signal_t RX = UART7_RX;
     static constexpr signal_t TX = UART7_TX;
-    static constexpr clock_source_t CS = APB1_PERIPH;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -618,7 +618,7 @@ template<> struct usart_traits<8>
     using usart = uart8_t;
     static constexpr signal_t RX = UART8_RX;
     static constexpr signal_t TX = UART8_TX;
-    static constexpr clock_source_t CS = APB1_PERIPH;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -655,7 +655,7 @@ template<> struct usart_traits<1>
     static constexpr signal_t RTS = USART1_RTS;
     static constexpr signal_t RX = USART1_RX;
     static constexpr signal_t TX = USART1_TX;
-    static constexpr clock_source_t CS = APB2_PERIPH;
+    static constexpr clock_source_t CLOCK = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -685,7 +685,7 @@ template<> struct usart_traits<2>
     static constexpr signal_t RTS = USART2_RTS;
     static constexpr signal_t RX = USART2_RX;
     static constexpr signal_t TX = USART2_TX;
-    static constexpr clock_source_t CS = APB1_PERIPH;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -709,7 +709,7 @@ template<> struct usart_traits<3>
     static constexpr signal_t RTS = USART3_RTS;
     static constexpr signal_t RX = USART3_RX;
     static constexpr signal_t TX = USART3_TX;
-    static constexpr clock_source_t CS = APB1_PERIPH;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -739,7 +739,7 @@ template<> struct usart_traits<6>
     static constexpr signal_t RTS = USART6_RTS;
     static constexpr signal_t RX = USART6_RX;
     static constexpr signal_t TX = USART6_TX;
-    static constexpr clock_source_t CS = APB2_PERIPH;
+    static constexpr clock_source_t CLOCK = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()

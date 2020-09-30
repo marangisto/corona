@@ -105,6 +105,7 @@ template<int INST> struct cordic_traits {};
 template<> struct cordic_traits<0>
 {
     using cordic = cordic_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

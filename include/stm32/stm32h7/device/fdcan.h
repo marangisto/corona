@@ -2284,7 +2284,7 @@ template<int INST> struct fdcan_traits {};
 template<> struct fdcan_traits<0>
 {
     using fdcan = fdcan_t;
-    static constexpr clock_source_t CS = APB1_PERIPH;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()

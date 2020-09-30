@@ -293,7 +293,7 @@ template<> struct swpmi_traits<1>
     static constexpr signal_t RX = SWPMI1_RX;
     static constexpr signal_t SUSPEND = SWPMI1_SUSPEND;
     static constexpr signal_t TX = SWPMI1_TX;
-    static constexpr clock_source_t CS = APB1_PERIPH;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()

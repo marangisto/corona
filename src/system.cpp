@@ -55,12 +55,12 @@ uint32_t sys_clock::m_freq;
 void sys_clock::init()
 {
     m_freq = clock_tree_init();
-    sys_tick_init(clock_tree_scale(STK, m_freq) / 1000);
+    sys_tick_init(clock_tree_scale(AHB_STK, m_freq) / 1000);
 }
 
-uint32_t sys_clock::freq(periph_t p)
+uint32_t sys_clock::freq(clock_source_t cs)
 {
-    return clock_tree_scale(p, m_freq);
+    return clock_tree_scale(cs, m_freq);
 }
 
 template<> void handler<interrupt::SYSTICK>()

@@ -275,6 +275,7 @@ template<int INST> struct flash_traits {};
 template<> struct flash_traits<0>
 {
     using flash = flash_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

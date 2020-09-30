@@ -207,7 +207,7 @@ template<> struct lptim_traits<1>
     static constexpr signal_t IN1 = LPTIM1_IN1;
     static constexpr signal_t IN2 = LPTIM1_IN2;
     static constexpr signal_t OUT = LPTIM1_OUT;
-    static constexpr clock_source_t CS = APB1_TIMER;
+    static constexpr clock_source_t CLOCK = APB1_TIMER;
 
     template<typename RCC>
     static void enable()
@@ -246,7 +246,7 @@ template<> struct lptim_traits<2>
     static constexpr signal_t ETR = LPTIM2_ETR;
     static constexpr signal_t IN1 = LPTIM2_IN1;
     static constexpr signal_t OUT = LPTIM2_OUT;
-    static constexpr clock_source_t CS = APB1_TIMER;
+    static constexpr clock_source_t CLOCK = APB1_TIMER;
 
     template<typename RCC>
     static void enable()
@@ -285,7 +285,7 @@ template<> struct lptim_traits<3>
     static constexpr signal_t ETR = LPTIM3_ETR;
     static constexpr signal_t IN1 = LPTIM3_IN1;
     static constexpr signal_t OUT = LPTIM3_OUT;
-    static constexpr clock_source_t CS = APB1_TIMER;
+    static constexpr clock_source_t CLOCK = APB1_TIMER;
 
     template<typename RCC>
     static void enable()

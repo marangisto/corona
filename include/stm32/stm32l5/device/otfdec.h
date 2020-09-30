@@ -232,6 +232,7 @@ template<int INST> struct otfdec_traits {};
 template<> struct otfdec_traits<1>
 {
     using otfdec = otfdec1_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

@@ -70,6 +70,7 @@ template<int INST> struct rng_traits {};
 template<> struct rng_traits<0>
 {
     using rng = rng_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

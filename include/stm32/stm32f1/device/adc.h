@@ -695,7 +695,7 @@ template<int INST> struct adc_traits {};
 template<> struct adc_traits<1>
 {
     using adc = adc1_t;
-    static constexpr clock_source_t CS = APB2_PERIPH;
+    static constexpr clock_source_t CLOCK = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -719,7 +719,7 @@ template<> struct adc_traits<1>
 template<> struct adc_traits<2>
 {
     using adc = adc2_t;
-    static constexpr clock_source_t CS = APB2_PERIPH;
+    static constexpr clock_source_t CLOCK = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()
@@ -743,7 +743,7 @@ template<> struct adc_traits<2>
 template<> struct adc_traits<3>
 {
     using adc = adc3_t;
-    static constexpr clock_source_t CS = APB2_PERIPH;
+    static constexpr clock_source_t CLOCK = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()

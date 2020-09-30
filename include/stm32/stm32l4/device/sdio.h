@@ -232,7 +232,7 @@ template<int INST> struct sdio_traits {};
 template<> struct sdio_traits<0>
 {
     using sdio = sdmmc_t;
-    static constexpr clock_source_t CS = APB2_PERIPH;
+    static constexpr clock_source_t CLOCK = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()

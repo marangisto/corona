@@ -505,6 +505,7 @@ template<int INST> struct hardware_semaphore_traits {};
 template<> struct hardware_semaphore_traits<0>
 {
     using hardware_semaphore = hsem_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

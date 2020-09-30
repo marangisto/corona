@@ -541,6 +541,7 @@ template<int INST> struct dma_traits {};
 template<> struct dma_traits<1>
 {
     using dma = dma1_t;
+    static constexpr clock_source_t CLOCK = AHB_PERIPH;
 
     template<typename RCC>
     static void enable()

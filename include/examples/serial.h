@@ -1,6 +1,6 @@
 #include <cstring>
 #include <textio.h>
-#include <board.h>
+#include <usart.h>
 
 using serial = usart_t<SERIAL_USART, SERIAL_TX, SERIAL_RX>;
 using led = output_t<LED>;

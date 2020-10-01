@@ -15,7 +15,7 @@ int main()
     const uint16_t max_duty = f_clk / (f_pwm * (psc + 1)) - 1;
 
     tim::setup(psc, max_duty);
-    pwma::setup();
+    pwma::setup(max_duty >> 1);
     pwmb::setup();
 
     for (uint16_t duty = 0;; ++duty)
@@ -26,9 +26,7 @@ int main()
             led::toggle();
         }
 
-        pwma::duty(duty);
         pwmb::duty(max_duty - duty);
-        pwma::duty(max_duty >> 1);
 
         sys_tick::delay_ms(100);
     }

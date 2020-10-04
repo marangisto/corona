@@ -41,7 +41,7 @@ static inline uint32_t clock_tree_init()
     return 72000000;
 }
 
-static uint32_t clock_tree_scale(periph_t p, uint32_t f)
+static uint32_t clock_tree_scale(clock_source_t cs, uint32_t f)
 {
     return f;
 }

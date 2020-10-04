@@ -53,6 +53,9 @@ struct stm32wb30_cm4_dbgmcu_t
 
     static constexpr uint32_t C2APB1FZR2_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t C2APB1FZR2_DBG_LPTIM2_STOP = 0x20; // LPTIM2 counter stopped when core is halted
+    static constexpr uint32_t C2APB1FZR2_DBG_TIM16_STOP = 0x20000; // TIM16 counter stopped when core is halted
+    static constexpr uint32_t C2APB1FZR2_DBG_TIM17_STOP = 0x40000; // TIM17 counter stopped when core is halted
+    static constexpr uint32_t C2APB1FZR2_DBG_TIM1_STOP = 0x800; // TIM1 counter stopped when core is halted
 
     static constexpr uint32_t APB2FZR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t APB2FZR_DBG_TIM1_STOP = 0x800; // TIM1 counter stopped when core is halted

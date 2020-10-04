@@ -368,16 +368,37 @@ struct stm32g070_exti_t
 
 
     static constexpr uint32_t IMR1_RESET_VALUE = 0xfff80000; // Reset value
+    static constexpr uint32_t IMR1_EM0 = 0x1; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM1 = 0x2; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM10 = 0x400; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM11 = 0x800; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM12 = 0x1000; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM13 = 0x2000; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM14 = 0x4000; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM15 = 0x8000; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM16 = 0x10000; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM17 = 0x20000; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM18 = 0x40000; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM19 = 0x80000; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM2 = 0x4; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM21 = 0x200000; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM23 = 0x800000; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM25 = 0x2000000; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM26 = 0x4000000; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM27 = 0x8000000; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM28 = 0x10000000; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM29 = 0x20000000; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM3 = 0x8; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM30 = 0x40000000; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM31 = 0x80000000; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM4 = 0x10; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM5 = 0x20; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM6 = 0x40; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM7 = 0x80; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM8 = 0x100; // CPU wakeup with event mask on event input
+    static constexpr uint32_t IMR1_EM9 = 0x200; // CPU wakeup with event mask on event input
     static constexpr uint32_t IMR1_IM0 = 0x1; // CPU wakeup with interrupt mask on event input
     static constexpr uint32_t IMR1_IM1 = 0x2; // CPU wakeup with interrupt mask on event input
-    static constexpr uint32_t IMR1_IM2 = 0x4; // CPU wakeup with interrupt mask on event input
-    static constexpr uint32_t IMR1_IM3 = 0x8; // CPU wakeup with interrupt mask on event input
-    static constexpr uint32_t IMR1_IM4 = 0x10; // CPU wakeup with interrupt mask on event input
-    static constexpr uint32_t IMR1_IM5 = 0x20; // CPU wakeup with interrupt mask on event input
-    static constexpr uint32_t IMR1_IM6 = 0x40; // CPU wakeup with interrupt mask on event input
-    static constexpr uint32_t IMR1_IM7 = 0x80; // CPU wakeup with interrupt mask on event input
-    static constexpr uint32_t IMR1_IM8 = 0x100; // CPU wakeup with interrupt mask on event input
-    static constexpr uint32_t IMR1_IM9 = 0x200; // CPU wakeup with interrupt mask on event input
     static constexpr uint32_t IMR1_IM10 = 0x400; // CPU wakeup with interrupt mask on event input
     static constexpr uint32_t IMR1_IM11 = 0x800; // CPU wakeup with interrupt mask on event input
     static constexpr uint32_t IMR1_IM12 = 0x1000; // CPU wakeup with interrupt mask on event input
@@ -388,6 +409,7 @@ struct stm32g070_exti_t
     static constexpr uint32_t IMR1_IM17 = 0x20000; // CPU wakeup with interrupt mask on event input
     static constexpr uint32_t IMR1_IM18 = 0x40000; // CPU wakeup with interrupt mask on event input
     static constexpr uint32_t IMR1_IM19 = 0x80000; // CPU wakeup with interrupt mask on event input
+    static constexpr uint32_t IMR1_IM2 = 0x4; // CPU wakeup with interrupt mask on event input
     static constexpr uint32_t IMR1_IM20 = 0x100000; // CPU wakeup with interrupt mask on event input
     static constexpr uint32_t IMR1_IM21 = 0x200000; // CPU wakeup with interrupt mask on event input
     static constexpr uint32_t IMR1_IM22 = 0x400000; // CPU wakeup with interrupt mask on event input
@@ -398,8 +420,15 @@ struct stm32g070_exti_t
     static constexpr uint32_t IMR1_IM27 = 0x8000000; // CPU wakeup with interrupt mask on event input
     static constexpr uint32_t IMR1_IM28 = 0x10000000; // CPU wakeup with interrupt mask on event input
     static constexpr uint32_t IMR1_IM29 = 0x20000000; // CPU wakeup with interrupt mask on event input
+    static constexpr uint32_t IMR1_IM3 = 0x8; // CPU wakeup with interrupt mask on event input
     static constexpr uint32_t IMR1_IM30 = 0x40000000; // CPU wakeup with interrupt mask on event input
     static constexpr uint32_t IMR1_IM31 = 0x80000000; // CPU wakeup with interrupt mask on event input
+    static constexpr uint32_t IMR1_IM4 = 0x10; // CPU wakeup with interrupt mask on event input
+    static constexpr uint32_t IMR1_IM5 = 0x20; // CPU wakeup with interrupt mask on event input
+    static constexpr uint32_t IMR1_IM6 = 0x40; // CPU wakeup with interrupt mask on event input
+    static constexpr uint32_t IMR1_IM7 = 0x80; // CPU wakeup with interrupt mask on event input
+    static constexpr uint32_t IMR1_IM8 = 0x100; // CPU wakeup with interrupt mask on event input
+    static constexpr uint32_t IMR1_IM9 = 0x200; // CPU wakeup with interrupt mask on event input
 
 
     static constexpr uint32_t IMR2_RESET_VALUE = 0xffffffff; // Reset value

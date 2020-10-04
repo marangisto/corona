@@ -1206,35 +1206,41 @@ struct stm32f745_otg_hs_device_t
 
 
     static constexpr uint32_t OTG_HS_DIEPCTL5_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0x7ff> OTG_HS_DIEPCTL5_MPSIZ; // Maximum packet size
-    static constexpr uint32_t OTG_HS_DIEPCTL5_USBAEP = 0x8000; // USB active endpoint
-    static constexpr uint32_t OTG_HS_DIEPCTL5_EONUM_DPID = 0x10000; // Even/odd frame
-    static constexpr uint32_t OTG_HS_DIEPCTL5_NAKSTS = 0x20000; // NAK status
-    typedef bit_field_t<18, 0x3> OTG_HS_DIEPCTL5_EPTYP; // Endpoint type
-    static constexpr uint32_t OTG_HS_DIEPCTL5_STALL = 0x200000; // STALL handshake
-    typedef bit_field_t<22, 0xf> OTG_HS_DIEPCTL5_TXFNUM; // TxFIFO number
     static constexpr uint32_t OTG_HS_DIEPCTL5_CNAK = 0x4000000; // Clear NAK
-    static constexpr uint32_t OTG_HS_DIEPCTL5_SNAK = 0x8000000; // Set NAK
-    static constexpr uint32_t OTG_HS_DIEPCTL5_SD0PID_SEVNFRM = 0x10000000; // Set DATA0 PID
-    static constexpr uint32_t OTG_HS_DIEPCTL5_SODDFRM = 0x20000000; // Set odd frame
+    static constexpr uint32_t OTG_HS_DIEPCTL5_EONUM_DPID = 0x10000; // Even/odd frame
     static constexpr uint32_t OTG_HS_DIEPCTL5_EPDIS = 0x40000000; // Endpoint disable
     static constexpr uint32_t OTG_HS_DIEPCTL5_EPENA = 0x80000000; // Endpoint enable
+    typedef bit_field_t<18, 0x3> OTG_HS_DIEPCTL5_EPTYP; // Endpoint type
+    typedef bit_field_t<29, 0x3> OTG_HS_DIEPCTL5_MCNT; // Multi count
+    typedef bit_field_t<0, 0x7ff> OTG_HS_DIEPCTL5_MPSIZ; // Maximum packet size
+    static constexpr uint32_t OTG_HS_DIEPCTL5_NAKSTS = 0x20000; // NAK status
+    typedef bit_field_t<19, 0x3ff> OTG_HS_DIEPCTL5_PKTCNT; // Packet count
+    static constexpr uint32_t OTG_HS_DIEPCTL5_SD0PID_SEVNFRM = 0x10000000; // Set DATA0 PID
+    static constexpr uint32_t OTG_HS_DIEPCTL5_SNAK = 0x8000000; // Set NAK
+    static constexpr uint32_t OTG_HS_DIEPCTL5_SODDFRM = 0x20000000; // Set odd frame
+    static constexpr uint32_t OTG_HS_DIEPCTL5_STALL = 0x200000; // STALL handshake
+    typedef bit_field_t<22, 0xf> OTG_HS_DIEPCTL5_TXFNUM; // TxFIFO number
+    static constexpr uint32_t OTG_HS_DIEPCTL5_USBAEP = 0x8000; // USB active endpoint
+    typedef bit_field_t<0, 0x7ffff> OTG_HS_DIEPCTL5_XFRSIZ; // Transfer size
 
     static constexpr uint32_t OTG_HS_DTXFSTS6_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<0, 0xffff> OTG_HS_DTXFSTS6_INEPTFSAV; // IN endpoint TxFIFO space avail
 
     static constexpr uint32_t OTG_HS_DIEPINT5_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t OTG_HS_DIEPINT5_XFRC = 0x1; // Transfer completed interrupt
+    static constexpr uint32_t OTG_HS_DIEPINT5_BERR = 0x1000; // Babble error interrupt
+    static constexpr uint32_t OTG_HS_DIEPINT5_BNA = 0x200; // Buffer not available interrupt
     static constexpr uint32_t OTG_HS_DIEPINT5_EPDISD = 0x2; // Endpoint disabled interrupt
-    static constexpr uint32_t OTG_HS_DIEPINT5_TOC = 0x8; // Timeout condition
-    static constexpr uint32_t OTG_HS_DIEPINT5_ITTXFE = 0x10; // IN token received when TxFIFO is empty
     static constexpr uint32_t OTG_HS_DIEPINT5_INEPNE = 0x40; // IN endpoint NAK effective
+    static constexpr uint32_t OTG_HS_DIEPINT5_ITTXFE = 0x10; // IN token received when TxFIFO is empty
+    typedef bit_field_t<29, 0x3> OTG_HS_DIEPINT5_MCNT; // Multi count
+    static constexpr uint32_t OTG_HS_DIEPINT5_NAK = 0x2000; // NAK interrupt
+    typedef bit_field_t<19, 0x3ff> OTG_HS_DIEPINT5_PKTCNT; // Packet count
+    static constexpr uint32_t OTG_HS_DIEPINT5_PKTDRPSTS = 0x800; // Packet dropped status
+    static constexpr uint32_t OTG_HS_DIEPINT5_TOC = 0x8; // Timeout condition
     static constexpr uint32_t OTG_HS_DIEPINT5_TXFE = 0x80; // Transmit FIFO empty
     static constexpr uint32_t OTG_HS_DIEPINT5_TXFIFOUDRN = 0x100; // Transmit Fifo Underrun
-    static constexpr uint32_t OTG_HS_DIEPINT5_BNA = 0x200; // Buffer not available interrupt
-    static constexpr uint32_t OTG_HS_DIEPINT5_PKTDRPSTS = 0x800; // Packet dropped status
-    static constexpr uint32_t OTG_HS_DIEPINT5_BERR = 0x1000; // Babble error interrupt
-    static constexpr uint32_t OTG_HS_DIEPINT5_NAK = 0x2000; // NAK interrupt
+    static constexpr uint32_t OTG_HS_DIEPINT5_XFRC = 0x1; // Transfer completed interrupt
+    typedef bit_field_t<0, 0x7ffff> OTG_HS_DIEPINT5_XFRSIZ; // Transfer size
 
     static constexpr uint32_t OTG_HS_DTXFSTS7_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<0, 0xffff> OTG_HS_DTXFSTS7_INEPTFSAV; // IN endpoint TxFIFO space avail
@@ -1702,23 +1708,29 @@ struct stm32f722_otg_hs_global_t
     static constexpr uint32_t OTG_HS_GINTMSK_LPMINTM = 0x8000000; // LPM interrupt mask
 
     static constexpr uint32_t OTG_HS_GRXSTSR_HOST_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0xf> OTG_HS_GRXSTSR_HOST_CHNUM; // Channel number
     typedef bit_field_t<4, 0x7ff> OTG_HS_GRXSTSR_HOST_BCNT; // Byte count
+    typedef bit_field_t<0, 0xf> OTG_HS_GRXSTSR_HOST_CHNUM; // Channel number
     typedef bit_field_t<15, 0x3> OTG_HS_GRXSTSR_HOST_DPID; // Data PID
+    typedef bit_field_t<0, 0xf> OTG_HS_GRXSTSR_HOST_EPNUM; // Endpoint number
+    typedef bit_field_t<21, 0xf> OTG_HS_GRXSTSR_HOST_FRMNUM; // Frame number
     typedef bit_field_t<17, 0xf> OTG_HS_GRXSTSR_HOST_PKTSTS; // Packet status
 
     static constexpr uint32_t OTG_HS_GRXSTSP_HOST_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0xf> OTG_HS_GRXSTSP_HOST_CHNUM; // Channel number
     typedef bit_field_t<4, 0x7ff> OTG_HS_GRXSTSP_HOST_BCNT; // Byte count
+    typedef bit_field_t<0, 0xf> OTG_HS_GRXSTSP_HOST_CHNUM; // Channel number
     typedef bit_field_t<15, 0x3> OTG_HS_GRXSTSP_HOST_DPID; // Data PID
+    typedef bit_field_t<0, 0xf> OTG_HS_GRXSTSP_HOST_EPNUM; // Endpoint number
+    typedef bit_field_t<21, 0xf> OTG_HS_GRXSTSP_HOST_FRMNUM; // Frame number
     typedef bit_field_t<17, 0xf> OTG_HS_GRXSTSP_HOST_PKTSTS; // Packet status
 
     static constexpr uint32_t OTG_HS_GRXFSIZ_RESET_VALUE = 0x200; // Reset value
     typedef bit_field_t<0, 0xffff> OTG_HS_GRXFSIZ_RXFD; // RxFIFO depth
 
     static constexpr uint32_t OTG_HS_HNPTXFSIZ_HOST_RESET_VALUE = 0x200; // Reset value
-    typedef bit_field_t<0, 0xffff> OTG_HS_HNPTXFSIZ_HOST_NPTXFSA; // Nonperiodic transmit RAM start address
     typedef bit_field_t<16, 0xffff> OTG_HS_HNPTXFSIZ_HOST_NPTXFD; // Nonperiodic TxFIFO depth
+    typedef bit_field_t<0, 0xffff> OTG_HS_HNPTXFSIZ_HOST_NPTXFSA; // Nonperiodic transmit RAM start address
+    typedef bit_field_t<16, 0xffff> OTG_HS_HNPTXFSIZ_HOST_TX0FD; // Endpoint 0 TxFIFO depth
+    typedef bit_field_t<0, 0xffff> OTG_HS_HNPTXFSIZ_HOST_TX0FSA; // Endpoint 0 transmit RAM start address
 
     static constexpr uint32_t OTG_HS_HNPTXSTS_RESET_VALUE = 0x80200; // Reset value
     typedef bit_field_t<0, 0xffff> OTG_HS_HNPTXSTS_NPTXFSAV; // Nonperiodic TxFIFO space available
@@ -1952,23 +1964,29 @@ struct stm32f745_otg_hs_global_t
     static constexpr uint32_t OTG_HS_GINTMSK_LPMINTM = 0x8000000; // LPM interrupt mask
 
     static constexpr uint32_t OTG_HS_GRXSTSR_HOST_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0xf> OTG_HS_GRXSTSR_HOST_CHNUM; // Channel number
     typedef bit_field_t<4, 0x7ff> OTG_HS_GRXSTSR_HOST_BCNT; // Byte count
+    typedef bit_field_t<0, 0xf> OTG_HS_GRXSTSR_HOST_CHNUM; // Channel number
     typedef bit_field_t<15, 0x3> OTG_HS_GRXSTSR_HOST_DPID; // Data PID
+    typedef bit_field_t<0, 0xf> OTG_HS_GRXSTSR_HOST_EPNUM; // Endpoint number
+    typedef bit_field_t<21, 0xf> OTG_HS_GRXSTSR_HOST_FRMNUM; // Frame number
     typedef bit_field_t<17, 0xf> OTG_HS_GRXSTSR_HOST_PKTSTS; // Packet status
 
     static constexpr uint32_t OTG_HS_GRXSTSP_HOST_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0xf> OTG_HS_GRXSTSP_HOST_CHNUM; // Channel number
     typedef bit_field_t<4, 0x7ff> OTG_HS_GRXSTSP_HOST_BCNT; // Byte count
+    typedef bit_field_t<0, 0xf> OTG_HS_GRXSTSP_HOST_CHNUM; // Channel number
     typedef bit_field_t<15, 0x3> OTG_HS_GRXSTSP_HOST_DPID; // Data PID
+    typedef bit_field_t<0, 0xf> OTG_HS_GRXSTSP_HOST_EPNUM; // Endpoint number
+    typedef bit_field_t<21, 0xf> OTG_HS_GRXSTSP_HOST_FRMNUM; // Frame number
     typedef bit_field_t<17, 0xf> OTG_HS_GRXSTSP_HOST_PKTSTS; // Packet status
 
     static constexpr uint32_t OTG_HS_GRXFSIZ_RESET_VALUE = 0x200; // Reset value
     typedef bit_field_t<0, 0xffff> OTG_HS_GRXFSIZ_RXFD; // RxFIFO depth
 
     static constexpr uint32_t OTG_HS_HNPTXFSIZ_HOST_RESET_VALUE = 0x200; // Reset value
-    typedef bit_field_t<0, 0xffff> OTG_HS_HNPTXFSIZ_HOST_NPTXFSA; // Nonperiodic transmit RAM start address
     typedef bit_field_t<16, 0xffff> OTG_HS_HNPTXFSIZ_HOST_NPTXFD; // Nonperiodic TxFIFO depth
+    typedef bit_field_t<0, 0xffff> OTG_HS_HNPTXFSIZ_HOST_NPTXFSA; // Nonperiodic transmit RAM start address
+    typedef bit_field_t<16, 0xffff> OTG_HS_HNPTXFSIZ_HOST_TX0FD; // Endpoint 0 TxFIFO depth
+    typedef bit_field_t<0, 0xffff> OTG_HS_HNPTXFSIZ_HOST_TX0FSA; // Endpoint 0 transmit RAM start address
 
     static constexpr uint32_t OTG_HS_GNPTXSTS_RESET_VALUE = 0x80200; // Reset value
     typedef bit_field_t<0, 0xffff> OTG_HS_GNPTXSTS_NPTXFSAV; // Nonperiodic TxFIFO space available

@@ -67,12 +67,14 @@ struct stm32h742x_spdifrx_t
     static constexpr uint32_t IFCR_SYNCDCF = 0x20; // Clears the Synchronization Done flag
 
     static constexpr uint32_t DR_00_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0xffffff> DR_00_DR; // Parity Error bit
-    static constexpr uint32_t DR_00_PE = 0x1000000; // Parity Error bit
-    static constexpr uint32_t DR_00_V = 0x2000000; // Validity bit
-    static constexpr uint32_t DR_00_U = 0x4000000; // User bit
     static constexpr uint32_t DR_00_C = 0x8000000; // Channel Status bit
+    typedef bit_field_t<0, 0xffffff> DR_00_DR; // Parity Error bit
+    typedef bit_field_t<0, 0xffff> DR_00_DRNL1; // Data value
+    typedef bit_field_t<16, 0xffff> DR_00_DRNL2; // Data value
+    static constexpr uint32_t DR_00_PE = 0x1000000; // Parity Error bit
     typedef bit_field_t<28, 0x3> DR_00_PT; // Preamble Type
+    static constexpr uint32_t DR_00_U = 0x4000000; // User bit
+    static constexpr uint32_t DR_00_V = 0x2000000; // Validity bit
 
     static constexpr uint32_t CSR_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<0, 0xffff> CSR_USR; // User data information

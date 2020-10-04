@@ -142,6 +142,7 @@ struct stm32h7b0x_otfdec1_t
 
     static constexpr uint32_t R4ENDADDR_RESET_VALUE = 0xfff; // Reset value
     typedef bit_field_t<0, 0xffffffff> R4ENDADDR_REGX_END_ADDR; // Region AXI end address
+    typedef bit_field_t<0, 0xffffffff> R4ENDADDR_REGX_NONCE; // REGx_NONCE
 
     static constexpr uint32_t R3NONCER1_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<0, 0xffffffff> R3NONCER1_REGX_NONCE; // REGx_NONCE

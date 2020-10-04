@@ -513,8 +513,11 @@ struct stm32f767_dfsdm_t
     typedef bit_field_t<29, 0x7> DFSDM1_FCR_FORD; // Sinc filter order
 
     static constexpr uint32_t DFSDM1_JDATAR_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0x7> DFSDM1_JDATAR_JDATACH; // Injected channel most recently converted
     typedef bit_field_t<8, 0xffffff> DFSDM1_JDATAR_JDATA; // Injected group conversion data
+    typedef bit_field_t<0, 0x7> DFSDM1_JDATAR_JDATACH; // Injected channel most recently converted
+    typedef bit_field_t<8, 0xffffff> DFSDM1_JDATAR_RDATA; // Regular channel conversion data
+    typedef bit_field_t<0, 0x7> DFSDM1_JDATAR_RDATACH; // Regular channel most recently converted
+    static constexpr uint32_t DFSDM1_JDATAR_RPEND = 0x10; // Regular channel pending data
 
 
     static constexpr uint32_t DFSDM1_AWHTR_RESET_VALUE = 0x0; // Reset value
@@ -598,8 +601,11 @@ struct stm32f767_dfsdm_t
     typedef bit_field_t<29, 0x7> DFSDM2_FCR_FORD; // Sinc filter order
 
     static constexpr uint32_t DFSDM2_JDATAR_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0x7> DFSDM2_JDATAR_JDATACH; // Injected channel most recently converted
     typedef bit_field_t<8, 0xffffff> DFSDM2_JDATAR_JDATA; // Injected group conversion data
+    typedef bit_field_t<0, 0x7> DFSDM2_JDATAR_JDATACH; // Injected channel most recently converted
+    typedef bit_field_t<8, 0xffffff> DFSDM2_JDATAR_RDATA; // Regular channel conversion data
+    typedef bit_field_t<0, 0x7> DFSDM2_JDATAR_RDATACH; // Regular channel most recently converted
+    static constexpr uint32_t DFSDM2_JDATAR_RPEND = 0x10; // Regular channel pending data
 
 
     static constexpr uint32_t DFSDM2_AWHTR_RESET_VALUE = 0x0; // Reset value
@@ -667,8 +673,11 @@ struct stm32f767_dfsdm_t
     typedef bit_field_t<29, 0x7> DFSDM3_FCR_FORD; // Sinc filter order
 
     static constexpr uint32_t DFSDM3_JDATAR_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0x7> DFSDM3_JDATAR_JDATACH; // Injected channel most recently converted
     typedef bit_field_t<8, 0xffffff> DFSDM3_JDATAR_JDATA; // Injected group conversion data
+    typedef bit_field_t<0, 0x7> DFSDM3_JDATAR_JDATACH; // Injected channel most recently converted
+    typedef bit_field_t<8, 0xffffff> DFSDM3_JDATAR_RDATA; // Regular channel conversion data
+    typedef bit_field_t<0, 0x7> DFSDM3_JDATAR_RDATACH; // Regular channel most recently converted
+    static constexpr uint32_t DFSDM3_JDATAR_RPEND = 0x10; // Regular channel pending data
 
 
     static constexpr uint32_t DFSDM3_CR1_RESET_VALUE = 0x0; // Reset value

@@ -168,9 +168,12 @@ struct stm32h742x_flash_t
     static constexpr uint32_t PRAR_CUR1_DMEP1 = 0x80000000; // Bank 1 PCROP protected erase enable option status bit
 
     static constexpr uint32_t PRAR_PRG1_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0xfff> PRAR_PRG1_PROT_AREA_START1; // Bank 1 lowest PCROP protected address configuration
-    typedef bit_field_t<16, 0xfff> PRAR_PRG1_PROT_AREA_END1; // Bank 1 highest PCROP protected address configuration
     static constexpr uint32_t PRAR_PRG1_DMEP1 = 0x80000000; // Bank 1 PCROP protected erase enable option configuration bit
+    static constexpr uint32_t PRAR_PRG1_DMEP2 = 0x80000000; // Bank 2 PCROP protected erase enable option configuration bit
+    typedef bit_field_t<16, 0xfff> PRAR_PRG1_PROT_AREA_END1; // Bank 1 highest PCROP protected address configuration
+    typedef bit_field_t<16, 0xfff> PRAR_PRG1_PROT_AREA_END2; // Bank 2 highest PCROP protected address configuration
+    typedef bit_field_t<0, 0xfff> PRAR_PRG1_PROT_AREA_START1; // Bank 1 lowest PCROP protected address configuration
+    typedef bit_field_t<0, 0xfff> PRAR_PRG1_PROT_AREA_START2; // Bank 2 lowest PCROP protected address configuration
 
     static constexpr uint32_t SCAR_CUR1_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<0, 0xfff> SCAR_CUR1_SEC_AREA_START1; // Bank 1 lowest secure protected address
@@ -527,9 +530,12 @@ struct stm32h7a3x_flash_t
     static constexpr uint32_t PRAR_CUR1_DMEP1 = 0x80000000; // Bank 1 PCROP protected erase enable option status bit
 
     static constexpr uint32_t PRAR_PRG1_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0xfff> PRAR_PRG1_PROT_AREA_START1; // Bank 1 lowest PCROP protected address configuration
-    typedef bit_field_t<16, 0xfff> PRAR_PRG1_PROT_AREA_END1; // Bank 1 highest PCROP protected address configuration
     static constexpr uint32_t PRAR_PRG1_DMEP1 = 0x80000000; // Bank 1 PCROP protected erase enable option configuration bit
+    static constexpr uint32_t PRAR_PRG1_DMEP2 = 0x80000000; // Bank 2 PCROP protected erase enable option configuration bit
+    typedef bit_field_t<16, 0xfff> PRAR_PRG1_PROT_AREA_END1; // Bank 1 highest PCROP protected address configuration
+    typedef bit_field_t<16, 0xfff> PRAR_PRG1_PROT_AREA_END2; // Bank 2 highest PCROP protected address configuration
+    typedef bit_field_t<0, 0xfff> PRAR_PRG1_PROT_AREA_START1; // Bank 1 lowest PCROP protected address configuration
+    typedef bit_field_t<0, 0xfff> PRAR_PRG1_PROT_AREA_START2; // Bank 2 lowest PCROP protected address configuration
 
 
     static constexpr uint32_t WPSN_CUR1R_RESET_VALUE = 0x0; // Reset value

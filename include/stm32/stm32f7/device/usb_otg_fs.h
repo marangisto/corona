@@ -1231,25 +1231,29 @@ struct stm32f722_otg_fs_global_t
     static constexpr uint32_t OTG_FS_GINTMSK_LPMIN = 0x8000000; // LPM interrupt mask
 
     static constexpr uint32_t OTG_FS_GRXSTSR_DEVICE_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0xf> OTG_FS_GRXSTSR_DEVICE_EPNUM; // Endpoint number
     typedef bit_field_t<4, 0x7ff> OTG_FS_GRXSTSR_DEVICE_BCNT; // Byte count
+    typedef bit_field_t<0, 0xf> OTG_FS_GRXSTSR_DEVICE_CHNUM; // Endpoint number
     typedef bit_field_t<15, 0x3> OTG_FS_GRXSTSR_DEVICE_DPID; // Data PID
-    typedef bit_field_t<17, 0xf> OTG_FS_GRXSTSR_DEVICE_PKTSTS; // Packet status
+    typedef bit_field_t<0, 0xf> OTG_FS_GRXSTSR_DEVICE_EPNUM; // Endpoint number
     typedef bit_field_t<21, 0xf> OTG_FS_GRXSTSR_DEVICE_FRMNUM; // Frame number
+    typedef bit_field_t<17, 0xf> OTG_FS_GRXSTSR_DEVICE_PKTSTS; // Packet status
 
     static constexpr uint32_t OTG_FS_GRXSTSP_DEVICE_RESET_VALUE = 0x2000400; // Reset value
-    typedef bit_field_t<0, 0xf> OTG_FS_GRXSTSP_DEVICE_EPNUM; // Endpoint number
     typedef bit_field_t<4, 0x7ff> OTG_FS_GRXSTSP_DEVICE_BCNT; // Byte count
+    typedef bit_field_t<0, 0xf> OTG_FS_GRXSTSP_DEVICE_CHNUM; // Channel number
     typedef bit_field_t<15, 0x3> OTG_FS_GRXSTSP_DEVICE_DPID; // Data PID
-    typedef bit_field_t<17, 0xf> OTG_FS_GRXSTSP_DEVICE_PKTSTS; // Packet status
+    typedef bit_field_t<0, 0xf> OTG_FS_GRXSTSP_DEVICE_EPNUM; // Endpoint number
     typedef bit_field_t<21, 0xf> OTG_FS_GRXSTSP_DEVICE_FRMNUM; // Frame number
+    typedef bit_field_t<17, 0xf> OTG_FS_GRXSTSP_DEVICE_PKTSTS; // Packet status
 
     static constexpr uint32_t OTG_FS_GRXFSIZ_RESET_VALUE = 0x200; // Reset value
     typedef bit_field_t<0, 0xffff> OTG_FS_GRXFSIZ_RXFD; // RxFIFO depth
 
     static constexpr uint32_t OTG_FS_DIEPTXF0_DEVICE_RESET_VALUE = 0x200; // Reset value
-    typedef bit_field_t<0, 0xffff> OTG_FS_DIEPTXF0_DEVICE_TX0FSA; // Endpoint 0 transmit RAM start address
+    typedef bit_field_t<16, 0xffff> OTG_FS_DIEPTXF0_DEVICE_NPTXFD; // Non-periodic TxFIFO depth
+    typedef bit_field_t<0, 0xffff> OTG_FS_DIEPTXF0_DEVICE_NPTXFSA; // Non-periodic transmit RAM start address
     typedef bit_field_t<16, 0xffff> OTG_FS_DIEPTXF0_DEVICE_TX0FD; // Endpoint 0 TxFIFO depth
+    typedef bit_field_t<0, 0xffff> OTG_FS_DIEPTXF0_DEVICE_TX0FSA; // Endpoint 0 transmit RAM start address
 
     static constexpr uint32_t OTG_FS_HNPTXSTS_RESET_VALUE = 0x80200; // Reset value
     typedef bit_field_t<0, 0xffff> OTG_FS_HNPTXSTS_NPTXFSAV; // Non-periodic TxFIFO space available
@@ -1469,25 +1473,29 @@ struct stm32f745_otg_fs_global_t
     static constexpr uint32_t OTG_FS_GINTMSK_LPMIN = 0x8000000; // LPM interrupt mask
 
     static constexpr uint32_t OTG_FS_GRXSTSR_DEVICE_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0xf> OTG_FS_GRXSTSR_DEVICE_EPNUM; // Endpoint number
     typedef bit_field_t<4, 0x7ff> OTG_FS_GRXSTSR_DEVICE_BCNT; // Byte count
+    typedef bit_field_t<0, 0xf> OTG_FS_GRXSTSR_DEVICE_CHNUM; // Endpoint number
     typedef bit_field_t<15, 0x3> OTG_FS_GRXSTSR_DEVICE_DPID; // Data PID
-    typedef bit_field_t<17, 0xf> OTG_FS_GRXSTSR_DEVICE_PKTSTS; // Packet status
+    typedef bit_field_t<0, 0xf> OTG_FS_GRXSTSR_DEVICE_EPNUM; // Endpoint number
     typedef bit_field_t<21, 0xf> OTG_FS_GRXSTSR_DEVICE_FRMNUM; // Frame number
+    typedef bit_field_t<17, 0xf> OTG_FS_GRXSTSR_DEVICE_PKTSTS; // Packet status
 
     static constexpr uint32_t OTG_FS_GRXSTSP_DEVICE_RESET_VALUE = 0x2000400; // Reset value
-    typedef bit_field_t<0, 0xf> OTG_FS_GRXSTSP_DEVICE_EPNUM; // Endpoint number
     typedef bit_field_t<4, 0x7ff> OTG_FS_GRXSTSP_DEVICE_BCNT; // Byte count
+    typedef bit_field_t<0, 0xf> OTG_FS_GRXSTSP_DEVICE_CHNUM; // Channel number
     typedef bit_field_t<15, 0x3> OTG_FS_GRXSTSP_DEVICE_DPID; // Data PID
-    typedef bit_field_t<17, 0xf> OTG_FS_GRXSTSP_DEVICE_PKTSTS; // Packet status
+    typedef bit_field_t<0, 0xf> OTG_FS_GRXSTSP_DEVICE_EPNUM; // Endpoint number
     typedef bit_field_t<21, 0xf> OTG_FS_GRXSTSP_DEVICE_FRMNUM; // Frame number
+    typedef bit_field_t<17, 0xf> OTG_FS_GRXSTSP_DEVICE_PKTSTS; // Packet status
 
     static constexpr uint32_t OTG_FS_GRXFSIZ_RESET_VALUE = 0x200; // Reset value
     typedef bit_field_t<0, 0xffff> OTG_FS_GRXFSIZ_RXFD; // RxFIFO depth
 
     static constexpr uint32_t OTG_FS_DIEPTXF0_DEVICE_RESET_VALUE = 0x200; // Reset value
-    typedef bit_field_t<0, 0xffff> OTG_FS_DIEPTXF0_DEVICE_TX0FSA; // Endpoint 0 transmit RAM start address
+    typedef bit_field_t<16, 0xffff> OTG_FS_DIEPTXF0_DEVICE_NPTXFD; // Non-periodic TxFIFO depth
+    typedef bit_field_t<0, 0xffff> OTG_FS_DIEPTXF0_DEVICE_NPTXFSA; // Non-periodic transmit RAM start address
     typedef bit_field_t<16, 0xffff> OTG_FS_DIEPTXF0_DEVICE_TX0FD; // Endpoint 0 TxFIFO depth
+    typedef bit_field_t<0, 0xffff> OTG_FS_DIEPTXF0_DEVICE_TX0FSA; // Endpoint 0 transmit RAM start address
 
     static constexpr uint32_t OTG_FS_HNPTXSTS_RESET_VALUE = 0x80200; // Reset value
     typedef bit_field_t<0, 0xffff> OTG_FS_HNPTXSTS_NPTXFSAV; // Non-periodic TxFIFO space available

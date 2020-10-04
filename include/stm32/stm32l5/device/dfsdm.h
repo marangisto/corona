@@ -564,6 +564,8 @@ struct stm32l552_dfsdm1_t
     static constexpr uint32_t FLT1AWHTR_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<8, 0xffffff> FLT1AWHTR_AWHT; // Analog watchdog high threshold
     typedef bit_field_t<0, 0xf> FLT1AWHTR_BKAWH; // Break signal assignment to analog watchdog high threshold event
+    typedef bit_field_t<8, 0xff> FLT1AWHTR_CLRAWHTF; // Clear the analog watchdog high threshold flag
+    typedef bit_field_t<0, 0xff> FLT1AWHTR_CLRAWLTF; // Clear the analog watchdog low threshold flag
 
     static constexpr uint32_t FLT1EXMAX_RESET_VALUE = 0x80000000; // Reset value
     typedef bit_field_t<8, 0xffffff> FLT1EXMAX_EXMAX; // Extremes detector maximum value

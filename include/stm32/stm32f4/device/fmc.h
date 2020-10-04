@@ -269,16 +269,16 @@ struct stm32f427_fmc_t
 
     static constexpr uint32_t BWTR1_RESET_VALUE = 0xfffffff; // Reset value
     typedef bit_field_t<28, 0x3> BWTR1_ACCMOD; // ACCMOD
-    typedef bit_field_t<16, 0xf> BWTR1_BUSTURN; // BUSTURN
     typedef bit_field_t<4, 0xf> BWTR1_ADDHLD; // ADDHLD
     typedef bit_field_t<0, 0xf> BWTR1_ADDSET; // ADDSET
+    typedef bit_field_t<16, 0xf> BWTR1_BUSTURN; // BUSTURN
 
 
     static constexpr uint32_t BWTR2_RESET_VALUE = 0xfffffff; // Reset value
     typedef bit_field_t<28, 0x3> BWTR2_ACCMOD; // ACCMOD
-    typedef bit_field_t<16, 0xf> BWTR2_BUSTURN; // BUSTURN
     typedef bit_field_t<4, 0xf> BWTR2_ADDHLD; // ADDHLD
     typedef bit_field_t<0, 0xf> BWTR2_ADDSET; // ADDSET
+    typedef bit_field_t<16, 0xf> BWTR2_BUSTURN; // BUSTURN
 
 
     static constexpr uint32_t SDCR1_RESET_VALUE = 0x2d0; // Reset value
@@ -596,20 +596,20 @@ struct stm32f429_fmc_t
 
     static constexpr uint32_t BWTR1_RESET_VALUE = 0xfffffff; // Reset value
     typedef bit_field_t<28, 0x3> BWTR1_ACCMOD; // ACCMOD
-    typedef bit_field_t<24, 0xf> BWTR1_DATLAT; // DATLAT
-    typedef bit_field_t<20, 0xf> BWTR1_CLKDIV; // CLKDIV
-    typedef bit_field_t<8, 0xff> BWTR1_DATAST; // DATAST
     typedef bit_field_t<4, 0xf> BWTR1_ADDHLD; // ADDHLD
     typedef bit_field_t<0, 0xf> BWTR1_ADDSET; // ADDSET
+    typedef bit_field_t<20, 0xf> BWTR1_CLKDIV; // CLKDIV
+    typedef bit_field_t<8, 0xff> BWTR1_DATAST; // DATAST
+    typedef bit_field_t<24, 0xf> BWTR1_DATLAT; // DATLAT
 
 
     static constexpr uint32_t BWTR2_RESET_VALUE = 0xfffffff; // Reset value
     typedef bit_field_t<28, 0x3> BWTR2_ACCMOD; // ACCMOD
-    typedef bit_field_t<24, 0xf> BWTR2_DATLAT; // DATLAT
-    typedef bit_field_t<20, 0xf> BWTR2_CLKDIV; // CLKDIV
-    typedef bit_field_t<8, 0xff> BWTR2_DATAST; // DATAST
     typedef bit_field_t<4, 0xf> BWTR2_ADDHLD; // ADDHLD
     typedef bit_field_t<0, 0xf> BWTR2_ADDSET; // ADDSET
+    typedef bit_field_t<20, 0xf> BWTR2_CLKDIV; // CLKDIV
+    typedef bit_field_t<8, 0xff> BWTR2_DATAST; // DATAST
+    typedef bit_field_t<24, 0xf> BWTR2_DATLAT; // DATLAT
 
 
     static constexpr uint32_t SDCR1_RESET_VALUE = 0x2d0; // Reset value

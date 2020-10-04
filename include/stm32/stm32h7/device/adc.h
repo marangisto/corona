@@ -1111,22 +1111,27 @@ struct stm32h750x_adc3_t
     static constexpr uint32_t CR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CR_ADCAL = 0x80000000; // ADC calibration
     static constexpr uint32_t CR_ADCALDIF = 0x40000000; // ADC differential mode for calibration
-    static constexpr uint32_t CR_DEEPPWD = 0x20000000; // ADC deep power down enable
-    static constexpr uint32_t CR_ADVREGEN = 0x10000000; // ADC voltage regulator enable
-    static constexpr uint32_t CR_LINCALRDYW6 = 0x8000000; // Linearity calibration ready Word 6
-    static constexpr uint32_t CR_LINCALRDYW5 = 0x4000000; // Linearity calibration ready Word 5
-    static constexpr uint32_t CR_LINCALRDYW4 = 0x2000000; // Linearity calibration ready Word 4
-    static constexpr uint32_t CR_LINCALRDYW3 = 0x1000000; // Linearity calibration ready Word 3
-    static constexpr uint32_t CR_LINCALRDYW2 = 0x800000; // Linearity calibration ready Word 2
-    static constexpr uint32_t CR_LINCALRDYW1 = 0x400000; // Linearity calibration ready Word 1
     static constexpr uint32_t CR_ADCALLIN = 0x10000; // Linearity calibration
-    static constexpr uint32_t CR_BOOST = 0x100; // Boost mode control
-    static constexpr uint32_t CR_JADSTP = 0x20; // ADC group injected conversion stop
-    static constexpr uint32_t CR_ADSTP = 0x10; // ADC group regular conversion stop
-    static constexpr uint32_t CR_JADSTART = 0x8; // ADC group injected conversion start
-    static constexpr uint32_t CR_ADSTART = 0x4; // ADC group regular conversion start
     static constexpr uint32_t CR_ADDIS = 0x2; // ADC disable
     static constexpr uint32_t CR_ADEN = 0x1; // ADC enable
+    static constexpr uint32_t CR_ADSTART = 0x4; // ADC group regular conversion start
+    static constexpr uint32_t CR_ADSTP = 0x10; // ADC group regular conversion stop
+    static constexpr uint32_t CR_ADVREGEN = 0x10000000; // ADC voltage regulator enable
+    static constexpr uint32_t CR_BOOST = 0x100; // Boost mode control
+    typedef bit_field_t<16, 0x3> CR_CKMODE; // ADC clock mode
+    static constexpr uint32_t CR_DEEPPWD = 0x20000000; // ADC deep power down enable
+    static constexpr uint32_t CR_JADSTART = 0x8; // ADC group injected conversion start
+    static constexpr uint32_t CR_JADSTP = 0x20; // ADC group injected conversion stop
+    static constexpr uint32_t CR_LINCALRDYW1 = 0x400000; // Linearity calibration ready Word 1
+    static constexpr uint32_t CR_LINCALRDYW2 = 0x800000; // Linearity calibration ready Word 2
+    static constexpr uint32_t CR_LINCALRDYW3 = 0x1000000; // Linearity calibration ready Word 3
+    static constexpr uint32_t CR_LINCALRDYW4 = 0x2000000; // Linearity calibration ready Word 4
+    static constexpr uint32_t CR_LINCALRDYW5 = 0x4000000; // Linearity calibration ready Word 5
+    static constexpr uint32_t CR_LINCALRDYW6 = 0x8000000; // Linearity calibration ready Word 6
+    typedef bit_field_t<18, 0xf> CR_PRESC; // ADC prescaler
+    static constexpr uint32_t CR_VBATEN = 0x1000000; // VBAT enable
+    static constexpr uint32_t CR_VREFEN = 0x400000; // VREFINT enable
+    static constexpr uint32_t CR_VSENSEEN = 0x800000; // Temperature sensor enable
 
     static constexpr uint32_t CFGR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CFGR_JQDIS = 0x80000000; // ADC group injected contexts queue disable

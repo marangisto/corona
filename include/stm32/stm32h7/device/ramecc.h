@@ -312,6 +312,7 @@ struct stm32h745_cm4_ramecc2_t
 
     static constexpr uint32_t M4FDRH_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<0, 0xffffffff> M4FDRH_FDATAH; // Failing data high (64-bit memory)
+    typedef bit_field_t<0, 0xffffffff> M4FDRH_FEC; // Failing error code
 
 
     static constexpr uint32_t M5CR_RESET_VALUE = 0x0; // Reset value

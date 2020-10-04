@@ -840,23 +840,29 @@ struct stm32f215_otg_hs_global_t
     static constexpr uint32_t OTG_HS_GINTMSK_WUIM = 0x80000000; // Resume/remote wakeup detected interrupt mask
 
     static constexpr uint32_t OTG_HS_GRXSTSR_HOST_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0xf> OTG_HS_GRXSTSR_HOST_CHNUM; // Channel number
     typedef bit_field_t<4, 0x7ff> OTG_HS_GRXSTSR_HOST_BCNT; // Byte count
+    typedef bit_field_t<0, 0xf> OTG_HS_GRXSTSR_HOST_CHNUM; // Channel number
     typedef bit_field_t<15, 0x3> OTG_HS_GRXSTSR_HOST_DPID; // Data PID
+    typedef bit_field_t<0, 0xf> OTG_HS_GRXSTSR_HOST_EPNUM; // Endpoint number
+    typedef bit_field_t<21, 0xf> OTG_HS_GRXSTSR_HOST_FRMNUM; // Frame number
     typedef bit_field_t<17, 0xf> OTG_HS_GRXSTSR_HOST_PKTSTS; // Packet status
 
     static constexpr uint32_t OTG_HS_GRXSTSP_HOST_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0xf> OTG_HS_GRXSTSP_HOST_CHNUM; // Channel number
     typedef bit_field_t<4, 0x7ff> OTG_HS_GRXSTSP_HOST_BCNT; // Byte count
+    typedef bit_field_t<0, 0xf> OTG_HS_GRXSTSP_HOST_CHNUM; // Channel number
     typedef bit_field_t<15, 0x3> OTG_HS_GRXSTSP_HOST_DPID; // Data PID
+    typedef bit_field_t<0, 0xf> OTG_HS_GRXSTSP_HOST_EPNUM; // Endpoint number
+    typedef bit_field_t<21, 0xf> OTG_HS_GRXSTSP_HOST_FRMNUM; // Frame number
     typedef bit_field_t<17, 0xf> OTG_HS_GRXSTSP_HOST_PKTSTS; // Packet status
 
     static constexpr uint32_t OTG_HS_GRXFSIZ_RESET_VALUE = 0x200; // Reset value
     typedef bit_field_t<0, 0xffff> OTG_HS_GRXFSIZ_RXFD; // RxFIFO depth
 
     static constexpr uint32_t OTG_HS_GNPTXFSIZ_HOST_RESET_VALUE = 0x200; // Reset value
-    typedef bit_field_t<0, 0xffff> OTG_HS_GNPTXFSIZ_HOST_NPTXFSA; // Nonperiodic transmit RAM start address
     typedef bit_field_t<16, 0xffff> OTG_HS_GNPTXFSIZ_HOST_NPTXFD; // Nonperiodic TxFIFO depth
+    typedef bit_field_t<0, 0xffff> OTG_HS_GNPTXFSIZ_HOST_NPTXFSA; // Nonperiodic transmit RAM start address
+    typedef bit_field_t<16, 0xffff> OTG_HS_GNPTXFSIZ_HOST_TX0FD; // Endpoint 0 TxFIFO depth
+    typedef bit_field_t<0, 0xffff> OTG_HS_GNPTXFSIZ_HOST_TX0FSA; // Endpoint 0 transmit RAM start address
 
     static constexpr uint32_t OTG_HS_GNPTXSTS_RESET_VALUE = 0x80200; // Reset value
     typedef bit_field_t<0, 0xffff> OTG_HS_GNPTXSTS_NPTXFSAV; // Nonperiodic TxFIFO space available

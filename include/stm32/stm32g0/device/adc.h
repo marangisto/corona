@@ -105,6 +105,14 @@ struct stm32g030_adc_t
 
     static constexpr uint32_t CHSELR_RESET_VALUE = 0xfff0000; // Reset value
     typedef bit_field_t<0, 0x7ffff> CHSELR_CHSEL; // Channel-x selection
+    typedef bit_field_t<0, 0xf> CHSELR_SQ1; // conversion of the sequence
+    typedef bit_field_t<4, 0xf> CHSELR_SQ2; // conversion of the sequence
+    typedef bit_field_t<8, 0xf> CHSELR_SQ3; // conversion of the sequence
+    typedef bit_field_t<12, 0xf> CHSELR_SQ4; // conversion of the sequence
+    typedef bit_field_t<16, 0xf> CHSELR_SQ5; // conversion of the sequence
+    typedef bit_field_t<20, 0xf> CHSELR_SQ6; // conversion of the sequence
+    typedef bit_field_t<24, 0xf> CHSELR_SQ7; // conversion of the sequence
+    typedef bit_field_t<28, 0xf> CHSELR_SQ8; // conversion of the sequence
 
     static constexpr uint32_t AWD3TR_RESET_VALUE = 0xfff0000; // Reset value
     typedef bit_field_t<16, 0xfff> AWD3TR_HT3; // ADC analog watchdog 3 threshold high
@@ -243,6 +251,14 @@ struct stm32g070_adc_t
 
     static constexpr uint32_t CHSELR_RESET_VALUE = 0xfff0000; // Reset value
     typedef bit_field_t<0, 0x7ffff> CHSELR_CHSEL; // Channel-x selection
+    typedef bit_field_t<0, 0xf> CHSELR_SQ1; // conversion of the sequence
+    typedef bit_field_t<4, 0xf> CHSELR_SQ2; // conversion of the sequence
+    typedef bit_field_t<8, 0xf> CHSELR_SQ3; // conversion of the sequence
+    typedef bit_field_t<12, 0xf> CHSELR_SQ4; // conversion of the sequence
+    typedef bit_field_t<16, 0xf> CHSELR_SQ5; // conversion of the sequence
+    typedef bit_field_t<20, 0xf> CHSELR_SQ6; // conversion of the sequence
+    typedef bit_field_t<24, 0xf> CHSELR_SQ7; // conversion of the sequence
+    typedef bit_field_t<28, 0xf> CHSELR_SQ8; // conversion of the sequence
 
     static constexpr uint32_t AWD3TR_RESET_VALUE = 0xfff0000; // Reset value
     typedef bit_field_t<16, 0xfff> AWD3TR_HT3; // ADC analog watchdog 3 threshold high

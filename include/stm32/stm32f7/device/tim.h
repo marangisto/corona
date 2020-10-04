@@ -117,32 +117,40 @@ struct stm32f722_tim1_t
     static constexpr uint32_t EGR_B2G = 0x100; // Break 2 generation
 
     static constexpr uint32_t CCMR1_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // Output Compare 2 clear enable
-    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // Output Compare 2 mode
-    static constexpr uint32_t CCMR1_OC2PE = 0x800; // Output Compare 2 preload enable
-    static constexpr uint32_t CCMR1_OC2FE = 0x400; // Output Compare 2 fast enable
-    typedef bit_field_t<8, 0x3> CCMR1_CC2S; // Capture/Compare 2 selection
-    static constexpr uint32_t CCMR1_OC1CE = 0x80; // Output Compare 1 clear enable
-    typedef bit_field_t<4, 0x7> CCMR1_OC1M; // Output Compare 1 mode
-    static constexpr uint32_t CCMR1_OC1PE = 0x8; // Output Compare 1 preload enable
-    static constexpr uint32_t CCMR1_OC1FE = 0x4; // Output Compare 1 fast enable
     typedef bit_field_t<0, 0x3> CCMR1_CC1S; // Capture/Compare 1 selection
-    static constexpr uint32_t CCMR1_OC2M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    typedef bit_field_t<8, 0x3> CCMR1_CC2S; // Capture/Compare 2 selection
+    typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
+    typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<2, 0x3> CCMR1_ICPCS; // Input capture 1 prescaler
+    static constexpr uint32_t CCMR1_OC1CE = 0x80; // Output Compare 1 clear enable
+    static constexpr uint32_t CCMR1_OC1FE = 0x4; // Output Compare 1 fast enable
+    typedef bit_field_t<4, 0x7> CCMR1_OC1M; // Output Compare 1 mode
     static constexpr uint32_t CCMR1_OC1M_3 = 0x10000; // Output Compare 1 mode - bit 3
+    static constexpr uint32_t CCMR1_OC1PE = 0x8; // Output Compare 1 preload enable
+    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // Output Compare 2 clear enable
+    static constexpr uint32_t CCMR1_OC2FE = 0x400; // Output Compare 2 fast enable
+    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // Output Compare 2 mode
+    static constexpr uint32_t CCMR1_OC2M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    static constexpr uint32_t CCMR1_OC2PE = 0x800; // Output Compare 2 preload enable
 
     static constexpr uint32_t CCMR2_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR2_OC4CE = 0x8000; // Output compare 4 clear enable
-    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // Output compare 4 mode
-    static constexpr uint32_t CCMR2_OC4PE = 0x800; // Output compare 4 preload enable
-    static constexpr uint32_t CCMR2_OC4FE = 0x400; // Output compare 4 fast enable
-    typedef bit_field_t<8, 0x3> CCMR2_CC4S; // Capture/Compare 4 selection
-    static constexpr uint32_t CCMR2_OC3CE = 0x80; // Output compare 3 clear enable
-    typedef bit_field_t<4, 0x7> CCMR2_OC3M; // Output compare 3 mode
-    static constexpr uint32_t CCMR2_OC3PE = 0x8; // Output compare 3 preload enable
-    static constexpr uint32_t CCMR2_OC3FE = 0x4; // Output compare 3 fast enable
     typedef bit_field_t<0, 0x3> CCMR2_CC3S; // Capture/Compare 3 selection
-    static constexpr uint32_t CCMR2_OC4M_3 = 0x1000000; // Output Compare 4 mode - bit 3
+    typedef bit_field_t<8, 0x3> CCMR2_CC4S; // Capture/Compare 4 selection
+    typedef bit_field_t<4, 0xf> CCMR2_IC3F; // Input capture 3 filter
+    typedef bit_field_t<2, 0x3> CCMR2_IC3PSC; // Input capture 3 prescaler
+    typedef bit_field_t<12, 0xf> CCMR2_IC4F; // Input capture 4 filter
+    typedef bit_field_t<10, 0x3> CCMR2_IC4PSC; // Input capture 4 prescaler
+    static constexpr uint32_t CCMR2_OC3CE = 0x80; // Output compare 3 clear enable
+    static constexpr uint32_t CCMR2_OC3FE = 0x4; // Output compare 3 fast enable
+    typedef bit_field_t<4, 0x7> CCMR2_OC3M; // Output compare 3 mode
     static constexpr uint32_t CCMR2_OC3M_3 = 0x10000; // Output Compare 3 mode - bit 3
+    static constexpr uint32_t CCMR2_OC3PE = 0x8; // Output compare 3 preload enable
+    static constexpr uint32_t CCMR2_OC4CE = 0x8000; // Output compare 4 clear enable
+    static constexpr uint32_t CCMR2_OC4FE = 0x400; // Output compare 4 fast enable
+    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // Output compare 4 mode
+    static constexpr uint32_t CCMR2_OC4M_3 = 0x1000000; // Output Compare 4 mode - bit 3
+    static constexpr uint32_t CCMR2_OC4PE = 0x800; // Output compare 4 preload enable
 
     static constexpr uint32_t CCER_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CCER_CC4P = 0x2000; // Capture/Compare 3 output Polarity
@@ -339,28 +347,36 @@ struct stm32f745_tim1_t
     static constexpr uint32_t EGR_UG = 0x1; // Update generation
 
     static constexpr uint32_t CCMR1_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // Output Compare 2 clear enable
-    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // Output Compare 2 mode
-    static constexpr uint32_t CCMR1_OC2PE = 0x800; // Output Compare 2 preload enable
-    static constexpr uint32_t CCMR1_OC2FE = 0x400; // Output Compare 2 fast enable
+    typedef bit_field_t<0, 0x3> CCMR1_CC1S; // Capture/Compare 1 selection
     typedef bit_field_t<8, 0x3> CCMR1_CC2S; // Capture/Compare 2 selection
+    typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
+    typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<2, 0x3> CCMR1_ICPCS; // Input capture 1 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // Output Compare 1 clear enable
+    static constexpr uint32_t CCMR1_OC1FE = 0x4; // Output Compare 1 fast enable
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // Output Compare 1 mode
     static constexpr uint32_t CCMR1_OC1PE = 0x8; // Output Compare 1 preload enable
-    static constexpr uint32_t CCMR1_OC1FE = 0x4; // Output Compare 1 fast enable
-    typedef bit_field_t<0, 0x3> CCMR1_CC1S; // Capture/Compare 1 selection
+    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // Output Compare 2 clear enable
+    static constexpr uint32_t CCMR1_OC2FE = 0x400; // Output Compare 2 fast enable
+    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // Output Compare 2 mode
+    static constexpr uint32_t CCMR1_OC2PE = 0x800; // Output Compare 2 preload enable
 
     static constexpr uint32_t CCMR2_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR2_OC4CE = 0x8000; // Output compare 4 clear enable
-    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // Output compare 4 mode
-    static constexpr uint32_t CCMR2_OC4PE = 0x800; // Output compare 4 preload enable
-    static constexpr uint32_t CCMR2_OC4FE = 0x400; // Output compare 4 fast enable
+    typedef bit_field_t<0, 0x3> CCMR2_CC3S; // Capture/Compare 3 selection
     typedef bit_field_t<8, 0x3> CCMR2_CC4S; // Capture/Compare 4 selection
+    typedef bit_field_t<4, 0xf> CCMR2_IC3F; // Input capture 3 filter
+    typedef bit_field_t<2, 0x3> CCMR2_IC3PSC; // Input capture 3 prescaler
+    typedef bit_field_t<12, 0xf> CCMR2_IC4F; // Input capture 4 filter
+    typedef bit_field_t<10, 0x3> CCMR2_IC4PSC; // Input capture 4 prescaler
     static constexpr uint32_t CCMR2_OC3CE = 0x80; // Output compare 3 clear enable
+    static constexpr uint32_t CCMR2_OC3FE = 0x4; // Output compare 3 fast enable
     typedef bit_field_t<4, 0x7> CCMR2_OC3M; // Output compare 3 mode
     static constexpr uint32_t CCMR2_OC3PE = 0x8; // Output compare 3 preload enable
-    static constexpr uint32_t CCMR2_OC3FE = 0x4; // Output compare 3 fast enable
-    typedef bit_field_t<0, 0x3> CCMR2_CC3S; // Capture/Compare 3 selection
+    static constexpr uint32_t CCMR2_OC4CE = 0x8000; // Output compare 4 clear enable
+    static constexpr uint32_t CCMR2_OC4FE = 0x400; // Output compare 4 fast enable
+    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // Output compare 4 mode
+    static constexpr uint32_t CCMR2_OC4PE = 0x800; // Output compare 4 preload enable
 
     static constexpr uint32_t CCER_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CCER_CC4P = 0x2000; // Capture/Compare 3 output Polarity
@@ -548,28 +564,36 @@ struct stm32f767_tim1_t
     static constexpr uint32_t EGR_UG = 0x1; // Update generation
 
     static constexpr uint32_t CCMR1_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // Output Compare 2 clear enable
-    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // Output Compare 2 mode
-    static constexpr uint32_t CCMR1_OC2PE = 0x800; // Output Compare 2 preload enable
-    static constexpr uint32_t CCMR1_OC2FE = 0x400; // Output Compare 2 fast enable
+    typedef bit_field_t<0, 0x3> CCMR1_CC1S; // Capture/Compare 1 selection
     typedef bit_field_t<8, 0x3> CCMR1_CC2S; // Capture/Compare 2 selection
+    typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
+    typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<2, 0x3> CCMR1_ICPCS; // Input capture 1 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // Output Compare 1 clear enable
+    static constexpr uint32_t CCMR1_OC1FE = 0x4; // Output Compare 1 fast enable
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // Output Compare 1 mode
     static constexpr uint32_t CCMR1_OC1PE = 0x8; // Output Compare 1 preload enable
-    static constexpr uint32_t CCMR1_OC1FE = 0x4; // Output Compare 1 fast enable
-    typedef bit_field_t<0, 0x3> CCMR1_CC1S; // Capture/Compare 1 selection
+    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // Output Compare 2 clear enable
+    static constexpr uint32_t CCMR1_OC2FE = 0x400; // Output Compare 2 fast enable
+    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // Output Compare 2 mode
+    static constexpr uint32_t CCMR1_OC2PE = 0x800; // Output Compare 2 preload enable
 
     static constexpr uint32_t CCMR2_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR2_OC4CE = 0x8000; // Output compare 4 clear enable
-    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // Output compare 4 mode
-    static constexpr uint32_t CCMR2_OC4PE = 0x800; // Output compare 4 preload enable
-    static constexpr uint32_t CCMR2_OC4FE = 0x400; // Output compare 4 fast enable
+    typedef bit_field_t<0, 0x3> CCMR2_CC3S; // Capture/Compare 3 selection
     typedef bit_field_t<8, 0x3> CCMR2_CC4S; // Capture/Compare 4 selection
+    typedef bit_field_t<4, 0xf> CCMR2_IC3F; // Input capture 3 filter
+    typedef bit_field_t<2, 0x3> CCMR2_IC3PSC; // Input capture 3 prescaler
+    typedef bit_field_t<12, 0xf> CCMR2_IC4F; // Input capture 4 filter
+    typedef bit_field_t<10, 0x3> CCMR2_IC4PSC; // Input capture 4 prescaler
     static constexpr uint32_t CCMR2_OC3CE = 0x80; // Output compare 3 clear enable
+    static constexpr uint32_t CCMR2_OC3FE = 0x4; // Output compare 3 fast enable
     typedef bit_field_t<4, 0x7> CCMR2_OC3M; // Output compare 3 mode
     static constexpr uint32_t CCMR2_OC3PE = 0x8; // Output compare 3 preload enable
-    static constexpr uint32_t CCMR2_OC3FE = 0x4; // Output compare 3 fast enable
-    typedef bit_field_t<0, 0x3> CCMR2_CC3S; // Capture/Compare 3 selection
+    static constexpr uint32_t CCMR2_OC4CE = 0x8000; // Output compare 4 clear enable
+    static constexpr uint32_t CCMR2_OC4FE = 0x400; // Output compare 4 fast enable
+    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // Output compare 4 mode
+    static constexpr uint32_t CCMR2_OC4PE = 0x800; // Output compare 4 preload enable
 
     static constexpr uint32_t CCER_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CCER_CC4P = 0x2000; // Capture/Compare 3 output Polarity
@@ -769,28 +793,36 @@ struct stm32f768_tim1_t
     static constexpr uint32_t EGR_UG = 0x1; // Update generation
 
     static constexpr uint32_t CCMR1_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // Output Compare 2 clear enable
-    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // Output Compare 2 mode
-    static constexpr uint32_t CCMR1_OC2PE = 0x800; // Output Compare 2 preload enable
-    static constexpr uint32_t CCMR1_OC2FE = 0x400; // Output Compare 2 fast enable
+    typedef bit_field_t<0, 0x3> CCMR1_CC1S; // Capture/Compare 1 selection
     typedef bit_field_t<8, 0x3> CCMR1_CC2S; // Capture/Compare 2 selection
+    typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
+    typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<2, 0x3> CCMR1_ICPCS; // Input capture 1 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // Output Compare 1 clear enable
+    static constexpr uint32_t CCMR1_OC1FE = 0x4; // Output Compare 1 fast enable
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // Output Compare 1 mode
     static constexpr uint32_t CCMR1_OC1PE = 0x8; // Output Compare 1 preload enable
-    static constexpr uint32_t CCMR1_OC1FE = 0x4; // Output Compare 1 fast enable
-    typedef bit_field_t<0, 0x3> CCMR1_CC1S; // Capture/Compare 1 selection
+    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // Output Compare 2 clear enable
+    static constexpr uint32_t CCMR1_OC2FE = 0x400; // Output Compare 2 fast enable
+    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // Output Compare 2 mode
+    static constexpr uint32_t CCMR1_OC2PE = 0x800; // Output Compare 2 preload enable
 
     static constexpr uint32_t CCMR2_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR2_OC4CE = 0x8000; // Output compare 4 clear enable
-    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // Output compare 4 mode
-    static constexpr uint32_t CCMR2_OC4PE = 0x800; // Output compare 4 preload enable
-    static constexpr uint32_t CCMR2_OC4FE = 0x400; // Output compare 4 fast enable
+    typedef bit_field_t<0, 0x3> CCMR2_CC3S; // Capture/Compare 3 selection
     typedef bit_field_t<8, 0x3> CCMR2_CC4S; // Capture/Compare 4 selection
+    typedef bit_field_t<4, 0xf> CCMR2_IC3F; // Input capture 3 filter
+    typedef bit_field_t<2, 0x3> CCMR2_IC3PSC; // Input capture 3 prescaler
+    typedef bit_field_t<12, 0xf> CCMR2_IC4F; // Input capture 4 filter
+    typedef bit_field_t<10, 0x3> CCMR2_IC4PSC; // Input capture 4 prescaler
     static constexpr uint32_t CCMR2_OC3CE = 0x80; // Output compare 3 clear enable
+    static constexpr uint32_t CCMR2_OC3FE = 0x4; // Output compare 3 fast enable
     typedef bit_field_t<4, 0x7> CCMR2_OC3M; // Output compare 3 mode
     static constexpr uint32_t CCMR2_OC3PE = 0x8; // Output compare 3 preload enable
-    static constexpr uint32_t CCMR2_OC3FE = 0x4; // Output compare 3 fast enable
-    typedef bit_field_t<0, 0x3> CCMR2_CC3S; // Capture/Compare 3 selection
+    static constexpr uint32_t CCMR2_OC4CE = 0x8000; // Output compare 4 clear enable
+    static constexpr uint32_t CCMR2_OC4FE = 0x400; // Output compare 4 fast enable
+    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // Output compare 4 mode
+    static constexpr uint32_t CCMR2_OC4PE = 0x800; // Output compare 4 preload enable
 
     static constexpr uint32_t CCER_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CCER_CC4P = 0x2000; // Capture/Compare 3 output Polarity
@@ -959,32 +991,40 @@ struct stm32f722_tim2_t
     static constexpr uint32_t EGR_UG = 0x1; // Update generation
 
     static constexpr uint32_t CCMR1_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // OC2CE
-    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // OC2M
-    static constexpr uint32_t CCMR1_OC2PE = 0x800; // OC2PE
-    static constexpr uint32_t CCMR1_OC2FE = 0x400; // OC2FE
-    typedef bit_field_t<8, 0x3> CCMR1_CC2S; // CC2S
-    static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
-    typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
-    static constexpr uint32_t CCMR1_OC1PE = 0x8; // OC1PE
-    static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
     typedef bit_field_t<0, 0x3> CCMR1_CC1S; // CC1S
-    static constexpr uint32_t CCMR1_OC2M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    typedef bit_field_t<8, 0x3> CCMR1_CC2S; // CC2S
+    typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
+    typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<2, 0x3> CCMR1_ICPCS; // Input capture 1 prescaler
+    static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
+    static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
+    typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
     static constexpr uint32_t CCMR1_OC1M_3 = 0x10000; // Output Compare 1 mode - bit 3
+    static constexpr uint32_t CCMR1_OC1PE = 0x8; // OC1PE
+    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // OC2CE
+    static constexpr uint32_t CCMR1_OC2FE = 0x400; // OC2FE
+    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // OC2M
+    static constexpr uint32_t CCMR1_OC2M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    static constexpr uint32_t CCMR1_OC2PE = 0x800; // OC2PE
 
     static constexpr uint32_t CCMR2_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR2_O24CE = 0x8000; // O24CE
-    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // OC4M
-    static constexpr uint32_t CCMR2_OC4PE = 0x800; // OC4PE
-    static constexpr uint32_t CCMR2_OC4FE = 0x400; // OC4FE
-    typedef bit_field_t<8, 0x3> CCMR2_CC4S; // CC4S
-    static constexpr uint32_t CCMR2_OC3CE = 0x80; // OC3CE
-    typedef bit_field_t<4, 0x7> CCMR2_OC3M; // OC3M
-    static constexpr uint32_t CCMR2_OC3PE = 0x8; // OC3PE
-    static constexpr uint32_t CCMR2_OC3FE = 0x4; // OC3FE
     typedef bit_field_t<0, 0x3> CCMR2_CC3S; // CC3S
-    static constexpr uint32_t CCMR2_OC4M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    typedef bit_field_t<8, 0x3> CCMR2_CC4S; // CC4S
+    typedef bit_field_t<4, 0xf> CCMR2_IC3F; // Input capture 3 filter
+    typedef bit_field_t<2, 0x3> CCMR2_IC3PSC; // Input capture 3 prescaler
+    typedef bit_field_t<12, 0xf> CCMR2_IC4F; // Input capture 4 filter
+    typedef bit_field_t<10, 0x3> CCMR2_IC4PSC; // Input capture 4 prescaler
+    static constexpr uint32_t CCMR2_O24CE = 0x8000; // O24CE
+    static constexpr uint32_t CCMR2_OC3CE = 0x80; // OC3CE
+    static constexpr uint32_t CCMR2_OC3FE = 0x4; // OC3FE
+    typedef bit_field_t<4, 0x7> CCMR2_OC3M; // OC3M
     static constexpr uint32_t CCMR2_OC3M_3 = 0x10000; // Output Compare 1 mode - bit 3
+    static constexpr uint32_t CCMR2_OC3PE = 0x8; // OC3PE
+    static constexpr uint32_t CCMR2_OC4FE = 0x400; // OC4FE
+    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // OC4M
+    static constexpr uint32_t CCMR2_OC4M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    static constexpr uint32_t CCMR2_OC4PE = 0x800; // OC4PE
 
     static constexpr uint32_t CCER_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CCER_CC4NP = 0x8000; // Capture/Compare 4 output Polarity
@@ -1127,32 +1167,40 @@ struct stm32f730_tim2_t
     static constexpr uint32_t EGR_UG = 0x1; // Update generation
 
     static constexpr uint32_t CCMR1_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // OC2CE
-    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // OC2M
-    static constexpr uint32_t CCMR1_OC2PE = 0x800; // OC2PE
-    static constexpr uint32_t CCMR1_OC2FE = 0x400; // OC2FE
-    typedef bit_field_t<8, 0x3> CCMR1_CC2S; // CC2S
-    static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
-    typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
-    static constexpr uint32_t CCMR1_OC1PE = 0x8; // OC1PE
-    static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
     typedef bit_field_t<0, 0x3> CCMR1_CC1S; // CC1S
-    static constexpr uint32_t CCMR1_OC2M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    typedef bit_field_t<8, 0x3> CCMR1_CC2S; // CC2S
+    typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
+    typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<2, 0x3> CCMR1_ICPCS; // Input capture 1 prescaler
+    static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
+    static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
+    typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
     static constexpr uint32_t CCMR1_OC1M_3 = 0x10000; // Output Compare 1 mode - bit 3
+    static constexpr uint32_t CCMR1_OC1PE = 0x8; // OC1PE
+    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // OC2CE
+    static constexpr uint32_t CCMR1_OC2FE = 0x400; // OC2FE
+    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // OC2M
+    static constexpr uint32_t CCMR1_OC2M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    static constexpr uint32_t CCMR1_OC2PE = 0x800; // OC2PE
 
     static constexpr uint32_t CCMR2_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR2_OC4CE = 0x8000; // OC4CE
-    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // OC4M
-    static constexpr uint32_t CCMR2_OC4PE = 0x800; // OC4PE
-    static constexpr uint32_t CCMR2_OC4FE = 0x400; // OC4FE
-    typedef bit_field_t<8, 0x3> CCMR2_CC4S; // CC4S
-    static constexpr uint32_t CCMR2_OC3CE = 0x80; // OC3CE
-    typedef bit_field_t<4, 0x7> CCMR2_OC3M; // OC3M
-    static constexpr uint32_t CCMR2_OC3PE = 0x8; // OC3PE
-    static constexpr uint32_t CCMR2_OC3FE = 0x4; // OC3FE
     typedef bit_field_t<0, 0x3> CCMR2_CC3S; // CC3S
-    static constexpr uint32_t CCMR2_OC4M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    typedef bit_field_t<8, 0x3> CCMR2_CC4S; // CC4S
+    typedef bit_field_t<4, 0xf> CCMR2_IC3F; // Input capture 3 filter
+    typedef bit_field_t<2, 0x3> CCMR2_IC3PSC; // Input capture 3 prescaler
+    typedef bit_field_t<12, 0xf> CCMR2_IC4F; // Input capture 4 filter
+    typedef bit_field_t<10, 0x3> CCMR2_IC4PSC; // Input capture 4 prescaler
+    static constexpr uint32_t CCMR2_OC3CE = 0x80; // OC3CE
+    static constexpr uint32_t CCMR2_OC3FE = 0x4; // OC3FE
+    typedef bit_field_t<4, 0x7> CCMR2_OC3M; // OC3M
     static constexpr uint32_t CCMR2_OC3M_3 = 0x10000; // Output Compare 1 mode - bit 3
+    static constexpr uint32_t CCMR2_OC3PE = 0x8; // OC3PE
+    static constexpr uint32_t CCMR2_OC4CE = 0x8000; // OC4CE
+    static constexpr uint32_t CCMR2_OC4FE = 0x400; // OC4FE
+    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // OC4M
+    static constexpr uint32_t CCMR2_OC4M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    static constexpr uint32_t CCMR2_OC4PE = 0x800; // OC4PE
 
     static constexpr uint32_t CCER_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CCER_CC4NP = 0x8000; // Capture/Compare 4 output Polarity
@@ -1296,28 +1344,36 @@ struct stm32f745_tim2_t
     static constexpr uint32_t EGR_UG = 0x1; // Update generation
 
     static constexpr uint32_t CCMR1_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // OC2CE
-    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // OC2M
-    static constexpr uint32_t CCMR1_OC2PE = 0x800; // OC2PE
-    static constexpr uint32_t CCMR1_OC2FE = 0x400; // OC2FE
+    typedef bit_field_t<0, 0x3> CCMR1_CC1S; // CC1S
     typedef bit_field_t<8, 0x3> CCMR1_CC2S; // CC2S
+    typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
+    typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<2, 0x3> CCMR1_ICPCS; // Input capture 1 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
+    static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
     static constexpr uint32_t CCMR1_OC1PE = 0x8; // OC1PE
-    static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
-    typedef bit_field_t<0, 0x3> CCMR1_CC1S; // CC1S
+    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // OC2CE
+    static constexpr uint32_t CCMR1_OC2FE = 0x400; // OC2FE
+    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // OC2M
+    static constexpr uint32_t CCMR1_OC2PE = 0x800; // OC2PE
 
     static constexpr uint32_t CCMR2_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR2_O24CE = 0x8000; // O24CE
-    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // OC4M
-    static constexpr uint32_t CCMR2_OC4PE = 0x800; // OC4PE
-    static constexpr uint32_t CCMR2_OC4FE = 0x400; // OC4FE
+    typedef bit_field_t<0, 0x3> CCMR2_CC3S; // CC3S
     typedef bit_field_t<8, 0x3> CCMR2_CC4S; // CC4S
+    typedef bit_field_t<4, 0xf> CCMR2_IC3F; // Input capture 3 filter
+    typedef bit_field_t<2, 0x3> CCMR2_IC3PSC; // Input capture 3 prescaler
+    typedef bit_field_t<12, 0xf> CCMR2_IC4F; // Input capture 4 filter
+    typedef bit_field_t<10, 0x3> CCMR2_IC4PSC; // Input capture 4 prescaler
+    static constexpr uint32_t CCMR2_O24CE = 0x8000; // O24CE
     static constexpr uint32_t CCMR2_OC3CE = 0x80; // OC3CE
+    static constexpr uint32_t CCMR2_OC3FE = 0x4; // OC3FE
     typedef bit_field_t<4, 0x7> CCMR2_OC3M; // OC3M
     static constexpr uint32_t CCMR2_OC3PE = 0x8; // OC3PE
-    static constexpr uint32_t CCMR2_OC3FE = 0x4; // OC3FE
-    typedef bit_field_t<0, 0x3> CCMR2_CC3S; // CC3S
+    static constexpr uint32_t CCMR2_OC4FE = 0x400; // OC4FE
+    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // OC4M
+    static constexpr uint32_t CCMR2_OC4PE = 0x800; // OC4PE
 
     static constexpr uint32_t CCER_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CCER_CC4NP = 0x8000; // Capture/Compare 4 output Polarity
@@ -1466,28 +1522,36 @@ struct stm32f767_tim2_t
     static constexpr uint32_t EGR_UG = 0x1; // Update generation
 
     static constexpr uint32_t CCMR1_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // OC2CE
-    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // OC2M
-    static constexpr uint32_t CCMR1_OC2PE = 0x800; // OC2PE
-    static constexpr uint32_t CCMR1_OC2FE = 0x400; // OC2FE
+    typedef bit_field_t<0, 0x3> CCMR1_CC1S; // CC1S
     typedef bit_field_t<8, 0x3> CCMR1_CC2S; // CC2S
+    typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
+    typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<2, 0x3> CCMR1_ICPCS; // Input capture 1 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
+    static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
     static constexpr uint32_t CCMR1_OC1PE = 0x8; // OC1PE
-    static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
-    typedef bit_field_t<0, 0x3> CCMR1_CC1S; // CC1S
+    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // OC2CE
+    static constexpr uint32_t CCMR1_OC2FE = 0x400; // OC2FE
+    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // OC2M
+    static constexpr uint32_t CCMR1_OC2PE = 0x800; // OC2PE
 
     static constexpr uint32_t CCMR2_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR2_O24CE = 0x8000; // O24CE
-    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // OC4M
-    static constexpr uint32_t CCMR2_OC4PE = 0x800; // OC4PE
-    static constexpr uint32_t CCMR2_OC4FE = 0x400; // OC4FE
+    typedef bit_field_t<0, 0x3> CCMR2_CC3S; // CC3S
     typedef bit_field_t<8, 0x3> CCMR2_CC4S; // CC4S
+    typedef bit_field_t<4, 0xf> CCMR2_IC3F; // Input capture 3 filter
+    typedef bit_field_t<2, 0x3> CCMR2_IC3PSC; // Input capture 3 prescaler
+    typedef bit_field_t<12, 0xf> CCMR2_IC4F; // Input capture 4 filter
+    typedef bit_field_t<10, 0x3> CCMR2_IC4PSC; // Input capture 4 prescaler
+    static constexpr uint32_t CCMR2_O24CE = 0x8000; // O24CE
     static constexpr uint32_t CCMR2_OC3CE = 0x80; // OC3CE
+    static constexpr uint32_t CCMR2_OC3FE = 0x4; // OC3FE
     typedef bit_field_t<4, 0x7> CCMR2_OC3M; // OC3M
     static constexpr uint32_t CCMR2_OC3PE = 0x8; // OC3PE
-    static constexpr uint32_t CCMR2_OC3FE = 0x4; // OC3FE
-    typedef bit_field_t<0, 0x3> CCMR2_CC3S; // CC3S
+    static constexpr uint32_t CCMR2_OC4FE = 0x400; // OC4FE
+    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // OC4M
+    static constexpr uint32_t CCMR2_OC4PE = 0x800; // OC4PE
 
     static constexpr uint32_t CCER_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CCER_CC4NP = 0x8000; // Capture/Compare 4 output Polarity
@@ -1635,32 +1699,40 @@ struct stm32f722_tim3_t
     static constexpr uint32_t EGR_UG = 0x1; // Update generation
 
     static constexpr uint32_t CCMR1_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // OC2CE
-    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // OC2M
-    static constexpr uint32_t CCMR1_OC2PE = 0x800; // OC2PE
-    static constexpr uint32_t CCMR1_OC2FE = 0x400; // OC2FE
-    typedef bit_field_t<8, 0x3> CCMR1_CC2S; // CC2S
-    static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
-    typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
-    static constexpr uint32_t CCMR1_OC1PE = 0x8; // OC1PE
-    static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
     typedef bit_field_t<0, 0x3> CCMR1_CC1S; // CC1S
-    static constexpr uint32_t CCMR1_OC2M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    typedef bit_field_t<8, 0x3> CCMR1_CC2S; // CC2S
+    typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
+    typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<2, 0x3> CCMR1_ICPCS; // Input capture 1 prescaler
+    static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
+    static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
+    typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
     static constexpr uint32_t CCMR1_OC1M_3 = 0x10000; // Output Compare 1 mode - bit 3
+    static constexpr uint32_t CCMR1_OC1PE = 0x8; // OC1PE
+    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // OC2CE
+    static constexpr uint32_t CCMR1_OC2FE = 0x400; // OC2FE
+    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // OC2M
+    static constexpr uint32_t CCMR1_OC2M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    static constexpr uint32_t CCMR1_OC2PE = 0x800; // OC2PE
 
     static constexpr uint32_t CCMR2_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR2_O24CE = 0x8000; // O24CE
-    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // OC4M
-    static constexpr uint32_t CCMR2_OC4PE = 0x800; // OC4PE
-    static constexpr uint32_t CCMR2_OC4FE = 0x400; // OC4FE
-    typedef bit_field_t<8, 0x3> CCMR2_CC4S; // CC4S
-    static constexpr uint32_t CCMR2_OC3CE = 0x80; // OC3CE
-    typedef bit_field_t<4, 0x7> CCMR2_OC3M; // OC3M
-    static constexpr uint32_t CCMR2_OC3PE = 0x8; // OC3PE
-    static constexpr uint32_t CCMR2_OC3FE = 0x4; // OC3FE
     typedef bit_field_t<0, 0x3> CCMR2_CC3S; // CC3S
-    static constexpr uint32_t CCMR2_OC4M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    typedef bit_field_t<8, 0x3> CCMR2_CC4S; // CC4S
+    typedef bit_field_t<4, 0xf> CCMR2_IC3F; // Input capture 3 filter
+    typedef bit_field_t<2, 0x3> CCMR2_IC3PSC; // Input capture 3 prescaler
+    typedef bit_field_t<12, 0xf> CCMR2_IC4F; // Input capture 4 filter
+    typedef bit_field_t<10, 0x3> CCMR2_IC4PSC; // Input capture 4 prescaler
+    static constexpr uint32_t CCMR2_O24CE = 0x8000; // O24CE
+    static constexpr uint32_t CCMR2_OC3CE = 0x80; // OC3CE
+    static constexpr uint32_t CCMR2_OC3FE = 0x4; // OC3FE
+    typedef bit_field_t<4, 0x7> CCMR2_OC3M; // OC3M
     static constexpr uint32_t CCMR2_OC3M_3 = 0x10000; // Output Compare 1 mode - bit 3
+    static constexpr uint32_t CCMR2_OC3PE = 0x8; // OC3PE
+    static constexpr uint32_t CCMR2_OC4FE = 0x400; // OC4FE
+    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // OC4M
+    static constexpr uint32_t CCMR2_OC4M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    static constexpr uint32_t CCMR2_OC4PE = 0x800; // OC4PE
 
     static constexpr uint32_t CCER_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CCER_CC4NP = 0x8000; // Capture/Compare 4 output Polarity
@@ -1799,32 +1871,40 @@ struct stm32f730_tim3_t
     static constexpr uint32_t EGR_UG = 0x1; // Update generation
 
     static constexpr uint32_t CCMR1_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // OC2CE
-    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // OC2M
-    static constexpr uint32_t CCMR1_OC2PE = 0x800; // OC2PE
-    static constexpr uint32_t CCMR1_OC2FE = 0x400; // OC2FE
-    typedef bit_field_t<8, 0x3> CCMR1_CC2S; // CC2S
-    static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
-    typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
-    static constexpr uint32_t CCMR1_OC1PE = 0x8; // OC1PE
-    static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
     typedef bit_field_t<0, 0x3> CCMR1_CC1S; // CC1S
-    static constexpr uint32_t CCMR1_OC2M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    typedef bit_field_t<8, 0x3> CCMR1_CC2S; // CC2S
+    typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
+    typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<2, 0x3> CCMR1_ICPCS; // Input capture 1 prescaler
+    static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
+    static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
+    typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
     static constexpr uint32_t CCMR1_OC1M_3 = 0x10000; // Output Compare 1 mode - bit 3
+    static constexpr uint32_t CCMR1_OC1PE = 0x8; // OC1PE
+    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // OC2CE
+    static constexpr uint32_t CCMR1_OC2FE = 0x400; // OC2FE
+    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // OC2M
+    static constexpr uint32_t CCMR1_OC2M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    static constexpr uint32_t CCMR1_OC2PE = 0x800; // OC2PE
 
     static constexpr uint32_t CCMR2_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR2_OC4CE = 0x8000; // OC4CE
-    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // OC4M
-    static constexpr uint32_t CCMR2_OC4PE = 0x800; // OC4PE
-    static constexpr uint32_t CCMR2_OC4FE = 0x400; // OC4FE
-    typedef bit_field_t<8, 0x3> CCMR2_CC4S; // CC4S
-    static constexpr uint32_t CCMR2_OC3CE = 0x80; // OC3CE
-    typedef bit_field_t<4, 0x7> CCMR2_OC3M; // OC3M
-    static constexpr uint32_t CCMR2_OC3PE = 0x8; // OC3PE
-    static constexpr uint32_t CCMR2_OC3FE = 0x4; // OC3FE
     typedef bit_field_t<0, 0x3> CCMR2_CC3S; // CC3S
-    static constexpr uint32_t CCMR2_OC4M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    typedef bit_field_t<8, 0x3> CCMR2_CC4S; // CC4S
+    typedef bit_field_t<4, 0xf> CCMR2_IC3F; // Input capture 3 filter
+    typedef bit_field_t<2, 0x3> CCMR2_IC3PSC; // Input capture 3 prescaler
+    typedef bit_field_t<12, 0xf> CCMR2_IC4F; // Input capture 4 filter
+    typedef bit_field_t<10, 0x3> CCMR2_IC4PSC; // Input capture 4 prescaler
+    static constexpr uint32_t CCMR2_OC3CE = 0x80; // OC3CE
+    static constexpr uint32_t CCMR2_OC3FE = 0x4; // OC3FE
+    typedef bit_field_t<4, 0x7> CCMR2_OC3M; // OC3M
     static constexpr uint32_t CCMR2_OC3M_3 = 0x10000; // Output Compare 1 mode - bit 3
+    static constexpr uint32_t CCMR2_OC3PE = 0x8; // OC3PE
+    static constexpr uint32_t CCMR2_OC4CE = 0x8000; // OC4CE
+    static constexpr uint32_t CCMR2_OC4FE = 0x400; // OC4FE
+    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // OC4M
+    static constexpr uint32_t CCMR2_OC4M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    static constexpr uint32_t CCMR2_OC4PE = 0x800; // OC4PE
 
     static constexpr uint32_t CCER_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CCER_CC4NP = 0x8000; // Capture/Compare 4 output Polarity
@@ -1965,28 +2045,36 @@ struct stm32f745_tim3_t
     static constexpr uint32_t EGR_UG = 0x1; // Update generation
 
     static constexpr uint32_t CCMR1_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // OC2CE
-    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // OC2M
-    static constexpr uint32_t CCMR1_OC2PE = 0x800; // OC2PE
-    static constexpr uint32_t CCMR1_OC2FE = 0x400; // OC2FE
+    typedef bit_field_t<0, 0x3> CCMR1_CC1S; // CC1S
     typedef bit_field_t<8, 0x3> CCMR1_CC2S; // CC2S
+    typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
+    typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<2, 0x3> CCMR1_ICPCS; // Input capture 1 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
+    static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
     static constexpr uint32_t CCMR1_OC1PE = 0x8; // OC1PE
-    static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
-    typedef bit_field_t<0, 0x3> CCMR1_CC1S; // CC1S
+    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // OC2CE
+    static constexpr uint32_t CCMR1_OC2FE = 0x400; // OC2FE
+    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // OC2M
+    static constexpr uint32_t CCMR1_OC2PE = 0x800; // OC2PE
 
     static constexpr uint32_t CCMR2_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR2_O24CE = 0x8000; // O24CE
-    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // OC4M
-    static constexpr uint32_t CCMR2_OC4PE = 0x800; // OC4PE
-    static constexpr uint32_t CCMR2_OC4FE = 0x400; // OC4FE
+    typedef bit_field_t<0, 0x3> CCMR2_CC3S; // CC3S
     typedef bit_field_t<8, 0x3> CCMR2_CC4S; // CC4S
+    typedef bit_field_t<4, 0xf> CCMR2_IC3F; // Input capture 3 filter
+    typedef bit_field_t<2, 0x3> CCMR2_IC3PSC; // Input capture 3 prescaler
+    typedef bit_field_t<12, 0xf> CCMR2_IC4F; // Input capture 4 filter
+    typedef bit_field_t<10, 0x3> CCMR2_IC4PSC; // Input capture 4 prescaler
+    static constexpr uint32_t CCMR2_O24CE = 0x8000; // O24CE
     static constexpr uint32_t CCMR2_OC3CE = 0x80; // OC3CE
+    static constexpr uint32_t CCMR2_OC3FE = 0x4; // OC3FE
     typedef bit_field_t<4, 0x7> CCMR2_OC3M; // OC3M
     static constexpr uint32_t CCMR2_OC3PE = 0x8; // OC3PE
-    static constexpr uint32_t CCMR2_OC3FE = 0x4; // OC3FE
-    typedef bit_field_t<0, 0x3> CCMR2_CC3S; // CC3S
+    static constexpr uint32_t CCMR2_OC4FE = 0x400; // OC4FE
+    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // OC4M
+    static constexpr uint32_t CCMR2_OC4PE = 0x800; // OC4PE
 
     static constexpr uint32_t CCER_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CCER_CC4NP = 0x8000; // Capture/Compare 4 output Polarity
@@ -2133,28 +2221,36 @@ struct stm32f767_tim3_t
     static constexpr uint32_t EGR_UG = 0x1; // Update generation
 
     static constexpr uint32_t CCMR1_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // OC2CE
-    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // OC2M
-    static constexpr uint32_t CCMR1_OC2PE = 0x800; // OC2PE
-    static constexpr uint32_t CCMR1_OC2FE = 0x400; // OC2FE
+    typedef bit_field_t<0, 0x3> CCMR1_CC1S; // CC1S
     typedef bit_field_t<8, 0x3> CCMR1_CC2S; // CC2S
+    typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
+    typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<2, 0x3> CCMR1_ICPCS; // Input capture 1 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
+    static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
     static constexpr uint32_t CCMR1_OC1PE = 0x8; // OC1PE
-    static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
-    typedef bit_field_t<0, 0x3> CCMR1_CC1S; // CC1S
+    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // OC2CE
+    static constexpr uint32_t CCMR1_OC2FE = 0x400; // OC2FE
+    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // OC2M
+    static constexpr uint32_t CCMR1_OC2PE = 0x800; // OC2PE
 
     static constexpr uint32_t CCMR2_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR2_O24CE = 0x8000; // O24CE
-    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // OC4M
-    static constexpr uint32_t CCMR2_OC4PE = 0x800; // OC4PE
-    static constexpr uint32_t CCMR2_OC4FE = 0x400; // OC4FE
+    typedef bit_field_t<0, 0x3> CCMR2_CC3S; // CC3S
     typedef bit_field_t<8, 0x3> CCMR2_CC4S; // CC4S
+    typedef bit_field_t<4, 0xf> CCMR2_IC3F; // Input capture 3 filter
+    typedef bit_field_t<2, 0x3> CCMR2_IC3PSC; // Input capture 3 prescaler
+    typedef bit_field_t<12, 0xf> CCMR2_IC4F; // Input capture 4 filter
+    typedef bit_field_t<10, 0x3> CCMR2_IC4PSC; // Input capture 4 prescaler
+    static constexpr uint32_t CCMR2_O24CE = 0x8000; // O24CE
     static constexpr uint32_t CCMR2_OC3CE = 0x80; // OC3CE
+    static constexpr uint32_t CCMR2_OC3FE = 0x4; // OC3FE
     typedef bit_field_t<4, 0x7> CCMR2_OC3M; // OC3M
     static constexpr uint32_t CCMR2_OC3PE = 0x8; // OC3PE
-    static constexpr uint32_t CCMR2_OC3FE = 0x4; // OC3FE
-    typedef bit_field_t<0, 0x3> CCMR2_CC3S; // CC3S
+    static constexpr uint32_t CCMR2_OC4FE = 0x400; // OC4FE
+    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // OC4M
+    static constexpr uint32_t CCMR2_OC4PE = 0x800; // OC4PE
 
     static constexpr uint32_t CCER_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CCER_CC4NP = 0x8000; // Capture/Compare 4 output Polarity
@@ -2299,28 +2395,36 @@ struct stm32f745_tim4_t
     static constexpr uint32_t EGR_UG = 0x1; // Update generation
 
     static constexpr uint32_t CCMR1_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // OC2CE
-    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // OC2M
-    static constexpr uint32_t CCMR1_OC2PE = 0x800; // OC2PE
-    static constexpr uint32_t CCMR1_OC2FE = 0x400; // OC2FE
+    typedef bit_field_t<0, 0x3> CCMR1_CC1S; // CC1S
     typedef bit_field_t<8, 0x3> CCMR1_CC2S; // CC2S
+    typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
+    typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<2, 0x3> CCMR1_ICPCS; // Input capture 1 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
+    static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
     static constexpr uint32_t CCMR1_OC1PE = 0x8; // OC1PE
-    static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
-    typedef bit_field_t<0, 0x3> CCMR1_CC1S; // CC1S
+    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // OC2CE
+    static constexpr uint32_t CCMR1_OC2FE = 0x400; // OC2FE
+    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // OC2M
+    static constexpr uint32_t CCMR1_OC2PE = 0x800; // OC2PE
 
     static constexpr uint32_t CCMR2_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR2_O24CE = 0x8000; // O24CE
-    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // OC4M
-    static constexpr uint32_t CCMR2_OC4PE = 0x800; // OC4PE
-    static constexpr uint32_t CCMR2_OC4FE = 0x400; // OC4FE
+    typedef bit_field_t<0, 0x3> CCMR2_CC3S; // CC3S
     typedef bit_field_t<8, 0x3> CCMR2_CC4S; // CC4S
+    typedef bit_field_t<4, 0xf> CCMR2_IC3F; // Input capture 3 filter
+    typedef bit_field_t<2, 0x3> CCMR2_IC3PSC; // Input capture 3 prescaler
+    typedef bit_field_t<12, 0xf> CCMR2_IC4F; // Input capture 4 filter
+    typedef bit_field_t<10, 0x3> CCMR2_IC4PSC; // Input capture 4 prescaler
+    static constexpr uint32_t CCMR2_O24CE = 0x8000; // O24CE
     static constexpr uint32_t CCMR2_OC3CE = 0x80; // OC3CE
+    static constexpr uint32_t CCMR2_OC3FE = 0x4; // OC3FE
     typedef bit_field_t<4, 0x7> CCMR2_OC3M; // OC3M
     static constexpr uint32_t CCMR2_OC3PE = 0x8; // OC3PE
-    static constexpr uint32_t CCMR2_OC3FE = 0x4; // OC3FE
-    typedef bit_field_t<0, 0x3> CCMR2_CC3S; // CC3S
+    static constexpr uint32_t CCMR2_OC4FE = 0x400; // OC4FE
+    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // OC4M
+    static constexpr uint32_t CCMR2_OC4PE = 0x800; // OC4PE
 
     static constexpr uint32_t CCER_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CCER_CC4NP = 0x8000; // Capture/Compare 4 output Polarity
@@ -2457,28 +2561,36 @@ struct stm32f767_tim4_t
     static constexpr uint32_t EGR_UG = 0x1; // Update generation
 
     static constexpr uint32_t CCMR1_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // OC2CE
-    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // OC2M
-    static constexpr uint32_t CCMR1_OC2PE = 0x800; // OC2PE
-    static constexpr uint32_t CCMR1_OC2FE = 0x400; // OC2FE
+    typedef bit_field_t<0, 0x3> CCMR1_CC1S; // CC1S
     typedef bit_field_t<8, 0x3> CCMR1_CC2S; // CC2S
+    typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
+    typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<2, 0x3> CCMR1_ICPCS; // Input capture 1 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
+    static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
     static constexpr uint32_t CCMR1_OC1PE = 0x8; // OC1PE
-    static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
-    typedef bit_field_t<0, 0x3> CCMR1_CC1S; // CC1S
+    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // OC2CE
+    static constexpr uint32_t CCMR1_OC2FE = 0x400; // OC2FE
+    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // OC2M
+    static constexpr uint32_t CCMR1_OC2PE = 0x800; // OC2PE
 
     static constexpr uint32_t CCMR2_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR2_O24CE = 0x8000; // O24CE
-    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // OC4M
-    static constexpr uint32_t CCMR2_OC4PE = 0x800; // OC4PE
-    static constexpr uint32_t CCMR2_OC4FE = 0x400; // OC4FE
+    typedef bit_field_t<0, 0x3> CCMR2_CC3S; // CC3S
     typedef bit_field_t<8, 0x3> CCMR2_CC4S; // CC4S
+    typedef bit_field_t<4, 0xf> CCMR2_IC3F; // Input capture 3 filter
+    typedef bit_field_t<2, 0x3> CCMR2_IC3PSC; // Input capture 3 prescaler
+    typedef bit_field_t<12, 0xf> CCMR2_IC4F; // Input capture 4 filter
+    typedef bit_field_t<10, 0x3> CCMR2_IC4PSC; // Input capture 4 prescaler
+    static constexpr uint32_t CCMR2_O24CE = 0x8000; // O24CE
     static constexpr uint32_t CCMR2_OC3CE = 0x80; // OC3CE
+    static constexpr uint32_t CCMR2_OC3FE = 0x4; // OC3FE
     typedef bit_field_t<4, 0x7> CCMR2_OC3M; // OC3M
     static constexpr uint32_t CCMR2_OC3PE = 0x8; // OC3PE
-    static constexpr uint32_t CCMR2_OC3FE = 0x4; // OC3FE
-    typedef bit_field_t<0, 0x3> CCMR2_CC3S; // CC3S
+    static constexpr uint32_t CCMR2_OC4FE = 0x400; // OC4FE
+    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // OC4M
+    static constexpr uint32_t CCMR2_OC4PE = 0x800; // OC4PE
 
     static constexpr uint32_t CCER_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CCER_CC4NP = 0x8000; // Capture/Compare 4 output Polarity
@@ -2618,32 +2730,40 @@ struct stm32f722_tim5_t
     static constexpr uint32_t EGR_UG = 0x1; // Update generation
 
     static constexpr uint32_t CCMR1_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // OC2CE
-    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // OC2M
-    static constexpr uint32_t CCMR1_OC2PE = 0x800; // OC2PE
-    static constexpr uint32_t CCMR1_OC2FE = 0x400; // OC2FE
-    typedef bit_field_t<8, 0x3> CCMR1_CC2S; // CC2S
-    static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
-    typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
-    static constexpr uint32_t CCMR1_OC1PE = 0x8; // OC1PE
-    static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
     typedef bit_field_t<0, 0x3> CCMR1_CC1S; // CC1S
-    static constexpr uint32_t CCMR1_OC2M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    typedef bit_field_t<8, 0x3> CCMR1_CC2S; // CC2S
+    typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
+    typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<2, 0x3> CCMR1_ICPCS; // Input capture 1 prescaler
+    static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
+    static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
+    typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
     static constexpr uint32_t CCMR1_OC1M_3 = 0x10000; // Output Compare 1 mode - bit 3
+    static constexpr uint32_t CCMR1_OC1PE = 0x8; // OC1PE
+    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // OC2CE
+    static constexpr uint32_t CCMR1_OC2FE = 0x400; // OC2FE
+    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // OC2M
+    static constexpr uint32_t CCMR1_OC2M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    static constexpr uint32_t CCMR1_OC2PE = 0x800; // OC2PE
 
     static constexpr uint32_t CCMR2_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR2_O24CE = 0x8000; // O24CE
-    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // OC4M
-    static constexpr uint32_t CCMR2_OC4PE = 0x800; // OC4PE
-    static constexpr uint32_t CCMR2_OC4FE = 0x400; // OC4FE
-    typedef bit_field_t<8, 0x3> CCMR2_CC4S; // CC4S
-    static constexpr uint32_t CCMR2_OC3CE = 0x80; // OC3CE
-    typedef bit_field_t<4, 0x7> CCMR2_OC3M; // OC3M
-    static constexpr uint32_t CCMR2_OC3PE = 0x8; // OC3PE
-    static constexpr uint32_t CCMR2_OC3FE = 0x4; // OC3FE
     typedef bit_field_t<0, 0x3> CCMR2_CC3S; // CC3S
-    static constexpr uint32_t CCMR2_OC4M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    typedef bit_field_t<8, 0x3> CCMR2_CC4S; // CC4S
+    typedef bit_field_t<4, 0xf> CCMR2_IC3F; // Input capture 3 filter
+    typedef bit_field_t<2, 0x3> CCMR2_IC3PSC; // Input capture 3 prescaler
+    typedef bit_field_t<12, 0xf> CCMR2_IC4F; // Input capture 4 filter
+    typedef bit_field_t<10, 0x3> CCMR2_IC4PSC; // Input capture 4 prescaler
+    static constexpr uint32_t CCMR2_O24CE = 0x8000; // O24CE
+    static constexpr uint32_t CCMR2_OC3CE = 0x80; // OC3CE
+    static constexpr uint32_t CCMR2_OC3FE = 0x4; // OC3FE
+    typedef bit_field_t<4, 0x7> CCMR2_OC3M; // OC3M
     static constexpr uint32_t CCMR2_OC3M_3 = 0x10000; // Output Compare 1 mode - bit 3
+    static constexpr uint32_t CCMR2_OC3PE = 0x8; // OC3PE
+    static constexpr uint32_t CCMR2_OC4FE = 0x400; // OC4FE
+    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // OC4M
+    static constexpr uint32_t CCMR2_OC4M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    static constexpr uint32_t CCMR2_OC4PE = 0x800; // OC4PE
 
     static constexpr uint32_t CCER_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CCER_CC4NP = 0x8000; // Capture/Compare 4 output Polarity
@@ -2786,32 +2906,40 @@ struct stm32f730_tim5_t
     static constexpr uint32_t EGR_UG = 0x1; // Update generation
 
     static constexpr uint32_t CCMR1_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // OC2CE
-    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // OC2M
-    static constexpr uint32_t CCMR1_OC2PE = 0x800; // OC2PE
-    static constexpr uint32_t CCMR1_OC2FE = 0x400; // OC2FE
-    typedef bit_field_t<8, 0x3> CCMR1_CC2S; // CC2S
-    static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
-    typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
-    static constexpr uint32_t CCMR1_OC1PE = 0x8; // OC1PE
-    static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
     typedef bit_field_t<0, 0x3> CCMR1_CC1S; // CC1S
-    static constexpr uint32_t CCMR1_OC2M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    typedef bit_field_t<8, 0x3> CCMR1_CC2S; // CC2S
+    typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
+    typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<2, 0x3> CCMR1_ICPCS; // Input capture 1 prescaler
+    static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
+    static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
+    typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
     static constexpr uint32_t CCMR1_OC1M_3 = 0x10000; // Output Compare 1 mode - bit 3
+    static constexpr uint32_t CCMR1_OC1PE = 0x8; // OC1PE
+    static constexpr uint32_t CCMR1_OC2CE = 0x8000; // OC2CE
+    static constexpr uint32_t CCMR1_OC2FE = 0x400; // OC2FE
+    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // OC2M
+    static constexpr uint32_t CCMR1_OC2M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    static constexpr uint32_t CCMR1_OC2PE = 0x800; // OC2PE
 
     static constexpr uint32_t CCMR2_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t CCMR2_OC4CE = 0x8000; // OC4CE
-    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // OC4M
-    static constexpr uint32_t CCMR2_OC4PE = 0x800; // OC4PE
-    static constexpr uint32_t CCMR2_OC4FE = 0x400; // OC4FE
-    typedef bit_field_t<8, 0x3> CCMR2_CC4S; // CC4S
-    static constexpr uint32_t CCMR2_OC3CE = 0x80; // OC3CE
-    typedef bit_field_t<4, 0x7> CCMR2_OC3M; // OC3M
-    static constexpr uint32_t CCMR2_OC3PE = 0x8; // OC3PE
-    static constexpr uint32_t CCMR2_OC3FE = 0x4; // OC3FE
     typedef bit_field_t<0, 0x3> CCMR2_CC3S; // CC3S
-    static constexpr uint32_t CCMR2_OC4M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    typedef bit_field_t<8, 0x3> CCMR2_CC4S; // CC4S
+    typedef bit_field_t<4, 0xf> CCMR2_IC3F; // Input capture 3 filter
+    typedef bit_field_t<2, 0x3> CCMR2_IC3PSC; // Input capture 3 prescaler
+    typedef bit_field_t<12, 0xf> CCMR2_IC4F; // Input capture 4 filter
+    typedef bit_field_t<10, 0x3> CCMR2_IC4PSC; // Input capture 4 prescaler
+    static constexpr uint32_t CCMR2_OC3CE = 0x80; // OC3CE
+    static constexpr uint32_t CCMR2_OC3FE = 0x4; // OC3FE
+    typedef bit_field_t<4, 0x7> CCMR2_OC3M; // OC3M
     static constexpr uint32_t CCMR2_OC3M_3 = 0x10000; // Output Compare 1 mode - bit 3
+    static constexpr uint32_t CCMR2_OC3PE = 0x8; // OC3PE
+    static constexpr uint32_t CCMR2_OC4CE = 0x8000; // OC4CE
+    static constexpr uint32_t CCMR2_OC4FE = 0x400; // OC4FE
+    typedef bit_field_t<12, 0x7> CCMR2_OC4M; // OC4M
+    static constexpr uint32_t CCMR2_OC4M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    static constexpr uint32_t CCMR2_OC4PE = 0x800; // OC4PE
 
     static constexpr uint32_t CCER_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CCER_CC4NP = 0x8000; // Capture/Compare 4 output Polarity
@@ -3017,16 +3145,20 @@ struct stm32f722_tim9_t
     static constexpr uint32_t EGR_UG = 0x1; // Update generation
 
     static constexpr uint32_t CCMR1_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // Output Compare 2 mode
-    static constexpr uint32_t CCMR1_OC2PE = 0x800; // Output Compare 2 preload enable
-    static constexpr uint32_t CCMR1_OC2FE = 0x400; // Output Compare 2 fast enable
-    typedef bit_field_t<8, 0x3> CCMR1_CC2S; // Capture/Compare 2 selection
-    typedef bit_field_t<4, 0x7> CCMR1_OC1M; // Output Compare 1 mode
-    static constexpr uint32_t CCMR1_OC1PE = 0x8; // Output Compare 1 preload enable
-    static constexpr uint32_t CCMR1_OC1FE = 0x4; // Output Compare 1 fast enable
     typedef bit_field_t<0, 0x3> CCMR1_CC1S; // Capture/Compare 1 selection
-    static constexpr uint32_t CCMR1_OC2M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    typedef bit_field_t<8, 0x3> CCMR1_CC2S; // Capture/Compare 2 selection
+    typedef bit_field_t<4, 0x7> CCMR1_IC1F; // Input capture 1 filter
+    typedef bit_field_t<12, 0x7> CCMR1_IC2F; // Input capture 2 filter
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<2, 0x3> CCMR1_ICPCS; // Input capture 1 prescaler
+    static constexpr uint32_t CCMR1_OC1FE = 0x4; // Output Compare 1 fast enable
+    typedef bit_field_t<4, 0x7> CCMR1_OC1M; // Output Compare 1 mode
     static constexpr uint32_t CCMR1_OC1M_3 = 0x10000; // Output Compare 1 mode - bit 3
+    static constexpr uint32_t CCMR1_OC1PE = 0x8; // Output Compare 1 preload enable
+    static constexpr uint32_t CCMR1_OC2FE = 0x400; // Output Compare 2 fast enable
+    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // Output Compare 2 mode
+    static constexpr uint32_t CCMR1_OC2M_3 = 0x1000000; // Output Compare 2 mode - bit 3
+    static constexpr uint32_t CCMR1_OC2PE = 0x800; // Output Compare 2 preload enable
 
 
     static constexpr uint32_t CCER_RESET_VALUE = 0x0; // Reset value
@@ -3109,14 +3241,18 @@ struct stm32f745_tim9_t
     static constexpr uint32_t EGR_UG = 0x1; // Update generation
 
     static constexpr uint32_t CCMR1_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // Output Compare 2 mode
-    static constexpr uint32_t CCMR1_OC2PE = 0x800; // Output Compare 2 preload enable
-    static constexpr uint32_t CCMR1_OC2FE = 0x400; // Output Compare 2 fast enable
+    typedef bit_field_t<0, 0x3> CCMR1_CC1S; // Capture/Compare 1 selection
     typedef bit_field_t<8, 0x3> CCMR1_CC2S; // Capture/Compare 2 selection
+    typedef bit_field_t<4, 0x7> CCMR1_IC1F; // Input capture 1 filter
+    typedef bit_field_t<12, 0x7> CCMR1_IC2F; // Input capture 2 filter
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<2, 0x3> CCMR1_ICPCS; // Input capture 1 prescaler
+    static constexpr uint32_t CCMR1_OC1FE = 0x4; // Output Compare 1 fast enable
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // Output Compare 1 mode
     static constexpr uint32_t CCMR1_OC1PE = 0x8; // Output Compare 1 preload enable
-    static constexpr uint32_t CCMR1_OC1FE = 0x4; // Output Compare 1 fast enable
-    typedef bit_field_t<0, 0x3> CCMR1_CC1S; // Capture/Compare 1 selection
+    static constexpr uint32_t CCMR1_OC2FE = 0x400; // Output Compare 2 fast enable
+    typedef bit_field_t<12, 0x7> CCMR1_OC2M; // Output Compare 2 mode
+    static constexpr uint32_t CCMR1_OC2PE = 0x800; // Output Compare 2 preload enable
 
 
     static constexpr uint32_t CCER_RESET_VALUE = 0x0; // Reset value
@@ -3197,10 +3333,12 @@ struct stm32f745_tim10_t
     static constexpr uint32_t EGR_UG = 0x1; // Update generation
 
     static constexpr uint32_t CCMR1_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x3> CCMR1_CC1S; // Capture/Compare 1 selection
+    typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
+    typedef bit_field_t<2, 0x3> CCMR1_ICPCS; // Input capture 1 prescaler
+    static constexpr uint32_t CCMR1_OC1FE = 0x4; // Output Compare 1 fast enable
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // Output Compare 1 mode
     static constexpr uint32_t CCMR1_OC1PE = 0x8; // Output Compare 1 preload enable
-    static constexpr uint32_t CCMR1_OC1FE = 0x4; // Output Compare 1 fast enable
-    typedef bit_field_t<0, 0x3> CCMR1_CC1S; // Capture/Compare 1 selection
 
 
     static constexpr uint32_t CCER_RESET_VALUE = 0x0; // Reset value
@@ -3273,11 +3411,13 @@ struct stm32f722_tim13_t
     static constexpr uint32_t EGR_UG = 0x1; // Update generation
 
     static constexpr uint32_t CCMR1_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<4, 0x7> CCMR1_OC1M; // Output Compare 1 mode
-    static constexpr uint32_t CCMR1_OC1PE = 0x8; // Output Compare 1 preload enable
-    static constexpr uint32_t CCMR1_OC1FE = 0x4; // Output Compare 1 fast enable
     typedef bit_field_t<0, 0x3> CCMR1_CC1S; // Capture/Compare 1 selection
+    typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
+    typedef bit_field_t<2, 0x3> CCMR1_ICPCS; // Input capture 1 prescaler
+    static constexpr uint32_t CCMR1_OC1FE = 0x4; // Output Compare 1 fast enable
+    typedef bit_field_t<4, 0x7> CCMR1_OC1M; // Output Compare 1 mode
     static constexpr uint32_t CCMR1_OC1M_3 = 0x10000; // Output Compare 1 mode - bit 3
+    static constexpr uint32_t CCMR1_OC1PE = 0x8; // Output Compare 1 preload enable
 
 
     static constexpr uint32_t CCER_RESET_VALUE = 0x0; // Reset value

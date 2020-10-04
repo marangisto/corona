@@ -1760,8 +1760,10 @@ struct stm32h7a3x_tt_fdcan_t
 
 
     static constexpr uint32_t FDCAN_TTTMC_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<2, 0x3fff> FDCAN_TTTMC_TMSA; // Trigger Memory Start Address
+    typedef bit_field_t<4, 0x3> FDCAN_TTTMC_EVTSEL; // Event trigger input selection
+    typedef bit_field_t<0, 0x3> FDCAN_TTTMC_SWTDEL; // Stop watch trigger input selection
     typedef bit_field_t<16, 0x7f> FDCAN_TTTMC_TME; // Trigger Memory Elements
+    typedef bit_field_t<2, 0x3fff> FDCAN_TTTMC_TMSA; // Trigger Memory Start Address
 
     static constexpr uint32_t FDCAN_TTRMC_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<0, 0x1fffffff> FDCAN_TTRMC_RID; // Reference Identifier.

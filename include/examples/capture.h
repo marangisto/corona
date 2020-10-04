@@ -7,23 +7,44 @@ using serial = usart_t<SERIAL_USART, SERIAL_TX, SERIAL_RX>;
 using led = output_t<LED>;
 using out = output_t<PROBE>;
 using tim = tim_t<TIMER_NO>;
-using aux = tim_t<4>;
-
-static constexpr interrupt_t AUX_ISR = interrupt::TIM4;
+using icc = tim::icc<CH1, TIMER_CH1>;
 
 static volatile uint32_t count = 0;
 
-template<> void handler<AUX_ISR>()
+template<> void handler<TIMER_ISR>()
 {
-    count = tim::count();
-    tim::set_count(0);
-    aux::clear_update_interrupt_flag();
-    out::toggle();
+    static bool idle = true;
+    static uint32_t start = 0;
+    static uint32_t overflow = 0;
+
+    if (icc::interrupt_flag())
+    {
+        icc::clear_interrupt_flag();
+
+        if (idle)
+        {
+            start = icc::count();
+            idle = false;
+            overflow = 0;
+        }
+        else
+        {
+            count = overflow + icc::count() - start;
+            tim::set_count(0);
+            idle = true;
+        }
+    }
+
+    if (tim::update_interrupt_flag())
+    {
+        tim::clear_update_interrupt_flag();
+        overflow += tim::arr() + 1;
+        led::toggle();
+    }
 }
 
 template<> void handler<SERIAL_ISR>()
 {
-    led::toggle();
     serial::isr();
 }
 
@@ -42,26 +63,17 @@ int main()
     const auto tim_pre = tim::clock() / tim_f - 1;
 
     tim::setup(tim_pre, 65535);
-
-    const auto aux_f = 20;      // Hz
-    const auto aux_pre = 999;
-    const uint16_t aux_arr = aux::clock() / (aux_f * (aux_pre + 1)) - 1;
-
-    aux::setup(aux_pre, aux_arr);
-    aux::enable_update_interrupt();
-    interrupt::set<AUX_ISR>();
+    tim::enable_update_interrupt();
+    icc::setup();
+    icc::enable_interrupt();
+    interrupt::set<TIMER_ISR>();
 
     for (uint32_t i = 0;;)
     {
         if (count)
         {
-            printf<serial>("count = '%d'\n", count);
+            printf<serial>("%05d %5d\n", i++, count);
             count = 0;
-            if (++i >= aux_f)
-            {
-                led::toggle();
-                i = 0;
-            }
         }
     }
 }

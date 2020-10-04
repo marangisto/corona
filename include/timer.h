@@ -15,6 +15,9 @@ template<typename TIMER> struct timch_traits<TIMER, CH1>
     using _ = typename tim::T;
 
     static constexpr signal_t CH = TIMER::traits::CH1;
+    static constexpr uint32_t CCDE = _::DIER_CC1DE;
+    static constexpr uint32_t CCIE = _::DIER_CC1IE;
+    static constexpr uint32_t CCIF = _::SR_CC1IF;
 
     static void setup_pwm(typename TIMER::count_t initial_duty)
     {
@@ -23,6 +26,19 @@ template<typename TIMER> struct timch_traits<TIMER, CH1>
                      ;
         tim::V.CCR1  = initial_duty;
         tim::V.CCER  |= _::CCER_CC1E;
+    }
+
+    static void setup_icc()
+    {
+        tim::V.CCMR1 |= _::CCMR1_CC1S::W(0x1)   // map TI1 input
+                     //|  _::CCMR1_IC1PSC::W(0)   // prescaler
+                     //|  _::CCMR1_IC1F::W(0)     // filter
+                     ;
+        tim::V.CCR1  = 0;
+        tim::V.CCER  |= _::CCER_CC1E;
+        tim::V.CCER  |= _::CCER_CC1E
+                     //|  _::CCER_CC1P::W(0x3)    // both edges
+                     ;
     }
 
     static inline volatile uint32_t& CCR() { return tim::V.CCR1; }
@@ -34,6 +50,9 @@ template<typename TIMER> struct timch_traits<TIMER, CH2>
     using _ = typename tim::T;
 
     static constexpr signal_t CH = TIMER::traits::CH2;
+    static constexpr uint32_t CCDE = _::DIER_CC2DE;
+    static constexpr uint32_t CCIE = _::DIER_CC2IE;
+    static constexpr uint32_t CCIF = _::SR_CC2IF;
 
     static void setup_pwm(typename TIMER::count_t initial_duty)
     {
@@ -53,6 +72,9 @@ template<typename TIMER> struct timch_traits<TIMER, CH3>
     using _ = typename tim::T;
 
     static constexpr signal_t CH = TIMER::traits::CH3;
+    static constexpr uint32_t CCDE = _::DIER_CC3DE;
+    static constexpr uint32_t CCIE = _::DIER_CC3IE;
+    static constexpr uint32_t CCIF = _::SR_CC3IF;
 
     static void setup_pwm(typename TIMER::count_t initial_duty)
     {
@@ -72,6 +94,9 @@ template<typename TIMER> struct timch_traits<TIMER, CH4>
     using _ = typename tim::T;
 
     static constexpr signal_t CH = TIMER::traits::CH4;
+    static constexpr uint32_t CCDE = _::DIER_CC4DE;
+    static constexpr uint32_t CCIE = _::DIER_CC4IE;
+    static constexpr uint32_t CCIF = _::SR_CC4IF;
 
     static void setup_pwm(typename TIMER::count_t initial_duty)
     {
@@ -149,6 +174,11 @@ public:
         tim::V.CNT = x;
     }
 
+    static inline volatile count_t arr()
+    {
+        return tim::V.ARR;
+    }
+
     static inline void main_output_enable()
     {
         tim::V.BDTR |= _::BDTR_MOE;
@@ -169,9 +199,10 @@ public:
     {
         using traits = timch_traits<tim_t<INST>, CH>;
 
+        template<output_type_t ot = push_pull, output_speed_t s = high_speed>
         static void setup(count_t initial_duty = 0)
         {
-            alternate_t<PIN, traits::CH>::template setup<push_pull, high_speed>();
+            alternate_t<PIN, traits::CH>::template setup<ot, s>();
             traits::setup_pwm(initial_duty);
         }
 
@@ -185,6 +216,49 @@ public:
             traits::CCR() = x;
         }
     };
+
+    template<channel_t CH, pin_t PIN>
+    struct icc
+    {
+        using traits = timch_traits<tim_t<INST>, CH>;
+
+        template<input_type_t it = floating>
+        static void setup()
+        {
+            alternate_t<PIN, traits::CH>::template setup<it>();
+            traits::setup_icc();
+        }
+
+        static inline void enable_interrupt()
+        {
+            tim::V.DIER |= traits::CCIE;
+        }
+
+        static inline volatile bool interrupt_flag()
+        {
+            return (tim::V.SR & traits::CCIF) != 0;
+        }
+
+        static inline void clear_interrupt_flag()
+        {
+            tim::V.SR &= ~traits::CCIF;
+        }
+
+        static count_t count()
+        {
+            return traits::CCR();
+        }
+
+        static void count(count_t x)
+        {
+            traits::CCR() = x;
+        }
+    };
+
+    // for debug only
+
+    // static inline volatile count_t dier() { return tim::V.DIER; }
+    // static inline volatile count_t sr() { return tim::V.SR; }
 };
 
 template<int INST, pin_t PIN1, pin_t PIN2>

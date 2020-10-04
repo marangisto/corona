@@ -109,7 +109,7 @@ struct stm32f0x0_tim1_t
     typedef bit_field_t<0, 0x3> CCMR1_CC1S; // Capture/Compare 1 selection
     typedef bit_field_t<8, 0x3> CCMR1_CC2S; // Capture/Compare 2 selection
     typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
-    typedef bit_field_t<2, 0x3> CCMR1_IC1PCS; // Input capture 1 prescaler
+    typedef bit_field_t<2, 0x3> CCMR1_IC1PSC; // Input capture 1 prescaler
     typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
     typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // Output Compare 1 clear enable

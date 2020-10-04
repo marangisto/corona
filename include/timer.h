@@ -31,8 +31,8 @@ template<typename TIMER> struct timch_traits<TIMER, CH1>
     static void setup_icc()
     {
         tim::V.CCMR1 |= _::CCMR1_CC1S::W(0x1)   // map TI1 input
-                     //|  _::CCMR1_IC1PSC::W(0)   // prescaler
-                     //|  _::CCMR1_IC1F::W(0)     // filter
+                     |  _::CCMR1_IC1PSC::W(0)   // prescaler
+                     |  _::CCMR1_IC1F::W(0)     // filter
                      ;
         tim::V.CCR1  = 0;
         tim::V.CCER  |= _::CCER_CC1E;

@@ -817,7 +817,7 @@ struct stm32g030_tim14_t
     static constexpr uint32_t CCMR1_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<0, 0x3> CCMR1_CC1S; // CC1S
     typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
-    typedef bit_field_t<2, 0x3> CCMR1_ICPCS; // Input capture 1 prescaler
+    typedef bit_field_t<2, 0x3> CCMR1_IC1PSC; // Input capture 1 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
     static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M

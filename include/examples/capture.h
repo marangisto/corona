@@ -10,6 +10,7 @@ using tim = tim_t<TIMER_NO>;
 using icc = tim::icc<CH1, TIMER_CH1>;
 
 static volatile uint32_t count = 0;
+static volatile tim::count_t ovf = 0;
 
 template<> void handler<TIMER_ISR>()
 {
@@ -38,6 +39,7 @@ template<> void handler<TIMER_ISR>()
     if (tim::update_interrupt_flag())
     {
         tim::clear_update_interrupt_flag();
+        ovf = tim::count() - 1;
         overflow += tim::arr() + 1;
         led::toggle();
     }
@@ -72,8 +74,12 @@ int main()
     {
         if (count)
         {
-            printf<serial>("%05d %5d\n", i++, count);
+            if (ovf)
+                printf<serial>("%05d %5u %5u\n", i++, count, ovf);
+            else
+                printf<serial>("%05d %5u\n", i++, count);
             count = 0;
+            ovf = 0;
         }
     }
 }

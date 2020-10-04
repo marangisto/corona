@@ -14,7 +14,7 @@ static inline uint32_t clock_tree_init()
 
     // set system clock to HSE-PLL 72MHz
 
-    constexpr uint8_t wait_states = 0x2;        // 2 wait-states
+    constexpr uint8_t wait_states = 2;  // 2 wait-states
 
     FLASH.ACR = __::ACR_PRFTBE | __::ACR_LATENCY::W(wait_states);
     while (__::ACR_LATENCY::R(FLASH.ACR) != wait_states); // take effect
@@ -36,16 +36,12 @@ static inline uint32_t clock_tree_init()
     return 72000000;
 }
 
-static uint32_t clock_tree_scale(periph_t p, uint32_t f)
+static uint32_t clock_tree_scale(clock_source_t cs, uint32_t f)
 {
-    switch (p)
+    switch (cs)
     {
-    case USART1:;
-    case USART2:;
-    case USART3:
-        return f >> 1;
-    default:
-        return f;
+        case APB1_PERIPH:   return f >> 1;
+        default:            return f;
     }
 }
 

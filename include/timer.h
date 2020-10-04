@@ -2,6 +2,7 @@
 
 #include "gpio.h"
 #include <device/tim.h>
+#include <driver/timer.h>
 
 template<int> struct counter_traits { using type = uint16_t; };
 template<> struct counter_traits<2> { using type = uint32_t; };
@@ -51,10 +52,7 @@ template<typename TIMER> struct timch_traits<TIMER, CH1>
                      |  _::CCMR1_IC1PSC::W(icc_prescale<PRE>::P)
                      |  _::CCMR1_IC1F::W(FILTER & 0xf)
                      ;
-        tim::V.CCER  |= _::CCER_CC1E
-                     |  (EDGE == rising_edge ? 0 : _::CCER_CC1P)
-                     |  (EDGE == both_edges ? _::CCER_CC1NP : 0)
-                     ;
+        tim::V.CCER  |= ccer_traits<CH1, EDGE, _>::CCER;
         tim::V.CCR1  = 0;
     }
 
@@ -92,10 +90,7 @@ template<typename TIMER> struct timch_traits<TIMER, CH2>
                      |  _::CCMR1_IC2PSC::W(icc_prescale<PRE>::P)
                      |  _::CCMR1_IC2F::W(FILTER & 0xf)
                      ;
-        tim::V.CCER  |= _::CCER_CC2E
-                     |  (EDGE == rising_edge ? 0 : _::CCER_CC2P)
-                     |  (EDGE == both_edges ? _::CCER_CC2NP : 0)
-                     ;
+        tim::V.CCER  |= ccer_traits<CH2, EDGE, _>::CCER;
         tim::V.CCR2  = 0;
     }
 
@@ -133,10 +128,7 @@ template<typename TIMER> struct timch_traits<TIMER, CH3>
                      |  _::CCMR2_IC1PSC::W(icc_prescale<PRE>::P)
                      |  _::CCMR2_IC1F::W(FILTER & 0xf)
                      ;
-        tim::V.CCER  |= _::CCER_CC3E
-                     |  (EDGE == rising_edge ? 0 : _::CCER_CC3P)
-                     |  (EDGE == both_edges ? _::CCER_CC3NP : 0)
-                     ;
+        tim::V.CCER  |= ccer_traits<CH3, EDGE, _>::CCER;
         tim::V.CCR3  = 0;
     }
 
@@ -174,10 +166,7 @@ template<typename TIMER> struct timch_traits<TIMER, CH4>
                      |  _::CCMR2_IC4PSC::W(icc_prescale<PRE>::P)
                      |  _::CCMR2_IC4F::W(FILTER & 0xf)
                      ;
-        tim::V.CCER  |= _::CCER_CC4E
-                     |  (EDGE == rising_edge ? 0 : _::CCER_CC4P)
-                     |  (EDGE == both_edges ? _::CCER_CC4NP : 0)
-                     ;
+        tim::V.CCER  |= ccer_traits<CH4, EDGE, _>::CCER;
         tim::V.CCR4  = 0;
     }
 

@@ -72,9 +72,9 @@ int main()
 
     tim::setup(tim_pre, 65535);
     tim::enable_update_interrupt();
-    icc1::setup();
+    icc1::setup<floating, rising_edge>();
     icc1::enable_interrupt();
-    icc2::setup();
+    icc2::setup<floating, rising_edge>();
     icc2::enable_interrupt();
     interrupt::set<TIMER_ISR>();
 

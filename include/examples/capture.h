@@ -7,41 +7,47 @@ using serial = usart_t<SERIAL_USART, SERIAL_TX, SERIAL_RX>;
 using led = output_t<LED>;
 using out = output_t<PROBE>;
 using tim = tim_t<TIMER_NO>;
-using icc = tim::icc<CH1, TIMER_CH1>;
+using icc1 = tim::icc<CH1, TIMER_CH1>;
+using icc2 = tim::icc<CH2, TIMER_CH2>;
 
-static volatile uint32_t count = 0;
-static volatile tim::count_t ovf = 0;
+static volatile bool update = false;
+static volatile uint32_t count1 = 0;
+static volatile uint32_t accum1 = 0;
+static volatile uint32_t count2 = 0;
+static volatile uint32_t accum2 = 0;
 
 template<> void handler<TIMER_ISR>()
 {
-    static bool idle = true;
-    static uint32_t start = 0;
-    static uint32_t overflow = 0;
-
-    if (icc::interrupt_flag())
-    {
-        icc::clear_interrupt_flag();
-
-        if (idle)
-        {
-            start = icc::count();
-            idle = false;
-            overflow = 0;
-        }
-        else
-        {
-            count = overflow + icc::count() - start;
-            tim::set_count(0);
-            idle = true;
-        }
-    }
+    static tim::count_t last1 = 0, last2 = 0;
 
     if (tim::update_interrupt_flag())
     {
+        uint32_t arr = tim::arr();
+
         tim::clear_update_interrupt_flag();
-        ovf = tim::count() - 1;
-        overflow += tim::arr() + 1;
+        accum1 += arr + 1;
+        accum2 += arr + 1;
         led::toggle();
+    }
+
+    if (icc1::interrupt_flag())
+    {
+        icc1::clear_interrupt_flag();
+        tim::count_t x = icc1::count();
+        count1 = (x - last1) + accum1;
+        last1 = x;
+        accum1 = 0;
+        update = true;
+    }
+
+    if (icc2::interrupt_flag())
+    {
+        icc2::clear_interrupt_flag();
+        tim::count_t x = icc2::count();
+        count2 = (x - last2) + accum2;
+        last2 = x;
+        accum2 = 0;
+        update = true;
     }
 }
 
@@ -66,20 +72,18 @@ int main()
 
     tim::setup(tim_pre, 65535);
     tim::enable_update_interrupt();
-    icc::setup();
-    icc::enable_interrupt();
+    icc1::setup();
+    icc1::enable_interrupt();
+    icc2::setup();
+    icc2::enable_interrupt();
     interrupt::set<TIMER_ISR>();
 
     for (uint32_t i = 0;;)
     {
-        if (count)
+        if (update)
         {
-            if (ovf)
-                printf<serial>("%05d %5u %5u\n", i++, count, ovf);
-            else
-                printf<serial>("%05d %5u\n", i++, count);
-            count = 0;
-            ovf = 0;
+            printf<serial>("%05d %5u %5u\n", i++, count1, count2);
+            update = 0;
         }
     }
 }

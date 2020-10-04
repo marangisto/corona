@@ -122,7 +122,7 @@ struct stm32f722_tim1_t
     typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
     typedef bit_field_t<2, 0x3> CCMR1_IC1PSC; // Input capture 1 prescaler
     typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
-    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PSC; // Input capture 2 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // Output Compare 1 clear enable
     static constexpr uint32_t CCMR1_OC1FE = 0x4; // Output Compare 1 fast enable
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // Output Compare 1 mode
@@ -352,7 +352,7 @@ struct stm32f745_tim1_t
     typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
     typedef bit_field_t<2, 0x3> CCMR1_IC1PSC; // Input capture 1 prescaler
     typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
-    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PSC; // Input capture 2 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // Output Compare 1 clear enable
     static constexpr uint32_t CCMR1_OC1FE = 0x4; // Output Compare 1 fast enable
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // Output Compare 1 mode
@@ -569,7 +569,7 @@ struct stm32f767_tim1_t
     typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
     typedef bit_field_t<2, 0x3> CCMR1_IC1PSC; // Input capture 1 prescaler
     typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
-    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PSC; // Input capture 2 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // Output Compare 1 clear enable
     static constexpr uint32_t CCMR1_OC1FE = 0x4; // Output Compare 1 fast enable
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // Output Compare 1 mode
@@ -798,7 +798,7 @@ struct stm32f768_tim1_t
     typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
     typedef bit_field_t<2, 0x3> CCMR1_IC1PSC; // Input capture 1 prescaler
     typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
-    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PSC; // Input capture 2 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // Output Compare 1 clear enable
     static constexpr uint32_t CCMR1_OC1FE = 0x4; // Output Compare 1 fast enable
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // Output Compare 1 mode
@@ -996,7 +996,7 @@ struct stm32f722_tim2_t
     typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
     typedef bit_field_t<2, 0x3> CCMR1_IC1PSC; // Input capture 1 prescaler
     typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
-    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PSC; // Input capture 2 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
     static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
@@ -1172,7 +1172,7 @@ struct stm32f730_tim2_t
     typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
     typedef bit_field_t<2, 0x3> CCMR1_IC1PSC; // Input capture 1 prescaler
     typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
-    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PSC; // Input capture 2 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
     static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
@@ -1349,7 +1349,7 @@ struct stm32f745_tim2_t
     typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
     typedef bit_field_t<2, 0x3> CCMR1_IC1PSC; // Input capture 1 prescaler
     typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
-    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PSC; // Input capture 2 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
     static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
@@ -1527,7 +1527,7 @@ struct stm32f767_tim2_t
     typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
     typedef bit_field_t<2, 0x3> CCMR1_IC1PSC; // Input capture 1 prescaler
     typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
-    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PSC; // Input capture 2 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
     static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
@@ -1704,7 +1704,7 @@ struct stm32f722_tim3_t
     typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
     typedef bit_field_t<2, 0x3> CCMR1_IC1PSC; // Input capture 1 prescaler
     typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
-    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PSC; // Input capture 2 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
     static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
@@ -1876,7 +1876,7 @@ struct stm32f730_tim3_t
     typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
     typedef bit_field_t<2, 0x3> CCMR1_IC1PSC; // Input capture 1 prescaler
     typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
-    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PSC; // Input capture 2 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
     static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
@@ -2050,7 +2050,7 @@ struct stm32f745_tim3_t
     typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
     typedef bit_field_t<2, 0x3> CCMR1_IC1PSC; // Input capture 1 prescaler
     typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
-    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PSC; // Input capture 2 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
     static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
@@ -2226,7 +2226,7 @@ struct stm32f767_tim3_t
     typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
     typedef bit_field_t<2, 0x3> CCMR1_IC1PSC; // Input capture 1 prescaler
     typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
-    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PSC; // Input capture 2 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
     static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
@@ -2400,7 +2400,7 @@ struct stm32f745_tim4_t
     typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
     typedef bit_field_t<2, 0x3> CCMR1_IC1PSC; // Input capture 1 prescaler
     typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
-    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PSC; // Input capture 2 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
     static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
@@ -2566,7 +2566,7 @@ struct stm32f767_tim4_t
     typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
     typedef bit_field_t<2, 0x3> CCMR1_IC1PSC; // Input capture 1 prescaler
     typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
-    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PSC; // Input capture 2 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
     static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
@@ -2735,7 +2735,7 @@ struct stm32f722_tim5_t
     typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
     typedef bit_field_t<2, 0x3> CCMR1_IC1PSC; // Input capture 1 prescaler
     typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
-    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PSC; // Input capture 2 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
     static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
@@ -2911,7 +2911,7 @@ struct stm32f730_tim5_t
     typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
     typedef bit_field_t<2, 0x3> CCMR1_IC1PSC; // Input capture 1 prescaler
     typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
-    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PSC; // Input capture 2 prescaler
     static constexpr uint32_t CCMR1_OC1CE = 0x80; // OC1CE
     static constexpr uint32_t CCMR1_OC1FE = 0x4; // OC1FE
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // OC1M
@@ -3150,7 +3150,7 @@ struct stm32f722_tim9_t
     typedef bit_field_t<4, 0x7> CCMR1_IC1F; // Input capture 1 filter
     typedef bit_field_t<2, 0x3> CCMR1_IC1PSC; // Input capture 1 prescaler
     typedef bit_field_t<12, 0x7> CCMR1_IC2F; // Input capture 2 filter
-    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PSC; // Input capture 2 prescaler
     static constexpr uint32_t CCMR1_OC1FE = 0x4; // Output Compare 1 fast enable
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // Output Compare 1 mode
     static constexpr uint32_t CCMR1_OC1M_3 = 0x10000; // Output Compare 1 mode - bit 3
@@ -3246,7 +3246,7 @@ struct stm32f745_tim9_t
     typedef bit_field_t<4, 0x7> CCMR1_IC1F; // Input capture 1 filter
     typedef bit_field_t<2, 0x3> CCMR1_IC1PSC; // Input capture 1 prescaler
     typedef bit_field_t<12, 0x7> CCMR1_IC2F; // Input capture 2 filter
-    typedef bit_field_t<10, 0x3> CCMR1_IC2PCS; // Input capture 2 prescaler
+    typedef bit_field_t<10, 0x3> CCMR1_IC2PSC; // Input capture 2 prescaler
     static constexpr uint32_t CCMR1_OC1FE = 0x4; // Output Compare 1 fast enable
     typedef bit_field_t<4, 0x7> CCMR1_OC1M; // Output Compare 1 mode
     static constexpr uint32_t CCMR1_OC1PE = 0x8; // Output Compare 1 preload enable

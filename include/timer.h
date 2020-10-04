@@ -7,6 +7,17 @@ template<int> struct counter_traits { using type = uint16_t; };
 template<> struct counter_traits<2> { using type = uint32_t; };
 template<> struct counter_traits<5> { using type = uint32_t; };
 
+template<int> struct icc_prescale {};
+template<> struct icc_prescale<1> { static constexpr uint8_t P = 0x0; };
+template<> struct icc_prescale<2> { static constexpr uint8_t P = 0x1; };
+template<> struct icc_prescale<4> { static constexpr uint8_t P = 0x2; };
+template<> struct icc_prescale<8> { static constexpr uint8_t P = 0x3; };
+
+enum icc_input_t
+    { regular_input = 0x1
+    , alternate_input = 0x2
+    };
+
 template<typename TIMER, channel_t CH> struct timch_traits {};
 
 template<typename TIMER> struct timch_traits<TIMER, CH1>
@@ -28,17 +39,23 @@ template<typename TIMER> struct timch_traits<TIMER, CH1>
         tim::V.CCER  |= _::CCER_CC1E;
     }
 
+    template
+        < icc_input_t       INPUT   // regular|alternate|trigger
+        , trigger_edge_t    EDGE    // rising|falling\both
+        , uint8_t           PRE     // 1|2|4|8
+        , uint8_t           FILTER  // see docs
+        >
     static void setup_icc()
     {
-        tim::V.CCMR1 |= _::CCMR1_CC1S::W(0x1)   // map TI1 input
-                     |  _::CCMR1_IC1PSC::W(0)   // prescaler
-                     |  _::CCMR1_IC1F::W(0)     // filter
+        tim::V.CCMR1 |= _::CCMR1_CC1S::W(INPUT)
+                     |  _::CCMR1_IC1PSC::W(icc_prescale<PRE>::P)
+                     |  _::CCMR1_IC1F::W(FILTER & 0xf)
+                     ;
+        tim::V.CCER  |= _::CCER_CC1E
+                     |  (EDGE == rising_edge ? 0 : _::CCER_CC1P)
+                     |  (EDGE == both_edges ? _::CCER_CC1NP : 0)
                      ;
         tim::V.CCR1  = 0;
-        tim::V.CCER  |= _::CCER_CC1E;
-        tim::V.CCER  |= _::CCER_CC1E
-                     //|  _::CCER_CC1P::W(0x3)    // both edges
-                     ;
     }
 
     static inline volatile uint32_t& CCR() { return tim::V.CCR1; }
@@ -63,6 +80,25 @@ template<typename TIMER> struct timch_traits<TIMER, CH2>
         tim::V.CCER  |= _::CCER_CC2E;
     }
 
+    template
+        < icc_input_t       INPUT   // regular|alternate|trigger
+        , trigger_edge_t    EDGE    // rising|falling\both
+        , uint8_t           PRE     // 1|2|4|8
+        , uint8_t           FILTER  // see docs
+        >
+    static void setup_icc()
+    {
+        tim::V.CCMR1 |= _::CCMR1_CC2S::W(INPUT)
+                     |  _::CCMR1_IC2PSC::W(icc_prescale<PRE>::P)
+                     |  _::CCMR1_IC2F::W(FILTER & 0xf)
+                     ;
+        tim::V.CCER  |= _::CCER_CC2E
+                     |  (EDGE == rising_edge ? 0 : _::CCER_CC2P)
+                     |  (EDGE == both_edges ? _::CCER_CC2NP : 0)
+                     ;
+        tim::V.CCR2  = 0;
+    }
+
     static inline volatile uint32_t& CCR() { return tim::V.CCR2; }
 };
 
@@ -85,6 +121,25 @@ template<typename TIMER> struct timch_traits<TIMER, CH3>
         tim::V.CCER  |= _::CCER_CC3E;
     }
 
+    template
+        < icc_input_t       INPUT   // regular|alternate|trigger
+        , trigger_edge_t    EDGE    // rising|falling\both
+        , uint8_t           PRE     // 1|2|4|8
+        , uint8_t           FILTER  // see docs
+        >
+    static void setup_icc()
+    {
+        tim::V.CCMR2 |= _::CCMR2_CC1S::W(INPUT)
+                     |  _::CCMR2_IC1PSC::W(icc_prescale<PRE>::P)
+                     |  _::CCMR2_IC1F::W(FILTER & 0xf)
+                     ;
+        tim::V.CCER  |= _::CCER_CC3E
+                     |  (EDGE == rising_edge ? 0 : _::CCER_CC3P)
+                     |  (EDGE == both_edges ? _::CCER_CC3NP : 0)
+                     ;
+        tim::V.CCR3  = 0;
+    }
+
     static inline volatile uint32_t& CCR() { return tim::V.CCR3; }
 };
 
@@ -105,6 +160,25 @@ template<typename TIMER> struct timch_traits<TIMER, CH4>
                      ;
         tim::V.CCR4  = initial_duty;
         tim::V.CCER  |= _::CCER_CC4E;
+    }
+
+    template
+        < icc_input_t       INPUT   // regular|alternate|trigger
+        , trigger_edge_t    EDGE    // rising|falling\both
+        , uint8_t           PRE     // 1|2|4|8
+        , uint8_t           FILTER  // see docs
+        >
+    static void setup_icc()
+    {
+        tim::V.CCMR2 |= _::CCMR2_CC4S::W(INPUT)
+                     |  _::CCMR2_IC4PSC::W(icc_prescale<PRE>::P)
+                     |  _::CCMR2_IC4F::W(FILTER & 0xf)
+                     ;
+        tim::V.CCER  |= _::CCER_CC4E
+                     |  (EDGE == rising_edge ? 0 : _::CCER_CC4P)
+                     |  (EDGE == both_edges ? _::CCER_CC4NP : 0)
+                     ;
+        tim::V.CCR4  = 0;
     }
 
     static inline volatile uint32_t& CCR() { return tim::V.CCR4; }
@@ -222,11 +296,16 @@ public:
     {
         using traits = timch_traits<tim_t<INST>, CH>;
 
-        template<input_type_t it = floating>
+        template
+            < input_type_t      it      = floating
+            , trigger_edge_t    edge    = rising_edge
+            , uint8_t           pre     = 1
+            , uint8_t           filter  = 0
+            >
         static void setup()
         {
             alternate_t<PIN, traits::CH>::template setup<it>();
-            traits::setup_icc();
+            traits::template setup_icc<regular_input, edge, pre, filter>();
         }
 
         static inline void enable_interrupt()

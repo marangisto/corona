@@ -69,14 +69,16 @@ static inline uint32_t clock_tree_init()
     return 480000000;
 }
 
-static uint32_t clock_tree_scale(periph_t p, uint32_t f)
+static uint32_t clock_tree_scale(clock_source_t cs, uint32_t f)
 {
-    switch (p)
+    switch (cs)
     {
-    case STK:
-        return f;
-    default:
-        return f >> 2;
+        case AHB_STK:       return f;
+        //case APB1_PERIPH:   return f >> 3;
+        //case APB1_TIMER:    return f >> 2;
+        //case APB2_PERIPH:   return f >> 2;
+        //case APB2_TIMER:    return f >> 1;
+        default:            return f >> 2;
     }
 }
 

@@ -40,13 +40,16 @@ static inline uint32_t clock_tree_init()
         while (!(PWR.CSR1 & _::CSR1_ODRDY));    // wait for over-drive ready
     }
 
-    // we leave HPRE = 0 but set ppre[12] to divide 4 for APB 54MHz
+    // we leave HPRE = 0 but set ppre 1 / 2 to divide 8 / 4 for APB 27MHz / 54MHz
 
-    RCC.CFGR |= _::CFGR_PPRE1::W(0x5) | _::CFGR_PPRE2::W(0x5);
+    RCC.CFGR |= _::CFGR_PPRE1::W(0x6) | _::CFGR_PPRE2::W(0x5);
 
-    // set system clock to HSI-PLL 216MHz
+    // set system clock to HSE-PLL 216MHz
 
-    // pllN = 216.0, pllM = 8.0, pllP = 2.0, pllQ = 9.0
+    RCC.CR |= _::CR_HSEON;              // enable external clock
+    while (!(RCC.CR & _::CR_HSERDY));   // wait for HSE ready
+
+    // pllN = 216.0, pllM = 4.0, pllP = 2.0, pllQ = 9.0
     // pllR = 2.0, fPllP = 2.16e8, fPllQ = 4.8e7, fPllR = 2.16e8
 
     enum pllP_t { pllP_2 = 0x0
@@ -56,11 +59,11 @@ static inline uint32_t clock_tree_init()
                 };
 
     constexpr uint16_t pllN = 216;      // 9 bits, valid range [50..432]
-    constexpr uint8_t pllM = 8;         // 6 bits, valid range [2..63]
+    constexpr uint8_t pllM = 4;         // 6 bits, valid range [2..63]
     constexpr pllP_t pllP = pllP_2;     // 2 bits, enum range [2, 4, 6, 8]
     constexpr uint8_t pllQ = 9;         // 4 bits, valid range [2..15]
 //  constexpr uint8_t pllR = 2;         // 3 bits, valid range [2..7]
-    constexpr uint8_t pllSRC = 0;       // 1 bit, 0 = HSI, 1 = HSE
+    constexpr uint8_t pllSRC = 1;       // 1 bit, 0 = HSI, 1 = HSE
 
     RCC.PLLCFGR = (pllSRC ? _::PLLCFGR_PLLSRC : 0)
                 | _::PLLCFGR_PLLN::W(pllN)
@@ -78,7 +81,7 @@ static inline uint32_t clock_tree_init()
 
     // set timer clock prescaler selection
 
-    RCC.DCKCFGR1 |= _::DCKCFGR1_TIMPRE;         // use HCLK for timers
+    // RCC.DCKCFGR1 |= _::DCKCFGR1_TIMPRE;         // use HCLK for timers
 
     fpu_cpacr_t::V.CPACR |= fpu_cpacr_t::T::CPACR_CP::W(0xf); // enable fpu
     __asm volatile ("dsb");         // data pipe-line reset
@@ -86,21 +89,15 @@ static inline uint32_t clock_tree_init()
     return 216000000;
 }
 
-static uint32_t clock_tree_scale(periph_t p, uint32_t f)
+static uint32_t clock_tree_scale(clock_source_t cs, uint32_t f)
 {
-    switch (p)
+    switch (cs)
     {
-    case UART4:;
-    case UART5:;
-    case UART7:;
-    case UART8:;
-    case USART1:;
-    case USART2:;
-    case USART3:;
-    case USART6:
-        return f >> 2;
-    default:
-        return f;
+        case APB1_PERIPH:   return f >> 3;
+        case APB1_TIMER:    return f >> 2;
+        case APB2_PERIPH:   return f >> 2;
+        case APB2_TIMER:    return f >> 1;
+        default:            return f;
     }
 }
 

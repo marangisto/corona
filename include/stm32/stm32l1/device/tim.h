@@ -92,7 +92,7 @@ struct stm32l100_tim2_t
 
     static constexpr uint32_t CCMR1_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<0, 0x3> CCMR1_CC1S; // Capture/Compare 1 selection
-    static constexpr uint32_t CCMR1_CC2S = 0x100; // Capture/Compare 2 selection
+    typedef bit_field_t<8, 0x3> CCMR1_CC2S; // Capture/Compare 2 selection
     typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
     typedef bit_field_t<2, 0x3> CCMR1_IC1PSC; // Input capture 1 prescaler
     typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter
@@ -108,7 +108,7 @@ struct stm32l100_tim2_t
 
     static constexpr uint32_t CCMR2_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<0, 0x3> CCMR2_CC3S; // Capture/Compare 3 selection
-    static constexpr uint32_t CCMR2_CC4S = 0x100; // Capture/Compare 4 selection
+    typedef bit_field_t<8, 0x3> CCMR2_CC4S; // Capture/Compare 4 selection
     typedef bit_field_t<4, 0xf> CCMR2_IC3F; // Input capture 3 filter
     typedef bit_field_t<2, 0x3> CCMR2_IC3PSC; // Input capture 3 prescaler
     typedef bit_field_t<12, 0xf> CCMR2_IC4F; // Input capture 4 filter
@@ -273,7 +273,7 @@ struct stm32l100_tim9_t
 
     static constexpr uint32_t CCMR1_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<0, 0x3> CCMR1_CC1S; // Capture/Compare 1 selection
-    static constexpr uint32_t CCMR1_CC2S = 0x100; // Capture/Compare 2 selection
+    typedef bit_field_t<8, 0x3> CCMR1_CC2S; // Capture/Compare 2 selection
     typedef bit_field_t<4, 0xf> CCMR1_IC1F; // Input capture 1 filter
     typedef bit_field_t<2, 0x3> CCMR1_IC1PSC; // Input capture 1 prescaler
     typedef bit_field_t<12, 0xf> CCMR1_IC2F; // Input capture 2 filter

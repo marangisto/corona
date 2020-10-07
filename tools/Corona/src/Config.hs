@@ -5,6 +5,7 @@ module Config
     , getBaseDir
     , getLink
     , getEntry
+    , getHSE
     ) where
 
 import Types
@@ -52,6 +53,9 @@ getLink = getConfig "LINK"
 
 getEntry :: Action FilePath
 getEntry = fromMaybe "__reset" <$> getConfig "ENTRY"
+
+getHSE :: Action Int
+getHSE = fromMaybe 0 . fmap read <$> getConfig "HSE"
 
 findMCU :: String -> Maybe MCU
 findMCU x = find ((==x) . name) mcuList

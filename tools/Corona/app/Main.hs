@@ -82,6 +82,7 @@ main = do
                 m = out -<.> "m"
             (command, flags) <- tool <$> toolChain
             mcu <- getMCU
+            hse <- (("HSE="<>) . show) <$> getHSE
             libs <- getLibs mcu
             defs <- getDefs
             let include = map ("-I"<>) $ "." :
@@ -93,7 +94,7 @@ main = do
                     | lib <- libs
                     , lib == "corona"
                     ]
-                define = [ "-D" <> def | def <- defs ]
+                define = [ "-D" <> def | def <- hse : defs ]
             () <- cmd command (flags [])
                 [ "-c", "-Werror", "-Wall", "-Os" ] include define
                 [ src ] "-o" [ out ] "-MMD -MF" [ m ]

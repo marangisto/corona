@@ -55,8 +55,14 @@ struct adc_api_t: private IMPL<NO>
 
     static void start_conversion() { impl::start_conversion(); }
 
-    template<uint8_t CH>
-    static uint16_t read() { return impl::template read<CH>(); }
+    template<typename ANALOG>
+    static uint16_t read()
+    {
+        constexpr periph_t P = adc_traits<NO>::adc::P;
+        constexpr uint8_t CH = ANALOG::template CHAN<P>;
+
+        return impl::template read<CH>();
+    }
 
     static inline void enable_interrupt(uint32_t flags)
     {

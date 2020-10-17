@@ -7,6 +7,12 @@ static const pin_t          BTN = PC13;
 static const input_type_t   BTN_TYPE = pull_down;
 static const interrupt_t    BTN_ISR = interrupt::EXTI15_10;
 static const pin_t          PROBE = PA8;
+static const pin_t          A0 = PA0;
+static const pin_t          A1 = PA1;
+static const pin_t          A2 = PA4;
+static const pin_t          A3 = PB0;
+static const pin_t          A4 = PC0;
+static const pin_t          A5 = PC1;
 
 static const int            SERIAL_USART = 2;
 static const pin_t          SERIAL_TX = PA2;

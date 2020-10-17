@@ -131,25 +131,25 @@ public:
     }
 };
 
-/*
-template<pin_t PIN>
-class analog_t
+template<pin_t PIN, int POLARITY = 1>
+class analog_t: private gpio_driver<PIN>
 {
 public:
+    using BASE = gpio_driver<PIN>;
+
+    template<periph_t PERIPH>
+    static constexpr uint8_t CHAN
+        = adc_dac_chan<PERIPH, PIN, POLARITY>::CHAN;
+
     template<input_type_t input_type = floating>
     static inline void setup()
     {
-        device::peripheral_traits<typename port_traits<pin_port(PIN)>::gpio_t>::enable();
-        pin::gpio().MODER |= 0x3 << (pin::bit_pos*2);
-        static_assert(input_type != pull_up, "only floating or pull-down modes allowed for analog pins");
-        if (input_type != floating)
-            pin::gpio().PUPDR |= input_type << (pin::bit_pos*2);
+        gpio_traits<BASE::PORT>::template enable<rcc_t>();
+        gpio_driver<PIN>::template setup_analog<input_type>();
     }
 
-private:
-    typedef pin_t<PIN> pin;
+    // FIXME: output setup for DAC
 };
- */
 
 template<pin_t PIN, signal_t ALT>
 class alternate_t: private gpio_driver<PIN>

@@ -6,12 +6,8 @@
 using serial = usart_t<SERIAL_USART, SERIAL_TX, SERIAL_RX>;
 using led = output_t<LED>;
 using adc = adc_t<1>;
-
-// FIXME: use traits to map pins to ADC channels
-static constexpr int A0 = 1;
-static constexpr int A1 = 2;
-static constexpr int A2 = 7;    // A4 on board!
-static constexpr int A3 = 6;    // A5 on board!
+using a0 = analog_t<A0>;
+using a1 = analog_t<A1>;
 
 template<> void handler<SERIAL_ISR>()
 {
@@ -27,6 +23,8 @@ int main()
 
     printf<serial>("ADC demo\n");
 
+    a0::setup();
+    a1::setup();
     adc::setup();
     adc::enable();
 
@@ -34,8 +32,8 @@ int main()
 
     for (auto t = 0;; t += dt)
     {
-        uint16_t y0 = adc::read<A0>();
-        uint16_t y1 = adc::read<A1>();
+        uint16_t y0 = adc::read<a0>();
+        uint16_t y1 = adc::read<a1>();
 
         printf<serial>("%4d %4d\n", y0, y1);
         sys_tick::delay_ms(dt);

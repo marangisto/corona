@@ -26,6 +26,21 @@ struct gpio_driver
             GPIO.PUPDR |= input_type << (POS*2);
     }
 
+    template<input_type_t input_type>
+    static inline void setup_analog()
+    {
+        typename gpio_t<PORT>::T& GPIO = gpio_t<PORT>::V;
+
+        static_assert
+            ( input_type != pull_up
+            , "only floating or pull-down modes allowed for analog pins"
+            );
+
+        GPIO.MODER |= (0x3 << (POS*2));
+        if (input_type != floating)
+            GPIO.PUPDR |= input_type << (POS*2);
+    }
+
     template
         < signal_t SIG
         , output_type_t output_type

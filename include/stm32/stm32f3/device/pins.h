@@ -5882,3 +5882,580 @@ struct signal_traits<CFG, PH2, EVENTOUT>
         > AF = AF1;
 };
 
+template<periph_t PERIPH, pin_t PIN, int POLARITY>
+struct adc_dac_chan{};
+
+template<>
+struct adc_dac_chan<ADC1, PA0, 1>
+{
+    static constexpr uint8_t CHAN = 0;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PA0, 1>
+{
+    static constexpr uint8_t CHAN = 1;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PA1, 1>
+{
+    static constexpr uint8_t CHAN = 1;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PA1, 1>
+{
+    static constexpr uint8_t CHAN = 2;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PA2, 1>
+{
+    static constexpr uint8_t CHAN = 2;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PA2, 1>
+{
+    static constexpr uint8_t CHAN = 3;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PA3, 1>
+{
+    static constexpr uint8_t CHAN = 3;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PA3, 1>
+{
+    static constexpr uint8_t CHAN = 4;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PA4, 1>
+{
+    static constexpr uint8_t CHAN = 4;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PA4, 1>
+{
+    static constexpr uint8_t CHAN = 5;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PA5, 1>
+{
+    static constexpr uint8_t CHAN = 5;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PA6, 1>
+{
+    static constexpr uint8_t CHAN = 10;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PA6, 1>
+{
+    static constexpr uint8_t CHAN = 6;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PA7, 1>
+{
+    static constexpr uint8_t CHAN = 15;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PA7, 1>
+{
+    static constexpr uint8_t CHAN = 7;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PB0, 1>
+{
+    static constexpr uint8_t CHAN = 11;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PB0, 1>
+{
+    static constexpr uint8_t CHAN = 8;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PB1, 1>
+{
+    static constexpr uint8_t CHAN = 12;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PB1, 1>
+{
+    static constexpr uint8_t CHAN = 9;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PB11, 1>
+{
+    static constexpr uint8_t CHAN = 14;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PB13, 1>
+{
+    static constexpr uint8_t CHAN = 13;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PC0, 1>
+{
+    static constexpr uint8_t CHAN = 10;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PC0, 1>
+{
+    static constexpr uint8_t CHAN = 6;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PC1, 1>
+{
+    static constexpr uint8_t CHAN = 11;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PC1, 1>
+{
+    static constexpr uint8_t CHAN = 7;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PC2, 1>
+{
+    static constexpr uint8_t CHAN = 12;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PC2, 1>
+{
+    static constexpr uint8_t CHAN = 8;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PC3, 1>
+{
+    static constexpr uint8_t CHAN = 13;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PC3, 1>
+{
+    static constexpr uint8_t CHAN = 9;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PC4, 1>
+{
+    static constexpr uint8_t CHAN = 14;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PC5, 1>
+{
+    static constexpr uint8_t CHAN = 15;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PF2, 1>
+{
+    static constexpr uint8_t CHAN = 10;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PF4, 1>
+{
+    static constexpr uint8_t CHAN = 5;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC2, PA4, 1>
+{
+    static constexpr uint8_t CHAN = 1;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC2, PA5, 1>
+{
+    static constexpr uint8_t CHAN = 2;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC2, PA6, 1>
+{
+    static constexpr uint8_t CHAN = 3;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC2, PA7, 1>
+{
+    static constexpr uint8_t CHAN = 4;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC2, PB2, 1>
+{
+    static constexpr uint8_t CHAN = 12;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC2, PB11, 1>
+{
+    static constexpr uint8_t CHAN = 14;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC2, PB12, 1>
+{
+    static constexpr uint8_t CHAN = 13;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC2, PB14, 1>
+{
+    static constexpr uint8_t CHAN = 14;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC2, PB15, 1>
+{
+    static constexpr uint8_t CHAN = 15;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC2, PC0, 1>
+{
+    static constexpr uint8_t CHAN = 6;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC2, PC1, 1>
+{
+    static constexpr uint8_t CHAN = 7;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC2, PC2, 1>
+{
+    static constexpr uint8_t CHAN = 8;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC2, PC3, 1>
+{
+    static constexpr uint8_t CHAN = 9;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC2, PC4, 1>
+{
+    static constexpr uint8_t CHAN = 5;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC2, PC5, 1>
+{
+    static constexpr uint8_t CHAN = 11;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC2, PF2, 1>
+{
+    static constexpr uint8_t CHAN = 10;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC3, PB0, 1>
+{
+    static constexpr uint8_t CHAN = 12;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC3, PB1, 1>
+{
+    static constexpr uint8_t CHAN = 1;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC3, PB13, 1>
+{
+    static constexpr uint8_t CHAN = 5;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC3, PD10, 1>
+{
+    static constexpr uint8_t CHAN = 7;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC3, PD11, 1>
+{
+    static constexpr uint8_t CHAN = 8;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC3, PD12, 1>
+{
+    static constexpr uint8_t CHAN = 9;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC3, PD13, 1>
+{
+    static constexpr uint8_t CHAN = 10;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC3, PD14, 1>
+{
+    static constexpr uint8_t CHAN = 11;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC3, PE7, 1>
+{
+    static constexpr uint8_t CHAN = 13;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC3, PE8, 1>
+{
+    static constexpr uint8_t CHAN = 6;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC3, PE9, 1>
+{
+    static constexpr uint8_t CHAN = 2;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC3, PE10, 1>
+{
+    static constexpr uint8_t CHAN = 14;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC3, PE11, 1>
+{
+    static constexpr uint8_t CHAN = 15;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC3, PE12, 1>
+{
+    static constexpr uint8_t CHAN = 16;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC3, PE13, 1>
+{
+    static constexpr uint8_t CHAN = 3;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC4, PB12, 1>
+{
+    static constexpr uint8_t CHAN = 3;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC4, PB14, 1>
+{
+    static constexpr uint8_t CHAN = 4;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC4, PB15, 1>
+{
+    static constexpr uint8_t CHAN = 5;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC4, PD8, 1>
+{
+    static constexpr uint8_t CHAN = 12;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC4, PD9, 1>
+{
+    static constexpr uint8_t CHAN = 13;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC4, PD10, 1>
+{
+    static constexpr uint8_t CHAN = 7;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC4, PD11, 1>
+{
+    static constexpr uint8_t CHAN = 8;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC4, PD12, 1>
+{
+    static constexpr uint8_t CHAN = 9;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC4, PD13, 1>
+{
+    static constexpr uint8_t CHAN = 10;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC4, PD14, 1>
+{
+    static constexpr uint8_t CHAN = 11;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC4, PE8, 1>
+{
+    static constexpr uint8_t CHAN = 6;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC4, PE14, 1>
+{
+    static constexpr uint8_t CHAN = 1;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC4, PE15, 1>
+{
+    static constexpr uint8_t CHAN = 2;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<DAC1, PA4, 1>
+{
+    static constexpr uint8_t CHAN = 1;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<DAC1, PA4, 1>
+{
+    static constexpr uint8_t CHAN = 1;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<DAC1, PA5, 1>
+{
+    static constexpr uint8_t CHAN = 2;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<DAC1, PA5, 1>
+{
+    static constexpr uint8_t CHAN = 2;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<DAC2, PA6, 1>
+{
+    static constexpr uint8_t CHAN = 1;
+    static constexpr uint8_t BANK = 0;
+};
+

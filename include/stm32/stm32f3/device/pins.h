@@ -6432,20 +6432,6 @@ struct adc_dac_chan<DAC1, PA4, 1>
 };
 
 template<>
-struct adc_dac_chan<DAC1, PA4, 1>
-{
-    static constexpr uint8_t CHAN = 1;
-    static constexpr uint8_t BANK = 0;
-};
-
-template<>
-struct adc_dac_chan<DAC1, PA5, 1>
-{
-    static constexpr uint8_t CHAN = 2;
-    static constexpr uint8_t BANK = 0;
-};
-
-template<>
 struct adc_dac_chan<DAC1, PA5, 1>
 {
     static constexpr uint8_t CHAN = 2;

@@ -180,8 +180,8 @@ class alternate_t<NO_PIN, ALT>
 {
 public:
     template
-        < output_speed_t speed = low_speed
-        , output_type_t output_type = push_pull
+        < output_type_t output_type = push_pull
+        , output_speed_t speed = low_speed
         >  // FIXME: should we not have output_type option here?
     static inline void setup() {}
 

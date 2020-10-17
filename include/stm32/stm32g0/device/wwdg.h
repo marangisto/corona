@@ -82,28 +82,29 @@ template<int INST> struct wwdg_traits {};
 template<> struct wwdg_traits<0>
 {
     using wwdg = wwdg_t;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APBENR1 |= RCC::T::APBENR1_WWDGEN;
+        RCC::V.APB1ENR |= RCC::T::APB1ENR_WWDGEN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APBENR1 &= ~RCC::T::APBENR1_WWDGEN;
+        RCC::V.APB1ENR &= ~RCC::T::APB1ENR_WWDGEN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APBSMENR1 |= RCC::T::APBSMENR1_WWDGSMEN;
+        RCC::V.APB1SMENR |= RCC::T::APB1SMENR_WWDGSMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APBSMENR1 &= ~RCC::T::APBSMENR1_WWDGSMEN;
+        RCC::V.APB1SMENR &= ~RCC::T::APB1SMENR_WWDGSMEN;
     }
 };

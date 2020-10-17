@@ -763,34 +763,35 @@ template<int INST> struct syscfg_traits {};
 template<> struct syscfg_traits<0>
 {
     using syscfg = syscfg_t;
+    static constexpr clock_source_t CLOCK = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APBENR2 |= RCC::T::APBENR2_SYSCFGEN;
+        RCC::V.APB2ENR |= RCC::T::APB2ENR_SYSCFGEN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APBENR2 &= ~RCC::T::APBENR2_SYSCFGEN;
+        RCC::V.APB2ENR &= ~RCC::T::APB2ENR_SYSCFGEN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APBSMENR2 |= RCC::T::APBSMENR2_SYSCFGSMEN;
+        RCC::V.APB2SMENR |= RCC::T::APB2SMENR_SYSCFGSMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APBSMENR2 &= ~RCC::T::APBSMENR2_SYSCFGSMEN;
+        RCC::V.APB2SMENR &= ~RCC::T::APB2SMENR_SYSCFGSMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.APBRSTR2 |= RCC::T::APBRSTR2_SYSCFGRST;
+        RCC::V.APB2RSTR |= RCC::T::APB2RSTR_SYSCFGRST;
     }
 };

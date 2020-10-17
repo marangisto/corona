@@ -1669,35 +1669,36 @@ template<> struct tim_traits<1>
     static constexpr signal_t CH3N = TIM1_CH3N;
     static constexpr signal_t CH4 = TIM1_CH4;
     static constexpr signal_t ETR = TIM1_ETR;
+    static constexpr clock_source_t CLOCK = APB2_TIMER;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APBENR2 |= RCC::T::APBENR2_TIM1EN;
+        RCC::V.APB2ENR |= RCC::T::APB2ENR_TIM1EN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APBENR2 &= ~RCC::T::APBENR2_TIM1EN;
+        RCC::V.APB2ENR &= ~RCC::T::APB2ENR_TIM1EN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APBSMENR2 |= RCC::T::APBSMENR2_TIM1SMEN;
+        RCC::V.APB2SMENR |= RCC::T::APB2SMENR_TIM1SMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APBSMENR2 &= ~RCC::T::APBSMENR2_TIM1SMEN;
+        RCC::V.APB2SMENR &= ~RCC::T::APB2SMENR_TIM1SMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.APBRSTR2 |= RCC::T::APBRSTR2_TIM1RST;
+        RCC::V.APB2RSTR |= RCC::T::APB2RSTR_TIM1RST;
     }
 };
 
@@ -1705,35 +1706,36 @@ template<> struct tim_traits<14>
 {
     using tim = tim14_t;
     static constexpr signal_t CH1 = TIM14_CH1;
+    static constexpr clock_source_t CLOCK = APB2_TIMER;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APBENR2 |= RCC::T::APBENR2_TIM14EN;
+        RCC::V.APB2ENR |= RCC::T::APB2ENR_TIM14EN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APBENR2 &= ~RCC::T::APBENR2_TIM14EN;
+        RCC::V.APB2ENR &= ~RCC::T::APB2ENR_TIM14EN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APBSMENR2 |= RCC::T::APBSMENR2_TIM14SMEN;
+        RCC::V.APB2SMENR |= RCC::T::APB2SMENR_TIM14SMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APBSMENR2 &= ~RCC::T::APBSMENR2_TIM14SMEN;
+        RCC::V.APB2SMENR &= ~RCC::T::APB2SMENR_TIM14SMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.APBRSTR2 |= RCC::T::APBRSTR2_TIM14RST;
+        RCC::V.APB2RSTR |= RCC::T::APB2RSTR_TIM14RST;
     }
 };
 
@@ -1744,35 +1746,36 @@ template<> struct tim_traits<15>
     static constexpr signal_t CH1 = TIM15_CH1;
     static constexpr signal_t CH1N = TIM15_CH1N;
     static constexpr signal_t CH2 = TIM15_CH2;
+    static constexpr clock_source_t CLOCK = APB2_TIMER;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APBENR2 |= RCC::T::APBENR2_TIM15EN;
+        RCC::V.APB2ENR |= RCC::T::APB2ENR_TIM15EN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APBENR2 &= ~RCC::T::APBENR2_TIM15EN;
+        RCC::V.APB2ENR &= ~RCC::T::APB2ENR_TIM15EN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APBSMENR2 |= RCC::T::APBSMENR2_TIM15SMEN;
+        RCC::V.APB2SMENR |= RCC::T::APB2SMENR_TIM15SMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APBSMENR2 &= ~RCC::T::APBSMENR2_TIM15SMEN;
+        RCC::V.APB2SMENR &= ~RCC::T::APB2SMENR_TIM15SMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.APBRSTR2 |= RCC::T::APBRSTR2_TIM15RST;
+        RCC::V.APB2RSTR |= RCC::T::APB2RSTR_TIM15RST;
     }
 };
 
@@ -1782,35 +1785,36 @@ template<> struct tim_traits<16>
     static constexpr signal_t BK = TIM16_BK;
     static constexpr signal_t CH1 = TIM16_CH1;
     static constexpr signal_t CH1N = TIM16_CH1N;
+    static constexpr clock_source_t CLOCK = APB2_TIMER;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APBENR2 |= RCC::T::APBENR2_TIM16EN;
+        RCC::V.APB2ENR |= RCC::T::APB2ENR_TIM16EN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APBENR2 &= ~RCC::T::APBENR2_TIM16EN;
+        RCC::V.APB2ENR &= ~RCC::T::APB2ENR_TIM16EN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APBSMENR2 |= RCC::T::APBSMENR2_TIM16SMEN;
+        RCC::V.APB2SMENR |= RCC::T::APB2SMENR_TIM16SMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APBSMENR2 &= ~RCC::T::APBSMENR2_TIM16SMEN;
+        RCC::V.APB2SMENR &= ~RCC::T::APB2SMENR_TIM16SMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.APBRSTR2 |= RCC::T::APBRSTR2_TIM16RST;
+        RCC::V.APB2RSTR |= RCC::T::APB2RSTR_TIM16RST;
     }
 };
 
@@ -1820,35 +1824,36 @@ template<> struct tim_traits<17>
     static constexpr signal_t BK = TIM17_BK;
     static constexpr signal_t CH1 = TIM17_CH1;
     static constexpr signal_t CH1N = TIM17_CH1N;
+    static constexpr clock_source_t CLOCK = APB2_TIMER;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APBENR2 |= RCC::T::APBENR2_TIM17EN;
+        RCC::V.APB2ENR |= RCC::T::APB2ENR_TIM17EN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APBENR2 &= ~RCC::T::APBENR2_TIM17EN;
+        RCC::V.APB2ENR &= ~RCC::T::APB2ENR_TIM17EN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APBSMENR2 |= RCC::T::APBSMENR2_TIM17SMEN;
+        RCC::V.APB2SMENR |= RCC::T::APB2SMENR_TIM17SMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APBSMENR2 &= ~RCC::T::APBSMENR2_TIM17SMEN;
+        RCC::V.APB2SMENR &= ~RCC::T::APB2SMENR_TIM17SMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.APBRSTR2 |= RCC::T::APBRSTR2_TIM17RST;
+        RCC::V.APB2RSTR |= RCC::T::APB2RSTR_TIM17RST;
     }
 };
 
@@ -1860,35 +1865,36 @@ template<> struct tim_traits<2>
     static constexpr signal_t CH3 = TIM2_CH3;
     static constexpr signal_t CH4 = TIM2_CH4;
     static constexpr signal_t ETR = TIM2_ETR;
+    static constexpr clock_source_t CLOCK = APB1_TIMER;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APBENR1 |= RCC::T::APBENR1_TIM2EN;
+        RCC::V.APB1ENR |= RCC::T::APB1ENR_TIM2EN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APBENR1 &= ~RCC::T::APBENR1_TIM2EN;
+        RCC::V.APB1ENR &= ~RCC::T::APB1ENR_TIM2EN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APBSMENR1 |= RCC::T::APBSMENR1_TIM2SMEN;
+        RCC::V.APB1SMENR |= RCC::T::APB1SMENR_TIM2SMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APBSMENR1 &= ~RCC::T::APBSMENR1_TIM2SMEN;
+        RCC::V.APB1SMENR &= ~RCC::T::APB1SMENR_TIM2SMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.APBRSTR1 |= RCC::T::APBRSTR1_TIM2RST;
+        RCC::V.APB1RSTR |= RCC::T::APB1RSTR_TIM2RST;
     }
 };
 
@@ -1900,104 +1906,107 @@ template<> struct tim_traits<3>
     static constexpr signal_t CH3 = TIM3_CH3;
     static constexpr signal_t CH4 = TIM3_CH4;
     static constexpr signal_t ETR = TIM3_ETR;
+    static constexpr clock_source_t CLOCK = APB1_TIMER;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APBENR1 |= RCC::T::APBENR1_TIM3EN;
+        RCC::V.APB1ENR |= RCC::T::APB1ENR_TIM3EN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APBENR1 &= ~RCC::T::APBENR1_TIM3EN;
+        RCC::V.APB1ENR &= ~RCC::T::APB1ENR_TIM3EN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APBSMENR1 |= RCC::T::APBSMENR1_TIM3SMEN;
+        RCC::V.APB1SMENR |= RCC::T::APB1SMENR_TIM3SMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APBSMENR1 &= ~RCC::T::APBSMENR1_TIM3SMEN;
+        RCC::V.APB1SMENR &= ~RCC::T::APB1SMENR_TIM3SMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.APBRSTR1 |= RCC::T::APBRSTR1_TIM3RST;
+        RCC::V.APB1RSTR |= RCC::T::APB1RSTR_TIM3RST;
     }
 };
 
 template<> struct tim_traits<6>
 {
     using tim = tim6_t;
+    static constexpr clock_source_t CLOCK = APB1_TIMER;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APBENR1 |= RCC::T::APBENR1_TIM6EN;
+        RCC::V.APB1ENR |= RCC::T::APB1ENR_TIM6EN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APBENR1 &= ~RCC::T::APBENR1_TIM6EN;
+        RCC::V.APB1ENR &= ~RCC::T::APB1ENR_TIM6EN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APBSMENR1 |= RCC::T::APBSMENR1_TIM6SMEN;
+        RCC::V.APB1SMENR |= RCC::T::APB1SMENR_TIM6SMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APBSMENR1 &= ~RCC::T::APBSMENR1_TIM6SMEN;
+        RCC::V.APB1SMENR &= ~RCC::T::APB1SMENR_TIM6SMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.APBRSTR1 |= RCC::T::APBRSTR1_TIM6RST;
+        RCC::V.APB1RSTR |= RCC::T::APB1RSTR_TIM6RST;
     }
 };
 
 template<> struct tim_traits<7>
 {
     using tim = tim7_t;
+    static constexpr clock_source_t CLOCK = APB1_TIMER;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APBENR1 |= RCC::T::APBENR1_TIM7EN;
+        RCC::V.APB1ENR |= RCC::T::APB1ENR_TIM7EN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APBENR1 &= ~RCC::T::APBENR1_TIM7EN;
+        RCC::V.APB1ENR &= ~RCC::T::APB1ENR_TIM7EN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APBSMENR1 |= RCC::T::APBSMENR1_TIM7SMEN;
+        RCC::V.APB1SMENR |= RCC::T::APB1SMENR_TIM7SMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APBSMENR1 &= ~RCC::T::APBSMENR1_TIM7SMEN;
+        RCC::V.APB1SMENR &= ~RCC::T::APB1SMENR_TIM7SMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.APBRSTR1 |= RCC::T::APBRSTR1_TIM7RST;
+        RCC::V.APB1RSTR |= RCC::T::APB1RSTR_TIM7RST;
     }
 };

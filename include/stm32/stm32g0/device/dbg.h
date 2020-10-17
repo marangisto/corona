@@ -164,34 +164,35 @@ template<int INST> struct dbg_traits {};
 template<> struct dbg_traits<0>
 {
     using dbg = dbg_t;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APBENR1 |= RCC::T::APBENR1_DBGEN;
+        RCC::V.APB1ENR |= RCC::T::APB1ENR_DBGEN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APBENR1 &= ~RCC::T::APBENR1_DBGEN;
+        RCC::V.APB1ENR &= ~RCC::T::APB1ENR_DBGEN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APBSMENR1 |= RCC::T::APBSMENR1_DBGSMEN;
+        RCC::V.APB1SMENR |= RCC::T::APB1SMENR_DBGSMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APBSMENR1 &= ~RCC::T::APBSMENR1_DBGSMEN;
+        RCC::V.APB1SMENR &= ~RCC::T::APB1SMENR_DBGSMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.APBRSTR1 |= RCC::T::APBRSTR1_DBGRST;
+        RCC::V.APB1RSTR |= RCC::T::APB1RSTR_DBGRST;
     }
 };

@@ -177,35 +177,36 @@ template<> struct lptim_traits<1>
     static constexpr signal_t IN1 = LPTIM1_IN1;
     static constexpr signal_t IN2 = LPTIM1_IN2;
     static constexpr signal_t OUT = LPTIM1_OUT;
+    static constexpr clock_source_t CLOCK = APB1_TIMER;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APBENR1 |= RCC::T::APBENR1_LPTIM1EN;
+        RCC::V.APB1ENR |= RCC::T::APB1ENR_LPTIM1EN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APBENR1 &= ~RCC::T::APBENR1_LPTIM1EN;
+        RCC::V.APB1ENR &= ~RCC::T::APB1ENR_LPTIM1EN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APBSMENR1 |= RCC::T::APBSMENR1_LPTIM1SMEN;
+        RCC::V.APB1SMENR |= RCC::T::APB1SMENR_LPTIM1SMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APBSMENR1 &= ~RCC::T::APBSMENR1_LPTIM1SMEN;
+        RCC::V.APB1SMENR &= ~RCC::T::APB1SMENR_LPTIM1SMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.APBRSTR1 |= RCC::T::APBRSTR1_LPTIM1RST;
+        RCC::V.APB1RSTR |= RCC::T::APB1RSTR_LPTIM1RST;
     }
 };
 
@@ -215,34 +216,35 @@ template<> struct lptim_traits<2>
     static constexpr signal_t ETR = LPTIM2_ETR;
     static constexpr signal_t IN1 = LPTIM2_IN1;
     static constexpr signal_t OUT = LPTIM2_OUT;
+    static constexpr clock_source_t CLOCK = APB1_TIMER;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APBENR1 |= RCC::T::APBENR1_LPTIM2EN;
+        RCC::V.APB1ENR |= RCC::T::APB1ENR_LPTIM2EN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APBENR1 &= ~RCC::T::APBENR1_LPTIM2EN;
+        RCC::V.APB1ENR &= ~RCC::T::APB1ENR_LPTIM2EN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APBSMENR1 |= RCC::T::APBSMENR1_LPTIM2SMEN;
+        RCC::V.APB1SMENR |= RCC::T::APB1SMENR_LPTIM2SMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APBSMENR1 &= ~RCC::T::APBSMENR1_LPTIM2SMEN;
+        RCC::V.APB1SMENR &= ~RCC::T::APB1SMENR_LPTIM2SMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.APBRSTR1 |= RCC::T::APBRSTR1_LPTIM2RST;
+        RCC::V.APB1RSTR |= RCC::T::APB1RSTR_LPTIM2RST;
     }
 };

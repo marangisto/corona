@@ -335,35 +335,36 @@ template<> struct usart_traits<1>
     static constexpr signal_t RTS = USART1_RTS;
     static constexpr signal_t RX = USART1_RX;
     static constexpr signal_t TX = USART1_TX;
+    static constexpr clock_source_t CLOCK = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APBENR2 |= RCC::T::APBENR2_USART1EN;
+        RCC::V.APB2ENR |= RCC::T::APB2ENR_USART1EN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APBENR2 &= ~RCC::T::APBENR2_USART1EN;
+        RCC::V.APB2ENR &= ~RCC::T::APB2ENR_USART1EN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APBSMENR2 |= RCC::T::APBSMENR2_USART1SMEN;
+        RCC::V.APB2SMENR |= RCC::T::APB2SMENR_USART1SMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APBSMENR2 &= ~RCC::T::APBSMENR2_USART1SMEN;
+        RCC::V.APB2SMENR &= ~RCC::T::APB2SMENR_USART1SMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.APBRSTR2 |= RCC::T::APBRSTR2_USART1RST;
+        RCC::V.APB2RSTR |= RCC::T::APB2RSTR_USART1RST;
     }
 };
 
@@ -377,35 +378,36 @@ template<> struct usart_traits<2>
     static constexpr signal_t RTS = USART2_RTS;
     static constexpr signal_t RX = USART2_RX;
     static constexpr signal_t TX = USART2_TX;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APBENR1 |= RCC::T::APBENR1_USART2EN;
+        RCC::V.APB1ENR |= RCC::T::APB1ENR_USART2EN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APBENR1 &= ~RCC::T::APBENR1_USART2EN;
+        RCC::V.APB1ENR &= ~RCC::T::APB1ENR_USART2EN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APBSMENR1 |= RCC::T::APBSMENR1_USART2SMEN;
+        RCC::V.APB1SMENR |= RCC::T::APB1SMENR_USART2SMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APBSMENR1 &= ~RCC::T::APBSMENR1_USART2SMEN;
+        RCC::V.APB1SMENR &= ~RCC::T::APB1SMENR_USART2SMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.APBRSTR1 |= RCC::T::APBRSTR1_USART2RST;
+        RCC::V.APB1RSTR |= RCC::T::APB1RSTR_USART2RST;
     }
 };
 
@@ -419,35 +421,36 @@ template<> struct usart_traits<3>
     static constexpr signal_t RTS = USART3_RTS;
     static constexpr signal_t RX = USART3_RX;
     static constexpr signal_t TX = USART3_TX;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APBENR1 |= RCC::T::APBENR1_USART3EN;
+        RCC::V.APB1ENR |= RCC::T::APB1ENR_USART3EN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APBENR1 &= ~RCC::T::APBENR1_USART3EN;
+        RCC::V.APB1ENR &= ~RCC::T::APB1ENR_USART3EN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APBSMENR1 |= RCC::T::APBSMENR1_USART3SMEN;
+        RCC::V.APB1SMENR |= RCC::T::APB1SMENR_USART3SMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APBSMENR1 &= ~RCC::T::APBSMENR1_USART3SMEN;
+        RCC::V.APB1SMENR &= ~RCC::T::APB1SMENR_USART3SMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.APBRSTR1 |= RCC::T::APBRSTR1_USART3RST;
+        RCC::V.APB1RSTR |= RCC::T::APB1RSTR_USART3RST;
     }
 };
 
@@ -461,34 +464,35 @@ template<> struct usart_traits<4>
     static constexpr signal_t RTS = USART4_RTS;
     static constexpr signal_t RX = USART4_RX;
     static constexpr signal_t TX = USART4_TX;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APBENR1 |= RCC::T::APBENR1_USART4EN;
+        RCC::V.APB1ENR |= RCC::T::APB1ENR_USART4EN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APBENR1 &= ~RCC::T::APBENR1_USART4EN;
+        RCC::V.APB1ENR &= ~RCC::T::APB1ENR_USART4EN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APBSMENR1 |= RCC::T::APBSMENR1_USART4SMEN;
+        RCC::V.APB1SMENR |= RCC::T::APB1SMENR_USART4SMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APBSMENR1 &= ~RCC::T::APBSMENR1_USART4SMEN;
+        RCC::V.APB1SMENR &= ~RCC::T::APB1SMENR_USART4SMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.APBRSTR1 |= RCC::T::APBRSTR1_USART4RST;
+        RCC::V.APB1RSTR |= RCC::T::APB1RSTR_USART4RST;
     }
 };

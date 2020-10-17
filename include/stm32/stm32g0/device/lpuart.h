@@ -337,34 +337,35 @@ template<> struct lpuart_traits<1>
     static constexpr signal_t RTS = LPUART1_RTS;
     static constexpr signal_t RX = LPUART1_RX;
     static constexpr signal_t TX = LPUART1_TX;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APBENR1 |= RCC::T::APBENR1_LPUART1EN;
+        RCC::V.APB1ENR |= RCC::T::APB1ENR_LPUART1EN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APBENR1 &= ~RCC::T::APBENR1_LPUART1EN;
+        RCC::V.APB1ENR &= ~RCC::T::APB1ENR_LPUART1EN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APBSMENR1 |= RCC::T::APBSMENR1_LPUART1SMEN;
+        RCC::V.APB1SMENR |= RCC::T::APB1SMENR_LPUART1SMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APBSMENR1 &= ~RCC::T::APBSMENR1_LPUART1SMEN;
+        RCC::V.APB1SMENR &= ~RCC::T::APB1SMENR_LPUART1SMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.APBRSTR1 |= RCC::T::APBRSTR1_LPUART1RST;
+        RCC::V.APB1RSTR |= RCC::T::APB1RSTR_LPUART1RST;
     }
 };

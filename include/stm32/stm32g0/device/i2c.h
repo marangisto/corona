@@ -230,35 +230,36 @@ template<> struct i2c_traits<1>
     static constexpr signal_t SCL = I2C1_SCL;
     static constexpr signal_t SDA = I2C1_SDA;
     static constexpr signal_t SMBA = I2C1_SMBA;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APBENR1 |= RCC::T::APBENR1_I2C1EN;
+        RCC::V.APB1ENR |= RCC::T::APB1ENR_I2C1EN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APBENR1 &= ~RCC::T::APBENR1_I2C1EN;
+        RCC::V.APB1ENR &= ~RCC::T::APB1ENR_I2C1EN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APBSMENR1 |= RCC::T::APBSMENR1_I2C1SMEN;
+        RCC::V.APB1SMENR |= RCC::T::APB1SMENR_I2C1SMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APBSMENR1 &= ~RCC::T::APBSMENR1_I2C1SMEN;
+        RCC::V.APB1SMENR &= ~RCC::T::APB1SMENR_I2C1SMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.APBRSTR1 |= RCC::T::APBRSTR1_I2C1RST;
+        RCC::V.APB1RSTR |= RCC::T::APB1RSTR_I2C1RST;
     }
 };
 
@@ -267,34 +268,35 @@ template<> struct i2c_traits<2>
     using i2c = i2c2_t;
     static constexpr signal_t SCL = I2C2_SCL;
     static constexpr signal_t SDA = I2C2_SDA;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APBENR1 |= RCC::T::APBENR1_I2C2EN;
+        RCC::V.APB1ENR |= RCC::T::APB1ENR_I2C2EN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APBENR1 &= ~RCC::T::APBENR1_I2C2EN;
+        RCC::V.APB1ENR &= ~RCC::T::APB1ENR_I2C2EN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APBSMENR1 |= RCC::T::APBSMENR1_I2C2SMEN;
+        RCC::V.APB1SMENR |= RCC::T::APB1SMENR_I2C2SMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APBSMENR1 &= ~RCC::T::APBSMENR1_I2C2SMEN;
+        RCC::V.APB1SMENR &= ~RCC::T::APB1SMENR_I2C2SMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.APBRSTR1 |= RCC::T::APBRSTR1_I2C2RST;
+        RCC::V.APB1RSTR |= RCC::T::APB1RSTR_I2C2RST;
     }
 };

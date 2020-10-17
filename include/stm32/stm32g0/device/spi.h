@@ -307,35 +307,36 @@ template<> struct spi_traits<1>
     static constexpr signal_t MOSI = SPI1_MOSI;
     static constexpr signal_t NSS = SPI1_NSS;
     static constexpr signal_t SCK = SPI1_SCK;
+    static constexpr clock_source_t CLOCK = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APBENR2 |= RCC::T::APBENR2_SPI1EN;
+        RCC::V.APB2ENR |= RCC::T::APB2ENR_SPI1EN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APBENR2 &= ~RCC::T::APBENR2_SPI1EN;
+        RCC::V.APB2ENR &= ~RCC::T::APB2ENR_SPI1EN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APBSMENR2 |= RCC::T::APBSMENR2_SPI1SMEN;
+        RCC::V.APB2SMENR |= RCC::T::APB2SMENR_SPI1SMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APBSMENR2 &= ~RCC::T::APBSMENR2_SPI1SMEN;
+        RCC::V.APB2SMENR &= ~RCC::T::APB2SMENR_SPI1SMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.APBRSTR2 |= RCC::T::APBRSTR2_SPI1RST;
+        RCC::V.APB2RSTR |= RCC::T::APB2RSTR_SPI1RST;
     }
 };
 
@@ -346,34 +347,35 @@ template<> struct spi_traits<2>
     static constexpr signal_t MOSI = SPI2_MOSI;
     static constexpr signal_t NSS = SPI2_NSS;
     static constexpr signal_t SCK = SPI2_SCK;
+    static constexpr clock_source_t CLOCK = APB1_PERIPH;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APBENR1 |= RCC::T::APBENR1_SPI2EN;
+        RCC::V.APB1ENR |= RCC::T::APB1ENR_SPI2EN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APBENR1 &= ~RCC::T::APBENR1_SPI2EN;
+        RCC::V.APB1ENR &= ~RCC::T::APB1ENR_SPI2EN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APBSMENR1 |= RCC::T::APBSMENR1_SPI2SMEN;
+        RCC::V.APB1SMENR |= RCC::T::APB1SMENR_SPI2SMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APBSMENR1 &= ~RCC::T::APBSMENR1_SPI2SMEN;
+        RCC::V.APB1SMENR &= ~RCC::T::APB1SMENR_SPI2SMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.APBRSTR1 |= RCC::T::APBRSTR1_SPI2RST;
+        RCC::V.APB1RSTR |= RCC::T::APB1RSTR_SPI2RST;
     }
 };

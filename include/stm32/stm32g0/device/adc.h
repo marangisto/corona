@@ -394,34 +394,35 @@ template<int INST> struct adc_traits {};
 template<> struct adc_traits<1>
 {
     using adc = adc1_t;
+    static constexpr clock_source_t CLOCK = APB2_PERIPH;
 
     template<typename RCC>
     static void enable()
     {
-        RCC::V.APBENR2 |= RCC::T::APBENR2_ADC1EN;
+        RCC::V.APB2ENR |= RCC::T::APB2ENR_ADC1EN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.APBENR2 &= ~RCC::T::APBENR2_ADC1EN;
+        RCC::V.APB2ENR &= ~RCC::T::APB2ENR_ADC1EN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.APBSMENR2 |= RCC::T::APBSMENR2_ADC1SMEN;
+        RCC::V.APB2SMENR |= RCC::T::APB2SMENR_ADC1SMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.APBSMENR2 &= ~RCC::T::APBSMENR2_ADC1SMEN;
+        RCC::V.APB2SMENR &= ~RCC::T::APB2SMENR_ADC1SMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.APBRSTR2 |= RCC::T::APBRSTR2_ADC1RST;
+        RCC::V.APB2RSTR |= RCC::T::APB2RSTR_ADC1RST;
     }
 };

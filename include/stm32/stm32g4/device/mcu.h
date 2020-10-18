@@ -130,14 +130,14 @@ enum mcu_t
     };
 
 enum svd_t
-    { STM32G431xx
-    , STM32G441xx
-    , STM32G471xx
-    , STM32G473xx
-    , STM32G474xx
-    , STM32G483xx
-    , STM32G484xx
-    , STM32GBK1CBT6
+    { STM32G431xx = 0x1
+    , STM32G441xx = 0x2
+    , STM32G471xx = 0x4
+    , STM32G473xx = 0x8
+    , STM32G474xx = 0x10
+    , STM32G483xx = 0x20
+    , STM32G484xx = 0x40
+    , STM32GBK1CBT6 = 0x80
     };
 
 enum gpio_conf_t

@@ -46,8 +46,8 @@ enum mcu_t
     };
 
 enum svd_t
-    { STM32L552
-    , STM32L562
+    { STM32L552 = 0x1
+    , STM32L562 = 0x2
     };
 
 enum gpio_conf_t

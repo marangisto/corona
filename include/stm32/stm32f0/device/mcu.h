@@ -121,10 +121,10 @@ enum mcu_t
     };
 
 enum svd_t
-    { STM32F0x0
-    , STM32F0x1
-    , STM32F0x2
-    , STM32F0x8
+    { STM32F0x0 = 0x1
+    , STM32F0x1 = 0x2
+    , STM32F0x2 = 0x4
+    , STM32F0x8 = 0x8
     };
 
 enum gpio_conf_t

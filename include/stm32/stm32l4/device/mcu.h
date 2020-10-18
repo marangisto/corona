@@ -176,14 +176,14 @@ enum mcu_t
     };
 
 enum svd_t
-    { STM32L412
-    , STM32L476
-    , STM32L496
-    , STM32L4x1
-    , STM32L4x2
-    , STM32L4x3
-    , STM32L4x5
-    , STM32L4x6
+    { STM32L412 = 0x1
+    , STM32L476 = 0x2
+    , STM32L496 = 0x4
+    , STM32L4x1 = 0x8
+    , STM32L4x2 = 0x10
+    , STM32L4x3 = 0x20
+    , STM32L4x5 = 0x40
+    , STM32L4x6 = 0x80
     };
 
 enum gpio_conf_t

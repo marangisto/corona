@@ -79,14 +79,14 @@ enum mcu_t
     };
 
 enum svd_t
-    { STM32L4P5
-    , STM32L4Q5
-    , STM32L4R5
-    , STM32L4R7
-    , STM32L4R9
-    , STM32L4S5
-    , STM32L4S7
-    , STM32L4S9
+    { STM32L4P5 = 0x1
+    , STM32L4Q5 = 0x2
+    , STM32L4R5 = 0x4
+    , STM32L4R7 = 0x8
+    , STM32L4R9 = 0x10
+    , STM32L4S5 = 0x20
+    , STM32L4S7 = 0x40
+    , STM32L4S9 = 0x80
     };
 
 enum gpio_conf_t

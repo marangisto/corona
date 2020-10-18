@@ -221,17 +221,17 @@ enum mcu_t
     };
 
 enum svd_t
-    { STM32F401
-    , STM32F405
-    , STM32F407
-    , STM32F410
-    , STM32F411
-    , STM32F412
-    , STM32F413
-    , STM32F427
-    , STM32F429
-    , STM32F446
-    , STM32F469
+    { STM32F401 = 0x1
+    , STM32F405 = 0x2
+    , STM32F407 = 0x4
+    , STM32F410 = 0x8
+    , STM32F411 = 0x10
+    , STM32F412 = 0x20
+    , STM32F413 = 0x40
+    , STM32F427 = 0x80
+    , STM32F429 = 0x100
+    , STM32F446 = 0x200
+    , STM32F469 = 0x400
     };
 
 enum gpio_conf_t

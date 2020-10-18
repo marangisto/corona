@@ -101,12 +101,12 @@ enum mcu_t
     };
 
 enum svd_t
-    { STM32F301
-    , STM32F302
-    , STM32F303
-    , STM32F373
-    , STM32F3x4
-    , STM32F3x8
+    { STM32F301 = 0x1
+    , STM32F302 = 0x2
+    , STM32F303 = 0x4
+    , STM32F373 = 0x8
+    , STM32F3x4 = 0x10
+    , STM32F3x8 = 0x20
     };
 
 enum gpio_conf_t

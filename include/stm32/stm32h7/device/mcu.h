@@ -134,21 +134,21 @@ enum mcu_t
     };
 
 enum svd_t
-    { STM32H742x
-    , STM32H743
-    , STM32H745_CM4
-    , STM32H745_CM7
-    , STM32H747_CM4
-    , STM32H747_CM7
-    , STM32H750x
-    , STM32H753
-    , STM32H755_CM4
-    , STM32H755_CM7
-    , STM32H757_CM4
-    , STM32H757_CM7
-    , STM32H7A3x
-    , STM32H7B0x
-    , STM32H7B3x
+    { STM32H742x = 0x1
+    , STM32H743 = 0x2
+    , STM32H745_CM4 = 0x4
+    , STM32H745_CM7 = 0x8
+    , STM32H747_CM4 = 0x10
+    , STM32H747_CM7 = 0x20
+    , STM32H750x = 0x40
+    , STM32H753 = 0x80
+    , STM32H755_CM4 = 0x100
+    , STM32H755_CM7 = 0x200
+    , STM32H757_CM4 = 0x400
+    , STM32H757_CM7 = 0x800
+    , STM32H7A3x = 0x1000
+    , STM32H7B0x = 0x2000
+    , STM32H7B3x = 0x4000
     };
 
 enum gpio_conf_t

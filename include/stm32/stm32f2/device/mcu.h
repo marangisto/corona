@@ -57,8 +57,8 @@ enum mcu_t
     };
 
 enum svd_t
-    { STM32F215
-    , STM32F217
+    { STM32F215 = 0x1
+    , STM32F217 = 0x2
     };
 
 enum gpio_conf_t

@@ -23,10 +23,10 @@ enum mcu_t
     };
 
 enum svd_t
-    { STM32WB30_CM4
-    , STM32WB35_CM4
-    , STM32WB50_CM4
-    , STM32WB55_CM4
+    { STM32WB30_CM4 = 0x1
+    , STM32WB35_CM4 = 0x2
+    , STM32WB50_CM4 = 0x4
+    , STM32WB55_CM4 = 0x8
     };
 
 enum gpio_conf_t

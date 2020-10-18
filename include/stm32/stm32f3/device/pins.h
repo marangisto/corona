@@ -5886,9 +5886,72 @@ template<periph_t PERIPH, pin_t PIN, int POLARITY>
 struct adc_dac_chan{};
 
 template<>
+struct adc_dac_chan<ADC1, PA0, 1>
+{
+    static constexpr uint8_t CHAN = (svd & (STM32F373|STM32F3x8)) ? 0 : 1;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PA1, 1>
+{
+    static constexpr uint8_t CHAN = (svd & (STM32F373|STM32F3x8)) ? 1 : 2;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PA2, 1>
+{
+    static constexpr uint8_t CHAN = (svd & (STM32F373|STM32F3x8)) ? 2 : 3;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PA3, 1>
+{
+    static constexpr uint8_t CHAN = (svd & (STM32F373|STM32F3x8)) ? 3 : 4;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PA4, 1>
+{
+    static constexpr uint8_t CHAN = (svd & (STM32F373|STM32F3x8)) ? 4 : 5;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
 struct adc_dac_chan<ADC1, PA5, 1>
 {
     static constexpr uint8_t CHAN = 5;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PA6, 1>
+{
+    static constexpr uint8_t CHAN = (svd & (STM32F373|STM32F3x8)) ? 6 : 10;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PA7, 1>
+{
+    static constexpr uint8_t CHAN = (svd & (STM32F373|STM32F3x8)) ? 7 : 15;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PB0, 1>
+{
+    static constexpr uint8_t CHAN = (svd & (STM32F373|STM32F3x8)) ? 8 : 11;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PB1, 1>
+{
+    static constexpr uint8_t CHAN = (svd & (STM32F373|STM32F3x8)) ? 9 : 12;
     static constexpr uint8_t BANK = 0;
 };
 
@@ -5903,6 +5966,34 @@ template<>
 struct adc_dac_chan<ADC1, PB13, 1>
 {
     static constexpr uint8_t CHAN = 13;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PC0, 1>
+{
+    static constexpr uint8_t CHAN = (svd & (STM32F373|STM32F3x8)) ? 10 : 6;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PC1, 1>
+{
+    static constexpr uint8_t CHAN = (svd & (STM32F373|STM32F3x8)) ? 11 : 7;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PC2, 1>
+{
+    static constexpr uint8_t CHAN = (svd & (STM32F373|STM32F3x8)) ? 12 : 8;
+    static constexpr uint8_t BANK = 0;
+};
+
+template<>
+struct adc_dac_chan<ADC1, PC3, 1>
+{
+    static constexpr uint8_t CHAN = (svd & (STM32F373|STM32F3x8)) ? 13 : 9;
     static constexpr uint8_t BANK = 0;
 };
 

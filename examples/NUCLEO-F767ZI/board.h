@@ -3,6 +3,9 @@
 #include <gpio.h>
 
 static const pin_t          LED = PB0;
+static const pin_t          LED2 = PB7;
+static const pin_t          LED3 = PB14;
+static const pin_t          LED4 = NO_PIN;
 static const pin_t          BTN = PC13;
 static const input_type_t   BTN_TYPE = pull_down;
 static const interrupt_t    BTN_ISR = interrupt::EXTI15_10;

@@ -36,6 +36,7 @@ int main()
         uint16_t y1 = adc::read<a1>();
 
         printf<serial>("%4d %4d\n", y0, y1);
+
         sys_tick::delay_ms(dt);
         if (!(t & 0xff))
             led::toggle();

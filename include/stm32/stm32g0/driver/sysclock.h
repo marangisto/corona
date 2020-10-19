@@ -97,7 +97,7 @@ static inline uint32_t clock_tree_init()
     while (!(RCC.CR & _::CR_PLLRDY));           // wait for PLL ready
     RCC.CFGR |= _::CFGR_SW::W(0x2);             // select PLL sys clock
     while (_::CFGR_SWS::R(RCC.CFGR) != 0x2);    // wait for PLL sys clock
-    return 64000000;
+    return clock_traits<HSE>::freq;
 }
 
 static uint32_t clock_tree_scale(clock_source_t cs, uint32_t f)

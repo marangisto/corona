@@ -80,7 +80,7 @@ struct adc_impl
                  | _::CFGR_OVRMOD           // overwrite on overrun
                  ;
 
-        rcc_t::V.CCIPR1 |= rcc_t::T::CCIPR1_ADCSEL::W(0x1); // use pllP clock
+        rcc_t::V.CCIPR1 |= rcc_t::T::CCIPR1_ADCSEL::W(0x2); // use sys-clock
 
         com::adc::V.CCR = __::CCR_RESET_VALUE   // common control register
                         | __::CCR_PRESC::W(prescale_traits<PRESCALE>::presc)
@@ -90,7 +90,6 @@ struct adc_impl
         ADC.GCOMP = _::GCOMP_RESET_VALUE;    // gain compensation register
         ADC.CFGR2 = _::CFGR2_RESET_VALUE;    // reset configuration register 2
     }
-
 
     static void enable()
     {

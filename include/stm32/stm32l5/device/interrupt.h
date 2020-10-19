@@ -66,9 +66,11 @@ struct interrupt
         , TIM1_TRG_COM = 43 // TIM1 Trigger and Commutation
         , TIM1_CC = 44 // TIM1 Capture Compare interrupt
         , TIM2 = 45 // TIM2 global interrupt
-        , TIM2_3 = 46 // TIM3 global interrupt
-        , TIM2_4 = 47 // TIM4 global interrupt
-        , TIM2_5 = 48 // TIM5 global interrupt
+        , TIM3 = 46 // TIM3 global interrupt
+        , TIM4 = 47 // TIM4 global interrupt
+        , TIM5 = 48 // TIM5 global interrupt
+        , TIM6 = 49 // TIM6 global interrupt
+        , TIM7 = 50 // TIM7 global interrupt
         , TIM8_BRK = 51 // TIM8 Break Interrupt
         , TIM8_UP = 52 // TIM8 Update Interrupt
         , TIM8_TRG_COM = 53 // TIM8 Trigger and Commutation Interrupt

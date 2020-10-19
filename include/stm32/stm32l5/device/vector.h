@@ -59,9 +59,11 @@ template<> void handler<interrupt::TIM1_UP>() __attribute__ ((weak, alias("_Z17_
 template<> void handler<interrupt::TIM1_TRG_COM>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::TIM1_CC>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::TIM2>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
-template<> void handler<interrupt::TIM2_3>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
-template<> void handler<interrupt::TIM2_4>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
-template<> void handler<interrupt::TIM2_5>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::TIM3>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::TIM4>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::TIM5>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::TIM6>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::TIM7>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::TIM8_BRK>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::TIM8_UP>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::TIM8_TRG_COM>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
@@ -179,11 +181,11 @@ void (*vectors[])(void) __attribute__ ((section(".vectors"))) =
     , handler<interrupt::TIM1_TRG_COM> // 43: TIM1 Trigger and Commutation
     , handler<interrupt::TIM1_CC> // 44: TIM1 Capture Compare interrupt
     , handler<interrupt::TIM2> // 45: TIM2 global interrupt
-    , handler<interrupt::TIM2_3> // 46: TIM3 global interrupt
-    , handler<interrupt::TIM2_4> // 47: TIM4 global interrupt
-    , handler<interrupt::TIM2_5> // 48: TIM5 global interrupt
-    , 0x0
-    , 0x0
+    , handler<interrupt::TIM3> // 46: TIM3 global interrupt
+    , handler<interrupt::TIM4> // 47: TIM4 global interrupt
+    , handler<interrupt::TIM5> // 48: TIM5 global interrupt
+    , handler<interrupt::TIM6> // 49: TIM6 global interrupt
+    , handler<interrupt::TIM7> // 50: TIM7 global interrupt
     , handler<interrupt::TIM8_BRK> // 51: TIM8 Break Interrupt
     , handler<interrupt::TIM8_UP> // 52: TIM8 Update Interrupt
     , handler<interrupt::TIM8_TRG_COM> // 53: TIM8 Trigger and Commutation Interrupt

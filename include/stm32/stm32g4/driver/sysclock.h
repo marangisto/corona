@@ -39,7 +39,6 @@ template<> struct clock_traits<0>
                        | _::PLLSYSCFGR_PLLSYSPDIV::W(pllPDIV)
                        | _::PLLSYSCFGR_PLLSYSQ::W(pllQ)
                        | _::PLLSYSCFGR_PLLSYSR::W(pllR)
-                       | _::PLLSYSCFGR_PLLPEN
                        | _::PLLSYSCFGR_PLLSYSQEN
                        | _::PLLSYSCFGR_PLLSYSREN
                        ;
@@ -74,7 +73,6 @@ template<> struct clock_traits<24000000>
                        | _::PLLSYSCFGR_PLLSYSPDIV::W(pllPDIV)
                        | _::PLLSYSCFGR_PLLSYSQ::W(pllQ)
                        | _::PLLSYSCFGR_PLLSYSR::W(pllR)
-                       | _::PLLSYSCFGR_PLLPEN
                        | _::PLLSYSCFGR_PLLSYSQEN
                        | _::PLLSYSCFGR_PLLSYSREN
                        ;
@@ -109,7 +107,6 @@ template<> struct clock_traits<8000000>
                        | _::PLLSYSCFGR_PLLSYSPDIV::W(pllPDIV)
                        | _::PLLSYSCFGR_PLLSYSQ::W(pllQ)
                        | _::PLLSYSCFGR_PLLSYSR::W(pllR)
-                       | _::PLLSYSCFGR_PLLPEN
                        | _::PLLSYSCFGR_PLLSYSQEN
                        | _::PLLSYSCFGR_PLLSYSREN
                        ;

@@ -83,6 +83,7 @@ struct adc_impl
         rcc_t::V.CCIPR1 |= rcc_t::T::CCIPR1_ADCSEL::W(0x2); // use sys-clock
 
         com::adc::V.CCR = __::CCR_RESET_VALUE   // common control register
+                        | __::CCR_CKMODE::W(0x2) // synchronous hclk/2 mode
                         | __::CCR_PRESC::W(prescale_traits<PRESCALE>::presc)
                         ;
 

@@ -109,8 +109,6 @@ struct at25_t
             SPI::w8(WREN);
         }
 
-        // N.B. scope brackets end of write enable!
-
         {
             chip_select<CS> cs;
 
@@ -122,14 +120,8 @@ struct at25_t
                 SPI::w8(*buf++);
         }
 
-        // N.B. scope brackets end of write!
-
-        {
-            chip_select<CS> cs;
-
-            while (status() & NRDY)
-                ; // wait for write completion
-        }
+        while (status() & NRDY)
+            sys_tick::delay_us(250);    // wait for write completion
 
         return 0;                   // success
     }

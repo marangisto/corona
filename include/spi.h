@@ -91,7 +91,8 @@ public:
                 | spi_order_traits<_, order>::value // bit-order
                 ;
         SPI.CR2 = _::CR2_RESET_VALUE                // reset register
-                |  _::CR2_SSOE;                     // enable ss output
+                | _::CR2_SSOE                       // enable ss output
+                | _::CR2_FRXTH                      // reception threshold
                 ;
         SPI.CR1 |= _::CR1_SPE;                      // enable spi
     }
@@ -128,6 +129,28 @@ public:
         while (!(spi::V.SR & _::SR_RXNE));  // wait until rx buffer is not empty
         return spi::V.DR;
     }
+
+    __attribute__((always_inline))
+    static inline void w8(uint8_t x)
+    {
+        write8(x);      // send data
+        read();         // discard frame
+    }
+
+    __attribute__((always_inline))
+    static inline uint32_t r8()
+    {
+        write8(0);      // run clock
+        return read();  // received data
+    }
+
+    __attribute__((always_inline))
+    static inline uint32_t w8r8(uint8_t x)
+    {
+        w8(x);
+        return r8();
+    }
+
     /*
     enum interrupt_t
         { err_interrupt = _::CR2_ERRIE

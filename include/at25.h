@@ -24,6 +24,8 @@ struct at25_t
 {
     using CS = output_t<CS_PIN>;
 
+    static constexpr unsigned EOM = KBITS << 7;  // max address
+
     enum instruction_t
         { WREN  = 0x06
         , WRDI  = 0x04
@@ -41,11 +43,12 @@ struct at25_t
         , WPEN  = 0x80
         };
 
+    template<spi_clock_divider_t PRESCALE = fpclk_256>
     static void setup()
     {
         CS::setup();
-        SPI::template setup<mode_0, msb_first, fpclk_256, high_speed>();
         CS::set();
+        SPI::template setup<mode_0, msb_first, PRESCALE, high_speed>();
     }
 
     static uint8_t status()
@@ -90,14 +93,21 @@ struct at25_t
         }
     }
 
-    static uint8_t read(uint16_t addr)
+    static int read(uint16_t addr, char *buf, uint16_t len)
     {
+        if (static_cast<unsigned>(addr) + len > EOM)
+            return -1;              // out of range access
+
         chip_select<CS> cs;
 
         SPI::w8(READ);
         SPI::w8(addr >> 8);
         SPI::w8(addr & 0xff);
-        return SPI::r8();
+
+        while (len-- != 0)
+            *buf++ = SPI::r8();
+
+        return 0;                   // success
     }
 };
 

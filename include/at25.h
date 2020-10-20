@@ -24,8 +24,9 @@ struct at25_t
 {
     using CS = output_t<CS_PIN>;
 
-    static constexpr unsigned EOM = KBITS << 7;  // max address
-    static constexpr unsigned PAGE = 64;
+    static constexpr unsigned EOM = KBITS << 7;     // max address
+    static constexpr unsigned PGSIZ = 64;           // page size
+    static constexpr unsigned MASK = ~(PGSIZ-1);    // page address bits
 
     enum instruction_t
         { WREN  = 0x06
@@ -83,7 +84,7 @@ struct at25_t
 
         while (len > 0)
         {
-            uint16_t n = len > PAGE ? PAGE : len;
+            uint16_t n = len > PGSIZ ? PGSIZ : len;
             int sts = write_page(addr, buf, n);
 
             if (sts)
@@ -99,14 +100,16 @@ struct at25_t
 
     static int write_page(uint16_t addr, char *buf, uint16_t len)
     {
-        if (len > PAGE)
-            return -2;
+        if ((addr & MASK) != ((addr + len - 1) & MASK))
+            return -2;              // can't span page boundary
 
         {
             chip_select<CS> cs;
 
             SPI::w8(WREN);
         }
+
+        // N.B. scope brackets end of write enable!
 
         {
             chip_select<CS> cs;
@@ -119,8 +122,14 @@ struct at25_t
                 SPI::w8(*buf++);
         }
 
-        while (status() & NRDY)
-            ; // wait for write completion
+        // N.B. scope brackets end of write!
+
+        {
+            chip_select<CS> cs;
+
+            while (status() & NRDY)
+                ; // wait for write completion
+        }
 
         return 0;                   // success
     }

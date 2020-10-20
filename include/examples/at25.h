@@ -45,49 +45,59 @@ int main()
     interrupt::set<SERIAL_ISR>();
     interrupt::enable();
 
-    printf<serial>("AT25xB Demo\n");
+    printf<serial>("AT25 Demo\n");
     printf<serial>("sys-clock = %d\n", sys_clock::freq());
+    printf<serial>("use 'h' for help\n");
 
     eeprom::setup<fpclk_8>();
-    sys_tick::delay_ms(25);
-
-    //eeprom::write_enable();
-    eeprom::write(10, 0xd);
-    eeprom::write(11, 0xe);
-    eeprom::write(12, 0xa);
-    eeprom::write(13, 0xd);
-    eeprom::write(14, 0xb);
-    eeprom::write(15, 0xe);
-    eeprom::write(16, 0xe);
-    eeprom::write(17, 0xf);
-
-    printf<serial>("sr = 0x%02x\n", eeprom::status());
-    eeprom::write_enable();
-    printf<serial>("sr = 0x%02x\n", eeprom::status());
-    eeprom::write_disable();
-    printf<serial>("sr = 0x%02x\n", eeprom::status());
-/*
-    for (uint16_t i = 0;; ++i)
-    {
-        uint8_t x = eeprom::read(i);
-        printf<serial>("mem[0x%04x] = 0x%02x\n", i, x);
-        sys_tick::delay_ms(1000);
-    }
-    */
 
     for (;;)
     {
         static char buf[512];
+        static uint16_t addr = 0;
 
         printf<serial>("> ");
         getline<serial>(buf, sizeof(buf));
         buf[strcspn(buf, "\r\n")] = 0;
-        uint16_t addr = atoi(buf);
-        printf<serial>("got = 0x%0x\n", addr);
-        if (eeprom::read(addr, buf, 256))
-            printf<serial>("read failure!\n");
-        else
-            hexdump(buf, 256, addr);
+
+        switch (buf[0])
+        {
+        case 'h':
+            printf<serial>("commands\n");
+            printf<serial>("    annnn   - set address to nnn (decimal)\n");
+            printf<serial>("    r       - read from current address\n");
+            printf<serial>("    wxyz    - write ascii at current address\n");
+            break;
+        case 'a':
+            addr = atoi(buf + 1);
+            printf<serial>("addr = 0x%04x\n", addr);
+            break;
+        case 'r':
+            if (eeprom::read(addr, buf, 256))
+                printf<serial>("read failure!\n");
+            else
+            {
+                printf<serial>("\n");
+                hexdump(buf, 256, addr);
+            }
+            break;
+        case 'w':
+            if (strlen(buf) <= 1)
+            {
+                printf<serial>("nothing to write!\n");
+                break;
+            }
+            if (eeprom::write(addr, buf + 1, strlen(buf) - 1))
+                printf<serial>("write failure!\n");
+            else
+                printf<serial>("wrote %d bytes\n", strlen(buf) - 1);
+            break;
+        case '\0':
+            printf<serial>("\n");
+            break;
+        default:
+            printf<serial>("bad command!\n");
+        }
     }
 }
 

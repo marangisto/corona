@@ -25,6 +25,7 @@ struct at25_t
     using CS = output_t<CS_PIN>;
 
     static constexpr unsigned EOM = KBITS << 7;  // max address
+    static constexpr unsigned PAGE = 64;
 
     enum instruction_t
         { WREN  = 0x06
@@ -58,41 +59,6 @@ struct at25_t
         return SPI::w8r8(RDSR);
     }
 
-    static void write_enable()
-    {
-        chip_select<CS> cs;
-
-        SPI::w8(WREN);
-    }
-
-    static void write_disable()
-    {
-        chip_select<CS> cs;
- 
-        SPI::w8(WRDI);
-    }
-
-    static void write(uint16_t addr, uint8_t x)
-    {
-        {
-            chip_select<CS> cs;
-
-            SPI::w8(WRITE);
-            SPI::w8(addr >> 8);
-            SPI::w8(addr & 0xff);
-            SPI::w8(x);
-        }
-
-        // N.B. scope brackets end of write!
-
-        {
-            chip_select<CS> cs;
-
-            while (status() & NRDY)
-                ; // wait for write completion
-        }
-    }
-
     static int read(uint16_t addr, char *buf, uint16_t len)
     {
         if (static_cast<unsigned>(addr) + len > EOM)
@@ -106,6 +72,55 @@ struct at25_t
 
         while (len-- != 0)
             *buf++ = SPI::r8();
+
+        return 0;                   // success
+    }
+
+    static int write(uint16_t addr, char *buf, uint16_t len)
+    {
+        if (static_cast<unsigned>(addr) + len > EOM)
+            return -1;              // out of range access
+
+        while (len > 0)
+        {
+            uint16_t n = len > PAGE ? PAGE : len;
+            int sts = write_page(addr, buf, n);
+
+            if (sts)
+                return sts;
+
+            addr += n;
+            buf += n;
+            len -= n;
+        }
+
+        return 0;                   // success
+    }
+
+    static int write_page(uint16_t addr, char *buf, uint16_t len)
+    {
+        if (len > PAGE)
+            return -2;
+
+        {
+            chip_select<CS> cs;
+
+            SPI::w8(WREN);
+        }
+
+        {
+            chip_select<CS> cs;
+
+            SPI::w8(WRITE);
+            SPI::w8(addr >> 8);
+            SPI::w8(addr & 0xff);
+
+            while (len-- != 0)
+                SPI::w8(*buf++);
+        }
+
+        while (status() & NRDY)
+            ; // wait for write completion
 
         return 0;                   // success
     }

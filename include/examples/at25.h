@@ -87,7 +87,7 @@ int main()
                 printf<serial>("nothing to write!\n");
                 break;
             }
-            if (eeprom::write_page(addr, buf + 1, strlen(buf) - 1))
+            if (eeprom::write(addr, buf + 1, strlen(buf) - 1))
                 printf<serial>("write failure!\n");
             else
                 printf<serial>("wrote %d bytes\n", strlen(buf) - 1);

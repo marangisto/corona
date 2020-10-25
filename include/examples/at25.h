@@ -1,8 +1,9 @@
 #include <cstring>
-#include <textio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <textio.h>
 #include <usart.h>
+#include <hexdump.h>
 #include <at25.h>
 
 using serial = usart_t<SERIAL_USART, SERIAL_TX, SERIAL_RX>;
@@ -14,28 +15,6 @@ template<> void handler<SERIAL_ISR>()
 {
     led::toggle();
     serial::isr();
-}
-
-static void hexdump(const char *buf, uint16_t len, uint16_t base = 0)
-{
-    static constexpr unsigned bpl = 16; // bytes per line
-    static char line[8 + 4 * bpl];
-
-    for (unsigned i = 0; i < len; i += bpl)
-    {
-        char *lp = line;
-
-        lp += sprintf(lp, "%04x ", base + i);
-        for (unsigned j = 0; j < bpl; ++j)
-            if (i + j < len)
-                lp += sprintf(lp, "%02x ", buf[i+j]);
-            else
-                lp += sprintf(lp, "   ");
-        for (unsigned j = 0; j < bpl; ++j)
-            if (i + j < len)
-                lp += sprintf(lp, "%c", isprint(buf[i+j]) ? buf[i+j] : '.');
-        printf<serial>("%s\n", line);
-    }
 }
 
 int main()
@@ -78,7 +57,7 @@ int main()
             else
             {
                 printf<serial>("\n");
-                hexdump(buf, 256, addr);
+                hexdump<serial>(buf, 256, addr);
             }
             break;
         case 'w':

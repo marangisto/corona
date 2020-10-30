@@ -46,7 +46,7 @@ public:
         return 0;                   // success
     }
 
-    static int write(uint16_t addr, char *buf, uint16_t len)
+    static int write(uint16_t addr, const char *buf, uint16_t len)
     {
         if (static_cast<unsigned>(addr) + len > EOM)
             return -1;              // out of range access
@@ -102,7 +102,7 @@ private:
         }
     };
 
-    static int write_page(uint16_t addr, char *buf, uint16_t len)
+    static int write_page(uint16_t addr, const char *buf, uint16_t len)
     {
         if ((addr & MASK) != ((addr + len - 1) & MASK))
             return -2;              // can't span page boundary

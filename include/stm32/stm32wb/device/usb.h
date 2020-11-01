@@ -8,7 +8,7 @@
 
 // USB: Universal serial bus full-speed device interface
 
-struct stm32wb30_cm4_usb_t
+struct stm32wb35_cm4_usb_t
 {
     volatile uint16_t EP0R; // endpoint 0 register
     reserved_t<0x0> _0x2;
@@ -213,18 +213,10 @@ struct stm32wb30_cm4_usb_t
 };
 
 template<>
-struct peripheral_t<STM32WB30_CM4, USB>
-{
-    static constexpr periph_t P = USB;
-    using T = stm32wb30_cm4_usb_t;
-    static T& V;
-};
-
-template<>
 struct peripheral_t<STM32WB35_CM4, USB>
 {
     static constexpr periph_t P = USB;
-    using T = stm32wb30_cm4_usb_t;
+    using T = stm32wb35_cm4_usb_t;
     static T& V;
 };
 
@@ -232,7 +224,7 @@ template<>
 struct peripheral_t<STM32WB55_CM4, USB>
 {
     static constexpr periph_t P = USB;
-    using T = stm32wb30_cm4_usb_t;
+    using T = stm32wb35_cm4_usb_t;
     static T& V;
 };
 

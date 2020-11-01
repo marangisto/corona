@@ -6,9 +6,9 @@
 //
 ///
 
-// ADC: Analog-to-Digital Converter
+// ADC1: Analog-to-Digital Converter
 
-struct stm32l552_adc_t
+struct stm32l552_adc1_t
 {
     volatile uint32_t ISR; // interrupt and status register
     volatile uint32_t IER; // interrupt enable register
@@ -294,15 +294,31 @@ template<>
 struct peripheral_t<STM32L552, ADC1>
 {
     static constexpr periph_t P = ADC1;
-    using T = stm32l552_adc_t;
+    using T = stm32l552_adc1_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L552, SEC_ADC>
+struct peripheral_t<STM32L552, ADC2>
 {
-    static constexpr periph_t P = SEC_ADC;
-    using T = stm32l552_adc_t;
+    static constexpr periph_t P = ADC2;
+    using T = stm32l552_adc1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L552, SEC_ADC1>
+{
+    static constexpr periph_t P = SEC_ADC1;
+    using T = stm32l552_adc1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L552, SEC_ADC2>
+{
+    static constexpr periph_t P = SEC_ADC2;
+    using T = stm32l552_adc1_t;
     static T& V;
 };
 
@@ -310,15 +326,31 @@ template<>
 struct peripheral_t<STM32L562, ADC1>
 {
     static constexpr periph_t P = ADC1;
-    using T = stm32l552_adc_t;
+    using T = stm32l552_adc1_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32L562, SEC_ADC>
+struct peripheral_t<STM32L562, ADC2>
 {
-    static constexpr periph_t P = SEC_ADC;
-    using T = stm32l552_adc_t;
+    static constexpr periph_t P = ADC2;
+    using T = stm32l552_adc1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L562, SEC_ADC1>
+{
+    static constexpr periph_t P = SEC_ADC1;
+    using T = stm32l552_adc1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L562, SEC_ADC2>
+{
+    static constexpr periph_t P = SEC_ADC2;
+    using T = stm32l552_adc1_t;
     static T& V;
 };
 
@@ -355,8 +387,10 @@ struct peripheral_t<STM32L562, SEC_ADC_COMMON>
 };
 
 using adc1_t = peripheral_t<svd, ADC1>;
+using adc2_t = peripheral_t<svd, ADC2>;
 using adc_common_t = peripheral_t<svd, ADC_COMMON>;
-using sec_adc_t = peripheral_t<svd, SEC_ADC>;
+using sec_adc1_t = peripheral_t<svd, SEC_ADC1>;
+using sec_adc2_t = peripheral_t<svd, SEC_ADC2>;
 using sec_adc_common_t = peripheral_t<svd, SEC_ADC_COMMON>;
 
 template<int INST> struct adc_traits {};
@@ -383,6 +417,11 @@ template<> struct adc_traits<1>
     {
         RCC::V.AHB2RSTR |= RCC::T::AHB2RSTR_ADC1RST;
     }
+};
+
+template<> struct adc_traits<2>
+{
+    using adc = adc2_t;
 };
 
 template<> struct adc_traits<123>

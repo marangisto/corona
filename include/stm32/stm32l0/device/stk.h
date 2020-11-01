@@ -8,7 +8,7 @@
 
 // STK: SysTick timer
 
-struct stm32l0x0_stk_t
+struct stm32l052_stk_t
 {
     volatile uint32_t CSR; // SysTick control and status register
     volatile uint32_t RVR; // SysTick reload value register
@@ -34,10 +34,42 @@ struct stm32l0x0_stk_t
 };
 
 template<>
+struct peripheral_t<STM32L052, STK>
+{
+    static constexpr periph_t P = STK;
+    using T = stm32l052_stk_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, STK>
+{
+    static constexpr periph_t P = STK;
+    using T = stm32l052_stk_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, STK>
+{
+    static constexpr periph_t P = STK;
+    using T = stm32l052_stk_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, STK>
+{
+    static constexpr periph_t P = STK;
+    using T = stm32l052_stk_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L0x0, STK>
 {
     static constexpr periph_t P = STK;
-    using T = stm32l0x0_stk_t;
+    using T = stm32l052_stk_t;
     static T& V;
 };
 
@@ -45,7 +77,7 @@ template<>
 struct peripheral_t<STM32L0x1, STK>
 {
     static constexpr periph_t P = STK;
-    using T = stm32l0x0_stk_t;
+    using T = stm32l052_stk_t;
     static T& V;
 };
 
@@ -53,7 +85,7 @@ template<>
 struct peripheral_t<STM32L0x2, STK>
 {
     static constexpr periph_t P = STK;
-    using T = stm32l0x0_stk_t;
+    using T = stm32l052_stk_t;
     static T& V;
 };
 
@@ -61,7 +93,7 @@ template<>
 struct peripheral_t<STM32L0x3, STK>
 {
     static constexpr periph_t P = STK;
-    using T = stm32l0x0_stk_t;
+    using T = stm32l052_stk_t;
     static T& V;
 };
 

@@ -8,7 +8,7 @@
 
 // DAC: Digital-to-analog converter
 
-struct stm32l0x2_dac_t
+struct stm32l052_dac_t
 {
     volatile uint32_t CR; // control register
     volatile uint32_t SWTRIGR; // software trigger register
@@ -88,7 +88,7 @@ struct stm32l0x2_dac_t
 
 // DAC: Digital-to-analog converter
 
-struct stm32l0x3_dac_t
+struct stm32l053_dac_t
 {
     volatile uint32_t CR; // control register
     volatile uint32_t SWTRIGR; // software trigger register
@@ -159,10 +159,42 @@ struct stm32l0x3_dac_t
 };
 
 template<>
+struct peripheral_t<STM32L052, DAC1>
+{
+    static constexpr periph_t P = DAC1;
+    using T = stm32l052_dac_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, DAC1>
+{
+    static constexpr periph_t P = DAC1;
+    using T = stm32l052_dac_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L0x2, DAC1>
 {
     static constexpr periph_t P = DAC1;
-    using T = stm32l0x2_dac_t;
+    using T = stm32l052_dac_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, DAC1>
+{
+    static constexpr periph_t P = DAC1;
+    using T = stm32l053_dac_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, DAC1>
+{
+    static constexpr periph_t P = DAC1;
+    using T = stm32l053_dac_t;
     static T& V;
 };
 
@@ -170,7 +202,7 @@ template<>
 struct peripheral_t<STM32L0x3, DAC1>
 {
     static constexpr periph_t P = DAC1;
-    using T = stm32l0x3_dac_t;
+    using T = stm32l053_dac_t;
     static T& V;
 };
 

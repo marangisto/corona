@@ -8,7 +8,7 @@
 
 // LPUART1: LPUART1
 
-struct stm32h742x_lpuart1_t
+struct stm32h723_lpuart1_t
 {
     volatile uint32_t CR1; // Control register 1
     volatile uint32_t CR2; // Control register 2
@@ -138,10 +138,26 @@ struct stm32h742x_lpuart1_t
 };
 
 template<>
+struct peripheral_t<STM32H723, LPUART1>
+{
+    static constexpr periph_t P = LPUART1;
+    using T = stm32h723_lpuart1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, LPUART1>
+{
+    static constexpr periph_t P = LPUART1;
+    using T = stm32h723_lpuart1_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H742x, LPUART1>
 {
     static constexpr periph_t P = LPUART1;
-    using T = stm32h742x_lpuart1_t;
+    using T = stm32h723_lpuart1_t;
     static T& V;
 };
 
@@ -149,7 +165,7 @@ template<>
 struct peripheral_t<STM32H743, LPUART1>
 {
     static constexpr periph_t P = LPUART1;
-    using T = stm32h742x_lpuart1_t;
+    using T = stm32h723_lpuart1_t;
     static T& V;
 };
 
@@ -157,7 +173,7 @@ template<>
 struct peripheral_t<STM32H745_CM4, LPUART1>
 {
     static constexpr periph_t P = LPUART1;
-    using T = stm32h742x_lpuart1_t;
+    using T = stm32h723_lpuart1_t;
     static T& V;
 };
 
@@ -165,7 +181,7 @@ template<>
 struct peripheral_t<STM32H745_CM7, LPUART1>
 {
     static constexpr periph_t P = LPUART1;
-    using T = stm32h742x_lpuart1_t;
+    using T = stm32h723_lpuart1_t;
     static T& V;
 };
 
@@ -173,7 +189,7 @@ template<>
 struct peripheral_t<STM32H747_CM4, LPUART1>
 {
     static constexpr periph_t P = LPUART1;
-    using T = stm32h742x_lpuart1_t;
+    using T = stm32h723_lpuart1_t;
     static T& V;
 };
 
@@ -181,7 +197,7 @@ template<>
 struct peripheral_t<STM32H747_CM7, LPUART1>
 {
     static constexpr periph_t P = LPUART1;
-    using T = stm32h742x_lpuart1_t;
+    using T = stm32h723_lpuart1_t;
     static T& V;
 };
 
@@ -189,7 +205,7 @@ template<>
 struct peripheral_t<STM32H750x, LPUART1>
 {
     static constexpr periph_t P = LPUART1;
-    using T = stm32h742x_lpuart1_t;
+    using T = stm32h723_lpuart1_t;
     static T& V;
 };
 
@@ -197,7 +213,7 @@ template<>
 struct peripheral_t<STM32H753, LPUART1>
 {
     static constexpr periph_t P = LPUART1;
-    using T = stm32h742x_lpuart1_t;
+    using T = stm32h723_lpuart1_t;
     static T& V;
 };
 
@@ -205,7 +221,7 @@ template<>
 struct peripheral_t<STM32H755_CM4, LPUART1>
 {
     static constexpr periph_t P = LPUART1;
-    using T = stm32h742x_lpuart1_t;
+    using T = stm32h723_lpuart1_t;
     static T& V;
 };
 
@@ -213,7 +229,7 @@ template<>
 struct peripheral_t<STM32H755_CM7, LPUART1>
 {
     static constexpr periph_t P = LPUART1;
-    using T = stm32h742x_lpuart1_t;
+    using T = stm32h723_lpuart1_t;
     static T& V;
 };
 
@@ -221,7 +237,7 @@ template<>
 struct peripheral_t<STM32H757_CM4, LPUART1>
 {
     static constexpr periph_t P = LPUART1;
-    using T = stm32h742x_lpuart1_t;
+    using T = stm32h723_lpuart1_t;
     static T& V;
 };
 
@@ -229,7 +245,7 @@ template<>
 struct peripheral_t<STM32H757_CM7, LPUART1>
 {
     static constexpr periph_t P = LPUART1;
-    using T = stm32h742x_lpuart1_t;
+    using T = stm32h723_lpuart1_t;
     static T& V;
 };
 
@@ -237,7 +253,7 @@ template<>
 struct peripheral_t<STM32H7A3x, LPUART1>
 {
     static constexpr periph_t P = LPUART1;
-    using T = stm32h742x_lpuart1_t;
+    using T = stm32h723_lpuart1_t;
     static T& V;
 };
 
@@ -245,7 +261,7 @@ template<>
 struct peripheral_t<STM32H7B0x, LPUART1>
 {
     static constexpr periph_t P = LPUART1;
-    using T = stm32h742x_lpuart1_t;
+    using T = stm32h723_lpuart1_t;
     static T& V;
 };
 
@@ -253,7 +269,7 @@ template<>
 struct peripheral_t<STM32H7B3x, LPUART1>
 {
     static constexpr periph_t P = LPUART1;
-    using T = stm32h742x_lpuart1_t;
+    using T = stm32h723_lpuart1_t;
     static T& V;
 };
 

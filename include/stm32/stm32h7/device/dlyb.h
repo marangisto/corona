@@ -8,7 +8,7 @@
 
 // DELAY_BLOCK_SDMMC1: DELAY_Block_SDMMC1
 
-struct stm32h742x_delay_block_sdmmc1_t
+struct stm32h723_delay_block_sdmmc1_t
 {
     volatile uint32_t CR; // DLYB control register
     volatile uint32_t CFGR; // DLYB configuration register
@@ -25,10 +25,74 @@ struct stm32h742x_delay_block_sdmmc1_t
 };
 
 template<>
+struct peripheral_t<STM32H723, DELAY_BLOCK_OCTOSPI1>
+{
+    static constexpr periph_t P = DELAY_BLOCK_OCTOSPI1;
+    using T = stm32h723_delay_block_sdmmc1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H723, DELAY_BLOCK_OCTOSPI2>
+{
+    static constexpr periph_t P = DELAY_BLOCK_OCTOSPI2;
+    using T = stm32h723_delay_block_sdmmc1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H723, DELAY_BLOCK_SDMMC1>
+{
+    static constexpr periph_t P = DELAY_BLOCK_SDMMC1;
+    using T = stm32h723_delay_block_sdmmc1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H723, DELAY_BLOCK_SDMMC2>
+{
+    static constexpr periph_t P = DELAY_BLOCK_SDMMC2;
+    using T = stm32h723_delay_block_sdmmc1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, DELAY_BLOCK_OCTOSPI1>
+{
+    static constexpr periph_t P = DELAY_BLOCK_OCTOSPI1;
+    using T = stm32h723_delay_block_sdmmc1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, DELAY_BLOCK_OCTOSPI2>
+{
+    static constexpr periph_t P = DELAY_BLOCK_OCTOSPI2;
+    using T = stm32h723_delay_block_sdmmc1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, DELAY_BLOCK_SDMMC1>
+{
+    static constexpr periph_t P = DELAY_BLOCK_SDMMC1;
+    using T = stm32h723_delay_block_sdmmc1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, DELAY_BLOCK_SDMMC2>
+{
+    static constexpr periph_t P = DELAY_BLOCK_SDMMC2;
+    using T = stm32h723_delay_block_sdmmc1_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H742x, DELAY_BLOCK_QUADSPI>
 {
     static constexpr periph_t P = DELAY_BLOCK_QUADSPI;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -36,7 +100,7 @@ template<>
 struct peripheral_t<STM32H742x, DELAY_BLOCK_SDMMC1>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC1;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -44,7 +108,7 @@ template<>
 struct peripheral_t<STM32H742x, DELAY_BLOCK_SDMMC2>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC2;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -52,7 +116,7 @@ template<>
 struct peripheral_t<STM32H743, DELAY_BLOCK_QUADSPI>
 {
     static constexpr periph_t P = DELAY_BLOCK_QUADSPI;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -60,7 +124,7 @@ template<>
 struct peripheral_t<STM32H743, DELAY_BLOCK_SDMMC1>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC1;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -68,7 +132,7 @@ template<>
 struct peripheral_t<STM32H743, DELAY_BLOCK_SDMMC2>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC2;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -76,7 +140,7 @@ template<>
 struct peripheral_t<STM32H745_CM4, DELAY_BLOCK_QUADSPI>
 {
     static constexpr periph_t P = DELAY_BLOCK_QUADSPI;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -84,7 +148,7 @@ template<>
 struct peripheral_t<STM32H745_CM4, DELAY_BLOCK_SDMMC1>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC1;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -92,7 +156,7 @@ template<>
 struct peripheral_t<STM32H745_CM4, DELAY_BLOCK_SDMMC2>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC2;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -100,7 +164,7 @@ template<>
 struct peripheral_t<STM32H745_CM7, DELAY_BLOCK_QUADSPI>
 {
     static constexpr periph_t P = DELAY_BLOCK_QUADSPI;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -108,7 +172,7 @@ template<>
 struct peripheral_t<STM32H745_CM7, DELAY_BLOCK_SDMMC1>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC1;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -116,7 +180,7 @@ template<>
 struct peripheral_t<STM32H745_CM7, DELAY_BLOCK_SDMMC2>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC2;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -124,7 +188,7 @@ template<>
 struct peripheral_t<STM32H747_CM4, DELAY_BLOCK_QUADSPI>
 {
     static constexpr periph_t P = DELAY_BLOCK_QUADSPI;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -132,7 +196,7 @@ template<>
 struct peripheral_t<STM32H747_CM4, DELAY_BLOCK_SDMMC1>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC1;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -140,7 +204,7 @@ template<>
 struct peripheral_t<STM32H747_CM4, DELAY_BLOCK_SDMMC2>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC2;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -148,7 +212,7 @@ template<>
 struct peripheral_t<STM32H747_CM7, DELAY_BLOCK_QUADSPI>
 {
     static constexpr periph_t P = DELAY_BLOCK_QUADSPI;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -156,7 +220,7 @@ template<>
 struct peripheral_t<STM32H747_CM7, DELAY_BLOCK_SDMMC1>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC1;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -164,7 +228,7 @@ template<>
 struct peripheral_t<STM32H747_CM7, DELAY_BLOCK_SDMMC2>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC2;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -172,7 +236,7 @@ template<>
 struct peripheral_t<STM32H750x, DELAY_BLOCK_QUADSPI>
 {
     static constexpr periph_t P = DELAY_BLOCK_QUADSPI;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -180,7 +244,7 @@ template<>
 struct peripheral_t<STM32H750x, DELAY_BLOCK_SDMMC1>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC1;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -188,7 +252,7 @@ template<>
 struct peripheral_t<STM32H750x, DELAY_BLOCK_SDMMC2>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC2;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -196,7 +260,7 @@ template<>
 struct peripheral_t<STM32H753, DELAY_BLOCK_QUADSPI>
 {
     static constexpr periph_t P = DELAY_BLOCK_QUADSPI;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -204,7 +268,7 @@ template<>
 struct peripheral_t<STM32H753, DELAY_BLOCK_SDMMC1>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC1;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -212,7 +276,7 @@ template<>
 struct peripheral_t<STM32H753, DELAY_BLOCK_SDMMC2>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC2;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -220,7 +284,7 @@ template<>
 struct peripheral_t<STM32H755_CM4, DELAY_BLOCK_QUADSPI>
 {
     static constexpr periph_t P = DELAY_BLOCK_QUADSPI;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -228,7 +292,7 @@ template<>
 struct peripheral_t<STM32H755_CM4, DELAY_BLOCK_SDMMC1>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC1;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -236,7 +300,7 @@ template<>
 struct peripheral_t<STM32H755_CM4, DELAY_BLOCK_SDMMC2>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC2;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -244,7 +308,7 @@ template<>
 struct peripheral_t<STM32H755_CM7, DELAY_BLOCK_QUADSPI>
 {
     static constexpr periph_t P = DELAY_BLOCK_QUADSPI;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -252,7 +316,7 @@ template<>
 struct peripheral_t<STM32H755_CM7, DELAY_BLOCK_SDMMC1>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC1;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -260,7 +324,7 @@ template<>
 struct peripheral_t<STM32H755_CM7, DELAY_BLOCK_SDMMC2>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC2;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -268,7 +332,7 @@ template<>
 struct peripheral_t<STM32H757_CM4, DELAY_BLOCK_QUADSPI>
 {
     static constexpr periph_t P = DELAY_BLOCK_QUADSPI;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -276,7 +340,7 @@ template<>
 struct peripheral_t<STM32H757_CM4, DELAY_BLOCK_SDMMC1>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC1;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -284,7 +348,7 @@ template<>
 struct peripheral_t<STM32H757_CM4, DELAY_BLOCK_SDMMC2>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC2;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -292,7 +356,7 @@ template<>
 struct peripheral_t<STM32H757_CM7, DELAY_BLOCK_QUADSPI>
 {
     static constexpr periph_t P = DELAY_BLOCK_QUADSPI;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -300,7 +364,7 @@ template<>
 struct peripheral_t<STM32H757_CM7, DELAY_BLOCK_SDMMC1>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC1;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -308,7 +372,7 @@ template<>
 struct peripheral_t<STM32H757_CM7, DELAY_BLOCK_SDMMC2>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC2;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -316,7 +380,7 @@ template<>
 struct peripheral_t<STM32H7A3x, DELAY_BLOCK_OCTOSPI1>
 {
     static constexpr periph_t P = DELAY_BLOCK_OCTOSPI1;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -324,7 +388,7 @@ template<>
 struct peripheral_t<STM32H7A3x, DELAY_BLOCK_OCTOSPI2>
 {
     static constexpr periph_t P = DELAY_BLOCK_OCTOSPI2;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -332,7 +396,7 @@ template<>
 struct peripheral_t<STM32H7A3x, DELAY_BLOCK_SDMMC1>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC1;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -340,7 +404,7 @@ template<>
 struct peripheral_t<STM32H7A3x, DELAY_BLOCK_SDMMC2>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC2;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -348,7 +412,7 @@ template<>
 struct peripheral_t<STM32H7B0x, DELAY_BLOCK_OCTOSPI1>
 {
     static constexpr periph_t P = DELAY_BLOCK_OCTOSPI1;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -356,7 +420,7 @@ template<>
 struct peripheral_t<STM32H7B0x, DELAY_BLOCK_OCTOSPI2>
 {
     static constexpr periph_t P = DELAY_BLOCK_OCTOSPI2;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -364,7 +428,7 @@ template<>
 struct peripheral_t<STM32H7B0x, DELAY_BLOCK_SDMMC1>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC1;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -372,7 +436,7 @@ template<>
 struct peripheral_t<STM32H7B0x, DELAY_BLOCK_SDMMC2>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC2;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -380,7 +444,7 @@ template<>
 struct peripheral_t<STM32H7B3x, DELAY_BLOCK_OCTOSPI1>
 {
     static constexpr periph_t P = DELAY_BLOCK_OCTOSPI1;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -388,7 +452,7 @@ template<>
 struct peripheral_t<STM32H7B3x, DELAY_BLOCK_OCTOSPI2>
 {
     static constexpr periph_t P = DELAY_BLOCK_OCTOSPI2;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -396,7 +460,7 @@ template<>
 struct peripheral_t<STM32H7B3x, DELAY_BLOCK_SDMMC1>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC1;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 
@@ -404,7 +468,7 @@ template<>
 struct peripheral_t<STM32H7B3x, DELAY_BLOCK_SDMMC2>
 {
     static constexpr periph_t P = DELAY_BLOCK_SDMMC2;
-    using T = stm32h742x_delay_block_sdmmc1_t;
+    using T = stm32h723_delay_block_sdmmc1_t;
     static T& V;
 };
 

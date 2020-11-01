@@ -8,7 +8,7 @@
 
 // DAC2: Digital-to-analog converter
 
-struct stm32f301_dac2_t
+struct stm32f373_dac2_t
 {
     volatile uint32_t CR; // control register
     volatile uint32_t SWTRIGR; // software trigger register
@@ -56,18 +56,10 @@ struct stm32f301_dac2_t
 };
 
 template<>
-struct peripheral_t<STM32F301, DAC2>
-{
-    static constexpr periph_t P = DAC2;
-    using T = stm32f301_dac2_t;
-    static T& V;
-};
-
-template<>
 struct peripheral_t<STM32F373, DAC2>
 {
     static constexpr periph_t P = DAC2;
-    using T = stm32f301_dac2_t;
+    using T = stm32f373_dac2_t;
     static T& V;
 };
 
@@ -75,7 +67,7 @@ template<>
 struct peripheral_t<STM32F3x8, DAC2>
 {
     static constexpr periph_t P = DAC2;
-    using T = stm32f301_dac2_t;
+    using T = stm32f373_dac2_t;
     static T& V;
 };
 

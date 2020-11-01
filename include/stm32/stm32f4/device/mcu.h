@@ -9,8 +9,6 @@
 enum mcu_t
     { STM32F401CBUx
     , STM32F401CCUx
-    , STM32F401CBYx
-    , STM32F401CCYx
     , STM32F401CDUx
     , STM32F401CEUx
     , STM32F401CDYx
@@ -379,22 +377,6 @@ template<> struct mcu_traits<STM32F401CBUx>
 };
 
 template<> struct mcu_traits<STM32F401CCUx>
-{
-    static constexpr family_t family = STM32F4;
-    static constexpr svd_t svd = STM32F401;
-    static constexpr gpio_conf_t gpio_conf = STM32F401_;
-    static constexpr unsigned frequency = 84;
-};
-
-template<> struct mcu_traits<STM32F401CBYx>
-{
-    static constexpr family_t family = STM32F4;
-    static constexpr svd_t svd = STM32F401;
-    static constexpr gpio_conf_t gpio_conf = STM32F401_;
-    static constexpr unsigned frequency = 84;
-};
-
-template<> struct mcu_traits<STM32F401CCYx>
 {
     static constexpr family_t family = STM32F4;
     static constexpr svd_t svd = STM32F401;

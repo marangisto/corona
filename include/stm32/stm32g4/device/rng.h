@@ -87,6 +87,22 @@ struct peripheral_t<STM32G484xx, RNG>
 };
 
 template<>
+struct peripheral_t<STM32G491xx, RNG>
+{
+    static constexpr periph_t P = RNG;
+    using T = stm32g431xx_rng_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, RNG>
+{
+    static constexpr periph_t P = RNG;
+    using T = stm32g431xx_rng_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32GBK1CBT6, RNG>
 {
     static constexpr periph_t P = RNG;

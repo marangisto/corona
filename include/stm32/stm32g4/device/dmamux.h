@@ -283,6 +283,22 @@ struct peripheral_t<STM32G484xx, DMAMUX>
 };
 
 template<>
+struct peripheral_t<STM32G491xx, DMAMUX>
+{
+    static constexpr periph_t P = DMAMUX;
+    using T = stm32g431xx_dmamux_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, DMAMUX>
+{
+    static constexpr periph_t P = DMAMUX;
+    using T = stm32g431xx_dmamux_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32GBK1CBT6, DMAMUX>
 {
     static constexpr periph_t P = DMAMUX;

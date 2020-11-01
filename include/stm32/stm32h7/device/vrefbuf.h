@@ -8,7 +8,7 @@
 
 // VREFBUF: VREFBUF
 
-struct stm32h742x_vrefbuf_t
+struct stm32h723_vrefbuf_t
 {
     volatile uint32_t CSR; // VREFBUF control and status register
     volatile uint32_t CCR; // VREFBUF calibration control register
@@ -41,10 +41,26 @@ struct stm32h750x_vrefbuf_t
 };
 
 template<>
+struct peripheral_t<STM32H723, VREFBUF>
+{
+    static constexpr periph_t P = VREFBUF;
+    using T = stm32h723_vrefbuf_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, VREFBUF>
+{
+    static constexpr periph_t P = VREFBUF;
+    using T = stm32h723_vrefbuf_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H742x, VREFBUF>
 {
     static constexpr periph_t P = VREFBUF;
-    using T = stm32h742x_vrefbuf_t;
+    using T = stm32h723_vrefbuf_t;
     static T& V;
 };
 
@@ -52,7 +68,7 @@ template<>
 struct peripheral_t<STM32H743, VREFBUF>
 {
     static constexpr periph_t P = VREFBUF;
-    using T = stm32h742x_vrefbuf_t;
+    using T = stm32h723_vrefbuf_t;
     static T& V;
 };
 
@@ -60,7 +76,7 @@ template<>
 struct peripheral_t<STM32H745_CM4, VREFBUF>
 {
     static constexpr periph_t P = VREFBUF;
-    using T = stm32h742x_vrefbuf_t;
+    using T = stm32h723_vrefbuf_t;
     static T& V;
 };
 
@@ -68,7 +84,7 @@ template<>
 struct peripheral_t<STM32H745_CM7, VREFBUF>
 {
     static constexpr periph_t P = VREFBUF;
-    using T = stm32h742x_vrefbuf_t;
+    using T = stm32h723_vrefbuf_t;
     static T& V;
 };
 
@@ -76,7 +92,7 @@ template<>
 struct peripheral_t<STM32H747_CM4, VREFBUF>
 {
     static constexpr periph_t P = VREFBUF;
-    using T = stm32h742x_vrefbuf_t;
+    using T = stm32h723_vrefbuf_t;
     static T& V;
 };
 
@@ -84,7 +100,7 @@ template<>
 struct peripheral_t<STM32H747_CM7, VREFBUF>
 {
     static constexpr periph_t P = VREFBUF;
-    using T = stm32h742x_vrefbuf_t;
+    using T = stm32h723_vrefbuf_t;
     static T& V;
 };
 
@@ -92,7 +108,7 @@ template<>
 struct peripheral_t<STM32H753, VREFBUF>
 {
     static constexpr periph_t P = VREFBUF;
-    using T = stm32h742x_vrefbuf_t;
+    using T = stm32h723_vrefbuf_t;
     static T& V;
 };
 
@@ -100,7 +116,7 @@ template<>
 struct peripheral_t<STM32H755_CM4, VREFBUF>
 {
     static constexpr periph_t P = VREFBUF;
-    using T = stm32h742x_vrefbuf_t;
+    using T = stm32h723_vrefbuf_t;
     static T& V;
 };
 
@@ -108,7 +124,7 @@ template<>
 struct peripheral_t<STM32H755_CM7, VREFBUF>
 {
     static constexpr periph_t P = VREFBUF;
-    using T = stm32h742x_vrefbuf_t;
+    using T = stm32h723_vrefbuf_t;
     static T& V;
 };
 
@@ -116,7 +132,7 @@ template<>
 struct peripheral_t<STM32H757_CM4, VREFBUF>
 {
     static constexpr periph_t P = VREFBUF;
-    using T = stm32h742x_vrefbuf_t;
+    using T = stm32h723_vrefbuf_t;
     static T& V;
 };
 
@@ -124,7 +140,7 @@ template<>
 struct peripheral_t<STM32H757_CM7, VREFBUF>
 {
     static constexpr periph_t P = VREFBUF;
-    using T = stm32h742x_vrefbuf_t;
+    using T = stm32h723_vrefbuf_t;
     static T& V;
 };
 

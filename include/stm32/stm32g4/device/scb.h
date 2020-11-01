@@ -133,9 +133,9 @@ struct stm32g431xx_scb_t
     typedef bit_field_t<0, 0xffffffff> AFSR_IMPDEF; // Implementation defined
 };
 
-// SCB_ACTRL: System control block ACTLR
+// SCB_ACTLR: System control block ACTLR
 
-struct stm32g431xx_scb_actrl_t
+struct stm32g431xx_scb_actlr_t
 {
     volatile uint32_t ACTRL; // Auxiliary control register
 
@@ -204,6 +204,22 @@ struct peripheral_t<STM32G484xx, SCB>
 };
 
 template<>
+struct peripheral_t<STM32G491xx, SCB>
+{
+    static constexpr periph_t P = SCB;
+    using T = stm32g431xx_scb_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, SCB>
+{
+    static constexpr periph_t P = SCB;
+    using T = stm32g431xx_scb_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32GBK1CBT6, SCB>
 {
     static constexpr periph_t P = SCB;
@@ -212,68 +228,84 @@ struct peripheral_t<STM32GBK1CBT6, SCB>
 };
 
 template<>
-struct peripheral_t<STM32G431xx, SCB_ACTRL>
+struct peripheral_t<STM32G431xx, SCB_ACTLR>
 {
-    static constexpr periph_t P = SCB_ACTRL;
-    using T = stm32g431xx_scb_actrl_t;
+    static constexpr periph_t P = SCB_ACTLR;
+    using T = stm32g431xx_scb_actlr_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G441xx, SCB_ACTRL>
+struct peripheral_t<STM32G441xx, SCB_ACTLR>
 {
-    static constexpr periph_t P = SCB_ACTRL;
-    using T = stm32g431xx_scb_actrl_t;
+    static constexpr periph_t P = SCB_ACTLR;
+    using T = stm32g431xx_scb_actlr_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G471xx, SCB_ACTRL>
+struct peripheral_t<STM32G471xx, SCB_ACTLR>
 {
-    static constexpr periph_t P = SCB_ACTRL;
-    using T = stm32g431xx_scb_actrl_t;
+    static constexpr periph_t P = SCB_ACTLR;
+    using T = stm32g431xx_scb_actlr_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G473xx, SCB_ACTRL>
+struct peripheral_t<STM32G473xx, SCB_ACTLR>
 {
-    static constexpr periph_t P = SCB_ACTRL;
-    using T = stm32g431xx_scb_actrl_t;
+    static constexpr periph_t P = SCB_ACTLR;
+    using T = stm32g431xx_scb_actlr_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G474xx, SCB_ACTRL>
+struct peripheral_t<STM32G474xx, SCB_ACTLR>
 {
-    static constexpr periph_t P = SCB_ACTRL;
-    using T = stm32g431xx_scb_actrl_t;
+    static constexpr periph_t P = SCB_ACTLR;
+    using T = stm32g431xx_scb_actlr_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G483xx, SCB_ACTRL>
+struct peripheral_t<STM32G483xx, SCB_ACTLR>
 {
-    static constexpr periph_t P = SCB_ACTRL;
-    using T = stm32g431xx_scb_actrl_t;
+    static constexpr periph_t P = SCB_ACTLR;
+    using T = stm32g431xx_scb_actlr_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32G484xx, SCB_ACTRL>
+struct peripheral_t<STM32G484xx, SCB_ACTLR>
 {
-    static constexpr periph_t P = SCB_ACTRL;
-    using T = stm32g431xx_scb_actrl_t;
+    static constexpr periph_t P = SCB_ACTLR;
+    using T = stm32g431xx_scb_actlr_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32GBK1CBT6, SCB_ACTRL>
+struct peripheral_t<STM32G491xx, SCB_ACTLR>
 {
-    static constexpr periph_t P = SCB_ACTRL;
-    using T = stm32g431xx_scb_actrl_t;
+    static constexpr periph_t P = SCB_ACTLR;
+    using T = stm32g431xx_scb_actlr_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, SCB_ACTLR>
+{
+    static constexpr periph_t P = SCB_ACTLR;
+    using T = stm32g431xx_scb_actlr_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32GBK1CBT6, SCB_ACTLR>
+{
+    static constexpr periph_t P = SCB_ACTLR;
+    using T = stm32g431xx_scb_actlr_t;
     static T& V;
 };
 
 using scb_t = peripheral_t<svd, SCB>;
-using scb_actrl_t = peripheral_t<svd, SCB_ACTRL>;
+using scb_actlr_t = peripheral_t<svd, SCB_ACTLR>;

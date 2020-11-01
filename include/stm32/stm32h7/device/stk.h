@@ -8,7 +8,7 @@
 
 // STK: SysTick timer
 
-struct stm32h742x_stk_t
+struct stm32h723_stk_t
 {
     volatile uint32_t CSR; // SysTick control and status register
     volatile uint32_t RVR; // SysTick reload value register
@@ -34,10 +34,26 @@ struct stm32h742x_stk_t
 };
 
 template<>
+struct peripheral_t<STM32H723, STK>
+{
+    static constexpr periph_t P = STK;
+    using T = stm32h723_stk_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, STK>
+{
+    static constexpr periph_t P = STK;
+    using T = stm32h723_stk_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H742x, STK>
 {
     static constexpr periph_t P = STK;
-    using T = stm32h742x_stk_t;
+    using T = stm32h723_stk_t;
     static T& V;
 };
 
@@ -45,7 +61,7 @@ template<>
 struct peripheral_t<STM32H743, STK>
 {
     static constexpr periph_t P = STK;
-    using T = stm32h742x_stk_t;
+    using T = stm32h723_stk_t;
     static T& V;
 };
 
@@ -53,7 +69,7 @@ template<>
 struct peripheral_t<STM32H745_CM4, STK>
 {
     static constexpr periph_t P = STK;
-    using T = stm32h742x_stk_t;
+    using T = stm32h723_stk_t;
     static T& V;
 };
 
@@ -61,7 +77,7 @@ template<>
 struct peripheral_t<STM32H745_CM7, STK>
 {
     static constexpr periph_t P = STK;
-    using T = stm32h742x_stk_t;
+    using T = stm32h723_stk_t;
     static T& V;
 };
 
@@ -69,7 +85,7 @@ template<>
 struct peripheral_t<STM32H747_CM4, STK>
 {
     static constexpr periph_t P = STK;
-    using T = stm32h742x_stk_t;
+    using T = stm32h723_stk_t;
     static T& V;
 };
 
@@ -77,7 +93,7 @@ template<>
 struct peripheral_t<STM32H747_CM7, STK>
 {
     static constexpr periph_t P = STK;
-    using T = stm32h742x_stk_t;
+    using T = stm32h723_stk_t;
     static T& V;
 };
 
@@ -85,7 +101,7 @@ template<>
 struct peripheral_t<STM32H750x, STK>
 {
     static constexpr periph_t P = STK;
-    using T = stm32h742x_stk_t;
+    using T = stm32h723_stk_t;
     static T& V;
 };
 
@@ -93,7 +109,7 @@ template<>
 struct peripheral_t<STM32H753, STK>
 {
     static constexpr periph_t P = STK;
-    using T = stm32h742x_stk_t;
+    using T = stm32h723_stk_t;
     static T& V;
 };
 
@@ -101,7 +117,7 @@ template<>
 struct peripheral_t<STM32H755_CM4, STK>
 {
     static constexpr periph_t P = STK;
-    using T = stm32h742x_stk_t;
+    using T = stm32h723_stk_t;
     static T& V;
 };
 
@@ -109,7 +125,7 @@ template<>
 struct peripheral_t<STM32H755_CM7, STK>
 {
     static constexpr periph_t P = STK;
-    using T = stm32h742x_stk_t;
+    using T = stm32h723_stk_t;
     static T& V;
 };
 
@@ -117,7 +133,7 @@ template<>
 struct peripheral_t<STM32H757_CM4, STK>
 {
     static constexpr periph_t P = STK;
-    using T = stm32h742x_stk_t;
+    using T = stm32h723_stk_t;
     static T& V;
 };
 
@@ -125,7 +141,7 @@ template<>
 struct peripheral_t<STM32H757_CM7, STK>
 {
     static constexpr periph_t P = STK;
-    using T = stm32h742x_stk_t;
+    using T = stm32h723_stk_t;
     static T& V;
 };
 
@@ -133,7 +149,7 @@ template<>
 struct peripheral_t<STM32H7A3x, STK>
 {
     static constexpr periph_t P = STK;
-    using T = stm32h742x_stk_t;
+    using T = stm32h723_stk_t;
     static T& V;
 };
 
@@ -141,7 +157,7 @@ template<>
 struct peripheral_t<STM32H7B0x, STK>
 {
     static constexpr periph_t P = STK;
-    using T = stm32h742x_stk_t;
+    using T = stm32h723_stk_t;
     static T& V;
 };
 
@@ -149,7 +165,7 @@ template<>
 struct peripheral_t<STM32H7B3x, STK>
 {
     static constexpr periph_t P = STK;
-    using T = stm32h742x_stk_t;
+    using T = stm32h723_stk_t;
     static T& V;
 };
 

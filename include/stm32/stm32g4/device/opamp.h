@@ -279,6 +279,22 @@ struct peripheral_t<STM32G471xx, OPAMP>
 };
 
 template<>
+struct peripheral_t<STM32G491xx, OPAMP>
+{
+    static constexpr periph_t P = OPAMP;
+    using T = stm32g431xx_opamp_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, OPAMP>
+{
+    static constexpr periph_t P = OPAMP;
+    using T = stm32g431xx_opamp_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32GBK1CBT6, OPAMP>
 {
     static constexpr periph_t P = OPAMP;

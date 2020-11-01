@@ -30,6 +30,7 @@ struct interrupt
         , TAMP_S = 5 // Tamper secure global interrupt (EXTI line 20)
         , FLASH = 6 // Flash global interrupt
         , FLASH_S = 7 // Flash memory secure global interrupt
+        , GTZC = 8 // TZIC secure global interrupt
         , RCC = 9 // RCC global interrupt
         , RCC_S = 10 // RCC SECURE GLOBAL INTERRUPT
         , EXTI0 = 11 // EXTI line0 interrupt
@@ -59,6 +60,7 @@ struct interrupt
         , DMA1_CHANNEL7 = 35 // DMA1 Channel 7 interrupt
         , DMA1_CHANNEL8 = 36 // DMA1_Channel8
         , ADC1_2 = 37 // ADC1_2 global interrupt
+        , DAC = 38 // DAC global interrupt
         , FDCAN1_IT0 = 39 // FDCAN1 Interrupt 0
         , FDCAN1_IT1 = 40 // FDCAN1 Interrupt 1
         , TIM1_BRK = 41 // TIM1 Break
@@ -94,6 +96,7 @@ struct interrupt
         , TIM17 = 71 // TIM17 global interrupt
         , COMP = 72 // COMP1 and COMP2 interrupts
         , USB_FS = 73 // USB FS global interrupt
+        , CRS = 74 // Clock recovery system global interrupt
         , FMC = 75 // FMC global interrupt
         , OCTOSPI1 = 76 // OCTOSPI1 global interrupt
         , SDMMC1 = 78 // SDMMC1 global interrupt
@@ -112,6 +115,7 @@ struct interrupt
         , TSC = 92 // TSC global interrupt
         , AES = 93 // AES global interrupts
         , RNG = 94 // RNG global interrupt
+        , HASH = 96 // HASH interrupt
         , PKA = 97 // PKA global interrupts
         , LPTIM3 = 98 // LPTIM3
         , SPI3 = 99 // SPI3

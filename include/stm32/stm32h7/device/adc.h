@@ -524,7 +524,7 @@ struct stm32h7a3x_adc2_t
 
 // ADC3: Analog to Digital Converter
 
-struct stm32h742x_adc3_t
+struct stm32h723_adc3_t
 {
     volatile uint32_t ISR; // ADC interrupt and status register
     volatile uint32_t IER; // ADC interrupt enable register
@@ -604,7 +604,7 @@ struct stm32h742x_adc3_t
     static constexpr uint32_t CR_LINCALRDYW2 = 0x800000; // Linearity calibration ready Word 2
     static constexpr uint32_t CR_LINCALRDYW1 = 0x400000; // Linearity calibration ready Word 1
     static constexpr uint32_t CR_ADCALLIN = 0x10000; // Linearity calibration
-    static constexpr uint32_t CR_BOOST = 0x100; // Boost mode control
+    typedef bit_field_t<8, 0x3> CR_BOOST; // Boost mode control
     static constexpr uint32_t CR_JADSTP = 0x20; // ADC group injected conversion stop
     static constexpr uint32_t CR_ADSTP = 0x10; // ADC group regular conversion stop
     static constexpr uint32_t CR_JADSTART = 0x8; // ADC group injected conversion start
@@ -782,7 +782,7 @@ struct stm32h742x_adc3_t
 
 // ADC3: Analog to Digital Converter
 
-struct stm32h745_cm4_adc3_t
+struct stm32h742x_adc3_t
 {
     volatile uint32_t ISR; // ADC interrupt and status register
     volatile uint32_t IER; // ADC interrupt enable register
@@ -862,7 +862,7 @@ struct stm32h745_cm4_adc3_t
     static constexpr uint32_t CR_LINCALRDYW2 = 0x800000; // Linearity calibration ready Word 2
     static constexpr uint32_t CR_LINCALRDYW1 = 0x400000; // Linearity calibration ready Word 1
     static constexpr uint32_t CR_ADCALLIN = 0x10000; // Linearity calibration
-    typedef bit_field_t<8, 0x3> CR_BOOST; // Boost mode control
+    static constexpr uint32_t CR_BOOST = 0x100; // Boost mode control
     static constexpr uint32_t CR_JADSTP = 0x20; // ADC group injected conversion stop
     static constexpr uint32_t CR_ADSTP = 0x10; // ADC group regular conversion stop
     static constexpr uint32_t CR_JADSTART = 0x8; // ADC group injected conversion start
@@ -1303,7 +1303,7 @@ struct stm32h750x_adc3_t
 
 // ADC3_COMMON: Analog-to-Digital Converter
 
-struct stm32h742x_adc3_common_t
+struct stm32h723_adc3_common_t
 {
     volatile uint32_t CSR; // ADC Common status register
     reserved_t<0x1> _0x4;
@@ -1452,6 +1452,230 @@ struct peripheral_t<STM32H7B3x, ADC2>
 };
 
 template<>
+struct peripheral_t<STM32H723, ADC1>
+{
+    static constexpr periph_t P = ADC1;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H723, ADC3>
+{
+    static constexpr periph_t P = ADC3;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, ADC1>
+{
+    static constexpr periph_t P = ADC1;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, ADC3>
+{
+    static constexpr periph_t P = ADC3;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H745_CM4, ADC1>
+{
+    static constexpr periph_t P = ADC1;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H745_CM4, ADC2>
+{
+    static constexpr periph_t P = ADC2;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H745_CM4, ADC3>
+{
+    static constexpr periph_t P = ADC3;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H745_CM7, ADC1>
+{
+    static constexpr periph_t P = ADC1;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H745_CM7, ADC2>
+{
+    static constexpr periph_t P = ADC2;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H745_CM7, ADC3>
+{
+    static constexpr periph_t P = ADC3;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H747_CM4, ADC1>
+{
+    static constexpr periph_t P = ADC1;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H747_CM4, ADC2>
+{
+    static constexpr periph_t P = ADC2;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H747_CM4, ADC3>
+{
+    static constexpr periph_t P = ADC3;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H747_CM7, ADC1>
+{
+    static constexpr periph_t P = ADC1;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H747_CM7, ADC2>
+{
+    static constexpr periph_t P = ADC2;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H747_CM7, ADC3>
+{
+    static constexpr periph_t P = ADC3;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H755_CM4, ADC1>
+{
+    static constexpr periph_t P = ADC1;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H755_CM4, ADC2>
+{
+    static constexpr periph_t P = ADC2;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H755_CM4, ADC3>
+{
+    static constexpr periph_t P = ADC3;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H755_CM7, ADC1>
+{
+    static constexpr periph_t P = ADC1;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H755_CM7, ADC2>
+{
+    static constexpr periph_t P = ADC2;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H755_CM7, ADC3>
+{
+    static constexpr periph_t P = ADC3;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H757_CM4, ADC1>
+{
+    static constexpr periph_t P = ADC1;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H757_CM4, ADC2>
+{
+    static constexpr periph_t P = ADC2;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H757_CM4, ADC3>
+{
+    static constexpr periph_t P = ADC3;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H757_CM7, ADC1>
+{
+    static constexpr periph_t P = ADC1;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H757_CM7, ADC2>
+{
+    static constexpr periph_t P = ADC2;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H757_CM7, ADC3>
+{
+    static constexpr periph_t P = ADC3;
+    using T = stm32h723_adc3_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H742x, ADC1>
 {
     static constexpr periph_t P = ADC1;
@@ -1524,198 +1748,6 @@ struct peripheral_t<STM32H753, ADC3>
 };
 
 template<>
-struct peripheral_t<STM32H745_CM4, ADC1>
-{
-    static constexpr periph_t P = ADC1;
-    using T = stm32h745_cm4_adc3_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H745_CM4, ADC2>
-{
-    static constexpr periph_t P = ADC2;
-    using T = stm32h745_cm4_adc3_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H745_CM4, ADC3>
-{
-    static constexpr periph_t P = ADC3;
-    using T = stm32h745_cm4_adc3_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H745_CM7, ADC1>
-{
-    static constexpr periph_t P = ADC1;
-    using T = stm32h745_cm4_adc3_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H745_CM7, ADC2>
-{
-    static constexpr periph_t P = ADC2;
-    using T = stm32h745_cm4_adc3_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H745_CM7, ADC3>
-{
-    static constexpr periph_t P = ADC3;
-    using T = stm32h745_cm4_adc3_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H747_CM4, ADC1>
-{
-    static constexpr periph_t P = ADC1;
-    using T = stm32h745_cm4_adc3_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H747_CM4, ADC2>
-{
-    static constexpr periph_t P = ADC2;
-    using T = stm32h745_cm4_adc3_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H747_CM4, ADC3>
-{
-    static constexpr periph_t P = ADC3;
-    using T = stm32h745_cm4_adc3_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H747_CM7, ADC1>
-{
-    static constexpr periph_t P = ADC1;
-    using T = stm32h745_cm4_adc3_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H747_CM7, ADC2>
-{
-    static constexpr periph_t P = ADC2;
-    using T = stm32h745_cm4_adc3_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H747_CM7, ADC3>
-{
-    static constexpr periph_t P = ADC3;
-    using T = stm32h745_cm4_adc3_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H755_CM4, ADC1>
-{
-    static constexpr periph_t P = ADC1;
-    using T = stm32h745_cm4_adc3_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H755_CM4, ADC2>
-{
-    static constexpr periph_t P = ADC2;
-    using T = stm32h745_cm4_adc3_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H755_CM4, ADC3>
-{
-    static constexpr periph_t P = ADC3;
-    using T = stm32h745_cm4_adc3_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H755_CM7, ADC1>
-{
-    static constexpr periph_t P = ADC1;
-    using T = stm32h745_cm4_adc3_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H755_CM7, ADC2>
-{
-    static constexpr periph_t P = ADC2;
-    using T = stm32h745_cm4_adc3_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H755_CM7, ADC3>
-{
-    static constexpr periph_t P = ADC3;
-    using T = stm32h745_cm4_adc3_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H757_CM4, ADC1>
-{
-    static constexpr periph_t P = ADC1;
-    using T = stm32h745_cm4_adc3_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H757_CM4, ADC2>
-{
-    static constexpr periph_t P = ADC2;
-    using T = stm32h745_cm4_adc3_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H757_CM4, ADC3>
-{
-    static constexpr periph_t P = ADC3;
-    using T = stm32h745_cm4_adc3_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H757_CM7, ADC1>
-{
-    static constexpr periph_t P = ADC1;
-    using T = stm32h745_cm4_adc3_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H757_CM7, ADC2>
-{
-    static constexpr periph_t P = ADC2;
-    using T = stm32h745_cm4_adc3_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H757_CM7, ADC3>
-{
-    static constexpr periph_t P = ADC3;
-    using T = stm32h745_cm4_adc3_t;
-    static T& V;
-};
-
-template<>
 struct peripheral_t<STM32H750x, ADC1>
 {
     static constexpr periph_t P = ADC1;
@@ -1740,10 +1772,42 @@ struct peripheral_t<STM32H750x, ADC3>
 };
 
 template<>
+struct peripheral_t<STM32H723, ADC12_COMMON>
+{
+    static constexpr periph_t P = ADC12_COMMON;
+    using T = stm32h723_adc3_common_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H723, ADC3_COMMON>
+{
+    static constexpr periph_t P = ADC3_COMMON;
+    using T = stm32h723_adc3_common_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, ADC12_COMMON>
+{
+    static constexpr periph_t P = ADC12_COMMON;
+    using T = stm32h723_adc3_common_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, ADC3_COMMON>
+{
+    static constexpr periph_t P = ADC3_COMMON;
+    using T = stm32h723_adc3_common_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H742x, ADC12_COMMON>
 {
     static constexpr periph_t P = ADC12_COMMON;
-    using T = stm32h742x_adc3_common_t;
+    using T = stm32h723_adc3_common_t;
     static T& V;
 };
 
@@ -1751,7 +1815,7 @@ template<>
 struct peripheral_t<STM32H742x, ADC3_COMMON>
 {
     static constexpr periph_t P = ADC3_COMMON;
-    using T = stm32h742x_adc3_common_t;
+    using T = stm32h723_adc3_common_t;
     static T& V;
 };
 
@@ -1759,7 +1823,7 @@ template<>
 struct peripheral_t<STM32H743, ADC12_COMMON>
 {
     static constexpr periph_t P = ADC12_COMMON;
-    using T = stm32h742x_adc3_common_t;
+    using T = stm32h723_adc3_common_t;
     static T& V;
 };
 
@@ -1767,7 +1831,7 @@ template<>
 struct peripheral_t<STM32H743, ADC3_COMMON>
 {
     static constexpr periph_t P = ADC3_COMMON;
-    using T = stm32h742x_adc3_common_t;
+    using T = stm32h723_adc3_common_t;
     static T& V;
 };
 
@@ -1775,7 +1839,7 @@ template<>
 struct peripheral_t<STM32H745_CM4, ADC12_COMMON>
 {
     static constexpr periph_t P = ADC12_COMMON;
-    using T = stm32h742x_adc3_common_t;
+    using T = stm32h723_adc3_common_t;
     static T& V;
 };
 
@@ -1783,7 +1847,7 @@ template<>
 struct peripheral_t<STM32H745_CM4, ADC3_COMMON>
 {
     static constexpr periph_t P = ADC3_COMMON;
-    using T = stm32h742x_adc3_common_t;
+    using T = stm32h723_adc3_common_t;
     static T& V;
 };
 
@@ -1791,7 +1855,7 @@ template<>
 struct peripheral_t<STM32H745_CM7, ADC12_COMMON>
 {
     static constexpr periph_t P = ADC12_COMMON;
-    using T = stm32h742x_adc3_common_t;
+    using T = stm32h723_adc3_common_t;
     static T& V;
 };
 
@@ -1799,7 +1863,7 @@ template<>
 struct peripheral_t<STM32H745_CM7, ADC3_COMMON>
 {
     static constexpr periph_t P = ADC3_COMMON;
-    using T = stm32h742x_adc3_common_t;
+    using T = stm32h723_adc3_common_t;
     static T& V;
 };
 
@@ -1807,7 +1871,7 @@ template<>
 struct peripheral_t<STM32H747_CM4, ADC12_COMMON>
 {
     static constexpr periph_t P = ADC12_COMMON;
-    using T = stm32h742x_adc3_common_t;
+    using T = stm32h723_adc3_common_t;
     static T& V;
 };
 
@@ -1815,7 +1879,7 @@ template<>
 struct peripheral_t<STM32H747_CM4, ADC3_COMMON>
 {
     static constexpr periph_t P = ADC3_COMMON;
-    using T = stm32h742x_adc3_common_t;
+    using T = stm32h723_adc3_common_t;
     static T& V;
 };
 
@@ -1823,7 +1887,7 @@ template<>
 struct peripheral_t<STM32H747_CM7, ADC12_COMMON>
 {
     static constexpr periph_t P = ADC12_COMMON;
-    using T = stm32h742x_adc3_common_t;
+    using T = stm32h723_adc3_common_t;
     static T& V;
 };
 
@@ -1831,7 +1895,7 @@ template<>
 struct peripheral_t<STM32H747_CM7, ADC3_COMMON>
 {
     static constexpr periph_t P = ADC3_COMMON;
-    using T = stm32h742x_adc3_common_t;
+    using T = stm32h723_adc3_common_t;
     static T& V;
 };
 
@@ -1839,7 +1903,7 @@ template<>
 struct peripheral_t<STM32H753, ADC12_COMMON>
 {
     static constexpr periph_t P = ADC12_COMMON;
-    using T = stm32h742x_adc3_common_t;
+    using T = stm32h723_adc3_common_t;
     static T& V;
 };
 
@@ -1847,7 +1911,7 @@ template<>
 struct peripheral_t<STM32H753, ADC3_COMMON>
 {
     static constexpr periph_t P = ADC3_COMMON;
-    using T = stm32h742x_adc3_common_t;
+    using T = stm32h723_adc3_common_t;
     static T& V;
 };
 
@@ -1855,7 +1919,7 @@ template<>
 struct peripheral_t<STM32H755_CM4, ADC12_COMMON>
 {
     static constexpr periph_t P = ADC12_COMMON;
-    using T = stm32h742x_adc3_common_t;
+    using T = stm32h723_adc3_common_t;
     static T& V;
 };
 
@@ -1863,7 +1927,7 @@ template<>
 struct peripheral_t<STM32H755_CM4, ADC3_COMMON>
 {
     static constexpr periph_t P = ADC3_COMMON;
-    using T = stm32h742x_adc3_common_t;
+    using T = stm32h723_adc3_common_t;
     static T& V;
 };
 
@@ -1871,7 +1935,7 @@ template<>
 struct peripheral_t<STM32H755_CM7, ADC12_COMMON>
 {
     static constexpr periph_t P = ADC12_COMMON;
-    using T = stm32h742x_adc3_common_t;
+    using T = stm32h723_adc3_common_t;
     static T& V;
 };
 
@@ -1879,7 +1943,7 @@ template<>
 struct peripheral_t<STM32H755_CM7, ADC3_COMMON>
 {
     static constexpr periph_t P = ADC3_COMMON;
-    using T = stm32h742x_adc3_common_t;
+    using T = stm32h723_adc3_common_t;
     static T& V;
 };
 
@@ -1887,7 +1951,7 @@ template<>
 struct peripheral_t<STM32H757_CM4, ADC12_COMMON>
 {
     static constexpr periph_t P = ADC12_COMMON;
-    using T = stm32h742x_adc3_common_t;
+    using T = stm32h723_adc3_common_t;
     static T& V;
 };
 
@@ -1895,7 +1959,7 @@ template<>
 struct peripheral_t<STM32H757_CM4, ADC3_COMMON>
 {
     static constexpr periph_t P = ADC3_COMMON;
-    using T = stm32h742x_adc3_common_t;
+    using T = stm32h723_adc3_common_t;
     static T& V;
 };
 
@@ -1903,7 +1967,7 @@ template<>
 struct peripheral_t<STM32H757_CM7, ADC12_COMMON>
 {
     static constexpr periph_t P = ADC12_COMMON;
-    using T = stm32h742x_adc3_common_t;
+    using T = stm32h723_adc3_common_t;
     static T& V;
 };
 
@@ -1911,7 +1975,7 @@ template<>
 struct peripheral_t<STM32H757_CM7, ADC3_COMMON>
 {
     static constexpr periph_t P = ADC3_COMMON;
-    using T = stm32h742x_adc3_common_t;
+    using T = stm32h723_adc3_common_t;
     static T& V;
 };
 

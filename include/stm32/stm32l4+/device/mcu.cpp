@@ -706,11 +706,6 @@ typename peripheral_t<STM32L4Q5, FLASH>::T&
         <typename peripheral_t<STM32L4Q5, FLASH>::T*
         >(0x40022000);
 
-typename peripheral_t<STM32L4R5, FLASH>::T&
-    peripheral_t<STM32L4R5, FLASH>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L4R5, FLASH>::T*
-        >(0x40022000);
-
 typename peripheral_t<STM32L4R7, FLASH>::T&
     peripheral_t<STM32L4R7, FLASH>::V = *reinterpret_cast
         <typename peripheral_t<STM32L4R7, FLASH>::T*
@@ -734,6 +729,11 @@ typename peripheral_t<STM32L4S7, FLASH>::T&
 typename peripheral_t<STM32L4S9, FLASH>::T&
     peripheral_t<STM32L4S9, FLASH>::V = *reinterpret_cast
         <typename peripheral_t<STM32L4S9, FLASH>::T*
+        >(0x40022000);
+
+typename peripheral_t<STM32L4R5, FLASH>::T&
+    peripheral_t<STM32L4R5, FLASH>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L4R5, FLASH>::T*
         >(0x40022000);
 
 typename peripheral_t<STM32L4P5, FMC>::T&

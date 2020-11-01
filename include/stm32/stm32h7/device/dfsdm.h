@@ -8,7 +8,7 @@
 
 // DFSDM: Digital filter for sigma delta modulators
 
-struct stm32h742x_dfsdm_t
+struct stm32h723_dfsdm_t
 {
     volatile uint32_t CH0CFGR1; // channel configuration y register
     volatile uint32_t CH0CFGR2; // channel configuration y register
@@ -1436,10 +1436,26 @@ struct stm32h743_dfsdm_t
 };
 
 template<>
+struct peripheral_t<STM32H723, DFSDM>
+{
+    static constexpr periph_t P = DFSDM;
+    using T = stm32h723_dfsdm_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, DFSDM>
+{
+    static constexpr periph_t P = DFSDM;
+    using T = stm32h723_dfsdm_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H742x, DFSDM>
 {
     static constexpr periph_t P = DFSDM;
-    using T = stm32h742x_dfsdm_t;
+    using T = stm32h723_dfsdm_t;
     static T& V;
 };
 
@@ -1447,7 +1463,7 @@ template<>
 struct peripheral_t<STM32H745_CM4, DFSDM>
 {
     static constexpr periph_t P = DFSDM;
-    using T = stm32h742x_dfsdm_t;
+    using T = stm32h723_dfsdm_t;
     static T& V;
 };
 
@@ -1455,7 +1471,7 @@ template<>
 struct peripheral_t<STM32H745_CM7, DFSDM>
 {
     static constexpr periph_t P = DFSDM;
-    using T = stm32h742x_dfsdm_t;
+    using T = stm32h723_dfsdm_t;
     static T& V;
 };
 
@@ -1463,7 +1479,7 @@ template<>
 struct peripheral_t<STM32H747_CM4, DFSDM>
 {
     static constexpr periph_t P = DFSDM;
-    using T = stm32h742x_dfsdm_t;
+    using T = stm32h723_dfsdm_t;
     static T& V;
 };
 
@@ -1471,7 +1487,7 @@ template<>
 struct peripheral_t<STM32H747_CM7, DFSDM>
 {
     static constexpr periph_t P = DFSDM;
-    using T = stm32h742x_dfsdm_t;
+    using T = stm32h723_dfsdm_t;
     static T& V;
 };
 
@@ -1479,7 +1495,7 @@ template<>
 struct peripheral_t<STM32H750x, DFSDM>
 {
     static constexpr periph_t P = DFSDM;
-    using T = stm32h742x_dfsdm_t;
+    using T = stm32h723_dfsdm_t;
     static T& V;
 };
 
@@ -1487,7 +1503,7 @@ template<>
 struct peripheral_t<STM32H753, DFSDM>
 {
     static constexpr periph_t P = DFSDM;
-    using T = stm32h742x_dfsdm_t;
+    using T = stm32h723_dfsdm_t;
     static T& V;
 };
 
@@ -1495,7 +1511,7 @@ template<>
 struct peripheral_t<STM32H755_CM4, DFSDM>
 {
     static constexpr periph_t P = DFSDM;
-    using T = stm32h742x_dfsdm_t;
+    using T = stm32h723_dfsdm_t;
     static T& V;
 };
 
@@ -1503,7 +1519,7 @@ template<>
 struct peripheral_t<STM32H755_CM7, DFSDM>
 {
     static constexpr periph_t P = DFSDM;
-    using T = stm32h742x_dfsdm_t;
+    using T = stm32h723_dfsdm_t;
     static T& V;
 };
 
@@ -1511,7 +1527,7 @@ template<>
 struct peripheral_t<STM32H757_CM4, DFSDM>
 {
     static constexpr periph_t P = DFSDM;
-    using T = stm32h742x_dfsdm_t;
+    using T = stm32h723_dfsdm_t;
     static T& V;
 };
 
@@ -1519,7 +1535,7 @@ template<>
 struct peripheral_t<STM32H757_CM7, DFSDM>
 {
     static constexpr periph_t P = DFSDM;
-    using T = stm32h742x_dfsdm_t;
+    using T = stm32h723_dfsdm_t;
     static T& V;
 };
 
@@ -1527,7 +1543,7 @@ template<>
 struct peripheral_t<STM32H7A3x, DFSDM>
 {
     static constexpr periph_t P = DFSDM;
-    using T = stm32h742x_dfsdm_t;
+    using T = stm32h723_dfsdm_t;
     static T& V;
 };
 
@@ -1535,7 +1551,7 @@ template<>
 struct peripheral_t<STM32H7B0x, DFSDM>
 {
     static constexpr periph_t P = DFSDM;
-    using T = stm32h742x_dfsdm_t;
+    using T = stm32h723_dfsdm_t;
     static T& V;
 };
 
@@ -1543,7 +1559,7 @@ template<>
 struct peripheral_t<STM32H7B3x, DFSDM>
 {
     static constexpr periph_t P = DFSDM;
-    using T = stm32h742x_dfsdm_t;
+    using T = stm32h723_dfsdm_t;
     static T& V;
 };
 

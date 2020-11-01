@@ -8,7 +8,7 @@
 
 // RNG: RNG
 
-struct stm32h742x_rng_t
+struct stm32h723_rng_t
 {
     volatile uint32_t CR; // RNG control register
     volatile uint32_t SR; // RNG status register
@@ -55,10 +55,26 @@ struct stm32h750x_rng_t
 };
 
 template<>
+struct peripheral_t<STM32H723, RNG>
+{
+    static constexpr periph_t P = RNG;
+    using T = stm32h723_rng_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, RNG>
+{
+    static constexpr periph_t P = RNG;
+    using T = stm32h723_rng_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H742x, RNG>
 {
     static constexpr periph_t P = RNG;
-    using T = stm32h742x_rng_t;
+    using T = stm32h723_rng_t;
     static T& V;
 };
 
@@ -66,7 +82,7 @@ template<>
 struct peripheral_t<STM32H743, RNG>
 {
     static constexpr periph_t P = RNG;
-    using T = stm32h742x_rng_t;
+    using T = stm32h723_rng_t;
     static T& V;
 };
 
@@ -74,7 +90,7 @@ template<>
 struct peripheral_t<STM32H745_CM4, RNG>
 {
     static constexpr periph_t P = RNG;
-    using T = stm32h742x_rng_t;
+    using T = stm32h723_rng_t;
     static T& V;
 };
 
@@ -82,7 +98,7 @@ template<>
 struct peripheral_t<STM32H745_CM7, RNG>
 {
     static constexpr periph_t P = RNG;
-    using T = stm32h742x_rng_t;
+    using T = stm32h723_rng_t;
     static T& V;
 };
 
@@ -90,7 +106,7 @@ template<>
 struct peripheral_t<STM32H747_CM4, RNG>
 {
     static constexpr periph_t P = RNG;
-    using T = stm32h742x_rng_t;
+    using T = stm32h723_rng_t;
     static T& V;
 };
 
@@ -98,7 +114,7 @@ template<>
 struct peripheral_t<STM32H747_CM7, RNG>
 {
     static constexpr periph_t P = RNG;
-    using T = stm32h742x_rng_t;
+    using T = stm32h723_rng_t;
     static T& V;
 };
 
@@ -106,7 +122,7 @@ template<>
 struct peripheral_t<STM32H753, RNG>
 {
     static constexpr periph_t P = RNG;
-    using T = stm32h742x_rng_t;
+    using T = stm32h723_rng_t;
     static T& V;
 };
 
@@ -114,7 +130,7 @@ template<>
 struct peripheral_t<STM32H755_CM4, RNG>
 {
     static constexpr periph_t P = RNG;
-    using T = stm32h742x_rng_t;
+    using T = stm32h723_rng_t;
     static T& V;
 };
 
@@ -122,7 +138,7 @@ template<>
 struct peripheral_t<STM32H755_CM7, RNG>
 {
     static constexpr periph_t P = RNG;
-    using T = stm32h742x_rng_t;
+    using T = stm32h723_rng_t;
     static T& V;
 };
 
@@ -130,7 +146,7 @@ template<>
 struct peripheral_t<STM32H757_CM4, RNG>
 {
     static constexpr periph_t P = RNG;
-    using T = stm32h742x_rng_t;
+    using T = stm32h723_rng_t;
     static T& V;
 };
 
@@ -138,7 +154,7 @@ template<>
 struct peripheral_t<STM32H757_CM7, RNG>
 {
     static constexpr periph_t P = RNG;
-    using T = stm32h742x_rng_t;
+    using T = stm32h723_rng_t;
     static T& V;
 };
 
@@ -146,7 +162,7 @@ template<>
 struct peripheral_t<STM32H7A3x, RNG>
 {
     static constexpr periph_t P = RNG;
-    using T = stm32h742x_rng_t;
+    using T = stm32h723_rng_t;
     static T& V;
 };
 

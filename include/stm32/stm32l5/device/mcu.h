@@ -35,10 +35,12 @@ enum mcu_t
     , STM32L562CEUxP
     , STM32L562MEYxP
     , STM32L562MEYxQ
+    , STM32L562QEIx
     , STM32L562QEIxP
     , STM32L562QEIxQ
     , STM32L562RETx
     , STM32L562RETxP
+    , STM32L562RETxQ
     , STM32L562VETx
     , STM32L562VETxQ
     , STM32L562ZETx
@@ -56,6 +58,7 @@ enum gpio_conf_t
 
 enum periph_t
     { ADC1
+    , ADC2
     , ADC_COMMON
     , AES
     , COMP
@@ -72,8 +75,6 @@ enum periph_t
     , FDCAN1
     , FLASH
     , FMC
-    , FPU
-    , FPU_CPACR
     , GPIOA
     , GPIOB
     , GPIOC
@@ -86,6 +87,7 @@ enum periph_t
     , GTZC_MPCBB2
     , GTZC_TZIC
     , GTZC_TZSC
+    , HASH
     , I2C1
     , I2C2
     , I2C3
@@ -109,7 +111,8 @@ enum periph_t
     , SAI1
     , SAI2
     , SDMMC1
-    , SEC_ADC
+    , SEC_ADC1
+    , SEC_ADC2
     , SEC_ADC_COMMON
     , SEC_AES
     , SEC_COMP
@@ -136,6 +139,7 @@ enum periph_t
     , SEC_GTZC_MPCBB2
     , SEC_GTZC_TZIC
     , SEC_GTZC_TZSC
+    , SEC_HASH
     , SEC_I2C1
     , SEC_I2C2
     , SEC_I2C3
@@ -186,7 +190,6 @@ enum periph_t
     , SPI1
     , SPI2
     , SPI3
-    , STK
     , SYSCFG
     , TAMP
     , TIM1
@@ -447,6 +450,14 @@ template<> struct mcu_traits<STM32L562MEYxQ>
     static constexpr unsigned frequency = 110;
 };
 
+template<> struct mcu_traits<STM32L562QEIx>
+{
+    static constexpr family_t family = STM32L5;
+    static constexpr svd_t svd = STM32L562;
+    static constexpr gpio_conf_t gpio_conf = STM32L55x;
+    static constexpr unsigned frequency = 110;
+};
+
 template<> struct mcu_traits<STM32L562QEIxP>
 {
     static constexpr family_t family = STM32L5;
@@ -472,6 +483,14 @@ template<> struct mcu_traits<STM32L562RETx>
 };
 
 template<> struct mcu_traits<STM32L562RETxP>
+{
+    static constexpr family_t family = STM32L5;
+    static constexpr svd_t svd = STM32L562;
+    static constexpr gpio_conf_t gpio_conf = STM32L55x;
+    static constexpr unsigned frequency = 110;
+};
+
+template<> struct mcu_traits<STM32L562RETxQ>
 {
     static constexpr family_t family = STM32L5;
     static constexpr svd_t svd = STM32L562;

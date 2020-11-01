@@ -8,7 +8,7 @@
 
 // CRC: Cyclic redundancy check calculation unit
 
-struct stm32l0x0_crc_t
+struct stm32l052_crc_t
 {
     volatile uint32_t DR; // Data register
     volatile uint32_t IDR; // Independent data register
@@ -38,10 +38,42 @@ struct stm32l0x0_crc_t
 };
 
 template<>
+struct peripheral_t<STM32L052, CRC>
+{
+    static constexpr periph_t P = CRC;
+    using T = stm32l052_crc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, CRC>
+{
+    static constexpr periph_t P = CRC;
+    using T = stm32l052_crc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, CRC>
+{
+    static constexpr periph_t P = CRC;
+    using T = stm32l052_crc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, CRC>
+{
+    static constexpr periph_t P = CRC;
+    using T = stm32l052_crc_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L0x0, CRC>
 {
     static constexpr periph_t P = CRC;
-    using T = stm32l0x0_crc_t;
+    using T = stm32l052_crc_t;
     static T& V;
 };
 
@@ -49,7 +81,7 @@ template<>
 struct peripheral_t<STM32L0x1, CRC>
 {
     static constexpr periph_t P = CRC;
-    using T = stm32l0x0_crc_t;
+    using T = stm32l052_crc_t;
     static T& V;
 };
 
@@ -57,7 +89,7 @@ template<>
 struct peripheral_t<STM32L0x2, CRC>
 {
     static constexpr periph_t P = CRC;
-    using T = stm32l0x0_crc_t;
+    using T = stm32l052_crc_t;
     static T& V;
 };
 
@@ -65,7 +97,7 @@ template<>
 struct peripheral_t<STM32L0x3, CRC>
 {
     static constexpr periph_t P = CRC;
-    using T = stm32l0x0_crc_t;
+    using T = stm32l052_crc_t;
     static T& V;
 };
 

@@ -8,7 +8,7 @@
 
 // SCB: System control block
 
-struct stm32l0x0_scb_t
+struct stm32l052_scb_t
 {
     volatile uint32_t CPUID; // CPUID base register
     volatile uint32_t ICSR; // Interrupt control and state register
@@ -70,10 +70,42 @@ struct stm32l0x0_scb_t
 };
 
 template<>
+struct peripheral_t<STM32L052, SCB>
+{
+    static constexpr periph_t P = SCB;
+    using T = stm32l052_scb_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, SCB>
+{
+    static constexpr periph_t P = SCB;
+    using T = stm32l052_scb_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, SCB>
+{
+    static constexpr periph_t P = SCB;
+    using T = stm32l052_scb_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, SCB>
+{
+    static constexpr periph_t P = SCB;
+    using T = stm32l052_scb_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L0x0, SCB>
 {
     static constexpr periph_t P = SCB;
-    using T = stm32l0x0_scb_t;
+    using T = stm32l052_scb_t;
     static T& V;
 };
 
@@ -81,7 +113,7 @@ template<>
 struct peripheral_t<STM32L0x1, SCB>
 {
     static constexpr periph_t P = SCB;
-    using T = stm32l0x0_scb_t;
+    using T = stm32l052_scb_t;
     static T& V;
 };
 
@@ -89,7 +121,7 @@ template<>
 struct peripheral_t<STM32L0x2, SCB>
 {
     static constexpr periph_t P = SCB;
-    using T = stm32l0x0_scb_t;
+    using T = stm32l052_scb_t;
     static T& V;
 };
 
@@ -97,7 +129,7 @@ template<>
 struct peripheral_t<STM32L0x3, SCB>
 {
     static constexpr periph_t P = SCB;
-    using T = stm32l0x0_scb_t;
+    using T = stm32l052_scb_t;
     static T& V;
 };
 

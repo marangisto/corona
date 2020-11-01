@@ -8,7 +8,7 @@
 
 // TSC: Touch sensing controller
 
-struct stm32l0x2_tsc_t
+struct stm32l052_tsc_t
 {
     volatile uint32_t CR; // control register
     volatile uint32_t IER; // interrupt enable register
@@ -242,10 +242,42 @@ struct stm32l0x2_tsc_t
 };
 
 template<>
+struct peripheral_t<STM32L052, TSC>
+{
+    static constexpr periph_t P = TSC;
+    using T = stm32l052_tsc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, TSC>
+{
+    static constexpr periph_t P = TSC;
+    using T = stm32l052_tsc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, TSC>
+{
+    static constexpr periph_t P = TSC;
+    using T = stm32l052_tsc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, TSC>
+{
+    static constexpr periph_t P = TSC;
+    using T = stm32l052_tsc_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L0x2, TSC>
 {
     static constexpr periph_t P = TSC;
-    using T = stm32l0x2_tsc_t;
+    using T = stm32l052_tsc_t;
     static T& V;
 };
 
@@ -253,7 +285,7 @@ template<>
 struct peripheral_t<STM32L0x3, TSC>
 {
     static constexpr periph_t P = TSC;
-    using T = stm32l0x2_tsc_t;
+    using T = stm32l052_tsc_t;
     static T& V;
 };
 

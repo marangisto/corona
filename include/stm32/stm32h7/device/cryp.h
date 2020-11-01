@@ -8,6 +8,543 @@
 
 // CRYP: Cryptographic processor
 
+struct stm32h73x_cryp_t
+{
+    volatile uint32_t CR; // control register
+    volatile uint32_t SR; // status register
+    volatile uint32_t DIN; // data input register
+    volatile uint32_t DOUT; // data output register
+    volatile uint32_t DMACR; // DMA control register
+    volatile uint32_t IMSCR; // interrupt mask set/clear register
+    volatile uint32_t RISR; // raw interrupt status register
+    volatile uint32_t MISR; // masked interrupt status register
+    volatile uint32_t K0LR; // key registers
+    volatile uint32_t K0RR; // key registers
+    volatile uint32_t K1LR; // key registers
+    volatile uint32_t K1RR; // key registers
+    volatile uint32_t K2LR; // key registers
+    volatile uint32_t K2RR; // key registers
+    volatile uint32_t K3LR; // key registers
+    volatile uint32_t K3RR; // key registers
+    volatile uint32_t IV0LR; // Initialization vector register 0L
+    volatile uint32_t IV0RR; // initialization vector register 0R
+    volatile uint32_t IV1LR; // Initialization vector register 1L
+    volatile uint32_t IV1RR; // Initialization vector register 1R
+    volatile uint32_t CSGCMCCM0R; // context swap register
+    volatile uint32_t CSGCMCCM1R; // context swap register
+    volatile uint32_t CSGCMCCM2R; // context swap register
+    volatile uint32_t CSGCMCCM3R; // context swap register
+    volatile uint32_t CSGCMCCM4R; // context swap register
+    volatile uint32_t CSGCMCCM5R; // context swap register
+    volatile uint32_t CSGCMCCM6R; // context swap register
+    volatile uint32_t CSGCMCCM7R; // context swap register
+    volatile uint32_t CSGCM0R; // context swap register
+    volatile uint32_t CSGCM1R; // context swap register
+    volatile uint32_t CSGCM2R; // context swap register
+    volatile uint32_t CSGCM3R; // context swap register
+    volatile uint32_t CSGCM4R; // context swap register
+    volatile uint32_t CSGCM5R; // context swap register
+    volatile uint32_t CSGCM6R; // context swap register
+    volatile uint32_t CSGCM7R; // context swap register
+
+    static constexpr uint32_t CR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t CR_ALGODIR = 0x4; // Algorithm direction
+    typedef bit_field_t<3, 0x7> CR_ALGOMODE0; // Algorithm mode
+    typedef bit_field_t<6, 0x3> CR_DATATYPE; // Data type selection
+    typedef bit_field_t<8, 0x3> CR_KEYSIZE; // Key size selection (AES mode only)
+    static constexpr uint32_t CR_FFLUSH = 0x4000; // FIFO flush
+    static constexpr uint32_t CR_CRYPEN = 0x8000; // Cryptographic processor enable
+    typedef bit_field_t<16, 0x3> CR_GCM_CCMPH; // GCM_CCMPH
+    static constexpr uint32_t CR_ALGOMODE3 = 0x80000; // ALGOMODE
+
+    static constexpr uint32_t SR_RESET_VALUE = 0x3; // Reset value
+    static constexpr uint32_t SR_BUSY = 0x10; // Busy bit
+    static constexpr uint32_t SR_OFFU = 0x8; // Output FIFO full
+    static constexpr uint32_t SR_OFNE = 0x4; // Output FIFO not empty
+    static constexpr uint32_t SR_IFNF = 0x2; // Input FIFO not full
+    static constexpr uint32_t SR_IFEM = 0x1; // Input FIFO empty
+
+    static constexpr uint32_t DIN_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> DIN_DATAIN; // Data input
+
+    static constexpr uint32_t DOUT_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> DOUT_DATAOUT; // Data output
+
+    static constexpr uint32_t DMACR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t DMACR_DOEN = 0x2; // DMA output enable
+    static constexpr uint32_t DMACR_DIEN = 0x1; // DMA input enable
+
+    static constexpr uint32_t IMSCR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t IMSCR_OUTIM = 0x2; // Output FIFO service interrupt mask
+    static constexpr uint32_t IMSCR_INIM = 0x1; // Input FIFO service interrupt mask
+
+    static constexpr uint32_t RISR_RESET_VALUE = 0x1; // Reset value
+    static constexpr uint32_t RISR_OUTRIS = 0x2; // Output FIFO service raw interrupt status
+    static constexpr uint32_t RISR_INRIS = 0x1; // Input FIFO service raw interrupt status
+
+    static constexpr uint32_t MISR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t MISR_OUTMIS = 0x2; // Output FIFO service masked interrupt status
+    static constexpr uint32_t MISR_INMIS = 0x1; // Input FIFO service masked interrupt status
+
+    static constexpr uint32_t K0LR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t K0LR_K224 = 0x1; // k224
+    static constexpr uint32_t K0LR_K225 = 0x2; // k225
+    static constexpr uint32_t K0LR_K226 = 0x4; // k226
+    static constexpr uint32_t K0LR_K227 = 0x8; // k227
+    static constexpr uint32_t K0LR_K228 = 0x10; // k228
+    static constexpr uint32_t K0LR_K229 = 0x20; // k229
+    static constexpr uint32_t K0LR_K230 = 0x40; // k230
+    static constexpr uint32_t K0LR_K231 = 0x80; // k231
+    static constexpr uint32_t K0LR_K232 = 0x100; // k232
+    static constexpr uint32_t K0LR_K233 = 0x200; // k233
+    static constexpr uint32_t K0LR_K234 = 0x400; // k234
+    static constexpr uint32_t K0LR_K235 = 0x800; // k235
+    static constexpr uint32_t K0LR_K236 = 0x1000; // k236
+    static constexpr uint32_t K0LR_K237 = 0x2000; // k237
+    static constexpr uint32_t K0LR_K238 = 0x4000; // k238
+    static constexpr uint32_t K0LR_K239 = 0x8000; // k239
+    static constexpr uint32_t K0LR_K240 = 0x10000; // k240
+    static constexpr uint32_t K0LR_K241 = 0x20000; // k241
+    static constexpr uint32_t K0LR_K242 = 0x40000; // k242
+    static constexpr uint32_t K0LR_K243 = 0x80000; // k243
+    static constexpr uint32_t K0LR_K244 = 0x100000; // k244
+    static constexpr uint32_t K0LR_K245 = 0x200000; // k245
+    static constexpr uint32_t K0LR_K246 = 0x400000; // k246
+    static constexpr uint32_t K0LR_K247 = 0x800000; // k247
+    static constexpr uint32_t K0LR_K248 = 0x1000000; // k248
+    static constexpr uint32_t K0LR_K249 = 0x2000000; // k249
+    static constexpr uint32_t K0LR_K250 = 0x4000000; // k250
+    static constexpr uint32_t K0LR_K251 = 0x8000000; // k251
+    static constexpr uint32_t K0LR_K252 = 0x10000000; // k252
+    static constexpr uint32_t K0LR_K253 = 0x20000000; // k253
+    static constexpr uint32_t K0LR_K254 = 0x40000000; // k254
+    static constexpr uint32_t K0LR_K255 = 0x80000000; // k255
+
+    static constexpr uint32_t K0RR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t K0RR_K192 = 0x1; // k192
+    static constexpr uint32_t K0RR_K193 = 0x2; // k193
+    static constexpr uint32_t K0RR_K194 = 0x4; // k194
+    static constexpr uint32_t K0RR_K195 = 0x8; // k195
+    static constexpr uint32_t K0RR_K196 = 0x10; // k196
+    static constexpr uint32_t K0RR_K197 = 0x20; // k197
+    static constexpr uint32_t K0RR_K198 = 0x40; // k198
+    static constexpr uint32_t K0RR_K199 = 0x80; // k199
+    static constexpr uint32_t K0RR_K200 = 0x100; // k200
+    static constexpr uint32_t K0RR_K201 = 0x200; // k201
+    static constexpr uint32_t K0RR_K202 = 0x400; // k202
+    static constexpr uint32_t K0RR_K203 = 0x800; // k203
+    static constexpr uint32_t K0RR_K204 = 0x1000; // k204
+    static constexpr uint32_t K0RR_K205 = 0x2000; // k205
+    static constexpr uint32_t K0RR_K206 = 0x4000; // k206
+    static constexpr uint32_t K0RR_K207 = 0x8000; // k207
+    static constexpr uint32_t K0RR_K208 = 0x10000; // k208
+    static constexpr uint32_t K0RR_K209 = 0x20000; // k209
+    static constexpr uint32_t K0RR_K210 = 0x40000; // k210
+    static constexpr uint32_t K0RR_K211 = 0x80000; // k211
+    static constexpr uint32_t K0RR_K212 = 0x100000; // k212
+    static constexpr uint32_t K0RR_K213 = 0x200000; // k213
+    static constexpr uint32_t K0RR_K214 = 0x400000; // k214
+    static constexpr uint32_t K0RR_K215 = 0x800000; // k215
+    static constexpr uint32_t K0RR_K216 = 0x1000000; // k216
+    static constexpr uint32_t K0RR_K217 = 0x2000000; // k217
+    static constexpr uint32_t K0RR_K218 = 0x4000000; // k218
+    static constexpr uint32_t K0RR_K219 = 0x8000000; // k219
+    static constexpr uint32_t K0RR_K220 = 0x10000000; // k220
+    static constexpr uint32_t K0RR_K221 = 0x20000000; // k221
+    static constexpr uint32_t K0RR_K222 = 0x40000000; // k222
+    static constexpr uint32_t K0RR_K223 = 0x80000000; // k223
+
+    static constexpr uint32_t K1LR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t K1LR_K160 = 0x1; // k160
+    static constexpr uint32_t K1LR_K161 = 0x2; // k161
+    static constexpr uint32_t K1LR_K162 = 0x4; // k162
+    static constexpr uint32_t K1LR_K163 = 0x8; // k163
+    static constexpr uint32_t K1LR_K164 = 0x10; // k164
+    static constexpr uint32_t K1LR_K165 = 0x20; // k165
+    static constexpr uint32_t K1LR_K166 = 0x40; // k166
+    static constexpr uint32_t K1LR_K167 = 0x80; // k167
+    static constexpr uint32_t K1LR_K168 = 0x100; // k168
+    static constexpr uint32_t K1LR_K169 = 0x200; // k169
+    static constexpr uint32_t K1LR_K170 = 0x400; // k170
+    static constexpr uint32_t K1LR_K171 = 0x800; // k171
+    static constexpr uint32_t K1LR_K172 = 0x1000; // k172
+    static constexpr uint32_t K1LR_K173 = 0x2000; // k173
+    static constexpr uint32_t K1LR_K174 = 0x4000; // k174
+    static constexpr uint32_t K1LR_K175 = 0x8000; // k175
+    static constexpr uint32_t K1LR_K176 = 0x10000; // k176
+    static constexpr uint32_t K1LR_K177 = 0x20000; // k177
+    static constexpr uint32_t K1LR_K178 = 0x40000; // k178
+    static constexpr uint32_t K1LR_K179 = 0x80000; // k179
+    static constexpr uint32_t K1LR_K180 = 0x100000; // k180
+    static constexpr uint32_t K1LR_K181 = 0x200000; // k181
+    static constexpr uint32_t K1LR_K182 = 0x400000; // k182
+    static constexpr uint32_t K1LR_K183 = 0x800000; // k183
+    static constexpr uint32_t K1LR_K184 = 0x1000000; // k184
+    static constexpr uint32_t K1LR_K185 = 0x2000000; // k185
+    static constexpr uint32_t K1LR_K186 = 0x4000000; // k186
+    static constexpr uint32_t K1LR_K187 = 0x8000000; // k187
+    static constexpr uint32_t K1LR_K188 = 0x10000000; // k188
+    static constexpr uint32_t K1LR_K189 = 0x20000000; // k189
+    static constexpr uint32_t K1LR_K190 = 0x40000000; // k190
+    static constexpr uint32_t K1LR_K191 = 0x80000000; // k191
+
+    static constexpr uint32_t K1RR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t K1RR_K128 = 0x1; // k128
+    static constexpr uint32_t K1RR_K129 = 0x2; // k129
+    static constexpr uint32_t K1RR_K130 = 0x4; // k130
+    static constexpr uint32_t K1RR_K131 = 0x8; // k131
+    static constexpr uint32_t K1RR_K132 = 0x10; // k132
+    static constexpr uint32_t K1RR_K133 = 0x20; // k133
+    static constexpr uint32_t K1RR_K134 = 0x40; // k134
+    static constexpr uint32_t K1RR_K135 = 0x80; // k135
+    static constexpr uint32_t K1RR_K136 = 0x100; // k136
+    static constexpr uint32_t K1RR_K137 = 0x200; // k137
+    static constexpr uint32_t K1RR_K138 = 0x400; // k138
+    static constexpr uint32_t K1RR_K139 = 0x800; // k139
+    static constexpr uint32_t K1RR_K140 = 0x1000; // k140
+    static constexpr uint32_t K1RR_K141 = 0x2000; // k141
+    static constexpr uint32_t K1RR_K142 = 0x4000; // k142
+    static constexpr uint32_t K1RR_K143 = 0x8000; // k143
+    static constexpr uint32_t K1RR_K144 = 0x10000; // k144
+    static constexpr uint32_t K1RR_K145 = 0x20000; // k145
+    static constexpr uint32_t K1RR_K146 = 0x40000; // k146
+    static constexpr uint32_t K1RR_K147 = 0x80000; // k147
+    static constexpr uint32_t K1RR_K148 = 0x100000; // k148
+    static constexpr uint32_t K1RR_K149 = 0x200000; // k149
+    static constexpr uint32_t K1RR_K150 = 0x400000; // k150
+    static constexpr uint32_t K1RR_K151 = 0x800000; // k151
+    static constexpr uint32_t K1RR_K152 = 0x1000000; // k152
+    static constexpr uint32_t K1RR_K153 = 0x2000000; // k153
+    static constexpr uint32_t K1RR_K154 = 0x4000000; // k154
+    static constexpr uint32_t K1RR_K155 = 0x8000000; // k155
+    static constexpr uint32_t K1RR_K156 = 0x10000000; // k156
+    static constexpr uint32_t K1RR_K157 = 0x20000000; // k157
+    static constexpr uint32_t K1RR_K158 = 0x40000000; // k158
+    static constexpr uint32_t K1RR_K159 = 0x80000000; // k159
+
+    static constexpr uint32_t K2LR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t K2LR_K96 = 0x1; // k96
+    static constexpr uint32_t K2LR_K97 = 0x2; // k97
+    static constexpr uint32_t K2LR_K98 = 0x4; // k98
+    static constexpr uint32_t K2LR_K99 = 0x8; // k99
+    static constexpr uint32_t K2LR_K100 = 0x10; // k100
+    static constexpr uint32_t K2LR_K101 = 0x20; // k101
+    static constexpr uint32_t K2LR_K102 = 0x40; // k102
+    static constexpr uint32_t K2LR_K103 = 0x80; // k103
+    static constexpr uint32_t K2LR_K104 = 0x100; // k104
+    static constexpr uint32_t K2LR_K105 = 0x200; // k105
+    static constexpr uint32_t K2LR_K106 = 0x400; // k106
+    static constexpr uint32_t K2LR_K107 = 0x800; // k107
+    static constexpr uint32_t K2LR_K108 = 0x1000; // k108
+    static constexpr uint32_t K2LR_K109 = 0x2000; // k109
+    static constexpr uint32_t K2LR_K110 = 0x4000; // k110
+    static constexpr uint32_t K2LR_K111 = 0x8000; // k111
+    static constexpr uint32_t K2LR_K112 = 0x10000; // k112
+    static constexpr uint32_t K2LR_K113 = 0x20000; // k113
+    static constexpr uint32_t K2LR_K114 = 0x40000; // k114
+    static constexpr uint32_t K2LR_K115 = 0x80000; // k115
+    static constexpr uint32_t K2LR_K116 = 0x100000; // k116
+    static constexpr uint32_t K2LR_K117 = 0x200000; // k117
+    static constexpr uint32_t K2LR_K118 = 0x400000; // k118
+    static constexpr uint32_t K2LR_K119 = 0x800000; // k119
+    static constexpr uint32_t K2LR_K120 = 0x1000000; // k120
+    static constexpr uint32_t K2LR_B121 = 0x2000000; // b121
+    static constexpr uint32_t K2LR_K122 = 0x4000000; // k122
+    static constexpr uint32_t K2LR_K123 = 0x8000000; // k123
+    static constexpr uint32_t K2LR_K124 = 0x10000000; // k124
+    static constexpr uint32_t K2LR_K125 = 0x20000000; // k125
+    static constexpr uint32_t K2LR_K126 = 0x40000000; // k126
+    static constexpr uint32_t K2LR_K127 = 0x80000000; // k127
+
+    static constexpr uint32_t K2RR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t K2RR_K64 = 0x1; // k64
+    static constexpr uint32_t K2RR_K65 = 0x2; // k65
+    static constexpr uint32_t K2RR_K66 = 0x4; // k66
+    static constexpr uint32_t K2RR_K67 = 0x8; // k67
+    static constexpr uint32_t K2RR_K68 = 0x10; // k68
+    static constexpr uint32_t K2RR_K69 = 0x20; // k69
+    static constexpr uint32_t K2RR_K70 = 0x40; // k70
+    static constexpr uint32_t K2RR_K71 = 0x80; // k71
+    static constexpr uint32_t K2RR_K72 = 0x100; // k72
+    static constexpr uint32_t K2RR_K73 = 0x200; // k73
+    static constexpr uint32_t K2RR_K74 = 0x400; // k74
+    static constexpr uint32_t K2RR_K75 = 0x800; // k75
+    static constexpr uint32_t K2RR_K76 = 0x1000; // k76
+    static constexpr uint32_t K2RR_K77 = 0x2000; // k77
+    static constexpr uint32_t K2RR_K78 = 0x4000; // k78
+    static constexpr uint32_t K2RR_K79 = 0x8000; // k79
+    static constexpr uint32_t K2RR_K80 = 0x10000; // k80
+    static constexpr uint32_t K2RR_K81 = 0x20000; // k81
+    static constexpr uint32_t K2RR_K82 = 0x40000; // k82
+    static constexpr uint32_t K2RR_K83 = 0x80000; // k83
+    static constexpr uint32_t K2RR_K84 = 0x100000; // k84
+    static constexpr uint32_t K2RR_K85 = 0x200000; // k85
+    static constexpr uint32_t K2RR_K86 = 0x400000; // k86
+    static constexpr uint32_t K2RR_K87 = 0x800000; // k87
+    static constexpr uint32_t K2RR_K88 = 0x1000000; // k88
+    static constexpr uint32_t K2RR_K89 = 0x2000000; // k89
+    static constexpr uint32_t K2RR_K90 = 0x4000000; // k90
+    static constexpr uint32_t K2RR_K91 = 0x8000000; // k91
+    static constexpr uint32_t K2RR_K92 = 0x10000000; // k92
+    static constexpr uint32_t K2RR_K93 = 0x20000000; // k93
+    static constexpr uint32_t K2RR_K94 = 0x40000000; // k94
+    static constexpr uint32_t K2RR_K95 = 0x80000000; // k95
+
+    static constexpr uint32_t K3LR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t K3LR_K32 = 0x1; // k32
+    static constexpr uint32_t K3LR_K33 = 0x2; // k33
+    static constexpr uint32_t K3LR_K34 = 0x4; // k34
+    static constexpr uint32_t K3LR_K35 = 0x8; // k35
+    static constexpr uint32_t K3LR_K36 = 0x10; // k36
+    static constexpr uint32_t K3LR_K37 = 0x20; // k37
+    static constexpr uint32_t K3LR_K38 = 0x40; // k38
+    static constexpr uint32_t K3LR_K39 = 0x80; // k39
+    static constexpr uint32_t K3LR_K40 = 0x100; // k40
+    static constexpr uint32_t K3LR_K41 = 0x200; // k41
+    static constexpr uint32_t K3LR_K42 = 0x400; // k42
+    static constexpr uint32_t K3LR_K43 = 0x800; // k43
+    static constexpr uint32_t K3LR_K44 = 0x1000; // k44
+    static constexpr uint32_t K3LR_K45 = 0x2000; // k45
+    static constexpr uint32_t K3LR_K46 = 0x4000; // k46
+    static constexpr uint32_t K3LR_K47 = 0x8000; // k47
+    static constexpr uint32_t K3LR_K48 = 0x10000; // k48
+    static constexpr uint32_t K3LR_K49 = 0x20000; // k49
+    static constexpr uint32_t K3LR_K50 = 0x40000; // k50
+    static constexpr uint32_t K3LR_K51 = 0x80000; // k51
+    static constexpr uint32_t K3LR_K52 = 0x100000; // k52
+    static constexpr uint32_t K3LR_K53 = 0x200000; // k53
+    static constexpr uint32_t K3LR_K54 = 0x400000; // k54
+    static constexpr uint32_t K3LR_K55 = 0x800000; // k55
+    static constexpr uint32_t K3LR_K56 = 0x1000000; // k56
+    static constexpr uint32_t K3LR_K57 = 0x2000000; // k57
+    static constexpr uint32_t K3LR_K58 = 0x4000000; // k58
+    static constexpr uint32_t K3LR_K59 = 0x8000000; // k59
+    static constexpr uint32_t K3LR_K60 = 0x10000000; // k60
+    static constexpr uint32_t K3LR_K61 = 0x20000000; // k61
+    static constexpr uint32_t K3LR_K62 = 0x40000000; // k62
+    static constexpr uint32_t K3LR_K63 = 0x80000000; // k63
+
+    static constexpr uint32_t K3RR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t K3RR_K0 = 0x1; // k0
+    static constexpr uint32_t K3RR_K1 = 0x2; // k1
+    static constexpr uint32_t K3RR_K2 = 0x4; // k2
+    static constexpr uint32_t K3RR_K3 = 0x8; // k3
+    static constexpr uint32_t K3RR_K4 = 0x10; // k4
+    static constexpr uint32_t K3RR_K5 = 0x20; // k5
+    static constexpr uint32_t K3RR_K6 = 0x40; // k6
+    static constexpr uint32_t K3RR_K7 = 0x80; // k7
+    static constexpr uint32_t K3RR_K8 = 0x100; // k8
+    static constexpr uint32_t K3RR_K9 = 0x200; // k9
+    static constexpr uint32_t K3RR_K10 = 0x400; // k10
+    static constexpr uint32_t K3RR_K11 = 0x800; // k11
+    static constexpr uint32_t K3RR_K12 = 0x1000; // k12
+    static constexpr uint32_t K3RR_K13 = 0x2000; // k13
+    static constexpr uint32_t K3RR_K14 = 0x4000; // k14
+    static constexpr uint32_t K3RR_K15 = 0x8000; // k15
+    static constexpr uint32_t K3RR_K16 = 0x10000; // k16
+    static constexpr uint32_t K3RR_K17 = 0x20000; // k17
+    static constexpr uint32_t K3RR_K18 = 0x40000; // k18
+    static constexpr uint32_t K3RR_K19 = 0x80000; // k19
+    static constexpr uint32_t K3RR_K20 = 0x100000; // k20
+    static constexpr uint32_t K3RR_K21 = 0x200000; // k21
+    static constexpr uint32_t K3RR_K22 = 0x400000; // k22
+    static constexpr uint32_t K3RR_K23 = 0x800000; // k23
+    static constexpr uint32_t K3RR_K24 = 0x1000000; // k24
+    static constexpr uint32_t K3RR_K25 = 0x2000000; // k25
+    static constexpr uint32_t K3RR_K26 = 0x4000000; // k26
+    static constexpr uint32_t K3RR_K27 = 0x8000000; // k27
+    static constexpr uint32_t K3RR_K28 = 0x10000000; // k28
+    static constexpr uint32_t K3RR_K29 = 0x20000000; // k29
+    static constexpr uint32_t K3RR_K30 = 0x40000000; // k30
+    static constexpr uint32_t K3RR_K31 = 0x80000000; // k31
+
+    static constexpr uint32_t IV0LR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t IV0LR_IV31 = 0x1; // IV31
+    static constexpr uint32_t IV0LR_IV30 = 0x2; // IV30
+    static constexpr uint32_t IV0LR_IV29 = 0x4; // IV29
+    static constexpr uint32_t IV0LR_IV28 = 0x8; // IV28
+    static constexpr uint32_t IV0LR_IV27 = 0x10; // IV27
+    static constexpr uint32_t IV0LR_IV26 = 0x20; // IV26
+    static constexpr uint32_t IV0LR_IV25 = 0x40; // IV25
+    static constexpr uint32_t IV0LR_IV24 = 0x80; // IV24
+    static constexpr uint32_t IV0LR_IV23 = 0x100; // IV23
+    static constexpr uint32_t IV0LR_IV22 = 0x200; // IV22
+    static constexpr uint32_t IV0LR_IV21 = 0x400; // IV21
+    static constexpr uint32_t IV0LR_IV20 = 0x800; // IV20
+    static constexpr uint32_t IV0LR_IV19 = 0x1000; // IV19
+    static constexpr uint32_t IV0LR_IV18 = 0x2000; // IV18
+    static constexpr uint32_t IV0LR_IV17 = 0x4000; // IV17
+    static constexpr uint32_t IV0LR_IV16 = 0x8000; // IV16
+    static constexpr uint32_t IV0LR_IV15 = 0x10000; // IV15
+    static constexpr uint32_t IV0LR_IV14 = 0x20000; // IV14
+    static constexpr uint32_t IV0LR_IV13 = 0x40000; // IV13
+    static constexpr uint32_t IV0LR_IV12 = 0x80000; // IV12
+    static constexpr uint32_t IV0LR_IV11 = 0x100000; // IV11
+    static constexpr uint32_t IV0LR_IV10 = 0x200000; // IV10
+    static constexpr uint32_t IV0LR_IV9 = 0x400000; // IV9
+    static constexpr uint32_t IV0LR_IV8 = 0x800000; // IV8
+    static constexpr uint32_t IV0LR_IV7 = 0x1000000; // IV7
+    static constexpr uint32_t IV0LR_IV6 = 0x2000000; // IV6
+    static constexpr uint32_t IV0LR_IV5 = 0x4000000; // IV5
+    static constexpr uint32_t IV0LR_IV4 = 0x8000000; // IV4
+    static constexpr uint32_t IV0LR_IV3 = 0x10000000; // IV3
+    static constexpr uint32_t IV0LR_IV2 = 0x20000000; // IV2
+    static constexpr uint32_t IV0LR_IV1 = 0x40000000; // IV1
+    static constexpr uint32_t IV0LR_IV0 = 0x80000000; // IV0
+
+    static constexpr uint32_t IV0RR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t IV0RR_IV63 = 0x1; // IV63
+    static constexpr uint32_t IV0RR_IV62 = 0x2; // IV62
+    static constexpr uint32_t IV0RR_IV61 = 0x4; // IV61
+    static constexpr uint32_t IV0RR_IV60 = 0x8; // IV60
+    static constexpr uint32_t IV0RR_IV59 = 0x10; // IV59
+    static constexpr uint32_t IV0RR_IV58 = 0x20; // IV58
+    static constexpr uint32_t IV0RR_IV57 = 0x40; // IV57
+    static constexpr uint32_t IV0RR_IV56 = 0x80; // IV56
+    static constexpr uint32_t IV0RR_IV55 = 0x100; // IV55
+    static constexpr uint32_t IV0RR_IV54 = 0x200; // IV54
+    static constexpr uint32_t IV0RR_IV53 = 0x400; // IV53
+    static constexpr uint32_t IV0RR_IV52 = 0x800; // IV52
+    static constexpr uint32_t IV0RR_IV51 = 0x1000; // IV51
+    static constexpr uint32_t IV0RR_IV50 = 0x2000; // IV50
+    static constexpr uint32_t IV0RR_IV49 = 0x4000; // IV49
+    static constexpr uint32_t IV0RR_IV48 = 0x8000; // IV48
+    static constexpr uint32_t IV0RR_IV47 = 0x10000; // IV47
+    static constexpr uint32_t IV0RR_IV46 = 0x20000; // IV46
+    static constexpr uint32_t IV0RR_IV45 = 0x40000; // IV45
+    static constexpr uint32_t IV0RR_IV44 = 0x80000; // IV44
+    static constexpr uint32_t IV0RR_IV43 = 0x100000; // IV43
+    static constexpr uint32_t IV0RR_IV42 = 0x200000; // IV42
+    static constexpr uint32_t IV0RR_IV41 = 0x400000; // IV41
+    static constexpr uint32_t IV0RR_IV40 = 0x800000; // IV40
+    static constexpr uint32_t IV0RR_IV39 = 0x1000000; // IV39
+    static constexpr uint32_t IV0RR_IV38 = 0x2000000; // IV38
+    static constexpr uint32_t IV0RR_IV37 = 0x4000000; // IV37
+    static constexpr uint32_t IV0RR_IV36 = 0x8000000; // IV36
+    static constexpr uint32_t IV0RR_IV35 = 0x10000000; // IV35
+    static constexpr uint32_t IV0RR_IV34 = 0x20000000; // IV34
+    static constexpr uint32_t IV0RR_IV33 = 0x40000000; // IV33
+    static constexpr uint32_t IV0RR_IV32 = 0x80000000; // IV32
+
+    static constexpr uint32_t IV1LR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t IV1LR_IV95 = 0x1; // IV95
+    static constexpr uint32_t IV1LR_IV94 = 0x2; // IV94
+    static constexpr uint32_t IV1LR_IV93 = 0x4; // IV93
+    static constexpr uint32_t IV1LR_IV92 = 0x8; // IV92
+    static constexpr uint32_t IV1LR_IV91 = 0x10; // IV91
+    static constexpr uint32_t IV1LR_IV90 = 0x20; // IV90
+    static constexpr uint32_t IV1LR_IV89 = 0x40; // IV89
+    static constexpr uint32_t IV1LR_IV88 = 0x80; // IV88
+    static constexpr uint32_t IV1LR_IV87 = 0x100; // IV87
+    static constexpr uint32_t IV1LR_IV86 = 0x200; // IV86
+    static constexpr uint32_t IV1LR_IV85 = 0x400; // IV85
+    static constexpr uint32_t IV1LR_IV84 = 0x800; // IV84
+    static constexpr uint32_t IV1LR_IV83 = 0x1000; // IV83
+    static constexpr uint32_t IV1LR_IV82 = 0x2000; // IV82
+    static constexpr uint32_t IV1LR_IV81 = 0x4000; // IV81
+    static constexpr uint32_t IV1LR_IV80 = 0x8000; // IV80
+    static constexpr uint32_t IV1LR_IV79 = 0x10000; // IV79
+    static constexpr uint32_t IV1LR_IV78 = 0x20000; // IV78
+    static constexpr uint32_t IV1LR_IV77 = 0x40000; // IV77
+    static constexpr uint32_t IV1LR_IV76 = 0x80000; // IV76
+    static constexpr uint32_t IV1LR_IV75 = 0x100000; // IV75
+    static constexpr uint32_t IV1LR_IV74 = 0x200000; // IV74
+    static constexpr uint32_t IV1LR_IV73 = 0x400000; // IV73
+    static constexpr uint32_t IV1LR_IV72 = 0x800000; // IV72
+    static constexpr uint32_t IV1LR_IV71 = 0x1000000; // IV71
+    static constexpr uint32_t IV1LR_IV70 = 0x2000000; // IV70
+    static constexpr uint32_t IV1LR_IV69 = 0x4000000; // IV69
+    static constexpr uint32_t IV1LR_IV68 = 0x8000000; // IV68
+    static constexpr uint32_t IV1LR_IV67 = 0x10000000; // IV67
+    static constexpr uint32_t IV1LR_IV66 = 0x20000000; // IV66
+    static constexpr uint32_t IV1LR_IV65 = 0x40000000; // IV65
+    static constexpr uint32_t IV1LR_IV64 = 0x80000000; // IV64
+
+    static constexpr uint32_t IV1RR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t IV1RR_IV127 = 0x1; // IV127
+    static constexpr uint32_t IV1RR_IV126 = 0x2; // IV126
+    static constexpr uint32_t IV1RR_IV125 = 0x4; // IV125
+    static constexpr uint32_t IV1RR_IV124 = 0x8; // IV124
+    static constexpr uint32_t IV1RR_IV123 = 0x10; // IV123
+    static constexpr uint32_t IV1RR_IV122 = 0x20; // IV122
+    static constexpr uint32_t IV1RR_IV121 = 0x40; // IV121
+    static constexpr uint32_t IV1RR_IV120 = 0x80; // IV120
+    static constexpr uint32_t IV1RR_IV119 = 0x100; // IV119
+    static constexpr uint32_t IV1RR_IV118 = 0x200; // IV118
+    static constexpr uint32_t IV1RR_IV117 = 0x400; // IV117
+    static constexpr uint32_t IV1RR_IV116 = 0x800; // IV116
+    static constexpr uint32_t IV1RR_IV115 = 0x1000; // IV115
+    static constexpr uint32_t IV1RR_IV114 = 0x2000; // IV114
+    static constexpr uint32_t IV1RR_IV113 = 0x4000; // IV113
+    static constexpr uint32_t IV1RR_IV112 = 0x8000; // IV112
+    static constexpr uint32_t IV1RR_IV111 = 0x10000; // IV111
+    static constexpr uint32_t IV1RR_IV110 = 0x20000; // IV110
+    static constexpr uint32_t IV1RR_IV109 = 0x40000; // IV109
+    static constexpr uint32_t IV1RR_IV108 = 0x80000; // IV108
+    static constexpr uint32_t IV1RR_IV107 = 0x100000; // IV107
+    static constexpr uint32_t IV1RR_IV106 = 0x200000; // IV106
+    static constexpr uint32_t IV1RR_IV105 = 0x400000; // IV105
+    static constexpr uint32_t IV1RR_IV104 = 0x800000; // IV104
+    static constexpr uint32_t IV1RR_IV103 = 0x1000000; // IV103
+    static constexpr uint32_t IV1RR_IV102 = 0x2000000; // IV102
+    static constexpr uint32_t IV1RR_IV101 = 0x4000000; // IV101
+    static constexpr uint32_t IV1RR_IV100 = 0x8000000; // IV100
+    static constexpr uint32_t IV1RR_IV99 = 0x10000000; // IV99
+    static constexpr uint32_t IV1RR_IV98 = 0x20000000; // IV98
+    static constexpr uint32_t IV1RR_IV97 = 0x40000000; // IV97
+    static constexpr uint32_t IV1RR_IV96 = 0x80000000; // IV96
+
+    static constexpr uint32_t CSGCMCCM0R_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> CSGCMCCM0R_CSGCMCCM0R; // CSGCMCCM0R
+
+    static constexpr uint32_t CSGCMCCM1R_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> CSGCMCCM1R_CSGCMCCM1R; // CSGCMCCM1R
+
+    static constexpr uint32_t CSGCMCCM2R_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> CSGCMCCM2R_CSGCMCCM2R; // CSGCMCCM2R
+
+    static constexpr uint32_t CSGCMCCM3R_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> CSGCMCCM3R_CSGCMCCM3R; // CSGCMCCM3R
+
+    static constexpr uint32_t CSGCMCCM4R_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> CSGCMCCM4R_CSGCMCCM4R; // CSGCMCCM4R
+
+    static constexpr uint32_t CSGCMCCM5R_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> CSGCMCCM5R_CSGCMCCM5R; // CSGCMCCM5R
+
+    static constexpr uint32_t CSGCMCCM6R_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> CSGCMCCM6R_CSGCMCCM6R; // CSGCMCCM6R
+
+    static constexpr uint32_t CSGCMCCM7R_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> CSGCMCCM7R_CSGCMCCM7R; // CSGCMCCM7R
+
+    static constexpr uint32_t CSGCM0R_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> CSGCM0R_CSGCM0R; // CSGCM0R
+
+    static constexpr uint32_t CSGCM1R_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> CSGCM1R_CSGCM1R; // CSGCM1R
+
+    static constexpr uint32_t CSGCM2R_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> CSGCM2R_CSGCM2R; // CSGCM2R
+
+    static constexpr uint32_t CSGCM3R_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> CSGCM3R_CSGCM3R; // CSGCM3R
+
+    static constexpr uint32_t CSGCM4R_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> CSGCM4R_CSGCM4R; // CSGCM4R
+
+    static constexpr uint32_t CSGCM5R_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> CSGCM5R_CSGCM5R; // CSGCM5R
+
+    static constexpr uint32_t CSGCM6R_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> CSGCM6R_CSGCM6R; // CSGCM6R
+
+    static constexpr uint32_t CSGCM7R_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> CSGCM7R_CSGCM7R; // CSGCM7R
+};
+
+// CRYP: Cryptographic processor
+
 struct stm32h750x_cryp_t
 {
     volatile uint32_t CR; // control register
@@ -1078,6 +1615,14 @@ struct stm32h753_cryp_t
 
     static constexpr uint32_t CSGCM7R_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<0, 0xffffffff> CSGCM7R_CSGCM7; // CSGCM7
+};
+
+template<>
+struct peripheral_t<STM32H73x, CRYP>
+{
+    static constexpr periph_t P = CRYP;
+    using T = stm32h73x_cryp_t;
+    static T& V;
 };
 
 template<>

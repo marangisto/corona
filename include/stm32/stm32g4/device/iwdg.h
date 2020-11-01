@@ -91,6 +91,22 @@ struct peripheral_t<STM32G484xx, IWDG>
 };
 
 template<>
+struct peripheral_t<STM32G491xx, IWDG>
+{
+    static constexpr periph_t P = IWDG;
+    using T = stm32g431xx_iwdg_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, IWDG>
+{
+    static constexpr periph_t P = IWDG;
+    using T = stm32g431xx_iwdg_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32GBK1CBT6, IWDG>
 {
     static constexpr periph_t P = IWDG;

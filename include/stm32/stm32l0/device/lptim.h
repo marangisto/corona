@@ -8,7 +8,7 @@
 
 // LPTIM: Low power timer
 
-struct stm32l0x0_lptim_t
+struct stm32l052_lptim_t
 {
     volatile uint32_t ISR; // Interrupt and Status Register
     volatile uint32_t ICR; // Interrupt Clear Register
@@ -77,10 +77,42 @@ struct stm32l0x0_lptim_t
 };
 
 template<>
+struct peripheral_t<STM32L052, LPTIM>
+{
+    static constexpr periph_t P = LPTIM;
+    using T = stm32l052_lptim_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, LPTIM>
+{
+    static constexpr periph_t P = LPTIM;
+    using T = stm32l052_lptim_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, LPTIM>
+{
+    static constexpr periph_t P = LPTIM;
+    using T = stm32l052_lptim_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, LPTIM>
+{
+    static constexpr periph_t P = LPTIM;
+    using T = stm32l052_lptim_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L0x0, LPTIM>
 {
     static constexpr periph_t P = LPTIM;
-    using T = stm32l0x0_lptim_t;
+    using T = stm32l052_lptim_t;
     static T& V;
 };
 
@@ -88,7 +120,7 @@ template<>
 struct peripheral_t<STM32L0x1, LPTIM>
 {
     static constexpr periph_t P = LPTIM;
-    using T = stm32l0x0_lptim_t;
+    using T = stm32l052_lptim_t;
     static T& V;
 };
 
@@ -96,7 +128,7 @@ template<>
 struct peripheral_t<STM32L0x2, LPTIM>
 {
     static constexpr periph_t P = LPTIM;
-    using T = stm32l0x0_lptim_t;
+    using T = stm32l052_lptim_t;
     static T& V;
 };
 
@@ -104,7 +136,7 @@ template<>
 struct peripheral_t<STM32L0x3, LPTIM>
 {
     static constexpr periph_t P = LPTIM;
-    using T = stm32l0x0_lptim_t;
+    using T = stm32l052_lptim_t;
     static T& V;
 };
 

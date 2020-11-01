@@ -8,7 +8,7 @@
 
 // AXI: AXI interconnect registers
 
-struct stm32h742x_axi_t
+struct stm32h723_axi_t
 {
     reserved_t<0x7f4> _0x0;
     volatile uint32_t AXI_PERIPH_ID_4; // AXI interconnect - peripheral ID4 register
@@ -271,10 +271,26 @@ struct stm32h742x_axi_t
 };
 
 template<>
+struct peripheral_t<STM32H723, AXI>
+{
+    static constexpr periph_t P = AXI;
+    using T = stm32h723_axi_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, AXI>
+{
+    static constexpr periph_t P = AXI;
+    using T = stm32h723_axi_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H742x, AXI>
 {
     static constexpr periph_t P = AXI;
-    using T = stm32h742x_axi_t;
+    using T = stm32h723_axi_t;
     static T& V;
 };
 
@@ -282,7 +298,7 @@ template<>
 struct peripheral_t<STM32H743, AXI>
 {
     static constexpr periph_t P = AXI;
-    using T = stm32h742x_axi_t;
+    using T = stm32h723_axi_t;
     static T& V;
 };
 
@@ -290,7 +306,7 @@ template<>
 struct peripheral_t<STM32H745_CM4, AXI>
 {
     static constexpr periph_t P = AXI;
-    using T = stm32h742x_axi_t;
+    using T = stm32h723_axi_t;
     static T& V;
 };
 
@@ -298,7 +314,7 @@ template<>
 struct peripheral_t<STM32H745_CM7, AXI>
 {
     static constexpr periph_t P = AXI;
-    using T = stm32h742x_axi_t;
+    using T = stm32h723_axi_t;
     static T& V;
 };
 
@@ -306,7 +322,7 @@ template<>
 struct peripheral_t<STM32H747_CM4, AXI>
 {
     static constexpr periph_t P = AXI;
-    using T = stm32h742x_axi_t;
+    using T = stm32h723_axi_t;
     static T& V;
 };
 
@@ -314,7 +330,7 @@ template<>
 struct peripheral_t<STM32H747_CM7, AXI>
 {
     static constexpr periph_t P = AXI;
-    using T = stm32h742x_axi_t;
+    using T = stm32h723_axi_t;
     static T& V;
 };
 
@@ -322,7 +338,7 @@ template<>
 struct peripheral_t<STM32H750x, AXI>
 {
     static constexpr periph_t P = AXI;
-    using T = stm32h742x_axi_t;
+    using T = stm32h723_axi_t;
     static T& V;
 };
 
@@ -330,7 +346,7 @@ template<>
 struct peripheral_t<STM32H753, AXI>
 {
     static constexpr periph_t P = AXI;
-    using T = stm32h742x_axi_t;
+    using T = stm32h723_axi_t;
     static T& V;
 };
 
@@ -338,7 +354,7 @@ template<>
 struct peripheral_t<STM32H755_CM4, AXI>
 {
     static constexpr periph_t P = AXI;
-    using T = stm32h742x_axi_t;
+    using T = stm32h723_axi_t;
     static T& V;
 };
 
@@ -346,7 +362,7 @@ template<>
 struct peripheral_t<STM32H755_CM7, AXI>
 {
     static constexpr periph_t P = AXI;
-    using T = stm32h742x_axi_t;
+    using T = stm32h723_axi_t;
     static T& V;
 };
 
@@ -354,7 +370,7 @@ template<>
 struct peripheral_t<STM32H757_CM4, AXI>
 {
     static constexpr periph_t P = AXI;
-    using T = stm32h742x_axi_t;
+    using T = stm32h723_axi_t;
     static T& V;
 };
 
@@ -362,7 +378,7 @@ template<>
 struct peripheral_t<STM32H757_CM7, AXI>
 {
     static constexpr periph_t P = AXI;
-    using T = stm32h742x_axi_t;
+    using T = stm32h723_axi_t;
     static T& V;
 };
 
@@ -370,7 +386,7 @@ template<>
 struct peripheral_t<STM32H7A3x, AXI>
 {
     static constexpr periph_t P = AXI;
-    using T = stm32h742x_axi_t;
+    using T = stm32h723_axi_t;
     static T& V;
 };
 
@@ -378,7 +394,7 @@ template<>
 struct peripheral_t<STM32H7B0x, AXI>
 {
     static constexpr periph_t P = AXI;
-    using T = stm32h742x_axi_t;
+    using T = stm32h723_axi_t;
     static T& V;
 };
 
@@ -386,7 +402,7 @@ template<>
 struct peripheral_t<STM32H7B3x, AXI>
 {
     static constexpr periph_t P = AXI;
-    using T = stm32h742x_axi_t;
+    using T = stm32h723_axi_t;
     static T& V;
 };
 

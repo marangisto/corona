@@ -8,7 +8,7 @@
 
 // PWR: Power control
 
-struct stm32l0x0_pwr_t
+struct stm32l052_pwr_t
 {
     volatile uint32_t CR; // power control register
     volatile uint32_t CSR; // power control/status register
@@ -39,10 +39,42 @@ struct stm32l0x0_pwr_t
 };
 
 template<>
+struct peripheral_t<STM32L052, PWR>
+{
+    static constexpr periph_t P = PWR;
+    using T = stm32l052_pwr_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, PWR>
+{
+    static constexpr periph_t P = PWR;
+    using T = stm32l052_pwr_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, PWR>
+{
+    static constexpr periph_t P = PWR;
+    using T = stm32l052_pwr_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, PWR>
+{
+    static constexpr periph_t P = PWR;
+    using T = stm32l052_pwr_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L0x0, PWR>
 {
     static constexpr periph_t P = PWR;
-    using T = stm32l0x0_pwr_t;
+    using T = stm32l052_pwr_t;
     static T& V;
 };
 
@@ -50,7 +82,7 @@ template<>
 struct peripheral_t<STM32L0x1, PWR>
 {
     static constexpr periph_t P = PWR;
-    using T = stm32l0x0_pwr_t;
+    using T = stm32l052_pwr_t;
     static T& V;
 };
 
@@ -58,7 +90,7 @@ template<>
 struct peripheral_t<STM32L0x2, PWR>
 {
     static constexpr periph_t P = PWR;
-    using T = stm32l0x0_pwr_t;
+    using T = stm32l052_pwr_t;
     static T& V;
 };
 
@@ -66,7 +98,7 @@ template<>
 struct peripheral_t<STM32L0x3, PWR>
 {
     static constexpr periph_t P = PWR;
-    using T = stm32l0x0_pwr_t;
+    using T = stm32l052_pwr_t;
     static T& V;
 };
 

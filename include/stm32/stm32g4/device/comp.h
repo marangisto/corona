@@ -197,6 +197,22 @@ struct peripheral_t<STM32G471xx, COMP>
 };
 
 template<>
+struct peripheral_t<STM32G491xx, COMP>
+{
+    static constexpr periph_t P = COMP;
+    using T = stm32g431xx_comp_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, COMP>
+{
+    static constexpr periph_t P = COMP;
+    using T = stm32g431xx_comp_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32GBK1CBT6, COMP>
 {
     static constexpr periph_t P = COMP;

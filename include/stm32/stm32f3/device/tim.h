@@ -2742,14 +2742,6 @@ struct peripheral_t<STM32F301, TIM6>
 };
 
 template<>
-struct peripheral_t<STM32F301, TIM7>
-{
-    static constexpr periph_t P = TIM7;
-    using T = stm32f301_tim6_t;
-    static T& V;
-};
-
-template<>
 struct peripheral_t<STM32F373, TIM18>
 {
     static constexpr periph_t P = TIM18;

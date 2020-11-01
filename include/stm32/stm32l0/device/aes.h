@@ -8,7 +8,7 @@
 
 // AES: Advanced encryption standard hardware accelerator
 
-struct stm32l0x1_aes_t
+struct stm32l062_aes_t
 {
     volatile uint32_t CR; // control register
     volatile uint32_t SR; // status register
@@ -72,10 +72,26 @@ struct stm32l0x1_aes_t
 };
 
 template<>
+struct peripheral_t<STM32L062, AES>
+{
+    static constexpr periph_t P = AES;
+    using T = stm32l062_aes_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, AES>
+{
+    static constexpr periph_t P = AES;
+    using T = stm32l062_aes_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L0x1, AES>
 {
     static constexpr periph_t P = AES;
-    using T = stm32l0x1_aes_t;
+    using T = stm32l062_aes_t;
     static T& V;
 };
 
@@ -83,7 +99,7 @@ template<>
 struct peripheral_t<STM32L0x2, AES>
 {
     static constexpr periph_t P = AES;
-    using T = stm32l0x1_aes_t;
+    using T = stm32l062_aes_t;
     static T& V;
 };
 
@@ -91,7 +107,7 @@ template<>
 struct peripheral_t<STM32L0x3, AES>
 {
     static constexpr periph_t P = AES;
-    using T = stm32l0x1_aes_t;
+    using T = stm32l062_aes_t;
     static T& V;
 };
 

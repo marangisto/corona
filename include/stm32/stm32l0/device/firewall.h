@@ -8,7 +8,7 @@
 
 // FIREWALL: Firewall
 
-struct stm32l0x0_firewall_t
+struct stm32l052_firewall_t
 {
     volatile uint32_t FIREWALL_CSSA; // Code segment start address
     volatile uint32_t FIREWALL_CSL; // Code segment length
@@ -45,10 +45,42 @@ struct stm32l0x0_firewall_t
 };
 
 template<>
+struct peripheral_t<STM32L052, FIREWALL>
+{
+    static constexpr periph_t P = FIREWALL;
+    using T = stm32l052_firewall_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, FIREWALL>
+{
+    static constexpr periph_t P = FIREWALL;
+    using T = stm32l052_firewall_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, FIREWALL>
+{
+    static constexpr periph_t P = FIREWALL;
+    using T = stm32l052_firewall_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, FIREWALL>
+{
+    static constexpr periph_t P = FIREWALL;
+    using T = stm32l052_firewall_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L0x0, FIREWALL>
 {
     static constexpr periph_t P = FIREWALL;
-    using T = stm32l0x0_firewall_t;
+    using T = stm32l052_firewall_t;
     static T& V;
 };
 
@@ -56,7 +88,7 @@ template<>
 struct peripheral_t<STM32L0x1, FIREWALL>
 {
     static constexpr periph_t P = FIREWALL;
-    using T = stm32l0x0_firewall_t;
+    using T = stm32l052_firewall_t;
     static T& V;
 };
 
@@ -64,7 +96,7 @@ template<>
 struct peripheral_t<STM32L0x2, FIREWALL>
 {
     static constexpr periph_t P = FIREWALL;
-    using T = stm32l0x0_firewall_t;
+    using T = stm32l052_firewall_t;
     static T& V;
 };
 
@@ -72,7 +104,7 @@ template<>
 struct peripheral_t<STM32L0x3, FIREWALL>
 {
     static constexpr periph_t P = FIREWALL;
-    using T = stm32l0x0_firewall_t;
+    using T = stm32l052_firewall_t;
     static T& V;
 };
 

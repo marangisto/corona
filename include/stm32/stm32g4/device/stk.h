@@ -90,6 +90,22 @@ struct peripheral_t<STM32G484xx, STK>
 };
 
 template<>
+struct peripheral_t<STM32G491xx, STK>
+{
+    static constexpr periph_t P = STK;
+    using T = stm32g431xx_stk_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, STK>
+{
+    static constexpr periph_t P = STK;
+    using T = stm32g431xx_stk_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32GBK1CBT6, STK>
 {
     static constexpr periph_t P = STK;

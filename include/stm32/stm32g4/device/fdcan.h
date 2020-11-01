@@ -515,6 +515,38 @@ struct peripheral_t<STM32G484xx, FDCAN3>
 };
 
 template<>
+struct peripheral_t<STM32G491xx, FDCAN>
+{
+    static constexpr periph_t P = FDCAN;
+    using T = stm32g431xx_fdcan_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G491xx, FDCAN1>
+{
+    static constexpr periph_t P = FDCAN1;
+    using T = stm32g431xx_fdcan_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, FDCAN>
+{
+    static constexpr periph_t P = FDCAN;
+    using T = stm32g431xx_fdcan_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, FDCAN1>
+{
+    static constexpr periph_t P = FDCAN1;
+    using T = stm32g431xx_fdcan_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32GBK1CBT6, FDCAN>
 {
     static constexpr periph_t P = FDCAN;

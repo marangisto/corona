@@ -8,7 +8,7 @@
 
 // MPU: Memory protection unit
 
-struct stm32l0x0_mpu_t
+struct stm32l052_mpu_t
 {
     volatile uint32_t MPU_TYPER; // MPU type register
     volatile uint32_t MPU_CTRL; // MPU control register
@@ -47,10 +47,42 @@ struct stm32l0x0_mpu_t
 };
 
 template<>
+struct peripheral_t<STM32L052, MPU>
+{
+    static constexpr periph_t P = MPU;
+    using T = stm32l052_mpu_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, MPU>
+{
+    static constexpr periph_t P = MPU;
+    using T = stm32l052_mpu_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, MPU>
+{
+    static constexpr periph_t P = MPU;
+    using T = stm32l052_mpu_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, MPU>
+{
+    static constexpr periph_t P = MPU;
+    using T = stm32l052_mpu_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L0x0, MPU>
 {
     static constexpr periph_t P = MPU;
-    using T = stm32l0x0_mpu_t;
+    using T = stm32l052_mpu_t;
     static T& V;
 };
 
@@ -58,7 +90,7 @@ template<>
 struct peripheral_t<STM32L0x1, MPU>
 {
     static constexpr periph_t P = MPU;
-    using T = stm32l0x0_mpu_t;
+    using T = stm32l052_mpu_t;
     static T& V;
 };
 
@@ -66,7 +98,7 @@ template<>
 struct peripheral_t<STM32L0x2, MPU>
 {
     static constexpr periph_t P = MPU;
-    using T = stm32l0x0_mpu_t;
+    using T = stm32l052_mpu_t;
     static T& V;
 };
 
@@ -74,7 +106,7 @@ template<>
 struct peripheral_t<STM32L0x3, MPU>
 {
     static constexpr periph_t P = MPU;
-    using T = stm32l0x0_mpu_t;
+    using T = stm32l052_mpu_t;
     static T& V;
 };
 

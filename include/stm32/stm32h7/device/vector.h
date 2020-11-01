@@ -135,7 +135,7 @@ template<> void handler<interrupt::MDIOS_WKUP>() __attribute__ ((weak, alias("_Z
 template<> void handler<interrupt::MDIOS>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::JPEG>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::MDMA>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
-template<> void handler<interrupt::SDMMC>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::SDMMC2>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::HSEM0>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::ADC3>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::DMAMUX2_OVR>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
@@ -212,9 +212,9 @@ void (*vectors[])(void) __attribute__ ((section(".vectors"))) =
     , handler<interrupt::TIM3> // 29: TIM3 global interrupt
     , handler<interrupt::TIM4> // 30: TIM4 global interrupt
     , handler<interrupt::I2C1_EV> // 31: I2C1 event interrupt
-    , handler<interrupt::I2C1_ER> // 32: I2C1 error interrupt
+    , handler<interrupt::I2C1_ER> // 32: I2C1 global error interrupt
     , handler<interrupt::I2C2_EV> // 33: I2C2 event interrupt
-    , handler<interrupt::I2C2_ER> // 34: I2C2 error interrupt
+    , handler<interrupt::I2C2_ER> // 34: I2C2 global error interrupt
     , handler<interrupt::SPI1> // 35: SPI1 global interrupt
     , handler<interrupt::SPI2> // 36: SPI2 global interrupt
     , handler<interrupt::USART1> // 37: USART1 global interrupt
@@ -229,7 +229,7 @@ void (*vectors[])(void) __attribute__ ((section(".vectors"))) =
     , handler<interrupt::TIM8_CC> // 46: TIM8 capture / compare
     , handler<interrupt::DMA1_STR7> // 47: DMA1 Stream7
     , handler<interrupt::FMC> // 48: FMC global interrupt
-    , handler<interrupt::SDMMC1> // 49: SDMMC global interrupt
+    , handler<interrupt::SDMMC1> // 49: SDMMC1 global interrupt
     , handler<interrupt::TIM5> // 50: TIM5 global interrupt
     , handler<interrupt::SPI3> // 51: SPI3 global interrupt
     , handler<interrupt::UART4> // 52: UART4 global interrupt
@@ -259,7 +259,7 @@ void (*vectors[])(void) __attribute__ ((section(".vectors"))) =
     , handler<interrupt::OTG_HS_WKUP> // 76: OTG_HS wakeup interrupt
     , handler<interrupt::OTG_HS> // 77: OTG_HS global interrupt
     , handler<interrupt::DCMI> // 78: DCMI global interrupt
-    , handler<interrupt::CRYP> // 79: CRYP global interrupt
+    , handler<interrupt::CRYP> // 79: Crypto global interrupt
     , handler<interrupt::HASH_RNG> // 80: HASH and RNG
     , handler<interrupt::FPU> // 81: Floating point unit interrupt
     , handler<interrupt::UART7> // 82: UART7 global interrupt
@@ -302,13 +302,13 @@ void (*vectors[])(void) __attribute__ ((section(".vectors"))) =
     , handler<interrupt::MDIOS_WKUP> // 119: MDIOS wakeup
     , handler<interrupt::MDIOS> // 120: MDIOS global interrupt
     , handler<interrupt::JPEG> // 121: JPEG global interrupt
-    , handler<interrupt::MDMA> // 122: MDMA
+    , handler<interrupt::MDMA> // 122: MDMA Global interrupt
     , 0x0
-    , handler<interrupt::SDMMC> // 124: SDMMC global interrupt
+    , handler<interrupt::SDMMC2> // 124: SDMMC2 global interrupt
     , handler<interrupt::HSEM0> // 125: HSEM global interrupt 1
     , 0x0
     , handler<interrupt::ADC3> // 127: ADC3 global interrupt
-    , handler<interrupt::DMAMUX2_OVR> // 128: DMAMUX2 overrun interrupt
+    , handler<interrupt::DMAMUX2_OVR> // 128: DMAMUX D3 overrun interrupt
     , handler<interrupt::BDMA_CH1> // 129: BDMA channel 1 interrupt
     , handler<interrupt::BDMA_CH2> // 130: BDMA channel 2 interrupt
     , handler<interrupt::BDMA_CH3> // 131: BDMA channel 3 interrupt
@@ -317,14 +317,14 @@ void (*vectors[])(void) __attribute__ ((section(".vectors"))) =
     , handler<interrupt::BDMA_CH6> // 134: BDMA channel 6 interrupt
     , handler<interrupt::BDMA_CH7> // 135: BDMA channel 7 interrupt
     , handler<interrupt::BDMA_CH8> // 136: BDMA channel 8 interrupt
-    , handler<interrupt::COMP> // 137: COMP1 and COMP2
+    , handler<interrupt::COMP> // 137: COMP1 and COMP2 global interrupt
     , handler<interrupt::LPTIM2> // 138: LPTIM2 timer interrupt
     , handler<interrupt::LPTIM3> // 139: LPTIM2 timer interrupt
     , handler<interrupt::LPTIM4> // 140: LPTIM2 timer interrupt
     , handler<interrupt::LPTIM5> // 141: LPTIM2 timer interrupt
     , handler<interrupt::LPUART> // 142: LPUART global interrupt
     , handler<interrupt::WWDG1_RST> // 143: Window Watchdog interrupt
-    , handler<interrupt::CRS> // 144: Clock Recovery System globa
+    , handler<interrupt::CRS> // 144: Clock Recovery System global interrupt
     , 0x0
     , handler<interrupt::SAI4> // 146: SAI4 global interrupt
     , 0x0

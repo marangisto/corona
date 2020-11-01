@@ -8,7 +8,7 @@
 
 // WWDG: System window watchdog
 
-struct stm32l0x0_wwdg_t
+struct stm32l052_wwdg_t
 {
     volatile uint32_t CR; // Control register
     volatile uint32_t CFR; // Configuration register
@@ -29,10 +29,42 @@ struct stm32l0x0_wwdg_t
 };
 
 template<>
+struct peripheral_t<STM32L052, WWDG>
+{
+    static constexpr periph_t P = WWDG;
+    using T = stm32l052_wwdg_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, WWDG>
+{
+    static constexpr periph_t P = WWDG;
+    using T = stm32l052_wwdg_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, WWDG>
+{
+    static constexpr periph_t P = WWDG;
+    using T = stm32l052_wwdg_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, WWDG>
+{
+    static constexpr periph_t P = WWDG;
+    using T = stm32l052_wwdg_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L0x0, WWDG>
 {
     static constexpr periph_t P = WWDG;
-    using T = stm32l0x0_wwdg_t;
+    using T = stm32l052_wwdg_t;
     static T& V;
 };
 
@@ -40,7 +72,7 @@ template<>
 struct peripheral_t<STM32L0x1, WWDG>
 {
     static constexpr periph_t P = WWDG;
-    using T = stm32l0x0_wwdg_t;
+    using T = stm32l052_wwdg_t;
     static T& V;
 };
 
@@ -48,7 +80,7 @@ template<>
 struct peripheral_t<STM32L0x2, WWDG>
 {
     static constexpr periph_t P = WWDG;
-    using T = stm32l0x0_wwdg_t;
+    using T = stm32l052_wwdg_t;
     static T& V;
 };
 
@@ -56,7 +88,7 @@ template<>
 struct peripheral_t<STM32L0x3, WWDG>
 {
     static constexpr periph_t P = WWDG;
-    using T = stm32l0x0_wwdg_t;
+    using T = stm32l052_wwdg_t;
     static T& V;
 };
 

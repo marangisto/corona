@@ -8,7 +8,7 @@
 
 // USB_FS: Universal serial bus full-speed device interface
 
-struct stm32l0x2_usb_fs_t
+struct stm32l052_usb_fs_t
 {
     volatile uint32_t EP0R; // endpoint register
     volatile uint32_t EP1R; // endpoint register
@@ -188,7 +188,7 @@ struct stm32l0x2_usb_fs_t
 
 // USB_SRAM: Universal serial bus full-speed device interface
 
-struct stm32l0x2_usb_sram_t
+struct stm32l052_usb_sram_t
 {
     volatile uint32_t EP0R; // endpoint 0 register
     volatile uint32_t EP1R; // endpoint 1 register
@@ -367,10 +367,42 @@ struct stm32l0x2_usb_sram_t
 };
 
 template<>
+struct peripheral_t<STM32L052, USB_FS>
+{
+    static constexpr periph_t P = USB_FS;
+    using T = stm32l052_usb_fs_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, USB_FS>
+{
+    static constexpr periph_t P = USB_FS;
+    using T = stm32l052_usb_fs_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, USB_FS>
+{
+    static constexpr periph_t P = USB_FS;
+    using T = stm32l052_usb_fs_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, USB_FS>
+{
+    static constexpr periph_t P = USB_FS;
+    using T = stm32l052_usb_fs_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L0x2, USB_FS>
 {
     static constexpr periph_t P = USB_FS;
-    using T = stm32l0x2_usb_fs_t;
+    using T = stm32l052_usb_fs_t;
     static T& V;
 };
 
@@ -378,7 +410,39 @@ template<>
 struct peripheral_t<STM32L0x3, USB_FS>
 {
     static constexpr periph_t P = USB_FS;
-    using T = stm32l0x2_usb_fs_t;
+    using T = stm32l052_usb_fs_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L052, USB_SRAM>
+{
+    static constexpr periph_t P = USB_SRAM;
+    using T = stm32l052_usb_sram_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, USB_SRAM>
+{
+    static constexpr periph_t P = USB_SRAM;
+    using T = stm32l052_usb_sram_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, USB_SRAM>
+{
+    static constexpr periph_t P = USB_SRAM;
+    using T = stm32l052_usb_sram_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, USB_SRAM>
+{
+    static constexpr periph_t P = USB_SRAM;
+    using T = stm32l052_usb_sram_t;
     static T& V;
 };
 
@@ -386,7 +450,7 @@ template<>
 struct peripheral_t<STM32L0x2, USB_SRAM>
 {
     static constexpr periph_t P = USB_SRAM;
-    using T = stm32l0x2_usb_sram_t;
+    using T = stm32l052_usb_sram_t;
     static T& V;
 };
 
@@ -394,7 +458,7 @@ template<>
 struct peripheral_t<STM32L0x3, USB_SRAM>
 {
     static constexpr periph_t P = USB_SRAM;
-    using T = stm32l0x2_usb_sram_t;
+    using T = stm32l052_usb_sram_t;
     static T& V;
 };
 

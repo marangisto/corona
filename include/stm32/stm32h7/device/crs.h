@@ -6,9 +6,9 @@
 //
 ///
 
-// CRS: CRS
+// CRS: Clock Recovery System
 
-struct stm32h742x_crs_t
+struct stm32h723_crs_t
 {
     volatile uint32_t CR; // CRS control register
     volatile uint32_t CFGR; // This register can be written only when the frequency error counter is disabled (CEN bit is cleared in CRS_CR). When the counter is enabled, this register is write-protected.
@@ -95,10 +95,26 @@ struct stm32h750x_crs_t
 };
 
 template<>
+struct peripheral_t<STM32H723, CRS>
+{
+    static constexpr periph_t P = CRS;
+    using T = stm32h723_crs_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, CRS>
+{
+    static constexpr periph_t P = CRS;
+    using T = stm32h723_crs_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H742x, CRS>
 {
     static constexpr periph_t P = CRS;
-    using T = stm32h742x_crs_t;
+    using T = stm32h723_crs_t;
     static T& V;
 };
 
@@ -106,7 +122,7 @@ template<>
 struct peripheral_t<STM32H743, CRS>
 {
     static constexpr periph_t P = CRS;
-    using T = stm32h742x_crs_t;
+    using T = stm32h723_crs_t;
     static T& V;
 };
 
@@ -114,7 +130,7 @@ template<>
 struct peripheral_t<STM32H745_CM4, CRS>
 {
     static constexpr periph_t P = CRS;
-    using T = stm32h742x_crs_t;
+    using T = stm32h723_crs_t;
     static T& V;
 };
 
@@ -122,7 +138,7 @@ template<>
 struct peripheral_t<STM32H745_CM7, CRS>
 {
     static constexpr periph_t P = CRS;
-    using T = stm32h742x_crs_t;
+    using T = stm32h723_crs_t;
     static T& V;
 };
 
@@ -130,7 +146,7 @@ template<>
 struct peripheral_t<STM32H747_CM4, CRS>
 {
     static constexpr periph_t P = CRS;
-    using T = stm32h742x_crs_t;
+    using T = stm32h723_crs_t;
     static T& V;
 };
 
@@ -138,7 +154,7 @@ template<>
 struct peripheral_t<STM32H747_CM7, CRS>
 {
     static constexpr periph_t P = CRS;
-    using T = stm32h742x_crs_t;
+    using T = stm32h723_crs_t;
     static T& V;
 };
 
@@ -146,7 +162,7 @@ template<>
 struct peripheral_t<STM32H753, CRS>
 {
     static constexpr periph_t P = CRS;
-    using T = stm32h742x_crs_t;
+    using T = stm32h723_crs_t;
     static T& V;
 };
 
@@ -154,7 +170,7 @@ template<>
 struct peripheral_t<STM32H755_CM4, CRS>
 {
     static constexpr periph_t P = CRS;
-    using T = stm32h742x_crs_t;
+    using T = stm32h723_crs_t;
     static T& V;
 };
 
@@ -162,7 +178,7 @@ template<>
 struct peripheral_t<STM32H755_CM7, CRS>
 {
     static constexpr periph_t P = CRS;
-    using T = stm32h742x_crs_t;
+    using T = stm32h723_crs_t;
     static T& V;
 };
 
@@ -170,7 +186,7 @@ template<>
 struct peripheral_t<STM32H757_CM4, CRS>
 {
     static constexpr periph_t P = CRS;
-    using T = stm32h742x_crs_t;
+    using T = stm32h723_crs_t;
     static T& V;
 };
 
@@ -178,7 +194,7 @@ template<>
 struct peripheral_t<STM32H757_CM7, CRS>
 {
     static constexpr periph_t P = CRS;
-    using T = stm32h742x_crs_t;
+    using T = stm32h723_crs_t;
     static T& V;
 };
 
@@ -186,7 +202,7 @@ template<>
 struct peripheral_t<STM32H7A3x, CRS>
 {
     static constexpr periph_t P = CRS;
-    using T = stm32h742x_crs_t;
+    using T = stm32h723_crs_t;
     static T& V;
 };
 

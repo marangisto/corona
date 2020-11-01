@@ -2654,9 +2654,7 @@ struct signal_traits<CFG, PF1, TIM15_CH1N>
 template<gpio_conf_t CFG>
 struct signal_traits<CFG, PF2, RCC_MCO>
 {
-    static constexpr altfun
-        < CFG & STM32G07x
-        > AF = AF0;
+    static constexpr altfun_t AF = AF0;
 };
 
 template<periph_t PERIPH, pin_t PIN, int POLARITY>

@@ -8,7 +8,7 @@
 
 // PWR: PWR
 
-struct stm32h742x_pwr_t
+struct stm32h723_pwr_t
 {
     volatile uint32_t CR1; // PWR control register 1
     volatile uint32_t CSR1; // PWR control status register 1
@@ -50,7 +50,7 @@ struct stm32h742x_pwr_t
     static constexpr uint32_t CR3_RESET_VALUE = 0x6; // Reset value
     static constexpr uint32_t CR3_BYPASS = 0x1; // Power management unit bypass
     static constexpr uint32_t CR3_LDOEN = 0x2; // Low drop-out regulator enable
-    static constexpr uint32_t CR3_SCUEN = 0x4; // SD converter Enable
+    static constexpr uint32_t CR3_SDEN = 0x4; // SD converter Enable
     static constexpr uint32_t CR3_VBE = 0x100; // VBAT charging enable
     static constexpr uint32_t CR3_VBRS = 0x200; // VBAT charging resistor selection
     static constexpr uint32_t CR3_USB33DEN = 0x1000000; // VDD33USB voltage level detector enable.
@@ -108,7 +108,7 @@ struct stm32h742x_pwr_t
 
 // PWR: PWR
 
-struct stm32h745_cm4_pwr_t
+struct stm32h742x_pwr_t
 {
     volatile uint32_t CR1; // PWR control register 1
     volatile uint32_t CSR1; // PWR control status register 1
@@ -150,7 +150,7 @@ struct stm32h745_cm4_pwr_t
     static constexpr uint32_t CR3_RESET_VALUE = 0x6; // Reset value
     static constexpr uint32_t CR3_BYPASS = 0x1; // Power management unit bypass
     static constexpr uint32_t CR3_LDOEN = 0x2; // Low drop-out regulator enable
-    static constexpr uint32_t CR3_SDEN = 0x4; // SD converter Enable
+    static constexpr uint32_t CR3_SCUEN = 0x4; // SD converter Enable
     static constexpr uint32_t CR3_VBE = 0x100; // VBAT charging enable
     static constexpr uint32_t CR3_VBRS = 0x200; // VBAT charging resistor selection
     static constexpr uint32_t CR3_USB33DEN = 0x1000000; // VDD33USB voltage level detector enable.
@@ -307,6 +307,86 @@ struct stm32h750x_pwr_t
 };
 
 template<>
+struct peripheral_t<STM32H723, PWR>
+{
+    static constexpr periph_t P = PWR;
+    using T = stm32h723_pwr_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, PWR>
+{
+    static constexpr periph_t P = PWR;
+    using T = stm32h723_pwr_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H745_CM4, PWR>
+{
+    static constexpr periph_t P = PWR;
+    using T = stm32h723_pwr_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H745_CM7, PWR>
+{
+    static constexpr periph_t P = PWR;
+    using T = stm32h723_pwr_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H747_CM4, PWR>
+{
+    static constexpr periph_t P = PWR;
+    using T = stm32h723_pwr_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H747_CM7, PWR>
+{
+    static constexpr periph_t P = PWR;
+    using T = stm32h723_pwr_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H755_CM4, PWR>
+{
+    static constexpr periph_t P = PWR;
+    using T = stm32h723_pwr_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H755_CM7, PWR>
+{
+    static constexpr periph_t P = PWR;
+    using T = stm32h723_pwr_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H757_CM4, PWR>
+{
+    static constexpr periph_t P = PWR;
+    using T = stm32h723_pwr_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H757_CM7, PWR>
+{
+    static constexpr periph_t P = PWR;
+    using T = stm32h723_pwr_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H742x, PWR>
 {
     static constexpr periph_t P = PWR;
@@ -327,70 +407,6 @@ struct peripheral_t<STM32H753, PWR>
 {
     static constexpr periph_t P = PWR;
     using T = stm32h742x_pwr_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H745_CM4, PWR>
-{
-    static constexpr periph_t P = PWR;
-    using T = stm32h745_cm4_pwr_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H745_CM7, PWR>
-{
-    static constexpr periph_t P = PWR;
-    using T = stm32h745_cm4_pwr_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H747_CM4, PWR>
-{
-    static constexpr periph_t P = PWR;
-    using T = stm32h745_cm4_pwr_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H747_CM7, PWR>
-{
-    static constexpr periph_t P = PWR;
-    using T = stm32h745_cm4_pwr_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H755_CM4, PWR>
-{
-    static constexpr periph_t P = PWR;
-    using T = stm32h745_cm4_pwr_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H755_CM7, PWR>
-{
-    static constexpr periph_t P = PWR;
-    using T = stm32h745_cm4_pwr_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H757_CM4, PWR>
-{
-    static constexpr periph_t P = PWR;
-    using T = stm32h745_cm4_pwr_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H757_CM7, PWR>
-{
-    static constexpr periph_t P = PWR;
-    using T = stm32h745_cm4_pwr_t;
     static T& V;
 };
 

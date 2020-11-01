@@ -8,7 +8,7 @@
 
 // LTDC: LCD-TFT Controller
 
-struct stm32h742x_ltdc_t
+struct stm32h723_ltdc_t
 {
     reserved_t<0x2> _0x0;
     volatile uint32_t SSCR; // Synchronization Size Configuration Register
@@ -237,10 +237,26 @@ struct stm32h742x_ltdc_t
 };
 
 template<>
+struct peripheral_t<STM32H723, LTDC>
+{
+    static constexpr periph_t P = LTDC;
+    using T = stm32h723_ltdc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, LTDC>
+{
+    static constexpr periph_t P = LTDC;
+    using T = stm32h723_ltdc_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H742x, LTDC>
 {
     static constexpr periph_t P = LTDC;
-    using T = stm32h742x_ltdc_t;
+    using T = stm32h723_ltdc_t;
     static T& V;
 };
 
@@ -248,7 +264,7 @@ template<>
 struct peripheral_t<STM32H743, LTDC>
 {
     static constexpr periph_t P = LTDC;
-    using T = stm32h742x_ltdc_t;
+    using T = stm32h723_ltdc_t;
     static T& V;
 };
 
@@ -256,7 +272,7 @@ template<>
 struct peripheral_t<STM32H745_CM4, LTDC>
 {
     static constexpr periph_t P = LTDC;
-    using T = stm32h742x_ltdc_t;
+    using T = stm32h723_ltdc_t;
     static T& V;
 };
 
@@ -264,7 +280,7 @@ template<>
 struct peripheral_t<STM32H745_CM7, LTDC>
 {
     static constexpr periph_t P = LTDC;
-    using T = stm32h742x_ltdc_t;
+    using T = stm32h723_ltdc_t;
     static T& V;
 };
 
@@ -272,7 +288,7 @@ template<>
 struct peripheral_t<STM32H747_CM4, LTDC>
 {
     static constexpr periph_t P = LTDC;
-    using T = stm32h742x_ltdc_t;
+    using T = stm32h723_ltdc_t;
     static T& V;
 };
 
@@ -280,7 +296,7 @@ template<>
 struct peripheral_t<STM32H747_CM7, LTDC>
 {
     static constexpr periph_t P = LTDC;
-    using T = stm32h742x_ltdc_t;
+    using T = stm32h723_ltdc_t;
     static T& V;
 };
 
@@ -288,7 +304,7 @@ template<>
 struct peripheral_t<STM32H750x, LTDC>
 {
     static constexpr periph_t P = LTDC;
-    using T = stm32h742x_ltdc_t;
+    using T = stm32h723_ltdc_t;
     static T& V;
 };
 
@@ -296,7 +312,7 @@ template<>
 struct peripheral_t<STM32H753, LTDC>
 {
     static constexpr periph_t P = LTDC;
-    using T = stm32h742x_ltdc_t;
+    using T = stm32h723_ltdc_t;
     static T& V;
 };
 
@@ -304,7 +320,7 @@ template<>
 struct peripheral_t<STM32H755_CM4, LTDC>
 {
     static constexpr periph_t P = LTDC;
-    using T = stm32h742x_ltdc_t;
+    using T = stm32h723_ltdc_t;
     static T& V;
 };
 
@@ -312,7 +328,7 @@ template<>
 struct peripheral_t<STM32H755_CM7, LTDC>
 {
     static constexpr periph_t P = LTDC;
-    using T = stm32h742x_ltdc_t;
+    using T = stm32h723_ltdc_t;
     static T& V;
 };
 
@@ -320,7 +336,7 @@ template<>
 struct peripheral_t<STM32H757_CM4, LTDC>
 {
     static constexpr periph_t P = LTDC;
-    using T = stm32h742x_ltdc_t;
+    using T = stm32h723_ltdc_t;
     static T& V;
 };
 
@@ -328,7 +344,7 @@ template<>
 struct peripheral_t<STM32H757_CM7, LTDC>
 {
     static constexpr periph_t P = LTDC;
-    using T = stm32h742x_ltdc_t;
+    using T = stm32h723_ltdc_t;
     static T& V;
 };
 
@@ -336,7 +352,7 @@ template<>
 struct peripheral_t<STM32H7A3x, LTDC>
 {
     static constexpr periph_t P = LTDC;
-    using T = stm32h742x_ltdc_t;
+    using T = stm32h723_ltdc_t;
     static T& V;
 };
 
@@ -344,7 +360,7 @@ template<>
 struct peripheral_t<STM32H7B0x, LTDC>
 {
     static constexpr periph_t P = LTDC;
-    using T = stm32h742x_ltdc_t;
+    using T = stm32h723_ltdc_t;
     static T& V;
 };
 
@@ -352,7 +368,7 @@ template<>
 struct peripheral_t<STM32H7B3x, LTDC>
 {
     static constexpr periph_t P = LTDC;
-    using T = stm32h742x_ltdc_t;
+    using T = stm32h723_ltdc_t;
     static T& V;
 };
 

@@ -258,6 +258,22 @@ struct peripheral_t<STM32G484xx, RTC>
 };
 
 template<>
+struct peripheral_t<STM32G491xx, RTC>
+{
+    static constexpr periph_t P = RTC;
+    using T = stm32g431xx_rtc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, RTC>
+{
+    static constexpr periph_t P = RTC;
+    using T = stm32g431xx_rtc_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32GBK1CBT6, RTC>
 {
     static constexpr periph_t P = RTC;

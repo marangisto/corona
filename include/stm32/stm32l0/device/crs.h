@@ -8,7 +8,7 @@
 
 // CRS: Clock recovery system
 
-struct stm32l0x2_crs_t
+struct stm32l052_crs_t
 {
     volatile uint32_t CR; // control register
     volatile uint32_t CFGR; // configuration register
@@ -51,10 +51,42 @@ struct stm32l0x2_crs_t
 };
 
 template<>
+struct peripheral_t<STM32L052, CRS>
+{
+    static constexpr periph_t P = CRS;
+    using T = stm32l052_crs_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, CRS>
+{
+    static constexpr periph_t P = CRS;
+    using T = stm32l052_crs_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, CRS>
+{
+    static constexpr periph_t P = CRS;
+    using T = stm32l052_crs_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, CRS>
+{
+    static constexpr periph_t P = CRS;
+    using T = stm32l052_crs_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L0x2, CRS>
 {
     static constexpr periph_t P = CRS;
-    using T = stm32l0x2_crs_t;
+    using T = stm32l052_crs_t;
     static T& V;
 };
 
@@ -62,7 +94,7 @@ template<>
 struct peripheral_t<STM32L0x3, CRS>
 {
     static constexpr periph_t P = CRS;
-    using T = stm32l0x2_crs_t;
+    using T = stm32l052_crs_t;
     static T& V;
 };
 

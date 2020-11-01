@@ -322,7 +322,5 @@ template<int INST> struct rtc_traits {};
 template<> struct rtc_traits<0>
 {
     using rtc = rtc_t;
-    static constexpr signal_t OUT_ALARM = RTC_OUT_ALARM;
-    static constexpr signal_t OUT_CALIB = RTC_OUT_CALIB;
     static constexpr signal_t REFIN = RTC_REFIN;
 };

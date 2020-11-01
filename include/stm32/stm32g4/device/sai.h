@@ -245,6 +245,22 @@ struct peripheral_t<STM32G484xx, SAI1>
 };
 
 template<>
+struct peripheral_t<STM32G491xx, SAI1>
+{
+    static constexpr periph_t P = SAI1;
+    using T = stm32g431xx_sai_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, SAI1>
+{
+    static constexpr periph_t P = SAI1;
+    using T = stm32g431xx_sai_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32GBK1CBT6, SAI1>
 {
     static constexpr periph_t P = SAI1;

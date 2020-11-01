@@ -157,8 +157,10 @@ enum mcu_t
     , STM32L496RGTxP
     , STM32L496VETx
     , STM32L496VGTx
+    , STM32L496VGTxP
     , STM32L496VGYx
     , STM32L496VGYxP
+    , STM32L496WGYxP
     , STM32L496ZETx
     , STM32L496ZGTx
     , STM32L496ZGTxP
@@ -169,6 +171,7 @@ enum mcu_t
     , STM32L4A6RGTx
     , STM32L4A6RGTxP
     , STM32L4A6VGTx
+    , STM32L4A6VGTxP
     , STM32L4A6VGYx
     , STM32L4A6VGYxP
     , STM32L4A6ZGTx
@@ -199,6 +202,7 @@ enum periph_t
     , ADC2
     , ADC3
     , ADC123_COMMON
+    , ADC12_COMMON
     , ADC_COMMON
     , AES
     , CAN1
@@ -1499,6 +1503,14 @@ template<> struct mcu_traits<STM32L496VGTx>
     static constexpr unsigned frequency = 80;
 };
 
+template<> struct mcu_traits<STM32L496VGTxP>
+{
+    static constexpr family_t family = STM32L4;
+    static constexpr svd_t svd = STM32L496;
+    static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
+};
+
 template<> struct mcu_traits<STM32L496VGYx>
 {
     static constexpr family_t family = STM32L4;
@@ -1508,6 +1520,14 @@ template<> struct mcu_traits<STM32L496VGYx>
 };
 
 template<> struct mcu_traits<STM32L496VGYxP>
+{
+    static constexpr family_t family = STM32L4;
+    static constexpr svd_t svd = STM32L496;
+    static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
+};
+
+template<> struct mcu_traits<STM32L496WGYxP>
 {
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L496;
@@ -1588,6 +1608,14 @@ template<> struct mcu_traits<STM32L4A6RGTxP>
 };
 
 template<> struct mcu_traits<STM32L4A6VGTx>
+{
+    static constexpr family_t family = STM32L4;
+    static constexpr svd_t svd = STM32L4x6;
+    static constexpr gpio_conf_t gpio_conf = STM32L49x;
+    static constexpr unsigned frequency = 80;
+};
+
+template<> struct mcu_traits<STM32L4A6VGTxP>
 {
     static constexpr family_t family = STM32L4;
     static constexpr svd_t svd = STM32L4x6;

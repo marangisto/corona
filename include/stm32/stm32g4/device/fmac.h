@@ -122,6 +122,22 @@ struct peripheral_t<STM32G484xx, FMAC>
 };
 
 template<>
+struct peripheral_t<STM32G491xx, FMAC>
+{
+    static constexpr periph_t P = FMAC;
+    using T = stm32g431xx_fmac_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, FMAC>
+{
+    static constexpr periph_t P = FMAC;
+    using T = stm32g431xx_fmac_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32GBK1CBT6, FMAC>
 {
     static constexpr periph_t P = FMAC;

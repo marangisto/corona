@@ -79,4 +79,20 @@ struct peripheral_t<STM32G484xx, VREFBUF>
     static T& V;
 };
 
+template<>
+struct peripheral_t<STM32G491xx, VREFBUF>
+{
+    static constexpr periph_t P = VREFBUF;
+    using T = stm32g431xx_vrefbuf_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, VREFBUF>
+{
+    static constexpr periph_t P = VREFBUF;
+    using T = stm32g431xx_vrefbuf_t;
+    static T& V;
+};
+
 using vrefbuf_t = peripheral_t<svd, VREFBUF>;

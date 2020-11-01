@@ -8,7 +8,7 @@
 
 // EXTI: External interrupt/event controller
 
-struct stm32l0x0_exti_t
+struct stm32l052_exti_t
 {
     volatile uint32_t IMR; // Interrupt mask register (EXTI_IMR)
     volatile uint32_t EMR; // Event mask register (EXTI_EMR)
@@ -177,10 +177,42 @@ struct stm32l0x0_exti_t
 };
 
 template<>
+struct peripheral_t<STM32L052, EXTI>
+{
+    static constexpr periph_t P = EXTI;
+    using T = stm32l052_exti_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, EXTI>
+{
+    static constexpr periph_t P = EXTI;
+    using T = stm32l052_exti_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, EXTI>
+{
+    static constexpr periph_t P = EXTI;
+    using T = stm32l052_exti_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, EXTI>
+{
+    static constexpr periph_t P = EXTI;
+    using T = stm32l052_exti_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L0x0, EXTI>
 {
     static constexpr periph_t P = EXTI;
-    using T = stm32l0x0_exti_t;
+    using T = stm32l052_exti_t;
     static T& V;
 };
 
@@ -188,7 +220,7 @@ template<>
 struct peripheral_t<STM32L0x1, EXTI>
 {
     static constexpr periph_t P = EXTI;
-    using T = stm32l0x0_exti_t;
+    using T = stm32l052_exti_t;
     static T& V;
 };
 
@@ -196,7 +228,7 @@ template<>
 struct peripheral_t<STM32L0x2, EXTI>
 {
     static constexpr periph_t P = EXTI;
-    using T = stm32l0x0_exti_t;
+    using T = stm32l052_exti_t;
     static T& V;
 };
 
@@ -204,7 +236,7 @@ template<>
 struct peripheral_t<STM32L0x3, EXTI>
 {
     static constexpr periph_t P = EXTI;
-    using T = stm32l0x0_exti_t;
+    using T = stm32l052_exti_t;
     static T& V;
 };
 

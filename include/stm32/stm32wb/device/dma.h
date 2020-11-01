@@ -277,7 +277,7 @@ struct stm32wb30_cm4_dma1_t
 
 // DMA2: Direct memory access controller
 
-struct stm32wb30_cm4_dma2_t
+struct stm32wb35_cm4_dma2_t
 {
     volatile uint32_t ISR; // interrupt status register
     volatile uint32_t IFCR; // interrupt flag clear register
@@ -589,18 +589,10 @@ struct peripheral_t<STM32WB55_CM4, DMA1>
 };
 
 template<>
-struct peripheral_t<STM32WB30_CM4, DMA2>
-{
-    static constexpr periph_t P = DMA2;
-    using T = stm32wb30_cm4_dma2_t;
-    static T& V;
-};
-
-template<>
 struct peripheral_t<STM32WB35_CM4, DMA2>
 {
     static constexpr periph_t P = DMA2;
-    using T = stm32wb30_cm4_dma2_t;
+    using T = stm32wb35_cm4_dma2_t;
     static T& V;
 };
 
@@ -608,7 +600,7 @@ template<>
 struct peripheral_t<STM32WB50_CM4, DMA2>
 {
     static constexpr periph_t P = DMA2;
-    using T = stm32wb30_cm4_dma2_t;
+    using T = stm32wb35_cm4_dma2_t;
     static T& V;
 };
 
@@ -616,7 +608,7 @@ template<>
 struct peripheral_t<STM32WB55_CM4, DMA2>
 {
     static constexpr periph_t P = DMA2;
-    using T = stm32wb30_cm4_dma2_t;
+    using T = stm32wb35_cm4_dma2_t;
     static T& V;
 };
 

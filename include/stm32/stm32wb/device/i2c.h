@@ -130,14 +130,6 @@ struct peripheral_t<STM32WB30_CM4, I2C1>
 };
 
 template<>
-struct peripheral_t<STM32WB30_CM4, I2C3>
-{
-    static constexpr periph_t P = I2C3;
-    using T = stm32wb30_cm4_i2c1_t;
-    static T& V;
-};
-
-template<>
 struct peripheral_t<STM32WB35_CM4, I2C1>
 {
     static constexpr periph_t P = I2C1;

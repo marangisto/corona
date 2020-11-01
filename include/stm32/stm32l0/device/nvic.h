@@ -8,7 +8,7 @@
 
 // NVIC: Nested Vectored Interrupt Controller
 
-struct stm32l0x0_nvic_t
+struct stm32l052_nvic_t
 {
     volatile uint32_t ISER0; // Interrupt Set Enable Register
     reserved_t<0x1f> _0x4;
@@ -93,10 +93,42 @@ struct stm32l0x0_nvic_t
 };
 
 template<>
+struct peripheral_t<STM32L052, NVIC>
+{
+    static constexpr periph_t P = NVIC;
+    using T = stm32l052_nvic_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, NVIC>
+{
+    static constexpr periph_t P = NVIC;
+    using T = stm32l052_nvic_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, NVIC>
+{
+    static constexpr periph_t P = NVIC;
+    using T = stm32l052_nvic_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, NVIC>
+{
+    static constexpr periph_t P = NVIC;
+    using T = stm32l052_nvic_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L0x0, NVIC>
 {
     static constexpr periph_t P = NVIC;
-    using T = stm32l0x0_nvic_t;
+    using T = stm32l052_nvic_t;
     static T& V;
 };
 
@@ -104,7 +136,7 @@ template<>
 struct peripheral_t<STM32L0x1, NVIC>
 {
     static constexpr periph_t P = NVIC;
-    using T = stm32l0x0_nvic_t;
+    using T = stm32l052_nvic_t;
     static T& V;
 };
 
@@ -112,7 +144,7 @@ template<>
 struct peripheral_t<STM32L0x2, NVIC>
 {
     static constexpr periph_t P = NVIC;
-    using T = stm32l0x0_nvic_t;
+    using T = stm32l052_nvic_t;
     static T& V;
 };
 
@@ -120,7 +152,7 @@ template<>
 struct peripheral_t<STM32L0x3, NVIC>
 {
     static constexpr periph_t P = NVIC;
-    using T = stm32l0x0_nvic_t;
+    using T = stm32l052_nvic_t;
     static T& V;
 };
 

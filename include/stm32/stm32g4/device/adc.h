@@ -709,6 +709,38 @@ struct peripheral_t<STM32G484xx, ADC4>
 };
 
 template<>
+struct peripheral_t<STM32G491xx, ADC1>
+{
+    static constexpr periph_t P = ADC1;
+    using T = stm32g431xx_adc1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G491xx, ADC2>
+{
+    static constexpr periph_t P = ADC2;
+    using T = stm32g431xx_adc1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, ADC1>
+{
+    static constexpr periph_t P = ADC1;
+    using T = stm32g431xx_adc1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, ADC2>
+{
+    static constexpr periph_t P = ADC2;
+    using T = stm32g431xx_adc1_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32GBK1CBT6, ADC1>
 {
     static constexpr periph_t P = ADC1;
@@ -792,6 +824,22 @@ template<>
 struct peripheral_t<STM32G484xx, ADC5>
 {
     static constexpr periph_t P = ADC5;
+    using T = stm32g471xx_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G491xx, ADC3>
+{
+    static constexpr periph_t P = ADC3;
+    using T = stm32g471xx_adc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, ADC3>
+{
+    static constexpr periph_t P = ADC3;
     using T = stm32g471xx_adc3_t;
     static T& V;
 };
@@ -902,6 +950,38 @@ struct peripheral_t<STM32G484xx, ADC12_COMMON>
 
 template<>
 struct peripheral_t<STM32G484xx, ADC345_COMMON>
+{
+    static constexpr periph_t P = ADC345_COMMON;
+    using T = stm32g431xx_adc12_common_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G491xx, ADC12_COMMON>
+{
+    static constexpr periph_t P = ADC12_COMMON;
+    using T = stm32g431xx_adc12_common_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G491xx, ADC345_COMMON>
+{
+    static constexpr periph_t P = ADC345_COMMON;
+    using T = stm32g431xx_adc12_common_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, ADC12_COMMON>
+{
+    static constexpr periph_t P = ADC12_COMMON;
+    using T = stm32g431xx_adc12_common_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, ADC345_COMMON>
 {
     static constexpr periph_t P = ADC345_COMMON;
     using T = stm32g431xx_adc12_common_t;

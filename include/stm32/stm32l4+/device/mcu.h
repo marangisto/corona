@@ -71,6 +71,7 @@ enum mcu_t
     , STM32L4R9ZITx
     , STM32L4R9ZGYx
     , STM32L4R9ZIYx
+    , STM32L4R9ZIYxP
     , STM32L4S9AIIx
     , STM32L4S9VITx
     , STM32L4S9ZIJx
@@ -701,6 +702,14 @@ template<> struct mcu_traits<STM32L4R9ZGYx>
 };
 
 template<> struct mcu_traits<STM32L4R9ZIYx>
+{
+    static constexpr family_t family = STM32L4Plus;
+    static constexpr svd_t svd = STM32L4R9;
+    static constexpr gpio_conf_t gpio_conf = STM32L4Rx;
+    static constexpr unsigned frequency = 120;
+};
+
+template<> struct mcu_traits<STM32L4R9ZIYxP>
 {
     static constexpr family_t family = STM32L4Plus;
     static constexpr svd_t svd = STM32L4R9;

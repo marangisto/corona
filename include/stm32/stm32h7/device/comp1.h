@@ -8,7 +8,7 @@
 
 // COMP1: COMP1
 
-struct stm32h742x_comp1_t
+struct stm32h723_comp1_t
 {
     volatile uint32_t SR; // Comparator status register
     volatile uint32_t ICFR; // Comparator interrupt clear flag register
@@ -111,10 +111,26 @@ struct stm32h750x_comp1_t
 };
 
 template<>
+struct peripheral_t<STM32H723, COMP1>
+{
+    static constexpr periph_t P = COMP1;
+    using T = stm32h723_comp1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, COMP1>
+{
+    static constexpr periph_t P = COMP1;
+    using T = stm32h723_comp1_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H742x, COMP1>
 {
     static constexpr periph_t P = COMP1;
-    using T = stm32h742x_comp1_t;
+    using T = stm32h723_comp1_t;
     static T& V;
 };
 
@@ -122,7 +138,7 @@ template<>
 struct peripheral_t<STM32H743, COMP1>
 {
     static constexpr periph_t P = COMP1;
-    using T = stm32h742x_comp1_t;
+    using T = stm32h723_comp1_t;
     static T& V;
 };
 
@@ -130,7 +146,7 @@ template<>
 struct peripheral_t<STM32H745_CM4, COMP1>
 {
     static constexpr periph_t P = COMP1;
-    using T = stm32h742x_comp1_t;
+    using T = stm32h723_comp1_t;
     static T& V;
 };
 
@@ -138,7 +154,7 @@ template<>
 struct peripheral_t<STM32H745_CM7, COMP1>
 {
     static constexpr periph_t P = COMP1;
-    using T = stm32h742x_comp1_t;
+    using T = stm32h723_comp1_t;
     static T& V;
 };
 
@@ -146,7 +162,7 @@ template<>
 struct peripheral_t<STM32H747_CM4, COMP1>
 {
     static constexpr periph_t P = COMP1;
-    using T = stm32h742x_comp1_t;
+    using T = stm32h723_comp1_t;
     static T& V;
 };
 
@@ -154,7 +170,7 @@ template<>
 struct peripheral_t<STM32H747_CM7, COMP1>
 {
     static constexpr periph_t P = COMP1;
-    using T = stm32h742x_comp1_t;
+    using T = stm32h723_comp1_t;
     static T& V;
 };
 
@@ -162,7 +178,7 @@ template<>
 struct peripheral_t<STM32H753, COMP1>
 {
     static constexpr periph_t P = COMP1;
-    using T = stm32h742x_comp1_t;
+    using T = stm32h723_comp1_t;
     static T& V;
 };
 
@@ -170,7 +186,7 @@ template<>
 struct peripheral_t<STM32H755_CM4, COMP1>
 {
     static constexpr periph_t P = COMP1;
-    using T = stm32h742x_comp1_t;
+    using T = stm32h723_comp1_t;
     static T& V;
 };
 
@@ -178,7 +194,7 @@ template<>
 struct peripheral_t<STM32H755_CM7, COMP1>
 {
     static constexpr periph_t P = COMP1;
-    using T = stm32h742x_comp1_t;
+    using T = stm32h723_comp1_t;
     static T& V;
 };
 
@@ -186,7 +202,7 @@ template<>
 struct peripheral_t<STM32H757_CM4, COMP1>
 {
     static constexpr periph_t P = COMP1;
-    using T = stm32h742x_comp1_t;
+    using T = stm32h723_comp1_t;
     static T& V;
 };
 
@@ -194,7 +210,7 @@ template<>
 struct peripheral_t<STM32H757_CM7, COMP1>
 {
     static constexpr periph_t P = COMP1;
-    using T = stm32h742x_comp1_t;
+    using T = stm32h723_comp1_t;
     static T& V;
 };
 
@@ -202,7 +218,7 @@ template<>
 struct peripheral_t<STM32H7A3x, COMP1>
 {
     static constexpr periph_t P = COMP1;
-    using T = stm32h742x_comp1_t;
+    using T = stm32h723_comp1_t;
     static T& V;
 };
 

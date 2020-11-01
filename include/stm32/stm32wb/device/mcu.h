@@ -7,7 +7,10 @@
 ///
 
 enum mcu_t
-    { STM32WB50CGUx
+    { STM32WB30CEUx
+    , STM32WB50CGUx
+    , STM32WB35CCUx
+    , STM32WB35CEUx
     , STM32WB55CCUx
     , STM32WB55CEUx
     , STM32WB55CGUx
@@ -20,6 +23,8 @@ enum mcu_t
     , STM32WB55VEYx
     , STM32WB55VGQx
     , STM32WB55VGYx
+    , STM32WB55VYYx
+    , STM32WB5MMGHx
     };
 
 enum svd_t
@@ -30,7 +35,9 @@ enum svd_t
     };
 
 enum gpio_conf_t
-    { STM32WB55x = 0x1
+    { STM32WB35x = 0x1
+    , STM32WB55x = 0x2
+    , STM32WB5Mx = 0x4
     };
 
 enum periph_t
@@ -101,11 +108,35 @@ struct peripheral_t
 
 template<mcu_t MCU> struct mcu_traits {};
 
+template<> struct mcu_traits<STM32WB30CEUx>
+{
+    static constexpr family_t family = STM32WB;
+    static constexpr svd_t svd = STM32WB30_CM4;
+    static constexpr gpio_conf_t gpio_conf = STM32WB35x;
+    static constexpr unsigned frequency = 64;
+};
+
 template<> struct mcu_traits<STM32WB50CGUx>
 {
     static constexpr family_t family = STM32WB;
     static constexpr svd_t svd = STM32WB50_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32WB55x;
+    static constexpr unsigned frequency = 64;
+};
+
+template<> struct mcu_traits<STM32WB35CCUx>
+{
+    static constexpr family_t family = STM32WB;
+    static constexpr svd_t svd = STM32WB35_CM4;
+    static constexpr gpio_conf_t gpio_conf = STM32WB35x;
+    static constexpr unsigned frequency = 64;
+};
+
+template<> struct mcu_traits<STM32WB35CEUx>
+{
+    static constexpr family_t family = STM32WB;
+    static constexpr svd_t svd = STM32WB35_CM4;
+    static constexpr gpio_conf_t gpio_conf = STM32WB35x;
     static constexpr unsigned frequency = 64;
 };
 
@@ -202,6 +233,22 @@ template<> struct mcu_traits<STM32WB55VGYx>
     static constexpr family_t family = STM32WB;
     static constexpr svd_t svd = STM32WB55_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32WB55x;
+    static constexpr unsigned frequency = 64;
+};
+
+template<> struct mcu_traits<STM32WB55VYYx>
+{
+    static constexpr family_t family = STM32WB;
+    static constexpr svd_t svd = STM32WB55_CM4;
+    static constexpr gpio_conf_t gpio_conf = STM32WB55x;
+    static constexpr unsigned frequency = 64;
+};
+
+template<> struct mcu_traits<STM32WB5MMGHx>
+{
+    static constexpr family_t family = STM32WB;
+    static constexpr svd_t svd = STM32WB55;
+    static constexpr gpio_conf_t gpio_conf = STM32WB5Mx;
     static constexpr unsigned frequency = 64;
 };
 

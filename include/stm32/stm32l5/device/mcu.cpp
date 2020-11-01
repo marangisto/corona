@@ -11,20 +11,40 @@ typename peripheral_t<STM32L552, ADC1>::T&
         <typename peripheral_t<STM32L552, ADC1>::T*
         >(0x42028000);
 
-typename peripheral_t<STM32L552, SEC_ADC>::T&
-    peripheral_t<STM32L552, SEC_ADC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L552, SEC_ADC>::T*
+typename peripheral_t<STM32L552, ADC2>::T&
+    peripheral_t<STM32L552, ADC2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L552, ADC2>::T*
+        >(0x42028100);
+
+typename peripheral_t<STM32L552, SEC_ADC1>::T&
+    peripheral_t<STM32L552, SEC_ADC1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L552, SEC_ADC1>::T*
         >(0x52028000);
+
+typename peripheral_t<STM32L552, SEC_ADC2>::T&
+    peripheral_t<STM32L552, SEC_ADC2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L552, SEC_ADC2>::T*
+        >(0x52028100);
 
 typename peripheral_t<STM32L562, ADC1>::T&
     peripheral_t<STM32L562, ADC1>::V = *reinterpret_cast
         <typename peripheral_t<STM32L562, ADC1>::T*
         >(0x42028000);
 
-typename peripheral_t<STM32L562, SEC_ADC>::T&
-    peripheral_t<STM32L562, SEC_ADC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L562, SEC_ADC>::T*
+typename peripheral_t<STM32L562, ADC2>::T&
+    peripheral_t<STM32L562, ADC2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L562, ADC2>::T*
+        >(0x42028100);
+
+typename peripheral_t<STM32L562, SEC_ADC1>::T&
+    peripheral_t<STM32L562, SEC_ADC1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L562, SEC_ADC1>::T*
         >(0x52028000);
+
+typename peripheral_t<STM32L562, SEC_ADC2>::T&
+    peripheral_t<STM32L562, SEC_ADC2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L562, SEC_ADC2>::T*
+        >(0x52028100);
 
 typename peripheral_t<STM32L552, ADC_COMMON>::T&
     peripheral_t<STM32L552, ADC_COMMON>::V = *reinterpret_cast
@@ -316,16 +336,6 @@ typename peripheral_t<STM32L562, SEC_FMC>::T&
         <typename peripheral_t<STM32L562, SEC_FMC>::T*
         >(0x54020000);
 
-typename peripheral_t<STM32L552, FPU>::T&
-    peripheral_t<STM32L552, FPU>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L552, FPU>::T*
-        >(0xe000ef34);
-
-typename peripheral_t<STM32L552, FPU_CPACR>::T&
-    peripheral_t<STM32L552, FPU_CPACR>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L552, FPU_CPACR>::T*
-        >(0xe000ed88);
-
 typename peripheral_t<STM32L552, GPIOA>::T&
     peripheral_t<STM32L552, GPIOA>::V = *reinterpret_cast
         <typename peripheral_t<STM32L552, GPIOA>::T*
@@ -545,6 +555,26 @@ typename peripheral_t<STM32L562, SEC_GTZC_TZSC>::T&
     peripheral_t<STM32L562, SEC_GTZC_TZSC>::V = *reinterpret_cast
         <typename peripheral_t<STM32L562, SEC_GTZC_TZSC>::T*
         >(0x50032400);
+
+typename peripheral_t<STM32L552, HASH>::T&
+    peripheral_t<STM32L552, HASH>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L552, HASH>::T*
+        >(0x420c0400);
+
+typename peripheral_t<STM32L552, SEC_HASH>::T&
+    peripheral_t<STM32L552, SEC_HASH>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L552, SEC_HASH>::T*
+        >(0x520c0400);
+
+typename peripheral_t<STM32L562, HASH>::T&
+    peripheral_t<STM32L562, HASH>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L562, HASH>::T*
+        >(0x420c0400);
+
+typename peripheral_t<STM32L562, SEC_HASH>::T&
+    peripheral_t<STM32L562, SEC_HASH>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L562, SEC_HASH>::T*
+        >(0x520c0400);
 
 typename peripheral_t<STM32L552, I2C1>::T&
     peripheral_t<STM32L552, I2C1>::V = *reinterpret_cast
@@ -1045,11 +1075,6 @@ typename peripheral_t<STM32L562, SPI3>::T&
     peripheral_t<STM32L562, SPI3>::V = *reinterpret_cast
         <typename peripheral_t<STM32L562, SPI3>::T*
         >(0x40003c00);
-
-typename peripheral_t<STM32L552, STK>::T&
-    peripheral_t<STM32L552, STK>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L552, STK>::T*
-        >(0xe000e010);
 
 typename peripheral_t<STM32L552, SEC_SYSCFG>::T&
     peripheral_t<STM32L552, SEC_SYSCFG>::V = *reinterpret_cast

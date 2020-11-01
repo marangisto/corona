@@ -8,7 +8,7 @@
 
 // AES1: Advanced encryption standard hardware accelerator 1
 
-struct stm32wb30_cm4_aes1_t
+struct stm32wb35_cm4_aes1_t
 {
     volatile uint32_t CR; // control register
     volatile uint32_t SR; // status register
@@ -285,18 +285,10 @@ struct stm32wb30_cm4_aes2_t
 };
 
 template<>
-struct peripheral_t<STM32WB30_CM4, AES1>
-{
-    static constexpr periph_t P = AES1;
-    using T = stm32wb30_cm4_aes1_t;
-    static T& V;
-};
-
-template<>
 struct peripheral_t<STM32WB35_CM4, AES1>
 {
     static constexpr periph_t P = AES1;
-    using T = stm32wb30_cm4_aes1_t;
+    using T = stm32wb35_cm4_aes1_t;
     static T& V;
 };
 
@@ -304,7 +296,7 @@ template<>
 struct peripheral_t<STM32WB55_CM4, AES1>
 {
     static constexpr periph_t P = AES1;
-    using T = stm32wb30_cm4_aes1_t;
+    using T = stm32wb35_cm4_aes1_t;
     static T& V;
 };
 

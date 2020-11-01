@@ -23,6 +23,7 @@ template<> void handler<interrupt::TAMP>() __attribute__ ((weak, alias("_Z17__de
 template<> void handler<interrupt::TAMP_S>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::FLASH>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::FLASH_S>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::GTZC>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::RCC>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::RCC_S>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::EXTI0>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
@@ -52,6 +53,7 @@ template<> void handler<interrupt::DMA1_CHANNEL6>() __attribute__ ((weak, alias(
 template<> void handler<interrupt::DMA1_CHANNEL7>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::DMA1_CHANNEL8>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::ADC1_2>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::DAC>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::FDCAN1_IT0>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::FDCAN1_IT1>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::TIM1_BRK>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
@@ -87,6 +89,7 @@ template<> void handler<interrupt::TIM16>() __attribute__ ((weak, alias("_Z17__d
 template<> void handler<interrupt::TIM17>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::COMP>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::USB_FS>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::CRS>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::FMC>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::OCTOSPI1>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::SDMMC1>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
@@ -105,6 +108,7 @@ template<> void handler<interrupt::SAI2>() __attribute__ ((weak, alias("_Z17__de
 template<> void handler<interrupt::TSC>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::AES>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::RNG>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::HASH>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::PKA>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::LPTIM3>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::SPI3>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
@@ -143,7 +147,7 @@ void (*vectors[])(void) __attribute__ ((section(".vectors"))) =
     , handler<interrupt::TAMP_S> // 5: Tamper secure global interrupt (EXTI line 20)
     , handler<interrupt::FLASH> // 6: Flash global interrupt
     , handler<interrupt::FLASH_S> // 7: Flash memory secure global interrupt
-    , 0x0
+    , handler<interrupt::GTZC> // 8: TZIC secure global interrupt
     , handler<interrupt::RCC> // 9: RCC global interrupt
     , handler<interrupt::RCC_S> // 10: RCC SECURE GLOBAL INTERRUPT
     , handler<interrupt::EXTI0> // 11: EXTI line0 interrupt
@@ -173,7 +177,7 @@ void (*vectors[])(void) __attribute__ ((section(".vectors"))) =
     , handler<interrupt::DMA1_CHANNEL7> // 35: DMA1 Channel 7 interrupt
     , handler<interrupt::DMA1_CHANNEL8> // 36: DMA1_Channel8
     , handler<interrupt::ADC1_2> // 37: ADC1_2 global interrupt
-    , 0x0
+    , handler<interrupt::DAC> // 38: DAC global interrupt
     , handler<interrupt::FDCAN1_IT0> // 39: FDCAN1 Interrupt 0
     , handler<interrupt::FDCAN1_IT1> // 40: FDCAN1 Interrupt 1
     , handler<interrupt::TIM1_BRK> // 41: TIM1 Break
@@ -209,7 +213,7 @@ void (*vectors[])(void) __attribute__ ((section(".vectors"))) =
     , handler<interrupt::TIM17> // 71: TIM17 global interrupt
     , handler<interrupt::COMP> // 72: COMP1 and COMP2 interrupts
     , handler<interrupt::USB_FS> // 73: USB FS global interrupt
-    , 0x0
+    , handler<interrupt::CRS> // 74: Clock recovery system global interrupt
     , handler<interrupt::FMC> // 75: FMC global interrupt
     , handler<interrupt::OCTOSPI1> // 76: OCTOSPI1 global interrupt
     , 0x0
@@ -231,7 +235,7 @@ void (*vectors[])(void) __attribute__ ((section(".vectors"))) =
     , handler<interrupt::AES> // 93: AES global interrupts
     , handler<interrupt::RNG> // 94: RNG global interrupt
     , 0x0
-    , 0x0
+    , handler<interrupt::HASH> // 96: HASH interrupt
     , handler<interrupt::PKA> // 97: PKA global interrupts
     , handler<interrupt::LPTIM3> // 98: LPTIM3
     , handler<interrupt::SPI3> // 99: SPI3

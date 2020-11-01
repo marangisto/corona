@@ -195,6 +195,22 @@ struct peripheral_t<STM32G484xx, UCPD1>
 };
 
 template<>
+struct peripheral_t<STM32G491xx, UCPD1>
+{
+    static constexpr periph_t P = UCPD1;
+    using T = stm32g431xx_ucpd1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, UCPD1>
+{
+    static constexpr periph_t P = UCPD1;
+    using T = stm32g431xx_ucpd1_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32GBK1CBT6, UCPD1>
 {
     static constexpr periph_t P = UCPD1;

@@ -8,7 +8,7 @@
 
 // SAI4: SAI
 
-struct stm32h742x_sai4_t
+struct stm32h723_sai4_t
 {
     volatile uint32_t SAI_GCR; // Global configuration register
     volatile uint32_t SAI_ACR1; // Configuration register 1
@@ -190,10 +190,42 @@ struct stm32h742x_sai4_t
 };
 
 template<>
+struct peripheral_t<STM32H723, SAI1>
+{
+    static constexpr periph_t P = SAI1;
+    using T = stm32h723_sai4_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H723, SAI4>
+{
+    static constexpr periph_t P = SAI4;
+    using T = stm32h723_sai4_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, SAI1>
+{
+    static constexpr periph_t P = SAI1;
+    using T = stm32h723_sai4_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, SAI4>
+{
+    static constexpr periph_t P = SAI4;
+    using T = stm32h723_sai4_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H742x, SAI1>
 {
     static constexpr periph_t P = SAI1;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -201,7 +233,7 @@ template<>
 struct peripheral_t<STM32H742x, SAI2>
 {
     static constexpr periph_t P = SAI2;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -209,7 +241,7 @@ template<>
 struct peripheral_t<STM32H742x, SAI3>
 {
     static constexpr periph_t P = SAI3;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -217,7 +249,7 @@ template<>
 struct peripheral_t<STM32H742x, SAI4>
 {
     static constexpr periph_t P = SAI4;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -225,7 +257,7 @@ template<>
 struct peripheral_t<STM32H743, SAI1>
 {
     static constexpr periph_t P = SAI1;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -233,7 +265,7 @@ template<>
 struct peripheral_t<STM32H743, SAI2>
 {
     static constexpr periph_t P = SAI2;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -241,7 +273,7 @@ template<>
 struct peripheral_t<STM32H743, SAI3>
 {
     static constexpr periph_t P = SAI3;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -249,7 +281,7 @@ template<>
 struct peripheral_t<STM32H743, SAI4>
 {
     static constexpr periph_t P = SAI4;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -257,7 +289,7 @@ template<>
 struct peripheral_t<STM32H745_CM4, SAI1>
 {
     static constexpr periph_t P = SAI1;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -265,7 +297,7 @@ template<>
 struct peripheral_t<STM32H745_CM4, SAI2>
 {
     static constexpr periph_t P = SAI2;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -273,7 +305,7 @@ template<>
 struct peripheral_t<STM32H745_CM4, SAI3>
 {
     static constexpr periph_t P = SAI3;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -281,7 +313,7 @@ template<>
 struct peripheral_t<STM32H745_CM4, SAI4>
 {
     static constexpr periph_t P = SAI4;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -289,7 +321,7 @@ template<>
 struct peripheral_t<STM32H745_CM7, SAI1>
 {
     static constexpr periph_t P = SAI1;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -297,7 +329,7 @@ template<>
 struct peripheral_t<STM32H745_CM7, SAI2>
 {
     static constexpr periph_t P = SAI2;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -305,7 +337,7 @@ template<>
 struct peripheral_t<STM32H745_CM7, SAI3>
 {
     static constexpr periph_t P = SAI3;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -313,7 +345,7 @@ template<>
 struct peripheral_t<STM32H745_CM7, SAI4>
 {
     static constexpr periph_t P = SAI4;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -321,7 +353,7 @@ template<>
 struct peripheral_t<STM32H747_CM4, SAI1>
 {
     static constexpr periph_t P = SAI1;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -329,7 +361,7 @@ template<>
 struct peripheral_t<STM32H747_CM4, SAI2>
 {
     static constexpr periph_t P = SAI2;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -337,7 +369,7 @@ template<>
 struct peripheral_t<STM32H747_CM4, SAI3>
 {
     static constexpr periph_t P = SAI3;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -345,7 +377,7 @@ template<>
 struct peripheral_t<STM32H747_CM4, SAI4>
 {
     static constexpr periph_t P = SAI4;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -353,7 +385,7 @@ template<>
 struct peripheral_t<STM32H747_CM7, SAI1>
 {
     static constexpr periph_t P = SAI1;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -361,7 +393,7 @@ template<>
 struct peripheral_t<STM32H747_CM7, SAI2>
 {
     static constexpr periph_t P = SAI2;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -369,7 +401,7 @@ template<>
 struct peripheral_t<STM32H747_CM7, SAI3>
 {
     static constexpr periph_t P = SAI3;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -377,7 +409,7 @@ template<>
 struct peripheral_t<STM32H747_CM7, SAI4>
 {
     static constexpr periph_t P = SAI4;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -385,7 +417,7 @@ template<>
 struct peripheral_t<STM32H750x, SAI1>
 {
     static constexpr periph_t P = SAI1;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -393,7 +425,7 @@ template<>
 struct peripheral_t<STM32H750x, SAI2>
 {
     static constexpr periph_t P = SAI2;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -401,7 +433,7 @@ template<>
 struct peripheral_t<STM32H750x, SAI3>
 {
     static constexpr periph_t P = SAI3;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -409,7 +441,7 @@ template<>
 struct peripheral_t<STM32H750x, SAI4>
 {
     static constexpr periph_t P = SAI4;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -417,7 +449,7 @@ template<>
 struct peripheral_t<STM32H753, SAI1>
 {
     static constexpr periph_t P = SAI1;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -425,7 +457,7 @@ template<>
 struct peripheral_t<STM32H753, SAI2>
 {
     static constexpr periph_t P = SAI2;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -433,7 +465,7 @@ template<>
 struct peripheral_t<STM32H753, SAI3>
 {
     static constexpr periph_t P = SAI3;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -441,7 +473,7 @@ template<>
 struct peripheral_t<STM32H753, SAI4>
 {
     static constexpr periph_t P = SAI4;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -449,7 +481,7 @@ template<>
 struct peripheral_t<STM32H755_CM4, SAI1>
 {
     static constexpr periph_t P = SAI1;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -457,7 +489,7 @@ template<>
 struct peripheral_t<STM32H755_CM4, SAI2>
 {
     static constexpr periph_t P = SAI2;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -465,7 +497,7 @@ template<>
 struct peripheral_t<STM32H755_CM4, SAI3>
 {
     static constexpr periph_t P = SAI3;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -473,7 +505,7 @@ template<>
 struct peripheral_t<STM32H755_CM4, SAI4>
 {
     static constexpr periph_t P = SAI4;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -481,7 +513,7 @@ template<>
 struct peripheral_t<STM32H755_CM7, SAI1>
 {
     static constexpr periph_t P = SAI1;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -489,7 +521,7 @@ template<>
 struct peripheral_t<STM32H755_CM7, SAI2>
 {
     static constexpr periph_t P = SAI2;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -497,7 +529,7 @@ template<>
 struct peripheral_t<STM32H755_CM7, SAI3>
 {
     static constexpr periph_t P = SAI3;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -505,7 +537,7 @@ template<>
 struct peripheral_t<STM32H755_CM7, SAI4>
 {
     static constexpr periph_t P = SAI4;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -513,7 +545,7 @@ template<>
 struct peripheral_t<STM32H757_CM4, SAI1>
 {
     static constexpr periph_t P = SAI1;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -521,7 +553,7 @@ template<>
 struct peripheral_t<STM32H757_CM4, SAI2>
 {
     static constexpr periph_t P = SAI2;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -529,7 +561,7 @@ template<>
 struct peripheral_t<STM32H757_CM4, SAI3>
 {
     static constexpr periph_t P = SAI3;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -537,7 +569,7 @@ template<>
 struct peripheral_t<STM32H757_CM4, SAI4>
 {
     static constexpr periph_t P = SAI4;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -545,7 +577,7 @@ template<>
 struct peripheral_t<STM32H757_CM7, SAI1>
 {
     static constexpr periph_t P = SAI1;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -553,7 +585,7 @@ template<>
 struct peripheral_t<STM32H757_CM7, SAI2>
 {
     static constexpr periph_t P = SAI2;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -561,7 +593,7 @@ template<>
 struct peripheral_t<STM32H757_CM7, SAI3>
 {
     static constexpr periph_t P = SAI3;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -569,7 +601,7 @@ template<>
 struct peripheral_t<STM32H757_CM7, SAI4>
 {
     static constexpr periph_t P = SAI4;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -577,7 +609,7 @@ template<>
 struct peripheral_t<STM32H7A3x, SAI1>
 {
     static constexpr periph_t P = SAI1;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -585,7 +617,7 @@ template<>
 struct peripheral_t<STM32H7A3x, SAI2>
 {
     static constexpr periph_t P = SAI2;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -593,7 +625,7 @@ template<>
 struct peripheral_t<STM32H7B0x, SAI1>
 {
     static constexpr periph_t P = SAI1;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -601,7 +633,7 @@ template<>
 struct peripheral_t<STM32H7B0x, SAI2>
 {
     static constexpr periph_t P = SAI2;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -609,7 +641,7 @@ template<>
 struct peripheral_t<STM32H7B3x, SAI1>
 {
     static constexpr periph_t P = SAI1;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 
@@ -617,7 +649,7 @@ template<>
 struct peripheral_t<STM32H7B3x, SAI2>
 {
     static constexpr periph_t P = SAI2;
-    using T = stm32h742x_sai4_t;
+    using T = stm32h723_sai4_t;
     static T& V;
 };
 

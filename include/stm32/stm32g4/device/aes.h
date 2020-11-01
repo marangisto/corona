@@ -173,6 +173,14 @@ struct peripheral_t<STM32G484xx, AES>
 };
 
 template<>
+struct peripheral_t<STM32G4A1xx, AES>
+{
+    static constexpr periph_t P = AES;
+    using T = stm32g431xx_aes_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32GBK1CBT6, AES>
 {
     static constexpr periph_t P = AES;

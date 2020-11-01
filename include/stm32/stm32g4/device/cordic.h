@@ -91,6 +91,22 @@ struct peripheral_t<STM32G484xx, CORDIC>
 };
 
 template<>
+struct peripheral_t<STM32G491xx, CORDIC>
+{
+    static constexpr periph_t P = CORDIC;
+    using T = stm32g431xx_cordic_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, CORDIC>
+{
+    static constexpr periph_t P = CORDIC;
+    using T = stm32g431xx_cordic_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32GBK1CBT6, CORDIC>
 {
     static constexpr periph_t P = CORDIC;

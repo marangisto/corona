@@ -385,6 +385,70 @@ struct peripheral_t<STM32G484xx, DAC4>
 };
 
 template<>
+struct peripheral_t<STM32G491xx, DAC1>
+{
+    static constexpr periph_t P = DAC1;
+    using T = stm32g431xx_dac1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G491xx, DAC2>
+{
+    static constexpr periph_t P = DAC2;
+    using T = stm32g431xx_dac1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G491xx, DAC3>
+{
+    static constexpr periph_t P = DAC3;
+    using T = stm32g431xx_dac1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G491xx, DAC4>
+{
+    static constexpr periph_t P = DAC4;
+    using T = stm32g431xx_dac1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, DAC1>
+{
+    static constexpr periph_t P = DAC1;
+    using T = stm32g431xx_dac1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, DAC2>
+{
+    static constexpr periph_t P = DAC2;
+    using T = stm32g431xx_dac1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, DAC3>
+{
+    static constexpr periph_t P = DAC3;
+    using T = stm32g431xx_dac1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, DAC4>
+{
+    static constexpr periph_t P = DAC4;
+    using T = stm32g431xx_dac1_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32GBK1CBT6, DAC1>
 {
     static constexpr periph_t P = DAC1;

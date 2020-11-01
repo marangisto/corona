@@ -8,7 +8,7 @@
 
 // RTC: RTC
 
-struct stm32h742x_rtc_t
+struct stm32h723_rtc_t
 {
     volatile uint32_t RTC_TR; // The RTC_TR is the calendar time shadow register. This register must be written in initialization mode only. Refer to Calendar initialization and configuration on page9 and Reading the calendar on page10.This register is write protected. The write access procedure is described in RTC register write protection on page9.
     volatile uint32_t RTC_DR; // The RTC_DR is the calendar date shadow register. This register must be written in initialization mode only. Refer to Calendar initialization and configuration on page9 and Reading the calendar on page10.This register is write protected. The write access procedure is described in RTC register write protection on page9.
@@ -332,10 +332,26 @@ struct stm32h742x_rtc_t
 };
 
 template<>
+struct peripheral_t<STM32H723, RTC>
+{
+    static constexpr periph_t P = RTC;
+    using T = stm32h723_rtc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, RTC>
+{
+    static constexpr periph_t P = RTC;
+    using T = stm32h723_rtc_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H742x, RTC>
 {
     static constexpr periph_t P = RTC;
-    using T = stm32h742x_rtc_t;
+    using T = stm32h723_rtc_t;
     static T& V;
 };
 
@@ -343,7 +359,7 @@ template<>
 struct peripheral_t<STM32H743, RTC>
 {
     static constexpr periph_t P = RTC;
-    using T = stm32h742x_rtc_t;
+    using T = stm32h723_rtc_t;
     static T& V;
 };
 
@@ -351,7 +367,7 @@ template<>
 struct peripheral_t<STM32H745_CM4, RTC>
 {
     static constexpr periph_t P = RTC;
-    using T = stm32h742x_rtc_t;
+    using T = stm32h723_rtc_t;
     static T& V;
 };
 
@@ -359,7 +375,7 @@ template<>
 struct peripheral_t<STM32H745_CM7, RTC>
 {
     static constexpr periph_t P = RTC;
-    using T = stm32h742x_rtc_t;
+    using T = stm32h723_rtc_t;
     static T& V;
 };
 
@@ -367,7 +383,7 @@ template<>
 struct peripheral_t<STM32H747_CM4, RTC>
 {
     static constexpr periph_t P = RTC;
-    using T = stm32h742x_rtc_t;
+    using T = stm32h723_rtc_t;
     static T& V;
 };
 
@@ -375,7 +391,7 @@ template<>
 struct peripheral_t<STM32H747_CM7, RTC>
 {
     static constexpr periph_t P = RTC;
-    using T = stm32h742x_rtc_t;
+    using T = stm32h723_rtc_t;
     static T& V;
 };
 
@@ -383,7 +399,7 @@ template<>
 struct peripheral_t<STM32H750x, RTC>
 {
     static constexpr periph_t P = RTC;
-    using T = stm32h742x_rtc_t;
+    using T = stm32h723_rtc_t;
     static T& V;
 };
 
@@ -391,7 +407,7 @@ template<>
 struct peripheral_t<STM32H753, RTC>
 {
     static constexpr periph_t P = RTC;
-    using T = stm32h742x_rtc_t;
+    using T = stm32h723_rtc_t;
     static T& V;
 };
 
@@ -399,7 +415,7 @@ template<>
 struct peripheral_t<STM32H755_CM4, RTC>
 {
     static constexpr periph_t P = RTC;
-    using T = stm32h742x_rtc_t;
+    using T = stm32h723_rtc_t;
     static T& V;
 };
 
@@ -407,7 +423,7 @@ template<>
 struct peripheral_t<STM32H755_CM7, RTC>
 {
     static constexpr periph_t P = RTC;
-    using T = stm32h742x_rtc_t;
+    using T = stm32h723_rtc_t;
     static T& V;
 };
 
@@ -415,7 +431,7 @@ template<>
 struct peripheral_t<STM32H757_CM4, RTC>
 {
     static constexpr periph_t P = RTC;
-    using T = stm32h742x_rtc_t;
+    using T = stm32h723_rtc_t;
     static T& V;
 };
 
@@ -423,7 +439,7 @@ template<>
 struct peripheral_t<STM32H757_CM7, RTC>
 {
     static constexpr periph_t P = RTC;
-    using T = stm32h742x_rtc_t;
+    using T = stm32h723_rtc_t;
     static T& V;
 };
 
@@ -431,7 +447,7 @@ template<>
 struct peripheral_t<STM32H7A3x, RTC>
 {
     static constexpr periph_t P = RTC;
-    using T = stm32h742x_rtc_t;
+    using T = stm32h723_rtc_t;
     static T& V;
 };
 
@@ -439,7 +455,7 @@ template<>
 struct peripheral_t<STM32H7B0x, RTC>
 {
     static constexpr periph_t P = RTC;
-    using T = stm32h742x_rtc_t;
+    using T = stm32h723_rtc_t;
     static T& V;
 };
 
@@ -447,7 +463,7 @@ template<>
 struct peripheral_t<STM32H7B3x, RTC>
 {
     static constexpr periph_t P = RTC;
-    using T = stm32h742x_rtc_t;
+    using T = stm32h723_rtc_t;
     static T& V;
 };
 

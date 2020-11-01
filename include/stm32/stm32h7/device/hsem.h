@@ -8,6 +8,547 @@
 
 // HSEM: HSEM
 
+struct stm32h723_hsem_t
+{
+    volatile uint32_t HSEM_R0; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R1; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R2; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R3; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R4; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R5; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R6; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R7; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R8; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R9; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R10; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R11; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R12; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R13; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R14; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R15; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R16; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R17; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R18; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R19; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R20; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R21; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R22; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R23; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R24; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R25; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R26; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R27; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R28; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R29; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R30; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_R31; // HSEM register HSEM_R0 HSEM_R31
+    volatile uint32_t HSEM_RLR0; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR1; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR2; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR3; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR4; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR5; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR6; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR7; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR8; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR9; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR10; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR11; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR12; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR13; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR14; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR15; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR16; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR17; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR18; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR19; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR20; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR21; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR22; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR23; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR24; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR25; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR26; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR27; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR28; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR29; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR30; // HSEM Read lock register
+    volatile uint32_t HSEM_RLR31; // HSEM Read lock register
+    volatile uint32_t HSEM_C1IER; // HSEM Interrupt enable register
+    volatile uint32_t HSEM_C1ICR; // HSEM Interrupt clear register
+    volatile uint32_t HSEM_C1ISR; // HSEM Interrupt status register
+    volatile uint32_t HSEM_C1MISR; // HSEM Masked interrupt status register
+    reserved_t<0xc> _0x110;
+    volatile uint32_t HSEM_CR; // HSEM Clear register
+    volatile uint32_t HSEM_KEYR; // HSEM Interrupt clear register
+
+    static constexpr uint32_t HSEM_R0_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R0_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R0_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R0_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R1_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R1_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R1_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R1_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R2_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R2_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R2_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R2_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R3_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R3_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R3_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R3_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R4_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R4_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R4_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R4_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R5_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R5_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R5_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R5_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R6_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R6_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R6_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R6_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R7_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R7_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R7_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R7_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R8_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R8_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R8_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R8_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R9_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R9_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R9_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R9_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R10_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R10_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R10_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R10_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R11_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R11_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R11_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R11_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R12_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R12_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R12_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R12_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R13_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R13_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R13_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R13_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R14_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R14_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R14_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R14_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R15_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R15_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R15_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R15_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R16_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R16_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R16_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R16_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R17_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R17_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R17_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R17_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R18_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R18_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R18_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R18_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R19_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R19_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R19_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R19_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R20_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R20_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R20_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R20_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R21_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R21_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R21_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R21_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R22_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R22_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R22_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R22_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R23_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R23_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R23_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R23_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R24_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R24_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R24_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R24_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R25_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R25_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R25_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R25_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R26_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R26_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R26_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R26_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R27_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R27_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R27_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R27_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R28_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R28_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R28_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R28_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R29_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R29_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R29_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R29_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R30_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R30_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R30_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R30_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_R31_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_R31_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_R31_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_R31_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR0_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR0_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR0_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR0_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR1_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR1_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR1_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR1_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR2_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR2_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR2_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR2_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR3_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR3_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR3_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR3_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR4_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR4_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR4_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR4_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR5_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR5_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR5_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR5_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR6_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR6_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR6_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR6_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR7_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR7_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR7_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR7_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR8_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR8_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR8_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR8_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR9_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR9_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR9_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR9_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR10_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR10_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR10_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR10_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR11_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR11_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR11_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR11_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR12_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR12_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR12_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR12_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR13_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR13_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR13_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR13_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR14_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR14_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR14_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR14_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR15_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR15_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR15_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR15_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR16_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR16_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR16_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR16_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR17_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR17_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR17_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR17_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR18_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR18_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR18_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR18_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR19_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR19_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR19_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR19_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR20_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR20_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR20_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR20_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR21_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR21_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR21_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR21_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR22_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR22_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR22_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR22_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR23_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR23_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR23_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR23_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR24_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR24_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR24_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR24_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR25_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR25_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR25_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR25_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR26_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR26_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR26_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR26_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR27_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR27_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR27_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR27_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR28_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR28_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR28_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR28_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR29_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR29_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR29_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR29_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR30_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR30_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR30_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR30_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_RLR31_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> HSEM_RLR31_PROCID; // Semaphore ProcessID
+    typedef bit_field_t<8, 0xff> HSEM_RLR31_MASTERID; // Semaphore MasterID
+    static constexpr uint32_t HSEM_RLR31_LOCK = 0x80000000; // Lock indication
+
+    static constexpr uint32_t HSEM_C1IER_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t HSEM_C1IER_ISEM0 = 0x1; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM1 = 0x2; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM2 = 0x4; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM3 = 0x8; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM4 = 0x10; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM5 = 0x20; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM6 = 0x40; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM7 = 0x80; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM8 = 0x100; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM9 = 0x200; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM10 = 0x400; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM11 = 0x800; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM12 = 0x1000; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM13 = 0x2000; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM14 = 0x4000; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM15 = 0x8000; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM16 = 0x10000; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM17 = 0x20000; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM18 = 0x40000; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM19 = 0x80000; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM20 = 0x100000; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM21 = 0x200000; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM22 = 0x400000; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM23 = 0x800000; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM24 = 0x1000000; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM25 = 0x2000000; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM26 = 0x4000000; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM27 = 0x8000000; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM28 = 0x10000000; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM29 = 0x20000000; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM30 = 0x40000000; // Interrupt semaphore n enable bit
+    static constexpr uint32_t HSEM_C1IER_ISEM31 = 0x80000000; // Interrupt(N) semaphore n enable bit.
+
+    static constexpr uint32_t HSEM_C1ICR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t HSEM_C1ICR_ISEM0 = 0x1; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM1 = 0x2; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM2 = 0x4; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM3 = 0x8; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM4 = 0x10; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM5 = 0x20; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM6 = 0x40; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM7 = 0x80; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM8 = 0x100; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM9 = 0x200; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM10 = 0x400; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM11 = 0x800; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM12 = 0x1000; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM13 = 0x2000; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM14 = 0x4000; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM15 = 0x8000; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM16 = 0x10000; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM17 = 0x20000; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM18 = 0x40000; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM19 = 0x80000; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM20 = 0x100000; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM21 = 0x200000; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM22 = 0x400000; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM23 = 0x800000; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM24 = 0x1000000; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM25 = 0x2000000; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM26 = 0x4000000; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM27 = 0x8000000; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM28 = 0x10000000; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM29 = 0x20000000; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM30 = 0x40000000; // Interrupt(N) semaphore n clear bit
+    static constexpr uint32_t HSEM_C1ICR_ISEM31 = 0x80000000; // Interrupt(N) semaphore n clear bit
+
+    static constexpr uint32_t HSEM_C1ISR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t HSEM_C1ISR_ISEM0 = 0x1; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM1 = 0x2; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM2 = 0x4; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM3 = 0x8; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM4 = 0x10; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM5 = 0x20; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM6 = 0x40; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM7 = 0x80; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM8 = 0x100; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM9 = 0x200; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM10 = 0x400; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM11 = 0x800; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM12 = 0x1000; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM13 = 0x2000; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM14 = 0x4000; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM15 = 0x8000; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM16 = 0x10000; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM17 = 0x20000; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM18 = 0x40000; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM19 = 0x80000; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM20 = 0x100000; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM21 = 0x200000; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM22 = 0x400000; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM23 = 0x800000; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM24 = 0x1000000; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM25 = 0x2000000; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM26 = 0x4000000; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM27 = 0x8000000; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM28 = 0x10000000; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM29 = 0x20000000; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM30 = 0x40000000; // Interrupt(N) semaphore n status bit before enable (mask)
+    static constexpr uint32_t HSEM_C1ISR_ISEM31 = 0x80000000; // Interrupt(N) semaphore n status bit before enable (mask)
+
+    static constexpr uint32_t HSEM_C1MISR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t HSEM_C1MISR_ISEM0 = 0x1; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM1 = 0x2; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM2 = 0x4; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM3 = 0x8; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM4 = 0x10; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM5 = 0x20; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM6 = 0x40; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM7 = 0x80; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM8 = 0x100; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM9 = 0x200; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM10 = 0x400; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM11 = 0x800; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM12 = 0x1000; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM13 = 0x2000; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM14 = 0x4000; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM15 = 0x8000; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM16 = 0x10000; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM17 = 0x20000; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM18 = 0x40000; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM19 = 0x80000; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM20 = 0x100000; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM21 = 0x200000; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM22 = 0x400000; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM23 = 0x800000; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM24 = 0x1000000; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM25 = 0x2000000; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM26 = 0x4000000; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM27 = 0x8000000; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM28 = 0x10000000; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM29 = 0x20000000; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM30 = 0x40000000; // masked interrupt(N) semaphore n status bit after enable (mask)
+    static constexpr uint32_t HSEM_C1MISR_ISEM31 = 0x80000000; // masked interrupt(N) semaphore n status bit after enable (mask)
+
+
+    static constexpr uint32_t HSEM_CR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<8, 0xf> HSEM_CR_COREID; // MasterID of semaphores to be cleared
+    typedef bit_field_t<16, 0xffff> HSEM_CR_KEY; // Semaphore clear Key
+
+    static constexpr uint32_t HSEM_KEYR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<16, 0xffff> HSEM_KEYR_KEY; // Semaphore Clear Key
+};
+
+// HSEM: HSEM
+
 struct stm32h742x_hsem_t
 {
     volatile uint32_t HSEM_R0; // HSEM register HSEM_R0 HSEM_R31
@@ -1086,6 +1627,22 @@ struct stm32h7a3x_hsem_t
 
     static constexpr uint32_t KEYR_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<16, 0xffff> KEYR_KEY; // Semaphore Clear Key
+};
+
+template<>
+struct peripheral_t<STM32H723, HSEM>
+{
+    static constexpr periph_t P = HSEM;
+    using T = stm32h723_hsem_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, HSEM>
+{
+    static constexpr periph_t P = HSEM;
+    using T = stm32h723_hsem_t;
+    static T& V;
 };
 
 template<>

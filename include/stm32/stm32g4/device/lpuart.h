@@ -194,6 +194,22 @@ struct peripheral_t<STM32G484xx, LPUART1>
 };
 
 template<>
+struct peripheral_t<STM32G491xx, LPUART1>
+{
+    static constexpr periph_t P = LPUART1;
+    using T = stm32g431xx_lpuart1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, LPUART1>
+{
+    static constexpr periph_t P = LPUART1;
+    using T = stm32g431xx_lpuart1_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32GBK1CBT6, LPUART1>
 {
     static constexpr periph_t P = LPUART1;

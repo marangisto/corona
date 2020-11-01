@@ -8,7 +8,7 @@
 
 // DMA1: Direct memory access controller
 
-struct stm32l0x0_dma1_t
+struct stm32l052_dma1_t
 {
     volatile uint32_t ISR; // interrupt status register
     volatile uint32_t IFCR; // interrupt flag clear register
@@ -288,10 +288,42 @@ struct stm32l0x0_dma1_t
 };
 
 template<>
+struct peripheral_t<STM32L052, DMA1>
+{
+    static constexpr periph_t P = DMA1;
+    using T = stm32l052_dma1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, DMA1>
+{
+    static constexpr periph_t P = DMA1;
+    using T = stm32l052_dma1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, DMA1>
+{
+    static constexpr periph_t P = DMA1;
+    using T = stm32l052_dma1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, DMA1>
+{
+    static constexpr periph_t P = DMA1;
+    using T = stm32l052_dma1_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L0x0, DMA1>
 {
     static constexpr periph_t P = DMA1;
-    using T = stm32l0x0_dma1_t;
+    using T = stm32l052_dma1_t;
     static T& V;
 };
 
@@ -299,7 +331,7 @@ template<>
 struct peripheral_t<STM32L0x1, DMA1>
 {
     static constexpr periph_t P = DMA1;
-    using T = stm32l0x0_dma1_t;
+    using T = stm32l052_dma1_t;
     static T& V;
 };
 
@@ -307,7 +339,7 @@ template<>
 struct peripheral_t<STM32L0x2, DMA1>
 {
     static constexpr periph_t P = DMA1;
-    using T = stm32l0x0_dma1_t;
+    using T = stm32l052_dma1_t;
     static T& V;
 };
 
@@ -315,7 +347,7 @@ template<>
 struct peripheral_t<STM32L0x3, DMA1>
 {
     static constexpr periph_t P = DMA1;
-    using T = stm32l0x0_dma1_t;
+    using T = stm32l052_dma1_t;
     static T& V;
 };
 

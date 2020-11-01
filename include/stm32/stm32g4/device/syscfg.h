@@ -168,6 +168,22 @@ struct peripheral_t<STM32G484xx, SYSCFG>
 };
 
 template<>
+struct peripheral_t<STM32G491xx, SYSCFG>
+{
+    static constexpr periph_t P = SYSCFG;
+    using T = stm32g431xx_syscfg_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, SYSCFG>
+{
+    static constexpr periph_t P = SYSCFG;
+    using T = stm32g431xx_syscfg_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32GBK1CBT6, SYSCFG>
 {
     static constexpr periph_t P = SYSCFG;

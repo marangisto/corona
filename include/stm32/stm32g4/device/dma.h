@@ -425,6 +425,38 @@ struct peripheral_t<STM32G484xx, DMA2>
 };
 
 template<>
+struct peripheral_t<STM32G491xx, DMA1>
+{
+    static constexpr periph_t P = DMA1;
+    using T = stm32g431xx_dma1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G491xx, DMA2>
+{
+    static constexpr periph_t P = DMA2;
+    using T = stm32g431xx_dma1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, DMA1>
+{
+    static constexpr periph_t P = DMA1;
+    using T = stm32g431xx_dma1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, DMA2>
+{
+    static constexpr periph_t P = DMA2;
+    using T = stm32g431xx_dma1_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32GBK1CBT6, DMA1>
 {
     static constexpr periph_t P = DMA1;

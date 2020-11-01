@@ -8,7 +8,7 @@
 
 // RTC: Real-time clock
 
-struct stm32l0x0_rtc_t
+struct stm32l052_rtc_t
 {
     volatile uint32_t TR; // RTC time register
     volatile uint32_t DR; // RTC date register
@@ -164,7 +164,7 @@ struct stm32l0x0_rtc_t
 
     static constexpr uint32_t CALR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CALR_CALP = 0x8000; // Increase frequency of RTC by 488.5 ppm
-    static constexpr uint32_t CALR_CALW8 = 0x4000; // Use an 8-second calibration cycle period
+    static constexpr uint32_t CALR_CALW8 = 0x4000; // Use a 8-second calibration cycle period
     static constexpr uint32_t CALR_CALW16 = 0x2000; // Use a 16-second calibration cycle period
     typedef bit_field_t<0, 0x1ff> CALR_CALM; // Calibration minus
 
@@ -215,10 +215,42 @@ struct stm32l0x0_rtc_t
 };
 
 template<>
+struct peripheral_t<STM32L052, RTC>
+{
+    static constexpr periph_t P = RTC;
+    using T = stm32l052_rtc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, RTC>
+{
+    static constexpr periph_t P = RTC;
+    using T = stm32l052_rtc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, RTC>
+{
+    static constexpr periph_t P = RTC;
+    using T = stm32l052_rtc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, RTC>
+{
+    static constexpr periph_t P = RTC;
+    using T = stm32l052_rtc_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L0x0, RTC>
 {
     static constexpr periph_t P = RTC;
-    using T = stm32l0x0_rtc_t;
+    using T = stm32l052_rtc_t;
     static T& V;
 };
 
@@ -226,7 +258,7 @@ template<>
 struct peripheral_t<STM32L0x1, RTC>
 {
     static constexpr periph_t P = RTC;
-    using T = stm32l0x0_rtc_t;
+    using T = stm32l052_rtc_t;
     static T& V;
 };
 
@@ -234,7 +266,7 @@ template<>
 struct peripheral_t<STM32L0x2, RTC>
 {
     static constexpr periph_t P = RTC;
-    using T = stm32l0x0_rtc_t;
+    using T = stm32l052_rtc_t;
     static T& V;
 };
 
@@ -242,7 +274,7 @@ template<>
 struct peripheral_t<STM32L0x3, RTC>
 {
     static constexpr periph_t P = RTC;
-    using T = stm32l0x0_rtc_t;
+    using T = stm32l052_rtc_t;
     static T& V;
 };
 

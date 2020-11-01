@@ -274,6 +274,22 @@ struct peripheral_t<STM32G484xx, TAMP>
 };
 
 template<>
+struct peripheral_t<STM32G491xx, TAMP>
+{
+    static constexpr periph_t P = TAMP;
+    using T = stm32g431xx_tamp_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, TAMP>
+{
+    static constexpr periph_t P = TAMP;
+    using T = stm32g431xx_tamp_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32GBK1CBT6, TAMP>
 {
     static constexpr periph_t P = TAMP;

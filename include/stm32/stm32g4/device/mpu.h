@@ -103,6 +103,22 @@ struct peripheral_t<STM32G484xx, MPU>
 };
 
 template<>
+struct peripheral_t<STM32G491xx, MPU>
+{
+    static constexpr periph_t P = MPU;
+    using T = stm32g431xx_mpu_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, MPU>
+{
+    static constexpr periph_t P = MPU;
+    using T = stm32g431xx_mpu_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32GBK1CBT6, MPU>
 {
     static constexpr periph_t P = MPU;

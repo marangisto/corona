@@ -4191,6 +4191,11 @@ typename peripheral_t<STM32F723, SCB>::T&
         <typename peripheral_t<STM32F723, SCB>::T*
         >(0xe000ed00);
 
+typename peripheral_t<STM32F730, SCB>::T&
+    peripheral_t<STM32F730, SCB>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F730, SCB>::T*
+        >(0xe000ed00);
+
 typename peripheral_t<STM32F732, SCB>::T&
     peripheral_t<STM32F732, SCB>::V = *reinterpret_cast
         <typename peripheral_t<STM32F732, SCB>::T*
@@ -4254,11 +4259,6 @@ typename peripheral_t<STM32F778, SCB>::T&
 typename peripheral_t<STM32F779, SCB>::T&
     peripheral_t<STM32F779, SCB>::V = *reinterpret_cast
         <typename peripheral_t<STM32F779, SCB>::T*
-        >(0xe000ed00);
-
-typename peripheral_t<STM32F730, SCB>::T&
-    peripheral_t<STM32F730, SCB>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F730, SCB>::T*
         >(0xe000ed00);
 
 typename peripheral_t<STM32F722, SCB_ACTRL>::T&

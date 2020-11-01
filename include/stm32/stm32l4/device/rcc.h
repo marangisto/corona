@@ -1178,6 +1178,8 @@ struct stm32l4x3_rcc_t
     reserved_t<0x1> _0x8c;
     volatile uint32_t BDCR; // BDCR
     volatile uint32_t CSR; // CSR
+    volatile uint32_t CRRCR; // Clock recovery RC register
+    volatile uint32_t CCIPR2; // Peripherals independent clock configuration register
 
     static constexpr uint32_t CR_RESET_VALUE = 0x63; // Reset value
     static constexpr uint32_t CR_PLLSAI1RDY = 0x8000000; // SAI1 PLL clock ready flag
@@ -1493,6 +1495,14 @@ struct stm32l4x3_rcc_t
     typedef bit_field_t<8, 0xf> CSR_MSISRANGE; // SI range after Standby mode
     static constexpr uint32_t CSR_LSIRDY = 0x2; // LSI oscillator ready
     static constexpr uint32_t CSR_LSION = 0x1; // LSI oscillator enable
+
+    static constexpr uint32_t CRRCR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<7, 0x1ff> CRRCR_HSI48CAL; // HSI48CAL
+    static constexpr uint32_t CRRCR_HSI48RDY = 0x2; // HSI48RDY
+    static constexpr uint32_t CRRCR_HSI48ON = 0x1; // HSI48ON
+
+    static constexpr uint32_t CCIPR2_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x3> CCIPR2_I2C4SEL; // I2C4SEL
 };
 
 // RCC: Reset and clock control

@@ -8,7 +8,7 @@
 
 // SPI1: Serial peripheral interface
 
-struct stm32l0x0_spi1_t
+struct stm32l052_spi1_t
 {
     volatile uint32_t CR1; // control register 1
     volatile uint32_t CR2; // control register 2
@@ -85,10 +85,74 @@ struct stm32l0x0_spi1_t
 };
 
 template<>
+struct peripheral_t<STM32L052, SPI1>
+{
+    static constexpr periph_t P = SPI1;
+    using T = stm32l052_spi1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L052, SPI2>
+{
+    static constexpr periph_t P = SPI2;
+    using T = stm32l052_spi1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, SPI1>
+{
+    static constexpr periph_t P = SPI1;
+    using T = stm32l052_spi1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, SPI2>
+{
+    static constexpr periph_t P = SPI2;
+    using T = stm32l052_spi1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, SPI1>
+{
+    static constexpr periph_t P = SPI1;
+    using T = stm32l052_spi1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, SPI2>
+{
+    static constexpr periph_t P = SPI2;
+    using T = stm32l052_spi1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, SPI1>
+{
+    static constexpr periph_t P = SPI1;
+    using T = stm32l052_spi1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, SPI2>
+{
+    static constexpr periph_t P = SPI2;
+    using T = stm32l052_spi1_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L0x0, SPI1>
 {
     static constexpr periph_t P = SPI1;
-    using T = stm32l0x0_spi1_t;
+    using T = stm32l052_spi1_t;
     static T& V;
 };
 
@@ -96,7 +160,7 @@ template<>
 struct peripheral_t<STM32L0x1, SPI1>
 {
     static constexpr periph_t P = SPI1;
-    using T = stm32l0x0_spi1_t;
+    using T = stm32l052_spi1_t;
     static T& V;
 };
 
@@ -104,7 +168,7 @@ template<>
 struct peripheral_t<STM32L0x1, SPI2>
 {
     static constexpr periph_t P = SPI2;
-    using T = stm32l0x0_spi1_t;
+    using T = stm32l052_spi1_t;
     static T& V;
 };
 
@@ -112,7 +176,7 @@ template<>
 struct peripheral_t<STM32L0x2, SPI1>
 {
     static constexpr periph_t P = SPI1;
-    using T = stm32l0x0_spi1_t;
+    using T = stm32l052_spi1_t;
     static T& V;
 };
 
@@ -120,7 +184,7 @@ template<>
 struct peripheral_t<STM32L0x2, SPI2>
 {
     static constexpr periph_t P = SPI2;
-    using T = stm32l0x0_spi1_t;
+    using T = stm32l052_spi1_t;
     static T& V;
 };
 
@@ -128,7 +192,7 @@ template<>
 struct peripheral_t<STM32L0x3, SPI1>
 {
     static constexpr periph_t P = SPI1;
-    using T = stm32l0x0_spi1_t;
+    using T = stm32l052_spi1_t;
     static T& V;
 };
 
@@ -136,7 +200,7 @@ template<>
 struct peripheral_t<STM32L0x3, SPI2>
 {
     static constexpr periph_t P = SPI2;
-    using T = stm32l0x0_spi1_t;
+    using T = stm32l052_spi1_t;
     static T& V;
 };
 

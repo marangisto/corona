@@ -115,6 +115,22 @@ struct peripheral_t<STM32G484xx, DBGMCU>
 };
 
 template<>
+struct peripheral_t<STM32G491xx, DBGMCU>
+{
+    static constexpr periph_t P = DBGMCU;
+    using T = stm32g431xx_dbgmcu_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, DBGMCU>
+{
+    static constexpr periph_t P = DBGMCU;
+    using T = stm32g431xx_dbgmcu_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32GBK1CBT6, DBGMCU>
 {
     static constexpr periph_t P = DBGMCU;

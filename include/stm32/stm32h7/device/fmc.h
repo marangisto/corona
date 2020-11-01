@@ -8,7 +8,7 @@
 
 // FMC: FMC
 
-struct stm32h742x_fmc_t
+struct stm32h723_fmc_t
 {
     volatile uint32_t BCR1; // This register contains the control information of each memory bank, used for SRAMs, PSRAM and NOR Flash memories.
     volatile uint32_t BTR1; // This register contains the control information of each memory bank, used for SRAMs, PSRAM and NOR Flash memories.If the EXTMOD bit is set in the FMC_BCRx register, then this register is partitioned for write and read access, that is, 2 registers are available: one to configure read accesses (this register) and one to configure write accesses (FMC_BWTRx registers).
@@ -563,10 +563,26 @@ struct stm32h750x_fmc_t
 };
 
 template<>
+struct peripheral_t<STM32H723, FMC>
+{
+    static constexpr periph_t P = FMC;
+    using T = stm32h723_fmc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, FMC>
+{
+    static constexpr periph_t P = FMC;
+    using T = stm32h723_fmc_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H742x, FMC>
 {
     static constexpr periph_t P = FMC;
-    using T = stm32h742x_fmc_t;
+    using T = stm32h723_fmc_t;
     static T& V;
 };
 
@@ -574,7 +590,7 @@ template<>
 struct peripheral_t<STM32H743, FMC>
 {
     static constexpr periph_t P = FMC;
-    using T = stm32h742x_fmc_t;
+    using T = stm32h723_fmc_t;
     static T& V;
 };
 
@@ -582,7 +598,7 @@ template<>
 struct peripheral_t<STM32H745_CM4, FMC>
 {
     static constexpr periph_t P = FMC;
-    using T = stm32h742x_fmc_t;
+    using T = stm32h723_fmc_t;
     static T& V;
 };
 
@@ -590,7 +606,7 @@ template<>
 struct peripheral_t<STM32H745_CM7, FMC>
 {
     static constexpr periph_t P = FMC;
-    using T = stm32h742x_fmc_t;
+    using T = stm32h723_fmc_t;
     static T& V;
 };
 
@@ -598,7 +614,7 @@ template<>
 struct peripheral_t<STM32H747_CM4, FMC>
 {
     static constexpr periph_t P = FMC;
-    using T = stm32h742x_fmc_t;
+    using T = stm32h723_fmc_t;
     static T& V;
 };
 
@@ -606,7 +622,7 @@ template<>
 struct peripheral_t<STM32H747_CM7, FMC>
 {
     static constexpr periph_t P = FMC;
-    using T = stm32h742x_fmc_t;
+    using T = stm32h723_fmc_t;
     static T& V;
 };
 
@@ -614,7 +630,7 @@ template<>
 struct peripheral_t<STM32H753, FMC>
 {
     static constexpr periph_t P = FMC;
-    using T = stm32h742x_fmc_t;
+    using T = stm32h723_fmc_t;
     static T& V;
 };
 
@@ -622,7 +638,7 @@ template<>
 struct peripheral_t<STM32H755_CM4, FMC>
 {
     static constexpr periph_t P = FMC;
-    using T = stm32h742x_fmc_t;
+    using T = stm32h723_fmc_t;
     static T& V;
 };
 
@@ -630,7 +646,7 @@ template<>
 struct peripheral_t<STM32H755_CM7, FMC>
 {
     static constexpr periph_t P = FMC;
-    using T = stm32h742x_fmc_t;
+    using T = stm32h723_fmc_t;
     static T& V;
 };
 
@@ -638,7 +654,7 @@ template<>
 struct peripheral_t<STM32H757_CM4, FMC>
 {
     static constexpr periph_t P = FMC;
-    using T = stm32h742x_fmc_t;
+    using T = stm32h723_fmc_t;
     static T& V;
 };
 
@@ -646,7 +662,7 @@ template<>
 struct peripheral_t<STM32H757_CM7, FMC>
 {
     static constexpr periph_t P = FMC;
-    using T = stm32h742x_fmc_t;
+    using T = stm32h723_fmc_t;
     static T& V;
 };
 
@@ -654,7 +670,7 @@ template<>
 struct peripheral_t<STM32H7A3x, FMC>
 {
     static constexpr periph_t P = FMC;
-    using T = stm32h742x_fmc_t;
+    using T = stm32h723_fmc_t;
     static T& V;
 };
 

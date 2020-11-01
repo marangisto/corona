@@ -8,6 +8,150 @@
 
 // SPI1: Serial peripheral interface
 
+struct stm32h723_spi1_t
+{
+    volatile uint32_t CR1; // control register 1
+    volatile uint32_t CR2; // control register 2
+    volatile uint32_t CFG1; // configuration register 1
+    volatile uint32_t CFG2; // configuration register 2
+    volatile uint32_t IER; // Interrupt Enable Register
+    volatile uint32_t SR; // Status Register
+    volatile uint32_t IFCR; // Interrupt/Status Flags Clear Register
+    reserved_t<0x1> _0x1c;
+    volatile uint32_t TXDR; // Transmit Data Register
+    reserved_t<0x3> _0x24;
+    volatile uint32_t RXDR; // Receive Data Register
+    reserved_t<0x3> _0x34;
+    volatile uint32_t CRCPOLY; // Polynomial Register
+    volatile uint32_t TXCRC; // Transmitter CRC Register
+    volatile uint32_t RXCRC; // Receiver CRC Register
+    volatile uint32_t UDRDR; // Underrun Data Register
+    volatile uint32_t I2SCFGR; // configuration register
+
+    static constexpr uint32_t CR1_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t CR1_IOLOCK = 0x10000; // Locking the AF configuration of associated IOs
+    static constexpr uint32_t CR1_TCRCI = 0x8000; // CRC calculation initialization pattern control for transmitter
+    static constexpr uint32_t CR1_RCRCI = 0x4000; // CRC calculation initialization pattern control for receiver
+    static constexpr uint32_t CR1_CRC33_17 = 0x2000; // 32-bit CRC polynomial configuration
+    static constexpr uint32_t CR1_SSI = 0x1000; // Internal SS signal input level
+    static constexpr uint32_t CR1_HDDIR = 0x800; // Rx/Tx direction at Half-duplex mode
+    static constexpr uint32_t CR1_CSUSP = 0x400; // Master SUSPend request
+    static constexpr uint32_t CR1_CSTART = 0x200; // Master transfer start
+    static constexpr uint32_t CR1_MASRX = 0x100; // Master automatic SUSP in Receive mode
+    static constexpr uint32_t CR1_SPE = 0x1; // Serial Peripheral Enable
+
+    static constexpr uint32_t CR2_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<16, 0xffff> CR2_TSER; // Number of data transfer extension to be reload into TSIZE just when a previous
+    typedef bit_field_t<0, 0xffff> CR2_TSIZE; // Number of data at current transfer
+
+    static constexpr uint32_t CFG1_RESET_VALUE = 0x70007; // Reset value
+    typedef bit_field_t<28, 0x7> CFG1_MBR; // Master baud rate
+    static constexpr uint32_t CFG1_CRCEN = 0x400000; // Hardware CRC computation enable
+    typedef bit_field_t<16, 0x1f> CFG1_CRCSIZE; // Length of CRC frame to be transacted and compared
+    static constexpr uint32_t CFG1_TXDMAEN = 0x8000; // Tx DMA stream enable
+    static constexpr uint32_t CFG1_RXDMAEN = 0x4000; // Rx DMA stream enable
+    typedef bit_field_t<11, 0x3> CFG1_UDRDET; // Detection of underrun condition at slave transmitter
+    typedef bit_field_t<9, 0x3> CFG1_UDRCFG; // Behavior of slave transmitter at underrun condition
+    typedef bit_field_t<5, 0xf> CFG1_FTHVL; // threshold level
+    typedef bit_field_t<0, 0x1f> CFG1_DSIZE; // Number of bits in at single SPI data frame
+
+    static constexpr uint32_t CFG2_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t CFG2_AFCNTR = 0x80000000; // Alternate function GPIOs control
+    static constexpr uint32_t CFG2_SSOM = 0x40000000; // SS output management in master mode
+    static constexpr uint32_t CFG2_SSOE = 0x20000000; // SS output enable
+    static constexpr uint32_t CFG2_SSIOP = 0x10000000; // SS input/output polarity
+    static constexpr uint32_t CFG2_SSM = 0x4000000; // Software management of SS signal input
+    static constexpr uint32_t CFG2_CPOL = 0x2000000; // Clock polarity
+    static constexpr uint32_t CFG2_CPHA = 0x1000000; // Clock phase
+    static constexpr uint32_t CFG2_LSBFRST = 0x800000; // Data frame format
+    static constexpr uint32_t CFG2_MASTER = 0x400000; // SPI Master
+    typedef bit_field_t<19, 0x7> CFG2_SP; // Serial Protocol
+    typedef bit_field_t<17, 0x3> CFG2_COMM; // SPI Communication Mode
+    static constexpr uint32_t CFG2_IOSWP = 0x8000; // Swap functionality of MISO and MOSI pins
+    typedef bit_field_t<4, 0xf> CFG2_MIDI; // Master Inter-Data Idleness
+    typedef bit_field_t<0, 0xf> CFG2_MSSI; // Master SS Idleness
+
+    static constexpr uint32_t IER_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t IER_TSERFIE = 0x400; // Additional number of transactions reload interrupt enable
+    static constexpr uint32_t IER_MODFIE = 0x200; // Mode Fault interrupt enable
+    static constexpr uint32_t IER_TIFREIE = 0x100; // TIFRE interrupt enable
+    static constexpr uint32_t IER_CRCEIE = 0x80; // CRC Interrupt enable
+    static constexpr uint32_t IER_OVRIE = 0x40; // OVR interrupt enable
+    static constexpr uint32_t IER_UDRIE = 0x20; // UDR interrupt enable
+    static constexpr uint32_t IER_TXTFIE = 0x10; // TXTFIE interrupt enable
+    static constexpr uint32_t IER_EOTIE = 0x8; // EOT, SUSP and TXC interrupt enable
+    static constexpr uint32_t IER_DPXPIE = 0x4; // DXP interrupt enabled
+    static constexpr uint32_t IER_TXPIE = 0x2; // TXP interrupt enable
+    static constexpr uint32_t IER_RXPIE = 0x1; // RXP Interrupt Enable
+
+    static constexpr uint32_t SR_RESET_VALUE = 0x1002; // Reset value
+    typedef bit_field_t<16, 0xffff> SR_CTSIZE; // Number of data frames remaining in current TSIZE session
+    static constexpr uint32_t SR_RXWNE = 0x8000; // RxFIFO Word Not Empty
+    typedef bit_field_t<13, 0x3> SR_RXPLVL; // RxFIFO Packing LeVeL
+    static constexpr uint32_t SR_TXC = 0x1000; // TxFIFO transmission complete
+    static constexpr uint32_t SR_SUSP = 0x800; // SUSPend
+    static constexpr uint32_t SR_TSERF = 0x400; // Additional number of SPI data to be transacted was reload
+    static constexpr uint32_t SR_MODF = 0x200; // Mode Fault
+    static constexpr uint32_t SR_TIFRE = 0x100; // TI frame format error
+    static constexpr uint32_t SR_CRCE = 0x80; // CRC Error
+    static constexpr uint32_t SR_OVR = 0x40; // Overrun
+    static constexpr uint32_t SR_UDR = 0x20; // Underrun at slave transmission mode
+    static constexpr uint32_t SR_TXTF = 0x10; // Transmission Transfer Filled
+    static constexpr uint32_t SR_EOT = 0x8; // End Of Transfer
+    static constexpr uint32_t SR_DXP = 0x4; // Duplex Packet
+    static constexpr uint32_t SR_TXP = 0x2; // Tx-Packet space available
+    static constexpr uint32_t SR_RXP = 0x1; // Rx-Packet available
+
+    static constexpr uint32_t IFCR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t IFCR_SUSPC = 0x800; // SUSPend flag clear
+    static constexpr uint32_t IFCR_TSERFC = 0x400; // TSERFC flag clear
+    static constexpr uint32_t IFCR_MODFC = 0x200; // Mode Fault flag clear
+    static constexpr uint32_t IFCR_TIFREC = 0x100; // TI frame format error flag clear
+    static constexpr uint32_t IFCR_CRCEC = 0x80; // CRC Error flag clear
+    static constexpr uint32_t IFCR_OVRC = 0x40; // Overrun flag clear
+    static constexpr uint32_t IFCR_UDRC = 0x20; // Underrun flag clear
+    static constexpr uint32_t IFCR_TXTFC = 0x10; // Transmission Transfer Filled flag clear
+    static constexpr uint32_t IFCR_EOTC = 0x8; // End Of Transfer flag clear
+
+
+    static constexpr uint32_t TXDR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> TXDR_TXDR; // Transmit data register
+
+
+    static constexpr uint32_t RXDR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> RXDR_RXDR; // Receive data register
+
+
+    static constexpr uint32_t CRCPOLY_RESET_VALUE = 0x107; // Reset value
+    typedef bit_field_t<0, 0xffffffff> CRCPOLY_CRCPOLY; // CRC polynomial register
+
+    static constexpr uint32_t TXCRC_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> TXCRC_TXCRC; // CRC register for transmitter
+
+    static constexpr uint32_t RXCRC_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> RXCRC_RXCRC; // CRC register for receiver
+
+    static constexpr uint32_t UDRDR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> UDRDR_UDRDR; // Data at slave underrun condition
+
+    static constexpr uint32_t I2SCFGR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t I2SCFGR_MCKOE = 0x2000000; // Master clock output enable
+    static constexpr uint32_t I2SCFGR_ODD = 0x1000000; // Odd factor for the prescaler
+    typedef bit_field_t<16, 0xff> I2SCFGR_I2SDIV; // I2S linear prescaler
+    static constexpr uint32_t I2SCFGR_DATFMT = 0x4000; // Data format
+    static constexpr uint32_t I2SCFGR_WSINV = 0x2000; // Fixed channel length in SLAVE
+    static constexpr uint32_t I2SCFGR_FIXCH = 0x1000; // Word select inversion
+    static constexpr uint32_t I2SCFGR_CKPOL = 0x800; // Serial audio clock polarity
+    static constexpr uint32_t I2SCFGR_CHLEN = 0x400; // Channel length (number of bits per audio channel)
+    typedef bit_field_t<8, 0x3> I2SCFGR_DATLEN; // Data length to be transferred
+    static constexpr uint32_t I2SCFGR_PCMSYNC = 0x80; // PCM frame synchronization
+    typedef bit_field_t<4, 0x3> I2SCFGR_I2SSTD; // I2S standard selection
+    typedef bit_field_t<1, 0x7> I2SCFGR_I2SCFG; // I2S configuration mode
+    static constexpr uint32_t I2SCFGR_I2SMOD = 0x1; // I2S mode selection
+};
+
+// SPI1: Serial peripheral interface
+
 struct stm32h742x_spi1_t
 {
     volatile uint32_t CR1; // control register 1
@@ -148,6 +292,102 @@ struct stm32h742x_spi1_t
     typedef bit_field_t<4, 0x3> CGFR_I2SSTD; // I2S standard selection
     typedef bit_field_t<1, 0x7> CGFR_I2SCFG; // I2S configuration mode
     static constexpr uint32_t CGFR_I2SMOD = 0x1; // I2S mode selection
+};
+
+template<>
+struct peripheral_t<STM32H723, SPI1>
+{
+    static constexpr periph_t P = SPI1;
+    using T = stm32h723_spi1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H723, SPI2>
+{
+    static constexpr periph_t P = SPI2;
+    using T = stm32h723_spi1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H723, SPI3>
+{
+    static constexpr periph_t P = SPI3;
+    using T = stm32h723_spi1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H723, SPI4>
+{
+    static constexpr periph_t P = SPI4;
+    using T = stm32h723_spi1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H723, SPI5>
+{
+    static constexpr periph_t P = SPI5;
+    using T = stm32h723_spi1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H723, SPI6>
+{
+    static constexpr periph_t P = SPI6;
+    using T = stm32h723_spi1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, SPI1>
+{
+    static constexpr periph_t P = SPI1;
+    using T = stm32h723_spi1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, SPI2>
+{
+    static constexpr periph_t P = SPI2;
+    using T = stm32h723_spi1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, SPI3>
+{
+    static constexpr periph_t P = SPI3;
+    using T = stm32h723_spi1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, SPI4>
+{
+    static constexpr periph_t P = SPI4;
+    using T = stm32h723_spi1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, SPI5>
+{
+    static constexpr periph_t P = SPI5;
+    using T = stm32h723_spi1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, SPI6>
+{
+    static constexpr periph_t P = SPI6;
+    using T = stm32h723_spi1_t;
+    static T& V;
 };
 
 template<>

@@ -8,7 +8,7 @@
 
 // OCTOSPI2: OctoSPI
 
-struct stm32h7a3x_octospi2_t
+struct stm32h723_octospi2_t
 {
     volatile uint32_t CR; // control register
     reserved_t<0x1> _0x4;
@@ -235,10 +235,42 @@ struct stm32h7a3x_octospi2_t
 };
 
 template<>
+struct peripheral_t<STM32H723, OCTOSPI1>
+{
+    static constexpr periph_t P = OCTOSPI1;
+    using T = stm32h723_octospi2_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H723, OCTOSPI2>
+{
+    static constexpr periph_t P = OCTOSPI2;
+    using T = stm32h723_octospi2_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, OCTOSPI1>
+{
+    static constexpr periph_t P = OCTOSPI1;
+    using T = stm32h723_octospi2_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, OCTOSPI2>
+{
+    static constexpr periph_t P = OCTOSPI2;
+    using T = stm32h723_octospi2_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H7A3x, OCTOSPI1_CONTROL_REGISTER>
 {
     static constexpr periph_t P = OCTOSPI1_CONTROL_REGISTER;
-    using T = stm32h7a3x_octospi2_t;
+    using T = stm32h723_octospi2_t;
     static T& V;
 };
 
@@ -246,7 +278,7 @@ template<>
 struct peripheral_t<STM32H7A3x, OCTOSPI2>
 {
     static constexpr periph_t P = OCTOSPI2;
-    using T = stm32h7a3x_octospi2_t;
+    using T = stm32h723_octospi2_t;
     static T& V;
 };
 
@@ -254,7 +286,7 @@ template<>
 struct peripheral_t<STM32H7B0x, OCTOSPI1_CONTROL_REGISTER>
 {
     static constexpr periph_t P = OCTOSPI1_CONTROL_REGISTER;
-    using T = stm32h7a3x_octospi2_t;
+    using T = stm32h723_octospi2_t;
     static T& V;
 };
 
@@ -262,7 +294,7 @@ template<>
 struct peripheral_t<STM32H7B0x, OCTOSPI2>
 {
     static constexpr periph_t P = OCTOSPI2;
-    using T = stm32h7a3x_octospi2_t;
+    using T = stm32h723_octospi2_t;
     static T& V;
 };
 
@@ -270,7 +302,7 @@ template<>
 struct peripheral_t<STM32H7B3x, OCTOSPI1_CONTROL_REGISTER>
 {
     static constexpr periph_t P = OCTOSPI1_CONTROL_REGISTER;
-    using T = stm32h7a3x_octospi2_t;
+    using T = stm32h723_octospi2_t;
     static T& V;
 };
 
@@ -278,9 +310,10 @@ template<>
 struct peripheral_t<STM32H7B3x, OCTOSPI2>
 {
     static constexpr periph_t P = OCTOSPI2;
-    using T = stm32h7a3x_octospi2_t;
+    using T = stm32h723_octospi2_t;
     static T& V;
 };
 
+using octospi1_t = peripheral_t<svd, OCTOSPI1>;
 using octospi1_control_register_t = peripheral_t<svd, OCTOSPI1_CONTROL_REGISTER>;
 using octospi2_t = peripheral_t<svd, OCTOSPI2>;

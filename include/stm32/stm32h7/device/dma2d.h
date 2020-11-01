@@ -8,7 +8,7 @@
 
 // DMA2D: DMA2D
 
-struct stm32h742x_dma2d_t
+struct stm32h723_dma2d_t
 {
     volatile uint32_t CR; // DMA2D control register
     volatile uint32_t ISR; // DMA2D Interrupt Status Register
@@ -400,10 +400,26 @@ struct stm32h7a3x_dma2d_t
 };
 
 template<>
+struct peripheral_t<STM32H723, DMA2D>
+{
+    static constexpr periph_t P = DMA2D;
+    using T = stm32h723_dma2d_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, DMA2D>
+{
+    static constexpr periph_t P = DMA2D;
+    using T = stm32h723_dma2d_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H742x, DMA2D>
 {
     static constexpr periph_t P = DMA2D;
-    using T = stm32h742x_dma2d_t;
+    using T = stm32h723_dma2d_t;
     static T& V;
 };
 
@@ -411,7 +427,7 @@ template<>
 struct peripheral_t<STM32H743, DMA2D>
 {
     static constexpr periph_t P = DMA2D;
-    using T = stm32h742x_dma2d_t;
+    using T = stm32h723_dma2d_t;
     static T& V;
 };
 
@@ -419,7 +435,7 @@ template<>
 struct peripheral_t<STM32H745_CM4, DMA2D>
 {
     static constexpr periph_t P = DMA2D;
-    using T = stm32h742x_dma2d_t;
+    using T = stm32h723_dma2d_t;
     static T& V;
 };
 
@@ -427,7 +443,7 @@ template<>
 struct peripheral_t<STM32H745_CM7, DMA2D>
 {
     static constexpr periph_t P = DMA2D;
-    using T = stm32h742x_dma2d_t;
+    using T = stm32h723_dma2d_t;
     static T& V;
 };
 
@@ -435,7 +451,7 @@ template<>
 struct peripheral_t<STM32H747_CM4, DMA2D>
 {
     static constexpr periph_t P = DMA2D;
-    using T = stm32h742x_dma2d_t;
+    using T = stm32h723_dma2d_t;
     static T& V;
 };
 
@@ -443,7 +459,7 @@ template<>
 struct peripheral_t<STM32H747_CM7, DMA2D>
 {
     static constexpr periph_t P = DMA2D;
-    using T = stm32h742x_dma2d_t;
+    using T = stm32h723_dma2d_t;
     static T& V;
 };
 
@@ -451,7 +467,7 @@ template<>
 struct peripheral_t<STM32H753, DMA2D>
 {
     static constexpr periph_t P = DMA2D;
-    using T = stm32h742x_dma2d_t;
+    using T = stm32h723_dma2d_t;
     static T& V;
 };
 
@@ -459,7 +475,7 @@ template<>
 struct peripheral_t<STM32H755_CM4, DMA2D>
 {
     static constexpr periph_t P = DMA2D;
-    using T = stm32h742x_dma2d_t;
+    using T = stm32h723_dma2d_t;
     static T& V;
 };
 
@@ -467,7 +483,7 @@ template<>
 struct peripheral_t<STM32H755_CM7, DMA2D>
 {
     static constexpr periph_t P = DMA2D;
-    using T = stm32h742x_dma2d_t;
+    using T = stm32h723_dma2d_t;
     static T& V;
 };
 
@@ -475,7 +491,7 @@ template<>
 struct peripheral_t<STM32H757_CM4, DMA2D>
 {
     static constexpr periph_t P = DMA2D;
-    using T = stm32h742x_dma2d_t;
+    using T = stm32h723_dma2d_t;
     static T& V;
 };
 
@@ -483,7 +499,7 @@ template<>
 struct peripheral_t<STM32H757_CM7, DMA2D>
 {
     static constexpr periph_t P = DMA2D;
-    using T = stm32h742x_dma2d_t;
+    using T = stm32h723_dma2d_t;
     static T& V;
 };
 

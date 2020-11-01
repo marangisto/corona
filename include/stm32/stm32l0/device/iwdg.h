@@ -8,7 +8,7 @@
 
 // IWDG: Independent watchdog
 
-struct stm32l0x0_iwdg_t
+struct stm32l052_iwdg_t
 {
     volatile uint32_t KR; // Key register
     volatile uint32_t PR; // Prescaler register
@@ -35,10 +35,42 @@ struct stm32l0x0_iwdg_t
 };
 
 template<>
+struct peripheral_t<STM32L052, IWDG>
+{
+    static constexpr periph_t P = IWDG;
+    using T = stm32l052_iwdg_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, IWDG>
+{
+    static constexpr periph_t P = IWDG;
+    using T = stm32l052_iwdg_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, IWDG>
+{
+    static constexpr periph_t P = IWDG;
+    using T = stm32l052_iwdg_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, IWDG>
+{
+    static constexpr periph_t P = IWDG;
+    using T = stm32l052_iwdg_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L0x0, IWDG>
 {
     static constexpr periph_t P = IWDG;
-    using T = stm32l0x0_iwdg_t;
+    using T = stm32l052_iwdg_t;
     static T& V;
 };
 
@@ -46,7 +78,7 @@ template<>
 struct peripheral_t<STM32L0x1, IWDG>
 {
     static constexpr periph_t P = IWDG;
-    using T = stm32l0x0_iwdg_t;
+    using T = stm32l052_iwdg_t;
     static T& V;
 };
 
@@ -54,7 +86,7 @@ template<>
 struct peripheral_t<STM32L0x2, IWDG>
 {
     static constexpr periph_t P = IWDG;
-    using T = stm32l0x0_iwdg_t;
+    using T = stm32l052_iwdg_t;
     static T& V;
 };
 
@@ -62,7 +94,7 @@ template<>
 struct peripheral_t<STM32L0x3, IWDG>
 {
     static constexpr periph_t P = IWDG;
-    using T = stm32l0x0_iwdg_t;
+    using T = stm32l052_iwdg_t;
     static T& V;
 };
 

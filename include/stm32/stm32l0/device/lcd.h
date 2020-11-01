@@ -8,7 +8,7 @@
 
 // LCD: Liquid crystal display controller
 
-struct stm32l0x3_lcd_t
+struct stm32l053_lcd_t
 {
     volatile uint32_t CR; // control register
     volatile uint32_t FCR; // frame control register
@@ -498,10 +498,26 @@ struct stm32l0x3_lcd_t
 };
 
 template<>
+struct peripheral_t<STM32L053, LCD>
+{
+    static constexpr periph_t P = LCD;
+    using T = stm32l053_lcd_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, LCD>
+{
+    static constexpr periph_t P = LCD;
+    using T = stm32l053_lcd_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L0x3, LCD>
 {
     static constexpr periph_t P = LCD;
-    using T = stm32l0x3_lcd_t;
+    using T = stm32l053_lcd_t;
     static T& V;
 };
 

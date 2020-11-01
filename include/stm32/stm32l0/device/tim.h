@@ -8,7 +8,7 @@
 
 // TIM2: General-purpose-timers
 
-struct stm32l0x0_tim2_t
+struct stm32l052_tim2_t
 {
     volatile uint32_t CR1; // control register 1
     volatile uint32_t CR2; // control register 2
@@ -179,7 +179,7 @@ struct stm32l0x0_tim2_t
 
 // TIM6: Basic-timers
 
-struct stm32l0x1_tim6_t
+struct stm32l052_tim6_t
 {
     volatile uint32_t CR1; // control register 1
     volatile uint32_t CR2; // control register 2
@@ -226,7 +226,7 @@ struct stm32l0x1_tim6_t
 
 // TIM21: General-purpose-timers
 
-struct stm32l0x0_tim21_t
+struct stm32l052_tim21_t
 {
     volatile uint32_t CR1; // control register 1
     volatile uint32_t CR2; // control register 2
@@ -336,7 +336,7 @@ struct stm32l0x0_tim21_t
 
 // TIM22: General-purpose-timers
 
-struct stm32l0x0_tim22_t
+struct stm32l052_tim22_t
 {
     volatile uint32_t CR1; // control register 1
     volatile uint32_t CR2; // control register 2
@@ -444,10 +444,74 @@ struct stm32l0x0_tim22_t
 };
 
 template<>
+struct peripheral_t<STM32L052, TIM2>
+{
+    static constexpr periph_t P = TIM2;
+    using T = stm32l052_tim2_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L052, TIM3>
+{
+    static constexpr periph_t P = TIM3;
+    using T = stm32l052_tim2_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, TIM2>
+{
+    static constexpr periph_t P = TIM2;
+    using T = stm32l052_tim2_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, TIM3>
+{
+    static constexpr periph_t P = TIM3;
+    using T = stm32l052_tim2_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, TIM2>
+{
+    static constexpr periph_t P = TIM2;
+    using T = stm32l052_tim2_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, TIM3>
+{
+    static constexpr periph_t P = TIM3;
+    using T = stm32l052_tim2_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, TIM2>
+{
+    static constexpr periph_t P = TIM2;
+    using T = stm32l052_tim2_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, TIM3>
+{
+    static constexpr periph_t P = TIM3;
+    using T = stm32l052_tim2_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L0x0, TIM2>
 {
     static constexpr periph_t P = TIM2;
-    using T = stm32l0x0_tim2_t;
+    using T = stm32l052_tim2_t;
     static T& V;
 };
 
@@ -455,7 +519,7 @@ template<>
 struct peripheral_t<STM32L0x1, TIM2>
 {
     static constexpr periph_t P = TIM2;
-    using T = stm32l0x0_tim2_t;
+    using T = stm32l052_tim2_t;
     static T& V;
 };
 
@@ -463,7 +527,7 @@ template<>
 struct peripheral_t<STM32L0x1, TIM3>
 {
     static constexpr periph_t P = TIM3;
-    using T = stm32l0x0_tim2_t;
+    using T = stm32l052_tim2_t;
     static T& V;
 };
 
@@ -471,7 +535,7 @@ template<>
 struct peripheral_t<STM32L0x2, TIM2>
 {
     static constexpr periph_t P = TIM2;
-    using T = stm32l0x0_tim2_t;
+    using T = stm32l052_tim2_t;
     static T& V;
 };
 
@@ -479,7 +543,7 @@ template<>
 struct peripheral_t<STM32L0x2, TIM3>
 {
     static constexpr periph_t P = TIM3;
-    using T = stm32l0x0_tim2_t;
+    using T = stm32l052_tim2_t;
     static T& V;
 };
 
@@ -487,7 +551,7 @@ template<>
 struct peripheral_t<STM32L0x3, TIM2>
 {
     static constexpr periph_t P = TIM2;
-    using T = stm32l0x0_tim2_t;
+    using T = stm32l052_tim2_t;
     static T& V;
 };
 
@@ -495,7 +559,71 @@ template<>
 struct peripheral_t<STM32L0x3, TIM3>
 {
     static constexpr periph_t P = TIM3;
-    using T = stm32l0x0_tim2_t;
+    using T = stm32l052_tim2_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L052, TIM6>
+{
+    static constexpr periph_t P = TIM6;
+    using T = stm32l052_tim6_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L052, TIM7>
+{
+    static constexpr periph_t P = TIM7;
+    using T = stm32l052_tim6_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, TIM6>
+{
+    static constexpr periph_t P = TIM6;
+    using T = stm32l052_tim6_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, TIM7>
+{
+    static constexpr periph_t P = TIM7;
+    using T = stm32l052_tim6_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, TIM6>
+{
+    static constexpr periph_t P = TIM6;
+    using T = stm32l052_tim6_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, TIM7>
+{
+    static constexpr periph_t P = TIM7;
+    using T = stm32l052_tim6_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, TIM6>
+{
+    static constexpr periph_t P = TIM6;
+    using T = stm32l052_tim6_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, TIM7>
+{
+    static constexpr periph_t P = TIM7;
+    using T = stm32l052_tim6_t;
     static T& V;
 };
 
@@ -503,7 +631,7 @@ template<>
 struct peripheral_t<STM32L0x1, TIM6>
 {
     static constexpr periph_t P = TIM6;
-    using T = stm32l0x1_tim6_t;
+    using T = stm32l052_tim6_t;
     static T& V;
 };
 
@@ -511,7 +639,7 @@ template<>
 struct peripheral_t<STM32L0x1, TIM7>
 {
     static constexpr periph_t P = TIM7;
-    using T = stm32l0x1_tim6_t;
+    using T = stm32l052_tim6_t;
     static T& V;
 };
 
@@ -519,7 +647,7 @@ template<>
 struct peripheral_t<STM32L0x2, TIM6>
 {
     static constexpr periph_t P = TIM6;
-    using T = stm32l0x1_tim6_t;
+    using T = stm32l052_tim6_t;
     static T& V;
 };
 
@@ -527,7 +655,7 @@ template<>
 struct peripheral_t<STM32L0x2, TIM7>
 {
     static constexpr periph_t P = TIM7;
-    using T = stm32l0x1_tim6_t;
+    using T = stm32l052_tim6_t;
     static T& V;
 };
 
@@ -535,7 +663,7 @@ template<>
 struct peripheral_t<STM32L0x3, TIM6>
 {
     static constexpr periph_t P = TIM6;
-    using T = stm32l0x1_tim6_t;
+    using T = stm32l052_tim6_t;
     static T& V;
 };
 
@@ -543,7 +671,39 @@ template<>
 struct peripheral_t<STM32L0x3, TIM7>
 {
     static constexpr periph_t P = TIM7;
-    using T = stm32l0x1_tim6_t;
+    using T = stm32l052_tim6_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L052, TIM21>
+{
+    static constexpr periph_t P = TIM21;
+    using T = stm32l052_tim21_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, TIM21>
+{
+    static constexpr periph_t P = TIM21;
+    using T = stm32l052_tim21_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, TIM21>
+{
+    static constexpr periph_t P = TIM21;
+    using T = stm32l052_tim21_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, TIM21>
+{
+    static constexpr periph_t P = TIM21;
+    using T = stm32l052_tim21_t;
     static T& V;
 };
 
@@ -551,7 +711,7 @@ template<>
 struct peripheral_t<STM32L0x0, TIM21>
 {
     static constexpr periph_t P = TIM21;
-    using T = stm32l0x0_tim21_t;
+    using T = stm32l052_tim21_t;
     static T& V;
 };
 
@@ -559,7 +719,7 @@ template<>
 struct peripheral_t<STM32L0x1, TIM21>
 {
     static constexpr periph_t P = TIM21;
-    using T = stm32l0x0_tim21_t;
+    using T = stm32l052_tim21_t;
     static T& V;
 };
 
@@ -567,7 +727,7 @@ template<>
 struct peripheral_t<STM32L0x2, TIM21>
 {
     static constexpr periph_t P = TIM21;
-    using T = stm32l0x0_tim21_t;
+    using T = stm32l052_tim21_t;
     static T& V;
 };
 
@@ -575,7 +735,39 @@ template<>
 struct peripheral_t<STM32L0x3, TIM21>
 {
     static constexpr periph_t P = TIM21;
-    using T = stm32l0x0_tim21_t;
+    using T = stm32l052_tim21_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L052, TIM22>
+{
+    static constexpr periph_t P = TIM22;
+    using T = stm32l052_tim22_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, TIM22>
+{
+    static constexpr periph_t P = TIM22;
+    using T = stm32l052_tim22_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, TIM22>
+{
+    static constexpr periph_t P = TIM22;
+    using T = stm32l052_tim22_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, TIM22>
+{
+    static constexpr periph_t P = TIM22;
+    using T = stm32l052_tim22_t;
     static T& V;
 };
 
@@ -583,7 +775,7 @@ template<>
 struct peripheral_t<STM32L0x0, TIM22>
 {
     static constexpr periph_t P = TIM22;
-    using T = stm32l0x0_tim22_t;
+    using T = stm32l052_tim22_t;
     static T& V;
 };
 
@@ -591,7 +783,7 @@ template<>
 struct peripheral_t<STM32L0x1, TIM22>
 {
     static constexpr periph_t P = TIM22;
-    using T = stm32l0x0_tim22_t;
+    using T = stm32l052_tim22_t;
     static T& V;
 };
 
@@ -599,7 +791,7 @@ template<>
 struct peripheral_t<STM32L0x2, TIM22>
 {
     static constexpr periph_t P = TIM22;
-    using T = stm32l0x0_tim22_t;
+    using T = stm32l052_tim22_t;
     static T& V;
 };
 
@@ -607,7 +799,7 @@ template<>
 struct peripheral_t<STM32L0x3, TIM22>
 {
     static constexpr periph_t P = TIM22;
-    using T = stm32l0x0_tim22_t;
+    using T = stm32l052_tim22_t;
     static T& V;
 };
 

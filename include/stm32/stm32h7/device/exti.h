@@ -8,7 +8,7 @@
 
 // EXTI: External interrupt/event controller
 
-struct stm32h742x_exti_t
+struct stm32h723_exti_t
 {
     volatile uint32_t RTSR1; // EXTI rising trigger selection register
     volatile uint32_t FTSR1; // EXTI falling trigger selection register
@@ -447,10 +447,26 @@ struct stm32h742x_exti_t
 };
 
 template<>
+struct peripheral_t<STM32H723, EXTI>
+{
+    static constexpr periph_t P = EXTI;
+    using T = stm32h723_exti_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, EXTI>
+{
+    static constexpr periph_t P = EXTI;
+    using T = stm32h723_exti_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H742x, EXTI>
 {
     static constexpr periph_t P = EXTI;
-    using T = stm32h742x_exti_t;
+    using T = stm32h723_exti_t;
     static T& V;
 };
 
@@ -458,7 +474,7 @@ template<>
 struct peripheral_t<STM32H743, EXTI>
 {
     static constexpr periph_t P = EXTI;
-    using T = stm32h742x_exti_t;
+    using T = stm32h723_exti_t;
     static T& V;
 };
 
@@ -466,7 +482,7 @@ template<>
 struct peripheral_t<STM32H745_CM4, EXTI>
 {
     static constexpr periph_t P = EXTI;
-    using T = stm32h742x_exti_t;
+    using T = stm32h723_exti_t;
     static T& V;
 };
 
@@ -474,7 +490,7 @@ template<>
 struct peripheral_t<STM32H745_CM7, EXTI>
 {
     static constexpr periph_t P = EXTI;
-    using T = stm32h742x_exti_t;
+    using T = stm32h723_exti_t;
     static T& V;
 };
 
@@ -482,7 +498,7 @@ template<>
 struct peripheral_t<STM32H747_CM4, EXTI>
 {
     static constexpr periph_t P = EXTI;
-    using T = stm32h742x_exti_t;
+    using T = stm32h723_exti_t;
     static T& V;
 };
 
@@ -490,7 +506,7 @@ template<>
 struct peripheral_t<STM32H747_CM7, EXTI>
 {
     static constexpr periph_t P = EXTI;
-    using T = stm32h742x_exti_t;
+    using T = stm32h723_exti_t;
     static T& V;
 };
 
@@ -498,7 +514,7 @@ template<>
 struct peripheral_t<STM32H750x, EXTI>
 {
     static constexpr periph_t P = EXTI;
-    using T = stm32h742x_exti_t;
+    using T = stm32h723_exti_t;
     static T& V;
 };
 
@@ -506,7 +522,7 @@ template<>
 struct peripheral_t<STM32H753, EXTI>
 {
     static constexpr periph_t P = EXTI;
-    using T = stm32h742x_exti_t;
+    using T = stm32h723_exti_t;
     static T& V;
 };
 
@@ -514,7 +530,7 @@ template<>
 struct peripheral_t<STM32H755_CM4, EXTI>
 {
     static constexpr periph_t P = EXTI;
-    using T = stm32h742x_exti_t;
+    using T = stm32h723_exti_t;
     static T& V;
 };
 
@@ -522,7 +538,7 @@ template<>
 struct peripheral_t<STM32H755_CM7, EXTI>
 {
     static constexpr periph_t P = EXTI;
-    using T = stm32h742x_exti_t;
+    using T = stm32h723_exti_t;
     static T& V;
 };
 
@@ -530,7 +546,7 @@ template<>
 struct peripheral_t<STM32H757_CM4, EXTI>
 {
     static constexpr periph_t P = EXTI;
-    using T = stm32h742x_exti_t;
+    using T = stm32h723_exti_t;
     static T& V;
 };
 
@@ -538,7 +554,7 @@ template<>
 struct peripheral_t<STM32H757_CM7, EXTI>
 {
     static constexpr periph_t P = EXTI;
-    using T = stm32h742x_exti_t;
+    using T = stm32h723_exti_t;
     static T& V;
 };
 
@@ -546,7 +562,7 @@ template<>
 struct peripheral_t<STM32H7A3x, EXTI>
 {
     static constexpr periph_t P = EXTI;
-    using T = stm32h742x_exti_t;
+    using T = stm32h723_exti_t;
     static T& V;
 };
 
@@ -554,7 +570,7 @@ template<>
 struct peripheral_t<STM32H7B0x, EXTI>
 {
     static constexpr periph_t P = EXTI;
-    using T = stm32h742x_exti_t;
+    using T = stm32h723_exti_t;
     static T& V;
 };
 
@@ -562,7 +578,7 @@ template<>
 struct peripheral_t<STM32H7B3x, EXTI>
 {
     static constexpr periph_t P = EXTI;
-    using T = stm32h742x_exti_t;
+    using T = stm32h723_exti_t;
     static T& V;
 };
 

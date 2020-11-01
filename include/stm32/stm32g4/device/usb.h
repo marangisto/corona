@@ -224,6 +224,22 @@ struct peripheral_t<STM32G484xx, USB>
 };
 
 template<>
+struct peripheral_t<STM32G491xx, USB>
+{
+    static constexpr periph_t P = USB;
+    using T = stm32g431xx_usb_fs_device_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, USB>
+{
+    static constexpr periph_t P = USB;
+    using T = stm32g431xx_usb_fs_device_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32GBK1CBT6, USB>
 {
     static constexpr periph_t P = USB;

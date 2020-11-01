@@ -142,6 +142,22 @@ struct peripheral_t<STM32G484xx, LPTIM1>
 };
 
 template<>
+struct peripheral_t<STM32G491xx, LPTIM1>
+{
+    static constexpr periph_t P = LPTIM1;
+    using T = stm32g431xx_lptimer1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G4A1xx, LPTIM1>
+{
+    static constexpr periph_t P = LPTIM1;
+    using T = stm32g431xx_lptimer1_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32GBK1CBT6, LPTIM1>
 {
     static constexpr periph_t P = LPTIM1;

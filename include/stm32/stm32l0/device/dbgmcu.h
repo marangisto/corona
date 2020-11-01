@@ -6,9 +6,9 @@
 //
 ///
 
-// DBG: Debug support
+// DBGMCU: Debug support
 
-struct stm32l0x0_dbg_t
+struct stm32l052_dbgmcu_t
 {
     volatile uint32_t IDCODE; // MCU Device ID Code Register
     volatile uint32_t CR; // Debug MCU Configuration Register
@@ -40,10 +40,42 @@ struct stm32l0x0_dbg_t
 };
 
 template<>
+struct peripheral_t<STM32L052, DBGMCU>
+{
+    static constexpr periph_t P = DBGMCU;
+    using T = stm32l052_dbgmcu_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, DBGMCU>
+{
+    static constexpr periph_t P = DBGMCU;
+    using T = stm32l052_dbgmcu_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, DBGMCU>
+{
+    static constexpr periph_t P = DBGMCU;
+    using T = stm32l052_dbgmcu_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, DBGMCU>
+{
+    static constexpr periph_t P = DBGMCU;
+    using T = stm32l052_dbgmcu_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L0x0, DBG>
 {
     static constexpr periph_t P = DBG;
-    using T = stm32l0x0_dbg_t;
+    using T = stm32l052_dbgmcu_t;
     static T& V;
 };
 
@@ -51,7 +83,7 @@ template<>
 struct peripheral_t<STM32L0x1, DBG>
 {
     static constexpr periph_t P = DBG;
-    using T = stm32l0x0_dbg_t;
+    using T = stm32l052_dbgmcu_t;
     static T& V;
 };
 
@@ -59,7 +91,7 @@ template<>
 struct peripheral_t<STM32L0x2, DBGMCU>
 {
     static constexpr periph_t P = DBGMCU;
-    using T = stm32l0x0_dbg_t;
+    using T = stm32l052_dbgmcu_t;
     static T& V;
 };
 
@@ -67,7 +99,7 @@ template<>
 struct peripheral_t<STM32L0x3, DBGMCU>
 {
     static constexpr periph_t P = DBGMCU;
-    using T = stm32l0x0_dbg_t;
+    using T = stm32l052_dbgmcu_t;
     static T& V;
 };
 

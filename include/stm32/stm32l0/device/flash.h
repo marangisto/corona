@@ -8,7 +8,7 @@
 
 // FLASH: Flash
 
-struct stm32l0x0_flash_t
+struct stm32l052_flash_t
 {
     volatile uint32_t ACR; // Access control register
     volatile uint32_t PECR; // Program/erase control register
@@ -89,10 +89,42 @@ struct stm32l0x0_flash_t
 };
 
 template<>
+struct peripheral_t<STM32L052, FLASH>
+{
+    static constexpr periph_t P = FLASH;
+    using T = stm32l052_flash_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L053, FLASH>
+{
+    static constexpr periph_t P = FLASH;
+    using T = stm32l052_flash_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L062, FLASH>
+{
+    static constexpr periph_t P = FLASH;
+    using T = stm32l052_flash_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L063, FLASH>
+{
+    static constexpr periph_t P = FLASH;
+    using T = stm32l052_flash_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L0x0, FLASH>
 {
     static constexpr periph_t P = FLASH;
-    using T = stm32l0x0_flash_t;
+    using T = stm32l052_flash_t;
     static T& V;
 };
 
@@ -100,7 +132,7 @@ template<>
 struct peripheral_t<STM32L0x1, FLASH>
 {
     static constexpr periph_t P = FLASH;
-    using T = stm32l0x0_flash_t;
+    using T = stm32l052_flash_t;
     static T& V;
 };
 
@@ -108,7 +140,7 @@ template<>
 struct peripheral_t<STM32L0x2, FLASH>
 {
     static constexpr periph_t P = FLASH;
-    using T = stm32l0x0_flash_t;
+    using T = stm32l052_flash_t;
     static T& V;
 };
 
@@ -116,7 +148,7 @@ template<>
 struct peripheral_t<STM32L0x3, FLASH>
 {
     static constexpr periph_t P = FLASH;
-    using T = stm32l0x0_flash_t;
+    using T = stm32l052_flash_t;
     static T& V;
 };
 

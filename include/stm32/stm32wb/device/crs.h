@@ -8,7 +8,7 @@
 
 // CRS: Clock recovery system
 
-struct stm32wb30_cm4_crs_t
+struct stm32wb35_cm4_crs_t
 {
     volatile uint32_t CR; // CRS control register
     volatile uint32_t CFGR; // CRS configuration register
@@ -51,18 +51,10 @@ struct stm32wb30_cm4_crs_t
 };
 
 template<>
-struct peripheral_t<STM32WB30_CM4, CRS>
-{
-    static constexpr periph_t P = CRS;
-    using T = stm32wb30_cm4_crs_t;
-    static T& V;
-};
-
-template<>
 struct peripheral_t<STM32WB35_CM4, CRS>
 {
     static constexpr periph_t P = CRS;
-    using T = stm32wb30_cm4_crs_t;
+    using T = stm32wb35_cm4_crs_t;
     static T& V;
 };
 
@@ -70,7 +62,7 @@ template<>
 struct peripheral_t<STM32WB55_CM4, CRS>
 {
     static constexpr periph_t P = CRS;
-    using T = stm32wb30_cm4_crs_t;
+    using T = stm32wb35_cm4_crs_t;
     static T& V;
 };
 

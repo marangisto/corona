@@ -45,6 +45,11 @@ public:
         m_pressed = false;
     }
 
+    static inline bool pressed()            // use to do raw read of button state
+    {
+        return input::read() != m_stable_state;
+    }
+
 private:
     typedef input_t<PIN> input;
 

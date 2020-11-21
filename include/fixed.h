@@ -144,5 +144,15 @@ static inline int32_t ftoq31(float x)
 typedef q_t<int16_t> q15_t;
 typedef q_t<int32_t> q31_t;
 
+// special function approximations
+
+static inline float exp6(float x)
+{
+    x = 1. + x / 64;
+    x *= x; x *= x; x *= x;
+    x *= x; x *= x; x *= x;
+    return x;
+}
+
 } // namespace fixed
 

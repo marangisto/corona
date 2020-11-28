@@ -15,8 +15,10 @@ static inline float exp6(float x)
     return x;
 }
 
-static inline float remap(float a, float b, float x)
+static inline float remap(const float a, const float b, float x)
 {
-    return (x - a) / (b - a);
+    const float k = 1. / (b - a);
+
+    return k * (x - a);
 }
 

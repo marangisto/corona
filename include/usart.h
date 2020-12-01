@@ -65,7 +65,7 @@ public:
     }
 
     __attribute__((always_inline))
-    static inline bool read(char &c)
+    static inline bool read(char& c)
     {
         return fifo::get(c);
     }

@@ -5,7 +5,7 @@
 #include <device/usart.h>
 #include <driver/usart.h>
 
-template<int INST, pin_t TX, pin_t RX> struct usart_t
+template<int INST, pin_t TX, pin_t RX, pin_t CK = NO_PIN> struct usart_t
 {
 public:
     template
@@ -19,6 +19,7 @@ public:
     {
         typename usart::T& USART = usart::V;
 
+        static_assert(CK == NO_PIN, "clock pin not allowed in async mode");
         alternate_t<TX, traits::TX>::template setup<push_pull, speed>();
         alternate_t<RX, traits::RX>::template setup<pull_up>();
 
@@ -33,8 +34,39 @@ public:
                   | _::CR1_RXNEIE           // interrupt on rx not empty
                   | _::CR1_UE               // enable usart itself
                   ;
-        USART.CR2 |= _::CR2_RESET_VALUE;    // reset control register 2
-        USART.CR3 |= _::CR3_RESET_VALUE;    // reset control register 3
+        USART.CR2 = _::CR2_RESET_VALUE;     // reset control register 2
+        USART.CR3 = _::CR3_RESET_VALUE;     // reset control register 3
+    }
+
+    template
+        < uint32_t              baud = 1000000
+        , output_speed_t        speed = high_speed
+        >
+    static inline void setup_sync_master()
+    {
+        typename usart::T& USART = usart::V;
+
+        static_assert(CK != NO_PIN, "clock pin required in sync mode");
+        alternate_t<CK, traits::CK>::template setup<push_pull, speed>();
+        alternate_t<TX, traits::TX>::template setup<push_pull, speed>();
+        alternate_t<RX, traits::RX>::template setup<pull_up>();
+
+        usart_traits<INST>::template enable<rcc_t>();   // enable clock
+
+        const uint32_t clock = sys_clock::freq(usart_traits<INST>::CLOCK);
+
+        USART.BRR = clock / baud;           // set the baud-rate
+        USART.CR3 = _::CR3_RESET_VALUE;     // reset control register 3
+        USART.CR2 = _::CR2_RESET_VALUE      // reset control register 2
+                  | _::CR2_CLKEN            // enable clock output
+                  | _::CR2_LBCL             // issue clock on last bit
+                  | _::CR2_MSBFIRST         // most significant bit first
+                  ;
+        USART.CR1 = _::CR1_RESET_VALUE      // reset control register 1
+                  | _::CR1_TE               // enable transmitter
+                  | _::CR1_RE               // enable receiver
+                  | _::CR1_UE               // enable usart itself
+                  ;
     }
 
     __attribute__((always_inline))
@@ -80,6 +112,12 @@ public:
     static inline bool rx_not_empty()
     {
         return usart_driver<usart>::rxne();
+    }
+
+    __attribute__((always_inline))
+    static inline bool tx_complete()
+    {
+        return usart_driver<usart>::tc();
     }
 
 private:

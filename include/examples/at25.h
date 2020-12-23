@@ -4,7 +4,7 @@
 #include <textio.h>
 #include <usart.h>
 #include <hexdump.h>
-#include <at25.h>
+#include <hardware/at25.h>
 
 using serial = usart_t<SERIAL_USART, SERIAL_TX, SERIAL_RX>;
 using led = output_t<LED>;

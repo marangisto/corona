@@ -1,4 +1,5 @@
 #include "../board.h"
+#include <algorithm>
 #include <cstring>
 #include <stdlib.h>
 #include <ctype.h>
@@ -26,6 +27,31 @@ extern "C" void yyerror(const char *s)
 {
     printf<serial>("%s\n", s);
 }
+
+struct keyword_t
+{
+    const char *s;
+    int         t;
+
+    static bool comp(const keyword_t& x, const char *s)
+    {
+        return strcmp(x.s, s) < 0;
+    }
+};
+
+static const keyword_t kws[] = // N.B. keep in ascending order!
+    { { "a",        ADDR }
+    , { "addr",     ADDR }
+    , { "d",        DUMP }
+    , { "dump",     DUMP }
+    , { "r",        READ }
+    , { "read",     READ }
+    , { "w",        WRITE }
+    , { "write",    WRITE }
+    };
+
+static const keyword_t *kws_begin = kws;
+static const keyword_t *kws_end = kws_begin + sizeof(kws) / sizeof(*kws);
 
 extern "C" int yylex(void)
 {
@@ -86,11 +112,13 @@ extern "C" int yylex(void)
 
         *p = 0;
 
-        if (!strcmp(buf, "r") || !strcmp(buf, "read")) return READ;
-        else if (!strcmp(buf, "w") || !strcmp(buf, "write")) return WRITE;
-        else if (!strcmp(buf, "a") || !strcmp(buf, "addr")) return ADDR;
-        else if (!strcmp(buf, "d") || !strcmp(buf, "dump")) return DUMP;
-        else return IDENT;
+        const keyword_t *it; // = std::lower_bound(kws_begin, kws_end, buf, keyword_t::comp);
+
+        for (it = kws_begin; it != kws_end; ++it)
+            if (!strcmp(it->s, buf))
+                break;
+
+        return (it != kws_end && !strcmp((*it).s, buf)) ?  it->t : IDENT;
     }
     else
         return c;

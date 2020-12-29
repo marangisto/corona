@@ -18,6 +18,16 @@ public:
         return true;
     }
 
+    static bool peek(T& x)
+    {
+        critical_section_t cs;
+
+        if (m_ridx == m_widx)
+            return false;
+        x = m_buf[m_ridx & mask];
+        return true;
+    }
+
     inline static void put(T x)         // use in interrupt only
     {
         static_assert((BUFSIZE != 0) && !(BUFSIZE & (BUFSIZE - 1)), "buffer size must be a power of 2");

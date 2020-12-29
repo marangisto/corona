@@ -103,6 +103,12 @@ public:
     }
 
     __attribute__((always_inline))
+    static inline bool peek(char& c)
+    {
+        return fifo::peek(c);
+    }
+
+    __attribute__((always_inline))
     static inline bool tx_empty()
     {
         return usart_driver<usart>::txe();

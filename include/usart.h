@@ -126,6 +126,36 @@ public:
         return usart_driver<usart>::tc();
     }
 
+    __attribute__((always_inline))
+    static inline void enable_tx_empty_interrupt()
+    {
+        usart::V.CR1 |= _::CR1_TXEIE;
+    }
+
+    __attribute__((always_inline))
+    static inline void disable_tx_empty_interrupt()
+    {
+        usart::V.CR1 &= ~_::CR1_TXEIE;
+    }
+
+    __attribute__((always_inline))
+    static inline bool tx_empty_interrupt_enabled()
+    {
+        return usart::V.CR1 & _::CR1_TXEIE;
+    }
+
+    __attribute__((always_inline))
+    static inline void raw_write(uint8_t x)
+    {
+        usart_driver<usart>::write(x);
+    }
+
+    __attribute__((always_inline))
+    static inline char raw_read()
+    {
+        return usart_driver<usart>::read();
+    }
+
 private:
     using traits = usart_traits<INST>;
     using usart = typename traits::usart;

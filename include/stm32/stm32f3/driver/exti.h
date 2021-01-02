@@ -80,6 +80,16 @@ struct exti_interrupt
         exti_t::V.PR1 = MASK;
     }
 
+    static inline uint32_t get_bits()
+    {
+        return exti_t::V.PR1;
+    }
+
+    static inline void clear_bits(uint32_t x)
+    {
+        exti_t::V.PR1 = x;
+    }
+
     static constexpr uint32_t MASK = 1 << POS;
 };
 

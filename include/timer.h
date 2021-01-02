@@ -211,6 +211,11 @@ public:
         tim::V.DIER |= _::DIER_UIE;
     }
 
+    static inline void disable_update_interrupt()
+    {
+        tim::V.DIER &= ~_::DIER_UIE;
+    }
+
     template<master_mode_t MM>
     static inline void master_mode()
     {
@@ -250,6 +255,11 @@ public:
     static inline void set_auto_reload_value(count_t arr)
     {
         tim::V.ARR = arr;
+    }
+
+    static inline void set_prescale(uint16_t psc)
+    {
+        tim::V.PSC = psc;
     }
 
     static inline uint32_t clock()

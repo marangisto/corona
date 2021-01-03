@@ -11,16 +11,15 @@ template<> void handler<interrupt::TIM3>()
 {
     master::clear_update_interrupt_flag();
     slave::set_count(0);
-    out::set();
     slave::clear_update_interrupt_flag();
     slave::enable_update_interrupt();
+    out::set();
 }
 
 template<> void handler<interrupt::TIM4>()
 {
-    out::clear();
-    slave::clear_update_interrupt_flag();
     slave::disable_update_interrupt();
+    out::clear();
 }
 
 int main()
@@ -34,6 +33,7 @@ int main()
     const auto t1 = 10;     // period in micro-seconds
     const auto pre1 = 0;    // prescaler
     const auto arr1 = t1 * (master::clock() / 1000000) / (pre1 + 1) - 1;
+
     master::setup(pre1, arr1);
     master::enable_update_interrupt();
     interrupt::set<interrupt::TIM3>();
@@ -41,6 +41,7 @@ int main()
     const auto t2 = 1;      // period in micro-seconds
     const auto pre2 = 0;    // prescaler
     const auto arr2 = t2 * (master::clock() / 1000000) / (pre2 + 1) - 1;
+
     slave::setup(pre2, arr2);
     interrupt::set<interrupt::TIM4>();
 

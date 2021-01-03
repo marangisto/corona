@@ -14,6 +14,11 @@ template<> struct icc_prescale<2> { static constexpr uint8_t P = 0x1; };
 template<> struct icc_prescale<4> { static constexpr uint8_t P = 0x2; };
 template<> struct icc_prescale<8> { static constexpr uint8_t P = 0x3; };
 
+enum pwm_mode_t
+    { pwm_mode_1 = 0x0
+    , pwm_mode_2 = 0x1
+    };
+
 enum icc_input_t
     { regular_input = 0x1
     , alternate_input = 0x2
@@ -31,9 +36,10 @@ template<typename TIMER> struct timch_traits<TIMER, CH1>
     static constexpr uint32_t CCIE = _::DIER_CC1IE;
     static constexpr uint32_t CCIF = _::SR_CC1IF;
 
+    template <pwm_mode_t MODE = pwm_mode_1>
     static void setup_pwm(typename TIMER::count_t initial_duty)
     {
-        tim::V.CCMR1 |= _::CCMR1_OC1M::W(0x6)
+        tim::V.CCMR1 |= _::CCMR1_OC1M::W(0x6 | MODE)
                      |  _::CCMR1_OC1PE
                      ;
         tim::V.CCR1  = initial_duty;
@@ -69,9 +75,10 @@ template<typename TIMER> struct timch_traits<TIMER, CH2>
     static constexpr uint32_t CCIE = _::DIER_CC2IE;
     static constexpr uint32_t CCIF = _::SR_CC2IF;
 
+    template <pwm_mode_t MODE = pwm_mode_1>
     static void setup_pwm(typename TIMER::count_t initial_duty)
     {
-        tim::V.CCMR1 |= _::CCMR1_OC2M::W(0x6)
+        tim::V.CCMR1 |= _::CCMR1_OC2M::W(0x6 | MODE)
                      |  _::CCMR1_OC2PE
                      ;
         tim::V.CCR2  = initial_duty;
@@ -107,9 +114,10 @@ template<typename TIMER> struct timch_traits<TIMER, CH3>
     static constexpr uint32_t CCIE = _::DIER_CC3IE;
     static constexpr uint32_t CCIF = _::SR_CC3IF;
 
+    template <pwm_mode_t MODE = pwm_mode_1>
     static void setup_pwm(typename TIMER::count_t initial_duty)
     {
-        tim::V.CCMR2 |= _::CCMR2_OC3M::W(0x6)
+        tim::V.CCMR2 |= _::CCMR2_OC3M::W(0x6 | MODE)
                      |  _::CCMR2_OC3PE
                      ;
         tim::V.CCR3  = initial_duty;
@@ -145,9 +153,10 @@ template<typename TIMER> struct timch_traits<TIMER, CH4>
     static constexpr uint32_t CCIE = _::DIER_CC4IE;
     static constexpr uint32_t CCIF = _::SR_CC4IF;
 
+    template <pwm_mode_t MODE = pwm_mode_1>
     static void setup_pwm(typename TIMER::count_t initial_duty)
     {
-        tim::V.CCMR2 |= _::CCMR2_OC4M::W(0x6)
+        tim::V.CCMR2 |= _::CCMR2_OC4M::W(0x6 | MODE)
                      |  _::CCMR2_OC4PE
                      ;
         tim::V.CCR4  = initial_duty;
@@ -193,7 +202,7 @@ public:
         TIM.PSC = psc;
         TIM.ARR = arr;
         TIM.CR1 |= _::CR1_ARPE;
-        TIM.CR1 |= _::CR1_CEN;  // FIXME: should this be on by default?
+        TIM.CR1 |= _::CR1_CEN;
     }
 
     static inline void enable()
@@ -267,16 +276,27 @@ public:
         return sys_clock::freq(traits::CLOCK);
     }
 
+    static inline void set_one_pulse_mode()
+    {
+        disable();
+        set_count(0);
+        tim::V.CR1 |= _::CR1_OPM;
+    }
+
     template<channel_t CH, pin_t PIN>
     struct pwm
     {
         using traits = timch_traits<tim_t<INST>, CH>;
 
-        template<output_type_t ot = push_pull, output_speed_t s = high_speed>
+        template
+            < pwm_mode_t MODE = pwm_mode_1
+            , output_type_t ot = push_pull
+            , output_speed_t s = high_speed
+            >
         static void setup(count_t initial_duty = 0)
         {
             alternate_t<PIN, traits::CH>::template setup<ot, s>();
-            traits::setup_pwm(initial_duty);
+            traits::template setup_pwm<MODE>(initial_duty);
         }
 
         static count_t duty()

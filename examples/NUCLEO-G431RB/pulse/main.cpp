@@ -2,7 +2,7 @@
 #include <timer.h>
 
 using led = output_t<LED>;
-using probe = output_t<PB1>;
+using probe = output_t<PB8>;
 using master = tim_t<3>;
 using slave = tim_t<4>;
 using pulse_a = slave::pwm<CH1, PB6>;
@@ -39,11 +39,11 @@ int main()
     master::enable_update_interrupt();
     interrupt::set<interrupt::TIM3>();
 
-    const auto len = 500;     // pulse length in nano-seconds
-    const auto del = 200;     // delay in nano-seconds
+    const auto len = 500;   // pulse length in nano-seconds
+    const auto del = 200;   // delay in nano-seconds
     const auto pre2 = 0;    // prescaler
-    const auto c1 = del * (master::clock() / 1000000) / (1000 * (pre2 + 1));
-    const auto c2 = len * (master::clock() / 1000000) / (1000 * (pre2 + 1));
+    const auto c1 = del * (slave::clock() / 1000000) / (1000 * (pre2 + 1));
+    const auto c2 = len * (slave::clock() / 1000000) / (1000 * (pre2 + 1));
 
     slave::setup(pre2, c1 + c2);
     slave::set_one_pulse_mode();

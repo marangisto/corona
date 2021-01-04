@@ -192,7 +192,7 @@ public:
     using count_t = typename counter_traits<INST>::type;
     enum master_mode_t { mm_reset, mm_enable, mm_update };
 
-    static inline void setup(uint16_t psc, count_t arr)
+    static inline void setup(uint16_t psc = 0, count_t arr = 1)
     {
         typename tim::T& TIM = tim::V;
 

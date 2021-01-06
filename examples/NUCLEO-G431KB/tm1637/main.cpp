@@ -8,7 +8,7 @@ using dio = output_t<PB6>;
 
 static inline void bit_delay()
 {
-    sys_tick::delay_us(80);
+    sys_tick::delay_us(50);
 }
 
 class seven_segment_t
@@ -96,7 +96,6 @@ static void write_byte(uint8_t x)
     for (uint8_t i = 0; i < 8; ++i)
     {
         write<clk>(0);
-        bit_delay();
         write<dio>(x & (1 << i));
         bit_delay();
         write<clk>(1);

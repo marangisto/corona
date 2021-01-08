@@ -91,6 +91,11 @@ public:
     {
         write(!read());
     }
+
+    static inline volatile uint32_t *bsrr()
+    {
+        return &gpio_t<BASE::PORT>::V.BSRR;
+    }
 };
 
 template<pin_t PIN>

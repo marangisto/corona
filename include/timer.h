@@ -276,6 +276,16 @@ public:
         return sys_clock::freq(traits::CLOCK);
     }
 
+    static inline void enable_update_dma()
+    {
+        tim::V.DIER |= _::DIER_UDE;
+    }
+
+    static inline void enable_trigger_dma()
+    {
+        tim::V.DIER |= _::DIER_TDE;
+    }
+
     static inline void set_one_pulse_mode()
     {
         disable();

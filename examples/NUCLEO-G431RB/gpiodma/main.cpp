@@ -6,10 +6,13 @@ using tim = tim_t<3>;
 using dma = dma_t<1>;
 using pin = output_t<PA0>;
 
+static constexpr uint32_t T = pin::MASK;
+static constexpr uint32_t F = pin::MASK << 16;
+
 static constexpr uint32_t bit_rate = 100000;
 static constexpr uint8_t dma_ch = 1;
 static constexpr uint16_t buf_size = 8;
-static uint32_t buf[buf_size] = { 0x1, 0x010000, 0, 0, 0x1, 0, 0x1 << 16, 0 };
+static uint32_t buf[buf_size] = { T, F, T, F, T, T, T, F };
 
 using led = output_t<LED>;
 using probe = output_t<PROBE>;

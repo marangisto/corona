@@ -56,6 +56,7 @@ class output_t: private gpio_driver<PIN>
 {
 public:
     using BASE = gpio_driver<PIN>;
+    static constexpr uint32_t MASK = BASE::MASK;
 
     template
         < output_type_t output_type = push_pull

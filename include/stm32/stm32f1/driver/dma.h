@@ -82,7 +82,12 @@ struct dma_t
                   ;
     }
 
-    template<uint8_t CH, typename T, uint32_t PERIPH_REG_SIZE = dma_type_size<uint32_t>(), circular_mode CIRC_MODE = circular>
+    template
+        < uint8_t CH                    // dma channel
+        , typename T                    // type of source buffer
+        , circular_mode CIRC_MODE = circular
+        , typename R = uint32_t         // type of peripheral register
+        >
     static inline void mem_to_periph(const T *source, uint16_t nelem, volatile uint32_t *dest)
     {
         typedef dma_channel_traits<INST, CH> __;
@@ -97,7 +102,7 @@ struct dma_t
                   | _::CCR1_MINC        // set memory increment mode
                   | (CIRC_MODE == circular ? _::CCR1_CIRC : 0)
                   | _::CCR1_MSIZE::W(dma_type_size<T>()) // set item size
-                  | _::CCR1_PSIZE::W(PERIPH_REG_SIZE)    // set peripheral register size
+                  | _::CCR1_PSIZE::W(dma_type_size<R>()) // set peripheral register size
                   ;
     }
 

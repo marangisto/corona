@@ -262,7 +262,12 @@ struct dma_t
                   ;
     }
 
-    template<uint8_t CH, typename T, uint32_t PERIPH_REG_SIZE = dma_type_size<uint32_t>(), circular_mode CIRC_MODE = circular>
+    template
+        < uint8_t CH                    // dma channel
+        , typename T                    // type of source buffer
+        , circular_mode CIRC_MODE = circular
+        , typename R = uint32_t         // type of peripheral register
+        >
     static inline void mem_to_periph(const T *source, uint16_t nelem, volatile uint32_t *dest)
     {
         typedef dma_channel_traits<INST, CH> __;
@@ -279,8 +284,24 @@ struct dma_t
                   | _::CCR1_MINC        // set memory increment mode
                   | (CIRC_MODE == circular ? _::CCR1_CIRC : 0)
                   | _::CCR1_MSIZE::W(dma_type_size<T>()) // set item size
-                  | _::CCR1_PSIZE::W(PERIPH_REG_SIZE)    // set peripheral register size
+                  | _::CCR1_PSIZE::W(dma_type_size<R>()) // set peripheral register size
                   ;
+    }
+
+    template
+        < uint8_t CH                    // dma channel
+        , typename T                    // type of source buffer
+        >
+    static inline void transfer(const T *source, uint16_t nelem)
+    {
+        typedef dma_channel_traits<INST, CH> __;
+
+        while (__::CNDTR());            // wait for previous transfer
+        disable<CH>();
+        dmamux_t::V.CFR &= ~(1 << (CH-1)); // clear sync overrun flag
+        __::CNDTR() = nelem;            // set number of data elements
+        __::CMAR() = reinterpret_cast<uint32_t>(source);
+        enable<CH>();
     }
 
     template<uint8_t CH, bool HALF = false>

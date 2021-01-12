@@ -304,6 +304,12 @@ struct dma_t
         enable<CH>();
     }
 
+    template<uint8_t CH>
+    static inline bool busy()
+    {
+        return dma_channel_traits<INST, CH>::CNDTR() > 0;
+    }
+
     template<uint8_t CH, bool HALF = false>
     static inline void enable_interrupt()
     {

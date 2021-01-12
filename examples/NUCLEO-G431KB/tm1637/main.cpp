@@ -1,15 +1,26 @@
 #include "../board.h"
 #include <textio.h>
+#include <timer.h>
+#include <dma.h>
 
 using led = output_t<LED>;
 using probe = output_t<PROBE>;
-using clk = output_t<PB4>;
-using dio = output_t<PB6>;
+using clk2 = output_t<PB4>;
+using dio2 = output_t<PB6>;
 
-static inline void bit_delay()
-{
-    sys_tick::delay_us(50);
-}
+using dma = dma_t<1>;
+using tim = tim_t<TIMER_NO>;
+using clk = output_t<PA1>;
+using dio = output_t<PA0>;
+
+static constexpr uint8_t dma_ch = 1;
+static constexpr uint32_t bit_rate = 10000;
+
+static constexpr uint32_t CF = clk2::MASK;
+static constexpr uint32_t CT = clk2::MASK << 16;
+
+static constexpr uint32_t DF = dio2::MASK;
+static constexpr uint32_t DT = dio2::MASK << 16;
 
 class seven_segment_t
 {
@@ -85,98 +96,142 @@ const uint8_t seven_segment_t::s_glyphs[] =
     , 0b0011011 // Z
     };
 
-template<typename OUTPUT>
-void write(bool x)
+template<pin_t CLK, pin_t DIO>
+class tm1637_t
 {
-    OUTPUT::write(!x);      // inverted!
-}
+public:
+    using clk = output_t<CLK>;
+    using dio = output_t<DIO>;
 
-static void write_byte(uint8_t x)
-{
-    for (uint8_t i = 0; i < 8; ++i)
+    static void write_string(const char *s)
     {
-        write<clk>(0);
-        write<dio>(x & (1 << i));
-        bit_delay();
-        write<clk>(1);
-        bit_delay();
+        static constexpr uint8_t pos[] = { 2, 1, 0, 5, 4, 3 };
+        uint8_t buf[sizeof(pos)];
+        uint8_t i = 0;
+
+        while (i < sizeof(pos) && *s)
+            buf[pos[i++]] = seven_segment_t::encode(*s++);
+        while (i < sizeof(pos))
+            buf[pos[i++]] = seven_segment_t::encode(' ');
+        set_segs(buf, sizeof(pos), 0);
     }
 
-    write<clk>(0);
-    write<dio>(1);
-    bit_delay();
+    static void enable()
+    {
+        level |= 0x8;
+        control();
+    }
 
-    write<clk>(1);
-    bit_delay();
-    write<dio>(0);  // ack unconditionally
-    bit_delay();
+    static void disable()
+    {
+        level &= ~0x8;
+        control();
+    }
 
-    write<clk>(0);
-    bit_delay();
-}
+    static void brightness(uint8_t x)
+    {
+        level &= ~0x7;
+        level |= (x & 0x7);
+        control();
+    }
 
-static void start()
-{
-    write<dio>(0);
-    bit_delay();
-}
+private:
+    static void start()
+    {
+        *bp++ = DF;
+    }
 
-static void stop()
-{
-    write<dio>(0);
-    bit_delay();
-    write<clk>(1);
-    bit_delay();
-    write<dio>(1);
-    bit_delay();
-}
+    static void stop()
+    {
+        *bp++ = DF;
+        *bp++ = CT;
+        *bp++ = DT;
+    }
 
-static void set_segs(const uint8_t *s, uint8_t n, uint8_t p)
-{
-    start();
-    write_byte(0x40);
-    stop();
+    static void write_byte(uint8_t x)
+    {
+        for (uint8_t i = 0; i < 8; ++i)
+        {
+            *bp++ = CF | ((x & (1 << i)) ? DT : DF);
+            *bp++ = CT;
+        }
 
-    start();
-    write_byte(0xc0 | (p & 0x07));
-    for (uint8_t i = 0; i < n; ++i)
-        write_byte(*s++);
-    stop();
+        *bp++ = CF | DT;
+        *bp++ = CT;
+        *bp++ = DF;         // ack unconditionally
+        *bp++ = CF;
+    }
 
-    start();
-    write_byte(0x80 | 0xa); // 8 + 0-7
-    stop();
-}
+    static void set_segs(const uint8_t *s, uint8_t n, uint8_t p)
+    {
+        while (dma::template busy<dma_ch>());       // waite idle
+        bp = buf;                                   // start afresh
+        start();                                    //  1
+        write_byte(0xc0 | (p & 0x07));              // 20
+        for (uint8_t i = 0; i < n && i < 6; ++i)
+            write_byte(*s++);                       // 20 * n
+        stop();                                     //  3
+        dma::template transfer<dma_ch>(buf, bp - buf);
+    }
 
-static void write_string(const char *s)
-{
-    static constexpr uint8_t pos[] = { 2, 1, 0, 5, 4, 3 };
-    static uint8_t buf[sizeof(pos)];
-    uint8_t i = 0;
+    static void control()
+    {
+        while (dma::template busy<dma_ch>());       // waite idle
+        bp = buf;                                   // start afresh
+        start();
+        write_byte(0x80 | level);
+        stop();
+        dma::template transfer<dma_ch>(buf, bp - buf);
+    }
 
-    while (i < sizeof(pos) && *s)
-        buf[pos[i++]] = seven_segment_t::encode(*s++);
-    while (i < sizeof(pos))
-        buf[pos[i++]] = seven_segment_t::encode(' ');
-    set_segs(buf, sizeof(pos), 0);
-}
+    static constexpr uint16_t buf_size = 144;       // N.B. count carefully!
+    static uint32_t buf[buf_size];
+    static uint32_t *bp;
+    static uint8_t level;
+};
+
+template<pin_t CLK, pin_t DIO>
+uint32_t tm1637_t<CLK, DIO>::buf[tm1637_t<CLK, DIO>::buf_size];
+
+template<pin_t CLK, pin_t DIO>
+uint32_t *tm1637_t<CLK, DIO>::bp;
+
+template<pin_t CLK, pin_t DIO>
+uint8_t tm1637_t<CLK, DIO>::level = 0xf;    // on / full-brightness
+
+using tm1637 = tm1637_t<PA1, PA0>;
 
 int main()
 {
     led::setup();
     probe::setup();
+    clk2::setup();
+    dio2::setup();
+
+    tim::setup(0, tim::clock() / (bit_rate << 1) - 1);
+    tim::enable_update_dma();
+
+    dma::setup();
+    dma::template mem_to_periph<dma_ch, uint32_t, linear>(0, 0, clk2::bsrr());
+    dma::set_request_id<dma_ch, 65>();
 
     clk::setup();
     dio::setup();
 
+    tm1637::enable();
+
     for (uint16_t i = 0;; ++i)
     {
-        char buf[7];
+        char str[7];
 
-        sprintf(buf, "%6d", i);
+        sprintf(str, "%6d", i);
         led::toggle();
         probe::toggle();
-        write_string(buf);
+        clk::set();
+        tm1637::write_string(str);
+        clk::clear();
+        tm1637::brightness(i >> 5);
+        sys_tick::delay_ms(20);
     }
 }
 

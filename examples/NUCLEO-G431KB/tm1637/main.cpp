@@ -110,7 +110,12 @@ public:
         uint8_t i = 0;
 
         while (i < sizeof(pos) && *s)
-            buf[pos[i++]] = seven_segment_t::encode(*s++);
+        {
+            uint8_t dp = (*(s+1) == '.') ? 0x80 : 0;
+            buf[pos[i++]] = seven_segment_t::encode(*s++) | dp;
+            if (dp)
+                ++s;
+        }
         while (i < sizeof(pos))
             buf[pos[i++]] = seven_segment_t::encode(' ');
         set_segments(buf, sizeof(pos), 0);
@@ -219,9 +224,9 @@ int main()
 
     for (uint16_t i = 0;; ++i)
     {
-        char str[7];
+        char str[8];
 
-        sprintf(str, "%6d", i);
+        sprintf(str, "%7.2f", static_cast<float>(i) / 13);
         led::toggle();
         probe::toggle();
         probe::set();

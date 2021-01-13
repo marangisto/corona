@@ -80,21 +80,24 @@ const uint8_t seven_segment_t::s_glyphs[] =
     , 0b0011011 // Z
     };
 
-template<pin_t CLK, pin_t DIO>
+template<int TIM_NO, int DMA_NO, int DMA_CH, pin_t CLK, pin_t DIO>
 class tm1637_t
 {
 public:
+    template<unsigned BIT_RATE = 10000>
     static void setup()
     {
+        static_assert(pin_port<DIO>() == pin_port<CLK>(), "pins must share port");
+
         clk::setup();
         dio::setup();
 
-        tim::setup(0, tim::clock() / (bit_rate << 1) - 1);
+        tim::setup(0, tim::clock() / (BIT_RATE << 1) - 1);
         tim::enable_update_dma();
 
         dma::setup();
-        dma::template mem_to_periph<dma_ch, uint32_t, linear>(0, 0, clk::bsrr());
-        dma::set_request_id<dma_ch, 65>();
+        dma::template mem_to_periph<DMA_CH, uint32_t, linear>(0, 0, clk::bsrr());
+        dma::template set_request_id<DMA_CH, 65>(); // FIXME: request-id!
 
         level = 0xf;
         control();
@@ -133,13 +136,10 @@ public:
     }
 
 private:
-    using dma = dma_t<1>;
+    using dma = dma_t<DMA_NO>;
     using tim = tim_t<TIMER_NO>;
     using clk = output_t<CLK>;
     using dio = output_t<DIO>;
-
-    static constexpr uint8_t dma_ch = 1;
-    static constexpr uint32_t bit_rate = 10000;
 
     static constexpr uint32_t CF = clk::MASK;
     static constexpr uint32_t CT = clk::MASK << 16;
@@ -174,24 +174,24 @@ private:
 
     static void set_segments(const uint8_t *s, uint8_t n, uint8_t p)
     {
-        while (dma::template busy<dma_ch>());       // waite idle
+        while (dma::template busy<DMA_CH>());       // waite idle
         bp = buf;                                   // start afresh
         start();                                    //  1
         write_byte(0xc0 | (p & 0x07));              // 20
         for (uint8_t i = 0; i < n && i < 6; ++i)
             write_byte(*s++);                       // 20 * n
         stop();                                     //  3
-        dma::template transfer<dma_ch>(buf, bp - buf);
+        dma::template transfer<DMA_CH>(buf, bp - buf);
     }
 
     static void control()
     {
-        while (dma::template busy<dma_ch>());       // waite idle
+        while (dma::template busy<DMA_CH>());       // waite idle
         bp = buf;                                   // start afresh
         start();
         write_byte(0x80 | level);
         stop();
-        dma::template transfer<dma_ch>(buf, bp - buf);
+        dma::template transfer<DMA_CH>(buf, bp - buf);
     }
 
     static constexpr uint16_t buf_size = 144;       // N.B. count carefully!
@@ -200,16 +200,16 @@ private:
     static uint8_t level;
 };
 
-template<pin_t CLK, pin_t DIO>
-uint32_t tm1637_t<CLK, DIO>::buf[tm1637_t<CLK, DIO>::buf_size];
+template<int T, int D, int C, pin_t CLK, pin_t DIO>
+uint32_t tm1637_t<T, D, C, CLK, DIO>::buf[tm1637_t<T, D, C, CLK, DIO>::buf_size];
 
-template<pin_t CLK, pin_t DIO>
-uint32_t *tm1637_t<CLK, DIO>::bp;
+template<int T, int D, int C, pin_t CLK, pin_t DIO>
+uint32_t *tm1637_t<T, D, C, CLK, DIO>::bp;
 
-template<pin_t CLK, pin_t DIO>
-uint8_t tm1637_t<CLK, DIO>::level;
+template<int T, int D, int C, pin_t CLK, pin_t DIO>
+uint8_t tm1637_t<T, D, C, CLK, DIO>::level;
 
-using tm1637 = tm1637_t<PB4, PB6>;
+using tm1637 = tm1637_t<3, 2, 5, PB4, PB6>;
 
 int main()
 {

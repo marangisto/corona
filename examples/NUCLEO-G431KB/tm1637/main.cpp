@@ -5,22 +5,6 @@
 
 using led = output_t<LED>;
 using probe = output_t<PROBE>;
-using clk2 = output_t<PB4>;
-using dio2 = output_t<PB6>;
-
-using dma = dma_t<1>;
-using tim = tim_t<TIMER_NO>;
-using clk = output_t<PA1>;
-using dio = output_t<PA0>;
-
-static constexpr uint8_t dma_ch = 1;
-static constexpr uint32_t bit_rate = 10000;
-
-static constexpr uint32_t CF = clk2::MASK;
-static constexpr uint32_t CT = clk2::MASK << 16;
-
-static constexpr uint32_t DF = dio2::MASK;
-static constexpr uint32_t DT = dio2::MASK << 16;
 
 class seven_segment_t
 {
@@ -100,8 +84,21 @@ template<pin_t CLK, pin_t DIO>
 class tm1637_t
 {
 public:
-    using clk = output_t<CLK>;
-    using dio = output_t<DIO>;
+    static void setup()
+    {
+        clk::setup();
+        dio::setup();
+
+        tim::setup(0, tim::clock() / (bit_rate << 1) - 1);
+        tim::enable_update_dma();
+
+        dma::setup();
+        dma::template mem_to_periph<dma_ch, uint32_t, linear>(0, 0, clk::bsrr());
+        dma::set_request_id<dma_ch, 65>();
+
+        level = 0xf;
+        control();
+    }
 
     static void write_string(const char *s)
     {
@@ -113,7 +110,7 @@ public:
             buf[pos[i++]] = seven_segment_t::encode(*s++);
         while (i < sizeof(pos))
             buf[pos[i++]] = seven_segment_t::encode(' ');
-        set_segs(buf, sizeof(pos), 0);
+        set_segments(buf, sizeof(pos), 0);
     }
 
     static void enable()
@@ -136,6 +133,19 @@ public:
     }
 
 private:
+    using dma = dma_t<1>;
+    using tim = tim_t<TIMER_NO>;
+    using clk = output_t<CLK>;
+    using dio = output_t<DIO>;
+
+    static constexpr uint8_t dma_ch = 1;
+    static constexpr uint32_t bit_rate = 10000;
+
+    static constexpr uint32_t CF = clk::MASK;
+    static constexpr uint32_t CT = clk::MASK << 16;
+    static constexpr uint32_t DF = dio::MASK;
+    static constexpr uint32_t DT = dio::MASK << 16;
+
     static void start()
     {
         *bp++ = DF;
@@ -162,7 +172,7 @@ private:
         *bp++ = CF;
     }
 
-    static void set_segs(const uint8_t *s, uint8_t n, uint8_t p)
+    static void set_segments(const uint8_t *s, uint8_t n, uint8_t p)
     {
         while (dma::template busy<dma_ch>());       // waite idle
         bp = buf;                                   // start afresh
@@ -197,28 +207,15 @@ template<pin_t CLK, pin_t DIO>
 uint32_t *tm1637_t<CLK, DIO>::bp;
 
 template<pin_t CLK, pin_t DIO>
-uint8_t tm1637_t<CLK, DIO>::level = 0xf;    // on / full-brightness
+uint8_t tm1637_t<CLK, DIO>::level;
 
-using tm1637 = tm1637_t<PA1, PA0>;
+using tm1637 = tm1637_t<PB4, PB6>;
 
 int main()
 {
     led::setup();
     probe::setup();
-    clk2::setup();
-    dio2::setup();
-
-    tim::setup(0, tim::clock() / (bit_rate << 1) - 1);
-    tim::enable_update_dma();
-
-    dma::setup();
-    dma::template mem_to_periph<dma_ch, uint32_t, linear>(0, 0, clk2::bsrr());
-    dma::set_request_id<dma_ch, 65>();
-
-    clk::setup();
-    dio::setup();
-
-    tm1637::enable();
+    tm1637::setup();
 
     for (uint16_t i = 0;; ++i)
     {
@@ -227,10 +224,9 @@ int main()
         sprintf(str, "%6d", i);
         led::toggle();
         probe::toggle();
-        clk::set();
+        probe::set();
         tm1637::write_string(str);
-        clk::clear();
-        tm1637::brightness(i >> 5);
+        probe::clear();
         sys_tick::delay_ms(20);
     }
 }

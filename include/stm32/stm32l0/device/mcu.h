@@ -198,6 +198,10 @@ enum gpio_conf_t
     , STM32L071 = 0x8
     };
 
+enum dma_resource_t
+    {
+    };
+
 enum periph_t
     { ADC1
     , AES
@@ -257,6 +261,15 @@ struct peripheral_t
     static_assert
         ( always_false_i<SVD>::value
         , "peripheral not available on this MCU!"
+        );
+};
+
+template<periph_t P, dma_resource_t R>
+struct dma_request_t
+{
+    static_assert
+        ( always_false_i<P>::value
+        , "DMA resource not available on this peripheral!"
         );
 };
 

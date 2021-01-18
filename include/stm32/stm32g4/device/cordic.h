@@ -153,3 +153,13 @@ template<> struct cordic_traits<0>
         RCC::V.AHB1RSTR |= RCC::T::AHB1RSTR_CORDICRST;
     }
 };
+
+template<> struct dma_request_t<CORDIC, CORDIC_READ>
+{
+    static constexpr unsigned ID = 112;
+};
+
+template<> struct dma_request_t<CORDIC, CORDIC_WRITE>
+{
+    static constexpr unsigned ID = 113;
+};

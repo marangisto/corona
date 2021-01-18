@@ -369,3 +369,13 @@ template<> struct lpuart_traits<1>
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_LPUART1RST;
     }
 };
+
+template<> struct dma_request_t<LPUART1, LPUART_RX>
+{
+    static constexpr unsigned ID = 14;
+};
+
+template<> struct dma_request_t<LPUART1, LPUART_TX>
+{
+    static constexpr unsigned ID = 15;
+};

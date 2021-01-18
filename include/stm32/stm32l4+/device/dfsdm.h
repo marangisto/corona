@@ -857,3 +857,23 @@ template<> struct dfsdm_traits<1>
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_DFSDM1RST;
     }
 };
+
+template<> struct dma_request_t<DFSDM1, DFSDM_FLT0>
+{
+    static constexpr unsigned ID = 95;
+};
+
+template<> struct dma_request_t<DFSDM1, DFSDM_FLT1>
+{
+    static constexpr unsigned ID = 96;
+};
+
+template<> struct dma_request_t<DFSDM1, DFSDM_FLT2>
+{
+    static constexpr unsigned ID = 97;
+};
+
+template<> struct dma_request_t<DFSDM1, DFSDM_FLT3>
+{
+    static constexpr unsigned ID = 98;
+};

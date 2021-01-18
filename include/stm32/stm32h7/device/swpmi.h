@@ -222,3 +222,13 @@ struct peripheral_t<STM32H7B3x, SWPMI>
 };
 
 using swpmi_t = peripheral_t<svd, SWPMI>;
+
+template<> struct dma_request_t<SWPMI, SWPMI_RX>
+{
+    static constexpr unsigned ID = 106;
+};
+
+template<> struct dma_request_t<SWPMI, SWPMI_TX>
+{
+    static constexpr unsigned ID = 107;
+};

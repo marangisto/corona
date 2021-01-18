@@ -178,3 +178,13 @@ template<> struct fmac_traits<0>
         RCC::V.AHB1SMENR &= ~RCC::T::AHB1SMENR_FMACSMEN;
     }
 };
+
+template<> struct dma_request_t<FMAC, FMAC_READ>
+{
+    static constexpr unsigned ID = 110;
+};
+
+template<> struct dma_request_t<FMAC, FMAC_WRITE>
+{
+    static constexpr unsigned ID = 111;
+};

@@ -326,3 +326,23 @@ template<> struct usart_traits<1>
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_USART1RST;
     }
 };
+
+template<> struct dma_request_t<LPUART1, LPUART_RX>
+{
+    static constexpr unsigned ID = 16;
+};
+
+template<> struct dma_request_t<LPUART1, LPUART_TX>
+{
+    static constexpr unsigned ID = 17;
+};
+
+template<> struct dma_request_t<USART1, USART_RX>
+{
+    static constexpr unsigned ID = 14;
+};
+
+template<> struct dma_request_t<USART1, USART_TX>
+{
+    static constexpr unsigned ID = 15;
+};

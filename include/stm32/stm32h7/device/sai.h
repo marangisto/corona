@@ -800,3 +800,43 @@ template<> struct sai_traits<4>
         RCC::V.APB4RSTR |= RCC::T::APB4RSTR_SAI4RST;
     }
 };
+
+template<> struct dma_request_t<SAI1, SAI_A>
+{
+    static constexpr unsigned ID = 96;
+};
+
+template<> struct dma_request_t<SAI1, SAI_B>
+{
+    static constexpr unsigned ID = 97;
+};
+
+template<> struct dma_request_t<SAI2, SAI_A>
+{
+    static constexpr unsigned ID = 98;
+};
+
+template<> struct dma_request_t<SAI2, SAI_B>
+{
+    static constexpr unsigned ID = 99;
+};
+
+template<> struct dma_request_t<SAI3, SAI_A>
+{
+    static constexpr unsigned ID = 116;
+};
+
+template<> struct dma_request_t<SAI3, SAI_B>
+{
+    static constexpr unsigned ID = 117;
+};
+
+template<> struct dma_request_t<SAI4, SAI_A>
+{
+    static constexpr unsigned ID = 120;
+};
+
+template<> struct dma_request_t<SAI4, SAI_B>
+{
+    static constexpr unsigned ID = 121;
+};

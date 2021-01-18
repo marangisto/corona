@@ -618,3 +618,43 @@ template<> struct spi_traits<4>
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_SPI4RST;
     }
 };
+
+template<> struct dma_request_t<SPI1, SPI_RX>
+{
+    static constexpr unsigned ID = 10;
+};
+
+template<> struct dma_request_t<SPI1, SPI_TX>
+{
+    static constexpr unsigned ID = 11;
+};
+
+template<> struct dma_request_t<SPI2, SPI_RX>
+{
+    static constexpr unsigned ID = 12;
+};
+
+template<> struct dma_request_t<SPI2, SPI_TX>
+{
+    static constexpr unsigned ID = 13;
+};
+
+template<> struct dma_request_t<SPI3, SPI_RX>
+{
+    static constexpr unsigned ID = 14;
+};
+
+template<> struct dma_request_t<SPI3, SPI_TX>
+{
+    static constexpr unsigned ID = 15;
+};
+
+template<> struct dma_request_t<SPI4, SPI_RX>
+{
+    static constexpr unsigned ID = 106;
+};
+
+template<> struct dma_request_t<SPI4, SPI_TX>
+{
+    static constexpr unsigned ID = 107;
+};

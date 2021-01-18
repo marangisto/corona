@@ -260,3 +260,8 @@ template<> struct dcmi_traits<0>
     static constexpr signal_t PIXCLK = DCMI_PIXCLK;
     static constexpr signal_t VSYNC = DCMI_VSYNC;
 };
+
+template<> struct dma_request_t<DCMI, DCMI_PSSI>
+{
+    static constexpr unsigned ID = 78;
+};

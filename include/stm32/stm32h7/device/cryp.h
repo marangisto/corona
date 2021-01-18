@@ -1690,3 +1690,13 @@ struct peripheral_t<STM32H753, CRYP>
 };
 
 using cryp_t = peripheral_t<svd, CRYP>;
+
+template<> struct dma_request_t<CRYP, CRYP_IN>
+{
+    static constexpr unsigned ID = 80;
+};
+
+template<> struct dma_request_t<CRYP, CRYP_OUT>
+{
+    static constexpr unsigned ID = 81;
+};

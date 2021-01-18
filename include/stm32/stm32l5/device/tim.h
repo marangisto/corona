@@ -2370,3 +2370,233 @@ template<> struct tim_traits<8>
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_TIM8RST;
     }
 };
+
+template<> struct dma_request_t<TIM1, TIM_CH1>
+{
+    static constexpr unsigned ID = 42;
+};
+
+template<> struct dma_request_t<TIM1, TIM_CH2>
+{
+    static constexpr unsigned ID = 43;
+};
+
+template<> struct dma_request_t<TIM1, TIM_CH3>
+{
+    static constexpr unsigned ID = 44;
+};
+
+template<> struct dma_request_t<TIM1, TIM_CH4>
+{
+    static constexpr unsigned ID = 45;
+};
+
+template<> struct dma_request_t<TIM1, TIM_UP>
+{
+    static constexpr unsigned ID = 46;
+};
+
+template<> struct dma_request_t<TIM1, TIM_TRIG>
+{
+    static constexpr unsigned ID = 47;
+};
+
+template<> struct dma_request_t<TIM1, TIM_COM>
+{
+    static constexpr unsigned ID = 48;
+};
+
+template<> struct dma_request_t<TIM15, TIM_CH1>
+{
+    static constexpr unsigned ID = 78;
+};
+
+template<> struct dma_request_t<TIM15, TIM_UP>
+{
+    static constexpr unsigned ID = 79;
+};
+
+template<> struct dma_request_t<TIM15, TIM_TRIG>
+{
+    static constexpr unsigned ID = 80;
+};
+
+template<> struct dma_request_t<TIM15, TIM_COM>
+{
+    static constexpr unsigned ID = 81;
+};
+
+template<> struct dma_request_t<TIM16, TIM_CH1>
+{
+    static constexpr unsigned ID = 82;
+};
+
+template<> struct dma_request_t<TIM16, TIM_UP>
+{
+    static constexpr unsigned ID = 83;
+};
+
+template<> struct dma_request_t<TIM17, TIM_CH1>
+{
+    static constexpr unsigned ID = 84;
+};
+
+template<> struct dma_request_t<TIM17, TIM_UP>
+{
+    static constexpr unsigned ID = 85;
+};
+
+template<> struct dma_request_t<TIM2, TIM_CH1>
+{
+    static constexpr unsigned ID = 56;
+};
+
+template<> struct dma_request_t<TIM2, TIM_CH2>
+{
+    static constexpr unsigned ID = 57;
+};
+
+template<> struct dma_request_t<TIM2, TIM_CH3>
+{
+    static constexpr unsigned ID = 58;
+};
+
+template<> struct dma_request_t<TIM2, TIM_CH4>
+{
+    static constexpr unsigned ID = 59;
+};
+
+template<> struct dma_request_t<TIM2, TIM_UP>
+{
+    static constexpr unsigned ID = 60;
+};
+
+template<> struct dma_request_t<TIM3, TIM_CH1>
+{
+    static constexpr unsigned ID = 61;
+};
+
+template<> struct dma_request_t<TIM3, TIM_CH2>
+{
+    static constexpr unsigned ID = 62;
+};
+
+template<> struct dma_request_t<TIM3, TIM_CH3>
+{
+    static constexpr unsigned ID = 63;
+};
+
+template<> struct dma_request_t<TIM3, TIM_CH4>
+{
+    static constexpr unsigned ID = 64;
+};
+
+template<> struct dma_request_t<TIM3, TIM_UP>
+{
+    static constexpr unsigned ID = 65;
+};
+
+template<> struct dma_request_t<TIM3, TIM_TRIG>
+{
+    static constexpr unsigned ID = 66;
+};
+
+template<> struct dma_request_t<TIM4, TIM_CH1>
+{
+    static constexpr unsigned ID = 67;
+};
+
+template<> struct dma_request_t<TIM4, TIM_CH2>
+{
+    static constexpr unsigned ID = 68;
+};
+
+template<> struct dma_request_t<TIM4, TIM_CH3>
+{
+    static constexpr unsigned ID = 69;
+};
+
+template<> struct dma_request_t<TIM4, TIM_CH4>
+{
+    static constexpr unsigned ID = 70;
+};
+
+template<> struct dma_request_t<TIM4, TIM_UP>
+{
+    static constexpr unsigned ID = 71;
+};
+
+template<> struct dma_request_t<TIM5, TIM_CH1>
+{
+    static constexpr unsigned ID = 72;
+};
+
+template<> struct dma_request_t<TIM5, TIM_CH2>
+{
+    static constexpr unsigned ID = 73;
+};
+
+template<> struct dma_request_t<TIM5, TIM_CH3>
+{
+    static constexpr unsigned ID = 74;
+};
+
+template<> struct dma_request_t<TIM5, TIM_CH4>
+{
+    static constexpr unsigned ID = 75;
+};
+
+template<> struct dma_request_t<TIM5, TIM_UP>
+{
+    static constexpr unsigned ID = 76;
+};
+
+template<> struct dma_request_t<TIM5, TIM_TRIG>
+{
+    static constexpr unsigned ID = 77;
+};
+
+template<> struct dma_request_t<TIM6, TIM_UP>
+{
+    static constexpr unsigned ID = 9;
+};
+
+template<> struct dma_request_t<TIM7, TIM_UP>
+{
+    static constexpr unsigned ID = 10;
+};
+
+template<> struct dma_request_t<TIM8, TIM_CH1>
+{
+    static constexpr unsigned ID = 49;
+};
+
+template<> struct dma_request_t<TIM8, TIM_CH2>
+{
+    static constexpr unsigned ID = 50;
+};
+
+template<> struct dma_request_t<TIM8, TIM_CH3>
+{
+    static constexpr unsigned ID = 51;
+};
+
+template<> struct dma_request_t<TIM8, TIM_CH4>
+{
+    static constexpr unsigned ID = 52;
+};
+
+template<> struct dma_request_t<TIM8, TIM_UP>
+{
+    static constexpr unsigned ID = 53;
+};
+
+template<> struct dma_request_t<TIM8, TIM_TRIG>
+{
+    static constexpr unsigned ID = 54;
+};
+
+template<> struct dma_request_t<TIM8, TIM_COM>
+{
+    static constexpr unsigned ID = 55;
+};

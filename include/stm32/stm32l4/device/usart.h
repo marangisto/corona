@@ -1396,3 +1396,53 @@ template<> struct usart_traits<3>
         RCC::V.APB1RSTR1 |= RCC::T::APB1RSTR1_USART3RST;
     }
 };
+
+template<> struct dma_request_t<UART4, UART_RX>
+{
+    static constexpr unsigned ID = 39;
+};
+
+template<> struct dma_request_t<UART4, UART_TX>
+{
+    static constexpr unsigned ID = 40;
+};
+
+template<> struct dma_request_t<UART5, UART_RX>
+{
+    static constexpr unsigned ID = 41;
+};
+
+template<> struct dma_request_t<UART5, UART_TX>
+{
+    static constexpr unsigned ID = 42;
+};
+
+template<> struct dma_request_t<USART1, USART_RX>
+{
+    static constexpr unsigned ID = 33;
+};
+
+template<> struct dma_request_t<USART1, USART_TX>
+{
+    static constexpr unsigned ID = 34;
+};
+
+template<> struct dma_request_t<USART2, USART_RX>
+{
+    static constexpr unsigned ID = 35;
+};
+
+template<> struct dma_request_t<USART2, USART_TX>
+{
+    static constexpr unsigned ID = 36;
+};
+
+template<> struct dma_request_t<USART3, USART_RX>
+{
+    static constexpr unsigned ID = 37;
+};
+
+template<> struct dma_request_t<USART3, USART_TX>
+{
+    static constexpr unsigned ID = 38;
+};

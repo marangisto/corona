@@ -415,3 +415,43 @@ template<> struct i2c_traits<4>
         RCC::V.APB1RSTR2 |= RCC::T::APB1RSTR2_I2C4RST;
     }
 };
+
+template<> struct dma_request_t<I2C1, I2C_RX>
+{
+    static constexpr unsigned ID = 17;
+};
+
+template<> struct dma_request_t<I2C1, I2C_TX>
+{
+    static constexpr unsigned ID = 18;
+};
+
+template<> struct dma_request_t<I2C2, I2C_RX>
+{
+    static constexpr unsigned ID = 19;
+};
+
+template<> struct dma_request_t<I2C2, I2C_TX>
+{
+    static constexpr unsigned ID = 20;
+};
+
+template<> struct dma_request_t<I2C3, I2C_RX>
+{
+    static constexpr unsigned ID = 21;
+};
+
+template<> struct dma_request_t<I2C3, I2C_TX>
+{
+    static constexpr unsigned ID = 22;
+};
+
+template<> struct dma_request_t<I2C4, I2C_RX>
+{
+    static constexpr unsigned ID = 23;
+};
+
+template<> struct dma_request_t<I2C4, I2C_TX>
+{
+    static constexpr unsigned ID = 24;
+};

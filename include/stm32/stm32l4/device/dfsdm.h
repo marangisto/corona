@@ -1546,3 +1546,23 @@ template<> struct dfsdm_traits<1>
     static constexpr signal_t DATIN6 = DFSDM1_DATIN6;
     static constexpr signal_t DATIN7 = DFSDM1_DATIN7;
 };
+
+template<> struct dma_request_t<DFSDM1, DFSDM_FLT0>
+{
+    static constexpr unsigned ID = 95;
+};
+
+template<> struct dma_request_t<DFSDM1, DFSDM_FLT1>
+{
+    static constexpr unsigned ID = 96;
+};
+
+template<> struct dma_request_t<DFSDM1, DFSDM_FLT2>
+{
+    static constexpr unsigned ID = 97;
+};
+
+template<> struct dma_request_t<DFSDM1, DFSDM_FLT3>
+{
+    static constexpr unsigned ID = 98;
+};

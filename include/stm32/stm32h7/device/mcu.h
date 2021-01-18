@@ -198,6 +198,52 @@ enum gpio_conf_t
     , STM32H7A2 = 0x4
     };
 
+enum dma_resource_t
+    { CORDIC_READ
+    , CORDIC_WRITE
+    , CRYP_IN
+    , CRYP_OUT
+    , DAC_CH1
+    , DAC_CH2
+    , DCMI_PSSI
+    , DFSDM_FLT0
+    , DFSDM_FLT1
+    , DFSDM_FLT2
+    , DFSDM_FLT3
+    , DFSDM_FLT4
+    , DFSDM_FLT5
+    , FMAC_READ
+    , FMAC_WRITE
+    , HASH_IN
+    , HRTIM_MASTER
+    , HRTIM_TIMER_A
+    , HRTIM_TIMER_B
+    , HRTIM_TIMER_C
+    , HRTIM_TIMER_D
+    , HRTIM_TIMER_E
+    , I2C_RX
+    , I2C_TX
+    , SAI_A
+    , SAI_B
+    , SPDIF_RX_CS
+    , SPDIF_RX_DT
+    , SPI_RX
+    , SPI_TX
+    , SWPMI_RX
+    , SWPMI_TX
+    , TIM_CH1
+    , TIM_CH2
+    , TIM_CH3
+    , TIM_CH4
+    , TIM_COM
+    , TIM_TRIG
+    , TIM_UP
+    , UART_RX
+    , UART_TX
+    , USART_RX
+    , USART_TX
+    };
+
 enum periph_t
     { AC
     , ADC1
@@ -363,6 +409,15 @@ struct peripheral_t
     static_assert
         ( always_false_i<SVD>::value
         , "peripheral not available on this MCU!"
+        );
+};
+
+template<periph_t P, dma_resource_t R>
+struct dma_request_t
+{
+    static_assert
+        ( always_false_i<P>::value
+        , "DMA resource not available on this peripheral!"
         );
 };
 

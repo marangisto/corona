@@ -320,3 +320,13 @@ template<> struct sai_traits<1>
         RCC::V.APB2RSTR |= RCC::T::APB2RSTR_SAI1RST;
     }
 };
+
+template<> struct dma_request_t<SAI1, SAI_A>
+{
+    static constexpr unsigned ID = 108;
+};
+
+template<> struct dma_request_t<SAI1, SAI_B>
+{
+    static constexpr unsigned ID = 109;
+};

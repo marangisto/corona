@@ -915,3 +915,33 @@ template<> struct i2c_traits<4>
         RCC::V.APB4RSTR |= RCC::T::APB4RSTR_I2C4RST;
     }
 };
+
+template<> struct dma_request_t<I2C1, I2C_RX>
+{
+    static constexpr unsigned ID = 33;
+};
+
+template<> struct dma_request_t<I2C1, I2C_TX>
+{
+    static constexpr unsigned ID = 34;
+};
+
+template<> struct dma_request_t<I2C2, I2C_RX>
+{
+    static constexpr unsigned ID = 35;
+};
+
+template<> struct dma_request_t<I2C2, I2C_TX>
+{
+    static constexpr unsigned ID = 36;
+};
+
+template<> struct dma_request_t<I2C3, I2C_RX>
+{
+    static constexpr unsigned ID = 76;
+};
+
+template<> struct dma_request_t<I2C3, I2C_TX>
+{
+    static constexpr unsigned ID = 77;
+};

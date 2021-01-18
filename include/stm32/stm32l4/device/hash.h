@@ -321,3 +321,8 @@ struct peripheral_t<STM32L4x6, HASH>
 };
 
 using hash_t = peripheral_t<svd, HASH>;
+
+template<> struct dma_request_t<HASH, HASH_IN>
+{
+    static constexpr unsigned ID = 103;
+};

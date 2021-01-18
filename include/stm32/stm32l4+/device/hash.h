@@ -407,3 +407,8 @@ template<> struct hash_traits<0>
         RCC::V.AHB2RSTR |= RCC::T::AHB2RSTR_HASHRST;
     }
 };
+
+template<> struct dma_request_t<HASH, HASH_IN>
+{
+    static constexpr unsigned ID = 103;
+};

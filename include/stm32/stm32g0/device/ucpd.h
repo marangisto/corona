@@ -290,3 +290,23 @@ template<> struct ucpd_traits<2>
         RCC::V.APB1RSTR |= RCC::T::APB1RSTR_UCPD2RST;
     }
 };
+
+template<> struct dma_request_t<UCPD1, UCPD_RX>
+{
+    static constexpr unsigned ID = 58;
+};
+
+template<> struct dma_request_t<UCPD1, UCPD_TX>
+{
+    static constexpr unsigned ID = 59;
+};
+
+template<> struct dma_request_t<UCPD2, UCPD_RX>
+{
+    static constexpr unsigned ID = 60;
+};
+
+template<> struct dma_request_t<UCPD2, UCPD_TX>
+{
+    static constexpr unsigned ID = 61;
+};

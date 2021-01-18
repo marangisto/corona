@@ -371,3 +371,13 @@ struct peripheral_t<STM32H7B3x, DAC1>
 };
 
 using dac1_t = peripheral_t<svd, DAC1>;
+
+template<> struct dma_request_t<DAC1, DAC_CH1>
+{
+    static constexpr unsigned ID = 67;
+};
+
+template<> struct dma_request_t<DAC1, DAC_CH2>
+{
+    static constexpr unsigned ID = 69;
+};

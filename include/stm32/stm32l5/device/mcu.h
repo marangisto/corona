@@ -56,6 +56,39 @@ enum gpio_conf_t
     { STM32L55x = 0x1
     };
 
+enum dma_resource_t
+    { AES_IN
+    , AES_OUT
+    , DAC_CH1
+    , DAC_CH2
+    , DFSDM_FLT0
+    , DFSDM_FLT1
+    , DFSDM_FLT2
+    , DFSDM_FLT3
+    , HASH_IN
+    , I2C_RX
+    , I2C_TX
+    , LPUART_RX
+    , LPUART_TX
+    , SAI_A
+    , SAI_B
+    , SPI_RX
+    , SPI_TX
+    , TIM_CH1
+    , TIM_CH2
+    , TIM_CH3
+    , TIM_CH4
+    , TIM_COM
+    , TIM_TRIG
+    , TIM_UP
+    , UART_RX
+    , UART_TX
+    , UCPD_RX
+    , UCPD_TX
+    , USART_RX
+    , USART_TX
+    };
+
 enum periph_t
     { ADC1
     , ADC2
@@ -221,6 +254,15 @@ struct peripheral_t
     static_assert
         ( always_false_i<SVD>::value
         , "peripheral not available on this MCU!"
+        );
+};
+
+template<periph_t P, dma_resource_t R>
+struct dma_request_t
+{
+    static_assert
+        ( always_false_i<P>::value
+        , "DMA resource not available on this peripheral!"
         );
 };
 

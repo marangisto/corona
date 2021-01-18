@@ -199,3 +199,13 @@ template<> struct dac_traits<1>
         RCC::V.APB1RSTR1 |= RCC::T::APB1RSTR1_DAC1RST;
     }
 };
+
+template<> struct dma_request_t<DAC1, DAC_CH1>
+{
+    static constexpr unsigned ID = 7;
+};
+
+template<> struct dma_request_t<DAC1, DAC_CH2>
+{
+    static constexpr unsigned ID = 8;
+};

@@ -630,3 +630,38 @@ template<> struct dac_traits<4>
         RCC::V.AHB2RSTR |= RCC::T::AHB2RSTR_DAC4RST;
     }
 };
+
+template<> struct dma_request_t<DAC1, DAC_CHANNEL1>
+{
+    static constexpr unsigned ID = 6;
+};
+
+template<> struct dma_request_t<DAC1, DAC_CHANNEL2>
+{
+    static constexpr unsigned ID = 7;
+};
+
+template<> struct dma_request_t<DAC2, DAC_CHANNEL1>
+{
+    static constexpr unsigned ID = 41;
+};
+
+template<> struct dma_request_t<DAC3, DAC_CHANNEL1>
+{
+    static constexpr unsigned ID = 102;
+};
+
+template<> struct dma_request_t<DAC3, DAC_CHANNEL2>
+{
+    static constexpr unsigned ID = 103;
+};
+
+template<> struct dma_request_t<DAC4, DAC_CHANNEL1>
+{
+    static constexpr unsigned ID = 104;
+};
+
+template<> struct dma_request_t<DAC4, DAC_CHANNEL2>
+{
+    static constexpr unsigned ID = 105;
+};

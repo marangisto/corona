@@ -278,3 +278,23 @@ template<> struct uart_traits<5>
         RCC::V.APB1RSTR1 |= RCC::T::APB1RSTR1_UART5RST;
     }
 };
+
+template<> struct dma_request_t<UART4, UART_RX>
+{
+    static constexpr unsigned ID = 39;
+};
+
+template<> struct dma_request_t<UART4, UART_TX>
+{
+    static constexpr unsigned ID = 40;
+};
+
+template<> struct dma_request_t<UART5, UART_RX>
+{
+    static constexpr unsigned ID = 41;
+};
+
+template<> struct dma_request_t<UART5, UART_TX>
+{
+    static constexpr unsigned ID = 42;
+};

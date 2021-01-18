@@ -219,3 +219,8 @@ template<> struct dcmi_traits<0>
         RCC::V.AHB2RSTR |= RCC::T::AHB2RSTR_DCMIRST;
     }
 };
+
+template<> struct dma_request_t<DCMI, DCMI_PSSI>
+{
+    static constexpr unsigned ID = 100;
+};

@@ -408,3 +408,23 @@ template<> struct aes1_traits<2>
         RCC::V.AHB3RSTR |= RCC::T::AHB3RSTR_AES2RST;
     }
 };
+
+template<> struct dma_request_t<AES1, AES_IN>
+{
+    static constexpr unsigned ID = 37;
+};
+
+template<> struct dma_request_t<AES1, AES_OUT>
+{
+    static constexpr unsigned ID = 38;
+};
+
+template<> struct dma_request_t<AES2, AES_IN>
+{
+    static constexpr unsigned ID = 39;
+};
+
+template<> struct dma_request_t<AES2, AES_OUT>
+{
+    static constexpr unsigned ID = 40;
+};

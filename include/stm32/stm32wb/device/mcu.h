@@ -40,6 +40,28 @@ enum gpio_conf_t
     , STM32WB5Mx = 0x4
     };
 
+enum dma_resource_t
+    { AES_IN
+    , AES_OUT
+    , I2C_RX
+    , I2C_TX
+    , LPUART_RX
+    , LPUART_TX
+    , SAI_A
+    , SAI_B
+    , SPI_RX
+    , SPI_TX
+    , TIM_CH1
+    , TIM_CH2
+    , TIM_CH3
+    , TIM_CH4
+    , TIM_COM
+    , TIM_TRIG
+    , TIM_UP
+    , USART_RX
+    , USART_TX
+    };
+
 enum periph_t
     { ADC1
     , AES1
@@ -103,6 +125,15 @@ struct peripheral_t
     static_assert
         ( always_false_i<SVD>::value
         , "peripheral not available on this MCU!"
+        );
+};
+
+template<periph_t P, dma_resource_t R>
+struct dma_request_t
+{
+    static_assert
+        ( always_false_i<P>::value
+        , "DMA resource not available on this peripheral!"
         );
 };
 

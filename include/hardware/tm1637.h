@@ -14,15 +14,18 @@ public:
     {
         static_assert(pin_port<DIO>() == pin_port<CLK>(), "pins must share port");
 
-        clk::setup();
-        dio::setup();
+        clk::template setup<open_drain>();
+        dio::template setup<open_drain>();
+        clk::set();
+        dio::set();
 
         tim::setup(0, tim::clock() / (BIT_RATE << 1) - 1);
         tim::enable_update_dma();
 
         dma::setup();
         dma::template mem_to_periph<DMA_CH, uint32_t, linear>(0, 0, clk::bsrr());
-        dma::template set_request_id<DMA_CH, 65>(); // FIXME: request-id!
+        static constexpr periph_t P = tim::tim::P;
+        dma::template set_request_id<DMA_CH, dma_request_t<P, TIM_UP>::ID>();
 
         level = 0xf;
         control();
@@ -67,14 +70,14 @@ public:
 
 private:
     using dma = dma_t<DMA_NO>;
-    using tim = tim_t<TIMER_NO>;
+    using tim = tim_t<TIM_NO>;
     using clk = output_t<CLK>;
     using dio = output_t<DIO>;
 
-    static constexpr uint32_t CF = clk::MASK;
-    static constexpr uint32_t CT = clk::MASK << 16;
-    static constexpr uint32_t DF = dio::MASK;
-    static constexpr uint32_t DT = dio::MASK << 16;
+    static constexpr uint32_t CT = clk::MASK;
+    static constexpr uint32_t CF = clk::MASK << 16;
+    static constexpr uint32_t DT = dio::MASK;
+    static constexpr uint32_t DF = dio::MASK << 16;
 
     static void start()
     {

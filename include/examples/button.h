@@ -15,7 +15,12 @@ int main()
 {
     led::setup();
     btn::setup<BTN_TYPE>();
-    aux::setup(sys_clock::freq() / 1000000 - 1, 1000 - 1);
+
+    const auto f_aux = 1000;    // 1 kHz
+    const auto psc = 1000;
+    const auto arr = aux::clock() / ((psc + 1) * f_aux) - 1;
+
+    aux::setup(psc, arr);
     aux::enable_update_interrupt();
     interrupt::set<TIMER_ISR>();
     interrupt::enable();

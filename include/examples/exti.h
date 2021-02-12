@@ -1,4 +1,4 @@
-#include <button.h>
+#include <gpio.h>
 
 using btn = input_t<BTN>;
 using led = output_t<LED>;

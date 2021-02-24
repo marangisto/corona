@@ -6,6 +6,7 @@ module Config
     , getLink
     , getEntry
     , getHSE
+    , getProg
     ) where
 
 import Types
@@ -59,4 +60,7 @@ getHSE = fromMaybe 0 . fmap read <$> getConfig "HSE"
 
 findMCU :: String -> Maybe MCU
 findMCU x = find ((==x) . name) mcuList
+
+getProg :: Action Prog
+getProg = fromMaybe SWD . fmap read <$> getConfig "PROG"
 

@@ -16,8 +16,8 @@ toolChain tc@ToolConfig{..} = ToolChain{..}
           objcopy = ("arm-none-eabi-objcopy", \_ -> copyFlags mcu)
           objdump = ("arm-none-eabi-objdump", \_ -> [ "--disassemble-all" ])
           size = ("arm-none-eabi-size", \_ -> [])
-          program = ("STM32_Programmer_CLI", progFlags)
-          reset = ("STM32_Programmer_CLI", \_ -> rstFlags)
+          program = ("STM32_Programmer_CLI", progFlags prog)
+          reset = ("STM32_Programmer_CLI", \_ -> rstFlags prog)
           format = Binary
           ldScript = makeLink tc
 
@@ -102,19 +102,26 @@ cleanCore :: String -> String
 cleanCore "cortex-m0+" = "cortex-m0plus"
 cleanCore c = c
 
-progFlags :: [FilePath] -> [String]
-progFlags (bin:[]) =
-    [ "--connect port=SWD mode=UR"
+progFlags :: Prog -> [FilePath] -> [String]
+progFlags prog (bin:[]) =
+    [ "--connect"
+    , "port=" <> port prog
+    , "mode=UR"
     , "--write"
     , bin
     , "0x8000000"
     , "--verify"
-    , "-hardRst"
-    ]
+    ] ++
+    [ "-hardRst" | prog == SWD ]
 
-rstFlags :: [String]
-rstFlags =
+rstFlags :: Prog -> [String]
+rstFlags SWD =
     [ "--connect port=SWD mode=UR"
     , "-hardRst"
     ]
+rstFlags _ = error "Hard reset not supported on this programmer!"
+
+port :: Prog -> String
+port SWD = "SWD"
+port USB = "USB1"
 

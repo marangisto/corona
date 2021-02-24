@@ -6,6 +6,7 @@ module Types
     , Format(..)
     , Tool
     , ToolChain(..)
+    , Prog(..)
     ) where
 
 import STM32 as STM32
@@ -19,6 +20,7 @@ data ToolConfig = ToolConfig
     , baseDir   :: FilePath
     , extLink   :: Maybe FilePath
     , entry     :: String
+    , prog      :: Prog
     }
 
 data Format = Binary | Hex
@@ -39,4 +41,6 @@ data ToolChain = ToolChain
     , format    :: Format
     , ldScript  :: IO String
     }
+
+data Prog = SWD | USB deriving (Eq, Read, Show)
 

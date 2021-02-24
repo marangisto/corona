@@ -130,6 +130,7 @@ toolChain = do
     baseDir <- getBaseDir
     entry <- getEntry
     extLink <- getLink
+    prog <- getProg
     return $ case arch mcu of
         ARM -> ARM.toolChain ToolConfig{..}
 

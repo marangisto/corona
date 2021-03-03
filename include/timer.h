@@ -37,13 +37,18 @@ template<typename TIMER> struct timch_traits<TIMER, CH1>
     static constexpr uint32_t CCIF = _::SR_CC1IF;
 
     template <pwm_mode_t MODE = pwm_mode_1>
-    static void setup_pwm(typename TIMER::count_t initial_duty)
+    static void setup_pwm
+        ( typename TIMER::count_t initial_duty
+        , bool invert
+        )
     {
         tim::V.CCMR1 |= _::CCMR1_OC1M::W(0x6 | MODE)
                      |  _::CCMR1_OC1PE
                      ;
         tim::V.CCR1  = initial_duty;
-        tim::V.CCER  |= _::CCER_CC1E;
+        tim::V.CCER  |= _::CCER_CC1E
+                     | (invert ? _::CCER_CC1P : 0)
+                     ;
     }
 
     template
@@ -76,13 +81,18 @@ template<typename TIMER> struct timch_traits<TIMER, CH2>
     static constexpr uint32_t CCIF = _::SR_CC2IF;
 
     template <pwm_mode_t MODE = pwm_mode_1>
-    static void setup_pwm(typename TIMER::count_t initial_duty)
+    static void setup_pwm
+        ( typename TIMER::count_t initial_duty
+        , bool invert
+        )
     {
         tim::V.CCMR1 |= _::CCMR1_OC2M::W(0x6 | MODE)
                      |  _::CCMR1_OC2PE
                      ;
         tim::V.CCR2  = initial_duty;
-        tim::V.CCER  |= _::CCER_CC2E;
+        tim::V.CCER  |= _::CCER_CC2E
+                     | (invert ? _::CCER_CC2P : 0)
+                     ;
     }
 
     template
@@ -115,13 +125,18 @@ template<typename TIMER> struct timch_traits<TIMER, CH3>
     static constexpr uint32_t CCIF = _::SR_CC3IF;
 
     template <pwm_mode_t MODE = pwm_mode_1>
-    static void setup_pwm(typename TIMER::count_t initial_duty)
+    static void setup_pwm
+        ( typename TIMER::count_t initial_duty
+        , bool invert
+        )
     {
         tim::V.CCMR2 |= _::CCMR2_OC3M::W(0x6 | MODE)
                      |  _::CCMR2_OC3PE
                      ;
         tim::V.CCR3  = initial_duty;
-        tim::V.CCER  |= _::CCER_CC3E;
+        tim::V.CCER  |= _::CCER_CC3E
+                     | (invert ? _::CCER_CC3P : 0)
+                     ;
     }
 
     template
@@ -154,13 +169,18 @@ template<typename TIMER> struct timch_traits<TIMER, CH4>
     static constexpr uint32_t CCIF = _::SR_CC4IF;
 
     template <pwm_mode_t MODE = pwm_mode_1>
-    static void setup_pwm(typename TIMER::count_t initial_duty)
+    static void setup_pwm
+        ( typename TIMER::count_t initial_duty
+        , bool invert
+        )
     {
         tim::V.CCMR2 |= _::CCMR2_OC4M::W(0x6 | MODE)
                      |  _::CCMR2_OC4PE
                      ;
         tim::V.CCR4  = initial_duty;
-        tim::V.CCER  |= _::CCER_CC4E;
+        tim::V.CCER  |= _::CCER_CC4E
+                     | (invert ? _::CCER_CC4P : 0)
+                     ;
     }
 
     template
@@ -303,10 +323,13 @@ public:
             , output_type_t ot = push_pull
             , output_speed_t s = high_speed
             >
-        static void setup(count_t initial_duty = 0)
+        static void setup
+            ( count_t initial_duty = 0
+            , bool invert = false
+            )
         {
             alternate_t<PIN, traits::CH>::template setup<ot, s>();
-            traits::template setup_pwm<MODE>(initial_duty);
+            traits::template setup_pwm<MODE>(initial_duty, invert);
         }
 
         static count_t duty()

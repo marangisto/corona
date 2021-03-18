@@ -215,7 +215,7 @@ enum dma_resource_t
     , FMAC_READ
     , FMAC_WRITE
     , HASH_IN
-    , HRTIM_MASTER
+    , HRTIM_MASTER_
     , HRTIM_TIMER_A
     , HRTIM_TIMER_B
     , HRTIM_TIMER_C

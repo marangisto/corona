@@ -11,7 +11,7 @@ using probe = output_t<PROBE>;
 using i2s = i2s_t<2, PB13, PB15, PB12>;
 using dma = dma_t<1>;
 static const unsigned dmach = 1;
-static const uint16_t half_samples = 128;               // half number of samples
+static const uint16_t half_samples = 256;               // half number of samples
 static const uint16_t n_samples = half_samples << 1;    // number of samples
 static const unsigned buf_size = n_samples << 1;        // we have two channels
 static int32_t buf[buf_size];                           // sample buffer
@@ -21,20 +21,20 @@ static inline uint32_t swap(uint32_t x)
     return (x >> 16) | (x << 16);
 }
 
-void process(int32_t *p, uint16_t n)
+inline q31_t drawL()
 {
-    static q31_t t1 = q31_t(0.0), t2 = t1, dt1 = q31_t(0.01), dt2 = q31_t(0.03);
+    static q31_t t = q31_t(0.0), dt = q31_t(0.01);
 
-    for (uint32_t i = 0; i < n; ++i)
-    {
-        q31_t y1 = q31_t(cordic::compute(t1.q));
-        q31_t y2 = q31_t(cordic::compute(t2.q));
+    t = t + dt;
+    return q31_t(cordic::compute(t.q));
+}
 
-        *p++ = swap(y2.q);
-        *p++ = swap(y1.q);
-        t1 = t1 + dt1;
-        t2 = t2 + dt2;
-    }
+inline q31_t drawR()
+{
+    static q31_t t = q31_t(0.0), dt = q31_t(0.0025);
+
+    t = t + dt;
+    return q31_t(cordic::compute(t.q));
 }
 
 template<> void handler<interrupt::DMA1_CH1>()
@@ -46,7 +46,12 @@ template<> void handler<interrupt::DMA1_CH1>()
     if (sts & (dma_half_transfer | dma_transfer_complete))
     {
         int32_t *p = buf + (sts & dma_transfer_complete ? n_samples : 0);
-        process(p, half_samples);
+
+        for (uint16_t i = 0; i < half_samples; ++i)
+        {
+            *p++ = swap(drawL().q);
+            *p++ = swap(drawR().q);
+        }
     }
 
     probe::clear();
@@ -64,6 +69,10 @@ int main()
     dma::enable_interrupt<dmach, true>();
     interrupt::set<interrupt::DMA1_CH1>();
 
-    for (;;) ;
+    for (;;)
+    {
+        led::toggle();
+        sys_tick::delay_ms(500);
+    }
 }
 

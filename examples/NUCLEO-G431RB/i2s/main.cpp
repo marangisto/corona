@@ -7,6 +7,7 @@
 using namespace fixed;
 
 using led = output_t<LED>;
+using probe = output_t<PROBE>;
 using i2s = i2s_t<2, PB13, PB15, PB12>;
 using dma = dma_t<1>;
 static const unsigned dmach = 1;
@@ -38,8 +39,8 @@ void process(int32_t *p, uint16_t n)
 
 template<> void handler<interrupt::DMA1_CH1>()
 {
+    probe::set();
     auto sts = dma::interrupt_status<dmach>();
-
     dma::clear_interrupt_flags<dmach>();
 
     if (sts & (dma_half_transfer | dma_transfer_complete))
@@ -47,11 +48,14 @@ template<> void handler<interrupt::DMA1_CH1>()
         int32_t *p = buf + (sts & dma_transfer_complete ? n_samples : 0);
         process(p, half_samples);
     }
+
+    probe::clear();
 }
 
 int main()
 {
     led::setup();
+    probe::setup();
     cordic::setup<cordic::sine, 4>();
 
     dma::setup();

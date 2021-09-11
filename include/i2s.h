@@ -53,7 +53,7 @@ template<> struct i2s_traits<3>
     static const request::request_t tx_request = request::SPI3_TX;
 };
 
-template<int INST, pin_t CK, pin_t SD, pin_t WS> struct i2s_t
+template<int INST, pin_t CK, pin_t SD, pin_t WS, pin_t CKIN = NO_PIN> struct i2s_t
 {
 private:
     using traits = spi_traits<INST>;
@@ -75,6 +75,10 @@ public:
         alternate_t<SD, i2s_traits<INST>::sd>::template setup<push_pull, speed>();
         alternate_t<WS, i2s_traits<INST>::ws>::template setup<push_pull, speed>();
         alternate_t<CK, i2s_traits<INST>::ck>::template setup<push_pull, speed>();
+        alternate_t<CKIN, I2S_CKIN>::template setup<floating>();
+
+        if (CKIN != NO_PIN)
+             rcc_t::V.CCIPR1 |= rcc_t::T::CCIPR1_SPISEL_::W(0x2);
 
         traits::template enable<rcc_t>();       // enable clock
 

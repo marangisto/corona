@@ -6,9 +6,13 @@
 
 using namespace fixed;
 
+static constexpr bool USE_CKIN = true;
+static constexpr pin_t CKIN = USE_CKIN ? PC9 : NO_PIN;
+static constexpr unsigned CKDIV = USE_CKIN ? 4 : 27;
+
 using led = output_t<LED>;
 using probe = output_t<PROBE>;
-using i2s = i2s_t<2, PB13, PB15, PB12>;
+using i2s = i2s_t<2, PB13, PB15, PB12, CKIN>;
 using dma = dma_t<1>;
 static const unsigned dmach = 1;
 static const uint16_t half_samples = 256;               // half number of samples
@@ -64,7 +68,7 @@ int main()
     cordic::setup<cordic::sine, 4>();
 
     dma::setup();
-    i2s::setup<philips_i2s, low_level, format_32_32, 27>();
+    i2s::setup<philips_i2s, low_level, format_32_32, CKDIV>();
     i2s::enable_dma<dma, dmach>(reinterpret_cast<uint16_t*>(buf), buf_size << 1);
     dma::enable_interrupt<dmach, true>();
     interrupt::set<interrupt::DMA1_CH1>();

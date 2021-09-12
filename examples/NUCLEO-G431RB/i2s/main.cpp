@@ -6,13 +6,14 @@
 
 using namespace fixed;
 
-static constexpr bool USE_CKIN = true;
+static constexpr bool USE_CKIN = false;
 static constexpr pin_t CKIN = USE_CKIN ? PC9 : NO_PIN;
 static constexpr unsigned CKDIV = USE_CKIN ? 4 : 27;
 
 using led = output_t<LED>;
 using probe = output_t<PROBE>;
-using i2s = i2s_t<2, PB13, PB15, PB12, CKIN>;
+//using i2s = i2s_t<2, PB13, PB15, PB12, CKIN>;
+using i2s = i2s_t<3, PC10, PC12, PA4, CKIN>;
 using dma = dma_t<1>;
 static const unsigned dmach = 1;
 static const uint16_t half_samples = 256;               // half number of samples

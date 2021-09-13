@@ -53,7 +53,7 @@ template<> struct i2s_traits<3>
     static const request::request_t tx_request = request::SPI3_TX;
 };
 
-template<int INST, pin_t CK, pin_t SD, pin_t WS, pin_t CKIN = NO_PIN> struct i2s_t
+template<int INST, pin_t CK, pin_t SD, pin_t WS, pin_t CKIN = NO_PIN> struct i2s_transmitter_t
 {
 private:
     using traits = spi_traits<INST>;

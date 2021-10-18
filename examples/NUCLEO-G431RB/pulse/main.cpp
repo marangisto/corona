@@ -7,6 +7,7 @@ using master = tim_t<3>;
 using slave = tim_t<4>;
 using pulse_a = slave::pwm<CH1, PB6>;
 using pulse_b = slave::pwm<CH2, PB7>;
+using dir_a = output_t<PA8>;
 
 volatile slave::count_t pulse_duty;
 
@@ -16,6 +17,13 @@ template<> void handler<interrupt::TIM3>()
 
     probe::set();
     master::clear_update_interrupt_flag();
+
+    if ((i & 0xff) == 0)
+    {
+        dir_a::toggle();
+        sys_tick::delay_us(6);
+    }
+
     pulse_a::duty(pulse_duty);
     pulse_b::duty(pulse_duty | ((i & 0x1) ? 0 : 0xffff));
     probe::clear();
@@ -31,15 +39,21 @@ int main()
     // f_tim = f_clock / ((psc + 1) (arr + 1))
     // arr = t_us * f_clock / (1e6 * (p + 1) - 1
 
-    const auto t1 = 2;     // period in micro-seconds
+    const auto t1 = 1;      // period in milli-seconds
+    const auto pre1 = 199;    // prescaler
+    const auto arr1 = t1 * (master::clock() / 1000) / (pre1 + 1) - 1;
+
+    /*
+    const auto t1 = 5;      // period in micro-seconds
     const auto pre1 = 0;    // prescaler
     const auto arr1 = t1 * (master::clock() / 1000000) / (pre1 + 1) - 1;
+    */
 
     master::setup(pre1, arr1);
     master::enable_update_interrupt();
     interrupt::set<interrupt::TIM3>();
 
-    const auto len = 500;   // pulse length in nano-seconds
+    const auto len = 2500;   // pulse length in nano-seconds
     const auto del = 200;   // delay in nano-seconds
     const auto pre2 = 0;    // prescaler
     const auto c1 = del * (slave::clock() / 1000000) / (1000 * (pre2 + 1));
@@ -47,9 +61,10 @@ int main()
 
     slave::setup(pre2, c1 + c2);
     slave::set_one_pulse_mode();
-    pulse_a::setup<pwm_mode_2>();
+    pulse_a::setup<pwm_mode_2>(0, true);    // inverted
     pulse_b::setup<pwm_mode_2>();
     pulse_duty = c1;
+    dir_a::setup();
 
     interrupt::enable();
 

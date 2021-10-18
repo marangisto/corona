@@ -12,6 +12,40 @@ enum pllP_t
 
 template<int FREQ> struct clock_traits {};
 
+template<> struct clock_traits<84>
+{
+    using _ = rcc_t::T;
+
+    static const uint8_t WS = 3;        // 100MHz at 2.7-3.3V
+
+    static constexpr uint32_t
+        CFGR = _::CFGR_PPRE1::W(0x4)    // divide by 2
+             | _::CFGR_PPRE2::W(0x0)    // divide by 1
+             ;
+
+    static constexpr int APB1_PERIPH_SHIFT = 1;
+    static constexpr int APB1_TIMER_SHIFT = 0;
+    static constexpr int APB2_PERIPH_SHIFT = 0;
+    static constexpr int APB2_TIMER_SHIFT = 0;
+
+    template<typename PWR>
+    static void enable_overdrive() {}   // not available on access-line
+
+    static const uint16_t pllN = 200;   // 9 bits, valid range [50..432]
+    static const uint8_t pllM = 4;      // 6 bits, valid range [2..63]
+    static const pllP_t pllP = pllP_4;  // 2 bits, enum range [2, 4, 6, 8]
+    static const uint8_t pllQ = 9;      // 4 bits, valid range [2..15]
+    static const uint8_t pllSRC = 1;    // 1 bit, 0 = HSI, 1 = HSE
+
+    static constexpr uint32_t
+        PLLCFGR = (pllSRC ? _::PLLCFGR_PLLSRC : 0)
+                | _::PLLCFGR_PLLN::W(pllN)
+                | _::PLLCFGR_PLLM::W(pllM)
+                | _::PLLCFGR_PLLP::W(pllP)
+                | _::PLLCFGR_PLLQ::W(pllQ)
+                ;
+};
+
 template<> struct clock_traits<100>
 {
     using _ = rcc_t::T;

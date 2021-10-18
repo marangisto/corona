@@ -90,6 +90,7 @@ mcuList =
     , MCU "STM32F072CBYx" "STM32F0" "cortex-m0" 128 16
     , MCU "STM32F072R8Tx" "STM32F0" "cortex-m0" 64 16
     , MCU "STM32F072RBHx" "STM32F0" "cortex-m0" 128 16
+    , MCU "STM32F072RBIx" "STM32F0" "cortex-m0" 128 16
     , MCU "STM32F072RBTx" "STM32F0" "cortex-m0" 128 16
     , MCU "STM32F072V8Hx" "STM32F0" "cortex-m0" 64 16
     , MCU "STM32F072V8Tx" "STM32F0" "cortex-m0" 64 16
@@ -198,7 +199,7 @@ mcuList =
     , MCU "STM32F103RBHx" "STM32F1" "cortex-m3" 128 20
     , MCU "STM32F103RBTx" "STM32F1" "cortex-m3" 128 20
     , MCU "STM32F103RCTx" "STM32F1" "cortex-m3" 256 48
-    , MCU "STM32F103RCYx" "STM32F1" "cortex-m3" 256 64
+    , MCU "STM32F103RCYx" "STM32F1" "cortex-m3" 256 48
     , MCU "STM32F103RDTx" "STM32F1" "cortex-m3" 384 64
     , MCU "STM32F103RDYx" "STM32F1" "cortex-m3" 384 64
     , MCU "STM32F103RETx" "STM32F1" "cortex-m3" 512 64
@@ -386,7 +387,6 @@ mcuList =
     , MCU "STM32F401CBUx" "STM32F4" "cortex-m4" 128 64
     , MCU "STM32F401CCFx" "STM32F4" "cortex-m4" 256 64
     , MCU "STM32F401CCUx" "STM32F4" "cortex-m4" 256 64
-    , MCU "STM32F401CCYx" "STM32F4" "cortex-m4" 256 64
     , MCU "STM32F401CDUx" "STM32F4" "cortex-m4" 384 96
     , MCU "STM32F401CDYx" "STM32F4" "cortex-m4" 384 96
     , MCU "STM32F401CEUx" "STM32F4" "cortex-m4" 512 96
@@ -416,9 +416,11 @@ mcuList =
     , MCU "STM32F407VGTx" "STM32F4" "cortex-m4" 1024 192
     , MCU "STM32F407ZETx" "STM32F4" "cortex-m4" 512 192
     , MCU "STM32F407ZGTx" "STM32F4" "cortex-m4" 1024 192
+    , MCU "STM32F410C8Tx" "STM32F4" "cortex-m4" 64 32
     , MCU "STM32F410C8Ux" "STM32F4" "cortex-m4" 64 32
     , MCU "STM32F410CBTx" "STM32F4" "cortex-m4" 128 32
     , MCU "STM32F410CBUx" "STM32F4" "cortex-m4" 128 32
+    , MCU "STM32F410R8Ix" "STM32F4" "cortex-m4" 64 32
     , MCU "STM32F410R8Tx" "STM32F4" "cortex-m4" 64 32
     , MCU "STM32F410RBIx" "STM32F4" "cortex-m4" 128 32
     , MCU "STM32F410RBTx" "STM32F4" "cortex-m4" 128 32
@@ -430,6 +432,7 @@ mcuList =
     , MCU "STM32F411CEYx" "STM32F4" "cortex-m4" 512 128
     , MCU "STM32F411RCTx" "STM32F4" "cortex-m4" 256 128
     , MCU "STM32F411RETx" "STM32F4" "cortex-m4" 512 128
+    , MCU "STM32F411VCHx" "STM32F4" "cortex-m4" 256 128
     , MCU "STM32F411VCTx" "STM32F4" "cortex-m4" 256 128
     , MCU "STM32F411VEHx" "STM32F4" "cortex-m4" 512 128
     , MCU "STM32F411VETx" "STM32F4" "cortex-m4" 512 128
@@ -437,6 +440,7 @@ mcuList =
     , MCU "STM32F412CGUx" "STM32F4" "cortex-m4" 1024 256
     , MCU "STM32F412RETx" "STM32F4" "cortex-m4" 512 256
     , MCU "STM32F412REYx" "STM32F4" "cortex-m4" 512 256
+    , MCU "STM32F412REYxP" "STM32F4" "cortex-m4" 512 256
     , MCU "STM32F412RGTx" "STM32F4" "cortex-m4" 1024 256
     , MCU "STM32F412RGYx" "STM32F4" "cortex-m4" 1024 256
     , MCU "STM32F412RGYxP" "STM32F4" "cortex-m4" 1024 256
@@ -550,6 +554,7 @@ mcuList =
     , MCU "STM32F446ZEJx" "STM32F4" "cortex-m4" 512 128
     , MCU "STM32F446ZETx" "STM32F4" "cortex-m4" 512 128
     , MCU "STM32F469AEHx" "STM32F4" "cortex-m4" 512 384
+    , MCU "STM32F469AEYx" "STM32F4" "cortex-m4" 512 384
     , MCU "STM32F469AGHx" "STM32F4" "cortex-m4" 1024 384
     , MCU "STM32F469AGYx" "STM32F4" "cortex-m4" 1024 384
     , MCU "STM32F469AIHx" "STM32F4" "cortex-m4" 2048 384
@@ -558,6 +563,7 @@ mcuList =
     , MCU "STM32F469BGTx" "STM32F4" "cortex-m4" 1024 384
     , MCU "STM32F469BITx" "STM32F4" "cortex-m4" 2048 384
     , MCU "STM32F469IEHx" "STM32F4" "cortex-m4" 512 384
+    , MCU "STM32F469IETx" "STM32F4" "cortex-m4" 512 384
     , MCU "STM32F469IGHx" "STM32F4" "cortex-m4" 1024 384
     , MCU "STM32F469IGTx" "STM32F4" "cortex-m4" 1024 384
     , MCU "STM32F469IIHx" "STM32F4" "cortex-m4" 2048 384
@@ -572,11 +578,14 @@ mcuList =
     , MCU "STM32F469ZGTx" "STM32F4" "cortex-m4" 1024 384
     , MCU "STM32F469ZITx" "STM32F4" "cortex-m4" 2048 384
     , MCU "STM32F479AGHx" "STM32F4" "cortex-m4" 1024 384
+    , MCU "STM32F479AGYx" "STM32F4" "cortex-m4" 1024 384
     , MCU "STM32F479AIHx" "STM32F4" "cortex-m4" 2048 384
     , MCU "STM32F479AIYx" "STM32F4" "cortex-m4" 2048 384
     , MCU "STM32F479BGTx" "STM32F4" "cortex-m4" 1024 384
     , MCU "STM32F479BITx" "STM32F4" "cortex-m4" 2048 384
     , MCU "STM32F479IGHx" "STM32F4" "cortex-m4" 1024 384
+    , MCU "STM32F479IGTx" "STM32F4" "cortex-m4" 1024 384
+    , MCU "STM32F479IIHx" "STM32F4" "cortex-m4" 2048 384
     , MCU "STM32F479IITx" "STM32F4" "cortex-m4" 2048 384
     , MCU "STM32F479NGHx" "STM32F4" "cortex-m4" 1024 384
     , MCU "STM32F479NIHx" "STM32F4" "cortex-m4" 2048 384
@@ -598,6 +607,9 @@ mcuList =
     , MCU "STM32F723ICTx" "STM32F7" "cortex-m7" 256 256
     , MCU "STM32F723IEKx" "STM32F7" "cortex-m7" 512 256
     , MCU "STM32F723IETx" "STM32F7" "cortex-m7" 512 256
+    , MCU "STM32F723VCTx" "STM32F7" "cortex-m7" 256 256
+    , MCU "STM32F723VCYx" "STM32F7" "cortex-m7" 256 256
+    , MCU "STM32F723VETx" "STM32F7" "cortex-m7" 512 256
     , MCU "STM32F723VEYx" "STM32F7" "cortex-m7" 512 256
     , MCU "STM32F723ZCIx" "STM32F7" "cortex-m7" 256 256
     , MCU "STM32F723ZCTx" "STM32F7" "cortex-m7" 256 256
@@ -614,6 +626,7 @@ mcuList =
     , MCU "STM32F732ZETx" "STM32F7" "cortex-m7" 512 256
     , MCU "STM32F733IEKx" "STM32F7" "cortex-m7" 512 256
     , MCU "STM32F733IETx" "STM32F7" "cortex-m7" 512 256
+    , MCU "STM32F733VETx" "STM32F7" "cortex-m7" 512 256
     , MCU "STM32F733VEYx" "STM32F7" "cortex-m7" 512 256
     , MCU "STM32F733ZEIx" "STM32F7" "cortex-m7" 512 256
     , MCU "STM32F733ZETx" "STM32F7" "cortex-m7" 512 256
@@ -682,6 +695,8 @@ mcuList =
     , MCU "STM32F767VITx" "STM32F7" "cortex-m7" 2048 512
     , MCU "STM32F767ZGTx" "STM32F7" "cortex-m7" 1024 512
     , MCU "STM32F767ZITx" "STM32F7" "cortex-m7" 2048 512
+    , MCU "STM32F768AIYx" "STM32F7" "cortex-m7" 2048 512
+    , MCU "STM32F769AGYx" "STM32F7" "cortex-m7" 1024 512
     , MCU "STM32F769AIYx" "STM32F7" "cortex-m7" 2048 512
     , MCU "STM32F769BGTx" "STM32F7" "cortex-m7" 1024 512
     , MCU "STM32F769BITx" "STM32F7" "cortex-m7" 2048 512
@@ -742,6 +757,37 @@ mcuList =
     , MCU "STM32G041K8Tx" "STM32G0" "cortex-m0+" 64 8
     , MCU "STM32G041K8Ux" "STM32G0" "cortex-m0+" 64 8
     , MCU "STM32G041Y8Yx" "STM32G0" "cortex-m0+" 64 8
+    , MCU "STM32G050C6Tx" "STM32G0" "cortex-m0+" 32 18
+    , MCU "STM32G050C8Tx" "STM32G0" "cortex-m0+" 64 18
+    , MCU "STM32G050F6Px" "STM32G0" "cortex-m0+" 32 18
+    , MCU "STM32G050K6Tx" "STM32G0" "cortex-m0+" 32 18
+    , MCU "STM32G050K8Tx" "STM32G0" "cortex-m0+" 64 18
+    , MCU "STM32G051C6Tx" "STM32G0" "cortex-m0+" 32 18
+    , MCU "STM32G051C6Ux" "STM32G0" "cortex-m0+" 32 18
+    , MCU "STM32G051C8Tx" "STM32G0" "cortex-m0+" 64 18
+    , MCU "STM32G051C8Ux" "STM32G0" "cortex-m0+" 64 18
+    , MCU "STM32G051F6Px" "STM32G0" "cortex-m0+" 32 18
+    , MCU "STM32G051F8Px" "STM32G0" "cortex-m0+" 64 18
+    , MCU "STM32G051F8Yx" "STM32G0" "cortex-m0+" 64 18
+    , MCU "STM32G051G6Ux" "STM32G0" "cortex-m0+" 32 18
+    , MCU "STM32G051G8Ux" "STM32G0" "cortex-m0+" 64 18
+    , MCU "STM32G051K6Tx" "STM32G0" "cortex-m0+" 32 18
+    , MCU "STM32G051K6Ux" "STM32G0" "cortex-m0+" 32 18
+    , MCU "STM32G051K8Tx" "STM32G0" "cortex-m0+" 64 18
+    , MCU "STM32G051K8Ux" "STM32G0" "cortex-m0+" 64 18
+    , MCU "STM32G061C6Tx" "STM32G0" "cortex-m0+" 32 18
+    , MCU "STM32G061C6Ux" "STM32G0" "cortex-m0+" 32 18
+    , MCU "STM32G061C8Tx" "STM32G0" "cortex-m0+" 64 18
+    , MCU "STM32G061C8Ux" "STM32G0" "cortex-m0+" 64 18
+    , MCU "STM32G061F6Px" "STM32G0" "cortex-m0+" 32 18
+    , MCU "STM32G061F8Px" "STM32G0" "cortex-m0+" 64 18
+    , MCU "STM32G061F8Yx" "STM32G0" "cortex-m0+" 64 18
+    , MCU "STM32G061G6Ux" "STM32G0" "cortex-m0+" 32 18
+    , MCU "STM32G061G8Ux" "STM32G0" "cortex-m0+" 64 18
+    , MCU "STM32G061K6Tx" "STM32G0" "cortex-m0+" 32 18
+    , MCU "STM32G061K6Ux" "STM32G0" "cortex-m0+" 32 18
+    , MCU "STM32G061K8Tx" "STM32G0" "cortex-m0+" 64 18
+    , MCU "STM32G061K8Ux" "STM32G0" "cortex-m0+" 64 18
     , MCU "STM32G070CBTx" "STM32G0" "cortex-m0+" 128 36
     , MCU "STM32G070KBTx" "STM32G0" "cortex-m0+" 128 36
     , MCU "STM32G070RBTx" "STM32G0" "cortex-m0+" 128 36
@@ -782,6 +828,82 @@ mcuList =
     , MCU "STM32G081KBUxN" "STM32G0" "cortex-m0+" 128 36
     , MCU "STM32G081RBIx" "STM32G0" "cortex-m0+" 128 36
     , MCU "STM32G081RBTx" "STM32G0" "cortex-m0+" 128 36
+    , MCU "STM32G0B0CETx" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0B0KETx" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0B0RETx" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0B0VETx" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0B1CBTx" "STM32G0" "cortex-m0+" 128 144
+    , MCU "STM32G0B1CBTxN" "STM32G0" "cortex-m0+" 128 144
+    , MCU "STM32G0B1CBUx" "STM32G0" "cortex-m0+" 128 144
+    , MCU "STM32G0B1CBUxN" "STM32G0" "cortex-m0+" 128 144
+    , MCU "STM32G0B1CCTx" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0B1CCTxN" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0B1CCUx" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0B1CCUxN" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0B1CETx" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0B1CETxN" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0B1CEUx" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0B1CEUxN" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0B1KBTx" "STM32G0" "cortex-m0+" 128 144
+    , MCU "STM32G0B1KBTxN" "STM32G0" "cortex-m0+" 128 144
+    , MCU "STM32G0B1KBUx" "STM32G0" "cortex-m0+" 128 144
+    , MCU "STM32G0B1KBUxN" "STM32G0" "cortex-m0+" 128 144
+    , MCU "STM32G0B1KCTx" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0B1KCTxN" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0B1KCUx" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0B1KCUxN" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0B1KETx" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0B1KETxN" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0B1KEUx" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0B1KEUxN" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0B1MBTx" "STM32G0" "cortex-m0+" 128 144
+    , MCU "STM32G0B1MCTx" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0B1METx" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0B1NEYx" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0B1RBIxN" "STM32G0" "cortex-m0+" 128 144
+    , MCU "STM32G0B1RBTx" "STM32G0" "cortex-m0+" 128 144
+    , MCU "STM32G0B1RBTxN" "STM32G0" "cortex-m0+" 128 144
+    , MCU "STM32G0B1RCIxN" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0B1RCTx" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0B1RCTxN" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0B1REIxN" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0B1RETx" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0B1RETxN" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0B1VBIx" "STM32G0" "cortex-m0+" 128 144
+    , MCU "STM32G0B1VBTx" "STM32G0" "cortex-m0+" 128 144
+    , MCU "STM32G0B1VCIx" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0B1VCTx" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0B1VEIx" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0B1VETx" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0C1CCTx" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0C1CCTxN" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0C1CCUx" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0C1CCUxN" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0C1CETx" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0C1CETxN" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0C1CEUx" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0C1CEUxN" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0C1KCTx" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0C1KCTxN" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0C1KCUx" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0C1KCUxN" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0C1KETx" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0C1KETxN" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0C1KEUx" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0C1KEUxN" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0C1MCTx" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0C1METx" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0C1NEYx" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0C1RCIxN" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0C1RCTx" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0C1RCTxN" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0C1REIxN" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0C1RETx" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0C1RETxN" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0C1VCIx" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0C1VCTx" "STM32G0" "cortex-m0+" 256 144
+    , MCU "STM32G0C1VEIx" "STM32G0" "cortex-m0+" 512 144
+    , MCU "STM32G0C1VETx" "STM32G0" "cortex-m0+" 512 144
     , MCU "STM32G431C6Tx" "STM32G4" "cortex-m4" 32 32
     , MCU "STM32G431C6Ux" "STM32G4" "cortex-m4" 32 32
     , MCU "STM32G431C8Tx" "STM32G4" "cortex-m4" 64 32
@@ -843,6 +965,9 @@ mcuList =
     , MCU "STM32G473MCTx" "STM32G4" "cortex-m4" 256 128
     , MCU "STM32G473METx" "STM32G4" "cortex-m4" 512 128
     , MCU "STM32G473MEYx" "STM32G4" "cortex-m4" 512 128
+    , MCU "STM32G473PBIx" "STM32G4" "cortex-m4" 128 128
+    , MCU "STM32G473PCIx" "STM32G4" "cortex-m4" 256 128
+    , MCU "STM32G473PEIx" "STM32G4" "cortex-m4" 512 128
     , MCU "STM32G473QBTx" "STM32G4" "cortex-m4" 128 128
     , MCU "STM32G473QCTx" "STM32G4" "cortex-m4" 256 128
     , MCU "STM32G473QETx" "STM32G4" "cortex-m4" 512 128
@@ -850,13 +975,10 @@ mcuList =
     , MCU "STM32G473RCTx" "STM32G4" "cortex-m4" 256 128
     , MCU "STM32G473RETx" "STM32G4" "cortex-m4" 512 128
     , MCU "STM32G473VBHx" "STM32G4" "cortex-m4" 128 128
-    , MCU "STM32G473VBIx" "STM32G4" "cortex-m4" 128 128
     , MCU "STM32G473VBTx" "STM32G4" "cortex-m4" 128 128
     , MCU "STM32G473VCHx" "STM32G4" "cortex-m4" 256 128
-    , MCU "STM32G473VCIx" "STM32G4" "cortex-m4" 256 128
     , MCU "STM32G473VCTx" "STM32G4" "cortex-m4" 256 128
     , MCU "STM32G473VEHx" "STM32G4" "cortex-m4" 512 128
-    , MCU "STM32G473VEIx" "STM32G4" "cortex-m4" 512 128
     , MCU "STM32G473VETx" "STM32G4" "cortex-m4" 512 128
     , MCU "STM32G474CBTx" "STM32G4" "cortex-m4" 128 128
     , MCU "STM32G474CBUx" "STM32G4" "cortex-m4" 128 128
@@ -868,6 +990,9 @@ mcuList =
     , MCU "STM32G474MCTx" "STM32G4" "cortex-m4" 256 128
     , MCU "STM32G474METx" "STM32G4" "cortex-m4" 512 128
     , MCU "STM32G474MEYx" "STM32G4" "cortex-m4" 512 128
+    , MCU "STM32G474PBIx" "STM32G4" "cortex-m4" 128 128
+    , MCU "STM32G474PCIx" "STM32G4" "cortex-m4" 256 128
+    , MCU "STM32G474PEIx" "STM32G4" "cortex-m4" 512 128
     , MCU "STM32G474QBTx" "STM32G4" "cortex-m4" 128 128
     , MCU "STM32G474QCTx" "STM32G4" "cortex-m4" 256 128
     , MCU "STM32G474QETx" "STM32G4" "cortex-m4" 512 128
@@ -887,21 +1012,89 @@ mcuList =
     , MCU "STM32G483CEUx" "STM32G4" "cortex-m4" 512 128
     , MCU "STM32G483METx" "STM32G4" "cortex-m4" 512 128
     , MCU "STM32G483MEYx" "STM32G4" "cortex-m4" 512 128
+    , MCU "STM32G483PEIx" "STM32G4" "cortex-m4" 512 128
     , MCU "STM32G483QETx" "STM32G4" "cortex-m4" 512 128
     , MCU "STM32G483RETx" "STM32G4" "cortex-m4" 512 128
     , MCU "STM32G483VEHx" "STM32G4" "cortex-m4" 512 128
-    , MCU "STM32G483VEIx" "STM32G4" "cortex-m4" 512 128
     , MCU "STM32G483VETx" "STM32G4" "cortex-m4" 512 128
     , MCU "STM32G484CETx" "STM32G4" "cortex-m4" 512 128
     , MCU "STM32G484CEUx" "STM32G4" "cortex-m4" 512 128
     , MCU "STM32G484METx" "STM32G4" "cortex-m4" 512 128
     , MCU "STM32G484MEYx" "STM32G4" "cortex-m4" 512 128
+    , MCU "STM32G484PEIx" "STM32G4" "cortex-m4" 512 128
     , MCU "STM32G484QETx" "STM32G4" "cortex-m4" 512 128
     , MCU "STM32G484RETx" "STM32G4" "cortex-m4" 512 128
     , MCU "STM32G484VEHx" "STM32G4" "cortex-m4" 512 128
-    , MCU "STM32G484VEIx" "STM32G4" "cortex-m4" 512 128
     , MCU "STM32G484VETx" "STM32G4" "cortex-m4" 512 128
+    , MCU "STM32G491CCTx" "STM32G4" "cortex-m4" 256 112
+    , MCU "STM32G491CCUx" "STM32G4" "cortex-m4" 256 112
+    , MCU "STM32G491CETx" "STM32G4" "cortex-m4" 512 112
+    , MCU "STM32G491CEUx" "STM32G4" "cortex-m4" 512 112
+    , MCU "STM32G491KCUx" "STM32G4" "cortex-m4" 256 112
+    , MCU "STM32G491KEUx" "STM32G4" "cortex-m4" 512 112
+    , MCU "STM32G491MCSx" "STM32G4" "cortex-m4" 256 112
+    , MCU "STM32G491MCTx" "STM32G4" "cortex-m4" 256 112
+    , MCU "STM32G491MESx" "STM32G4" "cortex-m4" 512 112
+    , MCU "STM32G491METx" "STM32G4" "cortex-m4" 512 112
+    , MCU "STM32G491RCIx" "STM32G4" "cortex-m4" 256 128
+    , MCU "STM32G491RCTx" "STM32G4" "cortex-m4" 256 112
+    , MCU "STM32G491REIx" "STM32G4" "cortex-m4" 512 112
+    , MCU "STM32G491RETx" "STM32G4" "cortex-m4" 512 112
+    , MCU "STM32G491REYx" "STM32G4" "cortex-m4" 512 112
+    , MCU "STM32G491VCTx" "STM32G4" "cortex-m4" 256 112
+    , MCU "STM32G491VETx" "STM32G4" "cortex-m4" 512 112
+    , MCU "STM32G4A1CETx" "STM32G4" "cortex-m4" 512 112
+    , MCU "STM32G4A1CEUx" "STM32G4" "cortex-m4" 512 112
+    , MCU "STM32G4A1KEUx" "STM32G4" "cortex-m4" 512 112
+    , MCU "STM32G4A1MESx" "STM32G4" "cortex-m4" 512 112
+    , MCU "STM32G4A1METx" "STM32G4" "cortex-m4" 512 112
+    , MCU "STM32G4A1REIx" "STM32G4" "cortex-m4" 512 112
+    , MCU "STM32G4A1RETx" "STM32G4" "cortex-m4" 512 112
+    , MCU "STM32G4A1REYx" "STM32G4" "cortex-m4" 512 112
+    , MCU "STM32G4A1VETx" "STM32G4" "cortex-m4" 512 112
     , MCU "STM32GBK1CBTx" "STM32G4" "cortex-m4" 128 32
+    , MCU "STM32H723VEHx" "STM32H7" "cortex-m7" 512 564
+    , MCU "STM32H723VETx" "STM32H7" "cortex-m7" 512 564
+    , MCU "STM32H723VGHx" "STM32H7" "cortex-m7" 1024 564
+    , MCU "STM32H723VGTx" "STM32H7" "cortex-m7" 1024 564
+    , MCU "STM32H723ZEIx" "STM32H7" "cortex-m7" 512 564
+    , MCU "STM32H723ZETx" "STM32H7" "cortex-m7" 512 564
+    , MCU "STM32H723ZGIx" "STM32H7" "cortex-m7" 1024 564
+    , MCU "STM32H723ZGTx" "STM32H7" "cortex-m7" 1024 564
+    , MCU "STM32H725AEIx" "STM32H7" "cortex-m7" 512 564
+    , MCU "STM32H725AGIx" "STM32H7" "cortex-m7" 1024 564
+    , MCU "STM32H725IEKx" "STM32H7" "cortex-m7" 512 564
+    , MCU "STM32H725IETx" "STM32H7" "cortex-m7" 512 564
+    , MCU "STM32H725IGKx" "STM32H7" "cortex-m7" 1024 564
+    , MCU "STM32H725IGTx" "STM32H7" "cortex-m7" 1024 564
+    , MCU "STM32H725REVx" "STM32H7" "cortex-m7" 512 564
+    , MCU "STM32H725RGVx" "STM32H7" "cortex-m7" 1024 564
+    , MCU "STM32H725VEHx" "STM32H7" "cortex-m7" 512 564
+    , MCU "STM32H725VETx" "STM32H7" "cortex-m7" 512 564
+    , MCU "STM32H725VGHx" "STM32H7" "cortex-m7" 1024 564
+    , MCU "STM32H725VGTx" "STM32H7" "cortex-m7" 1024 564
+    , MCU "STM32H725VGYx" "STM32H7" "cortex-m7" 1024 564
+    , MCU "STM32H725ZETx" "STM32H7" "cortex-m7" 512 564
+    , MCU "STM32H725ZGTx" "STM32H7" "cortex-m7" 1024 564
+    , MCU "STM32H730ABIxQ" "STM32H7" "cortex-m7" 128 564
+    , MCU "STM32H730IBKxQ" "STM32H7" "cortex-m7" 128 564
+    , MCU "STM32H730IBTxQ" "STM32H7" "cortex-m7" 128 564
+    , MCU "STM32H730VBHx" "STM32H7" "cortex-m7" 128 564
+    , MCU "STM32H730VBTx" "STM32H7" "cortex-m7" 128 564
+    , MCU "STM32H730ZBIx" "STM32H7" "cortex-m7" 128 564
+    , MCU "STM32H730ZBTx" "STM32H7" "cortex-m7" 128 564
+    , MCU "STM32H733VGHx" "STM32H7" "cortex-m7" 1024 564
+    , MCU "STM32H733VGTx" "STM32H7" "cortex-m7" 1024 564
+    , MCU "STM32H733ZGIx" "STM32H7" "cortex-m7" 1024 564
+    , MCU "STM32H733ZGTx" "STM32H7" "cortex-m7" 1024 564
+    , MCU "STM32H735AGIx" "STM32H7" "cortex-m7" 1024 564
+    , MCU "STM32H735IGKx" "STM32H7" "cortex-m7" 1024 564
+    , MCU "STM32H735IGTx" "STM32H7" "cortex-m7" 1024 564
+    , MCU "STM32H735RGVx" "STM32H7" "cortex-m7" 1024 564
+    , MCU "STM32H735VGHx" "STM32H7" "cortex-m7" 1024 564
+    , MCU "STM32H735VGTx" "STM32H7" "cortex-m7" 1024 564
+    , MCU "STM32H735VGYx" "STM32H7" "cortex-m7" 1024 564
+    , MCU "STM32H735ZGTx" "STM32H7" "cortex-m7" 1024 564
     , MCU "STM32H742AGIx" "STM32H7" "cortex-m7" 1024 692
     , MCU "STM32H742AIIx" "STM32H7" "cortex-m7" 2048 692
     , MCU "STM32H742BGTx" "STM32H7" "cortex-m7" 1024 692
@@ -1042,6 +1235,7 @@ mcuList =
     , MCU "STM32L011F4Ux" "STM32L0" "cortex-m0+" 16 2
     , MCU "STM32L011G3Ux" "STM32L0" "cortex-m0+" 8 2
     , MCU "STM32L011G4Ux" "STM32L0" "cortex-m0+" 16 2
+    , MCU "STM32L011K3Tx" "STM32L0" "cortex-m0+" 8 2
     , MCU "STM32L011K3Ux" "STM32L0" "cortex-m0+" 8 2
     , MCU "STM32L011K4Tx" "STM32L0" "cortex-m0+" 16 2
     , MCU "STM32L011K4Ux" "STM32L0" "cortex-m0+" 16 2
@@ -1050,6 +1244,7 @@ mcuList =
     , MCU "STM32L021G4Ux" "STM32L0" "cortex-m0+" 16 2
     , MCU "STM32L021K4Tx" "STM32L0" "cortex-m0+" 16 2
     , MCU "STM32L031C4Tx" "STM32L0" "cortex-m0+" 16 8
+    , MCU "STM32L031C4Ux" "STM32L0" "cortex-m0+" 16 8
     , MCU "STM32L031C6Tx" "STM32L0" "cortex-m0+" 32 8
     , MCU "STM32L031C6Ux" "STM32L0" "cortex-m0+" 32 8
     , MCU "STM32L031E4Yx" "STM32L0" "cortex-m0+" 16 8
@@ -1059,10 +1254,13 @@ mcuList =
     , MCU "STM32L031G4Ux" "STM32L0" "cortex-m0+" 16 8
     , MCU "STM32L031G6Ux" "STM32L0" "cortex-m0+" 32 8
     , MCU "STM32L031G6UxS" "STM32L0" "cortex-m0+" 32 8
+    , MCU "STM32L031K4Tx" "STM32L0" "cortex-m0+" 16 8
     , MCU "STM32L031K4Ux" "STM32L0" "cortex-m0+" 16 8
     , MCU "STM32L031K6Tx" "STM32L0" "cortex-m0+" 32 8
     , MCU "STM32L031K6Ux" "STM32L0" "cortex-m0+" 32 8
+    , MCU "STM32L041C4Tx" "STM32L0" "cortex-m0+" 16 8
     , MCU "STM32L041C6Tx" "STM32L0" "cortex-m0+" 32 8
+    , MCU "STM32L041C6Ux" "STM32L0" "cortex-m0+" 32 8
     , MCU "STM32L041E6Yx" "STM32L0" "cortex-m0+" 32 8
     , MCU "STM32L041F6Px" "STM32L0" "cortex-m0+" 32 8
     , MCU "STM32L041G6Ux" "STM32L0" "cortex-m0+" 32 8
@@ -1070,7 +1268,9 @@ mcuList =
     , MCU "STM32L041K6Tx" "STM32L0" "cortex-m0+" 32 8
     , MCU "STM32L041K6Ux" "STM32L0" "cortex-m0+" 32 8
     , MCU "STM32L051C6Tx" "STM32L0" "cortex-m0+" 32 8
+    , MCU "STM32L051C6Ux" "STM32L0" "cortex-m0+" 32 8
     , MCU "STM32L051C8Tx" "STM32L0" "cortex-m0+" 64 8
+    , MCU "STM32L051C8Ux" "STM32L0" "cortex-m0+" 64 8
     , MCU "STM32L051K6Tx" "STM32L0" "cortex-m0+" 32 8
     , MCU "STM32L051K6Ux" "STM32L0" "cortex-m0+" 32 8
     , MCU "STM32L051K8Tx" "STM32L0" "cortex-m0+" 64 8
@@ -1082,7 +1282,9 @@ mcuList =
     , MCU "STM32L051T6Yx" "STM32L0" "cortex-m0+" 32 8
     , MCU "STM32L051T8Yx" "STM32L0" "cortex-m0+" 64 8
     , MCU "STM32L052C6Tx" "STM32L0" "cortex-m0+" 32 8
+    , MCU "STM32L052C6Ux" "STM32L0" "cortex-m0+" 32 8
     , MCU "STM32L052C8Tx" "STM32L0" "cortex-m0+" 64 8
+    , MCU "STM32L052C8Ux" "STM32L0" "cortex-m0+" 64 8
     , MCU "STM32L052K6Tx" "STM32L0" "cortex-m0+" 32 8
     , MCU "STM32L052K6Ux" "STM32L0" "cortex-m0+" 32 8
     , MCU "STM32L052K8Tx" "STM32L0" "cortex-m0+" 64 8
@@ -1095,18 +1297,26 @@ mcuList =
     , MCU "STM32L052T8Fx" "STM32L0" "cortex-m0+" 64 8
     , MCU "STM32L052T8Yx" "STM32L0" "cortex-m0+" 64 8
     , MCU "STM32L053C6Tx" "STM32L0" "cortex-m0+" 32 8
+    , MCU "STM32L053C6Ux" "STM32L0" "cortex-m0+" 32 8
     , MCU "STM32L053C8Tx" "STM32L0" "cortex-m0+" 64 8
+    , MCU "STM32L053C8Ux" "STM32L0" "cortex-m0+" 64 8
     , MCU "STM32L053R6Hx" "STM32L0" "cortex-m0+" 32 8
     , MCU "STM32L053R6Tx" "STM32L0" "cortex-m0+" 32 8
     , MCU "STM32L053R8Hx" "STM32L0" "cortex-m0+" 64 8
     , MCU "STM32L053R8Tx" "STM32L0" "cortex-m0+" 64 8
+    , MCU "STM32L062C8Ux" "STM32L0" "cortex-m0+" 64 8
     , MCU "STM32L062K8Tx" "STM32L0" "cortex-m0+" 64 8
     , MCU "STM32L062K8Ux" "STM32L0" "cortex-m0+" 64 8
     , MCU "STM32L063C8Tx" "STM32L0" "cortex-m0+" 64 8
+    , MCU "STM32L063C8Ux" "STM32L0" "cortex-m0+" 64 8
     , MCU "STM32L063R8Tx" "STM32L0" "cortex-m0+" 64 8
     , MCU "STM32L071C8Tx" "STM32L0" "cortex-m0+" 64 20
+    , MCU "STM32L071C8Ux" "STM32L0" "cortex-m0+" 64 20
     , MCU "STM32L071CBTx" "STM32L0" "cortex-m0+" 128 20
+    , MCU "STM32L071CBUx" "STM32L0" "cortex-m0+" 128 20
+    , MCU "STM32L071CBYx" "STM32L0" "cortex-m0+" 128 20
     , MCU "STM32L071CZTx" "STM32L0" "cortex-m0+" 192 20
+    , MCU "STM32L071CZUx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L071CZYx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L071K8Ux" "STM32L0" "cortex-m0+" 64 20
     , MCU "STM32L071KBTx" "STM32L0" "cortex-m0+" 128 20
@@ -1121,47 +1331,63 @@ mcuList =
     , MCU "STM32L071VBTx" "STM32L0" "cortex-m0+" 128 20
     , MCU "STM32L071VZTx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L072CBTx" "STM32L0" "cortex-m0+" 128 20
+    , MCU "STM32L072CBUx" "STM32L0" "cortex-m0+" 128 20
     , MCU "STM32L072CBYx" "STM32L0" "cortex-m0+" 128 20
     , MCU "STM32L072CZEx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L072CZTx" "STM32L0" "cortex-m0+" 192 20
+    , MCU "STM32L072CZUx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L072CZYx" "STM32L0" "cortex-m0+" 192 20
+    , MCU "STM32L072KBTx" "STM32L0" "cortex-m0+" 128 20
     , MCU "STM32L072KBUx" "STM32L0" "cortex-m0+" 128 20
     , MCU "STM32L072KZTx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L072KZUx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L072RBHx" "STM32L0" "cortex-m0+" 128 20
     , MCU "STM32L072RBIx" "STM32L0" "cortex-m0+" 128 20
     , MCU "STM32L072RBTx" "STM32L0" "cortex-m0+" 128 20
+    , MCU "STM32L072RZHx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L072RZIx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L072RZTx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L072V8Ix" "STM32L0" "cortex-m0+" 64 20
     , MCU "STM32L072V8Tx" "STM32L0" "cortex-m0+" 64 20
+    , MCU "STM32L072VBIx" "STM32L0" "cortex-m0+" 128 20
     , MCU "STM32L072VBTx" "STM32L0" "cortex-m0+" 128 20
     , MCU "STM32L072VZIx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L072VZTx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L073CBTx" "STM32L0" "cortex-m0+" 128 20
+    , MCU "STM32L073CBUx" "STM32L0" "cortex-m0+" 128 20
     , MCU "STM32L073CZTx" "STM32L0" "cortex-m0+" 192 20
+    , MCU "STM32L073CZUx" "STM32L0" "cortex-m0+" 192 20
+    , MCU "STM32L073CZYx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L073RBHx" "STM32L0" "cortex-m0+" 128 20
     , MCU "STM32L073RBTx" "STM32L0" "cortex-m0+" 128 20
     , MCU "STM32L073RZHx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L073RZIx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L073RZTx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L073V8Tx" "STM32L0" "cortex-m0+" 64 20
+    , MCU "STM32L073VBIx" "STM32L0" "cortex-m0+" 128 20
     , MCU "STM32L073VBTx" "STM32L0" "cortex-m0+" 128 20
     , MCU "STM32L073VZIx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L073VZTx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L081CBTx" "STM32L0" "cortex-m0+" 128 20
     , MCU "STM32L081CZTx" "STM32L0" "cortex-m0+" 192 20
+    , MCU "STM32L081CZUx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L081KZTx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L081KZUx" "STM32L0" "cortex-m0+" 192 20
+    , MCU "STM32L082CZUx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L082CZYx" "STM32L0" "cortex-m0+" 192 20
+    , MCU "STM32L082KBTx" "STM32L0" "cortex-m0+" 128 20
+    , MCU "STM32L082KBUx" "STM32L0" "cortex-m0+" 128 20
     , MCU "STM32L082KZTx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L082KZUx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L083CBTx" "STM32L0" "cortex-m0+" 128 20
     , MCU "STM32L083CZTx" "STM32L0" "cortex-m0+" 192 20
+    , MCU "STM32L083CZUx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L083RBHx" "STM32L0" "cortex-m0+" 128 20
+    , MCU "STM32L083RBTx" "STM32L0" "cortex-m0+" 128 20
     , MCU "STM32L083RZHx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L083RZTx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L083V8Tx" "STM32L0" "cortex-m0+" 64 20
+    , MCU "STM32L083VBIx" "STM32L0" "cortex-m0+" 128 20
     , MCU "STM32L083VBTx" "STM32L0" "cortex-m0+" 128 20
     , MCU "STM32L083VZIx" "STM32L0" "cortex-m0+" 192 20
     , MCU "STM32L083VZTx" "STM32L0" "cortex-m0+" 192 20
@@ -1280,6 +1506,7 @@ mcuList =
     , MCU "STM32L152ZCTx" "STM32L1" "cortex-m3" 256 32
     , MCU "STM32L152ZDTx" "STM32L1" "cortex-m3" 384 48
     , MCU "STM32L152ZETx" "STM32L1" "cortex-m3" 512 80
+    , MCU "STM32L162QCHx" "STM32L1" "cortex-m3" 256 32
     , MCU "STM32L162QDHx" "STM32L1" "cortex-m3" 384 48
     , MCU "STM32L162RCTx" "STM32L1" "cortex-m3" 256 32
     , MCU "STM32L162RCTxA" "STM32L1" "cortex-m3" 256 32
@@ -1290,8 +1517,10 @@ mcuList =
     , MCU "STM32L162VCTx" "STM32L1" "cortex-m3" 256 32
     , MCU "STM32L162VCTxA" "STM32L1" "cortex-m3" 256 32
     , MCU "STM32L162VDTx" "STM32L1" "cortex-m3" 384 48
+    , MCU "STM32L162VDYxX" "STM32L1" "cortex-m3" 384 80
     , MCU "STM32L162VETx" "STM32L1" "cortex-m3" 512 80
     , MCU "STM32L162VEYx" "STM32L1" "cortex-m3" 512 80
+    , MCU "STM32L162ZCTx" "STM32L1" "cortex-m3" 256 32
     , MCU "STM32L162ZDTx" "STM32L1" "cortex-m3" 384 48
     , MCU "STM32L162ZETx" "STM32L1" "cortex-m3" 512 80
     , MCU "STM32L412C8Tx" "STM32L4" "cortex-m4" 64 40
@@ -1363,9 +1592,11 @@ mcuList =
     , MCU "STM32L443VCIx" "STM32L4" "cortex-m4" 256 64
     , MCU "STM32L443VCTx" "STM32L4" "cortex-m4" 256 64
     , MCU "STM32L451CCUx" "STM32L4" "cortex-m4" 256 160
+    , MCU "STM32L451CETx" "STM32L4" "cortex-m4" 512 160
     , MCU "STM32L451CEUx" "STM32L4" "cortex-m4" 512 160
     , MCU "STM32L451RCIx" "STM32L4" "cortex-m4" 256 160
     , MCU "STM32L451RCTx" "STM32L4" "cortex-m4" 256 160
+    , MCU "STM32L451RCYx" "STM32L4" "cortex-m4" 256 160
     , MCU "STM32L451REIx" "STM32L4" "cortex-m4" 512 160
     , MCU "STM32L451RETx" "STM32L4" "cortex-m4" 512 160
     , MCU "STM32L451REYx" "STM32L4" "cortex-m4" 512 160
@@ -1374,9 +1605,11 @@ mcuList =
     , MCU "STM32L451VEIx" "STM32L4" "cortex-m4" 512 160
     , MCU "STM32L451VETx" "STM32L4" "cortex-m4" 512 160
     , MCU "STM32L452CCUx" "STM32L4" "cortex-m4" 256 160
+    , MCU "STM32L452CETx" "STM32L4" "cortex-m4" 512 160
     , MCU "STM32L452CEUx" "STM32L4" "cortex-m4" 512 160
     , MCU "STM32L452RCIx" "STM32L4" "cortex-m4" 256 160
     , MCU "STM32L452RCTx" "STM32L4" "cortex-m4" 256 160
+    , MCU "STM32L452RCYx" "STM32L4" "cortex-m4" 256 160
     , MCU "STM32L452REIx" "STM32L4" "cortex-m4" 512 160
     , MCU "STM32L452RETx" "STM32L4" "cortex-m4" 512 160
     , MCU "STM32L452RETxP" "STM32L4" "cortex-m4" 512 160
@@ -1385,6 +1618,7 @@ mcuList =
     , MCU "STM32L452VCTx" "STM32L4" "cortex-m4" 256 160
     , MCU "STM32L452VEIx" "STM32L4" "cortex-m4" 512 160
     , MCU "STM32L452VETx" "STM32L4" "cortex-m4" 512 160
+    , MCU "STM32L462CETx" "STM32L4" "cortex-m4" 512 160
     , MCU "STM32L462CEUx" "STM32L4" "cortex-m4" 512 160
     , MCU "STM32L462REIx" "STM32L4" "cortex-m4" 512 160
     , MCU "STM32L462RETx" "STM32L4" "cortex-m4" 512 160
@@ -1424,6 +1658,8 @@ mcuList =
     , MCU "STM32L476ZGJx" "STM32L4" "cortex-m4" 1024 128
     , MCU "STM32L476ZGTx" "STM32L4" "cortex-m4" 1024 128
     , MCU "STM32L476ZGTxP" "STM32L4" "cortex-m4" 1024 128
+    , MCU "STM32L485JCYx" "STM32L4" "cortex-m4" 256 128
+    , MCU "STM32L485JEYx" "STM32L4" "cortex-m4" 512 128
     , MCU "STM32L486JGYx" "STM32L4" "cortex-m4" 1024 128
     , MCU "STM32L486QGIx" "STM32L4" "cortex-m4" 1024 128
     , MCU "STM32L486RGTx" "STM32L4" "cortex-m4" 1024 128
@@ -1440,8 +1676,10 @@ mcuList =
     , MCU "STM32L496RGTxP" "STM32L4" "cortex-m4" 1024 320
     , MCU "STM32L496VETx" "STM32L4" "cortex-m4" 512 320
     , MCU "STM32L496VGTx" "STM32L4" "cortex-m4" 1024 320
+    , MCU "STM32L496VGTxP" "STM32L4" "cortex-m4" 1024 320
     , MCU "STM32L496VGYx" "STM32L4" "cortex-m4" 1024 320
     , MCU "STM32L496VGYxP" "STM32L4" "cortex-m4" 1024 320
+    , MCU "STM32L496WGYxP" "STM32L4" "cortex-m4" 1024 320
     , MCU "STM32L496ZETx" "STM32L4" "cortex-m4" 512 320
     , MCU "STM32L496ZGTx" "STM32L4" "cortex-m4" 1024 320
     , MCU "STM32L496ZGTxP" "STM32L4" "cortex-m4" 1024 320
@@ -1452,6 +1690,7 @@ mcuList =
     , MCU "STM32L4A6RGTx" "STM32L4" "cortex-m4" 1024 320
     , MCU "STM32L4A6RGTxP" "STM32L4" "cortex-m4" 1024 320
     , MCU "STM32L4A6VGTx" "STM32L4" "cortex-m4" 1024 320
+    , MCU "STM32L4A6VGTxP" "STM32L4" "cortex-m4" 1024 320
     , MCU "STM32L4A6VGYx" "STM32L4" "cortex-m4" 1024 320
     , MCU "STM32L4A6VGYxP" "STM32L4" "cortex-m4" 1024 320
     , MCU "STM32L4A6ZGTx" "STM32L4" "cortex-m4" 1024 320
@@ -1481,13 +1720,21 @@ mcuList =
     , MCU "STM32L4P5ZGTx" "STM32L4+" "cortex-m4" 1024 320
     , MCU "STM32L4P5ZGTxP" "STM32L4+" "cortex-m4" 1024 320
     , MCU "STM32L4Q5AGIx" "STM32L4+" "cortex-m4" 1024 320
+    , MCU "STM32L4Q5AGIxP" "STM32L4+" "cortex-m4" 1024 320
     , MCU "STM32L4Q5CGTx" "STM32L4+" "cortex-m4" 1024 320
+    , MCU "STM32L4Q5CGTxP" "STM32L4+" "cortex-m4" 1024 320
     , MCU "STM32L4Q5CGUx" "STM32L4+" "cortex-m4" 1024 320
+    , MCU "STM32L4Q5CGUxP" "STM32L4+" "cortex-m4" 1024 320
     , MCU "STM32L4Q5QGIx" "STM32L4+" "cortex-m4" 1024 320
+    , MCU "STM32L4Q5QGIxP" "STM32L4+" "cortex-m4" 1024 320
     , MCU "STM32L4Q5RGTx" "STM32L4+" "cortex-m4" 1024 320
+    , MCU "STM32L4Q5RGTxP" "STM32L4+" "cortex-m4" 1024 320
     , MCU "STM32L4Q5VGTx" "STM32L4+" "cortex-m4" 1024 320
+    , MCU "STM32L4Q5VGTxP" "STM32L4+" "cortex-m4" 1024 320
     , MCU "STM32L4Q5VGYx" "STM32L4+" "cortex-m4" 1024 320
+    , MCU "STM32L4Q5VGYxP" "STM32L4+" "cortex-m4" 1024 320
     , MCU "STM32L4Q5ZGTx" "STM32L4+" "cortex-m4" 1024 320
+    , MCU "STM32L4Q5ZGTxP" "STM32L4+" "cortex-m4" 1024 320
     , MCU "STM32L4R5AGIx" "STM32L4+" "cortex-m4" 1024 640
     , MCU "STM32L4R5AIIx" "STM32L4+" "cortex-m4" 2048 640
     , MCU "STM32L4R5QGIx" "STM32L4+" "cortex-m4" 1024 640
@@ -1512,6 +1759,7 @@ mcuList =
     , MCU "STM32L4R9ZIJx" "STM32L4+" "cortex-m4" 2048 640
     , MCU "STM32L4R9ZITx" "STM32L4+" "cortex-m4" 2048 640
     , MCU "STM32L4R9ZIYx" "STM32L4+" "cortex-m4" 2048 640
+    , MCU "STM32L4R9ZIYxP" "STM32L4+" "cortex-m4" 2048 640
     , MCU "STM32L4S5AIIx" "STM32L4+" "cortex-m4" 2048 640
     , MCU "STM32L4S5QIIx" "STM32L4+" "cortex-m4" 2048 640
     , MCU "STM32L4S5VITx" "STM32L4+" "cortex-m4" 2048 640
@@ -1553,38 +1801,62 @@ mcuList =
     , MCU "STM32L562CEUxP" "STM32L5" "cortex-m33" 512 256
     , MCU "STM32L562MEYxP" "STM32L5" "cortex-m33" 512 256
     , MCU "STM32L562MEYxQ" "STM32L5" "cortex-m33" 512 256
+    , MCU "STM32L562QEIx" "STM32L5" "cortex-m33" 512 256
     , MCU "STM32L562QEIxP" "STM32L5" "cortex-m33" 512 256
     , MCU "STM32L562QEIxQ" "STM32L5" "cortex-m33" 512 256
     , MCU "STM32L562RETx" "STM32L5" "cortex-m33" 512 256
     , MCU "STM32L562RETxP" "STM32L5" "cortex-m33" 512 256
+    , MCU "STM32L562RETxQ" "STM32L5" "cortex-m33" 512 256
     , MCU "STM32L562VETx" "STM32L5" "cortex-m33" 512 256
     , MCU "STM32L562VETxQ" "STM32L5" "cortex-m33" 512 256
     , MCU "STM32L562ZETx" "STM32L5" "cortex-m33" 512 256
     , MCU "STM32L562ZETxQ" "STM32L5" "cortex-m33" 512 256
-    , MCU "STM32MP151AAAx" "STM32MP1" "cortex-a7" 0 448
-    , MCU "STM32MP151AABx" "STM32MP1" "cortex-a7" 0 448
-    , MCU "STM32MP151AACx" "STM32MP1" "cortex-a7" 0 448
-    , MCU "STM32MP151AADx" "STM32MP1" "cortex-a7" 0 448
-    , MCU "STM32MP151CAAx" "STM32MP1" "cortex-a7" 0 448
-    , MCU "STM32MP151CABx" "STM32MP1" "cortex-a7" 0 448
-    , MCU "STM32MP151CACx" "STM32MP1" "cortex-a7" 0 448
-    , MCU "STM32MP151CADx" "STM32MP1" "cortex-a7" 0 448
-    , MCU "STM32MP153AAAx" "STM32MP1" "cortex-a7" 0 448
-    , MCU "STM32MP153AABx" "STM32MP1" "cortex-a7" 0 448
-    , MCU "STM32MP153AACx" "STM32MP1" "cortex-a7" 0 448
-    , MCU "STM32MP153AADx" "STM32MP1" "cortex-a7" 0 448
-    , MCU "STM32MP153CAAx" "STM32MP1" "cortex-a7" 0 448
-    , MCU "STM32MP153CABx" "STM32MP1" "cortex-a7" 0 448
-    , MCU "STM32MP153CACx" "STM32MP1" "cortex-a7" 0 448
-    , MCU "STM32MP153CADx" "STM32MP1" "cortex-a7" 0 448
-    , MCU "STM32MP157AAAx" "STM32MP1" "cortex-a7" 0 448
-    , MCU "STM32MP157AABx" "STM32MP1" "cortex-a7" 0 448
-    , MCU "STM32MP157AACx" "STM32MP1" "cortex-a7" 0 448
-    , MCU "STM32MP157AADx" "STM32MP1" "cortex-a7" 0 448
-    , MCU "STM32MP157CAAx" "STM32MP1" "cortex-a7" 0 448
-    , MCU "STM32MP157CABx" "STM32MP1" "cortex-a7" 0 448
-    , MCU "STM32MP157CACx" "STM32MP1" "cortex-a7" 0 448
-    , MCU "STM32MP157CADx" "STM32MP1" "cortex-a7" 0 448
+    , MCU "STM32U575AGIx" "STM32U5" "cortex-m33" 1024 786
+    , MCU "STM32U575AGIxQ" "STM32U5" "cortex-m33" 1024 786
+    , MCU "STM32U575AIIx" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U575AIIxQ" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U575CGTx" "STM32U5" "cortex-m33" 1024 786
+    , MCU "STM32U575CGTxQ" "STM32U5" "cortex-m33" 1024 786
+    , MCU "STM32U575CGUx" "STM32U5" "cortex-m33" 1024 786
+    , MCU "STM32U575CGUxQ" "STM32U5" "cortex-m33" 1024 786
+    , MCU "STM32U575CITx" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U575CITxQ" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U575CIUx" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U575CIUxQ" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U575OIYxQ" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U575QGIx" "STM32U5" "cortex-m33" 1024 786
+    , MCU "STM32U575QGIxQ" "STM32U5" "cortex-m33" 1024 786
+    , MCU "STM32U575QIIx" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U575QIIxQ" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U575RGTx" "STM32U5" "cortex-m33" 1024 786
+    , MCU "STM32U575RGTxQ" "STM32U5" "cortex-m33" 1024 786
+    , MCU "STM32U575RITx" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U575RITxQ" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U575VGTx" "STM32U5" "cortex-m33" 1024 786
+    , MCU "STM32U575VGTxQ" "STM32U5" "cortex-m33" 1024 786
+    , MCU "STM32U575VITx" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U575VITxQ" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U575ZGTx" "STM32U5" "cortex-m33" 1024 786
+    , MCU "STM32U575ZGTxQ" "STM32U5" "cortex-m33" 1024 786
+    , MCU "STM32U575ZITx" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U575ZITxQ" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U585AIIx" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U585AIIxQ" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U585CITx" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U585CITxQ" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U585CIUx" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U585CIUxQ" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U585OIYxQ" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U585QIIx" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U585RITx" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U585RITxQ" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U585VITx" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U585VITxQ" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32U585ZITx" "STM32U5" "cortex-m33" 2048 786
+    , MCU "STM32WB10CCUx" "STM32WB" "cortex-m4" 320 48
+    , MCU "STM32WB15CCUx" "STM32WB" "cortex-m4" 320 48
+    , MCU "STM32WB15CCUxE" "STM32WB" "cortex-m4" 320 48
+    , MCU "STM32WB15CCYx" "STM32WB" "cortex-m4" 320 48
     , MCU "STM32WB50CGUx" "STM32WB" "cortex-m4" 1024 128
     , MCU "STM32WB55CCUx" "STM32WB" "cortex-m4" 256 128
     , MCU "STM32WB55CEUx" "STM32WB" "cortex-m4" 512 256
@@ -1598,5 +1870,26 @@ mcuList =
     , MCU "STM32WB55VEYx" "STM32WB" "cortex-m4" 512 256
     , MCU "STM32WB55VGQx" "STM32WB" "cortex-m4" 1024 256
     , MCU "STM32WB55VGYx" "STM32WB" "cortex-m4" 1024 256
+    , MCU "STM32WB55VYYx" "STM32WB" "cortex-m4" 640 256
+    , MCU "STM32WB5MMGHx" "STM32WB" "cortex-m4" 1024 256
+    , MCU "STM32WL54CCUx" "STM32WL" "cortex-m4" 256 64
+    , MCU "STM32WL54JCIx" "STM32WL" "cortex-m4" 256 64
+    , MCU "STM32WL55CCUx" "STM32WL" "cortex-m4" 256 64
+    , MCU "STM32WL55JCIx" "STM32WL" "cortex-m4" 256 64
+    , MCU "STM32WL55UCYx" "STM32WL" "cortex-m4" 256 64
+    , MCU "STM32WLE4C8Ux" "STM32WL" "cortex-m4" 64 20
+    , MCU "STM32WLE4CBUx" "STM32WL" "cortex-m4" 128 48
+    , MCU "STM32WLE4CCUx" "STM32WL" "cortex-m4" 256 64
+    , MCU "STM32WLE4J8Ix" "STM32WL" "cortex-m4" 64 20
+    , MCU "STM32WLE4JBIx" "STM32WL" "cortex-m4" 128 48
+    , MCU "STM32WLE4JCIx" "STM32WL" "cortex-m4" 256 64
+    , MCU "STM32WLE5C8Ux" "STM32WL" "cortex-m4" 64 20
+    , MCU "STM32WLE5CBUx" "STM32WL" "cortex-m4" 128 48
+    , MCU "STM32WLE5CCUx" "STM32WL" "cortex-m4" 256 64
+    , MCU "STM32WLE5J8Ix" "STM32WL" "cortex-m4" 64 20
+    , MCU "STM32WLE5JBIx" "STM32WL" "cortex-m4" 128 48
+    , MCU "STM32WLE5JCIx" "STM32WL" "cortex-m4" 256 64
+    , MCU "STM32WLE5U8Yx" "STM32WL" "cortex-m4" 64 20
+    , MCU "STM32WLE5UBYx" "STM32WL" "cortex-m4" 128 48
     ]
 

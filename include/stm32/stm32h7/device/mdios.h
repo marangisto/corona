@@ -613,6 +613,14 @@ struct peripheral_t<STM32H723, MDIOS>
 };
 
 template<>
+struct peripheral_t<STM32H725, MDIOS>
+{
+    static constexpr periph_t P = MDIOS;
+    using T = stm32h723_mdios_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, MDIOS>
 {
     static constexpr periph_t P = MDIOS;

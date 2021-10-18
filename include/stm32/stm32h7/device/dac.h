@@ -243,6 +243,14 @@ struct peripheral_t<STM32H723, DAC1>
 };
 
 template<>
+struct peripheral_t<STM32H725, DAC1>
+{
+    static constexpr periph_t P = DAC1;
+    using T = stm32h723_dac_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, DAC1>
 {
     static constexpr periph_t P = DAC1;

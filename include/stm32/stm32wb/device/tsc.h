@@ -8,7 +8,7 @@
 
 // TSC: Touch sensing controller
 
-struct stm32wb55_cm4_tsc_t
+struct stm32wb10_cm4_tsc_t
 {
     volatile uint32_t CR; // control register
     volatile uint32_t IER; // interrupt enable register
@@ -220,10 +220,26 @@ struct stm32wb55_cm4_tsc_t
 };
 
 template<>
+struct peripheral_t<STM32WB10_CM4, TSC>
+{
+    static constexpr periph_t P = TSC;
+    using T = stm32wb10_cm4_tsc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32WB15_CM4, TSC>
+{
+    static constexpr periph_t P = TSC;
+    using T = stm32wb10_cm4_tsc_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32WB55_CM4, TSC>
 {
     static constexpr periph_t P = TSC;
-    using T = stm32wb55_cm4_tsc_t;
+    using T = stm32wb10_cm4_tsc_t;
     static T& V;
 };
 

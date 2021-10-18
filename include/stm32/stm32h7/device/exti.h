@@ -455,6 +455,14 @@ struct peripheral_t<STM32H723, EXTI>
 };
 
 template<>
+struct peripheral_t<STM32H725, EXTI>
+{
+    static constexpr periph_t P = EXTI;
+    using T = stm32h723_exti_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, EXTI>
 {
     static constexpr periph_t P = EXTI;

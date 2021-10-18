@@ -216,14 +216,6 @@ struct peripheral_t<STM32L4x5, SDMMC>
     static T& V;
 };
 
-template<>
-struct peripheral_t<STM32L4x6, SDMMC1>
-{
-    static constexpr periph_t P = SDMMC1;
-    using T = stm32l476_sdmmc1_t;
-    static T& V;
-};
-
 using sdmmc_t = peripheral_t<svd, SDMMC>;
 using sdmmc1_t = peripheral_t<svd, SDMMC1>;
 

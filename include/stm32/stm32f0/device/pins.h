@@ -2215,7 +2215,7 @@ struct signal_traits<CFG, PC8, TIM3_CH3>
 {
     static constexpr altfun
         < CFG & (STM32F051|STM32F052|STM32F091)
-        > AF = (CFG & STM32F051) ? AF1 : AF0;
+        > AF = AF0;
 };
 
 template<gpio_conf_t CFG>

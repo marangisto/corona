@@ -837,6 +837,22 @@ struct peripheral_t<STM32H723, SDMMC2>
 };
 
 template<>
+struct peripheral_t<STM32H725, SDMMC1>
+{
+    static constexpr periph_t P = SDMMC1;
+    using T = stm32h723_sdmmc1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, SDMMC2>
+{
+    static constexpr periph_t P = SDMMC2;
+    using T = stm32h723_sdmmc1_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, SDMMC1>
 {
     static constexpr periph_t P = SDMMC1;

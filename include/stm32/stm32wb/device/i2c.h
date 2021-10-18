@@ -8,7 +8,7 @@
 
 // I2C1: Inter-integrated circuit
 
-struct stm32wb30_cm4_i2c1_t
+struct stm32wb10_cm4_i2c1_t
 {
     volatile uint32_t CR1; // Control register 1
     volatile uint32_t CR2; // Control register 2
@@ -122,10 +122,26 @@ struct stm32wb30_cm4_i2c1_t
 };
 
 template<>
+struct peripheral_t<STM32WB10_CM4, I2C1>
+{
+    static constexpr periph_t P = I2C1;
+    using T = stm32wb10_cm4_i2c1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32WB15_CM4, I2C1>
+{
+    static constexpr periph_t P = I2C1;
+    using T = stm32wb10_cm4_i2c1_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32WB30_CM4, I2C1>
 {
     static constexpr periph_t P = I2C1;
-    using T = stm32wb30_cm4_i2c1_t;
+    using T = stm32wb10_cm4_i2c1_t;
     static T& V;
 };
 
@@ -133,7 +149,7 @@ template<>
 struct peripheral_t<STM32WB35_CM4, I2C1>
 {
     static constexpr periph_t P = I2C1;
-    using T = stm32wb30_cm4_i2c1_t;
+    using T = stm32wb10_cm4_i2c1_t;
     static T& V;
 };
 
@@ -141,7 +157,7 @@ template<>
 struct peripheral_t<STM32WB35_CM4, I2C3>
 {
     static constexpr periph_t P = I2C3;
-    using T = stm32wb30_cm4_i2c1_t;
+    using T = stm32wb10_cm4_i2c1_t;
     static T& V;
 };
 
@@ -149,7 +165,7 @@ template<>
 struct peripheral_t<STM32WB50_CM4, I2C1>
 {
     static constexpr periph_t P = I2C1;
-    using T = stm32wb30_cm4_i2c1_t;
+    using T = stm32wb10_cm4_i2c1_t;
     static T& V;
 };
 
@@ -157,7 +173,7 @@ template<>
 struct peripheral_t<STM32WB55_CM4, I2C1>
 {
     static constexpr periph_t P = I2C1;
-    using T = stm32wb30_cm4_i2c1_t;
+    using T = stm32wb10_cm4_i2c1_t;
     static T& V;
 };
 
@@ -165,7 +181,7 @@ template<>
 struct peripheral_t<STM32WB55_CM4, I2C3>
 {
     static constexpr periph_t P = I2C3;
-    using T = stm32wb30_cm4_i2c1_t;
+    using T = stm32wb10_cm4_i2c1_t;
     static T& V;
 };
 

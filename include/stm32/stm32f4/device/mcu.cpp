@@ -486,6 +486,16 @@ typename peripheral_t<STM32F413, DFSDM2>::T&
         <typename peripheral_t<STM32F413, DFSDM2>::T*
         >(0x40016400);
 
+typename peripheral_t<STM32F413, DMA1>::T&
+    peripheral_t<STM32F413, DMA1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F413, DMA1>::T*
+        >(0x40026000);
+
+typename peripheral_t<STM32F413, DMA2>::T&
+    peripheral_t<STM32F413, DMA2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F413, DMA2>::T*
+        >(0x40026400);
+
 typename peripheral_t<STM32F401, DMA1>::T&
     peripheral_t<STM32F401, DMA1>::V = *reinterpret_cast
         <typename peripheral_t<STM32F401, DMA1>::T*
@@ -544,16 +554,6 @@ typename peripheral_t<STM32F412, DMA1>::T&
 typename peripheral_t<STM32F412, DMA2>::T&
     peripheral_t<STM32F412, DMA2>::V = *reinterpret_cast
         <typename peripheral_t<STM32F412, DMA2>::T*
-        >(0x40026400);
-
-typename peripheral_t<STM32F413, DMA1>::T&
-    peripheral_t<STM32F413, DMA1>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F413, DMA1>::T*
-        >(0x40026000);
-
-typename peripheral_t<STM32F413, DMA2>::T&
-    peripheral_t<STM32F413, DMA2>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F413, DMA2>::T*
         >(0x40026400);
 
 typename peripheral_t<STM32F427, DMA1>::T&
@@ -1806,11 +1806,6 @@ typename peripheral_t<STM32F469, MPU>::T&
         <typename peripheral_t<STM32F469, MPU>::T*
         >(0xe000ed90);
 
-typename peripheral_t<STM32F401, NVIC>::T&
-    peripheral_t<STM32F401, NVIC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F401, NVIC>::T*
-        >(0xe000e100);
-
 typename peripheral_t<STM32F405, NVIC>::T&
     peripheral_t<STM32F405, NVIC>::V = *reinterpret_cast
         <typename peripheral_t<STM32F405, NVIC>::T*
@@ -1860,11 +1855,6 @@ typename peripheral_t<STM32F469, NVIC>::T&
     peripheral_t<STM32F469, NVIC>::V = *reinterpret_cast
         <typename peripheral_t<STM32F469, NVIC>::T*
         >(0xe000e100);
-
-typename peripheral_t<STM32F401, NVIC_STIR>::T&
-    peripheral_t<STM32F401, NVIC_STIR>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F401, NVIC_STIR>::T*
-        >(0xe000ef00);
 
 typename peripheral_t<STM32F405, NVIC_STIR>::T&
     peripheral_t<STM32F405, NVIC_STIR>::V = *reinterpret_cast

@@ -7,10 +7,11 @@
 ///
 
 enum mcu_t
-    { STM32WB30CEUx
+    { STM32WB10CCUx
     , STM32WB50CGUx
-    , STM32WB35CCUx
-    , STM32WB35CEUx
+    , STM32WB15CCUx
+    , STM32WB15CCUxE
+    , STM32WB15CCYx
     , STM32WB55CCUx
     , STM32WB55CEUx
     , STM32WB55CGUx
@@ -28,10 +29,12 @@ enum mcu_t
     };
 
 enum svd_t
-    { STM32WB30_CM4 = 0x1
-    , STM32WB35_CM4 = 0x2
-    , STM32WB50_CM4 = 0x4
-    , STM32WB55_CM4 = 0x8
+    { STM32WB10_CM4 = 0x1
+    , STM32WB15_CM4 = 0x2
+    , STM32WB30_CM4 = 0x4
+    , STM32WB35_CM4 = 0x8
+    , STM32WB50_CM4 = 0x10
+    , STM32WB55_CM4 = 0x20
     };
 
 enum gpio_conf_t
@@ -139,10 +142,10 @@ struct dma_request_t
 
 template<mcu_t MCU> struct mcu_traits {};
 
-template<> struct mcu_traits<STM32WB30CEUx>
+template<> struct mcu_traits<STM32WB10CCUx>
 {
     static constexpr family_t family = STM32WB;
-    static constexpr svd_t svd = STM32WB30_CM4;
+    static constexpr svd_t svd = STM32WB10_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32WB35x;
     static constexpr unsigned frequency = 64;
 };
@@ -155,18 +158,26 @@ template<> struct mcu_traits<STM32WB50CGUx>
     static constexpr unsigned frequency = 64;
 };
 
-template<> struct mcu_traits<STM32WB35CCUx>
+template<> struct mcu_traits<STM32WB15CCUx>
 {
     static constexpr family_t family = STM32WB;
-    static constexpr svd_t svd = STM32WB35_CM4;
+    static constexpr svd_t svd = STM32WB15_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32WB35x;
     static constexpr unsigned frequency = 64;
 };
 
-template<> struct mcu_traits<STM32WB35CEUx>
+template<> struct mcu_traits<STM32WB15CCUxE>
 {
     static constexpr family_t family = STM32WB;
-    static constexpr svd_t svd = STM32WB35_CM4;
+    static constexpr svd_t svd = STM32WB15_CM4;
+    static constexpr gpio_conf_t gpio_conf = STM32WB35x;
+    static constexpr unsigned frequency = 64;
+};
+
+template<> struct mcu_traits<STM32WB15CCYx>
+{
+    static constexpr family_t family = STM32WB;
+    static constexpr svd_t svd = STM32WB15_CM4;
     static constexpr gpio_conf_t gpio_conf = STM32WB35x;
     static constexpr unsigned frequency = 64;
 };

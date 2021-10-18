@@ -139,6 +139,48 @@ struct stm32f722_adc2_t
     typedef bit_field_t<0, 0xffff> DR_DATA; // Regular data
 };
 
+// ADC_COMMON: Analog-to-Digital Converter
+
+struct stm32f765_adc_common_t
+{
+    volatile uint32_t CSR; // ADC Common status register
+    volatile uint32_t CCR; // ADC common control register
+    volatile uint32_t CDR; // ADC common regular data register for dual and triple modes
+
+    static constexpr uint32_t CSR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t CSR_AWD1 = 0x1; // AWD1
+    static constexpr uint32_t CSR_EOC1 = 0x2; // EOC1
+    static constexpr uint32_t CSR_JEOC1 = 0x4; // JEOC1
+    static constexpr uint32_t CSR_JSTRT1 = 0x8; // JSTRT1
+    static constexpr uint32_t CSR_STRT1 = 0x10; // STRT1
+    static constexpr uint32_t CSR_OVR1 = 0x20; // OVR1
+    static constexpr uint32_t CSR_AWD2 = 0x100; // AWD2
+    static constexpr uint32_t CSR_EOC2 = 0x200; // EOC2
+    static constexpr uint32_t CSR_JEOC2 = 0x400; // JEOC2
+    static constexpr uint32_t CSR_JSTRT2 = 0x800; // JSTRT2
+    static constexpr uint32_t CSR_STRT2 = 0x1000; // STRT2
+    static constexpr uint32_t CSR_OVR2 = 0x2000; // OVR2
+    static constexpr uint32_t CSR_AWD3 = 0x10000; // AWD3
+    static constexpr uint32_t CSR_EOC3 = 0x20000; // EOC3
+    static constexpr uint32_t CSR_JEOC3 = 0x40000; // JEOC3
+    static constexpr uint32_t CSR_JSTRT3 = 0x80000; // JSTRT3
+    static constexpr uint32_t CSR_STRT3 = 0x100000; // STRT3
+    static constexpr uint32_t CSR_OVR3 = 0x200000; // OVR3
+
+    static constexpr uint32_t CCR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x1f> CCR_MULTI; // MULTI
+    typedef bit_field_t<8, 0xf> CCR_DELAY; // DELAY
+    static constexpr uint32_t CCR_DDS = 0x2000; // DDS
+    typedef bit_field_t<14, 0x3> CCR_DMA; // DMA
+    typedef bit_field_t<16, 0x3> CCR_ADCPRE; // ADCPRE
+    static constexpr uint32_t CCR_VBATE = 0x400000; // VBATE
+    static constexpr uint32_t CCR_TSVREFE = 0x800000; // TSVREFE
+
+    static constexpr uint32_t CDR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffff> CDR_DATA1; // DATA1
+    typedef bit_field_t<16, 0xffff> CDR_DATA2; // DATA2
+};
+
 // C_ADC: Common ADC registers
 
 struct stm32f722_c_adc_t
@@ -566,6 +608,62 @@ struct peripheral_t<STM32F779, ADC3>
 };
 
 template<>
+struct peripheral_t<STM32F765, ADC_COMMON>
+{
+    static constexpr periph_t P = ADC_COMMON;
+    using T = stm32f765_adc_common_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32F767, ADC_COMMON>
+{
+    static constexpr periph_t P = ADC_COMMON;
+    using T = stm32f765_adc_common_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32F768, ADC_COMMON>
+{
+    static constexpr periph_t P = ADC_COMMON;
+    using T = stm32f765_adc_common_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32F769, ADC_COMMON>
+{
+    static constexpr periph_t P = ADC_COMMON;
+    using T = stm32f765_adc_common_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32F777, ADC_COMMON>
+{
+    static constexpr periph_t P = ADC_COMMON;
+    using T = stm32f765_adc_common_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32F778, ADC_COMMON>
+{
+    static constexpr periph_t P = ADC_COMMON;
+    using T = stm32f765_adc_common_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32F779, ADC_COMMON>
+{
+    static constexpr periph_t P = ADC_COMMON;
+    using T = stm32f765_adc_common_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32F722, C_ADC>
 {
     static constexpr periph_t P = C_ADC;
@@ -637,17 +735,10 @@ struct peripheral_t<STM32F756, C_ADC>
     static T& V;
 };
 
-template<>
-struct peripheral_t<STM32F765, C_ADC>
-{
-    static constexpr periph_t P = C_ADC;
-    using T = stm32f722_c_adc_t;
-    static T& V;
-};
-
 using adc1_t = peripheral_t<svd, ADC1>;
 using adc2_t = peripheral_t<svd, ADC2>;
 using adc3_t = peripheral_t<svd, ADC3>;
+using adc_common_t = peripheral_t<svd, ADC_COMMON>;
 using c_adc_t = peripheral_t<svd, C_ADC>;
 
 template<int INST> struct adc_traits {};
@@ -713,4 +804,9 @@ template<> struct adc_traits<3>
     {
         RCC::V.APB2ENR &= ~RCC::T::APB2ENR_ADC3EN;
     }
+};
+
+template<> struct adc_traits<123>
+{
+    using adc = adc_common_t;
 };

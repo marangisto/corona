@@ -8,7 +8,7 @@
 
 // QUADSPI: QuadSPI interface
 
-struct stm32wb30_cm4_quadspi_t
+struct stm32wb35_cm4_quadspi_t
 {
     volatile uint32_t CR; // control register
     volatile uint32_t DCR; // device configuration register
@@ -33,7 +33,7 @@ struct stm32wb30_cm4_quadspi_t
     static constexpr uint32_t CR_FTIE = 0x40000; // FIFO threshold interrupt enable
     static constexpr uint32_t CR_TCIE = 0x20000; // Transfer complete interrupt enable
     static constexpr uint32_t CR_TEIE = 0x10000; // Transfer error interrupt enable
-    typedef bit_field_t<8, 0xf> CR_FTHRES; // FIFO threshold level
+    typedef bit_field_t<8, 0x1f> CR_FTHRES; // FIFO threshold level
     static constexpr uint32_t CR_SSHIFT = 0x10; // Sample shift
     static constexpr uint32_t CR_TCEN = 0x8; // Timeout counter enable
     static constexpr uint32_t CR_DMAEN = 0x4; // DMA enable
@@ -46,7 +46,7 @@ struct stm32wb30_cm4_quadspi_t
     static constexpr uint32_t DCR_CKMODE = 0x1; // Mode 0 / mode 3
 
     static constexpr uint32_t SR_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<8, 0x1f> SR_FLEVEL; // FIFO level
+    typedef bit_field_t<8, 0x3f> SR_FLEVEL; // FIFO level
     static constexpr uint32_t SR_BUSY = 0x20; // Busy
     static constexpr uint32_t SR_TOF = 0x10; // Timeout flag
     static constexpr uint32_t SR_SMF = 0x8; // Status match flag
@@ -99,18 +99,10 @@ struct stm32wb30_cm4_quadspi_t
 };
 
 template<>
-struct peripheral_t<STM32WB30_CM4, QUADSPI1>
-{
-    static constexpr periph_t P = QUADSPI1;
-    using T = stm32wb30_cm4_quadspi_t;
-    static T& V;
-};
-
-template<>
 struct peripheral_t<STM32WB35_CM4, QUADSPI1>
 {
     static constexpr periph_t P = QUADSPI1;
-    using T = stm32wb30_cm4_quadspi_t;
+    using T = stm32wb35_cm4_quadspi_t;
     static T& V;
 };
 
@@ -118,7 +110,7 @@ template<>
 struct peripheral_t<STM32WB55_CM4, QUADSPI1>
 {
     static constexpr periph_t P = QUADSPI1;
-    using T = stm32wb30_cm4_quadspi_t;
+    using T = stm32wb35_cm4_quadspi_t;
     static T& V;
 };
 

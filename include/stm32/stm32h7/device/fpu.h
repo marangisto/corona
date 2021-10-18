@@ -64,6 +64,14 @@ struct peripheral_t<STM32H723, FPU>
 };
 
 template<>
+struct peripheral_t<STM32H725, FPU>
+{
+    static constexpr periph_t P = FPU;
+    using T = stm32h723_fpu_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, FPU>
 {
     static constexpr periph_t P = FPU;
@@ -193,6 +201,14 @@ struct peripheral_t<STM32H7B3x, FPU>
 
 template<>
 struct peripheral_t<STM32H723, FPU_CPACR>
+{
+    static constexpr periph_t P = FPU_CPACR;
+    using T = stm32h723_fpu_cpacr_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, FPU_CPACR>
 {
     static constexpr periph_t P = FPU_CPACR;
     using T = stm32h723_fpu_cpacr_t;

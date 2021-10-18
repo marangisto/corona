@@ -3100,9 +3100,7 @@ struct signal_traits<CFG, PE6, SYS_WKUP3>
 template<gpio_conf_t CFG>
 struct signal_traits<CFG, PE6, TIM9_CH2>
 {
-    static constexpr altfun
-        < CFG & (STM32L152x8|STM32L152xC|STM32L15xxA|STM32L162xE)
-        > AF = AF3;
+    static constexpr altfun_t AF = AF3;
 };
 
 template<gpio_conf_t CFG>

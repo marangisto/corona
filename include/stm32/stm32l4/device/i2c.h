@@ -305,38 +305,6 @@ struct peripheral_t<STM32L4x5, I2C3>
     static T& V;
 };
 
-template<>
-struct peripheral_t<STM32L4x6, I2C1>
-{
-    static constexpr periph_t P = I2C1;
-    using T = stm32l412_i2c1_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32L4x6, I2C2>
-{
-    static constexpr periph_t P = I2C2;
-    using T = stm32l412_i2c1_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32L4x6, I2C3>
-{
-    static constexpr periph_t P = I2C3;
-    using T = stm32l412_i2c1_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32L4x6, I2C4>
-{
-    static constexpr periph_t P = I2C4;
-    using T = stm32l412_i2c1_t;
-    static T& V;
-};
-
 using i2c1_t = peripheral_t<svd, I2C1>;
 using i2c2_t = peripheral_t<svd, I2C2>;
 using i2c3_t = peripheral_t<svd, I2C3>;

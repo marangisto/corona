@@ -37,6 +37,37 @@ struct stm32g030_crc_t
     typedef bit_field_t<0, 0xffffffff> POL_POL; // Programmable polynomial
 };
 
+// CRC: Cyclic redundancy check calculation unit
+
+struct stm32g050_crc_t
+{
+    volatile uint32_t DR; // Data register
+    volatile uint32_t IDR; // Independent data register
+    volatile uint32_t CR; // Control register
+    reserved_t<0x1> _0xc;
+    volatile uint32_t INIT; // Initial CRC value
+    volatile uint32_t POL; // polynomial
+
+    static constexpr uint32_t DR_RESET_VALUE = 0xffffffff; // Reset value
+    typedef bit_field_t<0, 0xffffffff> DR_DR; // Data register bits
+
+    static constexpr uint32_t IDR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> IDR_IDR; // General-purpose 32-bit data register bits
+
+    static constexpr uint32_t CR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t CR_REV_OUT = 0x80; // Reverse output data This bit controls the reversal of the bit order of the output data.
+    typedef bit_field_t<5, 0x3> CR_REV_IN; // Reverse input data These bits control the reversal of the bit order of the input data
+    typedef bit_field_t<3, 0x3> CR_POLYSIZE; // Polynomial size These bits control the size of the polynomial.
+    static constexpr uint32_t CR_RESET = 0x1; // RESET bit
+
+
+    static constexpr uint32_t INIT_RESET_VALUE = 0xffffffff; // Reset value
+    typedef bit_field_t<0, 0xffffffff> INIT_CRC_INIT; // Programmable initial CRC value
+
+    static constexpr uint32_t POL_RESET_VALUE = 0x4c11db7; // Reset value
+    typedef bit_field_t<0, 0xffffffff> POL_POL; // Programmable polynomial
+};
+
 template<>
 struct peripheral_t<STM32G030, CRC>
 {
@@ -82,6 +113,54 @@ struct peripheral_t<STM32G081, CRC>
 {
     static constexpr periph_t P = CRC;
     using T = stm32g030_crc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G050, CRC>
+{
+    static constexpr periph_t P = CRC;
+    using T = stm32g050_crc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G051, CRC>
+{
+    static constexpr periph_t P = CRC;
+    using T = stm32g050_crc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G061, CRC>
+{
+    static constexpr periph_t P = CRC;
+    using T = stm32g050_crc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G0B0, CRC>
+{
+    static constexpr periph_t P = CRC;
+    using T = stm32g050_crc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G0B1, CRC>
+{
+    static constexpr periph_t P = CRC;
+    using T = stm32g050_crc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G0C1, CRC>
+{
+    static constexpr periph_t P = CRC;
+    using T = stm32g050_crc_t;
     static T& V;
 };
 

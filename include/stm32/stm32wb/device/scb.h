@@ -135,7 +135,7 @@ struct stm32wb50_cm4_scb_t
 
 // SCB_ACTRL: System control block ACTLR
 
-struct stm32wb30_cm4_scb_actrl_t
+struct stm32wb10_cm4_scb_actrl_t
 {
     volatile uint32_t ACTRL; // Auxiliary control register
 
@@ -164,10 +164,26 @@ struct peripheral_t<STM32WB55_CM4, SCB>
 };
 
 template<>
+struct peripheral_t<STM32WB10_CM4, SCB_ACTRL>
+{
+    static constexpr periph_t P = SCB_ACTRL;
+    using T = stm32wb10_cm4_scb_actrl_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32WB15_CM4, SCB_ACTRL>
+{
+    static constexpr periph_t P = SCB_ACTRL;
+    using T = stm32wb10_cm4_scb_actrl_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32WB30_CM4, SCB_ACTRL>
 {
     static constexpr periph_t P = SCB_ACTRL;
-    using T = stm32wb30_cm4_scb_actrl_t;
+    using T = stm32wb10_cm4_scb_actrl_t;
     static T& V;
 };
 
@@ -175,7 +191,7 @@ template<>
 struct peripheral_t<STM32WB35_CM4, SCB_ACTRL>
 {
     static constexpr periph_t P = SCB_ACTRL;
-    using T = stm32wb30_cm4_scb_actrl_t;
+    using T = stm32wb10_cm4_scb_actrl_t;
     static T& V;
 };
 
@@ -183,7 +199,7 @@ template<>
 struct peripheral_t<STM32WB50_CM4, SCB_ACTRL>
 {
     static constexpr periph_t P = SCB_ACTRL;
-    using T = stm32wb30_cm4_scb_actrl_t;
+    using T = stm32wb10_cm4_scb_actrl_t;
     static T& V;
 };
 
@@ -191,7 +207,7 @@ template<>
 struct peripheral_t<STM32WB55_CM4, SCB_ACTRL>
 {
     static constexpr periph_t P = SCB_ACTRL;
-    using T = stm32wb30_cm4_scb_actrl_t;
+    using T = stm32wb10_cm4_scb_actrl_t;
     static T& V;
 };
 

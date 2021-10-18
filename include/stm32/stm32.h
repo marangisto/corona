@@ -22,5 +22,7 @@ enum family_t
     , STM32L4Plus
     , STM32L5
     , STM32MP1
+    , STM32U5
     , STM32WB
+    , STM32WL
     };

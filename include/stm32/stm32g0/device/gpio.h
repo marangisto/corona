@@ -463,6 +463,14 @@ struct peripheral_t<STM32G041, GPIOA>
 };
 
 template<>
+struct peripheral_t<STM32G050, GPIOA>
+{
+    static constexpr periph_t P = GPIOA;
+    using T = stm32g030_gpioa_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32G070, GPIOA>
 {
     static constexpr periph_t P = GPIOA;
@@ -480,6 +488,30 @@ struct peripheral_t<STM32G071, GPIOA>
 
 template<>
 struct peripheral_t<STM32G081, GPIOA>
+{
+    static constexpr periph_t P = GPIOA;
+    using T = stm32g030_gpioa_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G0B0, GPIOA>
+{
+    static constexpr periph_t P = GPIOA;
+    using T = stm32g030_gpioa_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G0B1, GPIOA>
+{
+    static constexpr periph_t P = GPIOA;
+    using T = stm32g030_gpioa_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G0C1, GPIOA>
 {
     static constexpr periph_t P = GPIOA;
     using T = stm32g030_gpioa_t;
@@ -583,6 +615,46 @@ struct peripheral_t<STM32G041, GPIOF>
 };
 
 template<>
+struct peripheral_t<STM32G050, GPIOB>
+{
+    static constexpr periph_t P = GPIOB;
+    using T = stm32g030_gpiob_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G050, GPIOC>
+{
+    static constexpr periph_t P = GPIOC;
+    using T = stm32g030_gpiob_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G050, GPIOD>
+{
+    static constexpr periph_t P = GPIOD;
+    using T = stm32g030_gpiob_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G050, GPIOE>
+{
+    static constexpr periph_t P = GPIOE;
+    using T = stm32g030_gpiob_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G050, GPIOF>
+{
+    static constexpr periph_t P = GPIOF;
+    using T = stm32g030_gpiob_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32G070, GPIOB>
 {
     static constexpr periph_t P = GPIOB;
@@ -678,10 +750,131 @@ struct peripheral_t<STM32G081, GPIOF>
     static T& V;
 };
 
+template<>
+struct peripheral_t<STM32G0B0, GPIOB>
+{
+    static constexpr periph_t P = GPIOB;
+    using T = stm32g030_gpiob_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G0B0, GPIOC>
+{
+    static constexpr periph_t P = GPIOC;
+    using T = stm32g030_gpiob_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G0B0, GPIOD>
+{
+    static constexpr periph_t P = GPIOD;
+    using T = stm32g030_gpiob_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G0B0, GPIOE>
+{
+    static constexpr periph_t P = GPIOE;
+    using T = stm32g030_gpiob_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G0B0, GPIOF>
+{
+    static constexpr periph_t P = GPIOF;
+    using T = stm32g030_gpiob_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G0B1, GPIOB>
+{
+    static constexpr periph_t P = GPIOB;
+    using T = stm32g030_gpiob_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G0B1, GPIOC>
+{
+    static constexpr periph_t P = GPIOC;
+    using T = stm32g030_gpiob_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G0B1, GPIOD>
+{
+    static constexpr periph_t P = GPIOD;
+    using T = stm32g030_gpiob_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G0B1, GPIOE>
+{
+    static constexpr periph_t P = GPIOE;
+    using T = stm32g030_gpiob_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G0B1, GPIOF>
+{
+    static constexpr periph_t P = GPIOF;
+    using T = stm32g030_gpiob_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G0C1, GPIOB>
+{
+    static constexpr periph_t P = GPIOB;
+    using T = stm32g030_gpiob_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G0C1, GPIOC>
+{
+    static constexpr periph_t P = GPIOC;
+    using T = stm32g030_gpiob_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G0C1, GPIOD>
+{
+    static constexpr periph_t P = GPIOD;
+    using T = stm32g030_gpiob_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G0C1, GPIOE>
+{
+    static constexpr periph_t P = GPIOE;
+    using T = stm32g030_gpiob_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G0C1, GPIOF>
+{
+    static constexpr periph_t P = GPIOF;
+    using T = stm32g030_gpiob_t;
+    static T& V;
+};
+
 using gpioa_t = peripheral_t<svd, GPIOA>;
 using gpiob_t = peripheral_t<svd, GPIOB>;
 using gpioc_t = peripheral_t<svd, GPIOC>;
 using gpiod_t = peripheral_t<svd, GPIOD>;
+using gpioe_t = peripheral_t<svd, GPIOE>;
 using gpiof_t = peripheral_t<svd, GPIOF>;
 
 template<int INST> struct gpio_traits {};
@@ -823,6 +1016,41 @@ template<> struct gpio_traits<3>
     static void reset()
     {
         RCC::V.IOPRSTR |= RCC::T::IOPRSTR_IOPDRST;
+    }
+};
+
+template<> struct gpio_traits<4>
+{
+    using gpio = gpioe_t;
+
+    template<typename RCC>
+    static void enable()
+    {
+        RCC::V.IOPENR |= RCC::T::IOPENR_GPIOEEN;
+    }
+
+    template<typename RCC>
+    static void disable()
+    {
+        RCC::V.IOPENR &= ~RCC::T::IOPENR_GPIOEEN;
+    }
+
+    template<typename RCC>
+    static void enable_sleep_mode()
+    {
+        RCC::V.IOPSMENR |= RCC::T::IOPSMENR_GPIOESMEN;
+    }
+
+    template<typename RCC>
+    static void disable_sleep_mode()
+    {
+        RCC::V.IOPSMENR &= ~RCC::T::IOPSMENR_GPIOESMEN;
+    }
+
+    template<typename RCC>
+    static void reset()
+    {
+        RCC::V.IOPRSTR |= RCC::T::IOPRSTR_GPIOERST;
     }
 };
 

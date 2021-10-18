@@ -23,9 +23,9 @@ struct interrupt
         , PENDSV = -2 // Pendable request for system service [settable]
         , SYSTICK = -1 // System tick timer [settable]
         , WWDG = 0 // Window Watchdog interrupt
-        , PVD = 1 // PVD through EXTI line detection interrupt
+        , EXTI16_PVD = 1 // EXTI Line 16 interrupt /PVD through EXTI line detection interrupt
         , TAMP_STAMP = 2 // Tamper and TimeStamp interrupts through the EXTI line
-        , RTC_WKUP = 3 // RTC Wakeup interrupt through the EXTI line
+        , EXTI22_RTC_WKUP = 3 // EXTI Line 22 interrupt /RTC Wakeup interrupt through the EXTI line
         , FLASH = 4 // FLASH global interrupt
         , RCC = 5 // RCC global interrupt
         , EXTI0 = 6 // EXTI Line0 interrupt
@@ -63,8 +63,8 @@ struct interrupt
         , USART2 = 38 // USART2 global interrupt
         , USART3 = 39 // USART3 global interrupt
         , EXTI15_10 = 40 // EXTI Line[15:10] interrupts
-        , EXTI17_RTC_ALARM = 41 // RTC Alarms (A and B) through EXTI line interrupt
-        , OTG_FS_WKUP = 42 // USB On-The-Go FS Wakeup through EXTI line interrupt
+        , EXTI17_RTC_ALARM = 41 // EXTI Line 17 interrupt / RTC Alarms (A and B) through EXTI line interrupt
+        , EXTI18_OTG_FS_WKUP = 42 // EXTI Line 18 interrupt / USBUSB On-The-Go FS Wakeup through EXTI line interrupt
         , TIM8_BRK_TIM12 = 43 // TIM8 Break interrupt and TIM12 global interrupt
         , TIM8_UP_TIM13 = 44 // TIM8 Update interrupt and TIM13 global interrupt
         , TIM8_TRG_COM_TIM14 = 45 // TIM8 Trigger and Commutation interrupts and TIM14 global interrupt
@@ -103,7 +103,7 @@ struct interrupt
         , DCMI = 78 // DCMI global interrupt
         , CRYPTO = 79 // AES global interrupt
         , HASH_RNG = 80 // Hash and Rng global interrupt
-        , FPU = 81 // FPU interrupt
+        , FPU = 81 // Floating point unit interrupt
         , USART7 = 82 // USART7 global interrupt
         , USART8 = 83 // USART8 global interrupt
         , SPI4 = 84 // SPI4 global interrupt

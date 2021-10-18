@@ -916,11 +916,6 @@ typename peripheral_t<STM32L063, PWR>::T&
         <typename peripheral_t<STM32L063, PWR>::T*
         >(0x40007000);
 
-typename peripheral_t<STM32L0x0, PWR>::T&
-    peripheral_t<STM32L0x0, PWR>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L0x0, PWR>::T*
-        >(0x40007000);
-
 typename peripheral_t<STM32L0x1, PWR>::T&
     peripheral_t<STM32L0x1, PWR>::V = *reinterpret_cast
         <typename peripheral_t<STM32L0x1, PWR>::T*
@@ -934,6 +929,11 @@ typename peripheral_t<STM32L0x2, PWR>::T&
 typename peripheral_t<STM32L0x3, PWR>::T&
     peripheral_t<STM32L0x3, PWR>::V = *reinterpret_cast
         <typename peripheral_t<STM32L0x3, PWR>::T*
+        >(0x40007000);
+
+typename peripheral_t<STM32L0x0, PWR>::T&
+    peripheral_t<STM32L0x0, PWR>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L0x0, PWR>::T*
         >(0x40007000);
 
 typename peripheral_t<STM32L052, RCC>::T&

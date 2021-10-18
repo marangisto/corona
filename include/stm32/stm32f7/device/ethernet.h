@@ -281,6 +281,164 @@ struct stm32f745_ethernet_mac_t
     typedef bit_field_t<0, 0xffffffff> MACA3LR_MBCA3L; // MBCA3L
 };
 
+// ETHERNET_MAC: Ethernet: media access control (MAC)
+
+struct stm32f746_ethernet_mac_t
+{
+    volatile uint32_t MACCR; // Ethernet MAC configuration register
+    volatile uint32_t MACFFR; // Ethernet MAC frame filter register
+    volatile uint32_t MACHTHR; // Ethernet MAC hash table high register
+    volatile uint32_t MACHTLR; // Ethernet MAC hash table low register
+    volatile uint32_t MACMIIAR; // Ethernet MAC MII address register
+    volatile uint32_t MACMIIDR; // Ethernet MAC MII data register
+    volatile uint32_t MACFCR; // Ethernet MAC flow control register
+    volatile uint32_t MACVLANTR; // Ethernet MAC VLAN tag register
+    reserved_t<0x3> _0x20;
+    volatile uint32_t MACPMTCSR; // Ethernet MAC PMT control and status register
+    reserved_t<0x1> _0x30;
+    volatile uint32_t MACDBGR; // Ethernet MAC debug register
+    volatile uint32_t MACSR; // Ethernet MAC interrupt status register
+    volatile uint32_t MACIMR; // Ethernet MAC interrupt mask register
+    volatile uint32_t MACA0HR; // Ethernet MAC address 0 high register
+    volatile uint32_t MACA0LR; // Ethernet MAC address 0 low register
+    volatile uint32_t MACA1HR; // Ethernet MAC address 1 high register
+    volatile uint32_t MACA1LR; // Ethernet MAC address1 low register
+    volatile uint32_t MACA2HR; // Ethernet MAC address 2 high register
+    volatile uint32_t MACA2LR; // Ethernet MAC address 2 low register
+    volatile uint32_t MACA3HR; // Ethernet MAC address 3 high register
+    volatile uint32_t MACA3LR; // Ethernet MAC address 3 low register
+
+    static constexpr uint32_t MACCR_RESET_VALUE = 0x8000; // Reset value
+    static constexpr uint32_t MACCR_RE = 0x4; // RE
+    static constexpr uint32_t MACCR_TE = 0x8; // TE
+    static constexpr uint32_t MACCR_DC = 0x10; // DC
+    typedef bit_field_t<5, 0x3> MACCR_BL; // BL
+    static constexpr uint32_t MACCR_APCS = 0x80; // APCS
+    static constexpr uint32_t MACCR_RD = 0x200; // RD
+    static constexpr uint32_t MACCR_IPCO = 0x400; // IPCO
+    static constexpr uint32_t MACCR_DM = 0x800; // DM
+    static constexpr uint32_t MACCR_LM = 0x1000; // LM
+    static constexpr uint32_t MACCR_ROD = 0x2000; // ROD
+    static constexpr uint32_t MACCR_FES = 0x4000; // FES
+    static constexpr uint32_t MACCR_CSD = 0x10000; // CSD
+    typedef bit_field_t<17, 0x7> MACCR_IFG; // IFG
+    static constexpr uint32_t MACCR_JD = 0x400000; // JD
+    static constexpr uint32_t MACCR_WD = 0x800000; // WD
+    static constexpr uint32_t MACCR_CSTF = 0x2000000; // CSTF
+
+    static constexpr uint32_t MACFFR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t MACFFR_PM = 0x1; // PM
+    static constexpr uint32_t MACFFR_HU = 0x2; // HU
+    static constexpr uint32_t MACFFR_HM = 0x4; // HM
+    static constexpr uint32_t MACFFR_DAIF = 0x8; // DAIF
+    static constexpr uint32_t MACFFR_PAM = 0x10; // PAM
+    static constexpr uint32_t MACFFR_BFD = 0x20; // BFD
+    typedef bit_field_t<6, 0x3> MACFFR_PCF; // PCF
+    static constexpr uint32_t MACFFR_SAIF = 0x100; // SAIF
+    static constexpr uint32_t MACFFR_SAF = 0x200; // SAF
+    static constexpr uint32_t MACFFR_HPF = 0x400; // HPF
+    static constexpr uint32_t MACFFR_RA = 0x80000000; // RA
+
+    static constexpr uint32_t MACHTHR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> MACHTHR_HTH; // HTH
+
+    static constexpr uint32_t MACHTLR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffffffff> MACHTLR_HTL; // HTL
+
+    static constexpr uint32_t MACMIIAR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t MACMIIAR_MB = 0x1; // MB
+    static constexpr uint32_t MACMIIAR_MW = 0x2; // MW
+    typedef bit_field_t<2, 0x7> MACMIIAR_CR; // CR
+    typedef bit_field_t<6, 0x1f> MACMIIAR_MR; // MR
+    typedef bit_field_t<11, 0x1f> MACMIIAR_PA; // PA
+
+    static constexpr uint32_t MACMIIDR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffff> MACMIIDR_MD; // MD
+
+    static constexpr uint32_t MACFCR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t MACFCR_FCB = 0x1; // FCB
+    static constexpr uint32_t MACFCR_TFCE = 0x2; // TFCE
+    static constexpr uint32_t MACFCR_RFCE = 0x4; // RFCE
+    static constexpr uint32_t MACFCR_UPFD = 0x8; // UPFD
+    typedef bit_field_t<4, 0x3> MACFCR_PLT; // PLT
+    static constexpr uint32_t MACFCR_ZQPD = 0x80; // ZQPD
+    typedef bit_field_t<16, 0xffff> MACFCR_PT; // PT
+
+    static constexpr uint32_t MACVLANTR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffff> MACVLANTR_VLANTI; // VLANTI
+    static constexpr uint32_t MACVLANTR_VLANTC = 0x10000; // VLANTC
+
+
+    static constexpr uint32_t MACPMTCSR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t MACPMTCSR_PD = 0x1; // PD
+    static constexpr uint32_t MACPMTCSR_MPE = 0x2; // MPE
+    static constexpr uint32_t MACPMTCSR_WFE = 0x4; // WFE
+    static constexpr uint32_t MACPMTCSR_MPR = 0x20; // MPR
+    static constexpr uint32_t MACPMTCSR_WFR = 0x40; // WFR
+    static constexpr uint32_t MACPMTCSR_GU = 0x200; // GU
+    static constexpr uint32_t MACPMTCSR_WFFRPR = 0x80000000; // WFFRPR
+
+
+    static constexpr uint32_t MACDBGR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t MACDBGR_MMRPEA = 0x1; // MMRPEA
+    typedef bit_field_t<1, 0x3> MACDBGR_MSFRWCS; // MSFRWCS
+    static constexpr uint32_t MACDBGR_RFWRA = 0x10; // RFWRA
+    typedef bit_field_t<5, 0x3> MACDBGR_RFRCS; // RFRCS
+    typedef bit_field_t<8, 0x3> MACDBGR_RFFL; // RFFL
+    static constexpr uint32_t MACDBGR_MMTEA = 0x10000; // MMTEA
+    typedef bit_field_t<17, 0x3> MACDBGR_MTFCS; // MTFCS
+    static constexpr uint32_t MACDBGR_MTP = 0x80000; // MTP
+    typedef bit_field_t<20, 0x3> MACDBGR_TFRS; // TFRS
+    static constexpr uint32_t MACDBGR_TFWA = 0x400000; // TFWA
+    static constexpr uint32_t MACDBGR_TFNE = 0x1000000; // TFNE
+    static constexpr uint32_t MACDBGR_TFF = 0x2000000; // TFF
+
+    static constexpr uint32_t MACSR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t MACSR_PMTS = 0x8; // PMTS
+    static constexpr uint32_t MACSR_MMCS = 0x10; // MMCS
+    static constexpr uint32_t MACSR_MMCRS = 0x20; // MMCRS
+    static constexpr uint32_t MACSR_MMCTS = 0x40; // MMCTS
+    static constexpr uint32_t MACSR_TSTS = 0x200; // TSTS
+
+    static constexpr uint32_t MACIMR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t MACIMR_PMTIM = 0x8; // PMTIM
+    static constexpr uint32_t MACIMR_TSTIM = 0x200; // TSTIM
+
+    static constexpr uint32_t MACA0HR_RESET_VALUE = 0x10ffff; // Reset value
+    typedef bit_field_t<0, 0xffff> MACA0HR_MACA0H; // MAC address0 high
+    static constexpr uint32_t MACA0HR_MO = 0x80000000; // Always 1
+
+    static constexpr uint32_t MACA0LR_RESET_VALUE = 0xffffffff; // Reset value
+    typedef bit_field_t<0, 0xffffffff> MACA0LR_MACA0L; // 0
+
+    static constexpr uint32_t MACA1HR_RESET_VALUE = 0xffff; // Reset value
+    typedef bit_field_t<0, 0xffff> MACA1HR_MACA1H; // MACA1H
+    typedef bit_field_t<24, 0x3f> MACA1HR_MBC; // MBC
+    static constexpr uint32_t MACA1HR_SA = 0x40000000; // SA
+    static constexpr uint32_t MACA1HR_AE = 0x80000000; // AE
+
+    static constexpr uint32_t MACA1LR_RESET_VALUE = 0xffffffff; // Reset value
+    typedef bit_field_t<0, 0xffffffff> MACA1LR_MACA1L; // MACA1L
+
+    static constexpr uint32_t MACA2HR_RESET_VALUE = 0xffff; // Reset value
+    typedef bit_field_t<0, 0xffff> MACA2HR_MAC2AH; // MAC2AH
+    typedef bit_field_t<24, 0x3f> MACA2HR_MBC; // MBC
+    static constexpr uint32_t MACA2HR_SA = 0x40000000; // SA
+    static constexpr uint32_t MACA2HR_AE = 0x80000000; // AE
+
+    static constexpr uint32_t MACA2LR_RESET_VALUE = 0xffffffff; // Reset value
+    typedef bit_field_t<0, 0x7fffffff> MACA2LR_MACA2L; // MACA2L
+
+    static constexpr uint32_t MACA3HR_RESET_VALUE = 0xffff; // Reset value
+    typedef bit_field_t<0, 0xffff> MACA3HR_MACA3H; // MACA3H
+    typedef bit_field_t<24, 0x3f> MACA3HR_MBC; // MBC
+    static constexpr uint32_t MACA3HR_SA = 0x40000000; // SA
+    static constexpr uint32_t MACA3HR_AE = 0x80000000; // AE
+
+    static constexpr uint32_t MACA3LR_RESET_VALUE = 0xffffffff; // Reset value
+    typedef bit_field_t<0, 0xffffffff> MACA3LR_MACA3L; // MACA3L
+};
+
 // ETHERNET_MMC: Ethernet: MAC management counters
 
 struct stm32f745_ethernet_mmc_t
@@ -520,14 +678,6 @@ struct peripheral_t<STM32F745, ETHERNET_MAC>
 };
 
 template<>
-struct peripheral_t<STM32F746, ETHERNET_MAC>
-{
-    static constexpr periph_t P = ETHERNET_MAC;
-    using T = stm32f745_ethernet_mac_t;
-    static T& V;
-};
-
-template<>
 struct peripheral_t<STM32F750x, ETHERNET_MAC>
 {
     static constexpr periph_t P = ETHERNET_MAC;
@@ -596,6 +746,14 @@ struct peripheral_t<STM32F779, ETHERNET_MAC>
 {
     static constexpr periph_t P = ETHERNET_MAC;
     using T = stm32f745_ethernet_mac_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32F746, ETHERNET_MAC>
+{
+    static constexpr periph_t P = ETHERNET_MAC;
+    using T = stm32f746_ethernet_mac_t;
     static T& V;
 };
 

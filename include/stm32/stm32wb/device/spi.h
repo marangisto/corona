@@ -8,7 +8,7 @@
 
 // SPI1: Serial peripheral interface/Inter-IC sound
 
-struct stm32wb30_cm4_spi1_t
+struct stm32wb10_cm4_spi1_t
 {
     volatile uint32_t CR1; // control register 1
     volatile uint32_t CR2; // control register 2
@@ -23,7 +23,7 @@ struct stm32wb30_cm4_spi1_t
     static constexpr uint32_t CR1_BIDIOE = 0x4000; // Output enable in bidirectional mode
     static constexpr uint32_t CR1_CRCEN = 0x2000; // Hardware CRC calculation enable
     static constexpr uint32_t CR1_CRCNEXT = 0x1000; // CRC transfer next
-    static constexpr uint32_t CR1_DFF = 0x800; // Data frame format
+    static constexpr uint32_t CR1_CRCL = 0x800; // CRC length
     static constexpr uint32_t CR1_RXONLY = 0x400; // Receive only
     static constexpr uint32_t CR1_SSM = 0x200; // Software slave management
     static constexpr uint32_t CR1_SSI = 0x100; // Internal slave select
@@ -73,10 +73,26 @@ struct stm32wb30_cm4_spi1_t
 };
 
 template<>
+struct peripheral_t<STM32WB10_CM4, SPI1>
+{
+    static constexpr periph_t P = SPI1;
+    using T = stm32wb10_cm4_spi1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32WB15_CM4, SPI1>
+{
+    static constexpr periph_t P = SPI1;
+    using T = stm32wb10_cm4_spi1_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32WB30_CM4, SPI1>
 {
     static constexpr periph_t P = SPI1;
-    using T = stm32wb30_cm4_spi1_t;
+    using T = stm32wb10_cm4_spi1_t;
     static T& V;
 };
 
@@ -84,7 +100,7 @@ template<>
 struct peripheral_t<STM32WB35_CM4, SPI1>
 {
     static constexpr periph_t P = SPI1;
-    using T = stm32wb30_cm4_spi1_t;
+    using T = stm32wb10_cm4_spi1_t;
     static T& V;
 };
 
@@ -92,7 +108,7 @@ template<>
 struct peripheral_t<STM32WB50_CM4, SPI1>
 {
     static constexpr periph_t P = SPI1;
-    using T = stm32wb30_cm4_spi1_t;
+    using T = stm32wb10_cm4_spi1_t;
     static T& V;
 };
 
@@ -100,7 +116,7 @@ template<>
 struct peripheral_t<STM32WB55_CM4, SPI1>
 {
     static constexpr periph_t P = SPI1;
-    using T = stm32wb30_cm4_spi1_t;
+    using T = stm32wb10_cm4_spi1_t;
     static T& V;
 };
 
@@ -108,7 +124,7 @@ template<>
 struct peripheral_t<STM32WB55_CM4, SPI2>
 {
     static constexpr periph_t P = SPI2;
-    using T = stm32wb30_cm4_spi1_t;
+    using T = stm32wb10_cm4_spi1_t;
     static T& V;
 };
 

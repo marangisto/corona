@@ -8,7 +8,7 @@
 
 // NVIC: Nested Vectored Interrupt Controller
 
-struct stm32f401_nvic_t
+struct stm32f405_nvic_t
 {
     volatile uint32_t ISER0; // Interrupt Set-Enable Register
     volatile uint32_t ISER1; // Interrupt Set-Enable Register
@@ -643,7 +643,7 @@ struct stm32f427_nvic_t
 
 // NVIC_STIR: Nested vectored interrupt controller
 
-struct stm32f401_nvic_stir_t
+struct stm32f405_nvic_stir_t
 {
     volatile uint32_t STIR; // Software trigger interrupt register
 
@@ -652,18 +652,10 @@ struct stm32f401_nvic_stir_t
 };
 
 template<>
-struct peripheral_t<STM32F401, NVIC>
-{
-    static constexpr periph_t P = NVIC;
-    using T = stm32f401_nvic_t;
-    static T& V;
-};
-
-template<>
 struct peripheral_t<STM32F405, NVIC>
 {
     static constexpr periph_t P = NVIC;
-    using T = stm32f401_nvic_t;
+    using T = stm32f405_nvic_t;
     static T& V;
 };
 
@@ -671,7 +663,7 @@ template<>
 struct peripheral_t<STM32F407, NVIC>
 {
     static constexpr periph_t P = NVIC;
-    using T = stm32f401_nvic_t;
+    using T = stm32f405_nvic_t;
     static T& V;
 };
 
@@ -679,7 +671,7 @@ template<>
 struct peripheral_t<STM32F410, NVIC>
 {
     static constexpr periph_t P = NVIC;
-    using T = stm32f401_nvic_t;
+    using T = stm32f405_nvic_t;
     static T& V;
 };
 
@@ -687,7 +679,7 @@ template<>
 struct peripheral_t<STM32F412, NVIC>
 {
     static constexpr periph_t P = NVIC;
-    using T = stm32f401_nvic_t;
+    using T = stm32f405_nvic_t;
     static T& V;
 };
 
@@ -695,7 +687,7 @@ template<>
 struct peripheral_t<STM32F413, NVIC>
 {
     static constexpr periph_t P = NVIC;
-    using T = stm32f401_nvic_t;
+    using T = stm32f405_nvic_t;
     static T& V;
 };
 
@@ -740,18 +732,10 @@ struct peripheral_t<STM32F469, NVIC>
 };
 
 template<>
-struct peripheral_t<STM32F401, NVIC_STIR>
-{
-    static constexpr periph_t P = NVIC_STIR;
-    using T = stm32f401_nvic_stir_t;
-    static T& V;
-};
-
-template<>
 struct peripheral_t<STM32F405, NVIC_STIR>
 {
     static constexpr periph_t P = NVIC_STIR;
-    using T = stm32f401_nvic_stir_t;
+    using T = stm32f405_nvic_stir_t;
     static T& V;
 };
 
@@ -759,7 +743,7 @@ template<>
 struct peripheral_t<STM32F407, NVIC_STIR>
 {
     static constexpr periph_t P = NVIC_STIR;
-    using T = stm32f401_nvic_stir_t;
+    using T = stm32f405_nvic_stir_t;
     static T& V;
 };
 
@@ -767,7 +751,7 @@ template<>
 struct peripheral_t<STM32F410, NVIC_STIR>
 {
     static constexpr periph_t P = NVIC_STIR;
-    using T = stm32f401_nvic_stir_t;
+    using T = stm32f405_nvic_stir_t;
     static T& V;
 };
 
@@ -775,7 +759,7 @@ template<>
 struct peripheral_t<STM32F411, NVIC_STIR>
 {
     static constexpr periph_t P = NVIC_STIR;
-    using T = stm32f401_nvic_stir_t;
+    using T = stm32f405_nvic_stir_t;
     static T& V;
 };
 
@@ -783,7 +767,7 @@ template<>
 struct peripheral_t<STM32F412, NVIC_STIR>
 {
     static constexpr periph_t P = NVIC_STIR;
-    using T = stm32f401_nvic_stir_t;
+    using T = stm32f405_nvic_stir_t;
     static T& V;
 };
 
@@ -791,7 +775,7 @@ template<>
 struct peripheral_t<STM32F413, NVIC_STIR>
 {
     static constexpr periph_t P = NVIC_STIR;
-    using T = stm32f401_nvic_stir_t;
+    using T = stm32f405_nvic_stir_t;
     static T& V;
 };
 
@@ -799,7 +783,7 @@ template<>
 struct peripheral_t<STM32F427, NVIC_STIR>
 {
     static constexpr periph_t P = NVIC_STIR;
-    using T = stm32f401_nvic_stir_t;
+    using T = stm32f405_nvic_stir_t;
     static T& V;
 };
 
@@ -807,7 +791,7 @@ template<>
 struct peripheral_t<STM32F429, NVIC_STIR>
 {
     static constexpr periph_t P = NVIC_STIR;
-    using T = stm32f401_nvic_stir_t;
+    using T = stm32f405_nvic_stir_t;
     static T& V;
 };
 
@@ -815,7 +799,7 @@ template<>
 struct peripheral_t<STM32F446, NVIC_STIR>
 {
     static constexpr periph_t P = NVIC_STIR;
-    using T = stm32f401_nvic_stir_t;
+    using T = stm32f405_nvic_stir_t;
     static T& V;
 };
 
@@ -823,7 +807,7 @@ template<>
 struct peripheral_t<STM32F469, NVIC_STIR>
 {
     static constexpr periph_t P = NVIC_STIR;
-    using T = stm32f401_nvic_stir_t;
+    using T = stm32f405_nvic_stir_t;
     static T& V;
 };
 

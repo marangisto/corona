@@ -1933,14 +1933,6 @@ struct peripheral_t<STM32L496, RCC>
 };
 
 template<>
-struct peripheral_t<STM32L4x6, RCC>
-{
-    static constexpr periph_t P = RCC;
-    using T = stm32l476_rcc_t;
-    static T& V;
-};
-
-template<>
 struct peripheral_t<STM32L4x1, RCC>
 {
     static constexpr periph_t P = RCC;

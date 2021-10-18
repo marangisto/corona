@@ -49,6 +49,14 @@ struct peripheral_t<STM32H723, VREFBUF>
 };
 
 template<>
+struct peripheral_t<STM32H725, VREFBUF>
+{
+    static constexpr periph_t P = VREFBUF;
+    using T = stm32h723_vrefbuf_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, VREFBUF>
 {
     static constexpr periph_t P = VREFBUF;

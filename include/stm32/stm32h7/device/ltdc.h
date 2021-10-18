@@ -245,6 +245,14 @@ struct peripheral_t<STM32H723, LTDC>
 };
 
 template<>
+struct peripheral_t<STM32H725, LTDC>
+{
+    static constexpr periph_t P = LTDC;
+    using T = stm32h723_ltdc_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, LTDC>
 {
     static constexpr periph_t P = LTDC;

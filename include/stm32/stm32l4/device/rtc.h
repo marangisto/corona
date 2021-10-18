@@ -583,14 +583,6 @@ struct peripheral_t<STM32L4x5, RTC>
     static T& V;
 };
 
-template<>
-struct peripheral_t<STM32L4x6, RTC>
-{
-    static constexpr periph_t P = RTC;
-    using T = stm32l476_rtc_t;
-    static T& V;
-};
-
 using rtc_t = peripheral_t<svd, RTC>;
 
 template<int INST> struct rtc_traits {};

@@ -408,6 +408,14 @@ struct peripheral_t<STM32H723, DMA2D>
 };
 
 template<>
+struct peripheral_t<STM32H725, DMA2D>
+{
+    static constexpr periph_t P = DMA2D;
+    using T = stm32h723_dma2d_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, DMA2D>
 {
     static constexpr periph_t P = DMA2D;

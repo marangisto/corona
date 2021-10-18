@@ -399,22 +399,6 @@ struct peripheral_t<STM32L4x5, DMA2>
     static T& V;
 };
 
-template<>
-struct peripheral_t<STM32L4x6, DMA1>
-{
-    static constexpr periph_t P = DMA1;
-    using T = stm32l412_dma1_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32L4x6, DMA2>
-{
-    static constexpr periph_t P = DMA2;
-    using T = stm32l412_dma1_t;
-    static T& V;
-};
-
 using dma1_t = peripheral_t<svd, DMA1>;
 using dma2_t = peripheral_t<svd, DMA2>;
 

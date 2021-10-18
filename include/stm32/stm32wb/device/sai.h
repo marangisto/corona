@@ -399,8 +399,6 @@ template<> struct sai_traits<1>
     static constexpr signal_t D1 = SAI1_D1;
     static constexpr signal_t D2 = SAI1_D2;
     static constexpr signal_t D3 = SAI1_D3;
-    static constexpr signal_t DI1 = SAI1_DI1;
-    static constexpr signal_t DI2 = SAI1_DI2;
     static constexpr signal_t EXTCLK = SAI1_EXTCLK;
     static constexpr signal_t FS_A = SAI1_FS_A;
     static constexpr signal_t FS_B = SAI1_FS_B;

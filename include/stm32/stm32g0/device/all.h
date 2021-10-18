@@ -9,6 +9,7 @@
 #include "adc.h"
 #include "aes.h"
 #include "cec.h"
+#include "comp.h"
 #include "comp1.h"
 #include "crc.h"
 #include "dac.h"
@@ -16,6 +17,7 @@
 #include "dma.h"
 #include "dmamux.h"
 #include "exti.h"
+#include "fdcan.h"
 #include "flash.h"
 #include "fpu.h"
 #include "gpio.h"
@@ -37,6 +39,7 @@
 #include "tim.h"
 #include "ucpd.h"
 #include "usart.h"
+#include "usb.h"
 #include "vrefbuf.h"
 #include "wwdg.h"
 

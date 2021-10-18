@@ -85,14 +85,6 @@ struct peripheral_t<STM32L4x5, RNG>
     static T& V;
 };
 
-template<>
-struct peripheral_t<STM32L4x6, RNG>
-{
-    static constexpr periph_t P = RNG;
-    using T = stm32l412_rng_t;
-    static T& V;
-};
-
 using rng_t = peripheral_t<svd, RNG>;
 
 template<int INST> struct rng_traits {};

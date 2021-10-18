@@ -108,10 +108,10 @@ struct interrupt
         , I2C4_ER = 83 // I2C4_ER
         , SPI4 = 84 // SPI4
         , AES = 85 // AES
-        , FDCAN2_INTR0 = 86 // FDCAN2_intr0
-        , FDCAN2_INTR1 = 87 // FDCAN2_intr1
-        , FDCAN3_INTR0 = 88 // FDCAN3_intr0
-        , FDCAN3_INTR1 = 89 // FDCAN3_intr1
+        , FDCAN2_INTR0 = 86 // FDCAN2 interrupt
+        , FDCAN2_INTR1 = 87 // FDCAN2 interrupt
+        , FDCAN3_INTR0 = 88 // FDCAN3 interrupt
+        , FDCAN3_INTR1 = 89 // FDCAN3 interrupt
         , RNG = 90 // RNG
         , LPUART = 91 // LPUART
         , I2C3_EV = 92 // I2C3_EV

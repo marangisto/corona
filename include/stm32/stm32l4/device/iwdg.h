@@ -90,12 +90,4 @@ struct peripheral_t<STM32L4x5, IWDG>
     static T& V;
 };
 
-template<>
-struct peripheral_t<STM32L4x6, IWDG>
-{
-    static constexpr periph_t P = IWDG;
-    using T = stm32l412_iwdg_t;
-    static T& V;
-};
-
 using iwdg_t = peripheral_t<svd, IWDG>;

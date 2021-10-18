@@ -232,14 +232,6 @@ struct peripheral_t<STM32L4x5, FMC>
     static T& V;
 };
 
-template<>
-struct peripheral_t<STM32L4x6, FMC>
-{
-    static constexpr periph_t P = FMC;
-    using T = stm32l476_fmc_t;
-    static T& V;
-};
-
 using fmc_t = peripheral_t<svd, FMC>;
 
 template<int INST> struct fmc_traits {};

@@ -103,6 +103,14 @@ struct peripheral_t<STM32H723, CRS>
 };
 
 template<>
+struct peripheral_t<STM32H725, CRS>
+{
+    static constexpr periph_t P = CRS;
+    using T = stm32h723_crs_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, CRS>
 {
     static constexpr periph_t P = CRS;

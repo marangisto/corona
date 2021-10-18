@@ -88,7 +88,7 @@ struct stm32g431xx_adc1_t
 
     static constexpr uint32_t CFGR_RESET_VALUE = 0x80000000; // Reset value
     static constexpr uint32_t CFGR_JQDIS = 0x80000000; // Injected Queue disable
-    typedef bit_field_t<26, 0x1f> CFGR_AWDCH1CH; // AWDCH1CH
+    typedef bit_field_t<26, 0x1f> CFGR_AWD1CH; // Analog watchdog 1 channel selection
     static constexpr uint32_t CFGR_JAUTO = 0x2000000; // JAUTO
     static constexpr uint32_t CFGR_JAWD1EN = 0x1000000; // JAWD1EN
     static constexpr uint32_t CFGR_AWD1EN = 0x800000; // AWD1EN
@@ -102,8 +102,7 @@ struct stm32g431xx_adc1_t
     static constexpr uint32_t CFGR_CONT = 0x2000; // CONT
     static constexpr uint32_t CFGR_OVRMOD = 0x1000; // OVRMOD
     typedef bit_field_t<10, 0x3> CFGR_EXTEN; // EXTEN
-    typedef bit_field_t<5, 0x1f> CFGR_EXTSEL; // EXTSEL
-    static constexpr uint32_t CFGR_ALIGN_5 = 0x20; // ALIGN_5
+    typedef bit_field_t<5, 0x1f> CFGR_EXTSEL; // External trigger selection for regular group
     typedef bit_field_t<3, 0x3> CFGR_RES; // RES
     static constexpr uint32_t CFGR_DMACFG = 0x2; // DMACFG
     static constexpr uint32_t CFGR_DMAEN = 0x1; // DMAEN

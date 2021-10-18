@@ -77,7 +77,7 @@ template<> void handler<interrupt::DMA2_CH4>() __attribute__ ((weak, alias("_Z17
 template<> void handler<interrupt::DMA2_CH5>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::DMA2_CH6>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::DMA2_CH7>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
-template<> void handler<interrupt::DMAMUX_OVR>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::DMAMUX1_OVR>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 
 void (*vectors[])(void) __attribute__ ((section(".vectors"))) =
     { (void(*)(void)) &__estack // -16: Initial stack pointer
@@ -118,7 +118,7 @@ void (*vectors[])(void) __attribute__ ((section(".vectors"))) =
     , handler<interrupt::USB_HP> // 19: USB high priority interrupt
     , handler<interrupt::USB_LP> // 20: USB low priority interrupt (including USB wakeup)
     , handler<interrupt::C2SEV> // 21: CPU2 SEV through EXTI[40]
-    , handler<interrupt::COMP> // 22: COMP2 &amp; COMP1 interrupt through AIEC[21:20]
+    , handler<interrupt::COMP> // 22: COMP1 interrupt through EXTI[21:20]
     , handler<interrupt::EXTI5_9> // 23: EXTI line [9:5] interrupt through EXTI[9:5]
     , handler<interrupt::TIM1_BRK> // 24: Timer 1 break interrupt
     , handler<interrupt::TIM1_UP> // 25: Timer 1 Update
@@ -158,6 +158,6 @@ void (*vectors[])(void) __attribute__ ((section(".vectors"))) =
     , handler<interrupt::DMA2_CH5> // 59: DMA2 channel 5 interrupt
     , handler<interrupt::DMA2_CH6> // 60: DMA2 channel 6 interrupt
     , handler<interrupt::DMA2_CH7> // 61: DMA2 channel 7 interrupt
-    , handler<interrupt::DMAMUX_OVR> // 62: DMAMUX overrun interrupt
+    , handler<interrupt::DMAMUX1_OVR> // 62: DMAMUX1 overrun interrupt
     };
 

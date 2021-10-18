@@ -391,14 +391,6 @@ struct peripheral_t<STM32L4x5, LCD>
     static T& V;
 };
 
-template<>
-struct peripheral_t<STM32L4x6, LCD>
-{
-    static constexpr periph_t P = LCD;
-    using T = stm32l476_lcd_t;
-    static T& V;
-};
-
 using lcd_t = peripheral_t<svd, LCD>;
 
 template<int INST> struct lcd_traits {};

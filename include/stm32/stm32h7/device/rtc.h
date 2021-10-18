@@ -340,6 +340,14 @@ struct peripheral_t<STM32H723, RTC>
 };
 
 template<>
+struct peripheral_t<STM32H725, RTC>
+{
+    static constexpr periph_t P = RTC;
+    using T = stm32h723_rtc_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, RTC>
 {
     static constexpr periph_t P = RTC;

@@ -108,6 +108,14 @@ struct peripheral_t<STM32H723, DCMI>
 };
 
 template<>
+struct peripheral_t<STM32H725, DCMI>
+{
+    static constexpr periph_t P = DCMI;
+    using T = stm32h723_dcmi_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, DCMI>
 {
     static constexpr periph_t P = DCMI;

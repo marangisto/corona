@@ -180,6 +180,14 @@ struct peripheral_t<STM32H723, SPDIFRX>
 };
 
 template<>
+struct peripheral_t<STM32H725, SPDIFRX>
+{
+    static constexpr periph_t P = SPDIFRX;
+    using T = stm32h723_spdifrx_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, SPDIFRX>
 {
     static constexpr periph_t P = SPDIFRX;

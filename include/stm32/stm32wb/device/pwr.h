@@ -8,7 +8,7 @@
 
 // PWR: Power control
 
-struct stm32wb30_cm4_pwr_t
+struct stm32wb10_cm4_pwr_t
 {
     volatile uint32_t CR1; // Power control register 1
     volatile uint32_t CR2; // Power control register 2
@@ -323,10 +323,26 @@ struct stm32wb30_cm4_pwr_t
 };
 
 template<>
+struct peripheral_t<STM32WB10_CM4, PWR>
+{
+    static constexpr periph_t P = PWR;
+    using T = stm32wb10_cm4_pwr_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32WB15_CM4, PWR>
+{
+    static constexpr periph_t P = PWR;
+    using T = stm32wb10_cm4_pwr_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32WB30_CM4, PWR>
 {
     static constexpr periph_t P = PWR;
-    using T = stm32wb30_cm4_pwr_t;
+    using T = stm32wb10_cm4_pwr_t;
     static T& V;
 };
 
@@ -334,7 +350,7 @@ template<>
 struct peripheral_t<STM32WB35_CM4, PWR>
 {
     static constexpr periph_t P = PWR;
-    using T = stm32wb30_cm4_pwr_t;
+    using T = stm32wb10_cm4_pwr_t;
     static T& V;
 };
 
@@ -342,7 +358,7 @@ template<>
 struct peripheral_t<STM32WB50_CM4, PWR>
 {
     static constexpr periph_t P = PWR;
-    using T = stm32wb30_cm4_pwr_t;
+    using T = stm32wb10_cm4_pwr_t;
     static T& V;
 };
 
@@ -350,7 +366,7 @@ template<>
 struct peripheral_t<STM32WB55_CM4, PWR>
 {
     static constexpr periph_t P = PWR;
-    using T = stm32wb30_cm4_pwr_t;
+    using T = stm32wb10_cm4_pwr_t;
     static T& V;
 };
 

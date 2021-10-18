@@ -518,12 +518,4 @@ struct peripheral_t<STM32L4x5, EXTI>
     static T& V;
 };
 
-template<>
-struct peripheral_t<STM32L4x6, EXTI>
-{
-    static constexpr periph_t P = EXTI;
-    using T = stm32l476_exti_t;
-    static T& V;
-};
-
 using exti_t = peripheral_t<svd, EXTI>;

@@ -863,6 +863,14 @@ struct peripheral_t<STM32H723, DMAMUX1>
 };
 
 template<>
+struct peripheral_t<STM32H725, DMAMUX1>
+{
+    static constexpr periph_t P = DMAMUX1;
+    using T = stm32h723_dmamux1_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, DMAMUX1>
 {
     static constexpr periph_t P = DMAMUX1;
@@ -1016,6 +1024,14 @@ struct peripheral_t<STM32H7B3x, DMAMUX2>
 
 template<>
 struct peripheral_t<STM32H723, DMAMUX3>
+{
+    static constexpr periph_t P = DMAMUX3;
+    using T = stm32h723_dmamux3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, DMAMUX3>
 {
     static constexpr periph_t P = DMAMUX3;
     using T = stm32h723_dmamux3_t;

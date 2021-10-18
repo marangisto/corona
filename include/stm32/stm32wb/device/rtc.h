@@ -8,7 +8,7 @@
 
 // RTC: Real-time clock
 
-struct stm32wb30_cm4_rtc_t
+struct stm32wb10_cm4_rtc_t
 {
     volatile uint32_t TR; // time register
     volatile uint32_t DR; // date register
@@ -284,10 +284,26 @@ struct stm32wb30_cm4_rtc_t
 };
 
 template<>
+struct peripheral_t<STM32WB10_CM4, RTC>
+{
+    static constexpr periph_t P = RTC;
+    using T = stm32wb10_cm4_rtc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32WB15_CM4, RTC>
+{
+    static constexpr periph_t P = RTC;
+    using T = stm32wb10_cm4_rtc_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32WB30_CM4, RTC>
 {
     static constexpr periph_t P = RTC;
-    using T = stm32wb30_cm4_rtc_t;
+    using T = stm32wb10_cm4_rtc_t;
     static T& V;
 };
 
@@ -295,7 +311,7 @@ template<>
 struct peripheral_t<STM32WB35_CM4, RTC>
 {
     static constexpr periph_t P = RTC;
-    using T = stm32wb30_cm4_rtc_t;
+    using T = stm32wb10_cm4_rtc_t;
     static T& V;
 };
 
@@ -303,7 +319,7 @@ template<>
 struct peripheral_t<STM32WB50_CM4, RTC>
 {
     static constexpr periph_t P = RTC;
-    using T = stm32wb30_cm4_rtc_t;
+    using T = stm32wb10_cm4_rtc_t;
     static T& V;
 };
 
@@ -311,7 +327,7 @@ template<>
 struct peripheral_t<STM32WB55_CM4, RTC>
 {
     static constexpr periph_t P = RTC;
-    using T = stm32wb30_cm4_rtc_t;
+    using T = stm32wb10_cm4_rtc_t;
     static T& V;
 };
 
@@ -322,5 +338,6 @@ template<int INST> struct rtc_traits {};
 template<> struct rtc_traits<0>
 {
     using rtc = rtc_t;
+    static constexpr signal_t OUT = RTC_OUT;
     static constexpr signal_t REFIN = RTC_REFIN;
 };

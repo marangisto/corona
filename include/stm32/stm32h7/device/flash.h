@@ -723,6 +723,14 @@ struct peripheral_t<STM32H723, FLASH>
 };
 
 template<>
+struct peripheral_t<STM32H725, FLASH>
+{
+    static constexpr periph_t P = FLASH;
+    using T = stm32h723_flash_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, FLASH>
 {
     static constexpr periph_t P = FLASH;

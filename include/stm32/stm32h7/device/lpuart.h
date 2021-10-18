@@ -146,6 +146,14 @@ struct peripheral_t<STM32H723, LPUART1>
 };
 
 template<>
+struct peripheral_t<STM32H725, LPUART1>
+{
+    static constexpr periph_t P = LPUART1;
+    using T = stm32h723_lpuart1_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, LPUART1>
 {
     static constexpr periph_t P = LPUART1;

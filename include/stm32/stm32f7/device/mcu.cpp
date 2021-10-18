@@ -326,6 +326,41 @@ typename peripheral_t<STM32F779, ADC3>::T&
         <typename peripheral_t<STM32F779, ADC3>::T*
         >(0x40012200);
 
+typename peripheral_t<STM32F765, ADC_COMMON>::T&
+    peripheral_t<STM32F765, ADC_COMMON>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F765, ADC_COMMON>::T*
+        >(0x40012300);
+
+typename peripheral_t<STM32F767, ADC_COMMON>::T&
+    peripheral_t<STM32F767, ADC_COMMON>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F767, ADC_COMMON>::T*
+        >(0x40012300);
+
+typename peripheral_t<STM32F768, ADC_COMMON>::T&
+    peripheral_t<STM32F768, ADC_COMMON>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F768, ADC_COMMON>::T*
+        >(0x40012300);
+
+typename peripheral_t<STM32F769, ADC_COMMON>::T&
+    peripheral_t<STM32F769, ADC_COMMON>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F769, ADC_COMMON>::T*
+        >(0x40012300);
+
+typename peripheral_t<STM32F777, ADC_COMMON>::T&
+    peripheral_t<STM32F777, ADC_COMMON>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F777, ADC_COMMON>::T*
+        >(0x40012300);
+
+typename peripheral_t<STM32F778, ADC_COMMON>::T&
+    peripheral_t<STM32F778, ADC_COMMON>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F778, ADC_COMMON>::T*
+        >(0x40012300);
+
+typename peripheral_t<STM32F779, ADC_COMMON>::T&
+    peripheral_t<STM32F779, ADC_COMMON>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F779, ADC_COMMON>::T*
+        >(0x40012300);
+
 typename peripheral_t<STM32F722, C_ADC>::T&
     peripheral_t<STM32F722, C_ADC>::V = *reinterpret_cast
         <typename peripheral_t<STM32F722, C_ADC>::T*
@@ -369,11 +404,6 @@ typename peripheral_t<STM32F750x, C_ADC>::T&
 typename peripheral_t<STM32F756, C_ADC>::T&
     peripheral_t<STM32F756, C_ADC>::V = *reinterpret_cast
         <typename peripheral_t<STM32F756, C_ADC>::T*
-        >(0x40012300);
-
-typename peripheral_t<STM32F765, C_ADC>::T&
-    peripheral_t<STM32F765, C_ADC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F765, C_ADC>::T*
         >(0x40012300);
 
 typename peripheral_t<STM32F730, AES>::T&
@@ -886,6 +916,26 @@ typename peripheral_t<STM32F765, DBG>::T&
         <typename peripheral_t<STM32F765, DBG>::T*
         >(0xe0042000);
 
+typename peripheral_t<STM32F768, DBG>::T&
+    peripheral_t<STM32F768, DBG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F768, DBG>::T*
+        >(0xe0042000);
+
+typename peripheral_t<STM32F769, DBG>::T&
+    peripheral_t<STM32F769, DBG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F769, DBG>::T*
+        >(0xe0042000);
+
+typename peripheral_t<STM32F778, DBG>::T&
+    peripheral_t<STM32F778, DBG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F778, DBG>::T*
+        >(0xe0042000);
+
+typename peripheral_t<STM32F779, DBG>::T&
+    peripheral_t<STM32F779, DBG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F779, DBG>::T*
+        >(0xe0042000);
+
 typename peripheral_t<STM32F767, DBGMCU>::T&
     peripheral_t<STM32F767, DBGMCU>::V = *reinterpret_cast
         <typename peripheral_t<STM32F767, DBGMCU>::T*
@@ -1286,11 +1336,6 @@ typename peripheral_t<STM32F745, ETHERNET_MAC>::T&
         <typename peripheral_t<STM32F745, ETHERNET_MAC>::T*
         >(0x40028000);
 
-typename peripheral_t<STM32F746, ETHERNET_MAC>::T&
-    peripheral_t<STM32F746, ETHERNET_MAC>::V = *reinterpret_cast
-        <typename peripheral_t<STM32F746, ETHERNET_MAC>::T*
-        >(0x40028000);
-
 typename peripheral_t<STM32F750x, ETHERNET_MAC>::T&
     peripheral_t<STM32F750x, ETHERNET_MAC>::V = *reinterpret_cast
         <typename peripheral_t<STM32F750x, ETHERNET_MAC>::T*
@@ -1334,6 +1379,11 @@ typename peripheral_t<STM32F778, ETHERNET_MAC>::T&
 typename peripheral_t<STM32F779, ETHERNET_MAC>::T&
     peripheral_t<STM32F779, ETHERNET_MAC>::V = *reinterpret_cast
         <typename peripheral_t<STM32F779, ETHERNET_MAC>::T*
+        >(0x40028000);
+
+typename peripheral_t<STM32F746, ETHERNET_MAC>::T&
+    peripheral_t<STM32F746, ETHERNET_MAC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32F746, ETHERNET_MAC>::T*
         >(0x40028000);
 
 typename peripheral_t<STM32F745, ETHERNET_MMC>::T&

@@ -287,6 +287,54 @@ struct peripheral_t<STM32H723, I2C4>
 };
 
 template<>
+struct peripheral_t<STM32H723, I2C5>
+{
+    static constexpr periph_t P = I2C5;
+    using T = stm32h723_i2c1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, I2C1>
+{
+    static constexpr periph_t P = I2C1;
+    using T = stm32h723_i2c1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, I2C2>
+{
+    static constexpr periph_t P = I2C2;
+    using T = stm32h723_i2c1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, I2C3>
+{
+    static constexpr periph_t P = I2C3;
+    using T = stm32h723_i2c1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, I2C4>
+{
+    static constexpr periph_t P = I2C4;
+    using T = stm32h723_i2c1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, I2C5>
+{
+    static constexpr periph_t P = I2C5;
+    using T = stm32h723_i2c1_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, I2C1>
 {
     static constexpr periph_t P = I2C1;
@@ -314,6 +362,14 @@ template<>
 struct peripheral_t<STM32H73x, I2C4>
 {
     static constexpr periph_t P = I2C4;
+    using T = stm32h723_i2c1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, I2C5>
+{
+    static constexpr periph_t P = I2C5;
     using T = stm32h723_i2c1_t;
     static T& V;
 };
@@ -802,6 +858,7 @@ using i2c1_t = peripheral_t<svd, I2C1>;
 using i2c2_t = peripheral_t<svd, I2C2>;
 using i2c3_t = peripheral_t<svd, I2C3>;
 using i2c4_t = peripheral_t<svd, I2C4>;
+using i2c5_t = peripheral_t<svd, I2C5>;
 
 template<int INST> struct i2c_traits {};
 
@@ -916,6 +973,14 @@ template<> struct i2c_traits<4>
     }
 };
 
+template<> struct i2c_traits<5>
+{
+    using i2c = i2c5_t;
+    static constexpr signal_t SCL = I2C5_SCL;
+    static constexpr signal_t SDA = I2C5_SDA;
+    static constexpr signal_t SMBA = I2C5_SMBA;
+};
+
 template<> struct dma_request_t<I2C1, I2C_RX>
 {
     static constexpr unsigned ID = 33;
@@ -944,4 +1009,24 @@ template<> struct dma_request_t<I2C3, I2C_RX>
 template<> struct dma_request_t<I2C3, I2C_TX>
 {
     static constexpr unsigned ID = 77;
+};
+
+template<> struct dma_request_t<I2C5, I2C_RX>
+{
+    static constexpr unsigned ID = 118;
+};
+
+template<> struct dma_request_t<I2C5, I2C_TX>
+{
+    static constexpr unsigned ID = 119;
+};
+
+template<> struct dma_request_t<I2C5, I2C_RX>
+{
+    static constexpr unsigned ID = 135;
+};
+
+template<> struct dma_request_t<I2C5, I2C_TX>
+{
+    static constexpr unsigned ID = 136;
 };

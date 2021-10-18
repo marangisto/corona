@@ -89,12 +89,4 @@ struct peripheral_t<STM32L4x5, STK>
     static T& V;
 };
 
-template<>
-struct peripheral_t<STM32L4x6, STK>
-{
-    static constexpr periph_t P = STK;
-    using T = stm32l412_stk_t;
-    static T& V;
-};
-
 using stk_t = peripheral_t<svd, STK>;

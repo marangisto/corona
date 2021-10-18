@@ -156,6 +156,7 @@ enum mcu_t
     , STM32L073CZTx
     , STM32L073CBUx
     , STM32L073CZUx
+    , STM32L073CZYx
     , STM32L073RBHx
     , STM32L073RZHx
     , STM32L073RBTx
@@ -1460,6 +1461,14 @@ template<> struct mcu_traits<STM32L073CBUx>
 };
 
 template<> struct mcu_traits<STM32L073CZUx>
+{
+    static constexpr family_t family = STM32L0;
+    static constexpr svd_t svd = STM32L0x3;
+    static constexpr gpio_conf_t gpio_conf = STM32L071;
+    static constexpr unsigned frequency = 32;
+};
+
+template<> struct mcu_traits<STM32L073CZYx>
 {
     static constexpr family_t family = STM32L0;
     static constexpr svd_t svd = STM32L0x3;

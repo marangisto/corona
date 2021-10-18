@@ -8,7 +8,7 @@
 
 // FPU: Floting point unit
 
-struct stm32wb30_cm4_fpu_t
+struct stm32wb10_cm4_fpu_t
 {
     volatile uint32_t FPCCR; // Floating-point context control register
     volatile uint32_t FPCAR; // Floating-point context address register
@@ -47,7 +47,7 @@ struct stm32wb30_cm4_fpu_t
 
 // FPU_CPACR: Floating point unit CPACR
 
-struct stm32wb30_cm4_fpu_cpacr_t
+struct stm32wb10_cm4_fpu_cpacr_t
 {
     volatile uint32_t CPACR; // Coprocessor access control register
 
@@ -56,10 +56,26 @@ struct stm32wb30_cm4_fpu_cpacr_t
 };
 
 template<>
+struct peripheral_t<STM32WB10_CM4, FPU>
+{
+    static constexpr periph_t P = FPU;
+    using T = stm32wb10_cm4_fpu_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32WB15_CM4, FPU>
+{
+    static constexpr periph_t P = FPU;
+    using T = stm32wb10_cm4_fpu_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32WB30_CM4, FPU>
 {
     static constexpr periph_t P = FPU;
-    using T = stm32wb30_cm4_fpu_t;
+    using T = stm32wb10_cm4_fpu_t;
     static T& V;
 };
 
@@ -67,7 +83,7 @@ template<>
 struct peripheral_t<STM32WB35_CM4, FPU>
 {
     static constexpr periph_t P = FPU;
-    using T = stm32wb30_cm4_fpu_t;
+    using T = stm32wb10_cm4_fpu_t;
     static T& V;
 };
 
@@ -75,7 +91,7 @@ template<>
 struct peripheral_t<STM32WB50_CM4, FPU>
 {
     static constexpr periph_t P = FPU;
-    using T = stm32wb30_cm4_fpu_t;
+    using T = stm32wb10_cm4_fpu_t;
     static T& V;
 };
 
@@ -83,7 +99,23 @@ template<>
 struct peripheral_t<STM32WB55_CM4, FPU>
 {
     static constexpr periph_t P = FPU;
-    using T = stm32wb30_cm4_fpu_t;
+    using T = stm32wb10_cm4_fpu_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32WB10_CM4, FPU_CPACR>
+{
+    static constexpr periph_t P = FPU_CPACR;
+    using T = stm32wb10_cm4_fpu_cpacr_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32WB15_CM4, FPU_CPACR>
+{
+    static constexpr periph_t P = FPU_CPACR;
+    using T = stm32wb10_cm4_fpu_cpacr_t;
     static T& V;
 };
 
@@ -91,7 +123,7 @@ template<>
 struct peripheral_t<STM32WB30_CM4, FPU_CPACR>
 {
     static constexpr periph_t P = FPU_CPACR;
-    using T = stm32wb30_cm4_fpu_cpacr_t;
+    using T = stm32wb10_cm4_fpu_cpacr_t;
     static T& V;
 };
 
@@ -99,7 +131,7 @@ template<>
 struct peripheral_t<STM32WB35_CM4, FPU_CPACR>
 {
     static constexpr periph_t P = FPU_CPACR;
-    using T = stm32wb30_cm4_fpu_cpacr_t;
+    using T = stm32wb10_cm4_fpu_cpacr_t;
     static T& V;
 };
 
@@ -107,7 +139,7 @@ template<>
 struct peripheral_t<STM32WB50_CM4, FPU_CPACR>
 {
     static constexpr periph_t P = FPU_CPACR;
-    using T = stm32wb30_cm4_fpu_cpacr_t;
+    using T = stm32wb10_cm4_fpu_cpacr_t;
     static T& V;
 };
 
@@ -115,7 +147,7 @@ template<>
 struct peripheral_t<STM32WB55_CM4, FPU_CPACR>
 {
     static constexpr periph_t P = FPU_CPACR;
-    using T = stm32wb30_cm4_fpu_cpacr_t;
+    using T = stm32wb10_cm4_fpu_cpacr_t;
     static T& V;
 };
 

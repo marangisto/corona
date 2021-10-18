@@ -112,14 +112,6 @@ struct peripheral_t<STM32L4x5, FPU>
 };
 
 template<>
-struct peripheral_t<STM32L4x6, FPU>
-{
-    static constexpr periph_t P = FPU;
-    using T = stm32l412_fpu_t;
-    static T& V;
-};
-
-template<>
 struct peripheral_t<STM32L412, FPU_CPACR>
 {
     static constexpr periph_t P = FPU_CPACR;
@@ -169,14 +161,6 @@ struct peripheral_t<STM32L4x3, FPU_CPACR>
 
 template<>
 struct peripheral_t<STM32L4x5, FPU_CPACR>
-{
-    static constexpr periph_t P = FPU_CPACR;
-    using T = stm32l412_fpu_cpacr_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32L4x6, FPU_CPACR>
 {
     static constexpr periph_t P = FPU_CPACR;
     using T = stm32l412_fpu_cpacr_t;

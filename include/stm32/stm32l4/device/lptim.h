@@ -18,11 +18,13 @@ struct stm32l412_lptim1_t
     volatile uint32_t CMP; // Compare Register
     volatile uint32_t ARR; // Autoreload Register
     volatile uint32_t CNT; // Counter Register
-    reserved_t<0x1> _0x20;
-    volatile uint32_t CFGR2; // LPTIM configuration register 2 (
-    volatile uint32_t RCR; // LPTIM repetition register
+    volatile uint32_t OR; // option register
+    volatile uint32_t CFGR2; // configuration register 2
+    volatile uint32_t RCR; // repetition register
 
     static constexpr uint32_t ISR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t ISR_REPOK = 0x100; // REPOK
+    static constexpr uint32_t ISR_UE = 0x80; // UE
     static constexpr uint32_t ISR_DOWN = 0x40; // Counter direction change up to down
     static constexpr uint32_t ISR_UP = 0x20; // Counter direction change down to up
     static constexpr uint32_t ISR_ARROK = 0x10; // Autoreload register update OK
@@ -30,10 +32,10 @@ struct stm32l412_lptim1_t
     static constexpr uint32_t ISR_EXTTRIG = 0x4; // External trigger edge event
     static constexpr uint32_t ISR_ARRM = 0x2; // Autoreload match
     static constexpr uint32_t ISR_CMPM = 0x1; // Compare match
-    static constexpr uint32_t ISR_UE = 0x80; // UE
-    static constexpr uint32_t ISR_REPOK = 0x100; // REPOK
 
     static constexpr uint32_t ICR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t ICR_REPOKCF = 0x100; // REPOKCF
+    static constexpr uint32_t ICR_UECF = 0x80; // UECF
     static constexpr uint32_t ICR_DOWNCF = 0x40; // Direction change to down Clear Flag
     static constexpr uint32_t ICR_UPCF = 0x20; // Direction change to UP Clear Flag
     static constexpr uint32_t ICR_ARROKCF = 0x10; // Autoreload register update OK Clear Flag
@@ -41,10 +43,10 @@ struct stm32l412_lptim1_t
     static constexpr uint32_t ICR_EXTTRIGCF = 0x4; // External trigger valid edge Clear Flag
     static constexpr uint32_t ICR_ARRMCF = 0x2; // Autoreload match Clear Flag
     static constexpr uint32_t ICR_CMPMCF = 0x1; // compare match Clear Flag
-    static constexpr uint32_t ICR_UECF = 0x80; // UECF
-    static constexpr uint32_t ICR_REPOKCF = 0x100; // REPOKCF
 
     static constexpr uint32_t IER_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t IER_REPOKIE = 0x100; // REPOKIE
+    static constexpr uint32_t IER_UEIE = 0x80; // UEIE
     static constexpr uint32_t IER_DOWNIE = 0x40; // Direction change to down Interrupt Enable
     static constexpr uint32_t IER_UPIE = 0x20; // Direction change to UP Interrupt Enable
     static constexpr uint32_t IER_ARROKIE = 0x10; // Autoreload register update OK Interrupt Enable
@@ -52,8 +54,6 @@ struct stm32l412_lptim1_t
     static constexpr uint32_t IER_EXTTRIGIE = 0x4; // External trigger valid edge Interrupt Enable
     static constexpr uint32_t IER_ARRMIE = 0x2; // Autoreload match Interrupt Enable
     static constexpr uint32_t IER_CMPMIE = 0x1; // Compare match Interrupt Enable
-    static constexpr uint32_t IER_UEIE = 0x80; // UEIE
-    static constexpr uint32_t IER_REPOKIE = 0x100; // REPOKIE
 
     static constexpr uint32_t CFGR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CFGR_ENC = 0x1000000; // Encoder mode enable
@@ -71,11 +71,11 @@ struct stm32l412_lptim1_t
     static constexpr uint32_t CFGR_CKSEL = 0x1; // Clock selector
 
     static constexpr uint32_t CR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t CR_RSTARE = 0x10; // RSTARE
+    static constexpr uint32_t CR_COUNTRST = 0x8; // COUNTRST
     static constexpr uint32_t CR_CNTSTRT = 0x4; // Timer start in continuous mode
     static constexpr uint32_t CR_SNGSTRT = 0x2; // LPTIM start in single mode
     static constexpr uint32_t CR_ENABLE = 0x1; // LPTIM Enable
-    static constexpr uint32_t CR_COUNTRST = 0x8; // COUNTRST
-    static constexpr uint32_t CR_RSTARE = 0x10; // RSTARE
 
     static constexpr uint32_t CMP_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<0, 0xffff> CMP_CMP; // Compare value
@@ -86,10 +86,13 @@ struct stm32l412_lptim1_t
     static constexpr uint32_t CNT_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<0, 0xffff> CNT_CNT; // Counter value
 
+    static constexpr uint32_t OR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t OR_OR_0 = 0x1; // Option register bit 0
+    static constexpr uint32_t OR_OR_1 = 0x2; // Option register bit 1
 
     static constexpr uint32_t CFGR2_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<4, 0x3> CFGR2_IN2SEL; // LPTIM input 2 selection
     typedef bit_field_t<0, 0x3> CFGR2_IN1SEL; // LPTIM input 1 selection
+    typedef bit_field_t<4, 0x3> CFGR2_IN2SEL; // LPTIM input 2 selection
 
     static constexpr uint32_t RCR_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<0, 0xff> RCR_REP; // Repetition register value
@@ -182,6 +185,22 @@ struct peripheral_t<STM32L412, LPTIM2>
 };
 
 template<>
+struct peripheral_t<STM32L4x2, LPTIM1>
+{
+    static constexpr periph_t P = LPTIM1;
+    using T = stm32l412_lptim1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L4x2, LPTIM2>
+{
+    static constexpr periph_t P = LPTIM2;
+    using T = stm32l412_lptim1_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L476, LPTIM1>
 {
     static constexpr periph_t P = LPTIM1;
@@ -230,22 +249,6 @@ struct peripheral_t<STM32L4x1, LPTIM2>
 };
 
 template<>
-struct peripheral_t<STM32L4x2, LPTIM1>
-{
-    static constexpr periph_t P = LPTIM1;
-    using T = stm32l476_lptim1_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32L4x2, LPTIM2>
-{
-    static constexpr periph_t P = LPTIM2;
-    using T = stm32l476_lptim1_t;
-    static T& V;
-};
-
-template<>
 struct peripheral_t<STM32L4x3, LPTIM1>
 {
     static constexpr periph_t P = LPTIM1;
@@ -271,22 +274,6 @@ struct peripheral_t<STM32L4x5, LPTIM1>
 
 template<>
 struct peripheral_t<STM32L4x5, LPTIM2>
-{
-    static constexpr periph_t P = LPTIM2;
-    using T = stm32l476_lptim1_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32L4x6, LPTIM1>
-{
-    static constexpr periph_t P = LPTIM1;
-    using T = stm32l476_lptim1_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32L4x6, LPTIM2>
 {
     static constexpr periph_t P = LPTIM2;
     using T = stm32l476_lptim1_t;

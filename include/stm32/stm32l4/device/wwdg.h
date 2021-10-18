@@ -83,14 +83,6 @@ struct peripheral_t<STM32L4x5, WWDG>
     static T& V;
 };
 
-template<>
-struct peripheral_t<STM32L4x6, WWDG>
-{
-    static constexpr periph_t P = WWDG;
-    using T = stm32l412_wwdg_t;
-    static T& V;
-};
-
 using wwdg_t = peripheral_t<svd, WWDG>;
 
 template<int INST> struct wwdg_traits {};

@@ -411,14 +411,6 @@ struct peripheral_t<STM32L4x5, LPUART1>
     static T& V;
 };
 
-template<>
-struct peripheral_t<STM32L4x6, LPUART1>
-{
-    static constexpr periph_t P = LPUART1;
-    using T = stm32l4x1_lpuart1_t;
-    static T& V;
-};
-
 using lpuart1_t = peripheral_t<svd, LPUART1>;
 
 template<int INST> struct lpuart_traits {};

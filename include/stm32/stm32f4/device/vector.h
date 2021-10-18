@@ -16,9 +16,9 @@ template<> void handler<interrupt::DEBUG>() __attribute__ ((weak, alias("_Z17__d
 template<> void handler<interrupt::PENDSV>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::SYSTICK>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::WWDG>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
-template<> void handler<interrupt::PVD>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::EXTI16_PVD>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::TAMP_STAMP>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
-template<> void handler<interrupt::RTC_WKUP>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::EXTI22_RTC_WKUP>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::FLASH>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::RCC>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::EXTI0>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
@@ -57,7 +57,7 @@ template<> void handler<interrupt::USART2>() __attribute__ ((weak, alias("_Z17__
 template<> void handler<interrupt::USART3>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::EXTI15_10>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::EXTI17_RTC_ALARM>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
-template<> void handler<interrupt::OTG_FS_WKUP>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::EXTI18_OTG_FS_WKUP>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::TIM8_BRK_TIM12>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::TIM8_UP_TIM13>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::TIM8_TRG_COM_TIM14>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
@@ -136,9 +136,9 @@ void (*vectors[])(void) __attribute__ ((section(".vectors"))) =
     , handler<interrupt::PENDSV> // -2: Pendable request for system service [settable]
     , handler<interrupt::SYSTICK> // -1: System tick timer [settable]
     , handler<interrupt::WWDG> // 0: Window Watchdog interrupt
-    , handler<interrupt::PVD> // 1: PVD through EXTI line detection interrupt
+    , handler<interrupt::EXTI16_PVD> // 1: EXTI Line 16 interrupt /PVD through EXTI line detection interrupt
     , handler<interrupt::TAMP_STAMP> // 2: Tamper and TimeStamp interrupts through the EXTI line
-    , handler<interrupt::RTC_WKUP> // 3: RTC Wakeup interrupt through the EXTI line
+    , handler<interrupt::EXTI22_RTC_WKUP> // 3: EXTI Line 22 interrupt /RTC Wakeup interrupt through the EXTI line
     , handler<interrupt::FLASH> // 4: FLASH global interrupt
     , handler<interrupt::RCC> // 5: RCC global interrupt
     , handler<interrupt::EXTI0> // 6: EXTI Line0 interrupt
@@ -176,8 +176,8 @@ void (*vectors[])(void) __attribute__ ((section(".vectors"))) =
     , handler<interrupt::USART2> // 38: USART2 global interrupt
     , handler<interrupt::USART3> // 39: USART3 global interrupt
     , handler<interrupt::EXTI15_10> // 40: EXTI Line[15:10] interrupts
-    , handler<interrupt::EXTI17_RTC_ALARM> // 41: RTC Alarms (A and B) through EXTI line interrupt
-    , handler<interrupt::OTG_FS_WKUP> // 42: USB On-The-Go FS Wakeup through EXTI line interrupt
+    , handler<interrupt::EXTI17_RTC_ALARM> // 41: EXTI Line 17 interrupt / RTC Alarms (A and B) through EXTI line interrupt
+    , handler<interrupt::EXTI18_OTG_FS_WKUP> // 42: EXTI Line 18 interrupt / USBUSB On-The-Go FS Wakeup through EXTI line interrupt
     , handler<interrupt::TIM8_BRK_TIM12> // 43: TIM8 Break interrupt and TIM12 global interrupt
     , handler<interrupt::TIM8_UP_TIM13> // 44: TIM8 Update interrupt and TIM13 global interrupt
     , handler<interrupt::TIM8_TRG_COM_TIM14> // 45: TIM8 Trigger and Commutation interrupts and TIM14 global interrupt
@@ -216,7 +216,7 @@ void (*vectors[])(void) __attribute__ ((section(".vectors"))) =
     , handler<interrupt::DCMI> // 78: DCMI global interrupt
     , handler<interrupt::CRYPTO> // 79: AES global interrupt
     , handler<interrupt::HASH_RNG> // 80: Hash and Rng global interrupt
-    , handler<interrupt::FPU> // 81: FPU interrupt
+    , handler<interrupt::FPU> // 81: Floating point unit interrupt
     , handler<interrupt::USART7> // 82: USART7 global interrupt
     , handler<interrupt::USART8> // 83: USART8 global interrupt
     , handler<interrupt::SPI4> // 84: SPI4 global interrupt

@@ -1435,8 +1435,316 @@ struct stm32h743_dfsdm_t
     typedef bit_field_t<4, 0xfffffff> DFSDM3_CNVTIMR_CNVCNT; // 28-bit timer counting conversion time
 };
 
+// DFSDM1: Digital filter for sigma delta modulators
+
+struct stm32h7a3x_dfsdm1_t
+{
+    volatile uint32_t DFSDM_CH0CFGR1; // DFSDM channel 0 configuration register
+    volatile uint32_t DFSDM_CH0CFGR2; // DFSDM channel 0 configuration register
+    volatile uint32_t DFSDM_CH0AWSCDR; // DFSDM channel 0 analog watchdog and short-circuit detector register
+    volatile uint32_t DFSDM_CH0WDATR; // DFSDM channel 0 watchdog filter data register
+    volatile uint32_t DFSDM_CH0DATINR; // DFSDM channel 0 data input register
+    reserved_t<0x3> _0x14;
+    volatile uint32_t DFSDM_CH1CFGR1; // DFSDM channel 1 configuration register
+    volatile uint32_t DFSDM_CH1CFGR2; // DFSDM channel 1 configuration register
+    volatile uint32_t DFSDM_CH1AWSCDR; // DFSDM channel 1 analog watchdog and short-circuit detector register
+    volatile uint32_t DFSDM_CH1WDATR; // DFSDM channel 1 watchdog filter data register
+    volatile uint32_t DFSDM_CH1DATINR; // DFSDM channel 1 data input register
+    reserved_t<0x3> _0x34;
+    volatile uint32_t DFSDM_CH2CFGR1; // DFSDM channel 2 configuration register
+    volatile uint32_t DFSDM_CH2CFGR2; // DFSDM channel 2 configuration register
+    volatile uint32_t DFSDM_CH2AWSCDR; // DFSDM channel 2 analog watchdog and short-circuit detector register
+    volatile uint32_t DFSDM_CH2WDATR; // DFSDM channel 2 watchdog filter data register
+    volatile uint32_t DFSDM_CH2DATINR; // DFSDM channel 2 data input register
+    reserved_t<0x3> _0x54;
+    volatile uint32_t DFSDM_CH3CFGR1; // DFSDM channel 3 configuration register
+    volatile uint32_t DFSDM_CH3CFGR2; // DFSDM channel 3 configuration register
+    volatile uint32_t DFSDM_CH3AWSCDR; // DFSDM channel 3 analog watchdog and short-circuit detector register
+    volatile uint32_t DFSDM_CH3WDATR; // DFSDM channel 3 watchdog filter data register
+    volatile uint32_t DFSDM_CH3DATINR; // DFSDM channel 3 data input register
+    reserved_t<0x3> _0x74;
+    volatile uint32_t DFSDM_CH4CFGR1; // DFSDM channel 4 configuration register
+    volatile uint32_t DFSDM_CH4CFGR2; // DFSDM channel 4 configuration register
+    volatile uint32_t DFSDM_CH4AWSCDR; // DFSDM channel 4 analog watchdog and short-circuit detector register
+    volatile uint32_t DFSDM_CH4WDATR; // DFSDM channel 4 watchdog filter data register
+    volatile uint32_t DFSDM_CH4DATINR; // DFSDM channel 4 data input register
+    reserved_t<0x3> _0x94;
+    volatile uint32_t DFSDM_CH5CFGR1; // DFSDM channel 5 configuration register
+    volatile uint32_t DFSDM_CH5CFGR2; // DFSDM channel 5 configuration register
+    volatile uint32_t DFSDM_CH5AWSCDR; // DFSDM channel 5 analog watchdog and short-circuit detector register
+    volatile uint32_t DFSDM_CH5WDATR; // DFSDM channel 5 watchdog filter data register
+    volatile uint32_t DFSDM_CH5DATINR; // DFSDM channel 5 data input register
+    reserved_t<0x3> _0xb4;
+    volatile uint32_t DFSDM_CH6CFGR1; // DFSDM channel 6 configuration register
+    volatile uint32_t DFSDM_CH6CFGR2; // DFSDM channel 6 configuration register
+    volatile uint32_t DFSDM_CH6AWSCDR; // DFSDM channel 6 analog watchdog and short-circuit detector register
+    volatile uint32_t DFSDM_CH6WDATR; // DFSDM channel 6 watchdog filter data register
+    volatile uint32_t DFSDM_CH6DATINR; // DFSDM channel 6 data input register
+    reserved_t<0x3> _0xd4;
+    volatile uint32_t DFSDM_CH7CFGR1; // DFSDM channel 7 configuration register
+    volatile uint32_t DFSDM_CH7CFGR2; // DFSDM channel 7 configuration register
+    volatile uint32_t DFSDM_CH7AWSCDR; // DFSDM channel 7 analog watchdog and short-circuit detector register
+    volatile uint32_t DFSDM_CH7WDATR; // DFSDM channel 7 watchdog filter data register
+    volatile uint32_t DFSDM_CH7DATINR; // DFSDM channel 7 data input register
+
+    static constexpr uint32_t DFSDM_CH0CFGR1_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x3> DFSDM_CH0CFGR1_SITP; // Serial interface type for channel y This value can only be modified when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<2, 0x3> DFSDM_CH0CFGR1_SPICKSEL; // SPI clock select for channel y 2: clock coming from internal CKOUT - sampling point on each second CKOUT falling edge. For connection to external modulator which divides its clock input (from CKOUT) by 2 to generate its output serial communication clock (and this output clock change is active on each clock input rising edge). 3: clock coming from internal CKOUT output - sampling point on each second CKOUT rising edge. For connection to external modulator which divides its clock input (from CKOUT) by 2 to generate its output serial communication clock (and this output clock change is active on each clock input falling edge). This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    static constexpr uint32_t DFSDM_CH0CFGR1_SCDEN = 0x20; // Short-circuit detector enable on channel y
+    static constexpr uint32_t DFSDM_CH0CFGR1_CKABEN = 0x40; // Clock absence detector enable on channel y
+    static constexpr uint32_t DFSDM_CH0CFGR1_CHEN = 0x80; // Channel y enable If channel y is enabled, then serial data receiving is started according to the given channel setting.
+    static constexpr uint32_t DFSDM_CH0CFGR1_CHINSEL = 0x100; // Channel inputs selection This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<12, 0x3> DFSDM_CH0CFGR1_DATMPX; // Input data multiplexer for channel y 2: Data to channel y are taken from internal DFSDM_CHyDATINR register by direct CPU/DMA write. There can be written one or two 16-bit data samples according DATPACK[1:0] bit field setting. 3: Reserved This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<14, 0x3> DFSDM_CH0CFGR1_DATPACK; // Data packing mode in DFSDM_CHyDATINR register. first sample in INDAT0[15:0] (assigned to channel y) second sample INDAT1[15:0] (assigned to channel y) To empty DFSDM_CHyDATINR register, two samples must be read by the digital filter from channel y (INDAT0[15:0] part is read as first sample and then INDAT1[15:0] part is read as next sample). 2: Dual: input data in DFSDM_CHyDATINR register are stored as two samples: first sample INDAT0[15:0] (assigned to channel y) second sample INDAT1[15:0] (assigned to channel y+1) To empty DFSDM_CHyDATINR register first sample must be read by the digital filter from channel y and second sample must be read by another digital filter from channel y+1. Dual mode is available only on even channel numbers (y = 0, 2, 4, 6), for odd channel numbers (y = 1, 3, 5, 7) DFSDM_CHyDATINR is write protected. If an even channel is set to dual mode then the following odd channel must be set into standard mode (DATPACK[1:0]=0) for correct cooperation with even channel. 3: Reserved This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<16, 0xff> DFSDM_CH0CFGR1_CKOUTDIV; // Output serial clock divider 256 (Divider = CKOUTDIV+1). CKOUTDIV also defines the threshold for a clock absence detection. This value can only be modified when DFSDMEN=0 (in DFSDM_CH0CFGR1 register). If DFSDMEN=0 (in DFSDM_CH0CFGR1 register) then CKOUT signal is set to low state (setting is performed one DFSDM clock cycle after DFSDMEN=0). Note: CKOUTDIV is present only in DFSDM_CH0CFGR1 register (channel y=0) 1- 255: Defines the division of system clock for the serial clock output for CKOUT signal in range 2-
+    static constexpr uint32_t DFSDM_CH0CFGR1_CKOUTSRC = 0x40000000; // Output serial clock source selection This value can be modified only when DFSDMEN=0 (in DFSDM_CH0CFGR1 register). Note: CKOUTSRC is present only in DFSDM_CH0CFGR1 register (channel y=0)
+    static constexpr uint32_t DFSDM_CH0CFGR1_DFSDMEN = 0x80000000; // Global enable for DFSDM interface If DFSDM interface is enabled, then it is started to operate according to enabled y channels and enabled x filters settings (CHEN bit in DFSDM_CHyCFGR1 and DFEN bit in DFSDM_FLTxCR1). Data cleared by setting DFSDMEN=0: all registers DFSDM_FLTxISR are set to reset state (x = 0..7) all registers DFSDM_FLTxAWSR are set to reset state (x = 0..7) Note: DFSDMEN is present only in DFSDM_CH0CFGR1 register (channel y=0)
+
+    static constexpr uint32_t DFSDM_CH0CFGR2_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<3, 0x1f> DFSDM_CH0CFGR2_DTRBS; // Data right bit-shift for channel y will be performed to have final results. Bit-shift is performed before offset correction. The data shift is rounding the result to nearest integer value. The sign of shifted result is maintained (to have valid 24-bit signed format of result data). This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register). 0-31: Defines the shift of the data result coming from the integrator - how many bit shifts to the right
+    typedef bit_field_t<8, 0xffffff> DFSDM_CH0CFGR2_OFFSET; // 24-bit calibration offset for channel y For channel y, OFFSET is applied to the results of each conversion from this channel. This value is set by software.
+
+    static constexpr uint32_t DFSDM_CH0AWSCDR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> DFSDM_CH0AWSCDR_SCDT; // short-circuit detector threshold for channel y These bits are written by software to define the threshold counter for the short-circuit detector. If this value is reached, then a short-circuit detector event occurs on a given channel.
+    typedef bit_field_t<12, 0xf> DFSDM_CH0AWSCDR_BKSCD; // Break signal assignment for short-circuit detector on channel y BKSCD[i] = 0: Break i signal not assigned to short-circuit detector on channel y BKSCD[i] = 1: Break i signal assigned to short-circuit detector on channel y
+    typedef bit_field_t<16, 0x1f> DFSDM_CH0AWSCDR_AWFOSR; // Analog watchdog filter oversampling ratio (decimation rate) on channel y also the decimation ratio of the analog data rate. This bit can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register). Note: If AWFOSR = 0 then the filter has no effect (filter bypass). 0 - 31: Defines the length of the Sinc type filter in the range 1 - 32 (AWFOSR + 1). This number is
+    typedef bit_field_t<22, 0x3> DFSDM_CH0AWSCDR_AWFORD; // Analog watchdog Sinc filter order on channel y 2: Sinc2 filter type 3: Sinc3 filter type Sincx filter type transfer function: FastSinc filter type transfer function: This bit can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+
+    static constexpr uint32_t DFSDM_CH0WDATR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffff> DFSDM_CH0WDATR_WDATA; // Input channel y watchdog data Data converted by the analog watchdog filter for input channel y. This data is continuously converted (no trigger) for this channel, with a limited resolution (OSR=1..32/sinc order = 1..3).
+
+    static constexpr uint32_t DFSDM_CH0DATINR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffff> DFSDM_CH0DATINR_INDAT0; // Input data for channel y Input parallel channel data to be processed by the digital filter if DATMPX[1:0]=1 or DATMPX[1:0]=2. Data can be written by CPU/DMA (if DATMPX[1:0]=2) or directly by internal ADC (if DATMPX[1:0]=1). If DATPACK[1:0]=0 (standard mode) Channel y data sample is stored into INDAT0[15:0]. If DATPACK[1:0]=1 (interleaved mode) First channel y data sample is stored into INDAT0[15:0]. Second channel y data sample is stored into INDAT1[15:0]. Both samples are read sequentially by DFSDM_FLTx filter as two channel y data samples. If DATPACK[1:0]=2 (dual mode). For even y channels: Channel y data sample is stored into INDAT0[15:0]. For odd y channels: INDAT0[15:0] is write protected. See for more details. INDAT0[15:0] is in the16-bit signed format.
+    typedef bit_field_t<16, 0xffff> DFSDM_CH0DATINR_INDAT1; // Input data for channel y or channel y+1 Input parallel channel data to be processed by the digital filter if DATMPX[1:0]=1 or DATMPX[1:0]=2. Data can be written by CPU/DMA (if DATMPX[1:0]=2) or directly by internal ADC (if DATMPX[1:0]=1). If DATPACK[1:0]=0 (standard mode) INDAT0[15:0] is write protected (not used for input sample). If DATPACK[1:0]=1 (interleaved mode) Second channel y data sample is stored into INDAT1[15:0]. First channel y data sample is stored into INDAT0[15:0]. Both samples are read sequentially by DFSDM_FLTx filter as two channel y data samples. If DATPACK[1:0]=2 (dual mode). For even y channels: sample in INDAT1[15:0] is automatically copied into INDAT0[15:0] of channel (y+1). For odd y channels: INDAT1[15:0] is write protected. See for more details. INDAT0[15:1] is in the16-bit signed format.
+
+
+    static constexpr uint32_t DFSDM_CH1CFGR1_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x3> DFSDM_CH1CFGR1_SITP; // Serial interface type for channel y This value can only be modified when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<2, 0x3> DFSDM_CH1CFGR1_SPICKSEL; // SPI clock select for channel y 2: clock coming from internal CKOUT - sampling point on each second CKOUT falling edge. For connection to external modulator which divides its clock input (from CKOUT) by 2 to generate its output serial communication clock (and this output clock change is active on each clock input rising edge). 3: clock coming from internal CKOUT output - sampling point on each second CKOUT rising edge. For connection to external modulator which divides its clock input (from CKOUT) by 2 to generate its output serial communication clock (and this output clock change is active on each clock input falling edge). This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    static constexpr uint32_t DFSDM_CH1CFGR1_SCDEN = 0x20; // Short-circuit detector enable on channel y
+    static constexpr uint32_t DFSDM_CH1CFGR1_CKABEN = 0x40; // Clock absence detector enable on channel y
+    static constexpr uint32_t DFSDM_CH1CFGR1_CHEN = 0x80; // Channel y enable If channel y is enabled, then serial data receiving is started according to the given channel setting.
+    static constexpr uint32_t DFSDM_CH1CFGR1_CHINSEL = 0x100; // Channel inputs selection This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<12, 0x3> DFSDM_CH1CFGR1_DATMPX; // Input data multiplexer for channel y 2: Data to channel y are taken from internal DFSDM_CHyDATINR register by direct CPU/DMA write. There can be written one or two 16-bit data samples according DATPACK[1:0] bit field setting. 3: Reserved This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<14, 0x3> DFSDM_CH1CFGR1_DATPACK; // Data packing mode in DFSDM_CHyDATINR register. first sample in INDAT0[15:0] (assigned to channel y) second sample INDAT1[15:0] (assigned to channel y) To empty DFSDM_CHyDATINR register, two samples must be read by the digital filter from channel y (INDAT0[15:0] part is read as first sample and then INDAT1[15:0] part is read as next sample). 2: Dual: input data in DFSDM_CHyDATINR register are stored as two samples: first sample INDAT0[15:0] (assigned to channel y) second sample INDAT1[15:0] (assigned to channel y+1) To empty DFSDM_CHyDATINR register first sample must be read by the digital filter from channel y and second sample must be read by another digital filter from channel y+1. Dual mode is available only on even channel numbers (y = 0, 2, 4, 6), for odd channel numbers (y = 1, 3, 5, 7) DFSDM_CHyDATINR is write protected. If an even channel is set to dual mode then the following odd channel must be set into standard mode (DATPACK[1:0]=0) for correct cooperation with even channel. 3: Reserved This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<16, 0xff> DFSDM_CH1CFGR1_CKOUTDIV; // Output serial clock divider 256 (Divider = CKOUTDIV+1). CKOUTDIV also defines the threshold for a clock absence detection. This value can only be modified when DFSDMEN=0 (in DFSDM_CH0CFGR1 register). If DFSDMEN=0 (in DFSDM_CH0CFGR1 register) then CKOUT signal is set to low state (setting is performed one DFSDM clock cycle after DFSDMEN=0). Note: CKOUTDIV is present only in DFSDM_CH0CFGR1 register (channel y=0) 1- 255: Defines the division of system clock for the serial clock output for CKOUT signal in range 2-
+    static constexpr uint32_t DFSDM_CH1CFGR1_CKOUTSRC = 0x40000000; // Output serial clock source selection This value can be modified only when DFSDMEN=0 (in DFSDM_CH0CFGR1 register). Note: CKOUTSRC is present only in DFSDM_CH0CFGR1 register (channel y=0)
+    static constexpr uint32_t DFSDM_CH1CFGR1_DFSDMEN = 0x80000000; // Global enable for DFSDM interface If DFSDM interface is enabled, then it is started to operate according to enabled y channels and enabled x filters settings (CHEN bit in DFSDM_CHyCFGR1 and DFEN bit in DFSDM_FLTxCR1). Data cleared by setting DFSDMEN=0: all registers DFSDM_FLTxISR are set to reset state (x = 0..7) all registers DFSDM_FLTxAWSR are set to reset state (x = 0..7) Note: DFSDMEN is present only in DFSDM_CH0CFGR1 register (channel y=0)
+
+    static constexpr uint32_t DFSDM_CH1CFGR2_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<3, 0x1f> DFSDM_CH1CFGR2_DTRBS; // Data right bit-shift for channel y will be performed to have final results. Bit-shift is performed before offset correction. The data shift is rounding the result to nearest integer value. The sign of shifted result is maintained (to have valid 24-bit signed format of result data). This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register). 0-31: Defines the shift of the data result coming from the integrator - how many bit shifts to the right
+    typedef bit_field_t<8, 0xffffff> DFSDM_CH1CFGR2_OFFSET; // 24-bit calibration offset for channel y For channel y, OFFSET is applied to the results of each conversion from this channel. This value is set by software.
+
+    static constexpr uint32_t DFSDM_CH1AWSCDR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> DFSDM_CH1AWSCDR_SCDT; // short-circuit detector threshold for channel y These bits are written by software to define the threshold counter for the short-circuit detector. If this value is reached, then a short-circuit detector event occurs on a given channel.
+    typedef bit_field_t<12, 0xf> DFSDM_CH1AWSCDR_BKSCD; // Break signal assignment for short-circuit detector on channel y BKSCD[i] = 0: Break i signal not assigned to short-circuit detector on channel y BKSCD[i] = 1: Break i signal assigned to short-circuit detector on channel y
+    typedef bit_field_t<16, 0x1f> DFSDM_CH1AWSCDR_AWFOSR; // Analog watchdog filter oversampling ratio (decimation rate) on channel y also the decimation ratio of the analog data rate. This bit can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register). Note: If AWFOSR = 0 then the filter has no effect (filter bypass). 0 - 31: Defines the length of the Sinc type filter in the range 1 - 32 (AWFOSR + 1). This number is
+    typedef bit_field_t<22, 0x3> DFSDM_CH1AWSCDR_AWFORD; // Analog watchdog Sinc filter order on channel y 2: Sinc2 filter type 3: Sinc3 filter type Sincx filter type transfer function: FastSinc filter type transfer function: This bit can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+
+    static constexpr uint32_t DFSDM_CH1WDATR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffff> DFSDM_CH1WDATR_WDATA; // Input channel y watchdog data Data converted by the analog watchdog filter for input channel y. This data is continuously converted (no trigger) for this channel, with a limited resolution (OSR=1..32/sinc order = 1..3).
+
+    static constexpr uint32_t DFSDM_CH1DATINR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffff> DFSDM_CH1DATINR_INDAT0; // Input data for channel y Input parallel channel data to be processed by the digital filter if DATMPX[1:0]=1 or DATMPX[1:0]=2. Data can be written by CPU/DMA (if DATMPX[1:0]=2) or directly by internal ADC (if DATMPX[1:0]=1). If DATPACK[1:0]=0 (standard mode) Channel y data sample is stored into INDAT0[15:0]. If DATPACK[1:0]=1 (interleaved mode) First channel y data sample is stored into INDAT0[15:0]. Second channel y data sample is stored into INDAT1[15:0]. Both samples are read sequentially by DFSDM_FLTx filter as two channel y data samples. If DATPACK[1:0]=2 (dual mode). For even y channels: Channel y data sample is stored into INDAT0[15:0]. For odd y channels: INDAT0[15:0] is write protected. See for more details. INDAT0[15:0] is in the16-bit signed format.
+    typedef bit_field_t<16, 0xffff> DFSDM_CH1DATINR_INDAT1; // Input data for channel y or channel y+1 Input parallel channel data to be processed by the digital filter if DATMPX[1:0]=1 or DATMPX[1:0]=2. Data can be written by CPU/DMA (if DATMPX[1:0]=2) or directly by internal ADC (if DATMPX[1:0]=1). If DATPACK[1:0]=0 (standard mode) INDAT0[15:0] is write protected (not used for input sample). If DATPACK[1:0]=1 (interleaved mode) Second channel y data sample is stored into INDAT1[15:0]. First channel y data sample is stored into INDAT0[15:0]. Both samples are read sequentially by DFSDM_FLTx filter as two channel y data samples. If DATPACK[1:0]=2 (dual mode). For even y channels: sample in INDAT1[15:0] is automatically copied into INDAT0[15:0] of channel (y+1). For odd y channels: INDAT1[15:0] is write protected. See for more details. INDAT0[15:1] is in the16-bit signed format.
+
+
+    static constexpr uint32_t DFSDM_CH2CFGR1_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x3> DFSDM_CH2CFGR1_SITP; // Serial interface type for channel y This value can only be modified when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<2, 0x3> DFSDM_CH2CFGR1_SPICKSEL; // SPI clock select for channel y 2: clock coming from internal CKOUT - sampling point on each second CKOUT falling edge. For connection to external modulator which divides its clock input (from CKOUT) by 2 to generate its output serial communication clock (and this output clock change is active on each clock input rising edge). 3: clock coming from internal CKOUT output - sampling point on each second CKOUT rising edge. For connection to external modulator which divides its clock input (from CKOUT) by 2 to generate its output serial communication clock (and this output clock change is active on each clock input falling edge). This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    static constexpr uint32_t DFSDM_CH2CFGR1_SCDEN = 0x20; // Short-circuit detector enable on channel y
+    static constexpr uint32_t DFSDM_CH2CFGR1_CKABEN = 0x40; // Clock absence detector enable on channel y
+    static constexpr uint32_t DFSDM_CH2CFGR1_CHEN = 0x80; // Channel y enable If channel y is enabled, then serial data receiving is started according to the given channel setting.
+    static constexpr uint32_t DFSDM_CH2CFGR1_CHINSEL = 0x100; // Channel inputs selection This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<12, 0x3> DFSDM_CH2CFGR1_DATMPX; // Input data multiplexer for channel y 2: Data to channel y are taken from internal DFSDM_CHyDATINR register by direct CPU/DMA write. There can be written one or two 16-bit data samples according DATPACK[1:0] bit field setting. 3: Reserved This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<14, 0x3> DFSDM_CH2CFGR1_DATPACK; // Data packing mode in DFSDM_CHyDATINR register. first sample in INDAT0[15:0] (assigned to channel y) second sample INDAT1[15:0] (assigned to channel y) To empty DFSDM_CHyDATINR register, two samples must be read by the digital filter from channel y (INDAT0[15:0] part is read as first sample and then INDAT1[15:0] part is read as next sample). 2: Dual: input data in DFSDM_CHyDATINR register are stored as two samples: first sample INDAT0[15:0] (assigned to channel y) second sample INDAT1[15:0] (assigned to channel y+1) To empty DFSDM_CHyDATINR register first sample must be read by the digital filter from channel y and second sample must be read by another digital filter from channel y+1. Dual mode is available only on even channel numbers (y = 0, 2, 4, 6), for odd channel numbers (y = 1, 3, 5, 7) DFSDM_CHyDATINR is write protected. If an even channel is set to dual mode then the following odd channel must be set into standard mode (DATPACK[1:0]=0) for correct cooperation with even channel. 3: Reserved This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<16, 0xff> DFSDM_CH2CFGR1_CKOUTDIV; // Output serial clock divider 256 (Divider = CKOUTDIV+1). CKOUTDIV also defines the threshold for a clock absence detection. This value can only be modified when DFSDMEN=0 (in DFSDM_CH0CFGR1 register). If DFSDMEN=0 (in DFSDM_CH0CFGR1 register) then CKOUT signal is set to low state (setting is performed one DFSDM clock cycle after DFSDMEN=0). Note: CKOUTDIV is present only in DFSDM_CH0CFGR1 register (channel y=0) 1- 255: Defines the division of system clock for the serial clock output for CKOUT signal in range 2-
+    static constexpr uint32_t DFSDM_CH2CFGR1_CKOUTSRC = 0x40000000; // Output serial clock source selection This value can be modified only when DFSDMEN=0 (in DFSDM_CH0CFGR1 register). Note: CKOUTSRC is present only in DFSDM_CH0CFGR1 register (channel y=0)
+    static constexpr uint32_t DFSDM_CH2CFGR1_DFSDMEN = 0x80000000; // Global enable for DFSDM interface If DFSDM interface is enabled, then it is started to operate according to enabled y channels and enabled x filters settings (CHEN bit in DFSDM_CHyCFGR1 and DFEN bit in DFSDM_FLTxCR1). Data cleared by setting DFSDMEN=0: all registers DFSDM_FLTxISR are set to reset state (x = 0..7) all registers DFSDM_FLTxAWSR are set to reset state (x = 0..7) Note: DFSDMEN is present only in DFSDM_CH0CFGR1 register (channel y=0)
+
+    static constexpr uint32_t DFSDM_CH2CFGR2_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<3, 0x1f> DFSDM_CH2CFGR2_DTRBS; // Data right bit-shift for channel y will be performed to have final results. Bit-shift is performed before offset correction. The data shift is rounding the result to nearest integer value. The sign of shifted result is maintained (to have valid 24-bit signed format of result data). This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register). 0-31: Defines the shift of the data result coming from the integrator - how many bit shifts to the right
+    typedef bit_field_t<8, 0xffffff> DFSDM_CH2CFGR2_OFFSET; // 24-bit calibration offset for channel y For channel y, OFFSET is applied to the results of each conversion from this channel. This value is set by software.
+
+    static constexpr uint32_t DFSDM_CH2AWSCDR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> DFSDM_CH2AWSCDR_SCDT; // short-circuit detector threshold for channel y These bits are written by software to define the threshold counter for the short-circuit detector. If this value is reached, then a short-circuit detector event occurs on a given channel.
+    typedef bit_field_t<12, 0xf> DFSDM_CH2AWSCDR_BKSCD; // Break signal assignment for short-circuit detector on channel y BKSCD[i] = 0: Break i signal not assigned to short-circuit detector on channel y BKSCD[i] = 1: Break i signal assigned to short-circuit detector on channel y
+    typedef bit_field_t<16, 0x1f> DFSDM_CH2AWSCDR_AWFOSR; // Analog watchdog filter oversampling ratio (decimation rate) on channel y also the decimation ratio of the analog data rate. This bit can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register). Note: If AWFOSR = 0 then the filter has no effect (filter bypass). 0 - 31: Defines the length of the Sinc type filter in the range 1 - 32 (AWFOSR + 1). This number is
+    typedef bit_field_t<22, 0x3> DFSDM_CH2AWSCDR_AWFORD; // Analog watchdog Sinc filter order on channel y 2: Sinc2 filter type 3: Sinc3 filter type Sincx filter type transfer function: FastSinc filter type transfer function: This bit can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+
+    static constexpr uint32_t DFSDM_CH2WDATR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffff> DFSDM_CH2WDATR_WDATA; // Input channel y watchdog data Data converted by the analog watchdog filter for input channel y. This data is continuously converted (no trigger) for this channel, with a limited resolution (OSR=1..32/sinc order = 1..3).
+
+    static constexpr uint32_t DFSDM_CH2DATINR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffff> DFSDM_CH2DATINR_INDAT0; // Input data for channel y Input parallel channel data to be processed by the digital filter if DATMPX[1:0]=1 or DATMPX[1:0]=2. Data can be written by CPU/DMA (if DATMPX[1:0]=2) or directly by internal ADC (if DATMPX[1:0]=1). If DATPACK[1:0]=0 (standard mode) Channel y data sample is stored into INDAT0[15:0]. If DATPACK[1:0]=1 (interleaved mode) First channel y data sample is stored into INDAT0[15:0]. Second channel y data sample is stored into INDAT1[15:0]. Both samples are read sequentially by DFSDM_FLTx filter as two channel y data samples. If DATPACK[1:0]=2 (dual mode). For even y channels: Channel y data sample is stored into INDAT0[15:0]. For odd y channels: INDAT0[15:0] is write protected. See for more details. INDAT0[15:0] is in the16-bit signed format.
+    typedef bit_field_t<16, 0xffff> DFSDM_CH2DATINR_INDAT1; // Input data for channel y or channel y+1 Input parallel channel data to be processed by the digital filter if DATMPX[1:0]=1 or DATMPX[1:0]=2. Data can be written by CPU/DMA (if DATMPX[1:0]=2) or directly by internal ADC (if DATMPX[1:0]=1). If DATPACK[1:0]=0 (standard mode) INDAT0[15:0] is write protected (not used for input sample). If DATPACK[1:0]=1 (interleaved mode) Second channel y data sample is stored into INDAT1[15:0]. First channel y data sample is stored into INDAT0[15:0]. Both samples are read sequentially by DFSDM_FLTx filter as two channel y data samples. If DATPACK[1:0]=2 (dual mode). For even y channels: sample in INDAT1[15:0] is automatically copied into INDAT0[15:0] of channel (y+1). For odd y channels: INDAT1[15:0] is write protected. See for more details. INDAT0[15:1] is in the16-bit signed format.
+
+
+    static constexpr uint32_t DFSDM_CH3CFGR1_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x3> DFSDM_CH3CFGR1_SITP; // Serial interface type for channel y This value can only be modified when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<2, 0x3> DFSDM_CH3CFGR1_SPICKSEL; // SPI clock select for channel y 2: clock coming from internal CKOUT - sampling point on each second CKOUT falling edge. For connection to external modulator which divides its clock input (from CKOUT) by 2 to generate its output serial communication clock (and this output clock change is active on each clock input rising edge). 3: clock coming from internal CKOUT output - sampling point on each second CKOUT rising edge. For connection to external modulator which divides its clock input (from CKOUT) by 2 to generate its output serial communication clock (and this output clock change is active on each clock input falling edge). This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    static constexpr uint32_t DFSDM_CH3CFGR1_SCDEN = 0x20; // Short-circuit detector enable on channel y
+    static constexpr uint32_t DFSDM_CH3CFGR1_CKABEN = 0x40; // Clock absence detector enable on channel y
+    static constexpr uint32_t DFSDM_CH3CFGR1_CHEN = 0x80; // Channel y enable If channel y is enabled, then serial data receiving is started according to the given channel setting.
+    static constexpr uint32_t DFSDM_CH3CFGR1_CHINSEL = 0x100; // Channel inputs selection This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<12, 0x3> DFSDM_CH3CFGR1_DATMPX; // Input data multiplexer for channel y 2: Data to channel y are taken from internal DFSDM_CHyDATINR register by direct CPU/DMA write. There can be written one or two 16-bit data samples according DATPACK[1:0] bit field setting. 3: Reserved This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<14, 0x3> DFSDM_CH3CFGR1_DATPACK; // Data packing mode in DFSDM_CHyDATINR register. first sample in INDAT0[15:0] (assigned to channel y) second sample INDAT1[15:0] (assigned to channel y) To empty DFSDM_CHyDATINR register, two samples must be read by the digital filter from channel y (INDAT0[15:0] part is read as first sample and then INDAT1[15:0] part is read as next sample). 2: Dual: input data in DFSDM_CHyDATINR register are stored as two samples: first sample INDAT0[15:0] (assigned to channel y) second sample INDAT1[15:0] (assigned to channel y+1) To empty DFSDM_CHyDATINR register first sample must be read by the digital filter from channel y and second sample must be read by another digital filter from channel y+1. Dual mode is available only on even channel numbers (y = 0, 2, 4, 6), for odd channel numbers (y = 1, 3, 5, 7) DFSDM_CHyDATINR is write protected. If an even channel is set to dual mode then the following odd channel must be set into standard mode (DATPACK[1:0]=0) for correct cooperation with even channel. 3: Reserved This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<16, 0xff> DFSDM_CH3CFGR1_CKOUTDIV; // Output serial clock divider 256 (Divider = CKOUTDIV+1). CKOUTDIV also defines the threshold for a clock absence detection. This value can only be modified when DFSDMEN=0 (in DFSDM_CH0CFGR1 register). If DFSDMEN=0 (in DFSDM_CH0CFGR1 register) then CKOUT signal is set to low state (setting is performed one DFSDM clock cycle after DFSDMEN=0). Note: CKOUTDIV is present only in DFSDM_CH0CFGR1 register (channel y=0) 1- 255: Defines the division of system clock for the serial clock output for CKOUT signal in range 2-
+    static constexpr uint32_t DFSDM_CH3CFGR1_CKOUTSRC = 0x40000000; // Output serial clock source selection This value can be modified only when DFSDMEN=0 (in DFSDM_CH0CFGR1 register). Note: CKOUTSRC is present only in DFSDM_CH0CFGR1 register (channel y=0)
+    static constexpr uint32_t DFSDM_CH3CFGR1_DFSDMEN = 0x80000000; // Global enable for DFSDM interface If DFSDM interface is enabled, then it is started to operate according to enabled y channels and enabled x filters settings (CHEN bit in DFSDM_CHyCFGR1 and DFEN bit in DFSDM_FLTxCR1). Data cleared by setting DFSDMEN=0: all registers DFSDM_FLTxISR are set to reset state (x = 0..7) all registers DFSDM_FLTxAWSR are set to reset state (x = 0..7) Note: DFSDMEN is present only in DFSDM_CH0CFGR1 register (channel y=0)
+
+    static constexpr uint32_t DFSDM_CH3CFGR2_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<3, 0x1f> DFSDM_CH3CFGR2_DTRBS; // Data right bit-shift for channel y will be performed to have final results. Bit-shift is performed before offset correction. The data shift is rounding the result to nearest integer value. The sign of shifted result is maintained (to have valid 24-bit signed format of result data). This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register). 0-31: Defines the shift of the data result coming from the integrator - how many bit shifts to the right
+    typedef bit_field_t<8, 0xffffff> DFSDM_CH3CFGR2_OFFSET; // 24-bit calibration offset for channel y For channel y, OFFSET is applied to the results of each conversion from this channel. This value is set by software.
+
+    static constexpr uint32_t DFSDM_CH3AWSCDR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> DFSDM_CH3AWSCDR_SCDT; // short-circuit detector threshold for channel y These bits are written by software to define the threshold counter for the short-circuit detector. If this value is reached, then a short-circuit detector event occurs on a given channel.
+    typedef bit_field_t<12, 0xf> DFSDM_CH3AWSCDR_BKSCD; // Break signal assignment for short-circuit detector on channel y BKSCD[i] = 0: Break i signal not assigned to short-circuit detector on channel y BKSCD[i] = 1: Break i signal assigned to short-circuit detector on channel y
+    typedef bit_field_t<16, 0x1f> DFSDM_CH3AWSCDR_AWFOSR; // Analog watchdog filter oversampling ratio (decimation rate) on channel y also the decimation ratio of the analog data rate. This bit can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register). Note: If AWFOSR = 0 then the filter has no effect (filter bypass). 0 - 31: Defines the length of the Sinc type filter in the range 1 - 32 (AWFOSR + 1). This number is
+    typedef bit_field_t<22, 0x3> DFSDM_CH3AWSCDR_AWFORD; // Analog watchdog Sinc filter order on channel y 2: Sinc2 filter type 3: Sinc3 filter type Sincx filter type transfer function: FastSinc filter type transfer function: This bit can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+
+    static constexpr uint32_t DFSDM_CH3WDATR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffff> DFSDM_CH3WDATR_WDATA; // Input channel y watchdog data Data converted by the analog watchdog filter for input channel y. This data is continuously converted (no trigger) for this channel, with a limited resolution (OSR=1..32/sinc order = 1..3).
+
+    static constexpr uint32_t DFSDM_CH3DATINR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffff> DFSDM_CH3DATINR_INDAT0; // Input data for channel y Input parallel channel data to be processed by the digital filter if DATMPX[1:0]=1 or DATMPX[1:0]=2. Data can be written by CPU/DMA (if DATMPX[1:0]=2) or directly by internal ADC (if DATMPX[1:0]=1). If DATPACK[1:0]=0 (standard mode) Channel y data sample is stored into INDAT0[15:0]. If DATPACK[1:0]=1 (interleaved mode) First channel y data sample is stored into INDAT0[15:0]. Second channel y data sample is stored into INDAT1[15:0]. Both samples are read sequentially by DFSDM_FLTx filter as two channel y data samples. If DATPACK[1:0]=2 (dual mode). For even y channels: Channel y data sample is stored into INDAT0[15:0]. For odd y channels: INDAT0[15:0] is write protected. See for more details. INDAT0[15:0] is in the16-bit signed format.
+    typedef bit_field_t<16, 0xffff> DFSDM_CH3DATINR_INDAT1; // Input data for channel y or channel y+1 Input parallel channel data to be processed by the digital filter if DATMPX[1:0]=1 or DATMPX[1:0]=2. Data can be written by CPU/DMA (if DATMPX[1:0]=2) or directly by internal ADC (if DATMPX[1:0]=1). If DATPACK[1:0]=0 (standard mode) INDAT0[15:0] is write protected (not used for input sample). If DATPACK[1:0]=1 (interleaved mode) Second channel y data sample is stored into INDAT1[15:0]. First channel y data sample is stored into INDAT0[15:0]. Both samples are read sequentially by DFSDM_FLTx filter as two channel y data samples. If DATPACK[1:0]=2 (dual mode). For even y channels: sample in INDAT1[15:0] is automatically copied into INDAT0[15:0] of channel (y+1). For odd y channels: INDAT1[15:0] is write protected. See for more details. INDAT0[15:1] is in the16-bit signed format.
+
+
+    static constexpr uint32_t DFSDM_CH4CFGR1_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x3> DFSDM_CH4CFGR1_SITP; // Serial interface type for channel y This value can only be modified when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<2, 0x3> DFSDM_CH4CFGR1_SPICKSEL; // SPI clock select for channel y 2: clock coming from internal CKOUT - sampling point on each second CKOUT falling edge. For connection to external modulator which divides its clock input (from CKOUT) by 2 to generate its output serial communication clock (and this output clock change is active on each clock input rising edge). 3: clock coming from internal CKOUT output - sampling point on each second CKOUT rising edge. For connection to external modulator which divides its clock input (from CKOUT) by 2 to generate its output serial communication clock (and this output clock change is active on each clock input falling edge). This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    static constexpr uint32_t DFSDM_CH4CFGR1_SCDEN = 0x20; // Short-circuit detector enable on channel y
+    static constexpr uint32_t DFSDM_CH4CFGR1_CKABEN = 0x40; // Clock absence detector enable on channel y
+    static constexpr uint32_t DFSDM_CH4CFGR1_CHEN = 0x80; // Channel y enable If channel y is enabled, then serial data receiving is started according to the given channel setting.
+    static constexpr uint32_t DFSDM_CH4CFGR1_CHINSEL = 0x100; // Channel inputs selection This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<12, 0x3> DFSDM_CH4CFGR1_DATMPX; // Input data multiplexer for channel y 2: Data to channel y are taken from internal DFSDM_CHyDATINR register by direct CPU/DMA write. There can be written one or two 16-bit data samples according DATPACK[1:0] bit field setting. 3: Reserved This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<14, 0x3> DFSDM_CH4CFGR1_DATPACK; // Data packing mode in DFSDM_CHyDATINR register. first sample in INDAT0[15:0] (assigned to channel y) second sample INDAT1[15:0] (assigned to channel y) To empty DFSDM_CHyDATINR register, two samples must be read by the digital filter from channel y (INDAT0[15:0] part is read as first sample and then INDAT1[15:0] part is read as next sample). 2: Dual: input data in DFSDM_CHyDATINR register are stored as two samples: first sample INDAT0[15:0] (assigned to channel y) second sample INDAT1[15:0] (assigned to channel y+1) To empty DFSDM_CHyDATINR register first sample must be read by the digital filter from channel y and second sample must be read by another digital filter from channel y+1. Dual mode is available only on even channel numbers (y = 0, 2, 4, 6), for odd channel numbers (y = 1, 3, 5, 7) DFSDM_CHyDATINR is write protected. If an even channel is set to dual mode then the following odd channel must be set into standard mode (DATPACK[1:0]=0) for correct cooperation with even channel. 3: Reserved This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<16, 0xff> DFSDM_CH4CFGR1_CKOUTDIV; // Output serial clock divider 256 (Divider = CKOUTDIV+1). CKOUTDIV also defines the threshold for a clock absence detection. This value can only be modified when DFSDMEN=0 (in DFSDM_CH0CFGR1 register). If DFSDMEN=0 (in DFSDM_CH0CFGR1 register) then CKOUT signal is set to low state (setting is performed one DFSDM clock cycle after DFSDMEN=0). Note: CKOUTDIV is present only in DFSDM_CH0CFGR1 register (channel y=0) 1- 255: Defines the division of system clock for the serial clock output for CKOUT signal in range 2-
+    static constexpr uint32_t DFSDM_CH4CFGR1_CKOUTSRC = 0x40000000; // Output serial clock source selection This value can be modified only when DFSDMEN=0 (in DFSDM_CH0CFGR1 register). Note: CKOUTSRC is present only in DFSDM_CH0CFGR1 register (channel y=0)
+    static constexpr uint32_t DFSDM_CH4CFGR1_DFSDMEN = 0x80000000; // Global enable for DFSDM interface If DFSDM interface is enabled, then it is started to operate according to enabled y channels and enabled x filters settings (CHEN bit in DFSDM_CHyCFGR1 and DFEN bit in DFSDM_FLTxCR1). Data cleared by setting DFSDMEN=0: all registers DFSDM_FLTxISR are set to reset state (x = 0..7) all registers DFSDM_FLTxAWSR are set to reset state (x = 0..7) Note: DFSDMEN is present only in DFSDM_CH0CFGR1 register (channel y=0)
+
+    static constexpr uint32_t DFSDM_CH4CFGR2_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<3, 0x1f> DFSDM_CH4CFGR2_DTRBS; // Data right bit-shift for channel y will be performed to have final results. Bit-shift is performed before offset correction. The data shift is rounding the result to nearest integer value. The sign of shifted result is maintained (to have valid 24-bit signed format of result data). This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register). 0-31: Defines the shift of the data result coming from the integrator - how many bit shifts to the right
+    typedef bit_field_t<8, 0xffffff> DFSDM_CH4CFGR2_OFFSET; // 24-bit calibration offset for channel y For channel y, OFFSET is applied to the results of each conversion from this channel. This value is set by software.
+
+    static constexpr uint32_t DFSDM_CH4AWSCDR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> DFSDM_CH4AWSCDR_SCDT; // short-circuit detector threshold for channel y These bits are written by software to define the threshold counter for the short-circuit detector. If this value is reached, then a short-circuit detector event occurs on a given channel.
+    typedef bit_field_t<12, 0xf> DFSDM_CH4AWSCDR_BKSCD; // Break signal assignment for short-circuit detector on channel y BKSCD[i] = 0: Break i signal not assigned to short-circuit detector on channel y BKSCD[i] = 1: Break i signal assigned to short-circuit detector on channel y
+    typedef bit_field_t<16, 0x1f> DFSDM_CH4AWSCDR_AWFOSR; // Analog watchdog filter oversampling ratio (decimation rate) on channel y also the decimation ratio of the analog data rate. This bit can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register). Note: If AWFOSR = 0 then the filter has no effect (filter bypass). 0 - 31: Defines the length of the Sinc type filter in the range 1 - 32 (AWFOSR + 1). This number is
+    typedef bit_field_t<22, 0x3> DFSDM_CH4AWSCDR_AWFORD; // Analog watchdog Sinc filter order on channel y 2: Sinc2 filter type 3: Sinc3 filter type Sincx filter type transfer function: FastSinc filter type transfer function: This bit can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+
+    static constexpr uint32_t DFSDM_CH4WDATR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffff> DFSDM_CH4WDATR_WDATA; // Input channel y watchdog data Data converted by the analog watchdog filter for input channel y. This data is continuously converted (no trigger) for this channel, with a limited resolution (OSR=1..32/sinc order = 1..3).
+
+    static constexpr uint32_t DFSDM_CH4DATINR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffff> DFSDM_CH4DATINR_INDAT0; // Input data for channel y Input parallel channel data to be processed by the digital filter if DATMPX[1:0]=1 or DATMPX[1:0]=2. Data can be written by CPU/DMA (if DATMPX[1:0]=2) or directly by internal ADC (if DATMPX[1:0]=1). If DATPACK[1:0]=0 (standard mode) Channel y data sample is stored into INDAT0[15:0]. If DATPACK[1:0]=1 (interleaved mode) First channel y data sample is stored into INDAT0[15:0]. Second channel y data sample is stored into INDAT1[15:0]. Both samples are read sequentially by DFSDM_FLTx filter as two channel y data samples. If DATPACK[1:0]=2 (dual mode). For even y channels: Channel y data sample is stored into INDAT0[15:0]. For odd y channels: INDAT0[15:0] is write protected. See for more details. INDAT0[15:0] is in the16-bit signed format.
+    typedef bit_field_t<16, 0xffff> DFSDM_CH4DATINR_INDAT1; // Input data for channel y or channel y+1 Input parallel channel data to be processed by the digital filter if DATMPX[1:0]=1 or DATMPX[1:0]=2. Data can be written by CPU/DMA (if DATMPX[1:0]=2) or directly by internal ADC (if DATMPX[1:0]=1). If DATPACK[1:0]=0 (standard mode) INDAT0[15:0] is write protected (not used for input sample). If DATPACK[1:0]=1 (interleaved mode) Second channel y data sample is stored into INDAT1[15:0]. First channel y data sample is stored into INDAT0[15:0]. Both samples are read sequentially by DFSDM_FLTx filter as two channel y data samples. If DATPACK[1:0]=2 (dual mode). For even y channels: sample in INDAT1[15:0] is automatically copied into INDAT0[15:0] of channel (y+1). For odd y channels: INDAT1[15:0] is write protected. See for more details. INDAT0[15:1] is in the16-bit signed format.
+
+
+    static constexpr uint32_t DFSDM_CH5CFGR1_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x3> DFSDM_CH5CFGR1_SITP; // Serial interface type for channel y This value can only be modified when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<2, 0x3> DFSDM_CH5CFGR1_SPICKSEL; // SPI clock select for channel y 2: clock coming from internal CKOUT - sampling point on each second CKOUT falling edge. For connection to external modulator which divides its clock input (from CKOUT) by 2 to generate its output serial communication clock (and this output clock change is active on each clock input rising edge). 3: clock coming from internal CKOUT output - sampling point on each second CKOUT rising edge. For connection to external modulator which divides its clock input (from CKOUT) by 2 to generate its output serial communication clock (and this output clock change is active on each clock input falling edge). This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    static constexpr uint32_t DFSDM_CH5CFGR1_SCDEN = 0x20; // Short-circuit detector enable on channel y
+    static constexpr uint32_t DFSDM_CH5CFGR1_CKABEN = 0x40; // Clock absence detector enable on channel y
+    static constexpr uint32_t DFSDM_CH5CFGR1_CHEN = 0x80; // Channel y enable If channel y is enabled, then serial data receiving is started according to the given channel setting.
+    static constexpr uint32_t DFSDM_CH5CFGR1_CHINSEL = 0x100; // Channel inputs selection This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<12, 0x3> DFSDM_CH5CFGR1_DATMPX; // Input data multiplexer for channel y 2: Data to channel y are taken from internal DFSDM_CHyDATINR register by direct CPU/DMA write. There can be written one or two 16-bit data samples according DATPACK[1:0] bit field setting. 3: Reserved This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<14, 0x3> DFSDM_CH5CFGR1_DATPACK; // Data packing mode in DFSDM_CHyDATINR register. first sample in INDAT0[15:0] (assigned to channel y) second sample INDAT1[15:0] (assigned to channel y) To empty DFSDM_CHyDATINR register, two samples must be read by the digital filter from channel y (INDAT0[15:0] part is read as first sample and then INDAT1[15:0] part is read as next sample). 2: Dual: input data in DFSDM_CHyDATINR register are stored as two samples: first sample INDAT0[15:0] (assigned to channel y) second sample INDAT1[15:0] (assigned to channel y+1) To empty DFSDM_CHyDATINR register first sample must be read by the digital filter from channel y and second sample must be read by another digital filter from channel y+1. Dual mode is available only on even channel numbers (y = 0, 2, 4, 6), for odd channel numbers (y = 1, 3, 5, 7) DFSDM_CHyDATINR is write protected. If an even channel is set to dual mode then the following odd channel must be set into standard mode (DATPACK[1:0]=0) for correct cooperation with even channel. 3: Reserved This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<16, 0xff> DFSDM_CH5CFGR1_CKOUTDIV; // Output serial clock divider 256 (Divider = CKOUTDIV+1). CKOUTDIV also defines the threshold for a clock absence detection. This value can only be modified when DFSDMEN=0 (in DFSDM_CH0CFGR1 register). If DFSDMEN=0 (in DFSDM_CH0CFGR1 register) then CKOUT signal is set to low state (setting is performed one DFSDM clock cycle after DFSDMEN=0). Note: CKOUTDIV is present only in DFSDM_CH0CFGR1 register (channel y=0) 1- 255: Defines the division of system clock for the serial clock output for CKOUT signal in range 2-
+    static constexpr uint32_t DFSDM_CH5CFGR1_CKOUTSRC = 0x40000000; // Output serial clock source selection This value can be modified only when DFSDMEN=0 (in DFSDM_CH0CFGR1 register). Note: CKOUTSRC is present only in DFSDM_CH0CFGR1 register (channel y=0)
+    static constexpr uint32_t DFSDM_CH5CFGR1_DFSDMEN = 0x80000000; // Global enable for DFSDM interface If DFSDM interface is enabled, then it is started to operate according to enabled y channels and enabled x filters settings (CHEN bit in DFSDM_CHyCFGR1 and DFEN bit in DFSDM_FLTxCR1). Data cleared by setting DFSDMEN=0: all registers DFSDM_FLTxISR are set to reset state (x = 0..7) all registers DFSDM_FLTxAWSR are set to reset state (x = 0..7) Note: DFSDMEN is present only in DFSDM_CH0CFGR1 register (channel y=0)
+
+    static constexpr uint32_t DFSDM_CH5CFGR2_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<3, 0x1f> DFSDM_CH5CFGR2_DTRBS; // Data right bit-shift for channel y will be performed to have final results. Bit-shift is performed before offset correction. The data shift is rounding the result to nearest integer value. The sign of shifted result is maintained (to have valid 24-bit signed format of result data). This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register). 0-31: Defines the shift of the data result coming from the integrator - how many bit shifts to the right
+    typedef bit_field_t<8, 0xffffff> DFSDM_CH5CFGR2_OFFSET; // 24-bit calibration offset for channel y For channel y, OFFSET is applied to the results of each conversion from this channel. This value is set by software.
+
+    static constexpr uint32_t DFSDM_CH5AWSCDR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> DFSDM_CH5AWSCDR_SCDT; // short-circuit detector threshold for channel y These bits are written by software to define the threshold counter for the short-circuit detector. If this value is reached, then a short-circuit detector event occurs on a given channel.
+    typedef bit_field_t<12, 0xf> DFSDM_CH5AWSCDR_BKSCD; // Break signal assignment for short-circuit detector on channel y BKSCD[i] = 0: Break i signal not assigned to short-circuit detector on channel y BKSCD[i] = 1: Break i signal assigned to short-circuit detector on channel y
+    typedef bit_field_t<16, 0x1f> DFSDM_CH5AWSCDR_AWFOSR; // Analog watchdog filter oversampling ratio (decimation rate) on channel y also the decimation ratio of the analog data rate. This bit can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register). Note: If AWFOSR = 0 then the filter has no effect (filter bypass). 0 - 31: Defines the length of the Sinc type filter in the range 1 - 32 (AWFOSR + 1). This number is
+    typedef bit_field_t<22, 0x3> DFSDM_CH5AWSCDR_AWFORD; // Analog watchdog Sinc filter order on channel y 2: Sinc2 filter type 3: Sinc3 filter type Sincx filter type transfer function: FastSinc filter type transfer function: This bit can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+
+    static constexpr uint32_t DFSDM_CH5WDATR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffff> DFSDM_CH5WDATR_WDATA; // Input channel y watchdog data Data converted by the analog watchdog filter for input channel y. This data is continuously converted (no trigger) for this channel, with a limited resolution (OSR=1..32/sinc order = 1..3).
+
+    static constexpr uint32_t DFSDM_CH5DATINR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffff> DFSDM_CH5DATINR_INDAT0; // Input data for channel y Input parallel channel data to be processed by the digital filter if DATMPX[1:0]=1 or DATMPX[1:0]=2. Data can be written by CPU/DMA (if DATMPX[1:0]=2) or directly by internal ADC (if DATMPX[1:0]=1). If DATPACK[1:0]=0 (standard mode) Channel y data sample is stored into INDAT0[15:0]. If DATPACK[1:0]=1 (interleaved mode) First channel y data sample is stored into INDAT0[15:0]. Second channel y data sample is stored into INDAT1[15:0]. Both samples are read sequentially by DFSDM_FLTx filter as two channel y data samples. If DATPACK[1:0]=2 (dual mode). For even y channels: Channel y data sample is stored into INDAT0[15:0]. For odd y channels: INDAT0[15:0] is write protected. See for more details. INDAT0[15:0] is in the16-bit signed format.
+    typedef bit_field_t<16, 0xffff> DFSDM_CH5DATINR_INDAT1; // Input data for channel y or channel y+1 Input parallel channel data to be processed by the digital filter if DATMPX[1:0]=1 or DATMPX[1:0]=2. Data can be written by CPU/DMA (if DATMPX[1:0]=2) or directly by internal ADC (if DATMPX[1:0]=1). If DATPACK[1:0]=0 (standard mode) INDAT0[15:0] is write protected (not used for input sample). If DATPACK[1:0]=1 (interleaved mode) Second channel y data sample is stored into INDAT1[15:0]. First channel y data sample is stored into INDAT0[15:0]. Both samples are read sequentially by DFSDM_FLTx filter as two channel y data samples. If DATPACK[1:0]=2 (dual mode). For even y channels: sample in INDAT1[15:0] is automatically copied into INDAT0[15:0] of channel (y+1). For odd y channels: INDAT1[15:0] is write protected. See for more details. INDAT0[15:1] is in the16-bit signed format.
+
+
+    static constexpr uint32_t DFSDM_CH6CFGR1_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x3> DFSDM_CH6CFGR1_SITP; // Serial interface type for channel y This value can only be modified when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<2, 0x3> DFSDM_CH6CFGR1_SPICKSEL; // SPI clock select for channel y 2: clock coming from internal CKOUT - sampling point on each second CKOUT falling edge. For connection to external modulator which divides its clock input (from CKOUT) by 2 to generate its output serial communication clock (and this output clock change is active on each clock input rising edge). 3: clock coming from internal CKOUT output - sampling point on each second CKOUT rising edge. For connection to external modulator which divides its clock input (from CKOUT) by 2 to generate its output serial communication clock (and this output clock change is active on each clock input falling edge). This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    static constexpr uint32_t DFSDM_CH6CFGR1_SCDEN = 0x20; // Short-circuit detector enable on channel y
+    static constexpr uint32_t DFSDM_CH6CFGR1_CKABEN = 0x40; // Clock absence detector enable on channel y
+    static constexpr uint32_t DFSDM_CH6CFGR1_CHEN = 0x80; // Channel y enable If channel y is enabled, then serial data receiving is started according to the given channel setting.
+    static constexpr uint32_t DFSDM_CH6CFGR1_CHINSEL = 0x100; // Channel inputs selection This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<12, 0x3> DFSDM_CH6CFGR1_DATMPX; // Input data multiplexer for channel y 2: Data to channel y are taken from internal DFSDM_CHyDATINR register by direct CPU/DMA write. There can be written one or two 16-bit data samples according DATPACK[1:0] bit field setting. 3: Reserved This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<14, 0x3> DFSDM_CH6CFGR1_DATPACK; // Data packing mode in DFSDM_CHyDATINR register. first sample in INDAT0[15:0] (assigned to channel y) second sample INDAT1[15:0] (assigned to channel y) To empty DFSDM_CHyDATINR register, two samples must be read by the digital filter from channel y (INDAT0[15:0] part is read as first sample and then INDAT1[15:0] part is read as next sample). 2: Dual: input data in DFSDM_CHyDATINR register are stored as two samples: first sample INDAT0[15:0] (assigned to channel y) second sample INDAT1[15:0] (assigned to channel y+1) To empty DFSDM_CHyDATINR register first sample must be read by the digital filter from channel y and second sample must be read by another digital filter from channel y+1. Dual mode is available only on even channel numbers (y = 0, 2, 4, 6), for odd channel numbers (y = 1, 3, 5, 7) DFSDM_CHyDATINR is write protected. If an even channel is set to dual mode then the following odd channel must be set into standard mode (DATPACK[1:0]=0) for correct cooperation with even channel. 3: Reserved This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<16, 0xff> DFSDM_CH6CFGR1_CKOUTDIV; // Output serial clock divider 256 (Divider = CKOUTDIV+1). CKOUTDIV also defines the threshold for a clock absence detection. This value can only be modified when DFSDMEN=0 (in DFSDM_CH0CFGR1 register). If DFSDMEN=0 (in DFSDM_CH0CFGR1 register) then CKOUT signal is set to low state (setting is performed one DFSDM clock cycle after DFSDMEN=0). Note: CKOUTDIV is present only in DFSDM_CH0CFGR1 register (channel y=0) 1- 255: Defines the division of system clock for the serial clock output for CKOUT signal in range 2-
+    static constexpr uint32_t DFSDM_CH6CFGR1_CKOUTSRC = 0x40000000; // Output serial clock source selection This value can be modified only when DFSDMEN=0 (in DFSDM_CH0CFGR1 register). Note: CKOUTSRC is present only in DFSDM_CH0CFGR1 register (channel y=0)
+    static constexpr uint32_t DFSDM_CH6CFGR1_DFSDMEN = 0x80000000; // Global enable for DFSDM interface If DFSDM interface is enabled, then it is started to operate according to enabled y channels and enabled x filters settings (CHEN bit in DFSDM_CHyCFGR1 and DFEN bit in DFSDM_FLTxCR1). Data cleared by setting DFSDMEN=0: all registers DFSDM_FLTxISR are set to reset state (x = 0..7) all registers DFSDM_FLTxAWSR are set to reset state (x = 0..7) Note: DFSDMEN is present only in DFSDM_CH0CFGR1 register (channel y=0)
+
+    static constexpr uint32_t DFSDM_CH6CFGR2_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<3, 0x1f> DFSDM_CH6CFGR2_DTRBS; // Data right bit-shift for channel y will be performed to have final results. Bit-shift is performed before offset correction. The data shift is rounding the result to nearest integer value. The sign of shifted result is maintained (to have valid 24-bit signed format of result data). This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register). 0-31: Defines the shift of the data result coming from the integrator - how many bit shifts to the right
+    typedef bit_field_t<8, 0xffffff> DFSDM_CH6CFGR2_OFFSET; // 24-bit calibration offset for channel y For channel y, OFFSET is applied to the results of each conversion from this channel. This value is set by software.
+
+    static constexpr uint32_t DFSDM_CH6AWSCDR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> DFSDM_CH6AWSCDR_SCDT; // short-circuit detector threshold for channel y These bits are written by software to define the threshold counter for the short-circuit detector. If this value is reached, then a short-circuit detector event occurs on a given channel.
+    typedef bit_field_t<12, 0xf> DFSDM_CH6AWSCDR_BKSCD; // Break signal assignment for short-circuit detector on channel y BKSCD[i] = 0: Break i signal not assigned to short-circuit detector on channel y BKSCD[i] = 1: Break i signal assigned to short-circuit detector on channel y
+    typedef bit_field_t<16, 0x1f> DFSDM_CH6AWSCDR_AWFOSR; // Analog watchdog filter oversampling ratio (decimation rate) on channel y also the decimation ratio of the analog data rate. This bit can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register). Note: If AWFOSR = 0 then the filter has no effect (filter bypass). 0 - 31: Defines the length of the Sinc type filter in the range 1 - 32 (AWFOSR + 1). This number is
+    typedef bit_field_t<22, 0x3> DFSDM_CH6AWSCDR_AWFORD; // Analog watchdog Sinc filter order on channel y 2: Sinc2 filter type 3: Sinc3 filter type Sincx filter type transfer function: FastSinc filter type transfer function: This bit can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+
+    static constexpr uint32_t DFSDM_CH6WDATR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffff> DFSDM_CH6WDATR_WDATA; // Input channel y watchdog data Data converted by the analog watchdog filter for input channel y. This data is continuously converted (no trigger) for this channel, with a limited resolution (OSR=1..32/sinc order = 1..3).
+
+    static constexpr uint32_t DFSDM_CH6DATINR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffff> DFSDM_CH6DATINR_INDAT0; // Input data for channel y Input parallel channel data to be processed by the digital filter if DATMPX[1:0]=1 or DATMPX[1:0]=2. Data can be written by CPU/DMA (if DATMPX[1:0]=2) or directly by internal ADC (if DATMPX[1:0]=1). If DATPACK[1:0]=0 (standard mode) Channel y data sample is stored into INDAT0[15:0]. If DATPACK[1:0]=1 (interleaved mode) First channel y data sample is stored into INDAT0[15:0]. Second channel y data sample is stored into INDAT1[15:0]. Both samples are read sequentially by DFSDM_FLTx filter as two channel y data samples. If DATPACK[1:0]=2 (dual mode). For even y channels: Channel y data sample is stored into INDAT0[15:0]. For odd y channels: INDAT0[15:0] is write protected. See for more details. INDAT0[15:0] is in the16-bit signed format.
+    typedef bit_field_t<16, 0xffff> DFSDM_CH6DATINR_INDAT1; // Input data for channel y or channel y+1 Input parallel channel data to be processed by the digital filter if DATMPX[1:0]=1 or DATMPX[1:0]=2. Data can be written by CPU/DMA (if DATMPX[1:0]=2) or directly by internal ADC (if DATMPX[1:0]=1). If DATPACK[1:0]=0 (standard mode) INDAT0[15:0] is write protected (not used for input sample). If DATPACK[1:0]=1 (interleaved mode) Second channel y data sample is stored into INDAT1[15:0]. First channel y data sample is stored into INDAT0[15:0]. Both samples are read sequentially by DFSDM_FLTx filter as two channel y data samples. If DATPACK[1:0]=2 (dual mode). For even y channels: sample in INDAT1[15:0] is automatically copied into INDAT0[15:0] of channel (y+1). For odd y channels: INDAT1[15:0] is write protected. See for more details. INDAT0[15:1] is in the16-bit signed format.
+
+
+    static constexpr uint32_t DFSDM_CH7CFGR1_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x3> DFSDM_CH7CFGR1_SITP; // Serial interface type for channel y This value can only be modified when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<2, 0x3> DFSDM_CH7CFGR1_SPICKSEL; // SPI clock select for channel y 2: clock coming from internal CKOUT - sampling point on each second CKOUT falling edge. For connection to external modulator which divides its clock input (from CKOUT) by 2 to generate its output serial communication clock (and this output clock change is active on each clock input rising edge). 3: clock coming from internal CKOUT output - sampling point on each second CKOUT rising edge. For connection to external modulator which divides its clock input (from CKOUT) by 2 to generate its output serial communication clock (and this output clock change is active on each clock input falling edge). This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    static constexpr uint32_t DFSDM_CH7CFGR1_SCDEN = 0x20; // Short-circuit detector enable on channel y
+    static constexpr uint32_t DFSDM_CH7CFGR1_CKABEN = 0x40; // Clock absence detector enable on channel y
+    static constexpr uint32_t DFSDM_CH7CFGR1_CHEN = 0x80; // Channel y enable If channel y is enabled, then serial data receiving is started according to the given channel setting.
+    static constexpr uint32_t DFSDM_CH7CFGR1_CHINSEL = 0x100; // Channel inputs selection This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<12, 0x3> DFSDM_CH7CFGR1_DATMPX; // Input data multiplexer for channel y 2: Data to channel y are taken from internal DFSDM_CHyDATINR register by direct CPU/DMA write. There can be written one or two 16-bit data samples according DATPACK[1:0] bit field setting. 3: Reserved This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<14, 0x3> DFSDM_CH7CFGR1_DATPACK; // Data packing mode in DFSDM_CHyDATINR register. first sample in INDAT0[15:0] (assigned to channel y) second sample INDAT1[15:0] (assigned to channel y) To empty DFSDM_CHyDATINR register, two samples must be read by the digital filter from channel y (INDAT0[15:0] part is read as first sample and then INDAT1[15:0] part is read as next sample). 2: Dual: input data in DFSDM_CHyDATINR register are stored as two samples: first sample INDAT0[15:0] (assigned to channel y) second sample INDAT1[15:0] (assigned to channel y+1) To empty DFSDM_CHyDATINR register first sample must be read by the digital filter from channel y and second sample must be read by another digital filter from channel y+1. Dual mode is available only on even channel numbers (y = 0, 2, 4, 6), for odd channel numbers (y = 1, 3, 5, 7) DFSDM_CHyDATINR is write protected. If an even channel is set to dual mode then the following odd channel must be set into standard mode (DATPACK[1:0]=0) for correct cooperation with even channel. 3: Reserved This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+    typedef bit_field_t<16, 0xff> DFSDM_CH7CFGR1_CKOUTDIV; // Output serial clock divider 256 (Divider = CKOUTDIV+1). CKOUTDIV also defines the threshold for a clock absence detection. This value can only be modified when DFSDMEN=0 (in DFSDM_CH0CFGR1 register). If DFSDMEN=0 (in DFSDM_CH0CFGR1 register) then CKOUT signal is set to low state (setting is performed one DFSDM clock cycle after DFSDMEN=0). Note: CKOUTDIV is present only in DFSDM_CH0CFGR1 register (channel y=0) 1- 255: Defines the division of system clock for the serial clock output for CKOUT signal in range 2-
+    static constexpr uint32_t DFSDM_CH7CFGR1_CKOUTSRC = 0x40000000; // Output serial clock source selection This value can be modified only when DFSDMEN=0 (in DFSDM_CH0CFGR1 register). Note: CKOUTSRC is present only in DFSDM_CH0CFGR1 register (channel y=0)
+    static constexpr uint32_t DFSDM_CH7CFGR1_DFSDMEN = 0x80000000; // Global enable for DFSDM interface If DFSDM interface is enabled, then it is started to operate according to enabled y channels and enabled x filters settings (CHEN bit in DFSDM_CHyCFGR1 and DFEN bit in DFSDM_FLTxCR1). Data cleared by setting DFSDMEN=0: all registers DFSDM_FLTxISR are set to reset state (x = 0..7) all registers DFSDM_FLTxAWSR are set to reset state (x = 0..7) Note: DFSDMEN is present only in DFSDM_CH0CFGR1 register (channel y=0)
+
+    static constexpr uint32_t DFSDM_CH7CFGR2_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<3, 0x1f> DFSDM_CH7CFGR2_DTRBS; // Data right bit-shift for channel y will be performed to have final results. Bit-shift is performed before offset correction. The data shift is rounding the result to nearest integer value. The sign of shifted result is maintained (to have valid 24-bit signed format of result data). This value can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register). 0-31: Defines the shift of the data result coming from the integrator - how many bit shifts to the right
+    typedef bit_field_t<8, 0xffffff> DFSDM_CH7CFGR2_OFFSET; // 24-bit calibration offset for channel y For channel y, OFFSET is applied to the results of each conversion from this channel. This value is set by software.
+
+    static constexpr uint32_t DFSDM_CH7AWSCDR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xff> DFSDM_CH7AWSCDR_SCDT; // short-circuit detector threshold for channel y These bits are written by software to define the threshold counter for the short-circuit detector. If this value is reached, then a short-circuit detector event occurs on a given channel.
+    typedef bit_field_t<12, 0xf> DFSDM_CH7AWSCDR_BKSCD; // Break signal assignment for short-circuit detector on channel y BKSCD[i] = 0: Break i signal not assigned to short-circuit detector on channel y BKSCD[i] = 1: Break i signal assigned to short-circuit detector on channel y
+    typedef bit_field_t<16, 0x1f> DFSDM_CH7AWSCDR_AWFOSR; // Analog watchdog filter oversampling ratio (decimation rate) on channel y also the decimation ratio of the analog data rate. This bit can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register). Note: If AWFOSR = 0 then the filter has no effect (filter bypass). 0 - 31: Defines the length of the Sinc type filter in the range 1 - 32 (AWFOSR + 1). This number is
+    typedef bit_field_t<22, 0x3> DFSDM_CH7AWSCDR_AWFORD; // Analog watchdog Sinc filter order on channel y 2: Sinc2 filter type 3: Sinc3 filter type Sincx filter type transfer function: FastSinc filter type transfer function: This bit can be modified only when CHEN=0 (in DFSDM_CHyCFGR1 register).
+
+    static constexpr uint32_t DFSDM_CH7WDATR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffff> DFSDM_CH7WDATR_WDATA; // Input channel y watchdog data Data converted by the analog watchdog filter for input channel y. This data is continuously converted (no trigger) for this channel, with a limited resolution (OSR=1..32/sinc order = 1..3).
+
+    static constexpr uint32_t DFSDM_CH7DATINR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffff> DFSDM_CH7DATINR_INDAT0; // Input data for channel y Input parallel channel data to be processed by the digital filter if DATMPX[1:0]=1 or DATMPX[1:0]=2. Data can be written by CPU/DMA (if DATMPX[1:0]=2) or directly by internal ADC (if DATMPX[1:0]=1). If DATPACK[1:0]=0 (standard mode) Channel y data sample is stored into INDAT0[15:0]. If DATPACK[1:0]=1 (interleaved mode) First channel y data sample is stored into INDAT0[15:0]. Second channel y data sample is stored into INDAT1[15:0]. Both samples are read sequentially by DFSDM_FLTx filter as two channel y data samples. If DATPACK[1:0]=2 (dual mode). For even y channels: Channel y data sample is stored into INDAT0[15:0]. For odd y channels: INDAT0[15:0] is write protected. See for more details. INDAT0[15:0] is in the16-bit signed format.
+    typedef bit_field_t<16, 0xffff> DFSDM_CH7DATINR_INDAT1; // Input data for channel y or channel y+1 Input parallel channel data to be processed by the digital filter if DATMPX[1:0]=1 or DATMPX[1:0]=2. Data can be written by CPU/DMA (if DATMPX[1:0]=2) or directly by internal ADC (if DATMPX[1:0]=1). If DATPACK[1:0]=0 (standard mode) INDAT0[15:0] is write protected (not used for input sample). If DATPACK[1:0]=1 (interleaved mode) Second channel y data sample is stored into INDAT1[15:0]. First channel y data sample is stored into INDAT0[15:0]. Both samples are read sequentially by DFSDM_FLTx filter as two channel y data samples. If DATPACK[1:0]=2 (dual mode). For even y channels: sample in INDAT1[15:0] is automatically copied into INDAT0[15:0] of channel (y+1). For odd y channels: INDAT1[15:0] is write protected. See for more details. INDAT0[15:1] is in the16-bit signed format.
+};
+
 template<>
 struct peripheral_t<STM32H723, DFSDM>
+{
+    static constexpr periph_t P = DFSDM;
+    using T = stm32h723_dfsdm_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, DFSDM>
 {
     static constexpr periph_t P = DFSDM;
     using T = stm32h723_dfsdm_t;
@@ -1540,30 +1848,6 @@ struct peripheral_t<STM32H757_CM7, DFSDM>
 };
 
 template<>
-struct peripheral_t<STM32H7A3x, DFSDM>
-{
-    static constexpr periph_t P = DFSDM;
-    using T = stm32h723_dfsdm_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H7B0x, DFSDM>
-{
-    static constexpr periph_t P = DFSDM;
-    using T = stm32h723_dfsdm_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H7B3x, DFSDM>
-{
-    static constexpr periph_t P = DFSDM;
-    using T = stm32h723_dfsdm_t;
-    static T& V;
-};
-
-template<>
 struct peripheral_t<STM32H743, DFSDM>
 {
     static constexpr periph_t P = DFSDM;
@@ -1571,4 +1855,138 @@ struct peripheral_t<STM32H743, DFSDM>
     static T& V;
 };
 
+template<>
+struct peripheral_t<STM32H7A3x, DFSDM1>
+{
+    static constexpr periph_t P = DFSDM1;
+    using T = stm32h7a3x_dfsdm1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H7A3x, DFSDM2>
+{
+    static constexpr periph_t P = DFSDM2;
+    using T = stm32h7a3x_dfsdm1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H7B0x, DFSDM1>
+{
+    static constexpr periph_t P = DFSDM1;
+    using T = stm32h7a3x_dfsdm1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H7B0x, DFSDM2>
+{
+    static constexpr periph_t P = DFSDM2;
+    using T = stm32h7a3x_dfsdm1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H7B3x, DFSDM1>
+{
+    static constexpr periph_t P = DFSDM1;
+    using T = stm32h7a3x_dfsdm1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H7B3x, DFSDM2>
+{
+    static constexpr periph_t P = DFSDM2;
+    using T = stm32h7a3x_dfsdm1_t;
+    static T& V;
+};
+
 using dfsdm_t = peripheral_t<svd, DFSDM>;
+using dfsdm1_t = peripheral_t<svd, DFSDM1>;
+using dfsdm2_t = peripheral_t<svd, DFSDM2>;
+
+template<int INST> struct dfsdm_traits {};
+
+template<> struct dfsdm_traits<1>
+{
+    using dfsdm = dfsdm1_t;
+    static constexpr signal_t CKIN0 = DFSDM1_CKIN0;
+    static constexpr signal_t CKIN1 = DFSDM1_CKIN1;
+    static constexpr signal_t CKIN2 = DFSDM1_CKIN2;
+    static constexpr signal_t CKIN3 = DFSDM1_CKIN3;
+    static constexpr signal_t CKIN4 = DFSDM1_CKIN4;
+    static constexpr signal_t CKIN5 = DFSDM1_CKIN5;
+    static constexpr signal_t CKIN6 = DFSDM1_CKIN6;
+    static constexpr signal_t CKIN7 = DFSDM1_CKIN7;
+    static constexpr signal_t CKOUT = DFSDM1_CKOUT;
+    static constexpr signal_t DATIN0 = DFSDM1_DATIN0;
+    static constexpr signal_t DATIN1 = DFSDM1_DATIN1;
+    static constexpr signal_t DATIN2 = DFSDM1_DATIN2;
+    static constexpr signal_t DATIN3 = DFSDM1_DATIN3;
+    static constexpr signal_t DATIN4 = DFSDM1_DATIN4;
+    static constexpr signal_t DATIN5 = DFSDM1_DATIN5;
+    static constexpr signal_t DATIN6 = DFSDM1_DATIN6;
+    static constexpr signal_t DATIN7 = DFSDM1_DATIN7;
+    static constexpr clock_source_t CLOCK = APB2_PERIPH;
+
+    template<typename RCC>
+    static void enable()
+    {
+        RCC::V.APB2ENR |= RCC::T::APB2ENR_DFSDM1EN;
+        __asm volatile ("dsb"); // dm00037591 2.1.13
+    }
+
+    template<typename RCC>
+    static void disable()
+    {
+        RCC::V.APB2ENR &= ~RCC::T::APB2ENR_DFSDM1EN;
+    }
+
+    template<typename RCC>
+    static void reset()
+    {
+        RCC::V.APB2RSTR |= RCC::T::APB2RSTR_DFSDM1RST;
+    }
+};
+
+template<> struct dfsdm_traits<2>
+{
+    using dfsdm = dfsdm2_t;
+    static constexpr signal_t CKIN0 = DFSDM2_CKIN0;
+    static constexpr signal_t CKIN1 = DFSDM2_CKIN1;
+    static constexpr signal_t CKOUT = DFSDM2_CKOUT;
+    static constexpr signal_t DATIN0 = DFSDM2_DATIN0;
+    static constexpr signal_t DATIN1 = DFSDM2_DATIN1;
+};
+
+template<> struct dma_request_t<DFSDM1, DFSDM_FLT0>
+{
+    static constexpr unsigned ID = 100;
+};
+
+template<> struct dma_request_t<DFSDM1, DFSDM_FLT1>
+{
+    static constexpr unsigned ID = 101;
+};
+
+template<> struct dma_request_t<DFSDM1, DFSDM_FLT2>
+{
+    static constexpr unsigned ID = 102;
+};
+
+template<> struct dma_request_t<DFSDM1, DFSDM_FLT3>
+{
+    static constexpr unsigned ID = 103;
+};
+
+template<> struct dma_request_t<DFSDM1, DFSDM_FLT4>
+{
+    static constexpr unsigned ID = 104;
+};
+
+template<> struct dma_request_t<DFSDM1, DFSDM_FLT5>
+{
+    static constexpr unsigned ID = 105;
+};

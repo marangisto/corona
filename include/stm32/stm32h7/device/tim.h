@@ -1145,6 +1145,22 @@ struct peripheral_t<STM32H723, TIM8>
 };
 
 template<>
+struct peripheral_t<STM32H725, TIM1>
+{
+    static constexpr periph_t P = TIM1;
+    using T = stm32h723_tim1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, TIM8>
+{
+    static constexpr periph_t P = TIM8;
+    using T = stm32h723_tim1_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, TIM1>
 {
     static constexpr periph_t P = TIM1;
@@ -1433,6 +1449,22 @@ struct peripheral_t<STM32H723, TIM2>
 };
 
 template<>
+struct peripheral_t<STM32H723, TIM23>
+{
+    static constexpr periph_t P = TIM23;
+    using T = stm32h723_tim2_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H723, TIM24>
+{
+    static constexpr periph_t P = TIM24;
+    using T = stm32h723_tim2_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H723, TIM3>
 {
     static constexpr periph_t P = TIM3;
@@ -1450,6 +1482,78 @@ struct peripheral_t<STM32H723, TIM4>
 
 template<>
 struct peripheral_t<STM32H723, TIM5>
+{
+    static constexpr periph_t P = TIM5;
+    using T = stm32h723_tim2_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, TIM12>
+{
+    static constexpr periph_t P = TIM12;
+    using T = stm32h723_tim2_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, TIM13>
+{
+    static constexpr periph_t P = TIM13;
+    using T = stm32h723_tim2_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, TIM14>
+{
+    static constexpr periph_t P = TIM14;
+    using T = stm32h723_tim2_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, TIM2>
+{
+    static constexpr periph_t P = TIM2;
+    using T = stm32h723_tim2_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, TIM23>
+{
+    static constexpr periph_t P = TIM23;
+    using T = stm32h723_tim2_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, TIM24>
+{
+    static constexpr periph_t P = TIM24;
+    using T = stm32h723_tim2_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, TIM3>
+{
+    static constexpr periph_t P = TIM3;
+    using T = stm32h723_tim2_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, TIM4>
+{
+    static constexpr periph_t P = TIM4;
+    using T = stm32h723_tim2_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, TIM5>
 {
     static constexpr periph_t P = TIM5;
     using T = stm32h723_tim2_t;
@@ -1484,6 +1588,22 @@ template<>
 struct peripheral_t<STM32H73x, TIM2>
 {
     static constexpr periph_t P = TIM2;
+    using T = stm32h723_tim2_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, TIM23>
+{
+    static constexpr periph_t P = TIM23;
+    using T = stm32h723_tim2_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H73x, TIM24>
+{
+    static constexpr periph_t P = TIM24;
     using T = stm32h723_tim2_t;
     static T& V;
 };
@@ -2369,6 +2489,22 @@ struct peripheral_t<STM32H723, TIM7>
 };
 
 template<>
+struct peripheral_t<STM32H725, TIM6>
+{
+    static constexpr periph_t P = TIM6;
+    using T = stm32h723_tim6_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, TIM7>
+{
+    static constexpr periph_t P = TIM7;
+    using T = stm32h723_tim6_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, TIM6>
 {
     static constexpr periph_t P = TIM6;
@@ -2633,6 +2769,14 @@ struct peripheral_t<STM32H723, TIM15>
 };
 
 template<>
+struct peripheral_t<STM32H725, TIM15>
+{
+    static constexpr periph_t P = TIM15;
+    using T = stm32h723_tim15_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, TIM15>
 {
     static constexpr periph_t P = TIM15;
@@ -2762,6 +2906,14 @@ struct peripheral_t<STM32H7B3x, TIM15>
 
 template<>
 struct peripheral_t<STM32H723, TIM16>
+{
+    static constexpr periph_t P = TIM16;
+    using T = stm32h723_tim16_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, TIM16>
 {
     static constexpr periph_t P = TIM16;
     using T = stm32h723_tim16_t;
@@ -2905,6 +3057,14 @@ struct peripheral_t<STM32H723, TIM17>
 };
 
 template<>
+struct peripheral_t<STM32H725, TIM17>
+{
+    static constexpr periph_t P = TIM17;
+    using T = stm32h723_tim17_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, TIM17>
 {
     static constexpr periph_t P = TIM17;
@@ -3040,6 +3200,8 @@ using tim15_t = peripheral_t<svd, TIM15>;
 using tim16_t = peripheral_t<svd, TIM16>;
 using tim17_t = peripheral_t<svd, TIM17>;
 using tim2_t = peripheral_t<svd, TIM2>;
+using tim23_t = peripheral_t<svd, TIM23>;
+using tim24_t = peripheral_t<svd, TIM24>;
 using tim3_t = peripheral_t<svd, TIM3>;
 using tim4_t = peripheral_t<svd, TIM4>;
 using tim5_t = peripheral_t<svd, TIM5>;
@@ -3280,6 +3442,26 @@ template<> struct tim_traits<2>
     {
         RCC::V.APB1LRSTR |= RCC::T::APB1LRSTR_TIM2RST;
     }
+};
+
+template<> struct tim_traits<23>
+{
+    using tim = tim23_t;
+    static constexpr signal_t CH1 = TIM23_CH1;
+    static constexpr signal_t CH2 = TIM23_CH2;
+    static constexpr signal_t CH3 = TIM23_CH3;
+    static constexpr signal_t CH4 = TIM23_CH4;
+    static constexpr signal_t ETR = TIM23_ETR;
+};
+
+template<> struct tim_traits<24>
+{
+    using tim = tim24_t;
+    static constexpr signal_t CH1 = TIM24_CH1;
+    static constexpr signal_t CH2 = TIM24_CH2;
+    static constexpr signal_t CH3 = TIM24_CH3;
+    static constexpr signal_t CH4 = TIM24_CH4;
+    static constexpr signal_t ETR = TIM24_ETR;
 };
 
 template<> struct tim_traits<3>
@@ -3559,6 +3741,66 @@ template<> struct dma_request_t<TIM2, TIM_CH4>
 template<> struct dma_request_t<TIM2, TIM_UP>
 {
     static constexpr unsigned ID = 22;
+};
+
+template<> struct dma_request_t<TIM23, TIM_CH1>
+{
+    static constexpr unsigned ID = 137;
+};
+
+template<> struct dma_request_t<TIM23, TIM_CH2>
+{
+    static constexpr unsigned ID = 138;
+};
+
+template<> struct dma_request_t<TIM23, TIM_CH3>
+{
+    static constexpr unsigned ID = 139;
+};
+
+template<> struct dma_request_t<TIM23, TIM_CH4>
+{
+    static constexpr unsigned ID = 140;
+};
+
+template<> struct dma_request_t<TIM23, TIM_UP>
+{
+    static constexpr unsigned ID = 141;
+};
+
+template<> struct dma_request_t<TIM23, TIM_TRIG>
+{
+    static constexpr unsigned ID = 142;
+};
+
+template<> struct dma_request_t<TIM24, TIM_CH1>
+{
+    static constexpr unsigned ID = 143;
+};
+
+template<> struct dma_request_t<TIM24, TIM_CH2>
+{
+    static constexpr unsigned ID = 144;
+};
+
+template<> struct dma_request_t<TIM24, TIM_CH3>
+{
+    static constexpr unsigned ID = 145;
+};
+
+template<> struct dma_request_t<TIM24, TIM_CH4>
+{
+    static constexpr unsigned ID = 146;
+};
+
+template<> struct dma_request_t<TIM24, TIM_UP>
+{
+    static constexpr unsigned ID = 147;
+};
+
+template<> struct dma_request_t<TIM24, TIM_TRIG>
+{
+    static constexpr unsigned ID = 148;
 };
 
 template<> struct dma_request_t<TIM3, TIM_CH1>

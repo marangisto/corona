@@ -8,7 +8,7 @@
 
 // DMA1: Direct memory access controller
 
-struct stm32wb30_cm4_dma1_t
+struct stm32wb10_cm4_dma1_t
 {
     volatile uint32_t ISR; // interrupt status register
     volatile uint32_t IFCR; // interrupt flag clear register
@@ -557,10 +557,26 @@ struct stm32wb35_cm4_dma2_t
 };
 
 template<>
+struct peripheral_t<STM32WB10_CM4, DMA1>
+{
+    static constexpr periph_t P = DMA1;
+    using T = stm32wb10_cm4_dma1_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32WB15_CM4, DMA1>
+{
+    static constexpr periph_t P = DMA1;
+    using T = stm32wb10_cm4_dma1_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32WB30_CM4, DMA1>
 {
     static constexpr periph_t P = DMA1;
-    using T = stm32wb30_cm4_dma1_t;
+    using T = stm32wb10_cm4_dma1_t;
     static T& V;
 };
 
@@ -568,7 +584,7 @@ template<>
 struct peripheral_t<STM32WB35_CM4, DMA1>
 {
     static constexpr periph_t P = DMA1;
-    using T = stm32wb30_cm4_dma1_t;
+    using T = stm32wb10_cm4_dma1_t;
     static T& V;
 };
 
@@ -576,7 +592,7 @@ template<>
 struct peripheral_t<STM32WB50_CM4, DMA1>
 {
     static constexpr periph_t P = DMA1;
-    using T = stm32wb30_cm4_dma1_t;
+    using T = stm32wb10_cm4_dma1_t;
     static T& V;
 };
 
@@ -584,7 +600,7 @@ template<>
 struct peripheral_t<STM32WB55_CM4, DMA1>
 {
     static constexpr periph_t P = DMA1;
-    using T = stm32wb30_cm4_dma1_t;
+    using T = stm32wb10_cm4_dma1_t;
     static T& V;
 };
 

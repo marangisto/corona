@@ -38,6 +38,37 @@ struct stm32l052_pwr_t
     static constexpr uint32_t CSR_REGLPF = 0x20; // Regulator LP flag
 };
 
+// PWR: Power control
+
+struct stm32l0x0_pwr_t
+{
+    volatile uint32_t CR; // power control register
+    volatile uint32_t CSR; // power control/status register
+
+    static constexpr uint32_t CR_RESET_VALUE = 0x1000; // Reset value
+    static constexpr uint32_t CR_LPSDSR = 0x1; // Low-power deepsleep/Sleep/Low-power run
+    static constexpr uint32_t CR_PDDS = 0x2; // Power down deepsleep
+    static constexpr uint32_t CR_CWUF = 0x4; // Clear wakeup flag
+    static constexpr uint32_t CR_CSBF = 0x8; // Clear standby flag
+    static constexpr uint32_t CR_DBP = 0x100; // Disable backup domain write protection
+    static constexpr uint32_t CR_ULP = 0x200; // Ultra-low-power mode
+    static constexpr uint32_t CR_FWU = 0x400; // Fast wakeup
+    typedef bit_field_t<11, 0x3> CR_VOS; // Voltage scaling range selection
+    static constexpr uint32_t CR_DS_EE_KOFF = 0x2000; // Deep sleep mode with Flash memory kept off
+    static constexpr uint32_t CR_LPRUN = 0x4000; // Low power run mode
+    static constexpr uint32_t CR_LPDS = 0x10000; // Regulator in Low-power deepsleep mode
+
+    static constexpr uint32_t CSR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t CSR_WUF = 0x1; // Wakeup flag
+    static constexpr uint32_t CSR_SBF = 0x2; // Standby flag
+    static constexpr uint32_t CSR_VREFINTRDYF = 0x8; // Internal voltage reference (VREFINT) ready flag
+    static constexpr uint32_t CSR_VOSF = 0x10; // Voltage Scaling select flag
+    static constexpr uint32_t CSR_REGLPF = 0x20; // Regulator LP flag
+    static constexpr uint32_t CSR_EWUP1 = 0x100; // Enable WKUP pin 1
+    static constexpr uint32_t CSR_EWUP2 = 0x200; // Enable WKUP pin 2
+    static constexpr uint32_t CSR_EWUP3 = 0x400; // Enable WKUP pin 3
+};
+
 template<>
 struct peripheral_t<STM32L052, PWR>
 {
@@ -71,14 +102,6 @@ struct peripheral_t<STM32L063, PWR>
 };
 
 template<>
-struct peripheral_t<STM32L0x0, PWR>
-{
-    static constexpr periph_t P = PWR;
-    using T = stm32l052_pwr_t;
-    static T& V;
-};
-
-template<>
 struct peripheral_t<STM32L0x1, PWR>
 {
     static constexpr periph_t P = PWR;
@@ -99,6 +122,14 @@ struct peripheral_t<STM32L0x3, PWR>
 {
     static constexpr periph_t P = PWR;
     using T = stm32l052_pwr_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L0x0, PWR>
+{
+    static constexpr periph_t P = PWR;
+    using T = stm32l0x0_pwr_t;
     static T& V;
 };
 

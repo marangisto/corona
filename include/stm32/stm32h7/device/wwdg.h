@@ -89,6 +89,14 @@ struct peripheral_t<STM32H723, WWDG1>
 };
 
 template<>
+struct peripheral_t<STM32H725, WWDG1>
+{
+    static constexpr periph_t P = WWDG1;
+    using T = stm32h723_wwdg1_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, WWDG1>
 {
     static constexpr periph_t P = WWDG1;

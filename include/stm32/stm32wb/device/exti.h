@@ -8,6 +8,96 @@
 
 // EXTI: External interrupt/event controller
 
+struct stm32wb10_cm4_exti_t
+{
+    volatile uint32_t RTSR1; // rising trigger selection register
+    volatile uint32_t FTSR1; // falling trigger selection register
+    volatile uint32_t SWIER1; // software interrupt event register
+    volatile uint32_t PR1; // EXTI pending register
+    reserved_t<0x4> _0x10;
+    volatile uint32_t RTSR2; // rising trigger selection register
+    volatile uint32_t FTSR2; // falling trigger selection register
+    volatile uint32_t SWIER2; // software interrupt event register
+    volatile uint32_t PR2; // pending register
+    reserved_t<0x14> _0x30;
+    volatile uint32_t IMR1; // CPUm wakeup with interrupt mask register
+    volatile uint32_t EMR1; // CPUm wakeup with event mask register
+    reserved_t<0x2> _0x88;
+    volatile uint32_t IMR2; // CPUm wakeup with interrupt mask register
+    volatile uint32_t EMR2; // CPUm wakeup with event mask register
+    reserved_t<0xa> _0x98;
+    volatile uint32_t C2IMR1; // CPUm wakeup with interrupt mask register
+    volatile uint32_t C2EMR1; // CPUm wakeup with event mask register
+    reserved_t<0x2> _0xc8;
+    volatile uint32_t C2IMR2; // CPUm wakeup with interrupt mask register
+    volatile uint32_t C2EMR2; // CPUm wakeup with event mask register
+
+    static constexpr uint32_t RTSR1_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x1fffff> RTSR1_RT; // Rising trigger event configuration bit of Configurable Event input
+
+    static constexpr uint32_t FTSR1_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x1fffff> FTSR1_FT; // Falling trigger event configuration bit of Configurable Event input
+
+    static constexpr uint32_t SWIER1_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x1fffff> SWIER1_SWI; // Software interrupt on event
+
+    static constexpr uint32_t PR1_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x1fffff> PR1_PIF; // Configurable event inputs Pending bit
+
+
+    static constexpr uint32_t RTSR2_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t RTSR2_RT33 = 0x2; // Rising trigger event configuration bit of Configurable Event input
+    static constexpr uint32_t RTSR2_RT40 = 0x100; // Rising trigger event configuration bit of Configurable Event input 40
+    static constexpr uint32_t RTSR2_RT41 = 0x200; // Rising trigger event configuration bit of Configurable Event input 41
+
+    static constexpr uint32_t FTSR2_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t FTSR2_FT33 = 0x2; // Falling trigger event configuration bit of Configurable Event input
+    static constexpr uint32_t FTSR2_FT40 = 0x100; // Falling trigger event configuration bit of configurable event input 40
+    static constexpr uint32_t FTSR2_FT41 = 0x200; // Falling trigger event configuration bit of configurable event input 41
+
+    static constexpr uint32_t SWIER2_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t SWIER2_SWI33 = 0x2; // Software interrupt on event
+    static constexpr uint32_t SWIER2_SWI40 = 0x100; // Software interrupt on event
+    static constexpr uint32_t SWIER2_SWI41 = 0x200; // Software interrupt on event
+
+    static constexpr uint32_t PR2_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t PR2_PIF33 = 0x2; // Configurable event inputs x+32 Pending bit.
+    static constexpr uint32_t PR2_PIF40 = 0x100; // Configurable event inputs x+32 Pending bit.
+    static constexpr uint32_t PR2_PIF41 = 0x200; // Configurable event inputs x+32 Pending bit.
+
+
+    static constexpr uint32_t IMR1_RESET_VALUE = 0x7fc00000; // Reset value
+    typedef bit_field_t<0, 0xffffffff> IMR1_IM; // CPU(m) wakeup with interrupt Mask on Event input
+
+    static constexpr uint32_t EMR1_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffff> EMR1_EM0_15; // CPU(m) Wakeup with event generation Mask on Event input
+    typedef bit_field_t<17, 0xf> EMR1_EM17_20; // CPU(m) Wakeup with event generation Mask on Event input
+
+
+    static constexpr uint32_t IMR2_RESET_VALUE = 0x1fcfd; // Reset value
+    typedef bit_field_t<1, 0x1ffff> IMR2_IM; // CPUm Wakeup with interrupt Mask on Event input
+
+    static constexpr uint32_t EMR2_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<8, 0x3> EMR2_EM; // CPU(m) Wakeup with event generation Mask on Event input
+
+
+    static constexpr uint32_t C2IMR1_RESET_VALUE = 0x7fc00000; // Reset value
+    typedef bit_field_t<0, 0xffffffff> C2IMR1_IM; // CPU(m) wakeup with interrupt Mask on Event input
+
+    static constexpr uint32_t C2EMR1_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffff> C2EMR1_EM0_15; // CPU(m) Wakeup with event generation Mask on Event input
+    typedef bit_field_t<17, 0xf> C2EMR1_EM17_20; // CPU(m) Wakeup with event generation Mask on Event input
+
+
+    static constexpr uint32_t C2IMR2_RESET_VALUE = 0x1fcfd; // Reset value
+    typedef bit_field_t<1, 0x1ffff> C2IMR2_IM; // CPUm Wakeup with interrupt Mask on Event input
+
+    static constexpr uint32_t C2EMR2_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<8, 0x3> C2EMR2_EM; // CPU(m) Wakeup with event generation Mask on Event input
+};
+
+// EXTI: External interrupt/event controller
+
 struct stm32wb30_cm4_exti_t
 {
     volatile uint32_t RTSR1; // rising trigger selection register
@@ -139,6 +229,22 @@ struct stm32wb30_cm4_exti_t
 
     static constexpr uint32_t SIDR_RESET_VALUE = 0xa3c5dd01; // Reset value
     typedef bit_field_t<0, 0xffffffff> SIDR_SID; // Size Identification
+};
+
+template<>
+struct peripheral_t<STM32WB10_CM4, EXTI>
+{
+    static constexpr periph_t P = EXTI;
+    using T = stm32wb10_cm4_exti_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32WB15_CM4, EXTI>
+{
+    static constexpr periph_t P = EXTI;
+    using T = stm32wb10_cm4_exti_t;
+    static T& V;
 };
 
 template<>

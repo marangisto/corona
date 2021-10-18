@@ -1969,6 +1969,14 @@ struct peripheral_t<STM32H723, ETHERNET_MAC>
 };
 
 template<>
+struct peripheral_t<STM32H725, ETHERNET_MAC>
+{
+    static constexpr periph_t P = ETHERNET_MAC;
+    using T = stm32h723_ethernet_mac_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, ETHERNET_MAC>
 {
     static constexpr periph_t P = ETHERNET_MAC;

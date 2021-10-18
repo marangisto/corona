@@ -1020,6 +1020,255 @@ struct stm32h723_otg1_hs_global_t
     typedef bit_field_t<16, 0xffff> OTG_HS_DIEPTXF7_INEPTXFD; // IN endpoint TxFIFO depth
 };
 
+// OTG1_HS_GLOBAL: USB 1 on the go high speed
+
+struct stm32h743_otg1_hs_global_t
+{
+    volatile uint32_t OTG_HS_GOTGCTL; // OTG_HS control and status register
+    volatile uint32_t OTG_HS_GOTGINT; // OTG_HS interrupt register
+    volatile uint32_t OTG_HS_GAHBCFG; // OTG_HS AHB configuration register
+    volatile uint32_t OTG_HS_GUSBCFG; // OTG_HS USB configuration register
+    volatile uint32_t OTG_HS_GRSTCTL; // OTG_HS reset register
+    volatile uint32_t OTG_HS_GINTSTS; // OTG_HS core interrupt register
+    volatile uint32_t OTG_HS_GINTMSK; // OTG_HS interrupt mask register
+    volatile uint32_t OTG_HS_GRXSTSR_HOST; // OTG_HS Receive status debug read register (host mode)
+    volatile uint32_t OTG_HS_GRXSTSP_HOST; // OTG_HS status read and pop register (host mode)
+    volatile uint32_t OTG_HS_GRXFSIZ; // OTG_HS Receive FIFO size register
+    volatile uint32_t OTG_HS_HNPTXFSIZ_HOST; // OTG_HS nonperiodic transmit FIFO size register (host mode)
+    volatile uint32_t OTG_HS_HNPTXSTS; // OTG_HS nonperiodic transmit FIFO/queue status register
+    reserved_t<0x2> _0x30;
+    volatile uint32_t OTG_HS_GCCFG; // OTG_HS general core configuration register
+    volatile uint32_t OTG_HS_CID; // OTG_HS core ID register
+    reserved_t<0x5> _0x40;
+    volatile uint32_t OTG_HS_GLPMCFG; // OTG core LPM configuration register
+    reserved_t<0x2a> _0x58;
+    volatile uint32_t OTG_HS_HPTXFSIZ; // OTG_HS Host periodic transmit FIFO size register
+    volatile uint32_t OTG_HS_DIEPTXF1; // OTG_HS device IN endpoint transmit FIFO size register
+    volatile uint32_t OTG_HS_DIEPTXF2; // OTG_HS device IN endpoint transmit FIFO size register
+    volatile uint32_t OTG_HS_DIEPTXF3; // OTG_HS device IN endpoint transmit FIFO size register
+    volatile uint32_t OTG_HS_DIEPTXF4; // OTG_HS device IN endpoint transmit FIFO size register
+    volatile uint32_t OTG_HS_DIEPTXF5; // OTG_HS device IN endpoint transmit FIFO size register
+    volatile uint32_t OTG_HS_DIEPTXF6; // OTG_HS device IN endpoint transmit FIFO size register
+    volatile uint32_t OTG_HS_DIEPTXF7; // OTG_HS device IN endpoint transmit FIFO size register
+    volatile uint32_t OTG_HS_DIEPTXF8; // OTG_HS device IN endpoint transmit FIFO size register
+
+    static constexpr uint32_t OTG_HS_GOTGCTL_RESET_VALUE = 0x800; // Reset value
+    static constexpr uint32_t OTG_HS_GOTGCTL_SRQSCS = 0x1; // Session request success
+    static constexpr uint32_t OTG_HS_GOTGCTL_SRQ = 0x2; // Session request
+    static constexpr uint32_t OTG_HS_GOTGCTL_HNGSCS = 0x100; // Host negotiation success
+    static constexpr uint32_t OTG_HS_GOTGCTL_HNPRQ = 0x200; // HNP request
+    static constexpr uint32_t OTG_HS_GOTGCTL_HSHNPEN = 0x400; // Host set HNP enable
+    static constexpr uint32_t OTG_HS_GOTGCTL_DHNPEN = 0x800; // Device HNP enabled
+    static constexpr uint32_t OTG_HS_GOTGCTL_CIDSTS = 0x10000; // Connector ID status
+    static constexpr uint32_t OTG_HS_GOTGCTL_DBCT = 0x20000; // Long/short debounce time
+    static constexpr uint32_t OTG_HS_GOTGCTL_ASVLD = 0x40000; // A-session valid
+    static constexpr uint32_t OTG_HS_GOTGCTL_BSVLD = 0x80000; // B-session valid
+    static constexpr uint32_t OTG_HS_GOTGCTL_EHEN = 0x1000; // Embedded host enable
+
+    static constexpr uint32_t OTG_HS_GOTGINT_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t OTG_HS_GOTGINT_SEDET = 0x4; // Session end detected
+    static constexpr uint32_t OTG_HS_GOTGINT_SRSSCHG = 0x100; // Session request success status change
+    static constexpr uint32_t OTG_HS_GOTGINT_HNSSCHG = 0x200; // Host negotiation success status change
+    static constexpr uint32_t OTG_HS_GOTGINT_HNGDET = 0x20000; // Host negotiation detected
+    static constexpr uint32_t OTG_HS_GOTGINT_ADTOCHG = 0x40000; // A-device timeout change
+    static constexpr uint32_t OTG_HS_GOTGINT_DBCDNE = 0x80000; // Debounce done
+    static constexpr uint32_t OTG_HS_GOTGINT_IDCHNG = 0x100000; // ID input pin changed
+
+    static constexpr uint32_t OTG_HS_GAHBCFG_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t OTG_HS_GAHBCFG_GINT = 0x1; // Global interrupt mask
+    typedef bit_field_t<1, 0xf> OTG_HS_GAHBCFG_HBSTLEN; // Burst length/type
+    static constexpr uint32_t OTG_HS_GAHBCFG_DMAEN = 0x20; // DMA enable
+    static constexpr uint32_t OTG_HS_GAHBCFG_TXFELVL = 0x80; // TxFIFO empty level
+    static constexpr uint32_t OTG_HS_GAHBCFG_PTXFELVL = 0x100; // Periodic TxFIFO empty level
+
+    static constexpr uint32_t OTG_HS_GUSBCFG_RESET_VALUE = 0xa00; // Reset value
+    typedef bit_field_t<0, 0x7> OTG_HS_GUSBCFG_TOCAL; // FS timeout calibration
+    static constexpr uint32_t OTG_HS_GUSBCFG_PHYSEL = 0x40; // USB 2.0 high-speed ULPI PHY or USB 1.1 full-speed serial transceiver select
+    static constexpr uint32_t OTG_HS_GUSBCFG_SRPCAP = 0x100; // SRP-capable
+    static constexpr uint32_t OTG_HS_GUSBCFG_HNPCAP = 0x200; // HNP-capable
+    typedef bit_field_t<10, 0xf> OTG_HS_GUSBCFG_TRDT; // USB turnaround time
+    static constexpr uint32_t OTG_HS_GUSBCFG_PHYLPCS = 0x8000; // PHY Low-power clock select
+    static constexpr uint32_t OTG_HS_GUSBCFG_ULPIFSLS = 0x20000; // ULPI FS/LS select
+    static constexpr uint32_t OTG_HS_GUSBCFG_ULPIAR = 0x40000; // ULPI Auto-resume
+    static constexpr uint32_t OTG_HS_GUSBCFG_ULPICSM = 0x80000; // ULPI Clock SuspendM
+    static constexpr uint32_t OTG_HS_GUSBCFG_ULPIEVBUSD = 0x100000; // ULPI External VBUS Drive
+    static constexpr uint32_t OTG_HS_GUSBCFG_ULPIEVBUSI = 0x200000; // ULPI external VBUS indicator
+    static constexpr uint32_t OTG_HS_GUSBCFG_TSDPS = 0x400000; // TermSel DLine pulsing selection
+    static constexpr uint32_t OTG_HS_GUSBCFG_PCCI = 0x800000; // Indicator complement
+    static constexpr uint32_t OTG_HS_GUSBCFG_PTCI = 0x1000000; // Indicator pass through
+    static constexpr uint32_t OTG_HS_GUSBCFG_ULPIIPD = 0x2000000; // ULPI interface protect disable
+    static constexpr uint32_t OTG_HS_GUSBCFG_FHMOD = 0x20000000; // Forced host mode
+    static constexpr uint32_t OTG_HS_GUSBCFG_FDMOD = 0x40000000; // Forced peripheral mode
+
+    static constexpr uint32_t OTG_HS_GRSTCTL_RESET_VALUE = 0x20000000; // Reset value
+    static constexpr uint32_t OTG_HS_GRSTCTL_CSRST = 0x1; // Core soft reset
+    static constexpr uint32_t OTG_HS_GRSTCTL_HSRST = 0x2; // HCLK soft reset
+    static constexpr uint32_t OTG_HS_GRSTCTL_FCRST = 0x4; // Host frame counter reset
+    static constexpr uint32_t OTG_HS_GRSTCTL_RXFFLSH = 0x10; // RxFIFO flush
+    static constexpr uint32_t OTG_HS_GRSTCTL_TXFFLSH = 0x20; // TxFIFO flush
+    typedef bit_field_t<6, 0x1f> OTG_HS_GRSTCTL_TXFNUM; // TxFIFO number
+    static constexpr uint32_t OTG_HS_GRSTCTL_AHBIDL = 0x80000000; // AHB master idle
+    static constexpr uint32_t OTG_HS_GRSTCTL_DMAREQ = 0x40000000; // DMA request signal enabled for USB OTG HS
+
+    static constexpr uint32_t OTG_HS_GINTSTS_RESET_VALUE = 0x4000020; // Reset value
+    static constexpr uint32_t OTG_HS_GINTSTS_CMOD = 0x1; // Current mode of operation
+    static constexpr uint32_t OTG_HS_GINTSTS_MMIS = 0x2; // Mode mismatch interrupt
+    static constexpr uint32_t OTG_HS_GINTSTS_OTGINT = 0x4; // OTG interrupt
+    static constexpr uint32_t OTG_HS_GINTSTS_SOF = 0x8; // Start of frame
+    static constexpr uint32_t OTG_HS_GINTSTS_RXFLVL = 0x10; // RxFIFO nonempty
+    static constexpr uint32_t OTG_HS_GINTSTS_NPTXFE = 0x20; // Nonperiodic TxFIFO empty
+    static constexpr uint32_t OTG_HS_GINTSTS_GINAKEFF = 0x40; // Global IN nonperiodic NAK effective
+    static constexpr uint32_t OTG_HS_GINTSTS_BOUTNAKEFF = 0x80; // Global OUT NAK effective
+    static constexpr uint32_t OTG_HS_GINTSTS_ESUSP = 0x400; // Early suspend
+    static constexpr uint32_t OTG_HS_GINTSTS_USBSUSP = 0x800; // USB suspend
+    static constexpr uint32_t OTG_HS_GINTSTS_USBRST = 0x1000; // USB reset
+    static constexpr uint32_t OTG_HS_GINTSTS_ENUMDNE = 0x2000; // Enumeration done
+    static constexpr uint32_t OTG_HS_GINTSTS_ISOODRP = 0x4000; // Isochronous OUT packet dropped interrupt
+    static constexpr uint32_t OTG_HS_GINTSTS_EOPF = 0x8000; // End of periodic frame interrupt
+    static constexpr uint32_t OTG_HS_GINTSTS_IEPINT = 0x40000; // IN endpoint interrupt
+    static constexpr uint32_t OTG_HS_GINTSTS_OEPINT = 0x80000; // OUT endpoint interrupt
+    static constexpr uint32_t OTG_HS_GINTSTS_IISOIXFR = 0x100000; // Incomplete isochronous IN transfer
+    static constexpr uint32_t OTG_HS_GINTSTS_PXFR_INCOMPISOOUT = 0x200000; // Incomplete periodic transfer
+    static constexpr uint32_t OTG_HS_GINTSTS_DATAFSUSP = 0x400000; // Data fetch suspended
+    static constexpr uint32_t OTG_HS_GINTSTS_HPRTINT = 0x1000000; // Host port interrupt
+    static constexpr uint32_t OTG_HS_GINTSTS_HCINT = 0x2000000; // Host channels interrupt
+    static constexpr uint32_t OTG_HS_GINTSTS_PTXFE = 0x4000000; // Periodic TxFIFO empty
+    static constexpr uint32_t OTG_HS_GINTSTS_CIDSCHG = 0x10000000; // Connector ID status change
+    static constexpr uint32_t OTG_HS_GINTSTS_DISCINT = 0x20000000; // Disconnect detected interrupt
+    static constexpr uint32_t OTG_HS_GINTSTS_SRQINT = 0x40000000; // Session request/new session detected interrupt
+    static constexpr uint32_t OTG_HS_GINTSTS_WKUINT = 0x80000000; // Resume/remote wakeup detected interrupt
+
+    static constexpr uint32_t OTG_HS_GINTMSK_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t OTG_HS_GINTMSK_MMISM = 0x2; // Mode mismatch interrupt mask
+    static constexpr uint32_t OTG_HS_GINTMSK_OTGINT = 0x4; // OTG interrupt mask
+    static constexpr uint32_t OTG_HS_GINTMSK_SOFM = 0x8; // Start of frame mask
+    static constexpr uint32_t OTG_HS_GINTMSK_RXFLVLM = 0x10; // Receive FIFO nonempty mask
+    static constexpr uint32_t OTG_HS_GINTMSK_NPTXFEM = 0x20; // Nonperiodic TxFIFO empty mask
+    static constexpr uint32_t OTG_HS_GINTMSK_GINAKEFFM = 0x40; // Global nonperiodic IN NAK effective mask
+    static constexpr uint32_t OTG_HS_GINTMSK_GONAKEFFM = 0x80; // Global OUT NAK effective mask
+    static constexpr uint32_t OTG_HS_GINTMSK_ESUSPM = 0x400; // Early suspend mask
+    static constexpr uint32_t OTG_HS_GINTMSK_USBSUSPM = 0x800; // USB suspend mask
+    static constexpr uint32_t OTG_HS_GINTMSK_USBRST = 0x1000; // USB reset mask
+    static constexpr uint32_t OTG_HS_GINTMSK_ENUMDNEM = 0x2000; // Enumeration done mask
+    static constexpr uint32_t OTG_HS_GINTMSK_ISOODRPM = 0x4000; // Isochronous OUT packet dropped interrupt mask
+    static constexpr uint32_t OTG_HS_GINTMSK_EOPFM = 0x8000; // End of periodic frame interrupt mask
+    static constexpr uint32_t OTG_HS_GINTMSK_IEPINT = 0x40000; // IN endpoints interrupt mask
+    static constexpr uint32_t OTG_HS_GINTMSK_OEPINT = 0x80000; // OUT endpoints interrupt mask
+    static constexpr uint32_t OTG_HS_GINTMSK_IISOIXFRM = 0x100000; // Incomplete isochronous IN transfer mask
+    static constexpr uint32_t OTG_HS_GINTMSK_PXFRM_IISOOXFRM = 0x200000; // Incomplete periodic transfer mask
+    static constexpr uint32_t OTG_HS_GINTMSK_FSUSPM = 0x400000; // Data fetch suspended mask
+    static constexpr uint32_t OTG_HS_GINTMSK_PRTIM = 0x1000000; // Host port interrupt mask
+    static constexpr uint32_t OTG_HS_GINTMSK_HCIM = 0x2000000; // Host channels interrupt mask
+    static constexpr uint32_t OTG_HS_GINTMSK_PTXFEM = 0x4000000; // Periodic TxFIFO empty mask
+    static constexpr uint32_t OTG_HS_GINTMSK_CIDSCHGM = 0x10000000; // Connector ID status change mask
+    static constexpr uint32_t OTG_HS_GINTMSK_DISCINT = 0x20000000; // Disconnect detected interrupt mask
+    static constexpr uint32_t OTG_HS_GINTMSK_SRQIM = 0x40000000; // Session request/new session detected interrupt mask
+    static constexpr uint32_t OTG_HS_GINTMSK_WUIM = 0x80000000; // Resume/remote wakeup detected interrupt mask
+    static constexpr uint32_t OTG_HS_GINTMSK_RSTDE = 0x800000; // Reset detected interrupt mask
+    static constexpr uint32_t OTG_HS_GINTMSK_LPMINTM = 0x8000000; // LPM interrupt mask
+
+    static constexpr uint32_t OTG_HS_GRXSTSR_HOST_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<4, 0x7ff> OTG_HS_GRXSTSR_HOST_BCNT; // Byte count
+    typedef bit_field_t<0, 0xf> OTG_HS_GRXSTSR_HOST_CHNUM; // Channel number
+    typedef bit_field_t<15, 0x3> OTG_HS_GRXSTSR_HOST_DPID; // Data PID
+    typedef bit_field_t<0, 0xf> OTG_HS_GRXSTSR_HOST_EPNUM; // Endpoint number
+    typedef bit_field_t<21, 0xf> OTG_HS_GRXSTSR_HOST_FRMNUM; // Frame number
+    typedef bit_field_t<17, 0xf> OTG_HS_GRXSTSR_HOST_PKTSTS; // Packet status
+
+    static constexpr uint32_t OTG_HS_GRXSTSP_HOST_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<4, 0x7ff> OTG_HS_GRXSTSP_HOST_BCNT; // Byte count
+    typedef bit_field_t<0, 0xf> OTG_HS_GRXSTSP_HOST_CHNUM; // Channel number
+    typedef bit_field_t<15, 0x3> OTG_HS_GRXSTSP_HOST_DPID; // Data PID
+    typedef bit_field_t<0, 0xf> OTG_HS_GRXSTSP_HOST_EPNUM; // Endpoint number
+    typedef bit_field_t<21, 0xf> OTG_HS_GRXSTSP_HOST_FRMNUM; // Frame number
+    typedef bit_field_t<17, 0xf> OTG_HS_GRXSTSP_HOST_PKTSTS; // Packet status
+
+    static constexpr uint32_t OTG_HS_GRXFSIZ_RESET_VALUE = 0x200; // Reset value
+    typedef bit_field_t<0, 0xffff> OTG_HS_GRXFSIZ_RXFD; // RxFIFO depth
+
+    static constexpr uint32_t OTG_HS_HNPTXFSIZ_HOST_RESET_VALUE = 0x200; // Reset value
+    typedef bit_field_t<16, 0xffff> OTG_HS_HNPTXFSIZ_HOST_NPTXFD; // Nonperiodic TxFIFO depth
+    typedef bit_field_t<0, 0xffff> OTG_HS_HNPTXFSIZ_HOST_NPTXFSA; // Nonperiodic transmit RAM start address
+    typedef bit_field_t<16, 0xffff> OTG_HS_HNPTXFSIZ_HOST_TX0FD; // Endpoint 0 TxFIFO depth
+    typedef bit_field_t<0, 0xffff> OTG_HS_HNPTXFSIZ_HOST_TX0FSA; // Endpoint 0 transmit RAM start address
+
+    static constexpr uint32_t OTG_HS_HNPTXSTS_RESET_VALUE = 0x80200; // Reset value
+    typedef bit_field_t<0, 0xffff> OTG_HS_HNPTXSTS_NPTXFSAV; // Nonperiodic TxFIFO space available
+    typedef bit_field_t<16, 0xff> OTG_HS_HNPTXSTS_NPTQXSAV; // Nonperiodic transmit request queue space available
+    typedef bit_field_t<24, 0x7f> OTG_HS_HNPTXSTS_NPTXQTOP; // Top of the nonperiodic transmit request queue
+
+
+    static constexpr uint32_t OTG_HS_GCCFG_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t OTG_HS_GCCFG_PWRDWN = 0x10000; // Power down
+    static constexpr uint32_t OTG_HS_GCCFG_BCDEN = 0x20000; // Battery charging detector (BCD) enable
+    static constexpr uint32_t OTG_HS_GCCFG_DCDEN = 0x40000; // Data contact detection (DCD) mode enable
+    static constexpr uint32_t OTG_HS_GCCFG_PDEN = 0x80000; // Primary detection (PD) mode enable
+    static constexpr uint32_t OTG_HS_GCCFG_SDEN = 0x100000; // Secondary detection (SD) mode enable
+    static constexpr uint32_t OTG_HS_GCCFG_VBDEN = 0x200000; // USB VBUS detection enable
+    static constexpr uint32_t OTG_HS_GCCFG_DCDET = 0x1; // Data contact detection (DCD) status
+    static constexpr uint32_t OTG_HS_GCCFG_PDET = 0x2; // Primary detection (PD) status
+    static constexpr uint32_t OTG_HS_GCCFG_SDET = 0x4; // Secondary detection (SD) status
+    static constexpr uint32_t OTG_HS_GCCFG_PS2DET = 0x8; // DM pull-up detection status
+
+    static constexpr uint32_t OTG_HS_CID_RESET_VALUE = 0x1200; // Reset value
+    typedef bit_field_t<0, 0xffffffff> OTG_HS_CID_PRODUCT_ID; // Product ID field
+
+
+    static constexpr uint32_t OTG_HS_GLPMCFG_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t OTG_HS_GLPMCFG_LPMEN = 0x1; // LPM support enable
+    static constexpr uint32_t OTG_HS_GLPMCFG_LPMACK = 0x2; // LPM token acknowledge enable
+    typedef bit_field_t<2, 0xf> OTG_HS_GLPMCFG_BESL; // Best effort service latency
+    static constexpr uint32_t OTG_HS_GLPMCFG_REMWAKE = 0x40; // bRemoteWake value
+    static constexpr uint32_t OTG_HS_GLPMCFG_L1SSEN = 0x80; // L1 Shallow Sleep enable
+    typedef bit_field_t<8, 0xf> OTG_HS_GLPMCFG_BESLTHRS; // BESL threshold
+    static constexpr uint32_t OTG_HS_GLPMCFG_L1DSEN = 0x1000; // L1 deep sleep enable
+    typedef bit_field_t<13, 0x3> OTG_HS_GLPMCFG_LPMRST; // LPM response
+    static constexpr uint32_t OTG_HS_GLPMCFG_SLPSTS = 0x8000; // Port sleep status
+    static constexpr uint32_t OTG_HS_GLPMCFG_L1RSMOK = 0x10000; // Sleep State Resume OK
+    typedef bit_field_t<17, 0xf> OTG_HS_GLPMCFG_LPMCHIDX; // LPM Channel Index
+    typedef bit_field_t<21, 0x7> OTG_HS_GLPMCFG_LPMRCNT; // LPM retry count
+    static constexpr uint32_t OTG_HS_GLPMCFG_SNDLPM = 0x1000000; // Send LPM transaction
+    typedef bit_field_t<25, 0x7> OTG_HS_GLPMCFG_LPMRCNTSTS; // LPM retry count status
+    static constexpr uint32_t OTG_HS_GLPMCFG_ENBESL = 0x10000000; // Enable best effort service latency
+
+
+    static constexpr uint32_t OTG_HS_HPTXFSIZ_RESET_VALUE = 0x2000600; // Reset value
+    typedef bit_field_t<0, 0xffff> OTG_HS_HPTXFSIZ_PTXSA; // Host periodic TxFIFO start address
+    typedef bit_field_t<16, 0xffff> OTG_HS_HPTXFSIZ_PTXFSIZ; // Host periodic TxFIFO depth
+
+    static constexpr uint32_t OTG_HS_DIEPTXF1_RESET_VALUE = 0x2000400; // Reset value
+    typedef bit_field_t<0, 0xffff> OTG_HS_DIEPTXF1_INEPTXSA; // IN endpoint FIFOx transmit RAM start address
+    typedef bit_field_t<16, 0xffff> OTG_HS_DIEPTXF1_INEPTXFD; // IN endpoint TxFIFO depth
+
+    static constexpr uint32_t OTG_HS_DIEPTXF2_RESET_VALUE = 0x2000400; // Reset value
+    typedef bit_field_t<0, 0xffff> OTG_HS_DIEPTXF2_INEPTXSA; // IN endpoint FIFOx transmit RAM start address
+    typedef bit_field_t<16, 0xffff> OTG_HS_DIEPTXF2_INEPTXFD; // IN endpoint TxFIFO depth
+
+    static constexpr uint32_t OTG_HS_DIEPTXF3_RESET_VALUE = 0x2000400; // Reset value
+    typedef bit_field_t<0, 0xffff> OTG_HS_DIEPTXF3_INEPTXSA; // IN endpoint FIFOx transmit RAM start address
+    typedef bit_field_t<16, 0xffff> OTG_HS_DIEPTXF3_INEPTXFD; // IN endpoint TxFIFO depth
+
+    static constexpr uint32_t OTG_HS_DIEPTXF4_RESET_VALUE = 0x2000400; // Reset value
+    typedef bit_field_t<0, 0xffff> OTG_HS_DIEPTXF4_INEPTXSA; // IN endpoint FIFOx transmit RAM start address
+    typedef bit_field_t<16, 0xffff> OTG_HS_DIEPTXF4_INEPTXFD; // IN endpoint TxFIFO depth
+
+    static constexpr uint32_t OTG_HS_DIEPTXF5_RESET_VALUE = 0x2000400; // Reset value
+    typedef bit_field_t<0, 0xffff> OTG_HS_DIEPTXF5_INEPTXSA; // IN endpoint FIFOx transmit RAM start address
+    typedef bit_field_t<16, 0xffff> OTG_HS_DIEPTXF5_INEPTXFD; // IN endpoint TxFIFO depth
+
+    static constexpr uint32_t OTG_HS_DIEPTXF6_RESET_VALUE = 0x2000400; // Reset value
+    typedef bit_field_t<0, 0xffff> OTG_HS_DIEPTXF6_INEPTXSA; // IN endpoint FIFOx transmit RAM start address
+    typedef bit_field_t<16, 0xffff> OTG_HS_DIEPTXF6_INEPTXFD; // IN endpoint TxFIFO depth
+
+    static constexpr uint32_t OTG_HS_DIEPTXF7_RESET_VALUE = 0x2000400; // Reset value
+    typedef bit_field_t<0, 0xffff> OTG_HS_DIEPTXF7_INEPTXSA; // IN endpoint FIFOx transmit RAM start address
+    typedef bit_field_t<16, 0xffff> OTG_HS_DIEPTXF7_INEPTXFD; // IN endpoint TxFIFO depth
+
+    static constexpr uint32_t OTG_HS_DIEPTXF8_RESET_VALUE = 0x2000400; // Reset value
+    typedef bit_field_t<0, 0xffff> OTG_HS_DIEPTXF8_INEPTXSA; // IN endpoint FIFOx transmit RAM start address
+    typedef bit_field_t<16, 0xffff> OTG_HS_DIEPTXF8_INEPTXFD; // IN endpoint TxFIFO depth
+};
+
 // OTG1_HS_HOST: USB 1 on the go high speed
 
 struct stm32h723_otg1_hs_host_t
@@ -2071,6 +2320,22 @@ struct peripheral_t<STM32H723, OTG2_HS_DEVICE>
 };
 
 template<>
+struct peripheral_t<STM32H725, OTG1_HS_DEVICE>
+{
+    static constexpr periph_t P = OTG1_HS_DEVICE;
+    using T = stm32h723_otg1_hs_device_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, OTG2_HS_DEVICE>
+{
+    static constexpr periph_t P = OTG2_HS_DEVICE;
+    using T = stm32h723_otg1_hs_device_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, OTG1_HS_DEVICE>
 {
     static constexpr periph_t P = OTG1_HS_DEVICE;
@@ -2311,6 +2576,14 @@ struct peripheral_t<STM32H723, OTG1_HS_GLOBAL>
 };
 
 template<>
+struct peripheral_t<STM32H725, OTG1_HS_GLOBAL>
+{
+    static constexpr periph_t P = OTG1_HS_GLOBAL;
+    using T = stm32h723_otg1_hs_global_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, OTG1_HS_GLOBAL>
 {
     static constexpr periph_t P = OTG1_HS_GLOBAL;
@@ -2328,22 +2601,6 @@ struct peripheral_t<STM32H742x, OTG1_HS_GLOBAL>
 
 template<>
 struct peripheral_t<STM32H742x, OTG2_HS_GLOBAL>
-{
-    static constexpr periph_t P = OTG2_HS_GLOBAL;
-    using T = stm32h723_otg1_hs_global_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H743, OTG1_HS_GLOBAL>
-{
-    static constexpr periph_t P = OTG1_HS_GLOBAL;
-    using T = stm32h723_otg1_hs_global_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H743, OTG2_HS_GLOBAL>
 {
     static constexpr periph_t P = OTG2_HS_GLOBAL;
     using T = stm32h723_otg1_hs_global_t;
@@ -2424,22 +2681,6 @@ struct peripheral_t<STM32H750x, OTG1_HS_GLOBAL>
 
 template<>
 struct peripheral_t<STM32H750x, OTG2_HS_GLOBAL>
-{
-    static constexpr periph_t P = OTG2_HS_GLOBAL;
-    using T = stm32h723_otg1_hs_global_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H753, OTG1_HS_GLOBAL>
-{
-    static constexpr periph_t P = OTG1_HS_GLOBAL;
-    using T = stm32h723_otg1_hs_global_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H753, OTG2_HS_GLOBAL>
 {
     static constexpr periph_t P = OTG2_HS_GLOBAL;
     using T = stm32h723_otg1_hs_global_t;
@@ -2535,6 +2776,38 @@ struct peripheral_t<STM32H7B3x, OTG1_HS_GLOBAL>
 };
 
 template<>
+struct peripheral_t<STM32H743, OTG1_HS_GLOBAL>
+{
+    static constexpr periph_t P = OTG1_HS_GLOBAL;
+    using T = stm32h743_otg1_hs_global_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H743, OTG2_HS_GLOBAL>
+{
+    static constexpr periph_t P = OTG2_HS_GLOBAL;
+    using T = stm32h743_otg1_hs_global_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H753, OTG1_HS_GLOBAL>
+{
+    static constexpr periph_t P = OTG1_HS_GLOBAL;
+    using T = stm32h743_otg1_hs_global_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H753, OTG2_HS_GLOBAL>
+{
+    static constexpr periph_t P = OTG2_HS_GLOBAL;
+    using T = stm32h743_otg1_hs_global_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H723, OTG1_HS_HOST>
 {
     static constexpr periph_t P = OTG1_HS_HOST;
@@ -2544,6 +2817,22 @@ struct peripheral_t<STM32H723, OTG1_HS_HOST>
 
 template<>
 struct peripheral_t<STM32H723, OTG2_HS_HOST>
+{
+    static constexpr periph_t P = OTG2_HS_HOST;
+    using T = stm32h723_otg1_hs_host_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, OTG1_HS_HOST>
+{
+    static constexpr periph_t P = OTG1_HS_HOST;
+    using T = stm32h723_otg1_hs_host_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, OTG2_HS_HOST>
 {
     static constexpr periph_t P = OTG2_HS_HOST;
     using T = stm32h723_otg1_hs_host_t;
@@ -2792,6 +3081,22 @@ struct peripheral_t<STM32H723, OTG1_HS_PWRCLK>
 
 template<>
 struct peripheral_t<STM32H723, OTG2_HS_PWRCLK>
+{
+    static constexpr periph_t P = OTG2_HS_PWRCLK;
+    using T = stm32h723_otg1_hs_pwrclk_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, OTG1_HS_PWRCLK>
+{
+    static constexpr periph_t P = OTG1_HS_PWRCLK;
+    using T = stm32h723_otg1_hs_pwrclk_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, OTG2_HS_PWRCLK>
 {
     static constexpr periph_t P = OTG2_HS_PWRCLK;
     using T = stm32h723_otg1_hs_pwrclk_t;

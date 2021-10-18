@@ -901,7 +901,8 @@ struct stm32g431xx_tim16_t
     volatile uint32_t TISEL; // TIM timer input selection register
     volatile uint32_t AF1; // TIM alternate function option register 1
     volatile uint32_t AF2; // TIM alternate function option register 2
-    reserved_t<0xdd> _0x68;
+    volatile uint32_t OR1; // TIM option register 1
+    reserved_t<0xdc> _0x6c;
     volatile uint32_t DCR; // DMA control register
     volatile uint32_t DMAR; // DMA address for full transfer
 
@@ -1018,6 +1019,9 @@ struct stm32g431xx_tim16_t
 
     static constexpr uint32_t AF2_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<16, 0x7> AF2_OCRSEL; // OCREF_CLR source selection
+
+    static constexpr uint32_t OR1_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t OR1_HSE32EN = 0x1; // HSE Divided by 32 enable
 
 
     static constexpr uint32_t DCR_RESET_VALUE = 0x0; // Reset value

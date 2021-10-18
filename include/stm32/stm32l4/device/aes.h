@@ -119,14 +119,6 @@ struct peripheral_t<STM32L4x5, AES>
     static T& V;
 };
 
-template<>
-struct peripheral_t<STM32L4x6, AES>
-{
-    static constexpr periph_t P = AES;
-    using T = stm32l476_aes_t;
-    static T& V;
-};
-
 using aes_t = peripheral_t<svd, AES>;
 
 template<int INST> struct aes_traits {};

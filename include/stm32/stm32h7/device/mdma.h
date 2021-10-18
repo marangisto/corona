@@ -3233,6 +3233,14 @@ struct peripheral_t<STM32H723, MDMA>
 };
 
 template<>
+struct peripheral_t<STM32H725, MDMA>
+{
+    static constexpr periph_t P = MDMA;
+    using T = stm32h723_mdma_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, MDMA>
 {
     static constexpr periph_t P = MDMA;

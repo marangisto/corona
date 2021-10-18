@@ -6,6 +6,254 @@
 //
 ///
 
+// ADC: Analog to Digital Converter
+
+struct stm32wb10_cm4_adc_t
+{
+    volatile uint32_t ISR; // ADC interrupt and status register
+    volatile uint32_t IER; // ADC interrupt enable register
+    volatile uint32_t CR; // ADC control register
+    volatile uint32_t CFGR1; // ADC configuration register 1
+    volatile uint32_t CFGR2; // ADC configuration register 2
+    volatile uint32_t SMPR; // ADC sampling time register
+    reserved_t<0x2> _0x18;
+    volatile uint32_t ADC_TR; // ADC watchdog threshold register
+    reserved_t<0x1> _0x24;
+    volatile uint32_t CHSELR0; // channel selection register
+    reserved_t<0x5> _0x2c;
+    volatile uint32_t DR; // ADC data register
+    reserved_t<0x1c> _0x44;
+    volatile uint32_t CALFACT; // ADC Calibration factor
+    reserved_t<0x94> _0xb8;
+    volatile uint32_t CCR; // ADC common configuration register
+
+    static constexpr uint32_t ISR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t ISR_ADRDY = 0x1; // ADRDY
+    static constexpr uint32_t ISR_EOSMP = 0x2; // EOSMP
+    static constexpr uint32_t ISR_EOC = 0x4; // EOC
+    static constexpr uint32_t ISR_EOS = 0x8; // EOS
+    static constexpr uint32_t ISR_OVR = 0x10; // OVR
+    static constexpr uint32_t ISR_AWD1 = 0x80; // AWD1
+    static constexpr uint32_t ISR_AWD2 = 0x100; // AWD2
+    static constexpr uint32_t ISR_AWD3 = 0x200; // AWD3
+    static constexpr uint32_t ISR_EOCAL = 0x800; // EOCAL
+    static constexpr uint32_t ISR_CCRDY = 0x2000; // CCRDY
+
+    static constexpr uint32_t IER_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t IER_ADRDYIE = 0x1; // ADRDYIE
+    static constexpr uint32_t IER_EOSMPIE = 0x2; // EOSMPIE
+    static constexpr uint32_t IER_EOCIE = 0x4; // EOCIE
+    static constexpr uint32_t IER_EOSIE = 0x8; // EOSIE
+    static constexpr uint32_t IER_OVRIE = 0x10; // OVRIE
+    static constexpr uint32_t IER_AWD1IE = 0x80; // AWD1IE
+    static constexpr uint32_t IER_AWD2IE = 0x100; // AWD2IE
+    static constexpr uint32_t IER_AWD3IE = 0x200; // AWD3IE
+    static constexpr uint32_t IER_EOCALIE = 0x800; // EOCALIE
+    static constexpr uint32_t IER_CCRDYIE = 0x2000; // CCRDYIE
+
+    static constexpr uint32_t CR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t CR_ADEN = 0x1; // ADEN
+    static constexpr uint32_t CR_ADDIS = 0x2; // ADDIS
+    static constexpr uint32_t CR_ADSTART = 0x4; // ADSTART
+    static constexpr uint32_t CR_ADSTP = 0x10; // ADSTP
+    static constexpr uint32_t CR_ADVREGEN = 0x10000000; // ADVREGEN
+    static constexpr uint32_t CR_ADCAL = 0x80000000; // ADCAL
+
+    static constexpr uint32_t CFGR1_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t CFGR1_DMAEN = 0x1; // DMAEN
+    static constexpr uint32_t CFGR1_DMACFG = 0x2; // DMACFG
+    static constexpr uint32_t CFGR1_SCANDIR = 0x4; // SCANDIR
+    typedef bit_field_t<3, 0x3> CFGR1_RES; // RES
+    static constexpr uint32_t CFGR1_ALIGN = 0x20; // ALIGN
+    typedef bit_field_t<6, 0x7> CFGR1_EXTSEL; // EXTSEL
+    typedef bit_field_t<10, 0x3> CFGR1_EXTEN; // EXTEN
+    static constexpr uint32_t CFGR1_OVRMOD = 0x1000; // OVRMOD
+    static constexpr uint32_t CFGR1_CONT = 0x2000; // CONT
+    static constexpr uint32_t CFGR1_WAIT = 0x4000; // WAIT
+    static constexpr uint32_t CFGR1_AUTOFF = 0x8000; // AUTOFF
+    static constexpr uint32_t CFGR1_DISCEN = 0x10000; // DISCEN
+    static constexpr uint32_t CFGR1_CHSELRMOD = 0x200000; // CHSELRMOD
+    static constexpr uint32_t CFGR1_AWD1SGL = 0x400000; // AWD1SGL
+    static constexpr uint32_t CFGR1_AWD1EN = 0x800000; // AWD1EN
+    typedef bit_field_t<26, 0x1f> CFGR1_AWDCH; // AWD1CH
+
+    static constexpr uint32_t CFGR2_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t CFGR2_LFTRIG = 0x20000000; // LFTRIG
+    typedef bit_field_t<30, 0x3> CFGR2_CKMODE; // CKMODE
+
+    static constexpr uint32_t SMPR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x7> SMPR_SMP1; // SMP1
+    typedef bit_field_t<4, 0x7> SMPR_SMP2; // SMP2
+    typedef bit_field_t<8, 0x7ffff> SMPR_SMPSEL; // SMPSEL
+
+
+    static constexpr uint32_t ADC_TR_RESET_VALUE = 0xfff0000; // Reset value
+    typedef bit_field_t<0, 0xfff> ADC_TR_LT1; // LT1
+    typedef bit_field_t<16, 0xfff> ADC_TR_HT1; // HT1
+
+
+    static constexpr uint32_t CHSELR0_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x7ffff> CHSELR0_CHSEL; // CHSEL
+    typedef bit_field_t<0, 0xf> CHSELR0_SQ1; // SQ1
+    typedef bit_field_t<4, 0xf> CHSELR0_SQ2; // SQ2
+    typedef bit_field_t<8, 0xf> CHSELR0_SQ3; // SQ3
+    typedef bit_field_t<12, 0xf> CHSELR0_SQ4; // SQ4
+    typedef bit_field_t<16, 0xf> CHSELR0_SQ5; // SQ5
+    typedef bit_field_t<20, 0xf> CHSELR0_SQ6; // SQ6
+    typedef bit_field_t<24, 0xf> CHSELR0_SQ7; // SQ7
+    typedef bit_field_t<28, 0xf> CHSELR0_SQ8; // SQ8
+
+
+    static constexpr uint32_t DR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffff> DR_DATA; // DATA
+
+
+    static constexpr uint32_t CALFACT_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x7f> CALFACT_CALFACT; // CALFACT
+
+
+    static constexpr uint32_t CCR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<18, 0xf> CCR_PRESC; // PRESC
+    static constexpr uint32_t CCR_VREFEN = 0x400000; // VREFEN
+    static constexpr uint32_t CCR_TSEN = 0x800000; // TSEN
+    static constexpr uint32_t CCR_VBATEN = 0x1000000; // VBATEN
+};
+
+// ADC: Analog to Digital Converter
+
+struct stm32wb15_cm4_adc_t
+{
+    volatile uint32_t ISR; // ADC interrupt and status register
+    volatile uint32_t IER; // ADC interrupt enable register
+    volatile uint32_t CR; // ADC control register
+    volatile uint32_t CFGR1; // ADC configuration register 1
+    volatile uint32_t CFGR2; // ADC configuration register 2
+    volatile uint32_t SMPR; // ADC sampling time register
+    reserved_t<0x2> _0x18;
+    volatile uint32_t AWD1TR; // ADC watchdog threshold register
+    volatile uint32_t AWD2TR; // ADC watchdog threshold register
+    volatile uint32_t CHSELR0; // channel selection register
+    volatile uint32_t AWD3TR; // ADC watchdog threshold register
+    reserved_t<0x4> _0x30;
+    volatile uint32_t DR; // ADC data register
+    reserved_t<0x17> _0x44;
+    volatile uint32_t AWD2CR; // ADC Analog Watchdog 2 Configuration register
+    volatile uint32_t AWD3CR; // ADC Analog Watchdog 3 Configuration register
+    reserved_t<0x3> _0xa8;
+    volatile uint32_t CALFACT; // ADC Calibration factor
+    reserved_t<0x94> _0xb8;
+    volatile uint32_t CCR; // ADC common configuration register
+
+    static constexpr uint32_t ISR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t ISR_ADRDY = 0x1; // ADRDY
+    static constexpr uint32_t ISR_EOSMP = 0x2; // EOSMP
+    static constexpr uint32_t ISR_EOC = 0x4; // EOC
+    static constexpr uint32_t ISR_EOS = 0x8; // EOS
+    static constexpr uint32_t ISR_OVR = 0x10; // OVR
+    static constexpr uint32_t ISR_AWD1 = 0x80; // AWD1
+    static constexpr uint32_t ISR_AWD2 = 0x100; // AWD2
+    static constexpr uint32_t ISR_AWD3 = 0x200; // AWD3
+    static constexpr uint32_t ISR_EOCAL = 0x800; // EOCAL
+    static constexpr uint32_t ISR_CCRDY = 0x2000; // CCRDY
+
+    static constexpr uint32_t IER_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t IER_ADRDYIE = 0x1; // ADRDYIE
+    static constexpr uint32_t IER_EOSMPIE = 0x2; // EOSMPIE
+    static constexpr uint32_t IER_EOCIE = 0x4; // EOCIE
+    static constexpr uint32_t IER_EOSIE = 0x8; // EOSIE
+    static constexpr uint32_t IER_OVRIE = 0x10; // OVRIE
+    static constexpr uint32_t IER_AWD1IE = 0x80; // AWD1IE
+    static constexpr uint32_t IER_AWD2IE = 0x100; // AWD2IE
+    static constexpr uint32_t IER_AWD3IE = 0x200; // AWD3IE
+    static constexpr uint32_t IER_EOCALIE = 0x800; // EOCALIE
+    static constexpr uint32_t IER_CCRDYIE = 0x2000; // CCRDYIE
+
+    static constexpr uint32_t CR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t CR_ADEN = 0x1; // ADEN
+    static constexpr uint32_t CR_ADDIS = 0x2; // ADDIS
+    static constexpr uint32_t CR_ADSTART = 0x4; // ADSTART
+    static constexpr uint32_t CR_ADSTP = 0x10; // ADSTP
+    static constexpr uint32_t CR_ADVREGEN = 0x10000000; // ADVREGEN
+    static constexpr uint32_t CR_ADCAL = 0x80000000; // ADCAL
+
+    static constexpr uint32_t CFGR1_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t CFGR1_DMAEN = 0x1; // DMAEN
+    static constexpr uint32_t CFGR1_DMACFG = 0x2; // DMACFG
+    static constexpr uint32_t CFGR1_SCANDIR = 0x4; // SCANDIR
+    typedef bit_field_t<3, 0x3> CFGR1_RES; // RES
+    static constexpr uint32_t CFGR1_ALIGN = 0x20; // ALIGN
+    typedef bit_field_t<6, 0x7> CFGR1_EXTSEL; // EXTSEL
+    typedef bit_field_t<10, 0x3> CFGR1_EXTEN; // EXTEN
+    static constexpr uint32_t CFGR1_OVRMOD = 0x1000; // OVRMOD
+    static constexpr uint32_t CFGR1_CONT = 0x2000; // CONT
+    static constexpr uint32_t CFGR1_WAIT = 0x4000; // WAIT
+    static constexpr uint32_t CFGR1_AUTOFF = 0x8000; // AUTOFF
+    static constexpr uint32_t CFGR1_DISCEN = 0x10000; // DISCEN
+    static constexpr uint32_t CFGR1_CHSELRMOD = 0x200000; // CHSELRMOD
+    static constexpr uint32_t CFGR1_AWD1SGL = 0x400000; // AWD1SGL
+    static constexpr uint32_t CFGR1_AWD1EN = 0x800000; // AWD1EN
+    typedef bit_field_t<26, 0x1f> CFGR1_AWDCH; // AWD1CH
+
+    static constexpr uint32_t CFGR2_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t CFGR2_OVSE = 0x1; // OVSE
+    typedef bit_field_t<2, 0x7> CFGR2_OVSR; // OVSR
+    typedef bit_field_t<5, 0xf> CFGR2_OVSS; // OVSS
+    static constexpr uint32_t CFGR2_TOVS = 0x200; // TOVS
+    static constexpr uint32_t CFGR2_LFTRIG = 0x20000000; // LFTRIG
+    typedef bit_field_t<30, 0x3> CFGR2_CKMODE; // CKMODE
+
+    static constexpr uint32_t SMPR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x7> SMPR_SMP1; // SMP1
+    typedef bit_field_t<4, 0x7> SMPR_SMP2; // SMP2
+    typedef bit_field_t<8, 0x7ffff> SMPR_SMPSEL; // SMPSEL
+
+
+    static constexpr uint32_t AWD1TR_RESET_VALUE = 0xfff0000; // Reset value
+    typedef bit_field_t<0, 0xfff> AWD1TR_LT1; // LT1
+    typedef bit_field_t<16, 0xfff> AWD1TR_HT1; // HT1
+
+    static constexpr uint32_t AWD2TR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xfff> AWD2TR_LT2; // LT2
+    typedef bit_field_t<16, 0xfff> AWD2TR_HT2; // HT2
+
+    static constexpr uint32_t CHSELR0_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x7ffff> CHSELR0_CHSEL; // CHSEL
+    typedef bit_field_t<0, 0xf> CHSELR0_SQ1; // SQ1
+    typedef bit_field_t<4, 0xf> CHSELR0_SQ2; // SQ2
+    typedef bit_field_t<8, 0xf> CHSELR0_SQ3; // SQ3
+    typedef bit_field_t<12, 0xf> CHSELR0_SQ4; // SQ4
+    typedef bit_field_t<16, 0xf> CHSELR0_SQ5; // SQ5
+    typedef bit_field_t<20, 0xf> CHSELR0_SQ6; // SQ6
+    typedef bit_field_t<24, 0xf> CHSELR0_SQ7; // SQ7
+    typedef bit_field_t<28, 0xf> CHSELR0_SQ8; // SQ8
+
+    static constexpr uint32_t AWD3TR_RESET_VALUE = 0xfff0000; // Reset value
+    typedef bit_field_t<0, 0xfff> AWD3TR_LT3; // LT3
+    typedef bit_field_t<16, 0xfff> AWD3TR_HT3; // HT3
+
+
+    static constexpr uint32_t DR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0xffff> DR_DATA; // DATA
+
+
+    static constexpr uint32_t AWD2CR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x7ffff> AWD2CR_AWD2CH; // AWD2CH
+
+    static constexpr uint32_t AWD3CR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x7ffff> AWD3CR_AWD3CH; // AWD3CH
+
+
+    static constexpr uint32_t CALFACT_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x7f> CALFACT_CALFACT; // CALFACT
+
+
+    static constexpr uint32_t CCR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<18, 0xf> CCR_PRESC; // PRESC
+    static constexpr uint32_t CCR_VREFEN = 0x400000; // VREFEN
+    static constexpr uint32_t CCR_TSEN = 0x800000; // TSEN
+    static constexpr uint32_t CCR_VBATEN = 0x1000000; // VBATEN
+};
+
 // ADC: Analog to Digital Converter instance 1
 
 struct stm32wb30_cm4_adc_t
@@ -248,6 +496,22 @@ struct stm32wb30_cm4_adc_t
     static constexpr uint32_t CCR_VREFEN = 0x400000; // VREFEN
     typedef bit_field_t<18, 0xf> CCR_PRESC; // ADC prescaler
     typedef bit_field_t<16, 0x3> CCR_CKMODE; // ADC clock mode
+};
+
+template<>
+struct peripheral_t<STM32WB10_CM4, ADC1>
+{
+    static constexpr periph_t P = ADC1;
+    using T = stm32wb10_cm4_adc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32WB15_CM4, ADC1>
+{
+    static constexpr periph_t P = ADC1;
+    using T = stm32wb15_cm4_adc_t;
+    static T& V;
 };
 
 template<>

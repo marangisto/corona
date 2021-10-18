@@ -243,14 +243,6 @@ struct peripheral_t<STM32L496, SWPMI1>
 };
 
 template<>
-struct peripheral_t<STM32L4x6, SWPMI1>
-{
-    static constexpr periph_t P = SWPMI1;
-    using T = stm32l476_swpmi1_t;
-    static T& V;
-};
-
-template<>
 struct peripheral_t<STM32L4x1, SWPMI1>
 {
     static constexpr periph_t P = SWPMI1;

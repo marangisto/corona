@@ -151,6 +151,7 @@ enum mcu_t
     , STM32G484CEUx
     , STM32G484METx
     , STM32G484MEYx
+    , STM32G484PEIx
     , STM32G484QETx
     , STM32G484RETx
     , STM32G484VEHx
@@ -1475,6 +1476,14 @@ template<> struct mcu_traits<STM32G484METx>
 };
 
 template<> struct mcu_traits<STM32G484MEYx>
+{
+    static constexpr family_t family = STM32G4;
+    static constexpr svd_t svd = STM32G484xx;
+    static constexpr gpio_conf_t gpio_conf = STM32G47x;
+    static constexpr unsigned frequency = 170;
+};
+
+template<> struct mcu_traits<STM32G484PEIx>
 {
     static constexpr family_t family = STM32G4;
     static constexpr svd_t svd = STM32G484xx;

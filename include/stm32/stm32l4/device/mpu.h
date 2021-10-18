@@ -102,12 +102,4 @@ struct peripheral_t<STM32L4x5, MPU>
     static T& V;
 };
 
-template<>
-struct peripheral_t<STM32L4x6, MPU>
-{
-    static constexpr periph_t P = MPU;
-    using T = stm32l412_mpu_t;
-    static T& V;
-};
-
 using mpu_t = peripheral_t<svd, MPU>;

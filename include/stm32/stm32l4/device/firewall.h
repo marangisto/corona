@@ -100,14 +100,6 @@ struct peripheral_t<STM32L4x5, FIREWALL>
     static T& V;
 };
 
-template<>
-struct peripheral_t<STM32L4x6, FIREWALL>
-{
-    static constexpr periph_t P = FIREWALL;
-    using T = stm32l412_firewall_t;
-    static T& V;
-};
-
 using firewall_t = peripheral_t<svd, FIREWALL>;
 
 template<int INST> struct firewall_traits {};

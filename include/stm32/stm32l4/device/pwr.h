@@ -40,16 +40,15 @@ struct stm32l412_pwr_t
 
     static constexpr uint32_t CR2_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t CR2_USV = 0x400; // VDDUSB USB supply valid
-    static constexpr uint32_t CR2_IOSV = 0x200; // VDDIO2 Independent I/Os supply valid
     static constexpr uint32_t CR2_PVME4 = 0x80; // Peripheral voltage monitoring 4 enable: VDDA vs. 2.2V
     static constexpr uint32_t CR2_PVME3 = 0x40; // Peripheral voltage monitoring 3 enable: VDDA vs. 1.62V
-    static constexpr uint32_t CR2_PVME2 = 0x20; // Peripheral voltage monitoring 2 enable: VDDIO2 vs. 0.9V
     static constexpr uint32_t CR2_PVME1 = 0x10; // Peripheral voltage monitoring 1 enable: VDDUSB vs. 1.2V
     typedef bit_field_t<1, 0x7> CR2_PLS; // Power voltage detector level selection
     static constexpr uint32_t CR2_PVDE = 0x1; // Power voltage detector enable
 
     static constexpr uint32_t CR3_RESET_VALUE = 0x8000; // Reset value
-    static constexpr uint32_t CR3_EWF = 0x8000; // Enable internal wakeup line
+    static constexpr uint32_t CR3_EIWUL = 0x8000; // Enable internal wakeup line
+    static constexpr uint32_t CR3_ENULP = 0x800; // Enable ULP sampling of BOR and PVD
     static constexpr uint32_t CR3_APC = 0x400; // Apply pull-up and pull-down configuration
     static constexpr uint32_t CR3_RRS = 0x100; // SRAM2 retention in Standby mode
     static constexpr uint32_t CR3_EWUP5 = 0x10; // Enable Wakeup pin WKUP5
@@ -57,9 +56,9 @@ struct stm32l412_pwr_t
     static constexpr uint32_t CR3_EWUP3 = 0x4; // Enable Wakeup pin WKUP3
     static constexpr uint32_t CR3_EWUP2 = 0x2; // Enable Wakeup pin WKUP2
     static constexpr uint32_t CR3_EWUP1 = 0x1; // Enable Wakeup pin WKUP1
-    static constexpr uint32_t CR3_ENULP = 0x800; // Enable ULP sampling of BOR and PVD
 
     static constexpr uint32_t CR4_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t CR4_EXT_SMPS_ON = 0x2000; // External SMPS On
     static constexpr uint32_t CR4_VBRS = 0x200; // VBAT battery charging resistor selection
     static constexpr uint32_t CR4_VBE = 0x100; // VBAT battery charging enable
     static constexpr uint32_t CR4_WP5 = 0x10; // Wakeup pin WKUP5 polarity
@@ -70,17 +69,17 @@ struct stm32l412_pwr_t
 
     static constexpr uint32_t SR1_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t SR1_WUFI = 0x8000; // Wakeup flag internal
-    static constexpr uint32_t SR1_CSBF = 0x100; // Standby flag
-    static constexpr uint32_t SR1_CWUF5 = 0x10; // Wakeup flag 5
-    static constexpr uint32_t SR1_CWUF4 = 0x8; // Wakeup flag 4
-    static constexpr uint32_t SR1_CWUF3 = 0x4; // Wakeup flag 3
-    static constexpr uint32_t SR1_CWUF2 = 0x2; // Wakeup flag 2
-    static constexpr uint32_t SR1_CWUF1 = 0x1; // Wakeup flag 1
+    static constexpr uint32_t SR1_EXT_SMPS_RDY = 0x2000; // External SMPS Ready
+    static constexpr uint32_t SR1_SBF = 0x100; // Standby flag
+    static constexpr uint32_t SR1_WUF5 = 0x10; // Wakeup flag 5
+    static constexpr uint32_t SR1_WUF4 = 0x8; // Wakeup flag 4
+    static constexpr uint32_t SR1_WUF3 = 0x4; // Wakeup flag 3
+    static constexpr uint32_t SR1_WUF2 = 0x2; // Wakeup flag 2
+    static constexpr uint32_t SR1_WUF1 = 0x1; // Wakeup flag 1
 
     static constexpr uint32_t SR2_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t SR2_PVMO4 = 0x8000; // Peripheral voltage monitoring output: VDDA vs. 2.2 V
     static constexpr uint32_t SR2_PVMO3 = 0x4000; // Peripheral voltage monitoring output: VDDA vs. 1.62 V
-    static constexpr uint32_t SR2_PVMO2 = 0x2000; // Peripheral voltage monitoring output: VDDIO2 vs. 0.9 V
     static constexpr uint32_t SR2_PVMO1 = 0x1000; // Peripheral voltage monitoring output: VDDUSB vs. 1.2 V
     static constexpr uint32_t SR2_PVDO = 0x800; // Power voltage detector output
     static constexpr uint32_t SR2_VOSF = 0x400; // Voltage scaling flag
@@ -88,17 +87,16 @@ struct stm32l412_pwr_t
     static constexpr uint32_t SR2_REGLPS = 0x100; // Low-power regulator started
 
     static constexpr uint32_t SCR_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t SCR_SBF = 0x100; // Clear standby flag
-    static constexpr uint32_t SCR_WUF5 = 0x10; // Clear wakeup flag 5
-    static constexpr uint32_t SCR_WUF4 = 0x8; // Clear wakeup flag 4
-    static constexpr uint32_t SCR_WUF3 = 0x4; // Clear wakeup flag 3
-    static constexpr uint32_t SCR_WUF2 = 0x2; // Clear wakeup flag 2
-    static constexpr uint32_t SCR_WUF1 = 0x1; // Clear wakeup flag 1
+    static constexpr uint32_t SCR_CSBF = 0x100; // Clear standby flag
+    static constexpr uint32_t SCR_CWUF5 = 0x10; // Clear wakeup flag 5
+    static constexpr uint32_t SCR_CWUF4 = 0x8; // Clear wakeup flag 4
+    static constexpr uint32_t SCR_CWUF3 = 0x4; // Clear wakeup flag 3
+    static constexpr uint32_t SCR_CWUF2 = 0x2; // Clear wakeup flag 2
+    static constexpr uint32_t SCR_CWUF1 = 0x1; // Clear wakeup flag 1
 
 
     static constexpr uint32_t PUCRA_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t PUCRA_PU15 = 0x8000; // Port A pull-up bit y (y=0..15)
-    static constexpr uint32_t PUCRA_PU14 = 0x4000; // Port A pull-up bit y (y=0..15)
     static constexpr uint32_t PUCRA_PU13 = 0x2000; // Port A pull-up bit y (y=0..15)
     static constexpr uint32_t PUCRA_PU12 = 0x1000; // Port A pull-up bit y (y=0..15)
     static constexpr uint32_t PUCRA_PU11 = 0x800; // Port A pull-up bit y (y=0..15)
@@ -115,9 +113,6 @@ struct stm32l412_pwr_t
     static constexpr uint32_t PUCRA_PU0 = 0x1; // Port A pull-up bit y (y=0..15)
 
     static constexpr uint32_t PDCRA_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t PDCRA_PD15 = 0x8000; // Port A pull-down bit y (y=0..15)
-    static constexpr uint32_t PDCRA_PD14 = 0x4000; // Port A pull-down bit y (y=0..15)
-    static constexpr uint32_t PDCRA_PD13 = 0x2000; // Port A pull-down bit y (y=0..15)
     static constexpr uint32_t PDCRA_PD12 = 0x1000; // Port A pull-down bit y (y=0..15)
     static constexpr uint32_t PDCRA_PD11 = 0x800; // Port A pull-down bit y (y=0..15)
     static constexpr uint32_t PDCRA_PD10 = 0x400; // Port A pull-down bit y (y=0..15)
@@ -162,7 +157,6 @@ struct stm32l412_pwr_t
     static constexpr uint32_t PDCRB_PD7 = 0x80; // Port B pull-down bit y (y=0..15)
     static constexpr uint32_t PDCRB_PD6 = 0x40; // Port B pull-down bit y (y=0..15)
     static constexpr uint32_t PDCRB_PD5 = 0x20; // Port B pull-down bit y (y=0..15)
-    static constexpr uint32_t PDCRB_PD4 = 0x10; // Port B pull-down bit y (y=0..15)
     static constexpr uint32_t PDCRB_PD3 = 0x8; // Port B pull-down bit y (y=0..15)
     static constexpr uint32_t PDCRB_PD2 = 0x4; // Port B pull-down bit y (y=0..15)
     static constexpr uint32_t PDCRB_PD1 = 0x2; // Port B pull-down bit y (y=0..15)
@@ -278,10 +272,12 @@ struct stm32l412_pwr_t
 
 
     static constexpr uint32_t PUCRH_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t PUCRH_PU3 = 0x8; // Port H pull-up bit y (y=0..1)
     static constexpr uint32_t PUCRH_PU1 = 0x2; // Port H pull-up bit y (y=0..1)
     static constexpr uint32_t PUCRH_PU0 = 0x1; // Port H pull-up bit y (y=0..1)
 
     static constexpr uint32_t PDCRH_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t PDCRH_PD3 = 0x8; // Port H pull-down bit y (y=0..1)
     static constexpr uint32_t PDCRH_PD1 = 0x2; // Port H pull-down bit y (y=0..1)
     static constexpr uint32_t PDCRH_PD0 = 0x1; // Port H pull-down bit y (y=0..1)
 };
@@ -648,6 +644,14 @@ struct peripheral_t<STM32L412, PWR>
 };
 
 template<>
+struct peripheral_t<STM32L4x2, PWR>
+{
+    static constexpr periph_t P = PWR;
+    using T = stm32l412_pwr_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L476, PWR>
 {
     static constexpr periph_t P = PWR;
@@ -672,14 +676,6 @@ struct peripheral_t<STM32L4x1, PWR>
 };
 
 template<>
-struct peripheral_t<STM32L4x2, PWR>
-{
-    static constexpr periph_t P = PWR;
-    using T = stm32l476_pwr_t;
-    static T& V;
-};
-
-template<>
 struct peripheral_t<STM32L4x3, PWR>
 {
     static constexpr periph_t P = PWR;
@@ -689,14 +685,6 @@ struct peripheral_t<STM32L4x3, PWR>
 
 template<>
 struct peripheral_t<STM32L4x5, PWR>
-{
-    static constexpr periph_t P = PWR;
-    using T = stm32l476_pwr_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32L4x6, PWR>
 {
     static constexpr periph_t P = PWR;
     using T = stm32l476_pwr_t;

@@ -8,7 +8,64 @@
 
 // PKA: PKA
 
+struct stm32wb10_cm4_pka_t
+{
+    volatile uint32_t CR; // Control register
+    volatile uint32_t SR; // PKA status register
+    volatile uint32_t CLRFR; // PKA clear flag register
+
+    static constexpr uint32_t CR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t CR_ADDRERRIE = 0x100000; // Address error interrupt enable
+    static constexpr uint32_t CR_RAMERRIE = 0x80000; // RAM error interrupt enable
+    static constexpr uint32_t CR_PROCENDIE = 0x20000; // End of operation interrupt enable
+    typedef bit_field_t<8, 0x3f> CR_MODE; // PKA Operation Mode
+    static constexpr uint32_t CR_SECLVL = 0x4; // Security Enable
+    static constexpr uint32_t CR_START = 0x2; // Start the operation
+    static constexpr uint32_t CR_EN = 0x1; // Peripheral Enable
+
+    static constexpr uint32_t SR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t SR_ADDRERRF = 0x100000; // Address error flag
+    static constexpr uint32_t SR_RAMERRF = 0x80000; // RAM error flag
+    static constexpr uint32_t SR_PROCENDF = 0x20000; // PKA End of Operation flag
+    static constexpr uint32_t SR_BUSY = 0x10000; // PKA Operation in progress
+
+    static constexpr uint32_t CLRFR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t CLRFR_ADDRERRFC = 0x100000; // Clear Address error flag
+    static constexpr uint32_t CLRFR_RAMERRFC = 0x80000; // Clear RAM error flag
+    static constexpr uint32_t CLRFR_PROCENDFC = 0x20000; // Clear PKA End of Operation flag
+};
+
+// PKA: PKA
+
 struct stm32wb30_cm4_pka_t
+{
+    volatile uint32_t CR; // Control register
+    volatile uint32_t SR; // PKA status register
+    volatile uint32_t CLRFR; // PKA clear flag register
+
+    static constexpr uint32_t CR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t CR_ADDRERRIE = 0x100000; // Address error interrupt enable
+    static constexpr uint32_t CR_RAMERRIE = 0x80000; // RAM error interrupt enable
+    static constexpr uint32_t CR_PROCENDIE = 0x20000; // End of operation interrupt enable
+    typedef bit_field_t<8, 0x3f> CR_MODE; // PKA Operation Mode
+    static constexpr uint32_t CR_START = 0x2; // Start the operation
+    static constexpr uint32_t CR_EN = 0x1; // Peripheral Enable
+
+    static constexpr uint32_t SR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t SR_ADDRERRF = 0x100000; // Address error flag
+    static constexpr uint32_t SR_RAMERRF = 0x80000; // RAM error flag
+    static constexpr uint32_t SR_PROCENDF = 0x20000; // PKA End of Operation flag
+    static constexpr uint32_t SR_BUSY = 0x10000; // PKA Operation in progress
+
+    static constexpr uint32_t CLRFR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t CLRFR_ADDRERRFC = 0x100000; // Clear Address error flag
+    static constexpr uint32_t CLRFR_RAMERRFC = 0x80000; // Clear RAM error flag
+    static constexpr uint32_t CLRFR_PROCENDFC = 0x20000; // Clear PKA End of Operation flag
+};
+
+// PKA: PKA
+
+struct stm32wb35_cm4_pka_t
 {
     volatile uint32_t CR; // Control register
     volatile uint32_t SR; // PKA status register
@@ -51,15 +108,23 @@ struct stm32wb30_cm4_pka_t
 };
 
 template<>
-struct peripheral_t<STM32WB30_CM4, PKA>
+struct peripheral_t<STM32WB10_CM4, PKA>
 {
     static constexpr periph_t P = PKA;
-    using T = stm32wb30_cm4_pka_t;
+    using T = stm32wb10_cm4_pka_t;
     static T& V;
 };
 
 template<>
-struct peripheral_t<STM32WB35_CM4, PKA>
+struct peripheral_t<STM32WB15_CM4, PKA>
+{
+    static constexpr periph_t P = PKA;
+    using T = stm32wb10_cm4_pka_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32WB30_CM4, PKA>
 {
     static constexpr periph_t P = PKA;
     using T = stm32wb30_cm4_pka_t;
@@ -75,10 +140,18 @@ struct peripheral_t<STM32WB50_CM4, PKA>
 };
 
 template<>
+struct peripheral_t<STM32WB35_CM4, PKA>
+{
+    static constexpr periph_t P = PKA;
+    using T = stm32wb35_cm4_pka_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32WB55_CM4, PKA>
 {
     static constexpr periph_t P = PKA;
-    using T = stm32wb30_cm4_pka_t;
+    using T = stm32wb35_cm4_pka_t;
     static T& V;
 };
 

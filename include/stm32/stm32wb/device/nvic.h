@@ -8,7 +8,7 @@
 
 // NVIC: Nested Vectored Interrupt Controller
 
-struct stm32wb30_cm4_nvic_t
+struct stm32wb10_cm4_nvic_t
 {
     volatile uint32_t ISER0; // Interrupt Set-Enable Register
     volatile uint32_t ISER1; // Interrupt Set-Enable Register
@@ -190,7 +190,7 @@ struct stm32wb30_cm4_nvic_t
 
 // NVIC_STIR: Nested vectored interrupt controller
 
-struct stm32wb30_cm4_nvic_stir_t
+struct stm32wb10_cm4_nvic_stir_t
 {
     volatile uint32_t STIR; // Software trigger interrupt register
 
@@ -199,10 +199,26 @@ struct stm32wb30_cm4_nvic_stir_t
 };
 
 template<>
+struct peripheral_t<STM32WB10_CM4, NVIC>
+{
+    static constexpr periph_t P = NVIC;
+    using T = stm32wb10_cm4_nvic_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32WB15_CM4, NVIC>
+{
+    static constexpr periph_t P = NVIC;
+    using T = stm32wb10_cm4_nvic_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32WB30_CM4, NVIC>
 {
     static constexpr periph_t P = NVIC;
-    using T = stm32wb30_cm4_nvic_t;
+    using T = stm32wb10_cm4_nvic_t;
     static T& V;
 };
 
@@ -210,7 +226,7 @@ template<>
 struct peripheral_t<STM32WB35_CM4, NVIC>
 {
     static constexpr periph_t P = NVIC;
-    using T = stm32wb30_cm4_nvic_t;
+    using T = stm32wb10_cm4_nvic_t;
     static T& V;
 };
 
@@ -218,7 +234,7 @@ template<>
 struct peripheral_t<STM32WB50_CM4, NVIC>
 {
     static constexpr periph_t P = NVIC;
-    using T = stm32wb30_cm4_nvic_t;
+    using T = stm32wb10_cm4_nvic_t;
     static T& V;
 };
 
@@ -226,7 +242,23 @@ template<>
 struct peripheral_t<STM32WB55_CM4, NVIC>
 {
     static constexpr periph_t P = NVIC;
-    using T = stm32wb30_cm4_nvic_t;
+    using T = stm32wb10_cm4_nvic_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32WB10_CM4, NVIC_STIR>
+{
+    static constexpr periph_t P = NVIC_STIR;
+    using T = stm32wb10_cm4_nvic_stir_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32WB15_CM4, NVIC_STIR>
+{
+    static constexpr periph_t P = NVIC_STIR;
+    using T = stm32wb10_cm4_nvic_stir_t;
     static T& V;
 };
 
@@ -234,7 +266,7 @@ template<>
 struct peripheral_t<STM32WB30_CM4, NVIC_STIR>
 {
     static constexpr periph_t P = NVIC_STIR;
-    using T = stm32wb30_cm4_nvic_stir_t;
+    using T = stm32wb10_cm4_nvic_stir_t;
     static T& V;
 };
 
@@ -242,7 +274,7 @@ template<>
 struct peripheral_t<STM32WB35_CM4, NVIC_STIR>
 {
     static constexpr periph_t P = NVIC_STIR;
-    using T = stm32wb30_cm4_nvic_stir_t;
+    using T = stm32wb10_cm4_nvic_stir_t;
     static T& V;
 };
 
@@ -250,7 +282,7 @@ template<>
 struct peripheral_t<STM32WB50_CM4, NVIC_STIR>
 {
     static constexpr periph_t P = NVIC_STIR;
-    using T = stm32wb30_cm4_nvic_stir_t;
+    using T = stm32wb10_cm4_nvic_stir_t;
     static T& V;
 };
 
@@ -258,7 +290,7 @@ template<>
 struct peripheral_t<STM32WB55_CM4, NVIC_STIR>
 {
     static constexpr periph_t P = NVIC_STIR;
-    using T = stm32wb30_cm4_nvic_stir_t;
+    using T = stm32wb10_cm4_nvic_stir_t;
     static T& V;
 };
 

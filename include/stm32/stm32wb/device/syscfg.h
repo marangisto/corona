@@ -8,7 +8,7 @@
 
 // SYSCFG: System configuration controller
 
-struct stm32wb30_cm4_syscfg_t
+struct stm32wb10_cm4_syscfg_t
 {
     volatile uint32_t MEMRMP; // memory remap register
     volatile uint32_t CFGR1; // configuration register 1
@@ -430,10 +430,26 @@ struct stm32wb55_cm4_syscfg_t
 };
 
 template<>
+struct peripheral_t<STM32WB10_CM4, SYSCFG>
+{
+    static constexpr periph_t P = SYSCFG;
+    using T = stm32wb10_cm4_syscfg_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32WB15_CM4, SYSCFG>
+{
+    static constexpr periph_t P = SYSCFG;
+    using T = stm32wb10_cm4_syscfg_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32WB30_CM4, SYSCFG>
 {
     static constexpr periph_t P = SYSCFG;
-    using T = stm32wb30_cm4_syscfg_t;
+    using T = stm32wb10_cm4_syscfg_t;
     static T& V;
 };
 
@@ -441,7 +457,7 @@ template<>
 struct peripheral_t<STM32WB35_CM4, SYSCFG>
 {
     static constexpr periph_t P = SYSCFG;
-    using T = stm32wb30_cm4_syscfg_t;
+    using T = stm32wb10_cm4_syscfg_t;
     static T& V;
 };
 
@@ -449,7 +465,7 @@ template<>
 struct peripheral_t<STM32WB50_CM4, SYSCFG>
 {
     static constexpr periph_t P = SYSCFG;
-    using T = stm32wb30_cm4_syscfg_t;
+    using T = stm32wb10_cm4_syscfg_t;
     static T& V;
 };
 

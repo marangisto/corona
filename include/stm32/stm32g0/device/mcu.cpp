@@ -21,6 +21,21 @@ typename peripheral_t<STM32G041, ADC1>::T&
         <typename peripheral_t<STM32G041, ADC1>::T*
         >(0x40012400);
 
+typename peripheral_t<STM32G050, ADC1>::T&
+    peripheral_t<STM32G050, ADC1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G050, ADC1>::T*
+        >(0x40012400);
+
+typename peripheral_t<STM32G051, ADC1>::T&
+    peripheral_t<STM32G051, ADC1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G051, ADC1>::T*
+        >(0x40012400);
+
+typename peripheral_t<STM32G061, ADC1>::T&
+    peripheral_t<STM32G061, ADC1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G061, ADC1>::T*
+        >(0x40012400);
+
 typename peripheral_t<STM32G070, ADC1>::T&
     peripheral_t<STM32G070, ADC1>::V = *reinterpret_cast
         <typename peripheral_t<STM32G070, ADC1>::T*
@@ -36,6 +51,16 @@ typename peripheral_t<STM32G081, ADC1>::T&
         <typename peripheral_t<STM32G081, ADC1>::T*
         >(0x40012400);
 
+typename peripheral_t<STM32G0B1, ADC1>::T&
+    peripheral_t<STM32G0B1, ADC1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, ADC1>::T*
+        >(0x40012400);
+
+typename peripheral_t<STM32G0C1, ADC1>::T&
+    peripheral_t<STM32G0C1, ADC1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, ADC1>::T*
+        >(0x40012400);
+
 typename peripheral_t<STM32G041, AES>::T&
     peripheral_t<STM32G041, AES>::V = *reinterpret_cast
         <typename peripheral_t<STM32G041, AES>::T*
@@ -45,6 +70,31 @@ typename peripheral_t<STM32G081, AES>::T&
     peripheral_t<STM32G081, AES>::V = *reinterpret_cast
         <typename peripheral_t<STM32G081, AES>::T*
         >(0x40026000);
+
+typename peripheral_t<STM32G0C1, AES>::T&
+    peripheral_t<STM32G0C1, AES>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, AES>::T*
+        >(0x40026000);
+
+typename peripheral_t<STM32G051, HDMI_CEC>::T&
+    peripheral_t<STM32G051, HDMI_CEC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G051, HDMI_CEC>::T*
+        >(0x40007800);
+
+typename peripheral_t<STM32G061, HDMI_CEC>::T&
+    peripheral_t<STM32G061, HDMI_CEC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G061, HDMI_CEC>::T*
+        >(0x40007800);
+
+typename peripheral_t<STM32G0B1, HDMI_CEC>::T&
+    peripheral_t<STM32G0B1, HDMI_CEC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, HDMI_CEC>::T*
+        >(0x40007800);
+
+typename peripheral_t<STM32G0C1, HDMI_CEC>::T&
+    peripheral_t<STM32G0C1, HDMI_CEC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, HDMI_CEC>::T*
+        >(0x40007800);
 
 typename peripheral_t<STM32G070, HDMI_CEC>::T&
     peripheral_t<STM32G070, HDMI_CEC>::V = *reinterpret_cast
@@ -60,6 +110,16 @@ typename peripheral_t<STM32G081, HDMI_CEC>::T&
     peripheral_t<STM32G081, HDMI_CEC>::V = *reinterpret_cast
         <typename peripheral_t<STM32G081, HDMI_CEC>::T*
         >(0x40007800);
+
+typename peripheral_t<STM32G0B1, COMP>::T&
+    peripheral_t<STM32G0B1, COMP>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, COMP>::T*
+        >(0x40010200);
+
+typename peripheral_t<STM32G0C1, COMP>::T&
+    peripheral_t<STM32G0C1, COMP>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, COMP>::T*
+        >(0x40010200);
 
 typename peripheral_t<STM32G070, COMP>::T&
     peripheral_t<STM32G070, COMP>::V = *reinterpret_cast
@@ -106,6 +166,56 @@ typename peripheral_t<STM32G081, CRC>::T&
         <typename peripheral_t<STM32G081, CRC>::T*
         >(0x40023000);
 
+typename peripheral_t<STM32G050, CRC>::T&
+    peripheral_t<STM32G050, CRC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G050, CRC>::T*
+        >(0x40023000);
+
+typename peripheral_t<STM32G051, CRC>::T&
+    peripheral_t<STM32G051, CRC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G051, CRC>::T*
+        >(0x40023000);
+
+typename peripheral_t<STM32G061, CRC>::T&
+    peripheral_t<STM32G061, CRC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G061, CRC>::T*
+        >(0x40023000);
+
+typename peripheral_t<STM32G0B0, CRC>::T&
+    peripheral_t<STM32G0B0, CRC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, CRC>::T*
+        >(0x40023000);
+
+typename peripheral_t<STM32G0B1, CRC>::T&
+    peripheral_t<STM32G0B1, CRC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, CRC>::T*
+        >(0x40023000);
+
+typename peripheral_t<STM32G0C1, CRC>::T&
+    peripheral_t<STM32G0C1, CRC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, CRC>::T*
+        >(0x40023000);
+
+typename peripheral_t<STM32G051, DAC1>::T&
+    peripheral_t<STM32G051, DAC1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G051, DAC1>::T*
+        >(0x40007400);
+
+typename peripheral_t<STM32G061, DAC1>::T&
+    peripheral_t<STM32G061, DAC1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G061, DAC1>::T*
+        >(0x40007400);
+
+typename peripheral_t<STM32G0B1, DAC1>::T&
+    peripheral_t<STM32G0B1, DAC1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, DAC1>::T*
+        >(0x40007400);
+
+typename peripheral_t<STM32G0C1, DAC1>::T&
+    peripheral_t<STM32G0C1, DAC1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, DAC1>::T*
+        >(0x40007400);
+
 typename peripheral_t<STM32G070, DAC1>::T&
     peripheral_t<STM32G070, DAC1>::V = *reinterpret_cast
         <typename peripheral_t<STM32G070, DAC1>::T*
@@ -136,6 +246,11 @@ typename peripheral_t<STM32G041, DBG>::T&
         <typename peripheral_t<STM32G041, DBG>::T*
         >(0x40015800);
 
+typename peripheral_t<STM32G050, DBG>::T&
+    peripheral_t<STM32G050, DBG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G050, DBG>::T*
+        >(0x40015800);
+
 typename peripheral_t<STM32G070, DBG>::T&
     peripheral_t<STM32G070, DBG>::V = *reinterpret_cast
         <typename peripheral_t<STM32G070, DBG>::T*
@@ -149,6 +264,21 @@ typename peripheral_t<STM32G071, DBG>::T&
 typename peripheral_t<STM32G081, DBG>::T&
     peripheral_t<STM32G081, DBG>::V = *reinterpret_cast
         <typename peripheral_t<STM32G081, DBG>::T*
+        >(0x40015800);
+
+typename peripheral_t<STM32G0B0, DBG>::T&
+    peripheral_t<STM32G0B0, DBG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, DBG>::T*
+        >(0x40015800);
+
+typename peripheral_t<STM32G0B1, DBG>::T&
+    peripheral_t<STM32G0B1, DBG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, DBG>::T*
+        >(0x40015800);
+
+typename peripheral_t<STM32G0C1, DBG>::T&
+    peripheral_t<STM32G0C1, DBG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, DBG>::T*
         >(0x40015800);
 
 typename peripheral_t<STM32G030, DMA1>::T&
@@ -171,15 +301,35 @@ typename peripheral_t<STM32G070, DMA1>::T&
         <typename peripheral_t<STM32G070, DMA1>::T*
         >(0x40020000);
 
+typename peripheral_t<STM32G081, DMA1>::T&
+    peripheral_t<STM32G081, DMA1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G081, DMA1>::T*
+        >(0x40020000);
+
 typename peripheral_t<STM32G071, DMA1>::T&
     peripheral_t<STM32G071, DMA1>::V = *reinterpret_cast
         <typename peripheral_t<STM32G071, DMA1>::T*
         >(0x40020000);
 
-typename peripheral_t<STM32G081, DMA1>::T&
-    peripheral_t<STM32G081, DMA1>::V = *reinterpret_cast
-        <typename peripheral_t<STM32G081, DMA1>::T*
+typename peripheral_t<STM32G0B1, DMA1>::T&
+    peripheral_t<STM32G0B1, DMA1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, DMA1>::T*
         >(0x40020000);
+
+typename peripheral_t<STM32G0B1, DMA2>::T&
+    peripheral_t<STM32G0B1, DMA2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, DMA2>::T*
+        >(0x40020400);
+
+typename peripheral_t<STM32G0C1, DMA1>::T&
+    peripheral_t<STM32G0C1, DMA1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, DMA1>::T*
+        >(0x40020000);
+
+typename peripheral_t<STM32G0C1, DMA2>::T&
+    peripheral_t<STM32G0C1, DMA2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, DMA2>::T*
+        >(0x40020400);
 
 typename peripheral_t<STM32G030, DMAMUX>::T&
     peripheral_t<STM32G030, DMAMUX>::V = *reinterpret_cast
@@ -194,6 +344,36 @@ typename peripheral_t<STM32G031, DMAMUX>::T&
 typename peripheral_t<STM32G041, DMAMUX>::T&
     peripheral_t<STM32G041, DMAMUX>::V = *reinterpret_cast
         <typename peripheral_t<STM32G041, DMAMUX>::T*
+        >(0x40020800);
+
+typename peripheral_t<STM32G050, DMAMUX>::T&
+    peripheral_t<STM32G050, DMAMUX>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G050, DMAMUX>::T*
+        >(0x40020800);
+
+typename peripheral_t<STM32G051, DMAMUX>::T&
+    peripheral_t<STM32G051, DMAMUX>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G051, DMAMUX>::T*
+        >(0x40020800);
+
+typename peripheral_t<STM32G061, DMAMUX>::T&
+    peripheral_t<STM32G061, DMAMUX>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G061, DMAMUX>::T*
+        >(0x40020800);
+
+typename peripheral_t<STM32G0B0, DMAMUX>::T&
+    peripheral_t<STM32G0B0, DMAMUX>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, DMAMUX>::T*
+        >(0x40020800);
+
+typename peripheral_t<STM32G0B1, DMAMUX>::T&
+    peripheral_t<STM32G0B1, DMAMUX>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, DMAMUX>::T*
+        >(0x40020800);
+
+typename peripheral_t<STM32G0C1, DMAMUX>::T&
+    peripheral_t<STM32G0C1, DMAMUX>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, DMAMUX>::T*
         >(0x40020800);
 
 typename peripheral_t<STM32G070, DMAMUX>::T&
@@ -241,6 +421,36 @@ typename peripheral_t<STM32G081, EXTI>::T&
         <typename peripheral_t<STM32G081, EXTI>::T*
         >(0x40021800);
 
+typename peripheral_t<STM32G0B1, EXTI>::T&
+    peripheral_t<STM32G0B1, EXTI>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, EXTI>::T*
+        >(0x40021800);
+
+typename peripheral_t<STM32G0C1, EXTI>::T&
+    peripheral_t<STM32G0C1, EXTI>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, EXTI>::T*
+        >(0x40021800);
+
+typename peripheral_t<STM32G0B1, FDCAN1>::T&
+    peripheral_t<STM32G0B1, FDCAN1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, FDCAN1>::T*
+        >(0x40006400);
+
+typename peripheral_t<STM32G0B1, FDCAN2>::T&
+    peripheral_t<STM32G0B1, FDCAN2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, FDCAN2>::T*
+        >(0x40006800);
+
+typename peripheral_t<STM32G0C1, FDCAN1>::T&
+    peripheral_t<STM32G0C1, FDCAN1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, FDCAN1>::T*
+        >(0x40006400);
+
+typename peripheral_t<STM32G0C1, FDCAN2>::T&
+    peripheral_t<STM32G0C1, FDCAN2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, FDCAN2>::T*
+        >(0x40006800);
+
 typename peripheral_t<STM32G030, FLASH>::T&
     peripheral_t<STM32G030, FLASH>::V = *reinterpret_cast
         <typename peripheral_t<STM32G030, FLASH>::T*
@@ -269,6 +479,16 @@ typename peripheral_t<STM32G071, FLASH>::T&
 typename peripheral_t<STM32G081, FLASH>::T&
     peripheral_t<STM32G081, FLASH>::V = *reinterpret_cast
         <typename peripheral_t<STM32G081, FLASH>::T*
+        >(0x40022000);
+
+typename peripheral_t<STM32G0B1, FLASH>::T&
+    peripheral_t<STM32G0B1, FLASH>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, FLASH>::T*
+        >(0x40022000);
+
+typename peripheral_t<STM32G0C1, FLASH>::T&
+    peripheral_t<STM32G0C1, FLASH>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, FLASH>::T*
         >(0x40022000);
 
 typename peripheral_t<STM32G030, FPU>::T&
@@ -316,6 +536,11 @@ typename peripheral_t<STM32G041, GPIOA>::T&
         <typename peripheral_t<STM32G041, GPIOA>::T*
         >(0x50000000);
 
+typename peripheral_t<STM32G050, GPIOA>::T&
+    peripheral_t<STM32G050, GPIOA>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G050, GPIOA>::T*
+        >(0x50000000);
+
 typename peripheral_t<STM32G070, GPIOA>::T&
     peripheral_t<STM32G070, GPIOA>::V = *reinterpret_cast
         <typename peripheral_t<STM32G070, GPIOA>::T*
@@ -329,6 +554,21 @@ typename peripheral_t<STM32G071, GPIOA>::T&
 typename peripheral_t<STM32G081, GPIOA>::T&
     peripheral_t<STM32G081, GPIOA>::V = *reinterpret_cast
         <typename peripheral_t<STM32G081, GPIOA>::T*
+        >(0x50000000);
+
+typename peripheral_t<STM32G0B0, GPIOA>::T&
+    peripheral_t<STM32G0B0, GPIOA>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, GPIOA>::T*
+        >(0x50000000);
+
+typename peripheral_t<STM32G0B1, GPIOA>::T&
+    peripheral_t<STM32G0B1, GPIOA>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, GPIOA>::T*
+        >(0x50000000);
+
+typename peripheral_t<STM32G0C1, GPIOA>::T&
+    peripheral_t<STM32G0C1, GPIOA>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, GPIOA>::T*
         >(0x50000000);
 
 typename peripheral_t<STM32G030, GPIOB>::T&
@@ -391,6 +631,31 @@ typename peripheral_t<STM32G041, GPIOF>::T&
         <typename peripheral_t<STM32G041, GPIOF>::T*
         >(0x50001400);
 
+typename peripheral_t<STM32G050, GPIOB>::T&
+    peripheral_t<STM32G050, GPIOB>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G050, GPIOB>::T*
+        >(0x50000400);
+
+typename peripheral_t<STM32G050, GPIOC>::T&
+    peripheral_t<STM32G050, GPIOC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G050, GPIOC>::T*
+        >(0x50000800);
+
+typename peripheral_t<STM32G050, GPIOD>::T&
+    peripheral_t<STM32G050, GPIOD>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G050, GPIOD>::T*
+        >(0x50000c00);
+
+typename peripheral_t<STM32G050, GPIOE>::T&
+    peripheral_t<STM32G050, GPIOE>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G050, GPIOE>::T*
+        >(0x50001000);
+
+typename peripheral_t<STM32G050, GPIOF>::T&
+    peripheral_t<STM32G050, GPIOF>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G050, GPIOF>::T*
+        >(0x50001400);
+
 typename peripheral_t<STM32G070, GPIOB>::T&
     peripheral_t<STM32G070, GPIOB>::V = *reinterpret_cast
         <typename peripheral_t<STM32G070, GPIOB>::T*
@@ -449,6 +714,81 @@ typename peripheral_t<STM32G081, GPIOD>::T&
 typename peripheral_t<STM32G081, GPIOF>::T&
     peripheral_t<STM32G081, GPIOF>::V = *reinterpret_cast
         <typename peripheral_t<STM32G081, GPIOF>::T*
+        >(0x50001400);
+
+typename peripheral_t<STM32G0B0, GPIOB>::T&
+    peripheral_t<STM32G0B0, GPIOB>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, GPIOB>::T*
+        >(0x50000400);
+
+typename peripheral_t<STM32G0B0, GPIOC>::T&
+    peripheral_t<STM32G0B0, GPIOC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, GPIOC>::T*
+        >(0x50000800);
+
+typename peripheral_t<STM32G0B0, GPIOD>::T&
+    peripheral_t<STM32G0B0, GPIOD>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, GPIOD>::T*
+        >(0x50000c00);
+
+typename peripheral_t<STM32G0B0, GPIOE>::T&
+    peripheral_t<STM32G0B0, GPIOE>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, GPIOE>::T*
+        >(0x50001000);
+
+typename peripheral_t<STM32G0B0, GPIOF>::T&
+    peripheral_t<STM32G0B0, GPIOF>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, GPIOF>::T*
+        >(0x50001400);
+
+typename peripheral_t<STM32G0B1, GPIOB>::T&
+    peripheral_t<STM32G0B1, GPIOB>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, GPIOB>::T*
+        >(0x50000400);
+
+typename peripheral_t<STM32G0B1, GPIOC>::T&
+    peripheral_t<STM32G0B1, GPIOC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, GPIOC>::T*
+        >(0x50000800);
+
+typename peripheral_t<STM32G0B1, GPIOD>::T&
+    peripheral_t<STM32G0B1, GPIOD>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, GPIOD>::T*
+        >(0x50000c00);
+
+typename peripheral_t<STM32G0B1, GPIOE>::T&
+    peripheral_t<STM32G0B1, GPIOE>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, GPIOE>::T*
+        >(0x50001000);
+
+typename peripheral_t<STM32G0B1, GPIOF>::T&
+    peripheral_t<STM32G0B1, GPIOF>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, GPIOF>::T*
+        >(0x50001400);
+
+typename peripheral_t<STM32G0C1, GPIOB>::T&
+    peripheral_t<STM32G0C1, GPIOB>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, GPIOB>::T*
+        >(0x50000400);
+
+typename peripheral_t<STM32G0C1, GPIOC>::T&
+    peripheral_t<STM32G0C1, GPIOC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, GPIOC>::T*
+        >(0x50000800);
+
+typename peripheral_t<STM32G0C1, GPIOD>::T&
+    peripheral_t<STM32G0C1, GPIOD>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, GPIOD>::T*
+        >(0x50000c00);
+
+typename peripheral_t<STM32G0C1, GPIOE>::T&
+    peripheral_t<STM32G0C1, GPIOE>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, GPIOE>::T*
+        >(0x50001000);
+
+typename peripheral_t<STM32G0C1, GPIOF>::T&
+    peripheral_t<STM32G0C1, GPIOF>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, GPIOF>::T*
         >(0x50001400);
 
 typename peripheral_t<STM32G030, I2C1>::T&
@@ -511,6 +851,76 @@ typename peripheral_t<STM32G081, I2C2>::T&
         <typename peripheral_t<STM32G081, I2C2>::T*
         >(0x40005800);
 
+typename peripheral_t<STM32G050, I2C1>::T&
+    peripheral_t<STM32G050, I2C1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G050, I2C1>::T*
+        >(0x40005400);
+
+typename peripheral_t<STM32G050, I2C2>::T&
+    peripheral_t<STM32G050, I2C2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G050, I2C2>::T*
+        >(0x40005800);
+
+typename peripheral_t<STM32G051, I2C1>::T&
+    peripheral_t<STM32G051, I2C1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G051, I2C1>::T*
+        >(0x40005400);
+
+typename peripheral_t<STM32G051, I2C2>::T&
+    peripheral_t<STM32G051, I2C2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G051, I2C2>::T*
+        >(0x40005800);
+
+typename peripheral_t<STM32G061, I2C1>::T&
+    peripheral_t<STM32G061, I2C1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G061, I2C1>::T*
+        >(0x40005400);
+
+typename peripheral_t<STM32G061, I2C2>::T&
+    peripheral_t<STM32G061, I2C2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G061, I2C2>::T*
+        >(0x40005800);
+
+typename peripheral_t<STM32G0B0, I2C1>::T&
+    peripheral_t<STM32G0B0, I2C1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, I2C1>::T*
+        >(0x40005400);
+
+typename peripheral_t<STM32G0B0, I2C2>::T&
+    peripheral_t<STM32G0B0, I2C2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, I2C2>::T*
+        >(0x40005800);
+
+typename peripheral_t<STM32G0B1, I2C1>::T&
+    peripheral_t<STM32G0B1, I2C1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, I2C1>::T*
+        >(0x40005400);
+
+typename peripheral_t<STM32G0B1, I2C2>::T&
+    peripheral_t<STM32G0B1, I2C2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, I2C2>::T*
+        >(0x40005800);
+
+typename peripheral_t<STM32G0B1, I2C3>::T&
+    peripheral_t<STM32G0B1, I2C3>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, I2C3>::T*
+        >(0x40008800);
+
+typename peripheral_t<STM32G0C1, I2C1>::T&
+    peripheral_t<STM32G0C1, I2C1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, I2C1>::T*
+        >(0x40005400);
+
+typename peripheral_t<STM32G0C1, I2C2>::T&
+    peripheral_t<STM32G0C1, I2C2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, I2C2>::T*
+        >(0x40005800);
+
+typename peripheral_t<STM32G0C1, I2C3>::T&
+    peripheral_t<STM32G0C1, I2C3>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, I2C3>::T*
+        >(0x40008800);
+
 typename peripheral_t<STM32G030, IWDG>::T&
     peripheral_t<STM32G030, IWDG>::V = *reinterpret_cast
         <typename peripheral_t<STM32G030, IWDG>::T*
@@ -524,6 +934,36 @@ typename peripheral_t<STM32G031, IWDG>::T&
 typename peripheral_t<STM32G041, IWDG>::T&
     peripheral_t<STM32G041, IWDG>::V = *reinterpret_cast
         <typename peripheral_t<STM32G041, IWDG>::T*
+        >(0x40003000);
+
+typename peripheral_t<STM32G050, IWDG>::T&
+    peripheral_t<STM32G050, IWDG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G050, IWDG>::T*
+        >(0x40003000);
+
+typename peripheral_t<STM32G051, IWDG>::T&
+    peripheral_t<STM32G051, IWDG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G051, IWDG>::T*
+        >(0x40003000);
+
+typename peripheral_t<STM32G061, IWDG>::T&
+    peripheral_t<STM32G061, IWDG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G061, IWDG>::T*
+        >(0x40003000);
+
+typename peripheral_t<STM32G0B0, IWDG>::T&
+    peripheral_t<STM32G0B0, IWDG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, IWDG>::T*
+        >(0x40003000);
+
+typename peripheral_t<STM32G0B1, IWDG>::T&
+    peripheral_t<STM32G0B1, IWDG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, IWDG>::T*
+        >(0x40003000);
+
+typename peripheral_t<STM32G0C1, IWDG>::T&
+    peripheral_t<STM32G0C1, IWDG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, IWDG>::T*
         >(0x40003000);
 
 typename peripheral_t<STM32G070, IWDG>::T&
@@ -591,6 +1031,46 @@ typename peripheral_t<STM32G081, LPTIM2>::T&
         <typename peripheral_t<STM32G081, LPTIM2>::T*
         >(0x40009400);
 
+typename peripheral_t<STM32G051, LPTIM1>::T&
+    peripheral_t<STM32G051, LPTIM1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G051, LPTIM1>::T*
+        >(0x40007c00);
+
+typename peripheral_t<STM32G051, LPTIM2>::T&
+    peripheral_t<STM32G051, LPTIM2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G051, LPTIM2>::T*
+        >(0x40009400);
+
+typename peripheral_t<STM32G061, LPTIM1>::T&
+    peripheral_t<STM32G061, LPTIM1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G061, LPTIM1>::T*
+        >(0x40007c00);
+
+typename peripheral_t<STM32G061, LPTIM2>::T&
+    peripheral_t<STM32G061, LPTIM2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G061, LPTIM2>::T*
+        >(0x40009400);
+
+typename peripheral_t<STM32G0B1, LPTIM1>::T&
+    peripheral_t<STM32G0B1, LPTIM1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, LPTIM1>::T*
+        >(0x40007c00);
+
+typename peripheral_t<STM32G0B1, LPTIM2>::T&
+    peripheral_t<STM32G0B1, LPTIM2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, LPTIM2>::T*
+        >(0x40009400);
+
+typename peripheral_t<STM32G0C1, LPTIM1>::T&
+    peripheral_t<STM32G0C1, LPTIM1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, LPTIM1>::T*
+        >(0x40007c00);
+
+typename peripheral_t<STM32G0C1, LPTIM2>::T&
+    peripheral_t<STM32G0C1, LPTIM2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, LPTIM2>::T*
+        >(0x40009400);
+
 typename peripheral_t<STM32G031, LPUART1>::T&
     peripheral_t<STM32G031, LPUART1>::V = *reinterpret_cast
         <typename peripheral_t<STM32G031, LPUART1>::T*
@@ -615,6 +1095,26 @@ typename peripheral_t<STM32G081, LPUART1>::T&
     peripheral_t<STM32G081, LPUART1>::V = *reinterpret_cast
         <typename peripheral_t<STM32G081, LPUART1>::T*
         >(0x40008000);
+
+typename peripheral_t<STM32G0B1, LPUART1>::T&
+    peripheral_t<STM32G0B1, LPUART1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, LPUART1>::T*
+        >(0x40008000);
+
+typename peripheral_t<STM32G0B1, LPUART2>::T&
+    peripheral_t<STM32G0B1, LPUART2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, LPUART2>::T*
+        >(0x40008400);
+
+typename peripheral_t<STM32G0C1, LPUART1>::T&
+    peripheral_t<STM32G0C1, LPUART1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, LPUART1>::T*
+        >(0x40008000);
+
+typename peripheral_t<STM32G0C1, LPUART2>::T&
+    peripheral_t<STM32G0C1, LPUART2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, LPUART2>::T*
+        >(0x40008400);
 
 typename peripheral_t<STM32G030, MPU>::T&
     peripheral_t<STM32G030, MPU>::V = *reinterpret_cast
@@ -721,6 +1221,16 @@ typename peripheral_t<STM32G081, PWR>::T&
         <typename peripheral_t<STM32G081, PWR>::T*
         >(0x40007000);
 
+typename peripheral_t<STM32G0B1, PWR>::T&
+    peripheral_t<STM32G0B1, PWR>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, PWR>::T*
+        >(0x40007000);
+
+typename peripheral_t<STM32G0C1, PWR>::T&
+    peripheral_t<STM32G0C1, PWR>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, PWR>::T*
+        >(0x40007000);
+
 typename peripheral_t<STM32G030, RCC>::T&
     peripheral_t<STM32G030, RCC>::V = *reinterpret_cast
         <typename peripheral_t<STM32G030, RCC>::T*
@@ -751,6 +1261,16 @@ typename peripheral_t<STM32G081, RCC>::T&
         <typename peripheral_t<STM32G081, RCC>::T*
         >(0x40021000);
 
+typename peripheral_t<STM32G0B1, RCC>::T&
+    peripheral_t<STM32G0B1, RCC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, RCC>::T*
+        >(0x40021000);
+
+typename peripheral_t<STM32G0C1, RCC>::T&
+    peripheral_t<STM32G0C1, RCC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, RCC>::T*
+        >(0x40021000);
+
 typename peripheral_t<STM32G041, RNG>::T&
     peripheral_t<STM32G041, RNG>::V = *reinterpret_cast
         <typename peripheral_t<STM32G041, RNG>::T*
@@ -769,6 +1289,11 @@ typename peripheral_t<STM32G071, RNG>::T&
 typename peripheral_t<STM32G081, RNG>::T&
     peripheral_t<STM32G081, RNG>::V = *reinterpret_cast
         <typename peripheral_t<STM32G081, RNG>::T*
+        >(0x40025000);
+
+typename peripheral_t<STM32G0C1, RNG>::T&
+    peripheral_t<STM32G0C1, RNG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, RNG>::T*
         >(0x40025000);
 
 typename peripheral_t<STM32G030, RTC>::T&
@@ -799,6 +1324,16 @@ typename peripheral_t<STM32G071, RTC>::T&
 typename peripheral_t<STM32G081, RTC>::T&
     peripheral_t<STM32G081, RTC>::V = *reinterpret_cast
         <typename peripheral_t<STM32G081, RTC>::T*
+        >(0x40002800);
+
+typename peripheral_t<STM32G0B1, RTC>::T&
+    peripheral_t<STM32G0B1, RTC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, RTC>::T*
+        >(0x40002800);
+
+typename peripheral_t<STM32G0C1, RTC>::T&
+    peripheral_t<STM32G0C1, RTC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, RTC>::T*
         >(0x40002800);
 
 typename peripheral_t<STM32G030, SCB>::T&
@@ -906,6 +1441,36 @@ typename peripheral_t<STM32G081, SPI2>::T&
         <typename peripheral_t<STM32G081, SPI2>::T*
         >(0x40003800);
 
+typename peripheral_t<STM32G0B1, SPI1>::T&
+    peripheral_t<STM32G0B1, SPI1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, SPI1>::T*
+        >(0x40013000);
+
+typename peripheral_t<STM32G0B1, SPI2>::T&
+    peripheral_t<STM32G0B1, SPI2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, SPI2>::T*
+        >(0x40003800);
+
+typename peripheral_t<STM32G0B1, SPI3>::T&
+    peripheral_t<STM32G0B1, SPI3>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, SPI3>::T*
+        >(0x40003c00);
+
+typename peripheral_t<STM32G0C1, SPI1>::T&
+    peripheral_t<STM32G0C1, SPI1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, SPI1>::T*
+        >(0x40013000);
+
+typename peripheral_t<STM32G0C1, SPI2>::T&
+    peripheral_t<STM32G0C1, SPI2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, SPI2>::T*
+        >(0x40003800);
+
+typename peripheral_t<STM32G0C1, SPI3>::T&
+    peripheral_t<STM32G0C1, SPI3>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, SPI3>::T*
+        >(0x40003c00);
+
 typename peripheral_t<STM32G030, STK>::T&
     peripheral_t<STM32G030, STK>::V = *reinterpret_cast
         <typename peripheral_t<STM32G030, STK>::T*
@@ -956,14 +1521,14 @@ typename peripheral_t<STM32G070, SYSCFG>::T&
         <typename peripheral_t<STM32G070, SYSCFG>::T*
         >(0x40010000);
 
-typename peripheral_t<STM32G071, SYSCFG>::T&
-    peripheral_t<STM32G071, SYSCFG>::V = *reinterpret_cast
-        <typename peripheral_t<STM32G071, SYSCFG>::T*
-        >(0x40010000);
-
 typename peripheral_t<STM32G081, SYSCFG>::T&
     peripheral_t<STM32G081, SYSCFG>::V = *reinterpret_cast
         <typename peripheral_t<STM32G081, SYSCFG>::T*
+        >(0x40010000);
+
+typename peripheral_t<STM32G071, SYSCFG>::T&
+    peripheral_t<STM32G071, SYSCFG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G071, SYSCFG>::T*
         >(0x40010000);
 
 typename peripheral_t<STM32G030, SYSCFG_ITLINE>::T&
@@ -1011,6 +1576,16 @@ typename peripheral_t<STM32G081, TAMP>::T&
         <typename peripheral_t<STM32G081, TAMP>::T*
         >(0x4000b000);
 
+typename peripheral_t<STM32G0B1, TAMP>::T&
+    peripheral_t<STM32G0B1, TAMP>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, TAMP>::T*
+        >(0x4000b000);
+
+typename peripheral_t<STM32G0C1, TAMP>::T&
+    peripheral_t<STM32G0C1, TAMP>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, TAMP>::T*
+        >(0x4000b000);
+
 typename peripheral_t<STM32G030, TIM1>::T&
     peripheral_t<STM32G030, TIM1>::V = *reinterpret_cast
         <typename peripheral_t<STM32G030, TIM1>::T*
@@ -1024,6 +1599,36 @@ typename peripheral_t<STM32G031, TIM1>::T&
 typename peripheral_t<STM32G041, TIM1>::T&
     peripheral_t<STM32G041, TIM1>::V = *reinterpret_cast
         <typename peripheral_t<STM32G041, TIM1>::T*
+        >(0x40012c00);
+
+typename peripheral_t<STM32G050, TIM1>::T&
+    peripheral_t<STM32G050, TIM1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G050, TIM1>::T*
+        >(0x40012c00);
+
+typename peripheral_t<STM32G051, TIM1>::T&
+    peripheral_t<STM32G051, TIM1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G051, TIM1>::T*
+        >(0x40012c00);
+
+typename peripheral_t<STM32G061, TIM1>::T&
+    peripheral_t<STM32G061, TIM1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G061, TIM1>::T*
+        >(0x40012c00);
+
+typename peripheral_t<STM32G0B0, TIM1>::T&
+    peripheral_t<STM32G0B0, TIM1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, TIM1>::T*
+        >(0x40012c00);
+
+typename peripheral_t<STM32G0B1, TIM1>::T&
+    peripheral_t<STM32G0B1, TIM1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, TIM1>::T*
+        >(0x40012c00);
+
+typename peripheral_t<STM32G0C1, TIM1>::T&
+    peripheral_t<STM32G0C1, TIM1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, TIM1>::T*
         >(0x40012c00);
 
 typename peripheral_t<STM32G070, TIM1>::T&
@@ -1101,6 +1706,126 @@ typename peripheral_t<STM32G081, TIM3>::T&
         <typename peripheral_t<STM32G081, TIM3>::T*
         >(0x40000400);
 
+typename peripheral_t<STM32G051, TIM2>::T&
+    peripheral_t<STM32G051, TIM2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G051, TIM2>::T*
+        >(0x40000000);
+
+typename peripheral_t<STM32G051, TIM3>::T&
+    peripheral_t<STM32G051, TIM3>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G051, TIM3>::T*
+        >(0x40000400);
+
+typename peripheral_t<STM32G061, TIM2>::T&
+    peripheral_t<STM32G061, TIM2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G061, TIM2>::T*
+        >(0x40000000);
+
+typename peripheral_t<STM32G061, TIM3>::T&
+    peripheral_t<STM32G061, TIM3>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G061, TIM3>::T*
+        >(0x40000400);
+
+typename peripheral_t<STM32G0B0, TIM3>::T&
+    peripheral_t<STM32G0B0, TIM3>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, TIM3>::T*
+        >(0x40000400);
+
+typename peripheral_t<STM32G0B1, TIM2>::T&
+    peripheral_t<STM32G0B1, TIM2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, TIM2>::T*
+        >(0x40000000);
+
+typename peripheral_t<STM32G0B1, TIM3>::T&
+    peripheral_t<STM32G0B1, TIM3>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, TIM3>::T*
+        >(0x40000400);
+
+typename peripheral_t<STM32G0B1, TIM4>::T&
+    peripheral_t<STM32G0B1, TIM4>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, TIM4>::T*
+        >(0x40000800);
+
+typename peripheral_t<STM32G0C1, TIM2>::T&
+    peripheral_t<STM32G0C1, TIM2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, TIM2>::T*
+        >(0x40000000);
+
+typename peripheral_t<STM32G0C1, TIM3>::T&
+    peripheral_t<STM32G0C1, TIM3>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, TIM3>::T*
+        >(0x40000400);
+
+typename peripheral_t<STM32G0C1, TIM4>::T&
+    peripheral_t<STM32G0C1, TIM4>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, TIM4>::T*
+        >(0x40000800);
+
+typename peripheral_t<STM32G050, TIM3>::T&
+    peripheral_t<STM32G050, TIM3>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G050, TIM3>::T*
+        >(0x40000400);
+
+typename peripheral_t<STM32G050, TIM6>::T&
+    peripheral_t<STM32G050, TIM6>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G050, TIM6>::T*
+        >(0x40001000);
+
+typename peripheral_t<STM32G050, TIM7>::T&
+    peripheral_t<STM32G050, TIM7>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G050, TIM7>::T*
+        >(0x40001400);
+
+typename peripheral_t<STM32G051, TIM6>::T&
+    peripheral_t<STM32G051, TIM6>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G051, TIM6>::T*
+        >(0x40001000);
+
+typename peripheral_t<STM32G051, TIM7>::T&
+    peripheral_t<STM32G051, TIM7>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G051, TIM7>::T*
+        >(0x40001400);
+
+typename peripheral_t<STM32G061, TIM6>::T&
+    peripheral_t<STM32G061, TIM6>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G061, TIM6>::T*
+        >(0x40001000);
+
+typename peripheral_t<STM32G061, TIM7>::T&
+    peripheral_t<STM32G061, TIM7>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G061, TIM7>::T*
+        >(0x40001400);
+
+typename peripheral_t<STM32G0B0, TIM6>::T&
+    peripheral_t<STM32G0B0, TIM6>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, TIM6>::T*
+        >(0x40001000);
+
+typename peripheral_t<STM32G0B0, TIM7>::T&
+    peripheral_t<STM32G0B0, TIM7>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, TIM7>::T*
+        >(0x40001400);
+
+typename peripheral_t<STM32G0B1, TIM6>::T&
+    peripheral_t<STM32G0B1, TIM6>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, TIM6>::T*
+        >(0x40001000);
+
+typename peripheral_t<STM32G0B1, TIM7>::T&
+    peripheral_t<STM32G0B1, TIM7>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, TIM7>::T*
+        >(0x40001400);
+
+typename peripheral_t<STM32G0C1, TIM6>::T&
+    peripheral_t<STM32G0C1, TIM6>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, TIM6>::T*
+        >(0x40001000);
+
+typename peripheral_t<STM32G0C1, TIM7>::T&
+    peripheral_t<STM32G0C1, TIM7>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, TIM7>::T*
+        >(0x40001400);
+
 typename peripheral_t<STM32G070, TIM6>::T&
     peripheral_t<STM32G070, TIM6>::V = *reinterpret_cast
         <typename peripheral_t<STM32G070, TIM6>::T*
@@ -1161,9 +1886,74 @@ typename peripheral_t<STM32G081, TIM14>::T&
         <typename peripheral_t<STM32G081, TIM14>::T*
         >(0x40002000);
 
+typename peripheral_t<STM32G050, TIM14>::T&
+    peripheral_t<STM32G050, TIM14>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G050, TIM14>::T*
+        >(0x40002000);
+
+typename peripheral_t<STM32G051, TIM14>::T&
+    peripheral_t<STM32G051, TIM14>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G051, TIM14>::T*
+        >(0x40002000);
+
+typename peripheral_t<STM32G061, TIM14>::T&
+    peripheral_t<STM32G061, TIM14>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G061, TIM14>::T*
+        >(0x40002000);
+
+typename peripheral_t<STM32G0B0, TIM14>::T&
+    peripheral_t<STM32G0B0, TIM14>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, TIM14>::T*
+        >(0x40002000);
+
+typename peripheral_t<STM32G0B1, TIM14>::T&
+    peripheral_t<STM32G0B1, TIM14>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, TIM14>::T*
+        >(0x40002000);
+
+typename peripheral_t<STM32G0C1, TIM14>::T&
+    peripheral_t<STM32G0C1, TIM14>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, TIM14>::T*
+        >(0x40002000);
+
+typename peripheral_t<STM32G050, TIM15>::T&
+    peripheral_t<STM32G050, TIM15>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G050, TIM15>::T*
+        >(0x40014000);
+
+typename peripheral_t<STM32G051, TIM15>::T&
+    peripheral_t<STM32G051, TIM15>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G051, TIM15>::T*
+        >(0x40014000);
+
+typename peripheral_t<STM32G061, TIM15>::T&
+    peripheral_t<STM32G061, TIM15>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G061, TIM15>::T*
+        >(0x40014000);
+
+typename peripheral_t<STM32G070, TIM15>::T&
+    peripheral_t<STM32G070, TIM15>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G070, TIM15>::T*
+        >(0x40014000);
+
 typename peripheral_t<STM32G071, TIM15>::T&
     peripheral_t<STM32G071, TIM15>::V = *reinterpret_cast
         <typename peripheral_t<STM32G071, TIM15>::T*
+        >(0x40014000);
+
+typename peripheral_t<STM32G0B0, TIM15>::T&
+    peripheral_t<STM32G0B0, TIM15>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, TIM15>::T*
+        >(0x40014000);
+
+typename peripheral_t<STM32G0B1, TIM15>::T&
+    peripheral_t<STM32G0B1, TIM15>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, TIM15>::T*
+        >(0x40014000);
+
+typename peripheral_t<STM32G0C1, TIM15>::T&
+    peripheral_t<STM32G0C1, TIM15>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, TIM15>::T*
         >(0x40014000);
 
 typename peripheral_t<STM32G030, TIM16>::T&
@@ -1196,11 +1986,6 @@ typename peripheral_t<STM32G041, TIM17>::T&
         <typename peripheral_t<STM32G041, TIM17>::T*
         >(0x40014800);
 
-typename peripheral_t<STM32G070, TIM15>::T&
-    peripheral_t<STM32G070, TIM15>::V = *reinterpret_cast
-        <typename peripheral_t<STM32G070, TIM15>::T*
-        >(0x40014000);
-
 typename peripheral_t<STM32G070, TIM16>::T&
     peripheral_t<STM32G070, TIM16>::V = *reinterpret_cast
         <typename peripheral_t<STM32G070, TIM16>::T*
@@ -1224,6 +2009,66 @@ typename peripheral_t<STM32G081, TIM16>::T&
 typename peripheral_t<STM32G081, TIM17>::T&
     peripheral_t<STM32G081, TIM17>::V = *reinterpret_cast
         <typename peripheral_t<STM32G081, TIM17>::T*
+        >(0x40014800);
+
+typename peripheral_t<STM32G050, TIM16>::T&
+    peripheral_t<STM32G050, TIM16>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G050, TIM16>::T*
+        >(0x40014400);
+
+typename peripheral_t<STM32G050, TIM17>::T&
+    peripheral_t<STM32G050, TIM17>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G050, TIM17>::T*
+        >(0x40014800);
+
+typename peripheral_t<STM32G051, TIM16>::T&
+    peripheral_t<STM32G051, TIM16>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G051, TIM16>::T*
+        >(0x40014400);
+
+typename peripheral_t<STM32G051, TIM17>::T&
+    peripheral_t<STM32G051, TIM17>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G051, TIM17>::T*
+        >(0x40014800);
+
+typename peripheral_t<STM32G061, TIM16>::T&
+    peripheral_t<STM32G061, TIM16>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G061, TIM16>::T*
+        >(0x40014400);
+
+typename peripheral_t<STM32G061, TIM17>::T&
+    peripheral_t<STM32G061, TIM17>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G061, TIM17>::T*
+        >(0x40014800);
+
+typename peripheral_t<STM32G0B0, TIM16>::T&
+    peripheral_t<STM32G0B0, TIM16>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, TIM16>::T*
+        >(0x40014400);
+
+typename peripheral_t<STM32G0B0, TIM17>::T&
+    peripheral_t<STM32G0B0, TIM17>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, TIM17>::T*
+        >(0x40014800);
+
+typename peripheral_t<STM32G0B1, TIM16>::T&
+    peripheral_t<STM32G0B1, TIM16>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, TIM16>::T*
+        >(0x40014400);
+
+typename peripheral_t<STM32G0B1, TIM17>::T&
+    peripheral_t<STM32G0B1, TIM17>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, TIM17>::T*
+        >(0x40014800);
+
+typename peripheral_t<STM32G0C1, TIM16>::T&
+    peripheral_t<STM32G0C1, TIM16>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, TIM16>::T*
+        >(0x40014400);
+
+typename peripheral_t<STM32G0C1, TIM17>::T&
+    peripheral_t<STM32G0C1, TIM17>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, TIM17>::T*
         >(0x40014800);
 
 typename peripheral_t<STM32G071, TIM16>::T&
@@ -1264,6 +2109,26 @@ typename peripheral_t<STM32G081, UCPD1>::T&
 typename peripheral_t<STM32G081, UCPD2>::T&
     peripheral_t<STM32G081, UCPD2>::V = *reinterpret_cast
         <typename peripheral_t<STM32G081, UCPD2>::T*
+        >(0x4000a400);
+
+typename peripheral_t<STM32G0B1, UCPD1>::T&
+    peripheral_t<STM32G0B1, UCPD1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, UCPD1>::T*
+        >(0x4000a000);
+
+typename peripheral_t<STM32G0B1, UCPD2>::T&
+    peripheral_t<STM32G0B1, UCPD2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, UCPD2>::T*
+        >(0x4000a400);
+
+typename peripheral_t<STM32G0C1, UCPD1>::T&
+    peripheral_t<STM32G0C1, UCPD1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, UCPD1>::T*
+        >(0x4000a000);
+
+typename peripheral_t<STM32G0C1, UCPD2>::T&
+    peripheral_t<STM32G0C1, UCPD2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, UCPD2>::T*
         >(0x4000a400);
 
 typename peripheral_t<STM32G030, USART1>::T&
@@ -1356,6 +2221,136 @@ typename peripheral_t<STM32G081, USART4>::T&
         <typename peripheral_t<STM32G081, USART4>::T*
         >(0x40004c00);
 
+typename peripheral_t<STM32G050, USART1>::T&
+    peripheral_t<STM32G050, USART1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G050, USART1>::T*
+        >(0x40013800);
+
+typename peripheral_t<STM32G050, USART2>::T&
+    peripheral_t<STM32G050, USART2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G050, USART2>::T*
+        >(0x40004400);
+
+typename peripheral_t<STM32G051, USART1>::T&
+    peripheral_t<STM32G051, USART1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G051, USART1>::T*
+        >(0x40013800);
+
+typename peripheral_t<STM32G051, USART2>::T&
+    peripheral_t<STM32G051, USART2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G051, USART2>::T*
+        >(0x40004400);
+
+typename peripheral_t<STM32G061, USART1>::T&
+    peripheral_t<STM32G061, USART1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G061, USART1>::T*
+        >(0x40013800);
+
+typename peripheral_t<STM32G061, USART2>::T&
+    peripheral_t<STM32G061, USART2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G061, USART2>::T*
+        >(0x40004400);
+
+typename peripheral_t<STM32G0B0, USART1>::T&
+    peripheral_t<STM32G0B0, USART1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, USART1>::T*
+        >(0x40013800);
+
+typename peripheral_t<STM32G0B0, USART2>::T&
+    peripheral_t<STM32G0B0, USART2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, USART2>::T*
+        >(0x40004400);
+
+typename peripheral_t<STM32G0B0, USART3>::T&
+    peripheral_t<STM32G0B0, USART3>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, USART3>::T*
+        >(0x40004800);
+
+typename peripheral_t<STM32G0B0, USART4>::T&
+    peripheral_t<STM32G0B0, USART4>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, USART4>::T*
+        >(0x40004c00);
+
+typename peripheral_t<STM32G0B0, USART5>::T&
+    peripheral_t<STM32G0B0, USART5>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, USART5>::T*
+        >(0x40005000);
+
+typename peripheral_t<STM32G0B0, USART6>::T&
+    peripheral_t<STM32G0B0, USART6>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, USART6>::T*
+        >(0x40013c00);
+
+typename peripheral_t<STM32G0B1, USART1>::T&
+    peripheral_t<STM32G0B1, USART1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, USART1>::T*
+        >(0x40013800);
+
+typename peripheral_t<STM32G0B1, USART2>::T&
+    peripheral_t<STM32G0B1, USART2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, USART2>::T*
+        >(0x40004400);
+
+typename peripheral_t<STM32G0B1, USART3>::T&
+    peripheral_t<STM32G0B1, USART3>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, USART3>::T*
+        >(0x40004800);
+
+typename peripheral_t<STM32G0B1, USART4>::T&
+    peripheral_t<STM32G0B1, USART4>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, USART4>::T*
+        >(0x40004c00);
+
+typename peripheral_t<STM32G0B1, USART5>::T&
+    peripheral_t<STM32G0B1, USART5>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, USART5>::T*
+        >(0x40005000);
+
+typename peripheral_t<STM32G0B1, USART6>::T&
+    peripheral_t<STM32G0B1, USART6>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, USART6>::T*
+        >(0x40013c00);
+
+typename peripheral_t<STM32G0C1, USART1>::T&
+    peripheral_t<STM32G0C1, USART1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, USART1>::T*
+        >(0x40013800);
+
+typename peripheral_t<STM32G0C1, USART2>::T&
+    peripheral_t<STM32G0C1, USART2>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, USART2>::T*
+        >(0x40004400);
+
+typename peripheral_t<STM32G0C1, USART3>::T&
+    peripheral_t<STM32G0C1, USART3>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, USART3>::T*
+        >(0x40004800);
+
+typename peripheral_t<STM32G0C1, USART4>::T&
+    peripheral_t<STM32G0C1, USART4>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, USART4>::T*
+        >(0x40004c00);
+
+typename peripheral_t<STM32G0C1, USART5>::T&
+    peripheral_t<STM32G0C1, USART5>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, USART5>::T*
+        >(0x40005000);
+
+typename peripheral_t<STM32G0C1, USART6>::T&
+    peripheral_t<STM32G0C1, USART6>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, USART6>::T*
+        >(0x40013c00);
+
+typename peripheral_t<STM32G0B1, USB>::T&
+    peripheral_t<STM32G0B1, USB>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, USB>::T*
+        >(0x40005c00);
+
+typename peripheral_t<STM32G0C1, USB>::T&
+    peripheral_t<STM32G0C1, USB>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, USB>::T*
+        >(0x40005c00);
+
 typename peripheral_t<STM32G030, VREFBUF>::T&
     peripheral_t<STM32G030, VREFBUF>::V = *reinterpret_cast
         <typename peripheral_t<STM32G030, VREFBUF>::T*
@@ -1369,6 +2364,31 @@ typename peripheral_t<STM32G031, VREFBUF>::T&
 typename peripheral_t<STM32G041, VREFBUF>::T&
     peripheral_t<STM32G041, VREFBUF>::V = *reinterpret_cast
         <typename peripheral_t<STM32G041, VREFBUF>::T*
+        >(0x40010030);
+
+typename peripheral_t<STM32G051, VREFBUF>::T&
+    peripheral_t<STM32G051, VREFBUF>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G051, VREFBUF>::T*
+        >(0x40010030);
+
+typename peripheral_t<STM32G061, VREFBUF>::T&
+    peripheral_t<STM32G061, VREFBUF>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G061, VREFBUF>::T*
+        >(0x40010030);
+
+typename peripheral_t<STM32G0B0, VREFBUF>::T&
+    peripheral_t<STM32G0B0, VREFBUF>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, VREFBUF>::T*
+        >(0x40010030);
+
+typename peripheral_t<STM32G0B1, VREFBUF>::T&
+    peripheral_t<STM32G0B1, VREFBUF>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, VREFBUF>::T*
+        >(0x40010030);
+
+typename peripheral_t<STM32G0C1, VREFBUF>::T&
+    peripheral_t<STM32G0C1, VREFBUF>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, VREFBUF>::T*
         >(0x40010030);
 
 typename peripheral_t<STM32G030, WWDG>::T&
@@ -1399,5 +2419,35 @@ typename peripheral_t<STM32G071, WWDG>::T&
 typename peripheral_t<STM32G081, WWDG>::T&
     peripheral_t<STM32G081, WWDG>::V = *reinterpret_cast
         <typename peripheral_t<STM32G081, WWDG>::T*
+        >(0x40002c00);
+
+typename peripheral_t<STM32G050, WWDG>::T&
+    peripheral_t<STM32G050, WWDG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G050, WWDG>::T*
+        >(0x40002c00);
+
+typename peripheral_t<STM32G051, WWDG>::T&
+    peripheral_t<STM32G051, WWDG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G051, WWDG>::T*
+        >(0x40002c00);
+
+typename peripheral_t<STM32G061, WWDG>::T&
+    peripheral_t<STM32G061, WWDG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G061, WWDG>::T*
+        >(0x40002c00);
+
+typename peripheral_t<STM32G0B0, WWDG>::T&
+    peripheral_t<STM32G0B0, WWDG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, WWDG>::T*
+        >(0x40002c00);
+
+typename peripheral_t<STM32G0B1, WWDG>::T&
+    peripheral_t<STM32G0B1, WWDG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, WWDG>::T*
+        >(0x40002c00);
+
+typename peripheral_t<STM32G0C1, WWDG>::T&
+    peripheral_t<STM32G0C1, WWDG>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, WWDG>::T*
         >(0x40002c00);
 

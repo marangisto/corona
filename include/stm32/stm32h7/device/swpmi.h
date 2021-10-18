@@ -94,6 +94,14 @@ struct peripheral_t<STM32H723, SWPMI>
 };
 
 template<>
+struct peripheral_t<STM32H725, SWPMI>
+{
+    static constexpr periph_t P = SWPMI;
+    using T = stm32h723_swpmi_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, SWPMI>
 {
     static constexpr periph_t P = SWPMI;

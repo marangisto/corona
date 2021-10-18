@@ -166,6 +166,7 @@ enum periph_t
     , ADC1
     , ADC2
     , ADC3
+    , ADC_COMMON
     , AES
     , CAN1
     , CAN2

@@ -551,6 +551,9 @@ enum signal_t
     , PSSI_DE
     , PSSI_PDCK
     , PSSI_RDY
+    , PWR_CSLEEP
+    , PWR_CSTOP
+    , PWR_NDSTOP2
     , QUADSPI_BK1_IO0
     , QUADSPI_BK1_IO1
     , QUADSPI_BK1_IO2
@@ -1827,6 +1830,14 @@ struct signal_traits<CFG, PA5, PSSI_D14>
     static constexpr altfun
         < CFG & (STM32H72|STM32H7A2)
         > AF = AF13;
+};
+
+template<gpio_conf_t CFG>
+struct signal_traits<CFG, PA5, PWR_NDSTOP2>
+{
+    static constexpr altfun
+        < CFG & STM32H7A2
+        > AF = AF0;
 };
 
 template<gpio_conf_t CFG>
@@ -4492,6 +4503,14 @@ struct signal_traits<CFG, PC2, OCTOSPIM_P1_IO5>
 };
 
 template<gpio_conf_t CFG>
+struct signal_traits<CFG, PC2, PWR_CSTOP>
+{
+    static constexpr altfun
+        < CFG & STM32H7A2
+        > AF = AF0;
+};
+
+template<gpio_conf_t CFG>
 struct signal_traits<CFG, PC2, SPI2_MISO>
 {
     static constexpr altfun
@@ -4561,6 +4580,14 @@ struct signal_traits<CFG, PC3, OCTOSPIM_P1_IO6>
     static constexpr altfun
         < CFG & STM32H7A2
         > AF = AF11;
+};
+
+template<gpio_conf_t CFG>
+struct signal_traits<CFG, PC3, PWR_CSLEEP>
+{
+    static constexpr altfun
+        < CFG & STM32H7A2
+        > AF = AF0;
 };
 
 template<gpio_conf_t CFG>

@@ -153,12 +153,4 @@ struct peripheral_t<STM32L4x5, DBGMCU>
     static T& V;
 };
 
-template<>
-struct peripheral_t<STM32L4x6, DBGMCU>
-{
-    static constexpr periph_t P = DBGMCU;
-    using T = stm32l476_dbgmcu_t;
-    static T& V;
-};
-
 using dbgmcu_t = peripheral_t<svd, DBGMCU>;

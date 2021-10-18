@@ -55,6 +55,14 @@ struct peripheral_t<STM32H723, MPU>
 };
 
 template<>
+struct peripheral_t<STM32H725, MPU>
+{
+    static constexpr periph_t P = MPU;
+    using T = stm32h723_mpu_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, MPU>
 {
     static constexpr periph_t P = MPU;

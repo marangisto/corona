@@ -1700,6 +1700,14 @@ struct signal_traits<CFG, PB10, OCTOSPIM_P1_CLK>
 };
 
 template<gpio_conf_t CFG>
+struct signal_traits<CFG, PB10, OCTOSPIM_P1_IO3>
+{
+    static constexpr altfun
+        < CFG & STM32L4P
+        > AF = AF6;
+};
+
+template<gpio_conf_t CFG>
 struct signal_traits<CFG, PB10, SAI1_SCK_A>
 {
     static constexpr altfun_t AF = AF13;

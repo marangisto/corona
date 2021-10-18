@@ -136,7 +136,6 @@ struct stm32h723_rcc_t
     static constexpr uint32_t CFGR_STOPWUCK = 0x40; // System clock selection after a wake up from system Stop
     static constexpr uint32_t CFGR_STOPKERWUCK = 0x80; // Kernel clock selection after a wake up from system Stop
     typedef bit_field_t<8, 0x3f> CFGR_RTCPRE; // HSE division factor for RTC clock
-    static constexpr uint32_t CFGR_HRTIMSEL = 0x4000; // High Resolution Timer clock prescaler selection
     static constexpr uint32_t CFGR_TIMPRE = 0x8000; // Timers clocks prescaler selection
     typedef bit_field_t<18, 0xf> CFGR_MCO1PRE; // MCO1 prescaler
     typedef bit_field_t<22, 0x7> CFGR_MCO1SEL; // Micro-controller clock output 1
@@ -394,7 +393,6 @@ struct stm32h723_rcc_t
     static constexpr uint32_t APB2RSTR_SAI2RST = 0x800000; // SAI2 block reset
     static constexpr uint32_t APB2RSTR_SAI3RST = 0x1000000; // SAI3 block reset
     static constexpr uint32_t APB2RSTR_DFSDM1RST = 0x10000000; // DFSDM1 block reset
-    static constexpr uint32_t APB2RSTR_HRTIMRST = 0x20000000; // HRTIM block reset
 
     static constexpr uint32_t APB4RSTR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t APB4RSTR_SYSCFGRST = 0x2; // SYSCFG block reset
@@ -545,7 +543,6 @@ struct stm32h723_rcc_t
     static constexpr uint32_t APB2ENR_SAI2EN = 0x800000; // SAI2 Peripheral Clocks Enable
     static constexpr uint32_t APB2ENR_SAI3EN = 0x1000000; // SAI3 Peripheral Clocks Enable
     static constexpr uint32_t APB2ENR_DFSDM1EN = 0x10000000; // DFSDM1 Peripheral Clocks Enable
-    static constexpr uint32_t APB2ENR_HRTIMEN = 0x20000000; // HRTIM peripheral clock enable
 
     static constexpr uint32_t APB4ENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t APB4ENR_SYSCFGEN = 0x2; // SYSCFG peripheral clock enable
@@ -667,7 +664,6 @@ struct stm32h723_rcc_t
     static constexpr uint32_t APB2LPENR_SAI2LPEN = 0x800000; // SAI2 Peripheral Clocks Enable During CSleep Mode
     static constexpr uint32_t APB2LPENR_SAI3LPEN = 0x1000000; // SAI3 Peripheral Clocks Enable During CSleep Mode
     static constexpr uint32_t APB2LPENR_DFSDM1LPEN = 0x10000000; // DFSDM1 Peripheral Clocks Enable During CSleep Mode
-    static constexpr uint32_t APB2LPENR_HRTIMLPEN = 0x20000000; // HRTIM peripheral clock enable during CSleep mode
 
     static constexpr uint32_t APB4LPENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t APB4LPENR_SYSCFGLPEN = 0x2; // SYSCFG peripheral clock enable during CSleep mode
@@ -797,7 +793,6 @@ struct stm32h723_rcc_t
     static constexpr uint32_t C1_APB2ENR_SAI2EN = 0x800000; // SAI2 Peripheral Clocks Enable
     static constexpr uint32_t C1_APB2ENR_SAI3EN = 0x1000000; // SAI3 Peripheral Clocks Enable
     static constexpr uint32_t C1_APB2ENR_DFSDM1EN = 0x10000000; // DFSDM1 Peripheral Clocks Enable
-    static constexpr uint32_t C1_APB2ENR_HRTIMEN = 0x20000000; // HRTIM peripheral clock enable
 
     static constexpr uint32_t C1_APB4ENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t C1_APB4ENR_SYSCFGEN = 0x2; // SYSCFG peripheral clock enable
@@ -919,7 +914,6 @@ struct stm32h723_rcc_t
     static constexpr uint32_t C1_APB2LPENR_SAI2LPEN = 0x800000; // SAI2 Peripheral Clocks Enable During CSleep Mode
     static constexpr uint32_t C1_APB2LPENR_SAI3LPEN = 0x1000000; // SAI3 Peripheral Clocks Enable During CSleep Mode
     static constexpr uint32_t C1_APB2LPENR_DFSDM1LPEN = 0x10000000; // DFSDM1 Peripheral Clocks Enable During CSleep Mode
-    static constexpr uint32_t C1_APB2LPENR_HRTIMLPEN = 0x20000000; // HRTIM peripheral clock enable during CSleep mode
 
     static constexpr uint32_t C1_APB4LPENR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t C1_APB4LPENR_SYSCFGLPEN = 0x2; // SYSCFG peripheral clock enable during CSleep mode
@@ -1869,7 +1863,7 @@ struct stm32h742x_rcc_t
 
 // RCC: Reset and clock control
 
-struct stm32h7a3x_rcc_t
+struct stm32h745_cm4_rcc_t
 {
     volatile uint32_t CR; // clock control register
     volatile uint32_t ICSCR; // RCC Internal Clock Source Calibration Register
@@ -1911,9 +1905,31 @@ struct stm32h7a3x_rcc_t
     volatile uint32_t APB1HRSTR; // RCC APB1 Peripheral Reset Register
     volatile uint32_t APB2RSTR; // RCC APB2 Peripheral Reset Register
     volatile uint32_t APB4RSTR; // RCC APB4 Peripheral Reset Register
-    reserved_t<0x2> _0xa0;
+    volatile uint32_t GCR; // RCC Global Control Register
+    reserved_t<0x1> _0xa4;
     volatile uint32_t D3AMR; // RCC D3 Autonomous mode Register
-    reserved_t<0x21> _0xac;
+    reserved_t<0x9> _0xac;
+    volatile uint32_t RSR; // RCC Reset Status Register
+    volatile uint32_t AHB3ENR; // RCC AHB3 Clock Register
+    volatile uint32_t AHB1ENR; // RCC AHB1 Clock Register
+    volatile uint32_t AHB2ENR; // RCC AHB2 Clock Register
+    volatile uint32_t AHB4ENR; // RCC AHB4 Clock Register
+    volatile uint32_t APB3ENR; // RCC APB3 Clock Register
+    volatile uint32_t APB1LENR; // RCC APB1 Clock Register
+    volatile uint32_t APB1HENR; // RCC APB1 Clock Register
+    volatile uint32_t APB2ENR; // RCC APB2 Clock Register
+    volatile uint32_t APB4ENR; // RCC APB4 Clock Register
+    reserved_t<0x1> _0xf8;
+    volatile uint32_t AHB3LPENR; // RCC AHB3 Sleep Clock Register
+    volatile uint32_t AHB1LPENR; // RCC AHB1 Sleep Clock Register
+    volatile uint32_t AHB2LPENR; // RCC AHB2 Sleep Clock Register
+    volatile uint32_t AHB4LPENR; // RCC AHB4 Sleep Clock Register
+    volatile uint32_t APB3LPENR; // RCC APB3 Sleep Clock Register
+    volatile uint32_t APB1LLPENR; // RCC APB1 Low Sleep Clock Register
+    volatile uint32_t APB1HLPENR; // RCC APB1 High Sleep Clock Register
+    volatile uint32_t APB2LPENR; // RCC APB2 Sleep Clock Register
+    volatile uint32_t APB4LPENR; // RCC APB4 Sleep Clock Register
+    reserved_t<0x4> _0x120;
     volatile uint32_t C1_RSR; // RCC Reset Status Register
     volatile uint32_t C1_AHB3ENR; // RCC AHB3 Clock Register
     volatile uint32_t C1_AHB1ENR; // RCC AHB1 Clock Register
@@ -2248,6 +2264,9 @@ struct stm32h7a3x_rcc_t
     static constexpr uint32_t APB4RSTR_VREFRST = 0x8000; // VREF block reset
     static constexpr uint32_t APB4RSTR_SAI4RST = 0x200000; // SAI4 block reset
 
+    static constexpr uint32_t GCR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t GCR_WW1RSC = 0x1; // WWDG1 reset scope control
+
 
     static constexpr uint32_t D3AMR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t D3AMR_BDMAAMEN = 0x1; // BDMA and DMAMUX Autonomous mode enable
@@ -2266,6 +2285,258 @@ struct stm32h7a3x_rcc_t
     static constexpr uint32_t D3AMR_ADC3AMEN = 0x1000000; // ADC3 Autonomous mode enable
     static constexpr uint32_t D3AMR_BKPSRAMAMEN = 0x10000000; // Backup RAM Autonomous mode enable
     static constexpr uint32_t D3AMR_SRAM4AMEN = 0x20000000; // SRAM4 Autonomous mode enable
+
+
+    static constexpr uint32_t RSR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t RSR_RMVF = 0x10000; // Remove reset flag
+    static constexpr uint32_t RSR_CPURSTF = 0x20000; // CPU reset flag
+    static constexpr uint32_t RSR_D1RSTF = 0x80000; // D1 domain power switch reset flag
+    static constexpr uint32_t RSR_D2RSTF = 0x100000; // D2 domain power switch reset flag
+    static constexpr uint32_t RSR_BORRSTF = 0x200000; // BOR reset flag
+    static constexpr uint32_t RSR_PINRSTF = 0x400000; // Pin reset flag (NRST)
+    static constexpr uint32_t RSR_PORRSTF = 0x800000; // POR/PDR reset flag
+    static constexpr uint32_t RSR_SFTRSTF = 0x1000000; // System reset from CPU reset flag
+    static constexpr uint32_t RSR_IWDG1RSTF = 0x4000000; // Independent Watchdog reset flag
+    static constexpr uint32_t RSR_WWDG1RSTF = 0x10000000; // Window Watchdog reset flag
+    static constexpr uint32_t RSR_LPWRRSTF = 0x40000000; // Reset due to illegal D1 DStandby or CPU CStop flag
+
+    static constexpr uint32_t AHB3ENR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t AHB3ENR_MDMAEN = 0x1; // MDMA Peripheral Clock Enable
+    static constexpr uint32_t AHB3ENR_DMA2DEN = 0x10; // DMA2D Peripheral Clock Enable
+    static constexpr uint32_t AHB3ENR_JPGDECEN = 0x20; // JPGDEC Peripheral Clock Enable
+    static constexpr uint32_t AHB3ENR_FMCEN = 0x1000; // FMC Peripheral Clocks Enable
+    static constexpr uint32_t AHB3ENR_QSPIEN = 0x4000; // QUADSPI and QUADSPI Delay Clock Enable
+    static constexpr uint32_t AHB3ENR_SDMMC1EN = 0x10000; // SDMMC1 and SDMMC1 Delay Clock Enable
+
+    static constexpr uint32_t AHB1ENR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t AHB1ENR_DMA1EN = 0x1; // DMA1 Clock Enable
+    static constexpr uint32_t AHB1ENR_DMA2EN = 0x2; // DMA2 Clock Enable
+    static constexpr uint32_t AHB1ENR_ADC12_COMMONEN = 0x20; // ADC1/2 Peripheral Clocks Enable
+    static constexpr uint32_t AHB1ENR_ETH1MACEN = 0x8000; // Ethernet MAC bus interface Clock Enable
+    static constexpr uint32_t AHB1ENR_ETH1TXEN = 0x10000; // Ethernet Transmission Clock Enable
+    static constexpr uint32_t AHB1ENR_ETH1RXEN = 0x20000; // Ethernet Reception Clock Enable
+    static constexpr uint32_t AHB1ENR_USB1OTGEN = 0x2000000; // USB1OTG Peripheral Clocks Enable
+    static constexpr uint32_t AHB1ENR_USB1ULPIEN = 0x4000000; // USB_PHY1 Clocks Enable
+    static constexpr uint32_t AHB1ENR_USB2OTGEN = 0x8000000; // USB2OTG Peripheral Clocks Enable
+    static constexpr uint32_t AHB1ENR_USB2ULPIEN = 0x10000000; // USB_PHY2 Clocks Enable
+
+    static constexpr uint32_t AHB2ENR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t AHB2ENR_CAMITFEN = 0x1; // CAMITF peripheral clock enable
+    static constexpr uint32_t AHB2ENR_AESEN = 0x10; // CRYPT peripheral clock enable
+    static constexpr uint32_t AHB2ENR_HASHEN = 0x20; // HASH peripheral clock enable
+    static constexpr uint32_t AHB2ENR_RNGEN = 0x40; // RNG peripheral clocks enable
+    static constexpr uint32_t AHB2ENR_SDMMC2EN = 0x200; // SDMMC2 and SDMMC2 delay clock enable
+    static constexpr uint32_t AHB2ENR_SRAM1EN = 0x20000000; // SRAM1 block enable
+    static constexpr uint32_t AHB2ENR_SRAM2EN = 0x40000000; // SRAM2 block enable
+    static constexpr uint32_t AHB2ENR_SRAM3EN = 0x80000000; // SRAM3 block enable
+
+    static constexpr uint32_t AHB4ENR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t AHB4ENR_GPIOAEN = 0x1; // 0GPIO peripheral clock enable
+    static constexpr uint32_t AHB4ENR_GPIOBEN = 0x2; // 0GPIO peripheral clock enable
+    static constexpr uint32_t AHB4ENR_GPIOCEN = 0x4; // 0GPIO peripheral clock enable
+    static constexpr uint32_t AHB4ENR_GPIODEN = 0x8; // 0GPIO peripheral clock enable
+    static constexpr uint32_t AHB4ENR_GPIOEEN = 0x10; // 0GPIO peripheral clock enable
+    static constexpr uint32_t AHB4ENR_GPIOFEN = 0x20; // 0GPIO peripheral clock enable
+    static constexpr uint32_t AHB4ENR_GPIOGEN = 0x40; // 0GPIO peripheral clock enable
+    static constexpr uint32_t AHB4ENR_GPIOHEN = 0x80; // 0GPIO peripheral clock enable
+    static constexpr uint32_t AHB4ENR_GPIOIEN = 0x100; // 0GPIO peripheral clock enable
+    static constexpr uint32_t AHB4ENR_GPIOJEN = 0x200; // 0GPIO peripheral clock enable
+    static constexpr uint32_t AHB4ENR_GPIOKEN = 0x400; // 0GPIO peripheral clock enable
+    static constexpr uint32_t AHB4ENR_CRCEN = 0x80000; // CRC peripheral clock enable
+    static constexpr uint32_t AHB4ENR_BDMAEN = 0x200000; // BDMA and DMAMUX2 Clock Enable
+    static constexpr uint32_t AHB4ENR_ADC3EN = 0x1000000; // ADC3 Peripheral Clocks Enable
+    static constexpr uint32_t AHB4ENR_HSEMEN = 0x2000000; // HSEM peripheral clock enable
+    static constexpr uint32_t AHB4ENR_BKPRAMEN = 0x10000000; // Backup RAM Clock Enable
+
+    static constexpr uint32_t APB3ENR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t APB3ENR_LTDCEN = 0x8; // LTDC peripheral clock enable
+    static constexpr uint32_t APB3ENR_WWDG1EN = 0x40; // WWDG1 Clock Enable
+
+    static constexpr uint32_t APB1LENR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t APB1LENR_TIM2EN = 0x1; // TIM peripheral clock enable
+    static constexpr uint32_t APB1LENR_TIM3EN = 0x2; // TIM peripheral clock enable
+    static constexpr uint32_t APB1LENR_TIM4EN = 0x4; // TIM peripheral clock enable
+    static constexpr uint32_t APB1LENR_TIM5EN = 0x8; // TIM peripheral clock enable
+    static constexpr uint32_t APB1LENR_TIM6EN = 0x10; // TIM peripheral clock enable
+    static constexpr uint32_t APB1LENR_TIM7EN = 0x20; // TIM peripheral clock enable
+    static constexpr uint32_t APB1LENR_TIM12EN = 0x40; // TIM peripheral clock enable
+    static constexpr uint32_t APB1LENR_TIM13EN = 0x80; // TIM peripheral clock enable
+    static constexpr uint32_t APB1LENR_TIM14EN = 0x100; // TIM peripheral clock enable
+    static constexpr uint32_t APB1LENR_LPTIM1EN = 0x200; // LPTIM1 Peripheral Clocks Enable
+    static constexpr uint32_t APB1LENR_SPI2EN = 0x4000; // SPI2 Peripheral Clocks Enable
+    static constexpr uint32_t APB1LENR_SPI3EN = 0x8000; // SPI3 Peripheral Clocks Enable
+    static constexpr uint32_t APB1LENR_SPDIFRXEN = 0x10000; // SPDIFRX Peripheral Clocks Enable
+    static constexpr uint32_t APB1LENR_USART2EN = 0x20000; // USART2 Peripheral Clocks Enable
+    static constexpr uint32_t APB1LENR_USART3EN = 0x40000; // USART3 Peripheral Clocks Enable
+    static constexpr uint32_t APB1LENR_UART4EN = 0x80000; // UART4 Peripheral Clocks Enable
+    static constexpr uint32_t APB1LENR_UART5EN = 0x100000; // UART5 Peripheral Clocks Enable
+    static constexpr uint32_t APB1LENR_I2C1EN = 0x200000; // I2C1 Peripheral Clocks Enable
+    static constexpr uint32_t APB1LENR_I2C2EN = 0x400000; // I2C2 Peripheral Clocks Enable
+    static constexpr uint32_t APB1LENR_I2C3EN = 0x800000; // I2C3 Peripheral Clocks Enable
+    static constexpr uint32_t APB1LENR_HDMICECEN = 0x8000000; // HDMI-CEC peripheral clock enable
+    static constexpr uint32_t APB1LENR_DAC12EN = 0x20000000; // DAC1&amp;2 peripheral clock enable
+    static constexpr uint32_t APB1LENR_USART7EN = 0x40000000; // USART7 Peripheral Clocks Enable
+    static constexpr uint32_t APB1LENR_USART8EN = 0x80000000; // USART8 Peripheral Clocks Enable
+
+    static constexpr uint32_t APB1HENR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t APB1HENR_CRSEN = 0x2; // Clock Recovery System peripheral clock enable
+    static constexpr uint32_t APB1HENR_SWPEN = 0x4; // SWPMI Peripheral Clocks Enable
+    static constexpr uint32_t APB1HENR_OPAMPEN = 0x10; // OPAMP peripheral clock enable
+    static constexpr uint32_t APB1HENR_MDIOSEN = 0x20; // MDIOS peripheral clock enable
+    static constexpr uint32_t APB1HENR_FDCANEN = 0x100; // FDCAN Peripheral Clocks Enable
+
+    static constexpr uint32_t APB2ENR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t APB2ENR_TIM1EN = 0x1; // TIM1 peripheral clock enable
+    static constexpr uint32_t APB2ENR_TIM8EN = 0x2; // TIM8 peripheral clock enable
+    static constexpr uint32_t APB2ENR_USART1EN = 0x10; // USART1 Peripheral Clocks Enable
+    static constexpr uint32_t APB2ENR_USART6EN = 0x20; // USART6 Peripheral Clocks Enable
+    static constexpr uint32_t APB2ENR_SPI1EN = 0x1000; // SPI1 Peripheral Clocks Enable
+    static constexpr uint32_t APB2ENR_SPI4EN = 0x2000; // SPI4 Peripheral Clocks Enable
+    static constexpr uint32_t APB2ENR_TIM16EN = 0x20000; // TIM16 peripheral clock enable
+    static constexpr uint32_t APB2ENR_TIM15EN = 0x10000; // TIM15 peripheral clock enable
+    static constexpr uint32_t APB2ENR_TIM17EN = 0x40000; // TIM17 peripheral clock enable
+    static constexpr uint32_t APB2ENR_SPI5EN = 0x100000; // SPI5 Peripheral Clocks Enable
+    static constexpr uint32_t APB2ENR_SAI1EN = 0x400000; // SAI1 Peripheral Clocks Enable
+    static constexpr uint32_t APB2ENR_SAI2EN = 0x800000; // SAI2 Peripheral Clocks Enable
+    static constexpr uint32_t APB2ENR_SAI3EN = 0x1000000; // SAI3 Peripheral Clocks Enable
+    static constexpr uint32_t APB2ENR_DFSDM1EN = 0x10000000; // DFSDM1 Peripheral Clocks Enable
+    static constexpr uint32_t APB2ENR_HRTIMEN = 0x20000000; // HRTIM peripheral clock enable
+
+    static constexpr uint32_t APB4ENR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t APB4ENR_SYSCFGEN = 0x2; // SYSCFG peripheral clock enable
+    static constexpr uint32_t APB4ENR_LPUART1EN = 0x8; // LPUART1 Peripheral Clocks Enable
+    static constexpr uint32_t APB4ENR_SPI6EN = 0x20; // SPI6 Peripheral Clocks Enable
+    static constexpr uint32_t APB4ENR_I2C4EN = 0x80; // I2C4 Peripheral Clocks Enable
+    static constexpr uint32_t APB4ENR_LPTIM2EN = 0x200; // LPTIM2 Peripheral Clocks Enable
+    static constexpr uint32_t APB4ENR_LPTIM3EN = 0x400; // LPTIM3 Peripheral Clocks Enable
+    static constexpr uint32_t APB4ENR_LPTIM4EN = 0x800; // LPTIM4 Peripheral Clocks Enable
+    static constexpr uint32_t APB4ENR_LPTIM5EN = 0x1000; // LPTIM5 Peripheral Clocks Enable
+    static constexpr uint32_t APB4ENR_COMP12EN = 0x4000; // COMP1/2 peripheral clock enable
+    static constexpr uint32_t APB4ENR_VREFEN = 0x8000; // VREF peripheral clock enable
+    static constexpr uint32_t APB4ENR_RTCAPBEN = 0x10000; // RTC APB Clock Enable
+    static constexpr uint32_t APB4ENR_SAI4EN = 0x200000; // SAI4 Peripheral Clocks Enable
+
+
+    static constexpr uint32_t AHB3LPENR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t AHB3LPENR_MDMALPEN = 0x1; // MDMA Clock Enable During CSleep Mode
+    static constexpr uint32_t AHB3LPENR_DMA2DLPEN = 0x10; // DMA2D Clock Enable During CSleep Mode
+    static constexpr uint32_t AHB3LPENR_JPGDECLPEN = 0x20; // JPGDEC Clock Enable During CSleep Mode
+    static constexpr uint32_t AHB3LPENR_FLITFLPEN = 0x100; // FLITF Clock Enable During CSleep Mode
+    static constexpr uint32_t AHB3LPENR_FMCLPEN = 0x1000; // FMC Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t AHB3LPENR_QSPILPEN = 0x4000; // QUADSPI and QUADSPI Delay Clock Enable During CSleep Mode
+    static constexpr uint32_t AHB3LPENR_SDMMC1LPEN = 0x10000; // SDMMC1 and SDMMC1 Delay Clock Enable During CSleep Mode
+    static constexpr uint32_t AHB3LPENR_D1DTCM1LPEN = 0x10000000; // D1DTCM1 Block Clock Enable During CSleep mode
+    static constexpr uint32_t AHB3LPENR_DTCM2LPEN = 0x20000000; // D1 DTCM2 Block Clock Enable During CSleep mode
+    static constexpr uint32_t AHB3LPENR_ITCMLPEN = 0x40000000; // D1ITCM Block Clock Enable During CSleep mode
+    static constexpr uint32_t AHB3LPENR_AXISRAMLPEN = 0x80000000; // AXISRAM Block Clock Enable During CSleep mode
+
+    static constexpr uint32_t AHB1LPENR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t AHB1LPENR_DMA1LPEN = 0x1; // DMA1 Clock Enable During CSleep Mode
+    static constexpr uint32_t AHB1LPENR_DMA2LPEN = 0x2; // DMA2 Clock Enable During CSleep Mode
+    static constexpr uint32_t AHB1LPENR_ADC12LPEN = 0x20; // ADC1/2 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t AHB1LPENR_ETH1MACLPEN = 0x8000; // Ethernet MAC bus interface Clock Enable During CSleep Mode
+    static constexpr uint32_t AHB1LPENR_ETH1TXLPEN = 0x10000; // Ethernet Transmission Clock Enable During CSleep Mode
+    static constexpr uint32_t AHB1LPENR_ETH1RXLPEN = 0x20000; // Ethernet Reception Clock Enable During CSleep Mode
+    static constexpr uint32_t AHB1LPENR_USB1OTGLPEN = 0x2000000; // USB1OTG peripheral clock enable during CSleep mode
+    static constexpr uint32_t AHB1LPENR_USB1ULPILPEN = 0x4000000; // USB_PHY1 clock enable during CSleep mode
+    static constexpr uint32_t AHB1LPENR_USB2OTGLPEN = 0x8000000; // USB2OTG peripheral clock enable during CSleep mode
+    static constexpr uint32_t AHB1LPENR_USB2ULPILPEN = 0x10000000; // USB_PHY2 clocks enable during CSleep mode
+
+    static constexpr uint32_t AHB2LPENR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t AHB2LPENR_CAMITFLPEN = 0x1; // CAMITF peripheral clock enable during CSleep mode
+    static constexpr uint32_t AHB2LPENR_CRYPTLPEN = 0x10; // CRYPT peripheral clock enable during CSleep mode
+    static constexpr uint32_t AHB2LPENR_HASHLPEN = 0x20; // HASH peripheral clock enable during CSleep mode
+    static constexpr uint32_t AHB2LPENR_SDMMC2LPEN = 0x200; // SDMMC2 and SDMMC2 Delay Clock Enable During CSleep Mode
+    static constexpr uint32_t AHB2LPENR_RNGLPEN = 0x40; // RNG peripheral clock enable during CSleep mode
+    static constexpr uint32_t AHB2LPENR_SRAM1LPEN = 0x20000000; // SRAM1 Clock Enable During CSleep Mode
+    static constexpr uint32_t AHB2LPENR_SRAM2LPEN = 0x40000000; // SRAM2 Clock Enable During CSleep Mode
+    static constexpr uint32_t AHB2LPENR_SRAM3LPEN = 0x80000000; // SRAM3 Clock Enable During CSleep Mode
+
+    static constexpr uint32_t AHB4LPENR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t AHB4LPENR_GPIOALPEN = 0x1; // GPIO peripheral clock enable during CSleep mode
+    static constexpr uint32_t AHB4LPENR_GPIOBLPEN = 0x2; // GPIO peripheral clock enable during CSleep mode
+    static constexpr uint32_t AHB4LPENR_GPIOCLPEN = 0x4; // GPIO peripheral clock enable during CSleep mode
+    static constexpr uint32_t AHB4LPENR_GPIODLPEN = 0x8; // GPIO peripheral clock enable during CSleep mode
+    static constexpr uint32_t AHB4LPENR_GPIOELPEN = 0x10; // GPIO peripheral clock enable during CSleep mode
+    static constexpr uint32_t AHB4LPENR_GPIOFLPEN = 0x20; // GPIO peripheral clock enable during CSleep mode
+    static constexpr uint32_t AHB4LPENR_GPIOGLPEN = 0x40; // GPIO peripheral clock enable during CSleep mode
+    static constexpr uint32_t AHB4LPENR_GPIOHLPEN = 0x80; // GPIO peripheral clock enable during CSleep mode
+    static constexpr uint32_t AHB4LPENR_GPIOILPEN = 0x100; // GPIO peripheral clock enable during CSleep mode
+    static constexpr uint32_t AHB4LPENR_GPIOJLPEN = 0x200; // GPIO peripheral clock enable during CSleep mode
+    static constexpr uint32_t AHB4LPENR_GPIOKLPEN = 0x400; // GPIO peripheral clock enable during CSleep mode
+    static constexpr uint32_t AHB4LPENR_CRCLPEN = 0x80000; // CRC peripheral clock enable during CSleep mode
+    static constexpr uint32_t AHB4LPENR_BDMALPEN = 0x200000; // BDMA Clock Enable During CSleep Mode
+    static constexpr uint32_t AHB4LPENR_ADC3LPEN = 0x1000000; // ADC3 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t AHB4LPENR_BKPRAMLPEN = 0x10000000; // Backup RAM Clock Enable During CSleep Mode
+    static constexpr uint32_t AHB4LPENR_SRAM4LPEN = 0x20000000; // SRAM4 Clock Enable During CSleep Mode
+
+    static constexpr uint32_t APB3LPENR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t APB3LPENR_LTDCLPEN = 0x8; // LTDC peripheral clock enable during CSleep mode
+    static constexpr uint32_t APB3LPENR_WWDG1LPEN = 0x40; // WWDG1 Clock Enable During CSleep Mode
+
+    static constexpr uint32_t APB1LLPENR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t APB1LLPENR_TIM2LPEN = 0x1; // TIM2 peripheral clock enable during CSleep mode
+    static constexpr uint32_t APB1LLPENR_TIM3LPEN = 0x2; // TIM3 peripheral clock enable during CSleep mode
+    static constexpr uint32_t APB1LLPENR_TIM4LPEN = 0x4; // TIM4 peripheral clock enable during CSleep mode
+    static constexpr uint32_t APB1LLPENR_TIM5LPEN = 0x8; // TIM5 peripheral clock enable during CSleep mode
+    static constexpr uint32_t APB1LLPENR_TIM6LPEN = 0x10; // TIM6 peripheral clock enable during CSleep mode
+    static constexpr uint32_t APB1LLPENR_TIM7LPEN = 0x20; // TIM7 peripheral clock enable during CSleep mode
+    static constexpr uint32_t APB1LLPENR_TIM12LPEN = 0x40; // TIM12 peripheral clock enable during CSleep mode
+    static constexpr uint32_t APB1LLPENR_TIM13LPEN = 0x80; // TIM13 peripheral clock enable during CSleep mode
+    static constexpr uint32_t APB1LLPENR_TIM14LPEN = 0x100; // TIM14 peripheral clock enable during CSleep mode
+    static constexpr uint32_t APB1LLPENR_LPTIM1LPEN = 0x200; // LPTIM1 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB1LLPENR_SPI2LPEN = 0x4000; // SPI2 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB1LLPENR_SPI3LPEN = 0x8000; // SPI3 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB1LLPENR_SPDIFRXLPEN = 0x10000; // SPDIFRX Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB1LLPENR_USART2LPEN = 0x20000; // USART2 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB1LLPENR_USART3LPEN = 0x40000; // USART3 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB1LLPENR_UART4LPEN = 0x80000; // UART4 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB1LLPENR_UART5LPEN = 0x100000; // UART5 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB1LLPENR_I2C1LPEN = 0x200000; // I2C1 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB1LLPENR_I2C2LPEN = 0x400000; // I2C2 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB1LLPENR_I2C3LPEN = 0x800000; // I2C3 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB1LLPENR_HDMICECLPEN = 0x8000000; // HDMI-CEC Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB1LLPENR_DAC12LPEN = 0x20000000; // DAC1/2 peripheral clock enable during CSleep mode
+    static constexpr uint32_t APB1LLPENR_USART7LPEN = 0x40000000; // USART7 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB1LLPENR_USART8LPEN = 0x80000000; // USART8 Peripheral Clocks Enable During CSleep Mode
+
+    static constexpr uint32_t APB1HLPENR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t APB1HLPENR_CRSLPEN = 0x2; // Clock Recovery System peripheral clock enable during CSleep mode
+    static constexpr uint32_t APB1HLPENR_SWPLPEN = 0x4; // SWPMI Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB1HLPENR_OPAMPLPEN = 0x10; // OPAMP peripheral clock enable during CSleep mode
+    static constexpr uint32_t APB1HLPENR_MDIOSLPEN = 0x20; // MDIOS peripheral clock enable during CSleep mode
+    static constexpr uint32_t APB1HLPENR_FDCANLPEN = 0x100; // FDCAN Peripheral Clocks Enable During CSleep Mode
+
+    static constexpr uint32_t APB2LPENR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t APB2LPENR_TIM1LPEN = 0x1; // TIM1 peripheral clock enable during CSleep mode
+    static constexpr uint32_t APB2LPENR_TIM8LPEN = 0x2; // TIM8 peripheral clock enable during CSleep mode
+    static constexpr uint32_t APB2LPENR_USART1LPEN = 0x10; // USART1 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB2LPENR_USART6LPEN = 0x20; // USART6 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB2LPENR_SPI1LPEN = 0x1000; // SPI1 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB2LPENR_SPI4LPEN = 0x2000; // SPI4 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB2LPENR_TIM15LPEN = 0x10000; // TIM15 peripheral clock enable during CSleep mode
+    static constexpr uint32_t APB2LPENR_TIM16LPEN = 0x20000; // TIM16 peripheral clock enable during CSleep mode
+    static constexpr uint32_t APB2LPENR_TIM17LPEN = 0x40000; // TIM17 peripheral clock enable during CSleep mode
+    static constexpr uint32_t APB2LPENR_SPI5LPEN = 0x100000; // SPI5 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB2LPENR_SAI1LPEN = 0x400000; // SAI1 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB2LPENR_SAI2LPEN = 0x800000; // SAI2 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB2LPENR_SAI3LPEN = 0x1000000; // SAI3 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB2LPENR_DFSDM1LPEN = 0x10000000; // DFSDM1 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB2LPENR_HRTIMLPEN = 0x20000000; // HRTIM peripheral clock enable during CSleep mode
+
+    static constexpr uint32_t APB4LPENR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t APB4LPENR_SYSCFGLPEN = 0x2; // SYSCFG peripheral clock enable during CSleep mode
+    static constexpr uint32_t APB4LPENR_LPUART1LPEN = 0x8; // LPUART1 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB4LPENR_SPI6LPEN = 0x20; // SPI6 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB4LPENR_I2C4LPEN = 0x80; // I2C4 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB4LPENR_LPTIM2LPEN = 0x200; // LPTIM2 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB4LPENR_LPTIM3LPEN = 0x400; // LPTIM3 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB4LPENR_LPTIM4LPEN = 0x800; // LPTIM4 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB4LPENR_LPTIM5LPEN = 0x1000; // LPTIM5 Peripheral Clocks Enable During CSleep Mode
+    static constexpr uint32_t APB4LPENR_COMP12LPEN = 0x4000; // COMP1/2 peripheral clock enable during CSleep mode
+    static constexpr uint32_t APB4LPENR_VREFLPEN = 0x8000; // VREF peripheral clock enable during CSleep mode
+    static constexpr uint32_t APB4LPENR_RTCAPBLPEN = 0x10000; // RTC APB Clock Enable During CSleep Mode
+    static constexpr uint32_t APB4LPENR_SAI4LPEN = 0x200000; // SAI4 Peripheral Clocks Enable During CSleep Mode
 
 
     static constexpr uint32_t C1_RSR_RESET_VALUE = 0x0; // Reset value
@@ -2520,6 +2791,149 @@ struct stm32h7a3x_rcc_t
     static constexpr uint32_t C1_APB4LPENR_SAI4LPEN = 0x200000; // SAI4 Peripheral Clocks Enable During CSleep Mode
 };
 
+// RCC: Reset and clock control
+
+struct stm32h7a3x_rcc_t
+{
+    reserved_t<0x1> _0x0;
+    volatile uint32_t RCC_HSICFGR; // RCC HSI calibration register
+    volatile uint32_t RCC_CRRCR; // RCC clock recovery RC register
+    volatile uint32_t RCC_CSICFGR; // RCC CSI calibration register
+    reserved_t<0xf> _0x10;
+    volatile uint32_t RCC_CDCCIPR; // RCC CPU domain kernel clock configuration register
+    volatile uint32_t RCC_CDCCIP1R; // RCC CPU domain kernel clock configuration register
+    volatile uint32_t RCC_CDCCIP2R; // RCC CPU domain kernel clock configuration register
+    volatile uint32_t RCC_SRDCCIPR; // RCC SmartRun domain kernel clock configuration register
+    reserved_t<0x5> _0x5c;
+    volatile uint32_t RCC_BDCR; // RCC Backup domain control register
+    volatile uint32_t RCC_CSR; // RCC clock control and status register
+    reserved_t<0xc> _0x78;
+    volatile uint32_t RCC_SRDAMR; // RCC SmartRun domain Autonomous mode register
+    reserved_t<0x1> _0xac;
+    volatile uint32_t RCC_CKGAENR; // RCC AXI clocks gating enable register
+    reserved_t<0x1f> _0xb4;
+    volatile uint32_t RCC_RSR; // RCC reset status register
+
+
+    static constexpr uint32_t RCC_HSICFGR_RESET_VALUE = 0x40000000; // Reset value
+    typedef bit_field_t<0, 0xfff> RCC_HSICFGR_HSICAL; // HSI clock calibration Set by hardware by option byte loading during system reset nreset. Adjusted by software through trimming bits HSITRIM. This field represents the sum of engineering option byte calibration value and HSITRIM bits value.
+    typedef bit_field_t<24, 0x7f> RCC_HSICFGR_HSITRIM; // HSI clock trimming Set by software to adjust calibration. HSITRIM field is added to the engineering option bytes loaded during reset phase (FLASH_HSI_opt) in order to form the calibration trimming value. HSICAL=HSITRIM+FLASH_HSI_opt. Note: The reset value of the field is 0x40.
+
+    static constexpr uint32_t RCC_CRRCR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x3ff> RCC_CRRCR_HSI48CAL; // Internal RC 48 MHz clock calibration Set by hardware by option byte loading during system reset nreset. Read-only.
+
+    static constexpr uint32_t RCC_CSICFGR_RESET_VALUE = 0x20000000; // Reset value
+    typedef bit_field_t<0, 0xff> RCC_CSICFGR_CSICAL; // CSI clock calibration Set by hardware by option byte loading during system reset nreset. Adjusted by software through trimming bits CSITRIM. This field represents the sum of engineering option byte calibration value and CSITRIM bits value.
+    typedef bit_field_t<24, 0x3f> RCC_CSICFGR_CSITRIM; // CSI clock trimming Set by software to adjust calibration. CSITRIM field is added to the engineering option bytes loaded during reset phase (FLASH_CSI_opt) in order to form the calibration trimming value. CSICAL=CSITRIM+FLASH_CSI_opt. Note: The reset value of the field is 0x20.
+
+
+    static constexpr uint32_t RCC_CDCCIPR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x3> RCC_CDCCIPR_FMCSEL; // FMC kernel clock source selection
+    typedef bit_field_t<4, 0x3> RCC_CDCCIPR_OCTOSPISEL; // OCTOSPI kernel clock source selection
+    static constexpr uint32_t RCC_CDCCIPR_SDMMCSEL = 0x10000; // SDMMC kernel clock source selection
+    typedef bit_field_t<28, 0x3> RCC_CDCCIPR_CKPERSEL; // per_ck clock source selection
+
+    static constexpr uint32_t RCC_CDCCIP1R_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x7> RCC_CDCCIP1R_SAI1SEL; // SAI1 and DFSDM1 kernel Aclk clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it isnot be possible to switch to another clock. Refer to for additional information. Note: DFSDM1 clock source selection is done by DFSDM1SEL. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin.
+    typedef bit_field_t<6, 0x7> RCC_CDCCIP1R_SAI2ASEL; // SAI2 kernel clock source A selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not be possible to switch to another clock. Refer to for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin. spdifrx_symb_ck is the symbol clock generated by the SPDIFRX (see ).
+    typedef bit_field_t<9, 0x7> RCC_CDCCIP1R_SAI2BSEL; // SAI2 kernel clock B source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not be possible to switch to another clock. Refer to for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin. spdifrx_symb_ck is the symbol clock generated by the spdifrx (see ).
+    typedef bit_field_t<12, 0x7> RCC_CDCCIP1R_SPI123SEL; // SPI/I2S1,2 and 3 kernel clock source selection Set and reset by software. If the selected clock is the external clock and this clock is stopped, it is not be possible to switch to another clock. Refer to for additional information. others: reserved, the kernel clock is disabled Note: I2S_CKIN is an external clock taken from a pin.
+    typedef bit_field_t<16, 0x7> RCC_CDCCIP1R_SPI45SEL; // SPI4 and 5 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled
+    typedef bit_field_t<20, 0x3> RCC_CDCCIP1R_SPDIFRXSEL; // SPDIFRX kernel clock source selection
+    static constexpr uint32_t RCC_CDCCIP1R_DFSDM1SEL = 0x1000000; // DFSDM1 kernel clock Clk source selection Set and reset by software. Note: the DFSDM1 Aclk clock source selection is done by SAI1SEL (see ).
+    typedef bit_field_t<28, 0x3> RCC_CDCCIP1R_FDCANSEL; // FDCAN kernel clock source selection Set and reset by software.
+    static constexpr uint32_t RCC_CDCCIP1R_SWPMISEL = 0x80000000; // SWPMI kernel clock source selection Set and reset by software.
+
+    static constexpr uint32_t RCC_CDCCIP2R_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x7> RCC_CDCCIP2R_USART234578SEL; // USART2/3, UART4,5, 7 and 8 (APB1) kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled
+    typedef bit_field_t<3, 0x7> RCC_CDCCIP2R_USART16910SEL; // USART1, 6, 9 and 10 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled
+    typedef bit_field_t<8, 0x3> RCC_CDCCIP2R_RNGSEL; // RNG kernel clock source selection Set and reset by software.
+    typedef bit_field_t<12, 0x3> RCC_CDCCIP2R_I2C123SEL; // I2C1,2,3 kernel clock source selection Set and reset by software.
+    typedef bit_field_t<20, 0x3> RCC_CDCCIP2R_USBSEL; // USBOTG 1 and 2 kernel clock source selection Set and reset by software.
+    typedef bit_field_t<22, 0x3> RCC_CDCCIP2R_CECSEL; // HDMI-CEC kernel clock source selection Set and reset by software.
+    typedef bit_field_t<28, 0x7> RCC_CDCCIP2R_LPTIM1SEL; // LPTIM1 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled
+
+    static constexpr uint32_t RCC_SRDCCIPR_RESET_VALUE = 0x0; // Reset value
+    typedef bit_field_t<0, 0x7> RCC_SRDCCIPR_LPUART1SEL; // LPUART1 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled
+    typedef bit_field_t<8, 0x3> RCC_SRDCCIPR_I2C4SEL; // I2C4 kernel clock source selection Set and reset by software.
+    typedef bit_field_t<10, 0x7> RCC_SRDCCIPR_LPTIM2SEL; // LPTIM2 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled
+    typedef bit_field_t<13, 0x7> RCC_SRDCCIPR_LPTIM3SEL; // LPTIM3 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled
+    typedef bit_field_t<16, 0x3> RCC_SRDCCIPR_ADCSEL; // SAR ADC kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled
+    static constexpr uint32_t RCC_SRDCCIPR_DFSDM2SEL = 0x8000000; // DFSDM2 kernel Clk clock source selection Set and reset by software. Note: The DFSDM2 Aclk clock source selection is done by SPI6SEL (see and ).
+    typedef bit_field_t<28, 0x7> RCC_SRDCCIPR_SPI6SEL; // SPI6 kernel clock source selection Set and reset by software. others: reserved, the kernel clock is disabled
+
+
+    static constexpr uint32_t RCC_BDCR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t RCC_BDCR_LSEON = 0x1; // LSE oscillator enabled Set and reset by software.
+    static constexpr uint32_t RCC_BDCR_LSERDY = 0x2; // LSE oscillator ready Set and reset by hardware to indicate when the LSE is stable. This bit needs 6 cycles of lse_ck clock to fall down after LSEON has been set to 0.
+    static constexpr uint32_t RCC_BDCR_LSEBYP = 0x4; // LSE oscillator bypass Set and reset by software to bypass oscillator in debug mode. This bit must not be written when the LSE is enabled (by LSEON) or ready (LSERDY = 1)
+    typedef bit_field_t<3, 0x3> RCC_BDCR_LSEDRV; // LSE oscillator driving capability Set by software to select the driving capability of the LSE oscillator.
+    static constexpr uint32_t RCC_BDCR_LSECSSON = 0x20; // LSE clock security system enable Set by software to enable the clock security system on 32 kHz oscillator. LSECSSON must be enabled after LSE is enabled (LSEON enabled) and ready (LSERDY set by hardware) and after RTCSEL is selected. Once enabled, this bit cannot be disabled, except after a LSE failure detection (LSECSSD = 1). In that case the software must disable LSECSSON.
+    static constexpr uint32_t RCC_BDCR_LSECSSD = 0x40; // LSE clock security system failure detection Set by hardware to indicate when a failure has been detected by the clock security system on the external 32 kHz oscillator.
+    static constexpr uint32_t RCC_BDCR_LSEEXT = 0x80; // low-speed external clock type in Bypass mode Set and reset by software to select the external clock type (analog or digital). The external clock must be enabled with the LSEON bit, to be used by the device. The LSEEXT bit can be written only if the LSE oscillator is disabled.
+    typedef bit_field_t<8, 0x3> RCC_BDCR_RTCSEL; // RTC clock source selection Set by software to select the clock source for the RTC. These bits can be written only one time (except in case of failure detection on LSE). These bits must be written before LSECSSON is enabled. The VSWRST bit can be used to reset them, then it can be written one time again. If HSE is selected as RTC clock, this clock is lost when the system is in Stop mode or in case of a pin reset (NRST).
+    static constexpr uint32_t RCC_BDCR_RTCEN = 0x8000; // RTC clock enable Set and reset by software.
+    static constexpr uint32_t RCC_BDCR_VSWRST = 0x10000; // VSwitch domain software reset Set and reset by software.
+
+    static constexpr uint32_t RCC_CSR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t RCC_CSR_LSION = 0x1; // LSI oscillator enable Set and reset by software.
+    static constexpr uint32_t RCC_CSR_LSIRDY = 0x2; // LSI oscillator ready Set and reset by hardware to indicate when the low-speed internal RC oscillator is stable. This bit needs 3 cycles of lsi_ck clock to fall down after LSION has been set to 0. This bit can be set even when LSION is not enabled if there is a request for LSI clock by the clock security system on LSE or by the low-speed watchdog or by the RTC.
+
+
+    static constexpr uint32_t RCC_SRDAMR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t RCC_SRDAMR_BDMA2AMEN = 0x1; // SmartRun domain DMA and DMAMUX Autonomous mode enable Set and reset by software. Refer to for additional information.
+    static constexpr uint32_t RCC_SRDAMR_GPIOAMEN = 0x2; // GPIO Autonomous mode enable Set and reset by software. Refer to for additional information.
+    static constexpr uint32_t RCC_SRDAMR_LPUART1AMEN = 0x8; // LPUART1 Autonomous mode enable Set and reset by software. Refer to for additional information.
+    static constexpr uint32_t RCC_SRDAMR_SPI6AMEN = 0x20; // SPI6 Autonomous mode enable Set and reset by software. Refer to for additional information.
+    static constexpr uint32_t RCC_SRDAMR_I2C4AMEN = 0x80; // I2C4 Autonomous mode enable Set and reset by software. Refer to for additional information.
+    static constexpr uint32_t RCC_SRDAMR_LPTIM2AMEN = 0x200; // LPTIM2 Autonomous mode enable Set and reset by software. Refer to for additional information
+    static constexpr uint32_t RCC_SRDAMR_LPTIM3AMEN = 0x400; // LPTIM3 Autonomous mode enable Set and reset by software. Refer to for additional information.
+    static constexpr uint32_t RCC_SRDAMR_DAC2AMEN = 0x2000; // DAC2 (containing one converter) Autonomous mode enable Set and reset by software. Refer to for additional information.
+    static constexpr uint32_t RCC_SRDAMR_COMP12AMEN = 0x4000; // COMP1 and 2 Autonomous mode enable Set and reset by software. Refer to for additional information.
+    static constexpr uint32_t RCC_SRDAMR_VREFAMEN = 0x8000; // VREF Autonomous mode enable Set and reset by software. Refer to for additional information.
+    static constexpr uint32_t RCC_SRDAMR_RTCAMEN = 0x10000; // RTC Autonomous mode enable Set and reset by software. Refer to for additional information.
+    static constexpr uint32_t RCC_SRDAMR_DTSAMEN = 0x4000000; // Digital temperature sensor Autonomous mode enable Set and reset by software. Refer to for additional information.
+    static constexpr uint32_t RCC_SRDAMR_DFSDM2AMEN = 0x8000000; // DFSDM2 Autonomous mode enable Set and reset by software. Refer to for additional information.
+    static constexpr uint32_t RCC_SRDAMR_BKPRAMAMEN = 0x10000000; // Backup RAM Autonomous mode enable Set and reset by software. Refer to for additional information.
+    static constexpr uint32_t RCC_SRDAMR_SRDSRAMAMEN = 0x20000000; // SmartRun domain SRAM Autonomous mode enable Set and reset by software. Refer to for additional information.
+
+
+    static constexpr uint32_t RCC_CKGAENR_RESET_VALUE = 0x0; // Reset value
+    static constexpr uint32_t RCC_CKGAENR_AXICKG = 0x1; // AXI interconnect matrix clock gating This bit is set and reset by software.
+    static constexpr uint32_t RCC_CKGAENR_AHBCKG = 0x2; // AXI master AHB clock gating This bit is set and reset by software.
+    static constexpr uint32_t RCC_CKGAENR_CPUCKG = 0x4; // AXI master CPU clock gating This bit is set and reset by software.
+    static constexpr uint32_t RCC_CKGAENR_SDMMCCKG = 0x8; // AXI master SDMMC clock gating This bit is set and reset by software.
+    static constexpr uint32_t RCC_CKGAENR_MDMACKG = 0x10; // AXI master MDMA clock gating This bit is set and reset by software.
+    static constexpr uint32_t RCC_CKGAENR_DMA2DCKG = 0x20; // AXI master DMA2D clock gating This bit is set and reset by software.
+    static constexpr uint32_t RCC_CKGAENR_LTDCCKG = 0x40; // AXI master LTDC clock gating This bit is set and reset by software.
+    static constexpr uint32_t RCC_CKGAENR_GFXMMUMCKG = 0x80; // AXI master GFXMMU clock gating This bit is set and reset by software.
+    static constexpr uint32_t RCC_CKGAENR_AHB12CKG = 0x100; // AXI slave AHB12 clock gating This bit is set and reset by software.
+    static constexpr uint32_t RCC_CKGAENR_AHB34CKG = 0x200; // AXI slave AHB34 clock gating This bit is set and reset by software.
+    static constexpr uint32_t RCC_CKGAENR_FLIFTCKG = 0x400; // AXI slave Flash interface (FLIFT) clock gating This bit is set and reset by software.
+    static constexpr uint32_t RCC_CKGAENR_OCTOSPI2CKG = 0x800; // AXI slave OCTOSPI2 clock gating This bit is set and reset by software.
+    static constexpr uint32_t RCC_CKGAENR_FMCCKG = 0x1000; // AXI slave FMC clock gating This bit is set and reset by software.
+    static constexpr uint32_t RCC_CKGAENR_OCTOSPI1CKG = 0x2000; // AXI slave OCTOSPI1 clock gating This bit is set and reset by software.
+    static constexpr uint32_t RCC_CKGAENR_AXIRAM1CKG = 0x4000; // AXI slave SRAM1 clock gating This bit is set and reset by software.
+    static constexpr uint32_t RCC_CKGAENR_AXIRAM2CKG = 0x8000; // AXI matrix slave SRAM2 clock gating This bit is set and reset by software.
+    static constexpr uint32_t RCC_CKGAENR_AXIRAM3CKG = 0x10000; // AXI matrix slave SRAM3 clock gating This bit is set and reset by software.
+    static constexpr uint32_t RCC_CKGAENR_GFXMMUSCKG = 0x20000; // AXI matrix slave GFXMMU clock gating This bit is set and reset by software.
+    static constexpr uint32_t RCC_CKGAENR_ECCRAMCKG = 0x20000000; // RAM error code correction (ECC) clock gating This bit is set and reset by software.
+    static constexpr uint32_t RCC_CKGAENR_EXTICKG = 0x40000000; // EXTI clock gating This bit is set and reset by software.
+    static constexpr uint32_t RCC_CKGAENR_JTAGCKG = 0x80000000; // JTAG automatic clock gating This bit is set and reset by software.
+
+
+    static constexpr uint32_t RCC_RSR_RESET_VALUE = 0xe80000; // Reset value
+    static constexpr uint32_t RCC_RSR_RMVF = 0x10000; // remove reset flag Set and reset by software to reset the value of the reset flags.
+    static constexpr uint32_t RCC_RSR_CDRSTF = 0x80000; // CPU domain power-switch reset flag Reset by software by writing the RMVF bit. Set by hardware when a the CPU domain exits from DStop or after of power-on reset. Set also when the CPU domain exists DStop2 but only when a pad reset has occurred during DStop2 (PINRST bit also set by hardware)
+    static constexpr uint32_t RCC_RSR_BORRSTF = 0x200000; // BOR reset flag Reset by software by writing the RMVF bit. Set by hardware when a BOR reset occurs (pwr_bor_rst).
+    static constexpr uint32_t RCC_RSR_PINRSTF = 0x400000; // pin reset flag (NRST) Reset by software by writing the RMVF bit. Set by hardware when a reset from pin occurs.
+    static constexpr uint32_t RCC_RSR_PORRSTF = 0x800000; // POR/PDR reset flag Reset by software by writing the RMVF bit. Set by hardware when a POR/PDR reset occurs.
+    static constexpr uint32_t RCC_RSR_SFTRSTF = 0x1000000; // system reset from CPU reset flag Reset by software by writing the RMVF bit. Set by hardware when the system reset is due to CPU.The CPU can generate a system reset by writing SYSRESETREQ bit of AIRCR register of the core M7.
+    static constexpr uint32_t RCC_RSR_IWDGRSTF = 0x4000000; // independent watchdog reset flag Reset by software by writing the RMVF bit. Set by hardware when an independent watchdog reset occurs.
+    static constexpr uint32_t RCC_RSR_WWDGRSTF = 0x10000000; // window watchdog reset flag Reset by software by writing the RMVF bit. Set by hardware when a window watchdog reset occurs.
+    static constexpr uint32_t RCC_RSR_LPWRRSTF = 0x40000000; // reset due to illegal CD DStop or CD DStop2 or CPU CStop flag Reset by software by writing the RMVF bit. Set by hardware when the CPU domain goes erroneously in DStop or DStop2, or when the CPU goes erroneously in CStop.
+};
+
 template<>
 struct peripheral_t<STM32H723, RCC>
 {
@@ -2529,79 +2943,15 @@ struct peripheral_t<STM32H723, RCC>
 };
 
 template<>
+struct peripheral_t<STM32H725, RCC>
+{
+    static constexpr periph_t P = RCC;
+    using T = stm32h723_rcc_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, RCC>
-{
-    static constexpr periph_t P = RCC;
-    using T = stm32h723_rcc_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H745_CM4, RCC>
-{
-    static constexpr periph_t P = RCC;
-    using T = stm32h723_rcc_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H745_CM7, RCC>
-{
-    static constexpr periph_t P = RCC;
-    using T = stm32h723_rcc_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H747_CM4, RCC>
-{
-    static constexpr periph_t P = RCC;
-    using T = stm32h723_rcc_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H747_CM7, RCC>
-{
-    static constexpr periph_t P = RCC;
-    using T = stm32h723_rcc_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H750x, RCC>
-{
-    static constexpr periph_t P = RCC;
-    using T = stm32h723_rcc_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H755_CM4, RCC>
-{
-    static constexpr periph_t P = RCC;
-    using T = stm32h723_rcc_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H755_CM7, RCC>
-{
-    static constexpr periph_t P = RCC;
-    using T = stm32h723_rcc_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H757_CM4, RCC>
-{
-    static constexpr periph_t P = RCC;
-    using T = stm32h723_rcc_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32H757_CM7, RCC>
 {
     static constexpr periph_t P = RCC;
     using T = stm32h723_rcc_t;
@@ -2629,6 +2979,78 @@ struct peripheral_t<STM32H753, RCC>
 {
     static constexpr periph_t P = RCC;
     using T = stm32h742x_rcc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H745_CM4, RCC>
+{
+    static constexpr periph_t P = RCC;
+    using T = stm32h745_cm4_rcc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H745_CM7, RCC>
+{
+    static constexpr periph_t P = RCC;
+    using T = stm32h745_cm4_rcc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H747_CM4, RCC>
+{
+    static constexpr periph_t P = RCC;
+    using T = stm32h745_cm4_rcc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H747_CM7, RCC>
+{
+    static constexpr periph_t P = RCC;
+    using T = stm32h745_cm4_rcc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H750x, RCC>
+{
+    static constexpr periph_t P = RCC;
+    using T = stm32h745_cm4_rcc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H755_CM4, RCC>
+{
+    static constexpr periph_t P = RCC;
+    using T = stm32h745_cm4_rcc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H755_CM7, RCC>
+{
+    static constexpr periph_t P = RCC;
+    using T = stm32h745_cm4_rcc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H757_CM4, RCC>
+{
+    static constexpr periph_t P = RCC;
+    using T = stm32h745_cm4_rcc_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H757_CM7, RCC>
+{
+    static constexpr periph_t P = RCC;
+    using T = stm32h745_cm4_rcc_t;
     static T& V;
 };
 

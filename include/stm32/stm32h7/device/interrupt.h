@@ -49,7 +49,7 @@ struct interrupt
         , TIM1_BRK = 24 // TIM1 break interrupt
         , TIM1_UP = 25 // TIM1 update interrupt
         , TIM1_TRG_COM = 26 // TIM1 trigger and commutation
-        , TIM_CC = 27 // TIM1 capture / compare
+        , TIM1_CC = 27 // TIM1 capture / compare
         , TIM2 = 28 // TIM2 global interrupt
         , TIM3 = 29 // TIM3 global interrupt
         , TIM4 = 30 // TIM4 global interrupt
@@ -97,7 +97,7 @@ struct interrupt
         , OTG_HS_EP1_IN = 75 // OTG_HS in global interrupt
         , OTG_HS_WKUP = 76 // OTG_HS wakeup interrupt
         , OTG_HS = 77 // OTG_HS global interrupt
-        , DCMI = 78 // DCMI global interrupt
+        , DCMI_PSSI = 78 // DCMI/PSSI global interrupt
         , CRYP = 79 // Crypto global interrupt
         , HASH_RNG = 80 // HASH and RNG
         , FPU = 81 // Floating point unit interrupt
@@ -111,7 +111,7 @@ struct interrupt
         , LTDC_ER = 89 // LCD-TFT error interrupt
         , DMA2D = 90 // DMA2D global interrupt
         , SAI2 = 91 // SAI2 global interrupt
-        , QUADSPI = 92 // QuadSPI global interrupt
+        , OCTOSPI1 = 92 // OCTOSPI1 global interrupt
         , LPTIM1 = 93 // LPTIM1 global interrupt
         , CEC = 94 // HDMI-CEC global interrupt
         , I2C4_EV = 95 // I2C4 event interrupt
@@ -168,7 +168,15 @@ struct interrupt
         , OCTOSPI2 = 150 // OCTOSPI2 global interrupt
         , OTFDEC1 = 151 // OTFDEC1 interrupt
         , OTFDEC2 = 152 // OTFDEC2 interrupt
-        , BDMA1 = 154 // BDMA1
+        , FMAC = 153 // FMAC interrupt
+        , CORDIC_IT = 154 // CORDIC interrupt
+        , USART10 = 156 // USART10 interrupt
+        , I2C5_EV = 157 // I2C5 event interrupt
+        , I2C5_ER = 158 // I2C5 error interrupt
+        , FDCAN3_IT0 = 159 // FDCAN3 Interrupt 0
+        , FDCAN3_IT1 = 160 // FDCAN3 Interrupt 1
+        , TIM23 = 161 // TIM23 global interrupt
+        , TIM24 = 162 // TIM24 global interrupt
     };
 
     template<interrupt_t INTERRUPT>
@@ -266,6 +274,17 @@ struct interrupt
         static bool get_pending() { return NVIC::V.ISPR4 & 1 << (I - 128); }
         static void set_pending() { NVIC::V.ISPR4 = 1 << (I - 128); }
         static void clear_pending() { NVIC::V.ICPR4 = 1 << (I - 128); }
+    };
+
+    template<typename NVIC, interrupt_t I>
+    struct helper<NVIC, I, is_in_range<(160 <= I && I < 192)>>
+    {
+        static bool get() { return NVIC::V.ISER5 & 1 << (I - 160); }
+        static void set() { NVIC::V.ISER5 = 1 << (I - 160); }
+        static void clear() { NVIC::V.ICER5 = 1 << (I - 160); }
+        static bool get_pending() { return NVIC::V.ISPR5 & 1 << (I - 160); }
+        static void set_pending() { NVIC::V.ISPR5 = 1 << (I - 160); }
+        static void clear_pending() { NVIC::V.ICPR5 = 1 << (I - 160); }
     };
 };
 

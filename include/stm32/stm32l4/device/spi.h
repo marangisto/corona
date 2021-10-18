@@ -298,30 +298,6 @@ struct peripheral_t<STM32L4x5, SPI3>
     static T& V;
 };
 
-template<>
-struct peripheral_t<STM32L4x6, SPI1>
-{
-    static constexpr periph_t P = SPI1;
-    using T = stm32l476_spi1_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32L4x6, SPI2>
-{
-    static constexpr periph_t P = SPI2;
-    using T = stm32l476_spi1_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32L4x6, SPI3>
-{
-    static constexpr periph_t P = SPI3;
-    using T = stm32l476_spi1_t;
-    static T& V;
-};
-
 using spi1_t = peripheral_t<svd, SPI1>;
 using spi2_t = peripheral_t<svd, SPI2>;
 using spi3_t = peripheral_t<svd, SPI3>;

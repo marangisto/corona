@@ -221,10 +221,10 @@ void (*vectors[])(void) __attribute__ ((section(".vectors"))) =
     , handler<interrupt::I2C4_ER> // 83: I2C4_ER
     , handler<interrupt::SPI4> // 84: SPI4
     , handler<interrupt::AES> // 85: AES
-    , handler<interrupt::FDCAN2_INTR0> // 86: FDCAN2_intr0
-    , handler<interrupt::FDCAN2_INTR1> // 87: FDCAN2_intr1
-    , handler<interrupt::FDCAN3_INTR0> // 88: FDCAN3_intr0
-    , handler<interrupt::FDCAN3_INTR1> // 89: FDCAN3_intr1
+    , handler<interrupt::FDCAN2_INTR0> // 86: FDCAN2 interrupt
+    , handler<interrupt::FDCAN2_INTR1> // 87: FDCAN2 interrupt
+    , handler<interrupt::FDCAN3_INTR0> // 88: FDCAN3 interrupt
+    , handler<interrupt::FDCAN3_INTR1> // 89: FDCAN3 interrupt
     , handler<interrupt::RNG> // 90: RNG
     , handler<interrupt::LPUART> // 91: LPUART
     , handler<interrupt::I2C3_EV> // 92: I2C3_EV

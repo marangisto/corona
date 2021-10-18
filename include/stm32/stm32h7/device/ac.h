@@ -63,6 +63,14 @@ struct peripheral_t<STM32H723, AC>
 };
 
 template<>
+struct peripheral_t<STM32H725, AC>
+{
+    static constexpr periph_t P = AC;
+    using T = stm32h723_ac_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, AC>
 {
     static constexpr periph_t P = AC;

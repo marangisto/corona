@@ -8,7 +8,7 @@
 
 // COMP: Comparator instance 1
 
-struct stm32wb35_cm4_comp_t
+struct stm32wb15_cm4_comp_t
 {
     volatile uint32_t COMP1_CSR; // Comparator control and status register
     volatile uint32_t COMP2_CSR; // Comparator 2 control and status register
@@ -44,10 +44,18 @@ struct stm32wb35_cm4_comp_t
 };
 
 template<>
+struct peripheral_t<STM32WB15_CM4, COMP>
+{
+    static constexpr periph_t P = COMP;
+    using T = stm32wb15_cm4_comp_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32WB35_CM4, COMP>
 {
     static constexpr periph_t P = COMP;
-    using T = stm32wb35_cm4_comp_t;
+    using T = stm32wb15_cm4_comp_t;
     static T& V;
 };
 
@@ -55,7 +63,7 @@ template<>
 struct peripheral_t<STM32WB55_CM4, COMP>
 {
     static constexpr periph_t P = COMP;
-    using T = stm32wb35_cm4_comp_t;
+    using T = stm32wb15_cm4_comp_t;
     static T& V;
 };
 

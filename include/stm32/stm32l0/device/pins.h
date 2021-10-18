@@ -330,7 +330,7 @@ template<gpio_conf_t CFG>
 struct signal_traits<CFG, PA0, LPTIM1_IN1>
 {
     static constexpr altfun
-        < CFG & (STM32L021|STM32L031)
+        < CFG & (STM32L021|STM32L031|STM32L031)
         > AF = AF1;
 };
 

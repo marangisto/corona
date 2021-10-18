@@ -279,6 +279,14 @@ struct peripheral_t<STM32H723, AXI>
 };
 
 template<>
+struct peripheral_t<STM32H725, AXI>
+{
+    static constexpr periph_t P = AXI;
+    using T = stm32h723_axi_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, AXI>
 {
     static constexpr periph_t P = AXI;

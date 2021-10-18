@@ -425,6 +425,14 @@ struct peripheral_t<STM32H723, RAMECC1>
 };
 
 template<>
+struct peripheral_t<STM32H725, RAMECC1>
+{
+    static constexpr periph_t P = RAMECC1;
+    using T = stm32h723_ramecc1_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, RAMECC1>
 {
     static constexpr periph_t P = RAMECC1;
@@ -529,6 +537,14 @@ struct peripheral_t<STM32H723, RAMECC2>
 };
 
 template<>
+struct peripheral_t<STM32H725, RAMECC2>
+{
+    static constexpr periph_t P = RAMECC2;
+    using T = stm32h723_ramecc2_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, RAMECC2>
 {
     static constexpr periph_t P = RAMECC2;
@@ -602,6 +618,14 @@ struct peripheral_t<STM32H757_CM7, RAMECC2>
 
 template<>
 struct peripheral_t<STM32H723, RAMECC3>
+{
+    static constexpr periph_t P = RAMECC3;
+    using T = stm32h723_ramecc3_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32H725, RAMECC3>
 {
     static constexpr periph_t P = RAMECC3;
     using T = stm32h723_ramecc3_t;

@@ -70,6 +70,14 @@ struct peripheral_t<STM32H723, OPAMP>
 };
 
 template<>
+struct peripheral_t<STM32H725, OPAMP>
+{
+    static constexpr periph_t P = OPAMP;
+    using T = stm32h723_opamp_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, OPAMP>
 {
     static constexpr periph_t P = OPAMP;

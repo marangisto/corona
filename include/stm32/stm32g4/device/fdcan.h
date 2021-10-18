@@ -55,7 +55,7 @@ struct stm32g431xx_fdcan_t
     reserved_t<0x5> _0xec;
     volatile uint32_t CKDIV; // FDCAN CFG clock divider register
 
-    static constexpr uint32_t CREL_RESET_VALUE = 0x11111111; // Reset value
+    static constexpr uint32_t CREL_RESET_VALUE = 0x32141218; // Reset value
     typedef bit_field_t<0, 0xff> CREL_DAY; // DAY
     typedef bit_field_t<8, 0xff> CREL_MON; // MON
     typedef bit_field_t<16, 0xf> CREL_YEAR; // YEAR
@@ -99,8 +99,8 @@ struct stm32g431xx_fdcan_t
     static constexpr uint32_t CCCR_TXP = 0x4000; // TXP
     static constexpr uint32_t CCCR_NISO = 0x8000; // NISO
 
-    static constexpr uint32_t NBTP_RESET_VALUE = 0xa33; // Reset value
-    typedef bit_field_t<0, 0x7f> NBTP_TSEG2; // TSEG2
+    static constexpr uint32_t NBTP_RESET_VALUE = 0x6000a03; // Reset value
+    typedef bit_field_t<0, 0x7f> NBTP_NTSEG2; // NTSEG2
     typedef bit_field_t<8, 0xff> NBTP_NTSEG1; // NTSEG1
     typedef bit_field_t<16, 0x1ff> NBTP_NBRP; // NBRP
     typedef bit_field_t<25, 0x7f> NBTP_NSJW; // NSJW
@@ -123,7 +123,7 @@ struct stm32g431xx_fdcan_t
 
     static constexpr uint32_t ECR_RESET_VALUE = 0x0; // Reset value
     typedef bit_field_t<0, 0xff> ECR_TEC; // TEC
-    typedef bit_field_t<8, 0x7f> ECR_TREC; // TREC
+    typedef bit_field_t<8, 0x7f> ECR_REC; // TREC
     static constexpr uint32_t ECR_RP = 0x8000; // RP
     typedef bit_field_t<16, 0xff> ECR_CEL; // CEL
 
@@ -147,97 +147,64 @@ struct stm32g431xx_fdcan_t
 
     static constexpr uint32_t IR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t IR_RF0N = 0x1; // RF0N
-    static constexpr uint32_t IR_RF0W = 0x2; // RF0W
-    static constexpr uint32_t IR_RF0F = 0x4; // RF0F
-    static constexpr uint32_t IR_RF0L = 0x8; // RF0L
-    static constexpr uint32_t IR_RF1N = 0x10; // RF1N
-    static constexpr uint32_t IR_RF1W = 0x20; // RF1W
-    static constexpr uint32_t IR_RF1F = 0x40; // RF1F
-    static constexpr uint32_t IR_RF1L = 0x80; // RF1L
-    static constexpr uint32_t IR_HPM = 0x100; // HPM
-    static constexpr uint32_t IR_TC = 0x200; // TC
-    static constexpr uint32_t IR_TCF = 0x400; // TCF
-    static constexpr uint32_t IR_TFE = 0x800; // TFE
-    static constexpr uint32_t IR_TEFN = 0x1000; // TEFN
-    static constexpr uint32_t IR_TEFW = 0x2000; // TEFW
-    static constexpr uint32_t IR_TEFF = 0x4000; // TEFF
-    static constexpr uint32_t IR_TEFL = 0x8000; // TEFL
-    static constexpr uint32_t IR_TSW = 0x10000; // TSW
-    static constexpr uint32_t IR_MRAF = 0x20000; // MRAF
-    static constexpr uint32_t IR_TOO = 0x40000; // TOO
-    static constexpr uint32_t IR_DRX = 0x80000; // DRX
-    static constexpr uint32_t IR_ELO = 0x400000; // ELO
-    static constexpr uint32_t IR_EP = 0x800000; // EP
-    static constexpr uint32_t IR_EW = 0x1000000; // EW
-    static constexpr uint32_t IR_BO = 0x2000000; // BO
-    static constexpr uint32_t IR_WDI = 0x4000000; // WDI
-    static constexpr uint32_t IR_PEA = 0x8000000; // PEA
-    static constexpr uint32_t IR_PED = 0x10000000; // PED
-    static constexpr uint32_t IR_ARA = 0x20000000; // ARA
+    static constexpr uint32_t IR_RF0F = 0x2; // RF0F
+    static constexpr uint32_t IR_RF0L = 0x4; // RF0L
+    static constexpr uint32_t IR_RF1N = 0x8; // RF1N
+    static constexpr uint32_t IR_RF1F = 0x10; // RF1F
+    static constexpr uint32_t IR_RF1L = 0x20; // RF1L
+    static constexpr uint32_t IR_HPM = 0x40; // HPM
+    static constexpr uint32_t IR_TC = 0x80; // TC
+    static constexpr uint32_t IR_TCF = 0x100; // TCF
+    static constexpr uint32_t IR_TFE = 0x200; // TFE
+    static constexpr uint32_t IR_TEFN = 0x400; // TEFN
+    static constexpr uint32_t IR_TEFF = 0x800; // TEFF
+    static constexpr uint32_t IR_TEFL = 0x1000; // TEFL
+    static constexpr uint32_t IR_TSW = 0x2000; // TSW
+    static constexpr uint32_t IR_MRAF = 0x4000; // MRAF
+    static constexpr uint32_t IR_TOO = 0x8000; // TOO
+    static constexpr uint32_t IR_ELO = 0x10000; // ELO
+    static constexpr uint32_t IR_EP = 0x20000; // EP
+    static constexpr uint32_t IR_EW = 0x40000; // EW
+    static constexpr uint32_t IR_BO = 0x80000; // BO
+    static constexpr uint32_t IR_WDI = 0x100000; // WDI
+    static constexpr uint32_t IR_PEA = 0x200000; // PEA
+    static constexpr uint32_t IR_PED = 0x400000; // PED
+    static constexpr uint32_t IR_ARA = 0x800000; // ARA
 
     static constexpr uint32_t IE_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t IE_RF0NE = 0x1; // RF0NE
-    static constexpr uint32_t IE_RF0WE = 0x2; // RF0WE
-    static constexpr uint32_t IE_RF0FE = 0x4; // RF0FE
-    static constexpr uint32_t IE_RF0LE = 0x8; // RF0LE
-    static constexpr uint32_t IE_RF1NE = 0x10; // RF1NE
-    static constexpr uint32_t IE_RF1WE = 0x20; // RF1WE
-    static constexpr uint32_t IE_RF1FE = 0x40; // RF1FE
-    static constexpr uint32_t IE_RF1LE = 0x80; // RF1LE
-    static constexpr uint32_t IE_HPME = 0x100; // HPME
-    static constexpr uint32_t IE_TCE = 0x200; // TCE
-    static constexpr uint32_t IE_TCFE = 0x400; // TCFE
-    static constexpr uint32_t IE_TFEE = 0x800; // TFEE
-    static constexpr uint32_t IE_TEFNE = 0x1000; // TEFNE
-    static constexpr uint32_t IE_TEFWE = 0x2000; // TEFWE
-    static constexpr uint32_t IE_TEFFE = 0x4000; // TEFFE
-    static constexpr uint32_t IE_TEFLE = 0x8000; // TEFLE
-    static constexpr uint32_t IE_TSWE = 0x10000; // TSWE
-    static constexpr uint32_t IE_MRAFE = 0x20000; // MRAFE
-    static constexpr uint32_t IE_TOOE = 0x40000; // TOOE
-    static constexpr uint32_t IE_DRX = 0x80000; // DRX
-    static constexpr uint32_t IE_BECE = 0x100000; // BECE
-    static constexpr uint32_t IE_BEUE = 0x200000; // BEUE
-    static constexpr uint32_t IE_ELOE = 0x400000; // ELOE
-    static constexpr uint32_t IE_EPE = 0x800000; // EPE
-    static constexpr uint32_t IE_EWE = 0x1000000; // EWE
-    static constexpr uint32_t IE_BOE = 0x2000000; // BOE
-    static constexpr uint32_t IE_WDIE = 0x4000000; // WDIE
-    static constexpr uint32_t IE_PEAE = 0x8000000; // PEAE
-    static constexpr uint32_t IE_PEDE = 0x10000000; // PEDE
-    static constexpr uint32_t IE_ARAE = 0x20000000; // ARAE
+    static constexpr uint32_t IE_RF0FE = 0x2; // RF0FE
+    static constexpr uint32_t IE_RF0LE = 0x4; // RF0LE
+    static constexpr uint32_t IE_RF1NE = 0x8; // RF1NE
+    static constexpr uint32_t IE_RF1FE = 0x10; // RF1FE
+    static constexpr uint32_t IE_RF1LE = 0x20; // RF1LE
+    static constexpr uint32_t IE_HPME = 0x40; // HPME
+    static constexpr uint32_t IE_TCE = 0x80; // TCE
+    static constexpr uint32_t IE_TCFE = 0x100; // TCFE
+    static constexpr uint32_t IE_TFEE = 0x200; // TFEE
+    static constexpr uint32_t IE_TEFNE = 0x400; // TEFNE
+    static constexpr uint32_t IE_TEFFE = 0x800; // TEFFE
+    static constexpr uint32_t IE_TEFLE = 0x1000; // TEFLE
+    static constexpr uint32_t IE_TSWE = 0x2000; // TSWE
+    static constexpr uint32_t IE_MRAFE = 0x4000; // MRAFE
+    static constexpr uint32_t IE_TOOE = 0x8000; // TOOE
+    static constexpr uint32_t IE_ELOE = 0x10000; // ELOE
+    static constexpr uint32_t IE_EPE = 0x20000; // EPE
+    static constexpr uint32_t IE_EWE = 0x40000; // EWE
+    static constexpr uint32_t IE_BOE = 0x80000; // BOE
+    static constexpr uint32_t IE_WDIE = 0x100000; // WDIE
+    static constexpr uint32_t IE_PEAE = 0x200000; // PEAE
+    static constexpr uint32_t IE_PEDE = 0x400000; // PEDE
+    static constexpr uint32_t IE_ARAE = 0x800000; // ARAE
 
     static constexpr uint32_t ILS_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t ILS_RF0NL = 0x1; // RF0NL
-    static constexpr uint32_t ILS_RF0WL = 0x2; // RF0WL
-    static constexpr uint32_t ILS_RF0FL = 0x4; // RF0FL
-    static constexpr uint32_t ILS_RF0LL = 0x8; // RF0LL
-    static constexpr uint32_t ILS_RF1NL = 0x10; // RF1NL
-    static constexpr uint32_t ILS_RF1WL = 0x20; // RF1WL
-    static constexpr uint32_t ILS_RF1FL = 0x40; // RF1FL
-    static constexpr uint32_t ILS_RF1LL = 0x80; // RF1LL
-    static constexpr uint32_t ILS_HPML = 0x100; // HPML
-    static constexpr uint32_t ILS_TCL = 0x200; // TCL
-    static constexpr uint32_t ILS_TCFL = 0x400; // TCFL
-    static constexpr uint32_t ILS_TFEL = 0x800; // TFEL
-    static constexpr uint32_t ILS_TEFNL = 0x1000; // TEFNL
-    static constexpr uint32_t ILS_TEFWL = 0x2000; // TEFWL
-    static constexpr uint32_t ILS_TEFFL = 0x4000; // TEFFL
-    static constexpr uint32_t ILS_TEFLL = 0x8000; // TEFLL
-    static constexpr uint32_t ILS_TSWL = 0x10000; // TSWL
-    static constexpr uint32_t ILS_MRAFL = 0x20000; // MRAFL
-    static constexpr uint32_t ILS_TOOL = 0x40000; // TOOL
-    static constexpr uint32_t ILS_DRXL = 0x80000; // DRXL
-    static constexpr uint32_t ILS_BECL = 0x100000; // BECL
-    static constexpr uint32_t ILS_BEUL = 0x200000; // BEUL
-    static constexpr uint32_t ILS_ELOL = 0x400000; // ELOL
-    static constexpr uint32_t ILS_EPL = 0x800000; // EPL
-    static constexpr uint32_t ILS_EWL = 0x1000000; // EWL
-    static constexpr uint32_t ILS_BOL = 0x2000000; // BOL
-    static constexpr uint32_t ILS_WDIL = 0x4000000; // WDIL
-    static constexpr uint32_t ILS_PEAL = 0x8000000; // PEAL
-    static constexpr uint32_t ILS_PEDL = 0x10000000; // PEDL
-    static constexpr uint32_t ILS_ARAL = 0x20000000; // ARAL
+    static constexpr uint32_t ILS_RXFIFO0 = 0x1; // RxFIFO0
+    static constexpr uint32_t ILS_RXFIFO1 = 0x2; // RxFIFO1
+    static constexpr uint32_t ILS_SMSG = 0x4; // SMSG
+    static constexpr uint32_t ILS_TFERR = 0x8; // TFERR
+    static constexpr uint32_t ILS_MISC = 0x10; // MISC
+    static constexpr uint32_t ILS_BERR = 0x20; // BERR
+    static constexpr uint32_t ILS_PERR = 0x40; // PERR
 
     static constexpr uint32_t ILE_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t ILE_EINT0 = 0x1; // EINT0
@@ -249,81 +216,81 @@ struct stm32g431xx_fdcan_t
     static constexpr uint32_t RXGFC_RRFS = 0x2; // RRFS
     typedef bit_field_t<2, 0x3> RXGFC_ANFE; // ANFE
     typedef bit_field_t<4, 0x3> RXGFC_ANFS; // ANFS
+    static constexpr uint32_t RXGFC_F1OM = 0x100; // F1OM
+    static constexpr uint32_t RXGFC_F0OM = 0x200; // F0OM
+    typedef bit_field_t<16, 0x1f> RXGFC_LSS; // LSS
+    typedef bit_field_t<24, 0xf> RXGFC_LSE; // LSE
 
     static constexpr uint32_t XIDAM_RESET_VALUE = 0x1fffffff; // Reset value
     typedef bit_field_t<0, 0x1fffffff> XIDAM_EIDM; // EIDM
 
     static constexpr uint32_t HPMS_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0x3f> HPMS_BIDX; // BIDX
+    typedef bit_field_t<0, 0x7> HPMS_BIDX; // BIDX
     typedef bit_field_t<6, 0x3> HPMS_MSI; // MSI
-    typedef bit_field_t<8, 0x7f> HPMS_FIDX; // FIDX
+    typedef bit_field_t<8, 0x1f> HPMS_FIDX; // FIDX
     static constexpr uint32_t HPMS_FLST = 0x8000; // FLST
 
 
     static constexpr uint32_t RXF0S_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0x7f> RXF0S_F0FL; // F0FL
-    typedef bit_field_t<8, 0x3f> RXF0S_F0GI; // F0GI
-    typedef bit_field_t<16, 0x3f> RXF0S_F0PI; // F0PI
+    typedef bit_field_t<0, 0xf> RXF0S_F0FL; // F0FL
+    typedef bit_field_t<8, 0x3> RXF0S_F0GI; // F0GI
+    typedef bit_field_t<16, 0x3> RXF0S_F0PI; // F0PI
     static constexpr uint32_t RXF0S_F0F = 0x1000000; // F0F
     static constexpr uint32_t RXF0S_RF0L = 0x2000000; // RF0L
 
     static constexpr uint32_t RXF0A_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0x3f> RXF0A_F0AI; // F0AI
+    typedef bit_field_t<0, 0x7> RXF0A_F0AI; // F0AI
 
     static constexpr uint32_t RXF1S_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0x7f> RXF1S_F1FL; // F1FL
-    typedef bit_field_t<8, 0x3f> RXF1S_F1GI; // F1GI
-    typedef bit_field_t<16, 0x3f> RXF1S_F1PI; // F1PI
+    typedef bit_field_t<0, 0xf> RXF1S_F1FL; // F1FL
+    typedef bit_field_t<8, 0x3> RXF1S_F1GI; // F1GI
+    typedef bit_field_t<16, 0x3> RXF1S_F1PI; // F1PI
     static constexpr uint32_t RXF1S_F1F = 0x1000000; // F1F
     static constexpr uint32_t RXF1S_RF1L = 0x2000000; // RF1L
-    typedef bit_field_t<30, 0x3> RXF1S_DMS; // DMS
 
     static constexpr uint32_t RXF1A_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0x3f> RXF1A_F1AI; // F1AI
+    typedef bit_field_t<0, 0x7> RXF1A_F1AI; // F1AI
 
 
     static constexpr uint32_t TXBC_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<2, 0x3fff> TXBC_TBSA; // TBSA
-    typedef bit_field_t<16, 0x3f> TXBC_NDTB; // NDTB
-    typedef bit_field_t<24, 0x3f> TXBC_TFQS; // TFQS
-    static constexpr uint32_t TXBC_TFQM = 0x40000000; // TFQM
+    static constexpr uint32_t TXBC_TFQM = 0x1000000; // TFQM
 
-    static constexpr uint32_t TXFQS_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0x3f> TXFQS_TFFL; // TFFL
-    typedef bit_field_t<8, 0x1f> TXFQS_TFGI; // TFGI
-    typedef bit_field_t<16, 0x1f> TXFQS_TFQPI; // TFQPI
+    static constexpr uint32_t TXFQS_RESET_VALUE = 0x3; // Reset value
+    typedef bit_field_t<0, 0x7> TXFQS_TFFL; // TFFL
+    typedef bit_field_t<8, 0x3> TXFQS_TFGI; // TFGI
+    typedef bit_field_t<16, 0x3> TXFQS_TFQPI; // TFQPI
     static constexpr uint32_t TXFQS_TFQF = 0x200000; // TFQF
 
     static constexpr uint32_t TXBRP_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0xffffffff> TXBRP_TRP; // TRP
+    typedef bit_field_t<0, 0x7> TXBRP_TRP; // TRP
 
     static constexpr uint32_t TXBAR_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0xffffffff> TXBAR_AR; // AR
+    typedef bit_field_t<0, 0x7> TXBAR_AR; // AR
 
     static constexpr uint32_t TXBCR_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0xffffffff> TXBCR_CR; // CR
+    typedef bit_field_t<0, 0x7> TXBCR_CR; // CR
 
     static constexpr uint32_t TXBTO_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0xffffffff> TXBTO_TO; // TO
+    typedef bit_field_t<0, 0x7> TXBTO_TO; // TO
 
     static constexpr uint32_t TXBCF_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0xffffffff> TXBCF_CF; // CF
+    typedef bit_field_t<0, 0x7> TXBCF_CF; // CF
 
     static constexpr uint32_t TXBTIE_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0xffffffff> TXBTIE_TIE; // TIE
+    typedef bit_field_t<0, 0x7> TXBTIE_TIE; // TIE
 
     static constexpr uint32_t TXBCIE_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0xffffffff> TXBCIE_CFIE; // CFIE
+    typedef bit_field_t<0, 0x7> TXBCIE_CFIE; // CFIE
 
     static constexpr uint32_t TXEFS_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0x3f> TXEFS_EFFL; // EFFL
-    typedef bit_field_t<8, 0x1f> TXEFS_EFGI; // EFGI
-    typedef bit_field_t<16, 0x1f> TXEFS_EFPI; // EFPI
+    typedef bit_field_t<0, 0x7> TXEFS_EFFL; // EFFL
+    typedef bit_field_t<8, 0x3> TXEFS_EFGI; // EFGI
+    typedef bit_field_t<16, 0x3> TXEFS_EFPI; // EFPI
     static constexpr uint32_t TXEFS_EFF = 0x1000000; // EFF
     static constexpr uint32_t TXEFS_TEFL = 0x2000000; // TEFL
 
     static constexpr uint32_t TXEFA_RESET_VALUE = 0x0; // Reset value
-    typedef bit_field_t<0, 0x1f> TXEFA_EFAI; // EFAI
+    typedef bit_field_t<0, 0x3> TXEFA_EFAI; // EFAI
 
 
     static constexpr uint32_t CKDIV_RESET_VALUE = 0x0; // Reset value

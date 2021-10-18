@@ -571,6 +571,14 @@ struct peripheral_t<STM32H723, FMC>
 };
 
 template<>
+struct peripheral_t<STM32H725, FMC>
+{
+    static constexpr periph_t P = FMC;
+    using T = stm32h723_fmc_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, FMC>
 {
     static constexpr periph_t P = FMC;

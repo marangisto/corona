@@ -1638,6 +1638,14 @@ struct peripheral_t<STM32H723, HSEM>
 };
 
 template<>
+struct peripheral_t<STM32H725, HSEM>
+{
+    static constexpr periph_t P = HSEM;
+    using T = stm32h723_hsem_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, HSEM>
 {
     static constexpr periph_t P = HSEM;

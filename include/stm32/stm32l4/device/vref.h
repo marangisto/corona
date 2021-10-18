@@ -71,12 +71,4 @@ struct peripheral_t<STM32L4x5, VREFBUF>
     static T& V;
 };
 
-template<>
-struct peripheral_t<STM32L4x6, VREFBUF>
-{
-    static constexpr periph_t P = VREFBUF;
-    using T = stm32l476_vrefbuf_t;
-    static T& V;
-};
-
 using vrefbuf_t = peripheral_t<svd, VREFBUF>;

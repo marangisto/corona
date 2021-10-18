@@ -52,6 +52,14 @@ struct peripheral_t<STM32H723, OCTOSPII_O_MANAGER>
 };
 
 template<>
+struct peripheral_t<STM32H725, OCTOSPII_O_MANAGER>
+{
+    static constexpr periph_t P = OCTOSPII_O_MANAGER;
+    using T = stm32h723_octospii_o_manager_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32H73x, OCTOSPII_O_MANAGER>
 {
     static constexpr periph_t P = OCTOSPII_O_MANAGER;

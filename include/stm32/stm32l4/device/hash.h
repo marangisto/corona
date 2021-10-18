@@ -312,14 +312,6 @@ struct peripheral_t<STM32L496, HASH>
     static T& V;
 };
 
-template<>
-struct peripheral_t<STM32L4x6, HASH>
-{
-    static constexpr periph_t P = HASH;
-    using T = stm32l496_hash_t;
-    static T& V;
-};
-
 using hash_t = peripheral_t<svd, HASH>;
 
 template<> struct dma_request_t<HASH, HASH_IN>

@@ -168,14 +168,6 @@ struct peripheral_t<STM32L4x5, DAC1>
     static T& V;
 };
 
-template<>
-struct peripheral_t<STM32L4x6, DAC1>
-{
-    static constexpr periph_t P = DAC1;
-    using T = stm32l476_dac_t;
-    static T& V;
-};
-
 using dac1_t = peripheral_t<svd, DAC1>;
 
 template<int INST> struct dac_traits {};

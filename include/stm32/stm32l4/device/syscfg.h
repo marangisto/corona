@@ -270,14 +270,6 @@ struct peripheral_t<STM32L4x5, SYSCFG>
     static T& V;
 };
 
-template<>
-struct peripheral_t<STM32L4x6, SYSCFG>
-{
-    static constexpr periph_t P = SYSCFG;
-    using T = stm32l476_syscfg_t;
-    static T& V;
-};
-
 using syscfg_t = peripheral_t<svd, SYSCFG>;
 
 template<int INST> struct syscfg_traits {};

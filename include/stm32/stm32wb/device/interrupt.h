@@ -44,7 +44,7 @@ struct interrupt
         , USB_HP = 19 // USB high priority interrupt
         , USB_LP = 20 // USB low priority interrupt (including USB wakeup)
         , C2SEV = 21 // CPU2 SEV through EXTI[40]
-        , COMP = 22 // COMP2 &amp; COMP1 interrupt through AIEC[21:20]
+        , COMP = 22 // COMP1 interrupt through EXTI[21:20]
         , EXTI5_9 = 23 // EXTI line [9:5] interrupt through EXTI[9:5]
         , TIM1_BRK = 24 // Timer 1 break interrupt
         , TIM1_UP = 25 // Timer 1 Update
@@ -84,7 +84,7 @@ struct interrupt
         , DMA2_CH5 = 59 // DMA2 channel 5 interrupt
         , DMA2_CH6 = 60 // DMA2 channel 6 interrupt
         , DMA2_CH7 = 61 // DMA2 channel 7 interrupt
-        , DMAMUX_OVR = 62 // DMAMUX overrun interrupt
+        , DMAMUX1_OVR = 62 // DMAMUX1 overrun interrupt
     };
 
     template<interrupt_t INTERRUPT>

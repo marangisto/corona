@@ -42,7 +42,7 @@ template<> void handler<interrupt::EXTI9_5>() __attribute__ ((weak, alias("_Z17_
 template<> void handler<interrupt::TIM1_BRK>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::TIM1_UP>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::TIM1_TRG_COM>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
-template<> void handler<interrupt::TIM_CC>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::TIM1_CC>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::TIM2>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::TIM3>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::TIM4>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
@@ -90,7 +90,7 @@ template<> void handler<interrupt::OTG_HS_EP1_OUT>() __attribute__ ((weak, alias
 template<> void handler<interrupt::OTG_HS_EP1_IN>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::OTG_HS_WKUP>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::OTG_HS>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
-template<> void handler<interrupt::DCMI>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::DCMI_PSSI>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::CRYP>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::HASH_RNG>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::FPU>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
@@ -104,7 +104,7 @@ template<> void handler<interrupt::LTDC>() __attribute__ ((weak, alias("_Z17__de
 template<> void handler<interrupt::LTDC_ER>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::DMA2D>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::SAI2>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
-template<> void handler<interrupt::QUADSPI>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::OCTOSPI1>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::LPTIM1>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::CEC>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::I2C4_EV>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
@@ -161,7 +161,15 @@ template<> void handler<interrupt::WKUP>() __attribute__ ((weak, alias("_Z17__de
 template<> void handler<interrupt::OCTOSPI2>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::OTFDEC1>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 template<> void handler<interrupt::OTFDEC2>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
-template<> void handler<interrupt::BDMA1>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::FMAC>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::CORDIC_IT>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::USART10>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::I2C5_EV>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::I2C5_ER>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::FDCAN3_IT0>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::FDCAN3_IT1>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::TIM23>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
+template<> void handler<interrupt::TIM24>() __attribute__ ((weak, alias("_Z17__default_handlerv")));
 
 void (*vectors[])(void) __attribute__ ((section(".vectors"))) =
     { (void(*)(void)) &__estack // -16: Initial stack pointer
@@ -207,7 +215,7 @@ void (*vectors[])(void) __attribute__ ((section(".vectors"))) =
     , handler<interrupt::TIM1_BRK> // 24: TIM1 break interrupt
     , handler<interrupt::TIM1_UP> // 25: TIM1 update interrupt
     , handler<interrupt::TIM1_TRG_COM> // 26: TIM1 trigger and commutation
-    , handler<interrupt::TIM_CC> // 27: TIM1 capture / compare
+    , handler<interrupt::TIM1_CC> // 27: TIM1 capture / compare
     , handler<interrupt::TIM2> // 28: TIM2 global interrupt
     , handler<interrupt::TIM3> // 29: TIM3 global interrupt
     , handler<interrupt::TIM4> // 30: TIM4 global interrupt
@@ -258,7 +266,7 @@ void (*vectors[])(void) __attribute__ ((section(".vectors"))) =
     , handler<interrupt::OTG_HS_EP1_IN> // 75: OTG_HS in global interrupt
     , handler<interrupt::OTG_HS_WKUP> // 76: OTG_HS wakeup interrupt
     , handler<interrupt::OTG_HS> // 77: OTG_HS global interrupt
-    , handler<interrupt::DCMI> // 78: DCMI global interrupt
+    , handler<interrupt::DCMI_PSSI> // 78: DCMI/PSSI global interrupt
     , handler<interrupt::CRYP> // 79: Crypto global interrupt
     , handler<interrupt::HASH_RNG> // 80: HASH and RNG
     , handler<interrupt::FPU> // 81: Floating point unit interrupt
@@ -272,7 +280,7 @@ void (*vectors[])(void) __attribute__ ((section(".vectors"))) =
     , handler<interrupt::LTDC_ER> // 89: LCD-TFT error interrupt
     , handler<interrupt::DMA2D> // 90: DMA2D global interrupt
     , handler<interrupt::SAI2> // 91: SAI2 global interrupt
-    , handler<interrupt::QUADSPI> // 92: QuadSPI global interrupt
+    , handler<interrupt::OCTOSPI1> // 92: OCTOSPI1 global interrupt
     , handler<interrupt::LPTIM1> // 93: LPTIM1 global interrupt
     , handler<interrupt::CEC> // 94: HDMI-CEC global interrupt
     , handler<interrupt::I2C4_EV> // 95: I2C4 event interrupt
@@ -333,7 +341,15 @@ void (*vectors[])(void) __attribute__ ((section(".vectors"))) =
     , handler<interrupt::OCTOSPI2> // 150: OCTOSPI2 global interrupt
     , handler<interrupt::OTFDEC1> // 151: OTFDEC1 interrupt
     , handler<interrupt::OTFDEC2> // 152: OTFDEC2 interrupt
+    , handler<interrupt::FMAC> // 153: FMAC interrupt
+    , handler<interrupt::CORDIC_IT> // 154: CORDIC interrupt
     , 0x0
-    , handler<interrupt::BDMA1> // 154: BDMA1
+    , handler<interrupt::USART10> // 156: USART10 interrupt
+    , handler<interrupt::I2C5_EV> // 157: I2C5 event interrupt
+    , handler<interrupt::I2C5_ER> // 158: I2C5 error interrupt
+    , handler<interrupt::FDCAN3_IT0> // 159: FDCAN3 Interrupt 0
+    , handler<interrupt::FDCAN3_IT1> // 160: FDCAN3 Interrupt 1
+    , handler<interrupt::TIM23> // 161: TIM23 global interrupt
+    , handler<interrupt::TIM24> // 162: TIM24 global interrupt
     };
 

@@ -2331,14 +2331,6 @@ struct peripheral_t<STM32L496, GPIOA>
 };
 
 template<>
-struct peripheral_t<STM32L4x6, GPIOA>
-{
-    static constexpr periph_t P = GPIOA;
-    using T = stm32l476_gpioa_t;
-    static T& V;
-};
-
-template<>
 struct peripheral_t<STM32L4x1, GPIOA>
 {
     static constexpr periph_t P = GPIOA;
@@ -2388,14 +2380,6 @@ struct peripheral_t<STM32L476, GPIOB>
 
 template<>
 struct peripheral_t<STM32L496, GPIOB>
-{
-    static constexpr periph_t P = GPIOB;
-    using T = stm32l476_gpiob_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32L4x6, GPIOB>
 {
     static constexpr periph_t P = GPIOB;
     using T = stm32l476_gpiob_t;
@@ -2540,54 +2524,6 @@ struct peripheral_t<STM32L496, GPIOG>
 
 template<>
 struct peripheral_t<STM32L496, GPIOH>
-{
-    static constexpr periph_t P = GPIOH;
-    using T = stm32l476_gpioc_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32L4x6, GPIOC>
-{
-    static constexpr periph_t P = GPIOC;
-    using T = stm32l476_gpioc_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32L4x6, GPIOD>
-{
-    static constexpr periph_t P = GPIOD;
-    using T = stm32l476_gpioc_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32L4x6, GPIOE>
-{
-    static constexpr periph_t P = GPIOE;
-    using T = stm32l476_gpioc_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32L4x6, GPIOF>
-{
-    static constexpr periph_t P = GPIOF;
-    using T = stm32l476_gpioc_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32L4x6, GPIOG>
-{
-    static constexpr periph_t P = GPIOG;
-    using T = stm32l476_gpioc_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32L4x6, GPIOH>
 {
     static constexpr periph_t P = GPIOH;
     using T = stm32l476_gpioc_t;
@@ -2764,14 +2700,6 @@ struct peripheral_t<STM32L412, GPIOH>
 
 template<>
 struct peripheral_t<STM32L496, GPIOI>
-{
-    static constexpr periph_t P = GPIOI;
-    using T = stm32l496_gpioi_t;
-    static T& V;
-};
-
-template<>
-struct peripheral_t<STM32L4x6, GPIOI>
 {
     static constexpr periph_t P = GPIOI;
     using T = stm32l496_gpioi_t;

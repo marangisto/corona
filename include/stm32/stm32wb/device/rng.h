@@ -8,7 +8,7 @@
 
 // RNG: Random number generator
 
-struct stm32wb30_cm4_rng_t
+struct stm32wb10_cm4_rng_t
 {
     volatile uint32_t CR; // control register
     volatile uint32_t SR; // status register
@@ -31,10 +31,26 @@ struct stm32wb30_cm4_rng_t
 };
 
 template<>
+struct peripheral_t<STM32WB10_CM4, RNG>
+{
+    static constexpr periph_t P = RNG;
+    using T = stm32wb10_cm4_rng_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32WB15_CM4, RNG>
+{
+    static constexpr periph_t P = RNG;
+    using T = stm32wb10_cm4_rng_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32WB30_CM4, RNG>
 {
     static constexpr periph_t P = RNG;
-    using T = stm32wb30_cm4_rng_t;
+    using T = stm32wb10_cm4_rng_t;
     static T& V;
 };
 
@@ -42,7 +58,7 @@ template<>
 struct peripheral_t<STM32WB35_CM4, RNG>
 {
     static constexpr periph_t P = RNG;
-    using T = stm32wb30_cm4_rng_t;
+    using T = stm32wb10_cm4_rng_t;
     static T& V;
 };
 
@@ -50,7 +66,7 @@ template<>
 struct peripheral_t<STM32WB50_CM4, RNG>
 {
     static constexpr periph_t P = RNG;
-    using T = stm32wb30_cm4_rng_t;
+    using T = stm32wb10_cm4_rng_t;
     static T& V;
 };
 
@@ -58,7 +74,7 @@ template<>
 struct peripheral_t<STM32WB55_CM4, RNG>
 {
     static constexpr periph_t P = RNG;
-    using T = stm32wb30_cm4_rng_t;
+    using T = stm32wb10_cm4_rng_t;
     static T& V;
 };
 

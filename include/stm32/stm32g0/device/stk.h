@@ -81,4 +81,28 @@ struct peripheral_t<STM32G081, STK>
     static T& V;
 };
 
+template<>
+struct peripheral_t<STM32G0B0, STK>
+{
+    static constexpr periph_t P = STK;
+    using T = stm32g030_stk_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G0B1, STK>
+{
+    static constexpr periph_t P = STK;
+    using T = stm32g030_stk_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32G0C1, STK>
+{
+    static constexpr periph_t P = STK;
+    using T = stm32g030_stk_t;
+    static T& V;
+};
+
 using stk_t = peripheral_t<svd, STK>;

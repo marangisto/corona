@@ -999,7 +999,7 @@ struct stm32g0b1_rcc_t
     volatile uint32_t CR; // Clock control register
     volatile uint32_t ICSCR; // Internal clock sources calibration register
     volatile uint32_t CFGR; // Clock configuration register
-    volatile uint32_t PLLCFGR; // PLL configuration register
+    volatile uint32_t PLLSYSCFGR; // PLL configuration register
     reserved_t<0x1> _0x10;
     volatile uint32_t CRRCR; // RCC clock recovery RC register
     volatile uint32_t CIER; // Clock interrupt enable register
@@ -1050,16 +1050,16 @@ struct stm32g0b1_rcc_t
     typedef bit_field_t<3, 0x7> CFGR_SWS; // System clock switch status
     typedef bit_field_t<0, 0x7> CFGR_SW; // System clock switch
 
-    static constexpr uint32_t PLLCFGR_RESET_VALUE = 0x1000; // Reset value
-    typedef bit_field_t<0, 0x3> PLLCFGR_PLLSRC; // PLL input clock source
-    typedef bit_field_t<4, 0x7> PLLCFGR_PLLM; // Division factor M of the PLL input clock divider
-    typedef bit_field_t<8, 0xff> PLLCFGR_PLLN; // PLL frequency multiplication factor N
-    static constexpr uint32_t PLLCFGR_PLLPEN = 0x10000; // PLLPCLK clock output enable
-    typedef bit_field_t<17, 0x1f> PLLCFGR_PLLP; // PLL VCO division factor P for PLLPCLK clock output
-    static constexpr uint32_t PLLCFGR_PLLQEN = 0x1000000; // PLLQCLK clock output enable
-    typedef bit_field_t<25, 0x7> PLLCFGR_PLLQ; // PLL VCO division factor Q for PLLQCLK clock output
-    static constexpr uint32_t PLLCFGR_PLLREN = 0x10000000; // PLLRCLK clock output enable
-    typedef bit_field_t<29, 0x7> PLLCFGR_PLLR; // PLL VCO division factor R for PLLRCLK clock output
+    static constexpr uint32_t PLLSYSCFGR_RESET_VALUE = 0x1000; // Reset value
+    typedef bit_field_t<0, 0x3> PLLSYSCFGR_PLLSRC; // PLL input clock source
+    typedef bit_field_t<4, 0x7> PLLSYSCFGR_PLLM; // Division factor M of the PLL input clock divider
+    typedef bit_field_t<8, 0xff> PLLSYSCFGR_PLLN; // PLL frequency multiplication factor N
+    static constexpr uint32_t PLLSYSCFGR_PLLPEN = 0x10000; // PLLPCLK clock output enable
+    typedef bit_field_t<17, 0x1f> PLLSYSCFGR_PLLP; // PLL VCO division factor P for PLLPCLK clock output
+    static constexpr uint32_t PLLSYSCFGR_PLLQEN = 0x1000000; // PLLQCLK clock output enable
+    typedef bit_field_t<25, 0x7> PLLSYSCFGR_PLLQ; // PLL VCO division factor Q for PLLQCLK clock output
+    static constexpr uint32_t PLLSYSCFGR_PLLREN = 0x10000000; // PLLRCLK clock output enable
+    typedef bit_field_t<29, 0x7> PLLSYSCFGR_PLLR; // PLL VCO division factor R for PLLRCLK clock output
 
 
     static constexpr uint32_t CRRCR_RESET_VALUE = 0x0; // Reset value
@@ -1316,7 +1316,7 @@ struct stm32g0c1_rcc_t
     volatile uint32_t CR; // Clock control register
     volatile uint32_t ICSCR; // Internal clock sources calibration register
     volatile uint32_t CFGR; // Clock configuration register
-    volatile uint32_t PLLCFGR; // PLL configuration register
+    volatile uint32_t PLLSYSCFGR; // PLL configuration register
     reserved_t<0x1> _0x10;
     volatile uint32_t CRRCR; // RCC clock recovery RC register
     volatile uint32_t CIER; // Clock interrupt enable register
@@ -1367,16 +1367,16 @@ struct stm32g0c1_rcc_t
     typedef bit_field_t<3, 0x7> CFGR_SWS; // System clock switch status
     typedef bit_field_t<0, 0x7> CFGR_SW; // System clock switch
 
-    static constexpr uint32_t PLLCFGR_RESET_VALUE = 0x1000; // Reset value
-    typedef bit_field_t<0, 0x3> PLLCFGR_PLLSRC; // PLL input clock source
-    typedef bit_field_t<4, 0x7> PLLCFGR_PLLM; // Division factor M of the PLL input clock divider
-    typedef bit_field_t<8, 0xff> PLLCFGR_PLLN; // PLL frequency multiplication factor N
-    static constexpr uint32_t PLLCFGR_PLLPEN = 0x10000; // PLLPCLK clock output enable
-    typedef bit_field_t<17, 0x1f> PLLCFGR_PLLP; // PLL VCO division factor P for PLLPCLK clock output
-    static constexpr uint32_t PLLCFGR_PLLQEN = 0x1000000; // PLLQCLK clock output enable
-    typedef bit_field_t<25, 0x7> PLLCFGR_PLLQ; // PLL VCO division factor Q for PLLQCLK clock output
-    static constexpr uint32_t PLLCFGR_PLLREN = 0x10000000; // PLLRCLK clock output enable
-    typedef bit_field_t<29, 0x7> PLLCFGR_PLLR; // PLL VCO division factor R for PLLRCLK clock output
+    static constexpr uint32_t PLLSYSCFGR_RESET_VALUE = 0x1000; // Reset value
+    typedef bit_field_t<0, 0x3> PLLSYSCFGR_PLLSRC; // PLL input clock source
+    typedef bit_field_t<4, 0x7> PLLSYSCFGR_PLLM; // Division factor M of the PLL input clock divider
+    typedef bit_field_t<8, 0xff> PLLSYSCFGR_PLLN; // PLL frequency multiplication factor N
+    static constexpr uint32_t PLLSYSCFGR_PLLPEN = 0x10000; // PLLPCLK clock output enable
+    typedef bit_field_t<17, 0x1f> PLLSYSCFGR_PLLP; // PLL VCO division factor P for PLLPCLK clock output
+    static constexpr uint32_t PLLSYSCFGR_PLLQEN = 0x1000000; // PLLQCLK clock output enable
+    typedef bit_field_t<25, 0x7> PLLSYSCFGR_PLLQ; // PLL VCO division factor Q for PLLQCLK clock output
+    static constexpr uint32_t PLLSYSCFGR_PLLREN = 0x10000000; // PLLRCLK clock output enable
+    typedef bit_field_t<29, 0x7> PLLSYSCFGR_PLLR; // PLL VCO division factor R for PLLRCLK clock output
 
 
     static constexpr uint32_t CRRCR_RESET_VALUE = 0x0; // Reset value

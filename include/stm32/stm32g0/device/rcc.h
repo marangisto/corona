@@ -1093,12 +1093,12 @@ struct stm32g0b1_rcc_t
     static constexpr uint32_t CICR_LSECSSC = 0x200; // LSE Clock security system interrupt clear
 
     static constexpr uint32_t IOPRSTR_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t IOPRSTR_GPIOARST = 0x1; // GPIOARST
-    static constexpr uint32_t IOPRSTR_GPIOBRST = 0x2; // GPIOBRST
-    static constexpr uint32_t IOPRSTR_GPIOCRST = 0x4; // GPIOCRST
-    static constexpr uint32_t IOPRSTR_GPIODRST = 0x8; // GPIODRST
-    static constexpr uint32_t IOPRSTR_GPIOERST = 0x10; // GPIOERST
-    static constexpr uint32_t IOPRSTR_GPIOFRST = 0x20; // GPIOFRST
+    static constexpr uint32_t IOPRSTR_IOPARST = 0x1; // GPIOARST
+    static constexpr uint32_t IOPRSTR_IOPBRST = 0x2; // GPIOBRST
+    static constexpr uint32_t IOPRSTR_IOPCRST = 0x4; // GPIOCRST
+    static constexpr uint32_t IOPRSTR_IOPDRST = 0x8; // GPIODRST
+    static constexpr uint32_t IOPRSTR_IOPERST = 0x10; // GPIOERST
+    static constexpr uint32_t IOPRSTR_IOPFRST = 0x20; // GPIOFRST
 
     static constexpr uint32_t AHBRSTR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t AHBRSTR_DMA1RST = 0x1; // DMA1 reset
@@ -1148,12 +1148,12 @@ struct stm32g0b1_rcc_t
     static constexpr uint32_t APB2RSTR_ADC1RST = 0x100000; // ADC reset
 
     static constexpr uint32_t IOPENR_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t IOPENR_GPIOAEN = 0x1; // I/O port A clock enable during Sleep mode
-    static constexpr uint32_t IOPENR_GPIOBEN = 0x2; // I/O port B clock enable during Sleep mode
-    static constexpr uint32_t IOPENR_GPIOCEN = 0x4; // I/O port C clock enable during Sleep mode
-    static constexpr uint32_t IOPENR_GPIODEN = 0x8; // I/O port D clock enable during Sleep mode
-    static constexpr uint32_t IOPENR_GPIOEEN = 0x10; // I/O port E clock enable during Sleep mode
-    static constexpr uint32_t IOPENR_GPIOFEN = 0x20; // I/O port F clock enable during Sleep mode
+    static constexpr uint32_t IOPENR_IOPAEN = 0x1; // I/O port A clock enable during Sleep mode
+    static constexpr uint32_t IOPENR_IOPBEN = 0x2; // I/O port B clock enable during Sleep mode
+    static constexpr uint32_t IOPENR_IOPCEN = 0x4; // I/O port C clock enable during Sleep mode
+    static constexpr uint32_t IOPENR_IOPDEN = 0x8; // I/O port D clock enable during Sleep mode
+    static constexpr uint32_t IOPENR_IOPEEN = 0x10; // I/O port E clock enable during Sleep mode
+    static constexpr uint32_t IOPENR_IOPFEN = 0x20; // I/O port F clock enable during Sleep mode
 
     static constexpr uint32_t AHBENR_RESET_VALUE = 0x100; // Reset value
     static constexpr uint32_t AHBENR_DMA1EN = 0x1; // DMA1 clock enable
@@ -1205,12 +1205,12 @@ struct stm32g0b1_rcc_t
     static constexpr uint32_t APB2ENR_ADC1EN = 0x100000; // ADC clock enable
 
     static constexpr uint32_t IOPSMENR_RESET_VALUE = 0x3f; // Reset value
-    static constexpr uint32_t IOPSMENR_GPIOASMEN = 0x1; // I/O port A clock enable during Sleep mode
-    static constexpr uint32_t IOPSMENR_GPIOBSMEN = 0x2; // I/O port B clock enable during Sleep mode
-    static constexpr uint32_t IOPSMENR_GPIOCSMEN = 0x4; // I/O port C clock enable during Sleep mode
-    static constexpr uint32_t IOPSMENR_GPIODSMEN = 0x8; // I/O port D clock enable during Sleep mode
-    static constexpr uint32_t IOPSMENR_GPIOESMEN = 0x10; // I/O port E clock enable during Sleep mode
-    static constexpr uint32_t IOPSMENR_GPIOFSMEN = 0x20; // I/O port F clock enable during Sleep mode
+    static constexpr uint32_t IOPSMENR_IOPASMEN = 0x1; // I/O port A clock enable during Sleep mode
+    static constexpr uint32_t IOPSMENR_IOPBSMEN = 0x2; // I/O port B clock enable during Sleep mode
+    static constexpr uint32_t IOPSMENR_IOPCSMEN = 0x4; // I/O port C clock enable during Sleep mode
+    static constexpr uint32_t IOPSMENR_IOPDSMEN = 0x8; // I/O port D clock enable during Sleep mode
+    static constexpr uint32_t IOPSMENR_IOPESMEN = 0x10; // I/O port E clock enable during Sleep mode
+    static constexpr uint32_t IOPSMENR_IOPFSMEN = 0x20; // I/O port F clock enable during Sleep mode
 
     static constexpr uint32_t AHBSMENR_RESET_VALUE = 0x51303; // Reset value
     static constexpr uint32_t AHBSMENR_DMA1SMEN = 0x1; // DMA1 clock enable during Sleep mode
@@ -1410,12 +1410,12 @@ struct stm32g0c1_rcc_t
     static constexpr uint32_t CICR_LSECSSC = 0x200; // LSE Clock security system interrupt clear
 
     static constexpr uint32_t IOPRSTR_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t IOPRSTR_GPIOARST = 0x1; // GPIOARST
-    static constexpr uint32_t IOPRSTR_GPIOBRST = 0x2; // GPIOBRST
-    static constexpr uint32_t IOPRSTR_GPIOCRST = 0x4; // GPIOCRST
-    static constexpr uint32_t IOPRSTR_GPIODRST = 0x8; // GPIODRST
-    static constexpr uint32_t IOPRSTR_GPIOERST = 0x10; // GPIOERST
-    static constexpr uint32_t IOPRSTR_GPIOFRST = 0x20; // GPIOFRST
+    static constexpr uint32_t IOPRSTR_IOPARST = 0x1; // GPIOARST
+    static constexpr uint32_t IOPRSTR_IOPBRST = 0x2; // GPIOBRST
+    static constexpr uint32_t IOPRSTR_IOPCRST = 0x4; // GPIOCRST
+    static constexpr uint32_t IOPRSTR_IOPDRST = 0x8; // GPIODRST
+    static constexpr uint32_t IOPRSTR_IOPERST = 0x10; // GPIOERST
+    static constexpr uint32_t IOPRSTR_IOPFRST = 0x20; // GPIOFRST
 
     static constexpr uint32_t AHBRSTR_RESET_VALUE = 0x0; // Reset value
     static constexpr uint32_t AHBRSTR_DMA1RST = 0x1; // DMA1 reset
@@ -1467,12 +1467,12 @@ struct stm32g0c1_rcc_t
     static constexpr uint32_t APB2RSTR_ADC1RST = 0x100000; // ADC reset
 
     static constexpr uint32_t IOPENR_RESET_VALUE = 0x0; // Reset value
-    static constexpr uint32_t IOPENR_GPIOAEN = 0x1; // I/O port A clock enable during Sleep mode
-    static constexpr uint32_t IOPENR_GPIOBEN = 0x2; // I/O port B clock enable during Sleep mode
-    static constexpr uint32_t IOPENR_GPIOCEN = 0x4; // I/O port C clock enable during Sleep mode
-    static constexpr uint32_t IOPENR_GPIODEN = 0x8; // I/O port D clock enable during Sleep mode
-    static constexpr uint32_t IOPENR_GPIOEEN = 0x10; // I/O port E clock enable during Sleep mode
-    static constexpr uint32_t IOPENR_GPIOFEN = 0x20; // I/O port F clock enable during Sleep mode
+    static constexpr uint32_t IOPENR_IOPAEN = 0x1; // I/O port A clock enable during Sleep mode
+    static constexpr uint32_t IOPENR_IOPBEN = 0x2; // I/O port B clock enable during Sleep mode
+    static constexpr uint32_t IOPENR_IOPCEN = 0x4; // I/O port C clock enable during Sleep mode
+    static constexpr uint32_t IOPENR_IOPDEN = 0x8; // I/O port D clock enable during Sleep mode
+    static constexpr uint32_t IOPENR_IOPEEN = 0x10; // I/O port E clock enable during Sleep mode
+    static constexpr uint32_t IOPENR_IOPFEN = 0x20; // I/O port F clock enable during Sleep mode
 
     static constexpr uint32_t AHBENR_RESET_VALUE = 0x100; // Reset value
     static constexpr uint32_t AHBENR_DMA1EN = 0x1; // DMA1 clock enable
@@ -1526,12 +1526,12 @@ struct stm32g0c1_rcc_t
     static constexpr uint32_t APB2ENR_ADC1EN = 0x100000; // ADC clock enable
 
     static constexpr uint32_t IOPSMENR_RESET_VALUE = 0x3f; // Reset value
-    static constexpr uint32_t IOPSMENR_GPIOASMEN = 0x1; // I/O port A clock enable during Sleep mode
-    static constexpr uint32_t IOPSMENR_GPIOBSMEN = 0x2; // I/O port B clock enable during Sleep mode
-    static constexpr uint32_t IOPSMENR_GPIOCSMEN = 0x4; // I/O port C clock enable during Sleep mode
-    static constexpr uint32_t IOPSMENR_GPIODSMEN = 0x8; // I/O port D clock enable during Sleep mode
-    static constexpr uint32_t IOPSMENR_GPIOESMEN = 0x10; // I/O port E clock enable during Sleep mode
-    static constexpr uint32_t IOPSMENR_GPIOFSMEN = 0x20; // I/O port F clock enable during Sleep mode
+    static constexpr uint32_t IOPSMENR_IOPASMEN = 0x1; // I/O port A clock enable during Sleep mode
+    static constexpr uint32_t IOPSMENR_IOPBSMEN = 0x2; // I/O port B clock enable during Sleep mode
+    static constexpr uint32_t IOPSMENR_IOPCSMEN = 0x4; // I/O port C clock enable during Sleep mode
+    static constexpr uint32_t IOPSMENR_IOPDSMEN = 0x8; // I/O port D clock enable during Sleep mode
+    static constexpr uint32_t IOPSMENR_IOPESMEN = 0x10; // I/O port E clock enable during Sleep mode
+    static constexpr uint32_t IOPSMENR_IOPFSMEN = 0x20; // I/O port F clock enable during Sleep mode
 
     static constexpr uint32_t AHBSMENR_RESET_VALUE = 0x51303; // Reset value
     static constexpr uint32_t AHBSMENR_DMA1SMEN = 0x1; // DMA1 clock enable during Sleep mode

@@ -1026,31 +1026,31 @@ template<> struct gpio_traits<4>
     template<typename RCC>
     static void enable()
     {
-        RCC::V.IOPENR |= RCC::T::IOPENR_GPIOEEN;
+        RCC::V.IOPENR |= RCC::T::IOPENR_IOPEEN;
     }
 
     template<typename RCC>
     static void disable()
     {
-        RCC::V.IOPENR &= ~RCC::T::IOPENR_GPIOEEN;
+        RCC::V.IOPENR &= ~RCC::T::IOPENR_IOPEEN;
     }
 
     template<typename RCC>
     static void enable_sleep_mode()
     {
-        RCC::V.IOPSMENR |= RCC::T::IOPSMENR_GPIOESMEN;
+        RCC::V.IOPSMENR |= RCC::T::IOPSMENR_IOPESMEN;
     }
 
     template<typename RCC>
     static void disable_sleep_mode()
     {
-        RCC::V.IOPSMENR &= ~RCC::T::IOPSMENR_GPIOESMEN;
+        RCC::V.IOPSMENR &= ~RCC::T::IOPSMENR_IOPESMEN;
     }
 
     template<typename RCC>
     static void reset()
     {
-        RCC::V.IOPRSTR |= RCC::T::IOPRSTR_GPIOERST;
+        RCC::V.IOPRSTR |= RCC::T::IOPRSTR_IOPERST;
     }
 };
 

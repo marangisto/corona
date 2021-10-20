@@ -1176,6 +1176,21 @@ typename peripheral_t<STM32G081, NVIC>::T&
         <typename peripheral_t<STM32G081, NVIC>::T*
         >(0xe000e100);
 
+typename peripheral_t<STM32G0B0, NVIC>::T&
+    peripheral_t<STM32G0B0, NVIC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B0, NVIC>::T*
+        >(0xe000e100);
+
+typename peripheral_t<STM32G0B1, NVIC>::T&
+    peripheral_t<STM32G0B1, NVIC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0B1, NVIC>::T*
+        >(0xe000e100);
+
+typename peripheral_t<STM32G0C1, NVIC>::T&
+    peripheral_t<STM32G0C1, NVIC>::V = *reinterpret_cast
+        <typename peripheral_t<STM32G0C1, NVIC>::T*
+        >(0xe000e100);
+
 typename peripheral_t<STM32G030, NVIC_STIR>::T&
     peripheral_t<STM32G030, NVIC_STIR>::V = *reinterpret_cast
         <typename peripheral_t<STM32G030, NVIC_STIR>::T*

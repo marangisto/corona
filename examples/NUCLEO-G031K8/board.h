@@ -14,10 +14,10 @@ static const pin_t          A5 = PA11;
 static const int            SERIAL_USART = 2;
 static const pin_t          SERIAL_TX = PA2;
 static const pin_t          SERIAL_RX = PA3;
-static const interrupt_t    SERIAL_ISR = interrupt::USART2;
+static const interrupt_t    SERIAL_ISR = interrupt::USART2_LPUART2;
 
 static const int            TIMER_NO = 3;
-static const interrupt_t    TIMER_ISR = interrupt::TIM3;
+static const interrupt_t    TIMER_ISR = interrupt::TIM3_TIM4;
 static const pin_t          TIMER_CH1 = PA6;
 static const pin_t          TIMER_CH2 = PA7;
 

@@ -21,6 +21,7 @@
 #include "iwdg.h"
 #include "lcd.h"
 #include "lptim.h"
+#include "lpusart.h"
 #include "mpu.h"
 #include "nvic.h"
 #include "pwr.h"

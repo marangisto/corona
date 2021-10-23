@@ -816,6 +816,46 @@ typename peripheral_t<STM32L0x3, LPTIM>::T&
         <typename peripheral_t<STM32L0x3, LPTIM>::T*
         >(0x40007c00);
 
+typename peripheral_t<STM32L052, LPUSART1>::T&
+    peripheral_t<STM32L052, LPUSART1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L052, LPUSART1>::T*
+        >(0x40004800);
+
+typename peripheral_t<STM32L053, LPUSART1>::T&
+    peripheral_t<STM32L053, LPUSART1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L053, LPUSART1>::T*
+        >(0x40004800);
+
+typename peripheral_t<STM32L062, LPUSART1>::T&
+    peripheral_t<STM32L062, LPUSART1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L062, LPUSART1>::T*
+        >(0x40004800);
+
+typename peripheral_t<STM32L063, LPUSART1>::T&
+    peripheral_t<STM32L063, LPUSART1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L063, LPUSART1>::T*
+        >(0x40004800);
+
+typename peripheral_t<STM32L0x0, LPUART1>::T&
+    peripheral_t<STM32L0x0, LPUART1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L0x0, LPUART1>::T*
+        >(0x40004800);
+
+typename peripheral_t<STM32L0x1, LPUART1>::T&
+    peripheral_t<STM32L0x1, LPUART1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L0x1, LPUART1>::T*
+        >(0x40004800);
+
+typename peripheral_t<STM32L0x2, LPUSART1>::T&
+    peripheral_t<STM32L0x2, LPUSART1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L0x2, LPUSART1>::T*
+        >(0x40004800);
+
+typename peripheral_t<STM32L0x3, LPUSART1>::T&
+    peripheral_t<STM32L0x3, LPUSART1>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L0x3, LPUSART1>::T*
+        >(0x40004800);
+
 typename peripheral_t<STM32L052, MPU>::T&
     peripheral_t<STM32L052, MPU>::V = *reinterpret_cast
         <typename peripheral_t<STM32L052, MPU>::T*
@@ -1495,46 +1535,6 @@ typename peripheral_t<STM32L0x3, TSC>::T&
     peripheral_t<STM32L0x3, TSC>::V = *reinterpret_cast
         <typename peripheral_t<STM32L0x3, TSC>::T*
         >(0x40024000);
-
-typename peripheral_t<STM32L052, LPUSART1>::T&
-    peripheral_t<STM32L052, LPUSART1>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L052, LPUSART1>::T*
-        >(0x40004800);
-
-typename peripheral_t<STM32L053, LPUSART1>::T&
-    peripheral_t<STM32L053, LPUSART1>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L053, LPUSART1>::T*
-        >(0x40004800);
-
-typename peripheral_t<STM32L062, LPUSART1>::T&
-    peripheral_t<STM32L062, LPUSART1>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L062, LPUSART1>::T*
-        >(0x40004800);
-
-typename peripheral_t<STM32L063, LPUSART1>::T&
-    peripheral_t<STM32L063, LPUSART1>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L063, LPUSART1>::T*
-        >(0x40004800);
-
-typename peripheral_t<STM32L0x0, LPUART1>::T&
-    peripheral_t<STM32L0x0, LPUART1>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L0x0, LPUART1>::T*
-        >(0x40004800);
-
-typename peripheral_t<STM32L0x1, LPUART1>::T&
-    peripheral_t<STM32L0x1, LPUART1>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L0x1, LPUART1>::T*
-        >(0x40004800);
-
-typename peripheral_t<STM32L0x2, LPUSART1>::T&
-    peripheral_t<STM32L0x2, LPUSART1>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L0x2, LPUSART1>::T*
-        >(0x40004800);
-
-typename peripheral_t<STM32L0x3, LPUSART1>::T&
-    peripheral_t<STM32L0x3, LPUSART1>::V = *reinterpret_cast
-        <typename peripheral_t<STM32L0x3, LPUSART1>::T*
-        >(0x40004800);
 
 typename peripheral_t<STM32L052, USART1>::T&
     peripheral_t<STM32L052, USART1>::V = *reinterpret_cast

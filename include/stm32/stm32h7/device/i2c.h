@@ -1000,33 +1000,3 @@ template<> struct dma_request_t<I2C2, I2C_TX>
 {
     static constexpr unsigned ID = 36;
 };
-
-template<> struct dma_request_t<I2C3, I2C_RX>
-{
-    static constexpr unsigned ID = 76;
-};
-
-template<> struct dma_request_t<I2C3, I2C_TX>
-{
-    static constexpr unsigned ID = 77;
-};
-
-template<> struct dma_request_t<I2C5, I2C_RX>
-{
-    static constexpr unsigned ID = 118;
-};
-
-template<> struct dma_request_t<I2C5, I2C_TX>
-{
-    static constexpr unsigned ID = 119;
-};
-
-template<> struct dma_request_t<I2C5, I2C_RX>
-{
-    static constexpr unsigned ID = 135;
-};
-
-template<> struct dma_request_t<I2C5, I2C_TX>
-{
-    static constexpr unsigned ID = 136;
-};

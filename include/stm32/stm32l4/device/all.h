@@ -47,7 +47,6 @@
 #include "syscfg.h"
 #include "tim.h"
 #include "tsc.h"
-#include "uart.h"
 #include "usart.h"
 #include "usb.h"
 #include "usb_otg_fs.h"

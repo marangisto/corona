@@ -1076,6 +1076,16 @@ typename peripheral_t<STM32L562, SPI3>::T&
         <typename peripheral_t<STM32L562, SPI3>::T*
         >(0x40003c00);
 
+typename peripheral_t<STM32L552, STK>::T&
+    peripheral_t<STM32L552, STK>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L552, STK>::T*
+        >(0xe000e010);
+
+typename peripheral_t<STM32L562, STK>::T&
+    peripheral_t<STM32L562, STK>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L562, STK>::T*
+        >(0xe000e010);
+
 typename peripheral_t<STM32L552, SEC_SYSCFG>::T&
     peripheral_t<STM32L552, SEC_SYSCFG>::V = *reinterpret_cast
         <typename peripheral_t<STM32L552, SEC_SYSCFG>::T*

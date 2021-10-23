@@ -223,6 +223,7 @@ enum periph_t
     , SPI1
     , SPI2
     , SPI3
+    , STK
     , SYSCFG
     , TAMP
     , TIM1

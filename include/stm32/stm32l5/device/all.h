@@ -42,6 +42,7 @@
 #include "sdmmc.h"
 #include "sec_gtzc.h"
 #include "spi.h"
+#include "stk.h"
 #include "syscfg.h"
 #include "tamp.h"
 #include "tim.h"

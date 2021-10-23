@@ -21,6 +21,7 @@
 #include "fdcan.h"
 #include "flash.h"
 #include "fmc.h"
+#include "fpu.h"
 #include "gpio.h"
 #include "gtzc.h"
 #include "hash.h"

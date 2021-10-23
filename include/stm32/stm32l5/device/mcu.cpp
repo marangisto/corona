@@ -336,6 +336,26 @@ typename peripheral_t<STM32L562, SEC_FMC>::T&
         <typename peripheral_t<STM32L562, SEC_FMC>::T*
         >(0x54020000);
 
+typename peripheral_t<STM32L552, FPU>::T&
+    peripheral_t<STM32L552, FPU>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L552, FPU>::T*
+        >(0xe000ef34);
+
+typename peripheral_t<STM32L562, FPU>::T&
+    peripheral_t<STM32L562, FPU>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L562, FPU>::T*
+        >(0xe000ef34);
+
+typename peripheral_t<STM32L552, FPU_CPACR>::T&
+    peripheral_t<STM32L552, FPU_CPACR>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L552, FPU_CPACR>::T*
+        >(0xe000ed88);
+
+typename peripheral_t<STM32L562, FPU_CPACR>::T&
+    peripheral_t<STM32L562, FPU_CPACR>::V = *reinterpret_cast
+        <typename peripheral_t<STM32L562, FPU_CPACR>::T*
+        >(0xe000ed88);
+
 typename peripheral_t<STM32L552, GPIOA>::T&
     peripheral_t<STM32L552, GPIOA>::V = *reinterpret_cast
         <typename peripheral_t<STM32L552, GPIOA>::T*

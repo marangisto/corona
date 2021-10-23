@@ -64,7 +64,23 @@ struct peripheral_t<STM32L552, FPU>
 };
 
 template<>
+struct peripheral_t<STM32L562, FPU>
+{
+    static constexpr periph_t P = FPU;
+    using T = stm32l552_fpu_t;
+    static T& V;
+};
+
+template<>
 struct peripheral_t<STM32L552, FPU_CPACR>
+{
+    static constexpr periph_t P = FPU_CPACR;
+    using T = stm32l552_fpu_cpacr_t;
+    static T& V;
+};
+
+template<>
+struct peripheral_t<STM32L562, FPU_CPACR>
 {
     static constexpr periph_t P = FPU_CPACR;
     using T = stm32l552_fpu_cpacr_t;

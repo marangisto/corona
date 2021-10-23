@@ -108,6 +108,8 @@ enum periph_t
     , FDCAN1
     , FLASH
     , FMC
+    , FPU
+    , FPU_CPACR
     , GPIOA
     , GPIOB
     , GPIOC

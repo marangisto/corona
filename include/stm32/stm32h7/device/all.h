@@ -68,7 +68,6 @@
 #include "swpmi.h"
 #include "syscfg.h"
 #include "tim.h"
-#include "uart.h"
 #include "usart.h"
 #include "usb_otg_hs.h"
 #include "vrefbuf.h"

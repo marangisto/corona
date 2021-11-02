@@ -85,6 +85,7 @@ main = do
             hse <- (("HSE="<>) . show) <$> getHSE
             libs <- getLibs mcu
             defs <- getDefs
+            incs <- getIncludes
             let include = map ("-I"<>) $ "." :
                     [ baseDir </> lib </> "include"
                     | lib <- libs
@@ -93,7 +94,7 @@ main = do
                       </> "stm32" </> (map toLower $ family mcu)
                     | lib <- libs
                     , lib == "corona"
-                    ]
+                    ] ++ incs
                 define = [ "-D" <> def | def <- hse : defs ]
             () <- cmd command (flags [])
                 [ "-c", "-Werror", "-Wall", "-Os" ] include define

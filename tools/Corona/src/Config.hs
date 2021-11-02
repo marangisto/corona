@@ -2,10 +2,7 @@ module Config
     ( getMCU
     , getLibs
     , getDefs
-    , getBaseDir
-    , getLink
-    , getEntry
-    , getHSE
+    , getIncludes , getBaseDir , getLink , getEntry , getHSE
     , getProg
     ) where
 
@@ -45,6 +42,9 @@ getDefs = do
     x <- fmap unBoard <$> getBoard
     xs <- maybe [] (map Just . words) <$> getConfig "DEFS"
     return $ catMaybes $ x : xs
+
+getIncludes :: Action [String]
+getIncludes = maybe [] words <$> getConfig "INCLUDE"
 
 getBaseDir :: Action FilePath
 getBaseDir = fromMaybe "../.." <$> getConfig "BASE_DIR"

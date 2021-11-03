@@ -4,12 +4,14 @@
 #include <cstring>
 #include <textio.h>
 #include <usart.h>
+#include <mco.h>
 
 using fdcan = fd_can_t<1, PB9, PB8>;
 using serial = usart_t<SERIAL_USART, SERIAL_TX, SERIAL_RX>;
 using led = output_t<LED>;
 using probe = output_t<PROBE>;
 using tim = tim_t<TIMER_NO>;
+using mco2 = mco_t<PC9>;
 
 template<> void handler<SERIAL_ISR>()
 {
@@ -26,6 +28,7 @@ int main()
 {
     led::setup();
     probe::setup();
+    mco2::setup<mco_pll2, 10>();
 
     // f_tim = f_sysclock / ((psc + 1) (arr + 1))
 
@@ -50,8 +53,8 @@ int main()
     fdcan::start();
     sys_tick::delay_ms(100);
 
-    fdcan_tx_header_t hdr = { 4711, 8 };
-    uint8_t buf[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
+    fdcan_tx_header_t hdr = { 0xf, 2 };
+    uint8_t buf[8] = { 0xd, 0xe, 0xa, 0xd, 0xb, 0xe, 0xe, 0xf };
 
     for (;;)
     {

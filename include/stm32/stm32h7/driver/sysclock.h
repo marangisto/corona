@@ -52,7 +52,8 @@ static inline uint32_t clock_tree_init()
                  | _::PLL1DIVR_DIVR1::W(pllR)
                  ;
 
-    RCC.PLLCKSELR = _::PLLCKSELR_DIVM1::W(0x2)  // prescale 2
+    RCC.PLLCKSELR = _::PLLCKSELR_DIVM1::W(0x2)  // PLL1 prescale 2
+                  | _::PLLCKSELR_DIVM2::W(0x2)  // PLL2 prescale 2
                   | _::PLLCKSELR_PLLSRC::W(0x2) // HSE PLL source
                   ;
 
@@ -61,6 +62,18 @@ static inline uint32_t clock_tree_init()
 
     RCC.CFGR |= _::CFGR_SW::W(0x3);             // select PLL as sys clock
     while (_::CFGR_SWS::R(RCC.CFGR) != 0x3);    // wait for PLL sys clock
+
+    // Set PLL2Q clock to 40MHz to feed FDCAN core clock.
+
+    RCC.PLL2DIVR = _::PLL2DIVR_DIVN1::W(20-1)
+                 | _::PLL2DIVR_DIVP1::W(2-1)
+                 | _::PLL2DIVR_DIVQ1::W(2-1)        // to fdcan_core_clk
+                 | _::PLL2DIVR_DIVR1::W(2-1)
+                 ;
+
+    RCC.CR |= _::CR_PLL2ON;                         // enable PLL2
+    while (!(RCC.CR & _::CR_PLL2RDY));              // wait for PLL2 to be ready
+    RCC.D2CCIP1R |= _::D2CCIP1R_FDCANSRC::W(0x2);   // use PLL2_Q_CK for FDCAN
 
     fpu_cpacr_t::V.CPACR |= fpu_cpacr_t::T::CPACR_CP::W(0xf); // enable fpu
     __asm volatile ("dsb");         // data pipe-line reset

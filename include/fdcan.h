@@ -67,10 +67,10 @@ public:
                          |  (_::FDCAN_CCCR_MON & 0)         // enable bus monitoring mode
                          |  (_::FDCAN_CCCR_ASM & 0)         // restricted operating mode
                          ;
-        FDCAN.FDCAN_DBTP = _::FDCAN_DBTP_DBRP::W(0x1)       // data bitrate prescaler
-                         | _::FDCAN_DBTP_DTSEG1::W(0x1f)    // data time segment before sample
-                         | _::FDCAN_DBTP_DTSEG2::W(0x8)     // data time segment after sample
-                         | _::FDCAN_DBTP_DSJW::W(0x8)       // synchronization jump width
+        FDCAN.FDCAN_DBTP = _::FDCAN_DBTP_DBRP::W(0x1-1)     // data bitrate prescaler
+                         | _::FDCAN_DBTP_DTSEG1::W(0x1f-1)  // data time segment before sample
+                         | _::FDCAN_DBTP_DTSEG2::W(0x8-1)   // data time segment after sample
+                         | _::FDCAN_DBTP_DSJW::W(0x8-1)     // synchronization jump width
                          ;
         FDCAN.FDCAN_TXESC = _::FDCAN_TXESC_RESET_VALUE      // reset tx-buffer element size
                           | _::FDCAN_TXESC_TBDS::W(BDS)     // tx-buffer element size
@@ -233,8 +233,10 @@ private:
                | (data_length_code(hdr.size) << 16)     // data length code
                ;
 
+        uint8_t *p = reinterpret_cast<uint8_t*>(dst);
+
         for (uint8_t j = 0; j < hdr.size; ++j)
-            *dst++ = buf[j];                            // FIXME: correct byte ordering?
+            *p++ = buf[j];                            // FIXME: correct byte ordering?
     }
 
     static uint32_t data_length_code(uint8_t n)

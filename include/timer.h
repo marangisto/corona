@@ -3,6 +3,8 @@
 #include "gpio.h"
 #include <device/tim.h>
 #include <driver/timer.h>
+#include <limits>
+#include <math.h>
 
 template<int> struct counter_traits { using type = uint16_t; };
 template<> struct counter_traits<2> { using type = uint32_t; };
@@ -211,6 +213,15 @@ public:
     using _ = typename tim::T;
     using count_t = typename counter_traits<INST>::type;
     enum master_mode_t { mm_reset, mm_enable, mm_update };
+
+    static inline void setup(double t)  // period in seconds
+    {
+        const double tc = t * clock();  
+        const uint16_t pre = ceil(tc / std::numeric_limits<uint16_t>::max());
+        const count_t arr = floor(tc / (pre + 1) - 1);
+
+        setup(pre, arr);
+    }
 
     static inline void setup(uint16_t psc = 0, count_t arr = 1)
     {

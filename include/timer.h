@@ -217,7 +217,7 @@ public:
     static inline void setup(double t)  // period in seconds
     {
         const double tc = t * clock();  
-        const uint16_t pre = ceil(tc / std::numeric_limits<uint16_t>::max());
+        const uint16_t pre = ceil(tc / std::numeric_limits<count_t>::max());
         const count_t arr = floor(tc / (pre + 1) - 1);
 
         setup(pre, arr);
